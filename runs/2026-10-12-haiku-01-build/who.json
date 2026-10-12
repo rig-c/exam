@@ -1,0 +1,7 @@
+{
+ "model": "Claude Haiku (alias `haiku`; exact identifier not recorded)",
+ "how": "as a sub-agent of the proctor's own session, by design",
+ "counts": "independent sitting",
+ "minutes": 21.0,
+ "minutes_read_from": "the proctor's own harness"
+}

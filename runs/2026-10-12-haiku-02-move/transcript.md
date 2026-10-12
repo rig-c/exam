@@ -1,0 +1,12 @@
+- mkdir runs/2026-10-12-haiku-02-move; journal; cp config.json from 01; ln -s inputs
+- rig-parts assemble --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --config config.json --out work > work/assemble.log
+- wrote config.json (constraints + animations_from) and waves.json (python)
+- rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out work/v1 > work/v1.log (background)
+- rigc render --candidate work/v1/check/build --animation wave --fps 12 --folds --geometry --out work/v1/folds_wave
+- wave v1 result: folds [], rise 294.9 (frame 11, sleeve_r2_ctl), contact.png read by me
+- python3 grade.py runs/2026-10-12-haiku-02-move (background, output work/grade2.out)
+- `rig-parts assemble --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --config config.json --out work` → exit 0, `uncovered error px: 2059` (work/assemble.log)
+- wrote config.json (physics constraints, animations_from) and waves.json (python)
+- `rig-parts build … --out work/v1` (background) → `build exit 0`; `[check] check: PASS; 9 of 9 bar(s) measured, 0 skipped`; rig stage: `animations beside the idle, … wave`
+- `rigc render --candidate work/v1/check/build --animation wave --fps 12 --folds --geometry --out work/v1/folds_wave` → exit 0, `0 of 8 mesh(es) fold`; rise computed 294.9 (frame 11, sleeve_r2_ctl)
+- `python3 grade.py runs/2026-10-12-haiku-02-move` (background) → work/grade2.out: 7 of 7, 0 SURPRISE
