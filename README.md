@@ -12,7 +12,9 @@ missing something, and that line of the journal is what the exam is for.
 
 1. **Open book, closed neighbours.** You may read anything inside the two pinned packages once installed
    (`README.md`, `docs/`, `--help`, the examples they ship) and anything on their public repository pages.
-   You may not read another examinee's run, and you may not ask a person.
+   You may not read another examinee's run, and you may not ask a person. The runs are public, on the
+   `runs` branch, because the results are; a run by an examinee that read them measures nothing, and its
+   journal usually shows it.
 2. **Pinned versions.** `package.json` at the root names the round's versions. `npm ci` installs them;
    use those and no others.
 3. **Journal before you act.** Copy `JOURNAL.md` into your run. Before every command that changes
@@ -35,13 +37,28 @@ missing something, and that line of the journal is what the exam is for.
     runs/<date>-<model>-<task>/ one examinee's run (on the `runs` branch): journal.md, transcript, the
                                 files handed in, result.json
 
+## Results
+
+[RESULTS.md on the `runs` branch](https://github.com/rig-c/exam/blob/runs/RESULTS.md): one row per
+examinee, generated from the regraded runs, each cell linking to the journal and the proctor's reading.
+
+## Sitting it
+
+[`PROMPT.md`](PROMPT.md) is the prompt every examinee is given, verbatim — paste it into a coding agent
+(one that can run commands and read and write files) with the model's name filled in. One model, one
+fresh session, one fresh clone.
+
 ## Submitting
 
-`main` holds the exam and no runs, so a checkout of it shows you nobody's answers. Make
-`runs/<YYYY-MM-DD>-<model>-<task>/` (`<task>` is the task's directory name, for example
-`2026-10-13-somemodel-01-build`), put the run there, and open a pull request against the `runs` branch.
-`python3 grade.py runs/<run>` writes `result.json`; you may run it yourself as often as you like — it is
-the same grader, and what you learn from it belongs in the journal like any other step.
+`main` holds the exam and no runs. Make `runs/<YYYY-MM-DD>-<model>-<task>/` for each task you sat
+(`<task>` is the task's directory name, for example `2026-10-13-somemodel-01-build`), commit only those
+directories on a branch of your fork, and open a pull request against the `runs` branch.
+
+`python3 grade.py runs/<run>` writes `result.json`; you may run it as often as you like — it is the same
+grader, and what you learn from it belongs in the journal like any other step. The proctor regrades every
+run from the files it hands in before it is merged, looks at the pictures, and adds a `READING.md`: what
+the journal caught, checked against the packages, and which of it was filed on the tools. A run's own
+`result.json` is not trusted, and neither is its report.
 
 ## What is in a round
 
