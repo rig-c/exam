@@ -5,7 +5,7 @@ write down what you expected before each step.
 
 The tools are written for agents that cannot see what they build. This repository measures whether that
 holds for an agent that has never seen the tools: the only help is what ships in the packages. Where an
-examinee is surprised — where what it expected and what happened differ — a document or a message is
+examinee says *WTF?* — where what it expected and what happened differ — a document or a message is
 missing something, and that line of the journal is what the exam is for.
 
 ## Rules

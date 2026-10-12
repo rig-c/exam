@@ -89,11 +89,12 @@ def main():
     else:
         for k in ('checked', 'whole', 'does_not_fold'): L[k] = {'pass': False, 'read': 'the build wrote no check.json'}
     res['journal'] = os.path.exists(os.path.join(rundir, 'journal.md'))
-    # an entry's fourth line that begins with SURPRISE:, as the form asks — not the word wherever it appears
-    res['surprises'] = len(re.findall(r'^4\.\s*\*\*Happened:\*\*\s*SURPRISE:', open(os.path.join(rundir, 'journal.md')).read(), re.M)) if res['journal'] else None
+    # an entry's fourth line that begins with WTF?: (SURPRISE: in the form before 2026-10-13), as the form asks —
+    # not the word wherever it appears
+    res['surprises'] = len(re.findall(r'^4\.\s*\*\*Happened:\*\*\s*(?:WTF\?:|SURPRISE:)', open(os.path.join(rundir, 'journal.md')).read(), re.M)) if res['journal'] else None
     res['passed'] = sum(1 for v in L.values() if v['pass']); res['of'] = len(L)
     json.dump(res, open(os.path.join(rundir, 'result.json'), 'w'), indent=1)
     for k, v in L.items(): print(('PASS  ' if v['pass'] else 'FAIL  ') + k + ': ' + json.dumps(v['read']))
-    print(f"{res['passed']} of {res['of']} line(s); journal {'present, ' + str(res['surprises']) + ' entry(ies) whose line 4 begins SURPRISE:' if res['journal'] else 'ABSENT'}; log {os.path.relpath(log, ROOT)}")
+    print(f"{res['passed']} of {res['of']} line(s); journal {'present, ' + str(res['surprises']) + ' entry(ies) whose line 4 begins WTF?:' if res['journal'] else 'ABSENT'}; log {os.path.relpath(log, ROOT)}")
 
 if __name__ == '__main__': main()

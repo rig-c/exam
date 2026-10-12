@@ -9,7 +9,8 @@ Write lines 1–3 **before** the step and line 4 **after** it.
 2. **Expect:** what the step will produce, concretely — an exit code, a file, a number, a line of output.
 3. **Chose / turned down:** what you are about to do, and the alternative you considered and why not.
 4. **Happened:** what the step actually produced. If it differs from line 2, begin the line with
-   `SURPRISE:` and say in one sentence what you now think you misread — or that nothing told you.
+   `WTF?:` and say in one sentence what you now think you misread — or that nothing told you. Say it
+   the way it landed. Politeness is not graded here; a line that understates the surprise hides it.
 
 ## At the end
 
