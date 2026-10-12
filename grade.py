@@ -12,7 +12,8 @@ import json, os, shutil, statistics, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
-UNCOVERED_LINE = 4200   # rig px; the unmodified proposed plan on this painting leaves 2,059
+UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
+KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
 RISE_LINE = 150         # rig px a hand rises above the rest of the body, task 02
 FPS = 12
 
@@ -49,7 +50,8 @@ def main():
     log = os.path.join(work, 'grade.log')
     for f in os.listdir(rundir):
         if f.endswith('.json') and f != 'result.json': shutil.copy(os.path.join(rundir, f), work)
-    os.symlink(os.path.join(ROOT, 'tasks', '01-build', 'inputs'), os.path.join(work, 'inputs'))
+    own = os.path.join(ROOT, 'tasks', task, 'inputs')
+    os.symlink(own if os.path.isdir(own) else os.path.join(ROOT, 'tasks', '01-build', 'inputs'), os.path.join(work, 'inputs'))
     versions = {p: json.load(open(os.path.join(ROOT, 'node_modules', p, 'package.json')))['version'] for p in ('@rig-c/parts', 'rig-c')}
     res = {'run': name, 'task': task, 'versions': versions, 'lines': {}}
     L = res['lines']
@@ -65,9 +67,12 @@ def main():
         bars = {k: v['status'] for k, v in c.items() if isinstance(v, dict) and 'status' in v}
         L['checked'] = {'pass': c.get('PASS') is True, 'read': bars}
         u = c.get('RECOMPOSITE_HOLES', {}).get('uncovered_error_px')
-        L['whole'] = {'pass': u is not None and u <= UNCOVERED_LINE, 'read': f'uncovered_error_px {u} against <= {UNCOVERED_LINE}'}
+        L['whole'] = {'pass': u is not None and u <= UNCOVERED_LINE[task], 'read': f'uncovered_error_px {u} against <= {UNCOVERED_LINE[task]}'}
         idle_folds, _ = folds(work, 'idle', log)
         L['does_not_fold'] = {'pass': idle_folds == [], 'read': idle_folds}
+        if task == '03-correct':
+            n = c.get('TEXTURE_STRETCH', {}).get('meshes')
+            L['kept'] = {'pass': n is not None and n >= KEPT_MESHES, 'read': f'{n} mesh(es) deformed against >= {KEPT_MESHES}'}
         if task == '02-move':
             rig = json.load(open(os.path.join(work, 'out', 'rig', 'rig.json'))); motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
             phys = sorted({k['bone'] for k in rig.get('constraints', []) if k.get('type') == 'physics'})
