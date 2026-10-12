@@ -1,1 +1,7 @@
-{"model":"`gpt-6-astra`","how":"itself, as a repeat in the session that had already seen its sub-agent's answers (its own statement) — not an independent sitting"}
+{
+ "model": "`gpt-6-astra`",
+ "how": "itself, as a repeat in the session that had already seen its sub-agent's answers (its own statement) \u2014 not an independent sitting",
+ "counts": "a repeat in the session that had already seen its sub-agent's answers, by its own statement",
+ "minutes": 7.2,
+ "minutes_read_from": "the examinee's clone"
+}

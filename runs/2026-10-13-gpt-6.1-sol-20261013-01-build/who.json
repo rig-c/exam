@@ -1,4 +1,7 @@
 {
  "model": "Sol 6.1 (`gpt-6.1-sol`) \u2014 the one sitting that is this model end to end",
- "how": "as a sub-agent of a `gpt-6.1-sol` session, the same model; sat once, no repeat"
+ "how": "as a sub-agent of a `gpt-6.1-sol` session, the same model; sat once, no repeat",
+ "counts": "independent sitting",
+ "minutes": 14.2,
+ "minutes_read_from": "the examinee's clone"
 }

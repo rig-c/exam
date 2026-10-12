@@ -1,4 +1,7 @@
 {
  "model": "`gpt-6-sol` \u2014 whether that is a name for Sol 6.1 or a model of its own is not established",
- "how": "as a sub-agent of a `gpt-5.6-sol` session, which asked for that model by name after first starting, and stopping, a `gpt-6.1-sol` one"
+ "how": "as a sub-agent of a `gpt-5.6-sol` session, which asked for that model by name after first starting, and stopping, a `gpt-6.1-sol` one",
+ "counts": "independent sitting",
+ "minutes": 14.1,
+ "minutes_read_from": "the examinee's clone"
 }

@@ -1,4 +1,7 @@
 {
  "model": "Sol 6.1 (`gpt-6.1-sol`)",
- "how": "as a sub-agent of a `gpt-6-astra` session, which wrote its brief"
+ "how": "as a sub-agent of a `gpt-6-astra` session, which wrote its brief",
+ "counts": "independent sitting",
+ "minutes": 15.3,
+ "minutes_read_from": "the examinee's clone"
 }

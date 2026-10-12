@@ -1,1 +1,7 @@
-{"model":"`gpt-5.6-sol` (the run is named for a persona, not the model)","how":"itself, as a repeat in the session that had already seen its sub-agent's report — void as an independent sitting, by its own statement"}
+{
+ "model": "`gpt-5.6-sol` (the run is named for a persona, not the model)",
+ "how": "itself, as a repeat in the session that had already seen its sub-agent's report \u2014 void as an independent sitting, by its own statement",
+ "counts": "a repeat in the session that had already seen its sub-agent's report, by its own statement; and the run is named for a persona, not its model",
+ "minutes": 10.8,
+ "minutes_read_from": "the examinee's clone"
+}
