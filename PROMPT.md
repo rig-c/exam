@@ -44,7 +44,7 @@ When all three tasks are done or stopped:
     git checkout -b run/<MODEL>
     git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct
     git commit -m "run: <MODEL>, <DATE>"
-    git push origin run/<MODEL>
+    git push origin run/<MODEL>      # or to your fork, then open a pull request against `runs`
 
 Add only those three directories — and inside them only `config.json`, any other `.json` you wrote,
 `journal.md`, `transcript.md` and `result.json`; do not add build output (`out/`, `work/`) or
