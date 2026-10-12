@@ -62,6 +62,14 @@ def tokens(r, full):
     else: s = k(t.get('total', 0)) + ' in all'
     return s + (f' — {src}' if full and src else '')
 
+def judge(r, full):
+    """What the person who judged the dance blind gave it (who.json `judge`): three marks out of 5."""
+    j = r['who'].get('judge')
+    if not j: return '—'
+    marks = [j.get(k) for k in ('dance', 'beat', 'whole')]
+    s = f"{sum(marks)} / 15"
+    return s + (f" (a dance {marks[0]}, on the beat {marks[1]}, in one piece {marks[2]}; judged as clip {j.get('letter', '?')})" if full else '')
+
 def journal(r):
     out = []
     for t in TASKS:
@@ -77,12 +85,12 @@ def versions(r):
 def tables(rs, prefix, full):
     good = [r for r in rs if counted(r)]; rest = [r for r in rs if not counted(r)]
     lines = [f'**{len(good)} independent sitting(s) so far**, each cell the lines passed of the lines graded, linking to the run:', '']
-    head = ['model that did the work', 'run, as submitted'] + TASKS + ['minutes', 'tokens']
+    head = ['model that did the work', 'run, as submitted'] + TASKS + ['the dance, judged', 'minutes', 'tokens']
     if full: head += ['minutes read from', 'journal entries / of them WTF?, per task', 'versions']
     lines += ['| ' + ' | '.join(head) + ' |', '| ' + ' | '.join('---' for _ in head) + ' |']
     for r in good:
         m, src = minutes(r)
-        row = [r['who'].get('model', f"`{r['name']}`") + (f" — {r['who']['how']}" if full and r['who'].get('how') else ''), f"[`{r['name']}`]({prefix}{r['path']}/), {r['day']}"] + [cell(r, t, prefix) for t in TASKS] + [m, tokens(r, full)]
+        row = [r['who'].get('model', f"`{r['name']}`") + (f" — {r['who']['how']}" if full and r['who'].get('how') else ''), f"[`{r['name']}`]({prefix}{r['path']}/), {r['day']}"] + [cell(r, t, prefix) for t in TASKS] + [judge(r, full), m, tokens(r, full)]
         if full: row += [src, journal(r), versions(r)]
         lines.append('| ' + ' | '.join(row) + ' |')
     if rest:
@@ -100,7 +108,7 @@ def results_page(rs):
     L += [l.replace('](results/', '](') for l in tables(rs, '', True)]
     L += ['', 'Minutes are for the tasks sat, together: the run\'s own `started:` / `finished:` lines where it has them,',
           'otherwise what the proctor read and from where. Tokens are fresh input plus output, with the cached input a session',
-          're-read on every turn beside them; a dash means nothing recorded them. Two rows with the same model are that model sitting the',
+          're-read on every turn beside them; a dash means nothing recorded them. The dance (task 05) is scored by a person from a clip that carries a letter and no name — three marks out of 5 — and the score changes no line. Two rows with the same model are that model sitting the',
           'exam twice, not two models.', '',
           'A pass says the published documents were enough for that model on that painting. It says nothing about',
           'a model that is not in the table, and little about taste: whether a wave reads as a wave is in the reading.', '']
@@ -108,7 +116,7 @@ def results_page(rs):
 
 def readme_block(rs):
     L = tables(rs, '', False)
-    L += ['', 'Minutes are for the tasks sat, together; tokens are fresh input plus output, cached input left out. [The full table](results/README.md) has who sat each run and how,',
+    L += ['', 'Minutes are for the tasks sat, together; tokens are fresh input plus output, cached input left out; the dance is judged by a person who does not know whose clip it is. [The full table](results/README.md) has who sat each run and how,',
           'the journals\' counts and the versions; [the proctor\'s report](results/REPORT.md) says what the journals found',
           'in the tools and in this exam.']
     return '\n'.join(L)
@@ -119,7 +127,7 @@ def profile_block(rs):
     by = {}
     for r in rs:
         if counted(r): by.setdefault(r['group'], []).append(r)
-    L = ['| model | sittings | lines passed, of lines graded | minutes for the three tasks |', '| --- | --- | --- | --- |']
+    L = ['| model | sittings | lines passed, of lines graded | minutes for the tasks sat |', '| --- | --- | --- | --- |']
     for group, rr in sorted(by.items()):
         name = rr[0]['who'].get('short') or rr[0]['who'].get('model', group)
         passed = sum(res['passed'] for r in rr for res in r['tasks'].values()); of = sum(res['of'] for r in rr for res in r['tasks'].values())
