@@ -7,6 +7,7 @@ transcript, and the proctor's reading (`READING.md`) of what the journal caught.
 | examinee | day | 01-build | 02-move | 03-correct | journal entries / of them WTF?, per task | versions |
 | --- | --- | --- | --- | --- | --- | --- |
 | `haiku` | 2026-10-12 | [**4 / 4**](runs/2026-10-12-haiku-01-build/) | [**7 / 7**](runs/2026-10-12-haiku-02-move/) | [**5 / 5**](runs/2026-10-12-haiku-03-correct/) | 11 / 1 · 6 / 0 · 12 / 0 | parts 1.11.0, rig-c 2.47.0 |
+| `gemini-3.8-flash` | 2026-10-13 | [**4 / 4**](runs/2026-10-13-gemini-3.8-flash-01-build/) | [**7 / 7**](runs/2026-10-13-gemini-3.8-flash-02-move/) | [**5 / 5**](runs/2026-10-13-gemini-3.8-flash-03-correct/) | 7 / 0 · 3 / 0 · 8 / 1 | parts 1.11.0, rig-c 2.47.0 |
 | `gpt-6-sol` | 2026-10-13 | [**4 / 4**](runs/2026-10-13-gpt-6-sol-01-build/) | [**7 / 7**](runs/2026-10-13-gpt-6-sol-02-move/) | [**5 / 5**](runs/2026-10-13-gpt-6-sol-03-correct/) | 8 / 0 · 4 / 0 · 9 / 0 | parts 1.11.0, rig-c 2.47.0 |
 
 A pass says the published documents were enough for that model on that painting. It says nothing about
