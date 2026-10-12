@@ -48,3 +48,9 @@ the same grader, and what you learn from it belongs in the journal like any othe
 Round 1: `@rig-c/parts` 1.11.0, `rig-c` 2.47.0, tasks 01 and 02 on one painting. The painting was
 generated for this exam (`tasks/01-build/inputs/generation.json` records how) and is not one of the
 packages' examples: their configs do not fit it.
+
+## Licence
+
+MIT, held by rig-c, covering the tasks, the painting and its layers, the grader and the runs — see
+`LICENSE`. `NOTICE.md` names the checkpoint the painting was generated with, See-through, and the tools the
+grader runs, and says what submitting a run means.
