@@ -8,6 +8,30 @@ holds for an agent that has never seen the tools: the only help is what ships in
 examinee says *WTF?* — where what it expected and what happened differ — a document or a message is
 missing something, and that line of the journal is what the exam is for.
 
+## Results
+
+<!-- results:start — generated on the `runs` branch by `python3 results.py --readme`; do not edit by hand -->
+**5 independent sitting(s) so far**, each cell the lines passed of the lines graded, linking to the run:
+
+| model that did the work | run | 01-build | 02-move | 03-correct | minutes |
+| --- | --- | --- | --- | --- | --- |
+| Claude Haiku (alias `haiku`; exact identifier not recorded) | `haiku` | [4 / 4](https://github.com/rig-c/exam/tree/runs/runs/2026-10-12-haiku-01-build/) | [7 / 7](https://github.com/rig-c/exam/tree/runs/runs/2026-10-12-haiku-02-move/) | [5 / 5](https://github.com/rig-c/exam/tree/runs/runs/2026-10-12-haiku-03-correct/) | 21 |
+| Gemini 3.8 Flash | `gemini-3.8-flash` | [4 / 4](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gemini-3.8-flash-01-build/) | [7 / 7](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gemini-3.8-flash-02-move/) | [5 / 5](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gemini-3.8-flash-03-correct/) | 20 |
+| `gpt-6-sol` — whether that is a name for Sol 6.1 or a model of its own is not established | `gpt-6-sol` | [4 / 4](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6-sol-01-build/) | [7 / 7](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6-sol-02-move/) | [5 / 5](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6-sol-03-correct/) | 14.1 |
+| Sol 6.1 (`gpt-6.1-sol`) | `gpt-6.1-sol` | [4 / 4](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6.1-sol-01-build/) | [7 / 7](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6.1-sol-02-move/) | [5 / 5](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6.1-sol-03-correct/) | 15.3 |
+| Sol 6.1 (`gpt-6.1-sol`) — the one sitting that is this model end to end | `gpt-6.1-sol-20261013` | [4 / 4](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6.1-sol-20261013-01-build/) | [7 / 7](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6.1-sol-20261013-02-move/) | [5 / 5](https://github.com/rig-c/exam/tree/runs/runs/2026-10-13-gpt-6.1-sol-20261013-03-correct/) | 14.2 |
+
+Kept, and not counted — 2 run(s):
+
+| model that did the work | run | why it does not count |
+| --- | --- | --- |
+| `gpt-6-astra` | `codex-direct` | a repeat in the session that had already seen its sub-agent's answers, by its own statement |
+| `gpt-5.6-sol` (the run is named for a persona, not the model) | `gpt-6-astra` | a repeat in the session that had already seen its sub-agent's report, by its own statement; and the run is named for a persona, not its model |
+
+Minutes are for the three tasks together. [The full table](https://github.com/rig-c/exam/blob/runs/RESULTS.md) has the journals' counts and the versions;
+[the proctor's report](https://github.com/rig-c/exam/blob/runs/REPORT.md) says what the journals found in the tools and in this exam.
+<!-- results:end -->
+
 ## Rules
 
 1. **Open book, closed neighbours.** You may read anything inside the two pinned packages once installed
@@ -36,11 +60,6 @@ missing something, and that line of the journal is what the exam is for.
     grade.py                    the grader: python3 grade.py runs/<your run>
     runs/<date>-<model>-<task>/ one examinee's run (on the `runs` branch): journal.md, transcript, the
                                 files handed in, result.json
-
-## Results
-
-<!-- results:start — generated on the `runs` branch by `python3 results.py --readme`; do not edit by hand -->
-<!-- results:end -->
 
 ## Sitting it
 
