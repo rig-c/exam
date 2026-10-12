@@ -12,7 +12,7 @@ import datetime, json, os, re, shutil, statistics, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
-UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200, '06-wiggle': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
+UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
 KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
 RISE_LINE = 150         # rig px a hand rises above the rest of the body, task 02
 FPS = 12
@@ -87,54 +87,36 @@ def rise(geometry):
         best = max(best, max(d) - statistics.median(d))
     return round(best, 1)
 
-WIGGLE = {'seconds': 4.0, 'fps': 24, 'swings': 4, 'closes': 0.5, 'count': 0.7, 'far': 24.0, 'shoulders': 0.5, 'elbow': (10.0, 60.0),
-          'head': 8.0, 'head_in_time': 0.6, 'skirt': (4.0, 0.5), 'ankle': 6.0, 'feet': 2.0, 'budget': 1000}
-                        # task 06: 8 beats, the hips out to a side on each — four times each way; the share of the hips' sideways
-                        # motion that comes at that count; rig px they travel side to side; the shoulders' travel as a share of
-                        # theirs; degrees each forearm is folded in toward the body, more than at rest; degrees the head
-                        # tilts and the share of it at the hips' count; rig px the hem swings on physics, at least, and at most as a share of the part's height; the legs at the feet,
-                        # the feet on the ground; triangles
-
 def band(rest, lo, hi):
     """Indices of a part's vertices between two fractions of its height at the rest pose, measured from its bottom (y up)."""
     ys = rest[1::2]; a, b = min(ys), max(ys)
     return [i for i, y in enumerate(ys) if a + lo * (b - a) <= y <= a + hi * (b - a)]
 
-def harmonic(x, k):
-    """The share of a looped signal's variation carried by its k-th harmonic."""
-    import cmath
-    n = len(x); m = sum(x) / n
-    P = [abs(sum((x[t] - m) * cmath.exp(-2j * cmath.pi * j * t / n) for t in range(n))) ** 2 for j in range(1, n // 2 + 1)]
-    return round(P[k - 1] / sum(P), 3) if sum(P) > 1e-9 and k <= len(P) else 0.0
+ARM = {'upper': ((0.82, 0.92), (0.72, 0.82), (0.62, 0.72)), 'fore': ((0.38, 0.46), (0.30, 0.38), (0.22, 0.30)), 'straight': 8.0}
+                        # an arm part, shoulder to fingertips, by height above its lowest point at rest: on this painting the
+                        # elbow is at about 0.54 and the wrist at about 0.20. Three bands of the upper arm and three of the forearm; degrees
+                        # either may bend along its own length, against the same reading at rest. The bands keep clear of the elbow, where the
+                        # skin blends from one bone to the next
 
-def wiggle_read(geometry):
-    """Readings of a hip wiggle off the posed vertices (y up), keys only. A part's bands are taken at the rest pose."""
-    rest = {r['slot']: r['vertices'] for r in geometry.get('rest', []) if r.get('vertices')}
-    rest = {k: (v if not isinstance(v[0], list) else [c for p in v for c in p]) for k, v in rest.items()}
-    F = [slot_vertices(f) for f in geometry['frames']][:-1]; n = len(F)
-    need = ('bottomwear', 'topwear', 'handwear_l', 'handwear_r', 'face', 'shoes')
-    if n < 8 or any(s not in rest or any(len(f.get(s, ())) != len(rest[s]) for f in F) for s in need): return None
-    mx = lambda v, ii: sum(v[2 * i] for i in ii) / len(ii)
-    hip, sho = band(rest['bottomwear'], 0.9, 1.0), band(rest['topwear'], 0.9, 1.0)
-    hx = [mx(f['bottomwear'], hip) for f in F]; sx = [mx(f['topwear'], sho) for f in F]
-    R = {'hips': round(max(hx) - min(hx), 1), 'count': harmonic(hx, WIGGLE['swings']), 'shoulders': round(max(sx) - min(sx), 1)}
-    mid = lambda v: sum(v[0::2]) / (len(v) // 2)
+def arm_read(rest, frames, slot, mid_x):
+    """Per frame, for one arm part: degrees the forearm is turned toward the trunk's middle from the line of the upper arm,
+    less the same at rest; and the largest bend along the upper arm or along the forearm themselves, less the same at
+    rest. None when a band holds no vertex."""
     import math
-    def bend(v, slot):   # degrees the forearm is turned toward the trunk's middle, from the line of the upper arm
-        c = lambda lo, hi: (lambda ii: (sum(v[2 * i] for i in ii) / len(ii), sum(v[2 * i + 1] for i in ii) / len(ii)))(band(rest[slot], lo, hi))
-        up, el, wr = c(0.80, 0.95), c(0.58, 0.70), c(0.30, 0.42)
-        d = math.degrees(math.atan2(wr[1] - el[1], wr[0] - el[0]) - math.atan2(el[1] - up[1], el[0] - up[0]))
-        d = (d + 180) % 360 - 180
-        return d if mx(rest[slot], list(range(len(rest[slot]) // 2))) < mid(rest['topwear']) else -d   # image-left arm: counter-clockwise is toward the middle
-    R['elbow'] = {}
-    for s_ in ('handwear_l', 'handwear_r'):
-        b0 = bend(rest[s_], s_); bs = [bend(f[s_], s_) - b0 for f in F]
-        R['elbow'][s_] = (round(min(bs), 1), round(max(bs), 1))
-    ang = [math.degrees(math.atan2(f['face'][5] - f['face'][3], f['face'][4] - f['face'][2])) for f in F]   # one edge of the face's quad
-    R['head'] = round(max(ang) - min(ang), 2); R['head_in_time'] = harmonic(ang, WIGGLE['swings'])
-    sh = F[0]['shoes']
-    R['feet'] = round(max(max(abs(f['shoes'][i] - sh[i]) for i in range(len(sh))) for f in F), 2)
-    return R
+    bands = {k: [band(rest[slot], lo, hi) for lo, hi in v] for k, v in ARM.items() if k != 'straight'}
+    if any(not ii for v in bands.values() for ii in v): return None
+    side = 1 if sum(rest[slot][0::2]) / (len(rest[slot]) // 2) < mid_x else -1   # an arm on the image's left: counter-clockwise is toward the middle
+    def read(v):
+        c = {k: [(sum(v[2 * i] for i in ii) / len(ii), sum(v[2 * i + 1] for i in ii) / len(ii)) for ii in b] for k, b in bands.items()}
+        ang = lambda p, q: math.atan2(q[1] - p[1], q[0] - p[0])
+        wrap = lambda d: (math.degrees(d) + 180) % 360 - 180
+        elbow = side * wrap(ang(c['fore'][0], c['fore'][2]) - ang(c['upper'][0], c['upper'][2]))
+        kink = {k: wrap(ang(c[k][1], c[k][2]) - ang(c[k][0], c[k][1])) for k in c}
+        return elbow, kink
+    e0, k0 = read(rest[slot]); out = []
+    for f in frames:
+        e, k = read(f[slot]); out.append((e - e0, max(abs(k[x] - k0[x]) for x in k)))
+    return out
 
 def paths(geometry, slot, against=None):
     """Per vertex of a slot, the diagonal of the box its path fills over the frames — measured from the centre of another slot when one is named."""
@@ -292,7 +274,7 @@ def main():
             b, _ = pose(work, bare, 'dance', D['fps'], log) if bare else (None, None)
             no = 'not measured: ' + ('there is no `dance` of the given length' if not timed else 'the build without its physics did not build')
             if b is None:
-                for k in ('closes', 'both_hands', 'whole_body', 'on_her_feet', 'keeps_time', 'soft_in_the_dance'): L[k] = {'pass': False, 'read': no}
+                for k in ('closes', 'both_hands', 'whole_body', 'arms_bend_at_the_joints', 'on_her_feet', 'keeps_time', 'soft_in_the_dance'): L[k] = {'pass': False, 'read': no}
             else:
                 g = loop_gap(b)
                 L['closes'] = {'pass': g is not None and g <= D['closes'], 'read': f"the last frame is {g} rig px from the first at its furthest vertex, against <= {D['closes']} (keys only, physics out)"}
@@ -300,6 +282,11 @@ def main():
                 L['both_hands'] = {'pass': all(v is not None and v >= D['hand'] for v in h.values()), 'read': f"`handwear_l` travels {h['handwear_l']} rig px and `handwear_r` {h['handwear_r']} at their furthest vertex, measured from the middle of `topwear`, each against >= {D['hand']}"}
                 t = paths(b, 'topwear', against='shoes'); t = None if t is None else round(min(t), 1)
                 L['whole_body'] = {'pass': t is not None and t >= D['body'], 'read': f"the vertex of `topwear` that travels least travels {t} rig px, measured from the middle of `shoes`, against >= {D['body']}"}
+                rest_ = {r['slot']: r['vertices'] for r in b.get('rest', []) if r.get('vertices')}
+                Fb = [slot_vertices(f) for f in b['frames']]
+                ar = [arm_read(rest_, Fb, s_, sum(rest_['topwear'][0::2]) / (len(rest_['topwear']) // 2)) if s_ in rest_ and all(len(f.get(s_, ())) == len(rest_[s_]) for f in Fb) else None for s_ in ('handwear_l', 'handwear_r')]
+                kk = None if any(x is None for x in ar) else round(max(k_ for x in ar for _, k_ in x), 1)
+                L['arms_bend_at_the_joints'] = {'pass': kk is not None and kk <= ARM['straight'], 'read': 'not measured: a band of an arm part holds no vertex' if kk is None else f"along its own length an upper arm or a forearm bends at most {kk} degrees more than at rest, against <= {ARM['straight']}"}
                 k = ankles(b)
                 L['on_her_feet'] = {'pass': k is not None and k <= D['ankle'], 'read': f"the end of a leg (`legwear`) gets {k} rig px from where it meets `shoes`, against <= {D['ankle']}"}
                 r = on_the_beat(b, D['fps'])
@@ -307,43 +294,6 @@ def main():
                 d = difference(a, b, 'topwear') if a else None
                 L['soft_in_the_dance'] = {'pass': d is not None and SOFT[0] <= d[0] <= SOFT[1], 'read': 'not measured: `topwear` is not a mesh with the same vertices in both builds' if d is None else f"`topwear` differs from the same build without its physics by {d[0]} rig px at dance frame {d[1]}, against {SOFT[0]} to {SOFT[1]}"}
             L['dance_does_not_fold'] = {'pass': dance_folds == [], 'read': dance_folds}
-        if task == '06-wiggle':
-            W = WIGGLE
-            tri = c.get('TEXTURE_STRETCH', {}).get('triangles')
-            L['budget'] = {'pass': tri is not None and tri <= W['budget'], 'read': f"{tri} triangles against <= {W['budget']}"}
-            motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
-            mine = motion['animations'].get('wiggle')
-            timed = mine is not None and abs(mine.get('duration', 0) - W['seconds']) < 1e-6
-            L['wiggle_as_timed'] = {'pass': bool(timed), 'read': 'no animation named wiggle in the built rig' if mine is None else f"`wiggle` lasts {mine.get('duration')} s against {W['seconds']}"}
-            bare = without_physics(work, log) if timed else None
-            a, wig_folds = pose(work, 'out/check/build', 'wiggle', W['fps'], log) if timed else (None, None)
-            b, _ = pose(work, bare, 'wiggle', W['fps'], log) if bare else (None, None)
-            g = wiggle_read(b) if b else None
-            no = 'not measured: ' + ('there is no `wiggle` of the given length' if not timed else 'the build without its physics did not build' if b is None else '`bottomwear`, `topwear`, `handwear_l`, `handwear_r`, `face` and `shoes` are not all there with vertices that keep their count')
-            if g is None:
-                for k in ('closes', 'four_each_way', 'hips_go_far', 'hips_not_shoulders', 'elbows_in', 'head_sways', 'skirt_swings', 'on_her_feet'): L[k] = {'pass': False, 'read': no}
-            else:
-                gp = loop_gap(b)
-                L['closes'] = {'pass': gp is not None and gp <= W['closes'], 'read': f"the last frame is {gp} rig px from the first at its furthest vertex, against <= {W['closes']} (keys only, physics out)"}
-                L['four_each_way'] = {'pass': g['count'] >= W['count'], 'read': f"{g['count']} of the hips' sideways motion comes {W['swings']} times a loop, against >= {W['count']}"}
-                L['hips_go_far'] = {'pass': g['hips'] >= W['far'], 'read': f"the top of `bottomwear` travels {g['hips']} rig px side to side, against >= {W['far']}"}
-                L['hips_not_shoulders'] = {'pass': g['hips'] > 0 and g['shoulders'] <= W['shoulders'] * g['hips'], 'read': f"the top of `topwear` travels {g['shoulders']} rig px side to side, against <= {W['shoulders']} of the hips' {g['hips']}"}
-                lo_, hi_ = min(v[0] for v in g['elbow'].values()), max(v[1] for v in g['elbow'].values())
-                L['elbows_in'] = {'pass': lo_ >= W['elbow'][0] and hi_ <= W['elbow'][1], 'read': f"through the loop each forearm is folded in toward the body by {lo_} to {hi_} degrees more than at rest, against {W['elbow'][0]} to {W['elbow'][1]}"}
-                L['head_sways'] = {'pass': g['head'] >= W['head'] and g['head_in_time'] >= W['head_in_time'], 'read': f"`face` tilts through {g['head']} degrees, against >= {W['head']}, and {g['head_in_time']} of that comes at the hips' count, against >= {W['head_in_time']}"}
-                hem = band({r['slot']: r['vertices'] for r in b.get('rest', []) if r.get('vertices')}['bottomwear'], 0.0, 0.1) if a else []
-                d = None
-                if a:
-                    d = 0.0
-                    for fa, fb in zip(a['frames'], b['frames']):
-                        x, y = slot_vertices(fa).get('bottomwear'), slot_vertices(fb).get('bottomwear')
-                        if x is None or y is None or len(x) != len(y): d = None; break
-                        d = max([d] + [((x[2 * i] - y[2 * i]) ** 2 + (x[2 * i + 1] - y[2 * i + 1]) ** 2) ** 0.5 for i in hem])
-                ys = {r['slot']: r['vertices'] for r in b.get('rest', []) if r.get('vertices')}['bottomwear'][1::2]; most = round(W['skirt'][1] * (max(ys) - min(ys)), 1)
-                L['skirt_swings'] = {'pass': d is not None and W['skirt'][0] <= d <= most, 'read': 'not measured: `bottomwear` is not a mesh with the same vertices in both builds' if d is None else f"the hem of `bottomwear` differs from the same build without its physics by {round(d, 2)} rig px at its furthest vertex, against {W['skirt'][0]} to {most} (half the part's height)"}
-                k = ankles(b)
-                L['on_her_feet'] = {'pass': k is not None and k <= W['ankle'] and g['feet'] <= W['feet'], 'read': f"the end of a leg (`legwear`) gets {k} rig px from where it meets `shoes`, against <= {W['ankle']}; `shoes` moves {g['feet']} rig px, against <= {W['feet']}"}
-            L['wiggle_does_not_fold'] = {'pass': wig_folds == [], 'read': wig_folds}
         if task == '02-move':
             rig = json.load(open(os.path.join(work, 'out', 'rig', 'rig.json'))); motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
             phys = sorted({k['bone'] for k in rig.get('constraints', []) if k.get('type') == 'physics'})
