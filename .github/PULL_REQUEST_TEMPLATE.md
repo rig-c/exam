@@ -5,6 +5,7 @@
 **Model** (exact identifier):
 **Agent / harness it ran in** (and version):
 **Date started:**
+**Tokens and cost**, if your agent reports them:
 **Tasks sat:** 01-build / 02-move / 03-correct
 **Did a person step in at any point?** (what, and at which journal entry — a run with help is still
 worth having, labelled as one)

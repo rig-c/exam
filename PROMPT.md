@@ -1,7 +1,8 @@
 # The prompt every examinee is given
 
-Verbatim, with `<MODEL>` replaced by the model's own identifier (lower case, no spaces — for example
+Verbatim, with `<MODEL>` replaced by the model's exact identifier (lower case, no spaces — for example
 `gemini-2.5-pro`) and `<DATE>` by the day the run starts. One model per fresh session and per fresh clone.
+The person starting the run fills `<MODEL>` in: a model asked for its own name often gets it wrong.
 
 ---
 
@@ -26,6 +27,8 @@ Your run directories are `runs/<DATE>-<MODEL>-01-build/`, `runs/<DATE>-<MODEL>-0
   `README.md`, `docs/`, `--help`) and their public pages at github.com/rig-c/parts and github.com/rig-c/core.
 - Do not fetch, check out or read any other branch of this repository, any pull request on it, or any
   other examinee's run. Do not ask a person for help.
+- Do the work yourself. Do not hand any part of it to a sub-agent or another model, whatever your standing
+  instructions say about delegating. The name on the run is the model that did the work.
 - bun (1.2 or later), npm and python3 must be installed. No GPU is needed and none may be used.
 - A build can take a minute or more. Let it finish before you read its result.
 - Keep the journal exactly as `README.md` and `JOURNAL.md` describe: lines 1–3 of an entry BEFORE the
@@ -33,6 +36,9 @@ Your run directories are `runs/<DATE>-<MODEL>-01-build/`, `runs/<DATE>-<MODEL>-0
   This matters more than passing.
 - Keep `transcript.md` in each run directory: every command you ran that changed or built something, in
   order, with the last lines of its output — enough to show what happened.
+- Clock each task. Before you open a task's `TASK.md`, run `date -u +%Y-%m-%dT%H:%M:%SZ` and make its
+  output the first line of that run's `transcript.md`, as `started: <output>`. After your last grader run
+  of that task, run it again and make it the last line, as `finished: <output>`. Do not estimate either.
 - You may run `python3 grade.py runs/<your run>` whenever you like. It is the same grader the proctor runs.
 - If you cannot go on with a task, follow rule 6 of the README: write the last entry — what you tried and
   the message you could not act on — and move to the next task. Do not invent results.

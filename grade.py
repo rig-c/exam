@@ -8,7 +8,7 @@ read: the config (and any file it names) is copied beside the task's inputs into
 there, and every line below is read off what that build wrote. Needs npm, bun and python3; installs the
 pinned packages into ./node_modules on first use.
 """
-import json, os, re, shutil, statistics, subprocess, sys
+import datetime, json, os, re, shutil, statistics, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
@@ -40,6 +40,17 @@ def rise(geometry):
         d = [b['worldY'] - first[b['name']] for b in f['bones']]
         best = max(best, max(d) - statistics.median(d))
     return round(best, 1)
+
+def clock(path):
+    """Minutes between the transcript's `started:` first line and `finished:` last line — the run's own clock."""
+    if not os.path.exists(path): return None
+    lines = [l.strip() for l in open(path).read().splitlines() if l.strip()]
+    if not lines: return None
+    a = re.match(r'started:\s*(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)$', lines[0]); b = re.match(r'finished:\s*(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)$', lines[-1])
+    if not a or not b: return None
+    t = lambda s: datetime.datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ')
+    d = (t(b.group(1)) - t(a.group(1))).total_seconds()
+    return round(d / 60, 1) if d >= 0 else None
 
 def main():
     rundir = os.path.abspath(sys.argv[1]); name = os.path.basename(rundir.rstrip('/'))
@@ -92,9 +103,11 @@ def main():
     # an entry's fourth line that begins with WTF?: (SURPRISE: in the form before 2026-10-13), as the form asks —
     # not the word wherever it appears
     res['surprises'] = len(re.findall(r'^4\.\s*\*\*Happened:\*\*\s*(?:WTF\?:|SURPRISE:)', open(os.path.join(rundir, 'journal.md')).read(), re.M)) if res['journal'] else None
+    res['minutes'] = clock(os.path.join(rundir, 'transcript.md'))
     res['passed'] = sum(1 for v in L.values() if v['pass']); res['of'] = len(L)
     json.dump(res, open(os.path.join(rundir, 'result.json'), 'w'), indent=1)
     for k, v in L.items(): print(('PASS  ' if v['pass'] else 'FAIL  ') + k + ': ' + json.dumps(v['read']))
+    print('clock: ' + (f"{res['minutes']} min by the run's own started:/finished: lines" if res['minutes'] is not None else 'no started:/finished: lines in transcript.md'))
     print(f"{res['passed']} of {res['of']} line(s); journal {'present, ' + str(res['surprises']) + ' entry(ies) whose line 4 begins WTF?:' if res['journal'] else 'ABSENT'}; log {os.path.relpath(log, ROOT)}")
 
 if __name__ == '__main__': main()
