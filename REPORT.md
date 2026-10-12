@@ -20,7 +20,9 @@ from the files it handed in and found the same as its own report. They are not s
 | the run named `gpt-6-astra` | `gpt-5.6-sol` itself, repeating in the session that had seen its sub-agent's report | **void** as a sitting; kept as a specimen |
 
 So the models that have sat this exam are three — Claude Haiku, Gemini 3.8 Flash and Sol 6.1 — and each
-passed every line of all three tasks. `gpt-6-astra` and `gpt-5.6-sol` have not yet sat it.
+passed every line of all three tasks. `gpt-6-astra` and `gpt-5.6-sol` have no independent sitting, and none
+is planned for this round: what the exam asks is whether a small model passes, and the two smallest
+models here — one from each of two vendors — answer that.
 
 | independent sitting | minutes for the three tasks | task 03's correction |
 | --- | --- | --- |
