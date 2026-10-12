@@ -7,4 +7,4 @@ The proposal was pasted uncorrected. The idle (`idle_frames.jpg`) is whole; the 
 marked. Closing note: `assemble.rig_scale` 0.5 was taken from the guide's two examples — "a task-specific
 scale would have required a stated target size". True: nothing in the task or the guide says how to choose it.
 
-**Who sat it.** The model named itself `gpt-6-sol`; the person who started the run reports it was a 6.1 model. The directory keeps the name it was submitted under. (Since this run the prompt has the person, not the model, fill the name in.)
+**Who sat it.** A sub-agent. The session the run was started in was `gpt-5.6-sol`; following its standing instructions to delegate, it handed the exam to a sub-agent whose model its session log records as `gpt-6-sol`, and that sub-agent did the work. (The person who started it was told the model was a 6.1; the log says otherwise, and the log is what is recorded here.) The prompt did not forbid delegating when this run was sat; it does now.

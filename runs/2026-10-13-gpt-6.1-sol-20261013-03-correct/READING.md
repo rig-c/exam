@@ -9,4 +9,6 @@ and lag kept, with a `note` in the track saying why. The correction that keeps t
 
 **What the journal caught.** Nothing marked; thirteen entries, the longest journal for this task.
 
-**How long.** No clock in the run. The four runs of this night were started together, and the person who started them said so at 15:28:06 UTC; this run's commit is 19 minutes after that. Since they were started before he said so, all three tasks took at least that long — an estimate, not a measurement.
+**Who sat it.** A sub-agent. The session the run was started in was `gpt-6.1-sol`; following its standing instructions to delegate, it handed the exam to a sub-agent of the same model, which did the work. The prompt did not forbid delegating when this run was sat; it does now.
+
+**How long.** 14.2 minutes for the three tasks, 4.6 · 2.3 · 7.3 each — read by the proctor off the examinee's own clone: from the clone's creation to each task's last `result.json`. Observed file times, not the examinee's report; the hand-in (commit and push) came after and is not counted.

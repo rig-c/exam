@@ -9,3 +9,5 @@ idle keys left on those links: the fullest reading of "hair that trails" among t
 **What the journal caught.** Nothing marked; four entries. It read rig-c's own AUTHORING (§3.5, physics,
 and its appendix of defaults) for the constraint's values — the second examinee to go to the compiler's
 documents for what the parts recipe did not carry.
+
+**Who sat it.** A sub-agent. The session the run was started in was `gpt-6.1-sol`; following its standing instructions to delegate, it handed the exam to a sub-agent of the same model, which did the work. The prompt did not forbid delegating when this run was sat; it does now.

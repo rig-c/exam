@@ -20,6 +20,6 @@ moves. This run passed the lines as they were written.
 
 **What the journal caught.** No line marked — the task told it the draft would fail, and it did.
 
-**Who sat it.** The model named itself `gpt-6-sol`; the person who started the run reports it was a 6.1 model. The directory keeps the name it was submitted under. (Since this run the prompt has the person, not the model, fill the name in.)
+**Who sat it.** A sub-agent. The session the run was started in was `gpt-5.6-sol`; following its standing instructions to delegate, it handed the exam to a sub-agent whose model its session log records as `gpt-6-sol`, and that sub-agent did the work. (The person who started it was told the model was a 6.1; the log says otherwise, and the log is what is recorded here.) The prompt did not forbid delegating when this run was sat; it does now.
 
-**How long.** No clock in the run. The four runs of this night were started together, and the person who started them said so at 15:28:06 UTC; this run's commit is 15 minutes after that. Since they were started before he said so, all three tasks took at least that long — an estimate, not a measurement.
+**How long.** 14.1 minutes for the three tasks, 4.6 · 3.9 · 5.7 each — read by the proctor off the examinee's own clone: from the clone's creation to each task's last `result.json`. Observed file times, not the examinee's report; the hand-in (commit and push) came after and is not counted.

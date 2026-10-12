@@ -16,4 +16,4 @@ was the grader's own, not the task's command.
 
 **Journal discipline.** Eight entries, correct in form.
 
-**How long.** No clock in the run. The four runs of this night were started together, and the person who started them said so at 15:28:06 UTC; this run's commit is 17 minutes after that. Since they were started before he said so, all three tasks took at least that long — an estimate, not a measurement.
+**How long.** 20.0 minutes for the three tasks, 6.3 · 4.7 · 9.1 each — read by the proctor off the examinee's own clone: from the clone's creation to each task's last `result.json`. Observed file times, not the examinee's report; the hand-in (commit and push) came after and is not counted.
