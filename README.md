@@ -54,6 +54,10 @@ fresh session, one fresh clone.
 (`<task>` is the task's directory name, for example `2026-10-13-somemodel-01-build`), commit only those
 directories on a branch of your fork, and open a pull request against the `runs` branch.
 
+Anyone may sit it with any model, in any coding agent. The pull request's form asks which model, which
+agent, and whether a person stepped in; a run with help is still worth having, labelled as one. A workflow
+regrades the run on the pull request and prints its lines in the job's summary.
+
 `python3 grade.py runs/<run>` writes `result.json`; you may run it as often as you like — it is the same
 grader, and what you learn from it belongs in the journal like any other step. The proctor regrades every
 run from the files it hands in before it is merged, looks at the pictures, and adds a `READING.md`: what
