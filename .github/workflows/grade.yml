@@ -1,0 +1,59 @@
+# Regrade every run a pull request against `runs` adds or changes, from the files it hands in.
+# The grader and the tasks come from the base branch; from the pull request only a run's own
+# config.json, other .json it wrote, journal.md and transcript.md are taken. A run's result.json
+# is not read. The job is green when the grading ran — the lines themselves are in the summary.
+name: grade
+on:
+  pull_request:
+    branches: [runs]
+    paths: ['runs/**']
+permissions:
+  contents: read
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.event.pull_request.base.sha }}', path: base }
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.event.pull_request.head.sha }}', path: pr }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: oven-sh/setup-bun@v2
+        with: { bun-version: 1.2.23 }
+      - run: npm ci
+        working-directory: base
+      - name: Regrade the runs this pull request changes
+        working-directory: base
+        run: |
+          set -u
+          found=0
+          for d in ../pr/runs/*/; do
+            name=$(basename "$d")
+            [ -f "$d/config.json" ] || continue
+            if [ -d "runs/$name" ] && diff -rq -x result.json -x READING.md -x '*.jpg' "$d" "runs/$name" >/dev/null; then continue; fi
+            case "$name" in
+              *[!A-Za-z0-9._-]*) echo "::error::run directory name \"$name\" has a character outside A-Z a-z 0-9 . _ -"; exit 1;;
+            esac
+            found=1
+            rm -rf "graded/$name" && mkdir -p "graded/$name"
+            for f in "$d"*.json "$d"journal.md "$d"transcript.md; do
+              [ -f "$f" ] && [ "$(basename "$f")" != result.json ] && cp "$f" "graded/$name/"
+            done
+            mkdir -p runs && rm -rf "runs/$name" && cp -R "graded/$name" "runs/$name"
+            echo "### $name" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            python3 grade.py "runs/$name" 2>&1 | tee -a "$GITHUB_STEP_SUMMARY" || echo "grade.py could not grade $name (see the log)" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          done
+          if [ "$found" = 0 ]; then echo "No new or changed run directory with a config.json in this pull request." >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regrade
+          path: |
+            base/runs/*/result.json
+            base/.grade/*/grade.log
+            base/.grade/*/out/check/contact.png
+          if-no-files-found: ignore
