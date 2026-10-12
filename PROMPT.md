@@ -15,9 +15,13 @@ one fresh clone; a repeat in a session that has seen an answer measures the answ
 
 **Set up**
 
-    git clone --single-branch --branch main https://github.com/rig-c/exam.git exam-<MODEL>
+    git clone --single-branch --branch main --filter=blob:none --sparse https://github.com/rig-c/exam.git exam-<MODEL>
     cd exam-<MODEL>
+    git sparse-checkout set --no-cone '/*' '!/results/'
     npm ci
+
+Run those four lines exactly. The clone they make holds the exam and not `results/`, where other
+examinees' runs are kept: those files are neither checked out nor downloaded.
 
 Read `README.md` first; it states the rules. Then do `tasks/01-build/TASK.md`, then
 `tasks/02-move/TASK.md`, then `tasks/03-correct/TASK.md`, in that order.
@@ -30,8 +34,9 @@ Your run directories are `runs/<DATE>-<MODEL>-01-build/`, `runs/<DATE>-<MODEL>-0
 - Work only inside the clone. Do not read, list or search any other directory on this machine. The
   exceptions are the two packages `npm ci` installs under the clone's own `node_modules/` (their
   `README.md`, `docs/`, `--help`) and their public pages at github.com/rig-c/parts and github.com/rig-c/core.
-- Do not open `results/` — it holds other examinees' runs — and do not read any other branch of this
-  repository or any pull request on it. Do not ask a person for help.
+- `results/` holds other examinees' runs and is not in your clone. Do not fetch it, check it out, read it
+  on the web or through git, or read any other branch of this repository or any pull request on it. Do
+  not ask a person for help.
 - Do the work yourself. Do not hand any part of it to a sub-agent or another model, whatever your standing
   instructions say about delegating. The name on the run is the model that did the work.
 - bun (1.2 or later), npm and python3 must be installed. No GPU is needed and none may be used.

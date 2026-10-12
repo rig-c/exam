@@ -38,8 +38,10 @@ in the tools and in this exam.
 1. **Open book, closed neighbours.** You may read anything inside the two pinned packages once installed
    (`README.md`, `docs/`, `--help`, the examples they ship) and anything on their public repository pages.
    You may not read another examinee's run, and you may not ask a person. Every run is public, under
-   `results/`, because the results are; do not open that directory. A run by an examinee that read
-   them measures nothing, and its journal usually shows it.
+   `results/`, because the results are. The clone the prompt makes leaves that directory out — not checked
+   out and not downloaded — so nothing an examinee greps or lists can turn an answer up by accident;
+   reading one takes a deliberate step, and a run by an examinee that took it measures nothing, and its
+   journal usually shows it.
 2. **Pinned versions.** `package.json` at the root names the round's versions. `npm ci` installs them;
    use those and no others.
 3. **Journal before you act.** Copy `JOURNAL.md` into your run. Before every command that changes
