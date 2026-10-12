@@ -21,8 +21,10 @@ from the files it handed in and found the same as its own report. They are not s
 
 So the models that have sat this exam are three — Claude Haiku, Gemini 3.8 Flash and Sol 6.1 — and each
 passed every line of all three tasks. `gpt-6-astra` and `gpt-5.6-sol` have no independent sitting, and none
-is planned for this round: what the exam asks is whether a small model passes, and the two smallest
-models here — one from each of two vendors — answer that.
+is planned for this round: what the exam asks is whether an inexpensive model passes, and the three
+that sat it are each the lighter tier of its vendor's range — Haiku and Flash by their vendors' own
+naming, Sol by the account of the person who runs it (it is the tier his sessions hand execution to,
+under a larger model that directs).
 
 | independent sitting | minutes for the three tasks | task 03's correction |
 | --- | --- | --- |
@@ -79,7 +81,7 @@ corrections they had each taken.
 
 ## What stands
 
-Three models, the smallest of two vendors' ranges among them, built a rig that passes its check from
+Three models, the lighter tier of three vendors' ranges, built a rig that passes its check from
 one painting and the installed documents, in fourteen to twenty-one minutes, including a draft that had
 to be diagnosed and corrected. Five sittings produced three issues on the tools, two of them fixed and
 released within the day. Nothing above says how a model not in the table would do.
