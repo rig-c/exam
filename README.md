@@ -51,6 +51,7 @@ packages' examples: their configs do not fit it.
 
 ## Licence
 
-MIT, held by rig-c, covering the tasks, the painting and its layers, the grader and the runs — see
-`LICENSE`. `NOTICE.md` names the checkpoint the painting was generated with, See-through, and the tools the
-grader runs, and says what submitting a run means.
+CC BY-NC 4.0, held by rig-c, covering the tasks, the painting and its layers, the grader and the runs:
+free to use, share and adapt with credit, not for commercial use — see `LICENSE`. `NOTICE.md` names the
+checkpoint the painting was generated with, See-through, and the tools the grader runs, and says what
+submitting a run means.

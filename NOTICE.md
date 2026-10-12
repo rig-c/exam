@@ -2,7 +2,9 @@
 
 This repository is an exam, not a library. Its contents — the tasks, the
 painting and its layers, the grader, and the runs — belong to the rig-c
-organisation and are published under the MIT licence in `LICENSE`. Naming a
+organisation and are licensed under CC BY-NC 4.0 (`LICENSE`): free to use, share
+and adapt with credit, not for commercial use. That is deliberately not the MIT
+licence the rig-c tools carry — this is an exam's content, not code to build on. Naming a
 project below identifies where something comes from; it does not imply that its
 authors endorse this repository. Statements marked **[observed]** carry the
 date and the place they were read; upstream terms can change.
@@ -16,7 +18,8 @@ publish that way.
 ## The tools the grader runs
 
 - [`@rig-c/parts`](https://github.com/rig-c/parts) and
-  [`rig-c`](https://github.com/rig-c/core), both MIT, installed from npm at the
+  [`rig-c`](https://github.com/rig-c/core), both MIT (their licence, not this
+  repository's), installed from npm at the
   versions `package.json` pins. Their own notices cover what they depend on; in
   particular the skeleton data `rigc build` writes is in the Spine 4.3 format,
   and rig-c's `NOTICE.md` says what that does and does not involve.
