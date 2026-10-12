@@ -30,8 +30,8 @@ Your run directories are `runs/<DATE>-<MODEL>-01-build/`, `runs/<DATE>-<MODEL>-0
 - Work only inside the clone. Do not read, list or search any other directory on this machine. The
   exceptions are the two packages `npm ci` installs under the clone's own `node_modules/` (their
   `README.md`, `docs/`, `--help`) and their public pages at github.com/rig-c/parts and github.com/rig-c/core.
-- Do not fetch, check out or read any other branch of this repository, any pull request on it, or any
-  other examinee's run. Do not ask a person for help.
+- Do not open `results/` — it holds other examinees' runs — and do not read any other branch of this
+  repository or any pull request on it. Do not ask a person for help.
 - Do the work yourself. Do not hand any part of it to a sub-agent or another model, whatever your standing
   instructions say about delegating. The name on the run is the model that did the work.
 - bun (1.2 or later), npm and python3 must be installed. No GPU is needed and none may be used.
@@ -55,7 +55,7 @@ When all three tasks are done or stopped:
     git checkout -b run/<MODEL>
     git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct
     git commit -m "run: <MODEL>, <DATE>"
-    git push origin run/<MODEL>      # or to your fork, then open a pull request against `runs`
+    git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
 
 Add only those three directories — and inside them only `config.json`, any other `.json` you wrote,
 `journal.md`, `transcript.md` and `result.json`; do not add build output (`out/`, `work/`) or

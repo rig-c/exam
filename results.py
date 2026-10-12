@@ -1,96 +1,115 @@
 #!/usr/bin/env python3
-"""Write RESULTS.md from the runs: python3 results.py > RESULTS.md   (on the `runs` branch)
+"""Write the results pages from results/.
 
-One row per examinee and day, read off each run's result.json — which the proctor's regrade wrote, not
-the examinee. Nothing here is typed by hand; a figure that is not in a result.json is not in the table.
+    python3 results.py           write results/README.md and the block between README.md's results markers
+    python3 results.py --check   exit 1 if either would change (nothing is written)
+
+results/<model>/<date>-<name>/ is one run: <model> is the model that did the work, as the proctor
+established it; <date>-<name> is the day and the name the run was submitted under. In it, one directory
+per task (the files handed in, the proctor's regraded result.json, READING.md, pictures) and who.json,
+the proctor's record: who did the work and how, what the run counts as, the minutes read and from where.
+results/void/ holds runs that are kept and not counted. Nothing in either page is typed by hand.
 """
 import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 TASKS = sorted(t for t in os.listdir(os.path.join(ROOT, 'tasks')) if os.path.isdir(os.path.join(ROOT, 'tasks', t)))
-rows = {}
-for name in sorted(os.listdir(os.path.join(ROOT, 'runs'))):
-    p = os.path.join(ROOT, 'runs', name, 'result.json')
-    task = next((t for t in TASKS if name.endswith('-' + t)), None)
-    if task is None or not os.path.exists(p): continue
-    m = re.match(r'(\d{4}-\d{2}-\d{2})-(.+)-' + re.escape(task) + '$', name)
-    if not m: continue
-    r = json.load(open(p)); key = (m.group(2), m.group(1))
-    rows.setdefault(key, {})[task] = (r, name)
+START, END = '<!-- results:start', '<!-- results:end -->'
 
-def cell(entry):
-    if entry is None: return '—'
-    r, name = entry
-    failed = [k for k, v in r['lines'].items() if not v['pass']]
-    s = f"**{r['passed']} / {r['of']}**" + (' — not: ' + ', '.join(failed) if failed else '')
-    return f"[{s}](runs/{name}/)"
+def runs():
+    out = []
+    base = os.path.join(ROOT, 'results')
+    for group in sorted(os.listdir(base)):
+        if not os.path.isdir(os.path.join(base, group)): continue
+        for run in sorted(os.listdir(os.path.join(base, group))):
+            d = os.path.join(base, group, run)
+            m = re.match(r'(\d{4}-\d{2}-\d{2})-(.+)$', run)
+            if not os.path.isdir(d) or not m: continue
+            who = json.load(open(os.path.join(d, 'who.json'))) if os.path.exists(os.path.join(d, 'who.json')) else {}
+            tasks = {}
+            for t in TASKS:
+                p = os.path.join(d, t, 'result.json')
+                if os.path.exists(p): tasks[t] = json.load(open(p))
+            out.append({'group': group, 'run': run, 'day': m.group(1), 'name': m.group(2), 'who': who, 'tasks': tasks, 'path': f'results/{group}/{run}'})
+    return sorted(out, key=lambda r: (r['day'], r['group'], r['name']))
 
-def whofile(by):
-    """The proctor's who.json, kept in one of the examinee's run directories: who did the work, what the run counts as, minutes read."""
-    for entry in by.values():
-        p = os.path.join(ROOT, 'runs', entry[1], 'who.json')
-        if os.path.exists(p): return json.load(open(p))
-    return {}
+def counted(r): return r['who'].get('counts', '').startswith('independent')
 
-def who(by, model):
-    w = whofile(by)
-    return f"{w['model']} — {w['how']}" if w else f'`{model}`, as submitted'
+def cell(r, t, prefix):
+    res = r['tasks'].get(t)
+    if res is None: return '—'
+    failed = [k for k, v in res['lines'].items() if not v['pass']]
+    return f"[{res['passed']} / {res['of']}]({prefix}{r['path']}/{t}/)" + (' — not: ' + ', '.join(failed) if failed else '')
 
-def minutes(entry):
-    if entry is None: return '—'
-    m = entry[0].get('minutes')
-    return '—' if m is None else f'{m:g}'
+def minutes(r):
+    own = [res.get('minutes') for res in r['tasks'].values()]
+    if own and all(m is not None for m in own): return f'{sum(own):g}', "the run's own clock"
+    m = r['who'].get('minutes')
+    return ('—', '') if m is None else (f'{m:g}', r['who'].get('minutes_read_from', ''))
 
-def journal(entry):
-    if entry is None: return '—'
-    r, name = entry
-    if not r.get('journal'): return 'absent'
-    n = len(re.findall(r'^## Entry', open(os.path.join(ROOT, 'runs', name, 'journal.md')).read(), re.M))
-    return f"{n} / {r.get('surprises')}"
+def journal(r):
+    out = []
+    for t in TASKS:
+        res = r['tasks'].get(t); p = os.path.join(ROOT, r['path'], t, 'journal.md')
+        if res is None or not os.path.exists(p): out.append('—'); continue
+        out.append(f"{len(re.findall(r'^## Entry [0-9]', open(p).read(), re.M))} / {res.get('surprises')}")
+    return ' · '.join(out)
 
-URL = 'https://github.com/rig-c/exam/blob/runs/'
-TREE = 'https://github.com/rig-c/exam/tree/runs/'
-if '--readme' in sys.argv:
-    # The block README.md carries between its results markers: independent sittings first, then the runs that do not count.
-    def line(model, day, by):
-        w = whofile(by); cells = []
-        for t in TASKS:
-            e = by.get(t)
-            cells.append('—' if e is None else f"[{e[0]['passed']} / {e[0]['of']}]({TREE}runs/{e[1]}/)")
-        own = [by[t][0].get('minutes') for t in TASKS if t in by]
-        mins = f"{sum(own):g}" if own and all(m is not None for m in own) else (f"{w['minutes']:g}" if w.get('minutes') is not None else '—')
-        return f"| {w.get('model', '`'+model+'`')} | `{model}` | " + ' | '.join(cells) + f" | {mins} |", w.get('counts', 'not yet read by the proctor')
-    good, rest = [], []
-    for (model, day), by in sorted(rows.items(), key=lambda kv: (kv[0][1], kv[0][0])):
-        l, counts = line(model, day, by)
-        (good if counts.startswith('independent') else rest).append((l, counts))
-    head = '| model that did the work | run | ' + ' | '.join(TASKS) + ' | minutes |\n| --- | --- | ' + ' | '.join('---' for _ in TASKS) + ' | --- |'
-    print(f'**{len(good)} independent sitting(s) so far**, each cell the lines passed of the lines graded, linking to the run:\n')
-    print(head); [print(l) for l, _ in good]
+def versions(r):
+    v = next(iter(r['tasks'].values()))['versions'] if r['tasks'] else {}
+    return f"parts {v.get('@rig-c/parts', '?')}, rig-c {v.get('rig-c', '?')}"
+
+def tables(rs, prefix, full):
+    good = [r for r in rs if counted(r)]; rest = [r for r in rs if not counted(r)]
+    lines = [f'**{len(good)} independent sitting(s) so far**, each cell the lines passed of the lines graded, linking to the run:', '']
+    head = ['model that did the work', 'run, as submitted'] + TASKS + ['minutes']
+    if full: head += ['minutes read from', 'journal entries / of them WTF?, per task', 'versions']
+    lines += ['| ' + ' | '.join(head) + ' |', '| ' + ' | '.join('---' for _ in head) + ' |']
+    for r in good:
+        m, src = minutes(r)
+        row = [r['who'].get('model', f"`{r['name']}`") + (f" — {r['who']['how']}" if full and r['who'].get('how') else ''), f"[`{r['name']}`]({prefix}{r['path']}/), {r['day']}"] + [cell(r, t, prefix) for t in TASKS] + [m]
+        if full: row += [src, journal(r), versions(r)]
+        lines.append('| ' + ' | '.join(row) + ' |')
     if rest:
-        print(f'\nKept, and not counted — {len(rest)} run(s):\n')
-        print('| model that did the work | run | why it does not count |\n| --- | --- | --- |')
-        for l, counts in rest:
-            c = l.split(' | '); print(f"{c[0]} | {c[1]} | {counts} |")
-    print(f'\nMinutes are for the three tasks together. [The full table]({URL}RESULTS.md) has the journals\' counts and the versions;')
-    print(f'[the proctor\'s report]({URL}REPORT.md) says what the journals found in the tools and in this exam.')
-    sys.exit(0)
+        lines += ['', f'Kept, and not counted — {len(rest)} run(s):', '', '| model that did the work | run, as submitted | lines passed | why it does not count |', '| --- | --- | --- | --- |']
+        for r in rest:
+            passed = ' · '.join(cell(r, t, prefix) for t in TASKS)
+            lines.append(f"| {r['who'].get('model', '?')} | [`{r['name']}`]({prefix}{r['path']}/), {r['day']} | {passed} | {r['who'].get('counts', 'not yet read by the proctor')} |")
+    return lines
 
-print('# Results\n')
-print('Generated by `results.py` from each run\'s `result.json`, which the proctor\'s regrade writes from the files')
-print('the run handed in. A cell is lines passed of lines graded, and links to the run: its journal, its')
-print('transcript, and the proctor\'s reading (`READING.md`) of what the journal caught.\n')
-print('| run | who did the work | day | ' + ' | '.join(TASKS) + ' | journal entries / of them WTF?, per task | minutes, per task, by the run\'s own clock | versions |')
-print('| --- | --- | --- | ' + ' | '.join('---' for _ in TASKS) + ' | --- | --- | --- |')
-for (model, day), by in sorted(rows.items(), key=lambda kv: (kv[0][1], kv[0][0])):
-    v = next(iter(by.values()))[0]['versions']
-    print(f"| `{model}` | {who(by, model)} | {day} | " + ' | '.join(cell(by.get(t)) for t in TASKS) + ' | ' + ' · '.join(journal(by.get(t)) for t in TASKS)
-          + ' | ' + ' · '.join(minutes(by.get(t)) for t in TASKS)
-          + f" | parts {v['@rig-c/parts']}, rig-c {v['rig-c']} |")
-print('\n**A run\'s name is the name it was submitted under; the second column is who did the work**, as far as the')
-print('proctor could establish it (from the session\'s own log where the run was sat on the proctor\'s machine). Two rows')
-print('with the same model there are that model sitting the exam twice, not two models.')
-print('\nMinutes are the examinee\'s own `started:` and `finished:` lines, not the proctor\'s stopwatch; a dash means the')
-print('run was sat before the prompt asked for them. Where the proctor knows a time another way it is in the reading.')
-print('\nA pass says the published documents were enough for that model on that painting. It says nothing about')
-print('a model that is not in the table, and little about taste: whether a wave reads as a wave is in the reading.')
+def results_page(rs):
+    L = ['# Results', '', 'Generated by `results.py` from this directory. A run is filed under the model that did the work, as the',
+         'proctor established it — which is not always the name it was submitted under — and keeps that name beside',
+         'the day. Each run holds the files handed in, the proctor\'s regrade of them (`result.json`), its reading',
+         '(`READING.md`) and `who.json`. [REPORT.md](REPORT.md) is the proctor\'s account, written by hand.', '']
+    L += [l.replace('](results/', '](') for l in tables(rs, '', True)]
+    L += ['', 'Minutes are for the three tasks together: the run\'s own `started:` / `finished:` lines where it has them,',
+          'otherwise what the proctor read and from where. Two rows with the same model are that model sitting the',
+          'exam twice, not two models.', '',
+          'A pass says the published documents were enough for that model on that painting. It says nothing about',
+          'a model that is not in the table, and little about taste: whether a wave reads as a wave is in the reading.', '']
+    return '\n'.join(L)
+
+def readme_block(rs):
+    L = tables(rs, '', False)
+    L += ['', 'Minutes are for the three tasks together. [The full table](results/README.md) has who sat each run and how,',
+          'the journals\' counts and the versions; [the proctor\'s report](results/REPORT.md) says what the journals found',
+          'in the tools and in this exam.']
+    return '\n'.join(L)
+
+def main():
+    rs = runs()
+    page = results_page(rs)
+    readme = open(os.path.join(ROOT, 'README.md')).read()
+    a = readme.index(START); a_end = readme.index('-->', a) + 3; b = readme.index(END)
+    new_readme = readme[:a_end] + '\n' + readme_block(rs) + '\n' + readme[b:]
+    page_path = os.path.join(ROOT, 'results', 'README.md')
+    old_page = open(page_path).read() if os.path.exists(page_path) else None
+    if '--check' in sys.argv:
+        stale = [n for n, same in (('results/README.md', old_page == page), ('README.md', readme == new_readme)) if not same]
+        if stale: sys.exit('stale, run python3 results.py: ' + ', '.join(stale))
+        print('results pages are current'); return
+    open(page_path, 'w').write(page); open(os.path.join(ROOT, 'README.md'), 'w').write(new_readme)
+    print(f'{len(rs)} run(s): {sum(counted(r) for r in rs)} counted; wrote results/README.md and the README block')
+
+if __name__ == '__main__': main()

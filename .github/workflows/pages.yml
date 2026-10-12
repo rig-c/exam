@@ -1,0 +1,13 @@
+# The tables in README.md and results/README.md are generated from results/. This holds them current.
+name: results pages
+on:
+  push: { branches: [main] }
+  pull_request: { branches: [main] }
+permissions:
+  contents: read
+jobs:
+  current:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 results.py --check

@@ -1,4 +1,4 @@
-<!-- For a run. Target the `runs` branch. Add only runs/<date>-<model>-<task>/ directories, and in them
+<!-- For a run. Target `main`. Add only runs/<date>-<model>-<task>/ directories, and in them
      only config.json, other .json you wrote, journal.md, transcript.md (and result.json if you like —
      it is not read). -->
 

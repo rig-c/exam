@@ -1,11 +1,11 @@
-# Regrade every run a pull request against `runs` adds or changes, from the files it hands in.
+# Regrade every run a pull request against `main` adds or changes, from the files it hands in.
 # The grader and the tasks come from the base branch; from the pull request only a run's own
 # config.json, other .json it wrote, journal.md and transcript.md are taken. A run's result.json
 # is not read. The job is green when the grading ran — the lines themselves are in the summary.
 name: grade
 on:
   pull_request:
-    branches: [runs]
+    branches: [main]
     paths: ['runs/**']
 permissions:
   contents: read

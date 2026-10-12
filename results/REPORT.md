@@ -1,6 +1,6 @@
 # The proctor's report — the first sittings, 2026-10-12 and 13
 
-Written by the proctor, by hand, from the runs on this branch. [RESULTS.md](RESULTS.md) is the generated
+Written by the proctor, by hand, from the runs in this directory. [README.md](README.md) is the generated
 table; this page says what the table cannot: which rows count as what, what the journals found, and what
 the exam itself got wrong. Versions: `@rig-c/parts` 1.11.0, `rig-c` 2.47.0.
 
