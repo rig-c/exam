@@ -1,4 +1,5 @@
 {
+ "short": "Claude Haiku",
  "model": "Claude Haiku (alias `haiku`; exact identifier not recorded)",
  "how": "as a sub-agent of the proctor's own session, by design",
  "counts": "independent sitting",

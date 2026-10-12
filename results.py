@@ -106,7 +106,7 @@ def profile_block(rs):
         if counted(r): by.setdefault(r['group'], []).append(r)
     L = ['| model | sittings | lines passed, of lines graded | minutes for the three tasks |', '| --- | --- | --- | --- |']
     for group, rr in sorted(by.items()):
-        name = rr[0]['who'].get('model', group).split(' — ')[0]
+        name = rr[0]['who'].get('short') or rr[0]['who'].get('model', group)
         passed = sum(res['passed'] for r in rr for res in r['tasks'].values()); of = sum(res['of'] for r in rr for res in r['tasks'].values())
         mins = sorted(float(minutes(r)[0]) for r in rr if minutes(r)[0] != '—')
         span = '—' if not mins else (f'{mins[0]:g}' if len(mins) == 1 else f'{mins[0]:g} to {mins[-1]:g}')
