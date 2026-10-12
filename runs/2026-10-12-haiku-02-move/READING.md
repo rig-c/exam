@@ -14,3 +14,5 @@ What the journal caught:
   2. whether the hair lags the head at all was not measured; the pass line only counts constraints.
      That is a weakness of this task's line, not of the run.
   3. the examinee did not run the task's exact `--out out` command itself, and says so.
+
+**Who sat it.** A sub-agent of the proctor's own session, model alias `haiku` (the exact model identifier was not recorded), given this repository's clone and no other context.

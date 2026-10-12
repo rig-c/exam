@@ -14,3 +14,5 @@ What the journal caught (the lines this exam is for):
   tool's; AUTHORING §8 gives build times, far from the step that builds.
 
 Journal discipline: twelve entries; the examinee says itself that entry 9 was written after the step.
+
+**Who sat it.** A sub-agent of the proctor's own session, model alias `haiku` (the exact model identifier was not recorded), given this repository's clone and no other context.

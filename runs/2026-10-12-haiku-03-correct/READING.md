@@ -22,3 +22,5 @@ different correction from the proctor's (one chain dropped), and the gentler one
 **Journal discipline.** Eleven entries. No fourth line begins `SURPRISE:` although entries 4 and 6 record
 a result that differed from the expectation — the examinee says so itself at the end and did not rewrite
 them. The form's own "At the end" text was left above the entries.
+
+**Who sat it.** A sub-agent of the proctor's own session, model alias `haiku` (the exact model identifier was not recorded), given this repository's clone and no other context.
