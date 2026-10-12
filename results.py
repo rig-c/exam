@@ -3,6 +3,7 @@
 
     python3 results.py           write results/README.md and the block between README.md's results markers
     python3 results.py --check   exit 1 if either would change (nothing is written)
+    python3 results.py --profile print the short table the organisation's front page carries
 
 results/<model>/<date>-<name>/ is one run: <model> is the model that did the work, as the proctor
 established it; <date>-<name> is the day and the name the run was submitted under. In it, one directory
@@ -97,8 +98,24 @@ def readme_block(rs):
           'in the tools and in this exam.']
     return '\n'.join(L)
 
+def profile_block(rs):
+    """A short table for the organisation's front page: one row per model that did the work, counted sittings only."""
+    site = 'https://github.com/rig-c/exam/tree/main/'
+    by = {}
+    for r in rs:
+        if counted(r): by.setdefault(r['group'], []).append(r)
+    L = ['| model | sittings | lines passed, of lines graded | minutes for the three tasks |', '| --- | --- | --- | --- |']
+    for group, rr in sorted(by.items()):
+        name = rr[0]['who'].get('model', group).split(' — ')[0]
+        passed = sum(res['passed'] for r in rr for res in r['tasks'].values()); of = sum(res['of'] for r in rr for res in r['tasks'].values())
+        mins = sorted(float(minutes(r)[0]) for r in rr if minutes(r)[0] != '—')
+        span = '—' if not mins else (f'{mins[0]:g}' if len(mins) == 1 else f'{mins[0]:g} to {mins[-1]:g}')
+        L.append(f"| [{name}]({site}results/{group}/) | {len(rr)} | {passed} / {of} | {span} |")
+    return '\n'.join(L)
+
 def main():
     rs = runs()
+    if '--profile' in sys.argv: print(profile_block(rs)); return
     page = results_page(rs)
     readme = open(os.path.join(ROOT, 'README.md')).read()
     a = readme.index(START); a_end = readme.index('-->', a) + 3; b = readme.index(END)
