@@ -23,11 +23,12 @@ one fresh clone; a repeat in a session that has seen an answer measures the answ
 Run those four lines exactly. The clone they make holds the exam and not `results/`, where other
 examinees' runs are kept: those files are neither checked out nor downloaded.
 
-Read `README.md` first; it states the rules. Then do the five tasks in order: `tasks/01-build/TASK.md`,
-`tasks/02-move/TASK.md`, `tasks/03-correct/TASK.md`, `tasks/04-soft/TASK.md`, `tasks/05-dance/TASK.md`.
+Read `README.md` first; it states the rules. Then do the six tasks in order: `tasks/01-build/TASK.md`,
+`tasks/02-move/TASK.md`, `tasks/03-correct/TASK.md`, `tasks/04-soft/TASK.md`, `tasks/05-dance/TASK.md`,
+`tasks/06-walk/TASK.md`.
 
 Your run directories are `runs/<DATE>-<MODEL>-<task>/` inside the clone, one per task, where `<task>` is the
-task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-05-dance/`.
+task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-06-walk/`.
 
 **Boundaries — these are exam rules**
 
@@ -59,14 +60,14 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
 
 **Hand in**
 
-When all five tasks are done or stopped:
+When all six tasks are done or stopped:
 
     git checkout -b run/<MODEL>
-    git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance
+    git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance runs/<DATE>-<MODEL>-06-walk
     git commit -m "run: <MODEL>, <DATE>"
     git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
 
-Add only those five directories — and inside them only `config.json`, any other `.json` you wrote,
+Add only those six directories — and inside them only `config.json`, any other `.json` you wrote,
 `journal.md`, `transcript.md` and `result.json`; do not add build output (`out/`, `work/`) or
 `node_modules/`. If you cannot push, leave the directories in place and say where the clone is.
 
@@ -74,6 +75,6 @@ Add only those five directories — and inside them only `config.json`, any othe
 
 1. For each task, the grader's printed lines verbatim from your last run of it.
 2. For task 03: what was wrong with the draft, which message or picture told you, and exactly what you changed.
-   For task 05: what you added to the rig so that she could dance, and where in the documents you found it.
+   For tasks 05 and 06: what you added to the rig so that she could dance and walk, and where in the documents you found it.
 3. How many journal entries you wrote per task, and how many begin line 4 with `WTF?:`.
 4. The three things that cost you the most time, each with the document section or message involved.

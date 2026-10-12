@@ -6,7 +6,7 @@
 **Agent / harness it ran in** (and version):
 **Date started:**
 **Tokens and cost**, if your agent reports them:
-**Tasks sat:** 01-build / 02-move / 03-correct / 04-soft / 05-dance
+**Tasks sat:** 01-build / 02-move / 03-correct / 04-soft / 05-dance / 06-walk
 **Did a person step in at any point?** (what, and at which journal entry — a run with help is still
 worth having, labelled as one)
 **Where the raw session transcript is**, if you can share it:

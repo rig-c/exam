@@ -12,7 +12,7 @@ import datetime, json, os, re, shutil, statistics, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
-UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
+UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200, '06-walk': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
 KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
 RISE_LINE = 150         # rig px a hand rises above the rest of the body, task 02
 FPS = 12
@@ -86,6 +86,50 @@ def rise(geometry):
         d = [b['worldY'] - first[b['name']] for b in f['bones']]
         best = max(best, max(d) - statistics.median(d))
     return round(best, 1)
+
+WALK = {'seconds': 1.0, 'fps': 48, 'closes': 0.5, 'lift': 10.0, 'both_up': 2.0, 'down': 0.40, 'skate': 2.0, 'over': 4.0,
+        'bob': 3.0, 'twice': 0.5, 'arms': 15.0, 'budget': 1000}
+                        # task 06: one cycle, two steps; rig px a foot must leave the ground; rig px both may be off it at once;
+                        # the share of the cycle each foot stands, and the rig px it may move while it does; rig px the trunk
+                        # is over the standing foot; rig px it bobs and the share of that which comes twice a cycle; rig px the
+                        # hand opposite the lifted foot is further out than the other; triangles
+
+def gait(geometry):
+    """Readings of a walk in place seen from the front, off the posed vertices (y up). The feet are the two halves of
+    `shoes`, split at the widest gap in x in the first frame; a foot's lift is its lowest vertex above that vertex's
+    lowest over the loop. `a` is the image's left, `b` its right."""
+    import cmath
+    F = [slot_vertices(f) for f in geometry['frames']][:-1]   # the last frame is the first again
+    n = len(F)
+    if n < 8 or any(s not in F[0] for s in ('shoes', 'topwear', 'handwear_l', 'handwear_r')): return None
+    if any(len(f.get(s, ())) != len(F[0][s]) for f in F for s in ('shoes', 'topwear', 'handwear_l', 'handwear_r')): return None
+    mid = lambda v: (sum(v[0::2]) / (len(v) // 2), sum(v[1::2]) / (len(v) // 2))
+    s0 = F[0]['shoes']; idx = sorted(range(len(s0) // 2), key=lambda i: s0[2 * i]); xs = [s0[2 * i] for i in idx]
+    if len(xs) < 2: return None
+    gap = max(range(1, len(xs)), key=lambda k: xs[k] - xs[k - 1]); feet = {'a': idx[:gap], 'b': idx[gap:]}
+    low = {k: [min(f['shoes'][2 * i + 1] for i in ii) for f in F] for k, ii in feet.items()}
+    lift = {k: [y - min(v) for y in v] for k, v in low.items()}
+    R = {'lift': {k: round(max(v), 1) for k, v in lift.items()},
+         'both_up': round(max(min(lift['a'][t], lift['b'][t]) for t in range(n)), 2),
+         'down': {k: round(sum(1 for y in v if y <= 1.0) / n, 2) for k, v in lift.items()}}
+    skate = 0.0
+    for k, ii in feet.items():
+        down = [t for t in range(n) if lift[k][t] <= 1.0]; b = F[down[0]]['shoes']
+        for t in down: skate = max(skate, max(abs(F[t]['shoes'][2 * i] - b[2 * i]) for i in ii))
+    R['skate'] = round(skate, 2)
+    tx = [mid(f['topwear'])[0] for f in F]; ty = [mid(f['topwear'])[1] for f in F]; mx = sum(tx) / n; my = sum(ty) / n
+    top = {k: max(range(n), key=lambda t: lift[k][t]) for k in feet}
+    R['over'] = {'a': round(tx[top['a']] - mx, 1), 'b': round(mx - tx[top['b']], 1)}   # the image-left foot up: the trunk to the right
+    P = [abs(sum((ty[t] - my) * cmath.exp(-2j * cmath.pi * k * t / n) for t in range(n))) ** 2 for k in range(1, n // 2 + 1)]
+    R['bob'] = round(max(ty) - min(ty), 1); R['twice'] = round(P[1] / sum(P), 3) if sum(P) > 1e-9 else 0.0
+    hands = sorted(('handwear_l', 'handwear_r'), key=lambda s: mid(F[0][s])[0]); H = {'a': hands[0], 'b': hands[1]}
+    def reach(slot):   # how far the hand end of an arm part is from the trunk's middle, against its own mean over the loop
+        v0 = F[0][slot]; ys = sorted(v0[1::2]); cut = ys[max(0, len(ys) // 10 - 1)]; ii = [i for i in range(len(v0) // 2) if v0[2 * i + 1] <= cut]
+        r = [sum(abs(f[slot][2 * i] - tx[t]) for i in ii) / len(ii) for t, f in enumerate(F)]; m = sum(r) / n
+        return [x - m for x in r]
+    d = {k: reach(s) for k, s in H.items()}
+    R['arms'] = {'a': round(d['b'][top['a']] - d['a'][top['a']], 1), 'b': round(d['a'][top['b']] - d['b'][top['b']], 1)}
+    return R
 
 def paths(geometry, slot, against=None):
     """Per vertex of a slot, the diagonal of the box its path fills over the frames — measured from the centre of another slot when one is named."""
@@ -250,6 +294,31 @@ def main():
                 d = difference(a, b, 'topwear') if a else None
                 L['soft_in_the_dance'] = {'pass': d is not None and SOFT[0] <= d[0] <= SOFT[1], 'read': 'not measured: `topwear` is not a mesh with the same vertices in both builds' if d is None else f"`topwear` differs from the same build without its physics by {d[0]} rig px at dance frame {d[1]}, against {SOFT[0]} to {SOFT[1]}"}
             L['dance_does_not_fold'] = {'pass': dance_folds == [], 'read': dance_folds}
+        if task == '06-walk':
+            W = WALK
+            tri = c.get('TEXTURE_STRETCH', {}).get('triangles')
+            L['budget'] = {'pass': tri is not None and tri <= W['budget'], 'read': f"{tri} triangles against <= {W['budget']}"}
+            motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
+            mine = motion['animations'].get('walk')
+            timed = mine is not None and abs(mine.get('duration', 0) - W['seconds']) < 1e-6
+            L['walk_as_timed'] = {'pass': bool(timed), 'read': 'no animation named walk in the built rig' if mine is None else f"`walk` lasts {mine.get('duration')} s against {W['seconds']}"}
+            bare = without_physics(work, log) if timed else None
+            _, walk_folds = pose(work, 'out/check/build', 'walk', 24, log) if timed else (None, None)
+            b, _ = pose(work, bare, 'walk', W['fps'], log) if bare else (None, None)
+            g = gait(b) if b else None
+            no = 'not measured: ' + ('there is no `walk` of the given length' if not timed else 'the build without its physics did not build' if b is None else '`shoes`, `topwear`, `handwear_l` and `handwear_r` are not all there with vertices that keep their count')
+            if g is None:
+                for k in ('closes', 'steps', 'one_at_a_time', 'stands', 'over_the_standing_foot', 'bobs_twice', 'arms_opposite'): L[k] = {'pass': False, 'read': no}
+            else:
+                gp = loop_gap(b)
+                L['closes'] = {'pass': gp is not None and gp <= W['closes'], 'read': f"the last frame is {gp} rig px from the first at its furthest vertex, against <= {W['closes']} (keys only, physics out)"}
+                L['steps'] = {'pass': min(g['lift'].values()) >= W['lift'], 'read': f"the image-left foot leaves the ground by {g['lift']['a']} rig px and the image-right one by {g['lift']['b']}, each against >= {W['lift']}"}
+                L['one_at_a_time'] = {'pass': g['both_up'] <= W['both_up'], 'read': f"at the frame both feet are furthest off the ground together, the lower is {g['both_up']} rig px up, against <= {W['both_up']}"}
+                L['stands'] = {'pass': min(g['down'].values()) >= W['down'] and g['skate'] <= W['skate'], 'read': f"the feet are on the ground for {g['down']['a']} and {g['down']['b']} of the cycle, each against >= {W['down']}; a foot on the ground moves {g['skate']} rig px sideways, against <= {W['skate']}"}
+                L['over_the_standing_foot'] = {'pass': min(g['over'].values()) >= W['over'], 'read': f"when a foot is highest the middle of `topwear` is {g['over']['a']} (image-left foot up) and {g['over']['b']} (image-right foot up) rig px toward the other foot from its mean place, each against >= {W['over']}"}
+                L['bobs_twice'] = {'pass': g['bob'] >= W['bob'] and g['twice'] >= W['twice'], 'read': f"the middle of `topwear` rises and falls {g['bob']} rig px, against >= {W['bob']}, and {g['twice']} of that comes twice a cycle, against >= {W['twice']}"}
+                L['arms_opposite'] = {'pass': min(g['arms'].values()) >= W['arms'], 'read': f"when a foot is highest, the hand on the other side is {g['arms']['a']} (image-left foot up) and {g['arms']['b']} (image-right foot up) rig px further out from the trunk than the hand on its own side, each against >= {W['arms']}"}
+            L['walk_does_not_fold'] = {'pass': walk_folds == [], 'read': walk_folds}
         if task == '02-move':
             rig = json.load(open(os.path.join(work, 'out', 'rig', 'rig.json'))); motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
             phys = sorted({k['bone'] for k in rig.get('constraints', []) if k.get('type') == 'physics'})
