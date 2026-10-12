@@ -10,3 +10,5 @@ a wave, at the small end. Nothing folds.
 and the four physics sets "were authored without a task-specific source"; "the package gave a recipe but
 no target pose for this painting". The same gap the first examinee named (physics values for a strand),
 from the other side; it was filed then and is fixed in `@rig-c/parts` 1.12.0.
+
+**Who sat it.** The model named itself `gpt-6-sol`; the person who started the run reports it was a 6.1 model. The directory keeps the name it was submitted under. (Since this run the prompt has the person, not the model, fill the name in.)

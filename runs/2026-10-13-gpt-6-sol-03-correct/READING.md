@@ -19,3 +19,7 @@ refuse a motion turned most of the way down. A later round's line should read ho
 moves. This run passed the lines as they were written.
 
 **What the journal caught.** No line marked — the task told it the draft would fail, and it did.
+
+**Who sat it.** The model named itself `gpt-6-sol`; the person who started the run reports it was a 6.1 model. The directory keeps the name it was submitted under. (Since this run the prompt has the person, not the model, fill the name in.)
+
+**How long.** No clock in the run. The four runs of this night were started together, and the person who started them said so at 15:28:06 UTC; this run's commit is 15 minutes after that. Since they were started before he said so, all three tasks took at least that long — an estimate, not a measurement.

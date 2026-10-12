@@ -13,3 +13,5 @@ then tested, which is what it was.
 **What the journal caught.** Nothing marked; nine entries. Closing note: "0 LINT did not explain the later
 texture squeeze; the build did" — the gap between the lint and the check, in one line. Filed from the
 first examinee's run (rig-c/parts#314); the lint now says it.
+
+**How long.** No clock in the run. The four runs of this night were started together, and the person who started them said so at 15:28:06 UTC; this run's commit is 21 minutes after that. Since they were started before he said so, all three tasks took at least that long — an estimate, not a measurement.

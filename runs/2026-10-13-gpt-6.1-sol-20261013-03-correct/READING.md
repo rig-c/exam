@@ -8,3 +8,5 @@ mesh, from the `CHECK_TEXTURE_STRETCH` line; `hairback_l`'s amplitudes to `hairb
 and lag kept, with a `note` in the track saying why. The correction that keeps the drafted motion whole.
 
 **What the journal caught.** Nothing marked; thirteen entries, the longest journal for this task.
+
+**How long.** No clock in the run. The four runs of this night were started together, and the person who started them said so at 15:28:06 UTC; this run's commit is 19 minutes after that. Since they were started before he said so, all three tasks took at least that long — an estimate, not a measurement.

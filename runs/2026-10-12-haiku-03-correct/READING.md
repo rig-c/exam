@@ -24,3 +24,5 @@ a result that differed from the expectation — the examinee says so itself at t
 them. The form's own "At the end" text was left above the entries.
 
 **Who sat it.** A sub-agent of the proctor's own session, model alias `haiku` (the exact model identifier was not recorded), given this repository's clone and no other context.
+
+**How long.** Measured by the proctor's own harness, since this examinee was its sub-agent: 11.6 minutes for tasks 01 and 02 together, 9.4 for task 03.

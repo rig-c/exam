@@ -15,3 +15,5 @@ first examinee did, and the step `@rig-c/parts` now prints in the message (rig-c
 was the grader's own, not the task's command.
 
 **Journal discipline.** Eight entries, correct in form.
+
+**How long.** No clock in the run. The four runs of this night were started together, and the person who started them said so at 15:28:06 UTC; this run's commit is 17 minutes after that. Since they were started before he said so, all three tasks took at least that long — an estimate, not a measurement.
