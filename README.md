@@ -39,10 +39,8 @@ missing something, and that line of the journal is what the exam is for.
 
 ## Results
 
-[RESULTS.md on the `runs` branch](https://github.com/rig-c/exam/blob/runs/RESULTS.md): one row per
-examinee, generated from the regraded runs, each cell linking to the journal and the proctor's reading.
-[REPORT.md](https://github.com/rig-c/exam/blob/runs/REPORT.md) beside it is the proctor's account of the
-sittings so far: which runs count, what the journals found in the tools, and what they found in this exam.
+<!-- results:start — generated on the `runs` branch by `python3 results.py --readme`; do not edit by hand -->
+<!-- results:end -->
 
 ## Sitting it
 
