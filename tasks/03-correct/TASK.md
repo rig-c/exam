@@ -33,6 +33,7 @@ from; say in the journal which of them you decided from.
 | **Whole** | the build's own count of painting pixels no part holds (`uncovered_error_px`) is at most 3,500 |
 | **Does not fold** | `rigc render --folds` over the idle names no mesh |
 | **Kept** | the build still deforms at least the eight meshes the proposal drafts — a part is not made to pass by being made rigid |
+| **Still moves** *(since round 3)* | over the idle, the back hair travels at least 23 rig px against the head — a part is not made to pass by turning its motion down either. The draft's own amplitudes give 45.9 once what is wrong with them is put right |
 
 A person looks at five frames of the idle for every run and at what the journal says was wrong; that
 reading is recorded beside the machine's, and does not change it.

@@ -4,5 +4,11 @@
  "how": "as a sub-agent of a `gpt-6.1-sol` session, the same model; sat once, no repeat",
  "counts": "independent sitting",
  "minutes": 14.2,
- "minutes_read_from": "the examinee's clone"
+ "minutes_read_from": "the examinee's clone",
+ "tokens": {
+  "input_fresh": 173467,
+  "input_cached": 12270464,
+  "output": 21854
+ },
+ "tokens_read_from": "the session's own log"
 }

@@ -3,5 +3,11 @@
  "how": "itself, as a repeat in the session that had already seen its sub-agent's report \u2014 void as an independent sitting, by its own statement",
  "counts": "a repeat in the session that had already seen its sub-agent's report, by its own statement; and the run is named for a persona, not its model",
  "minutes": 10.8,
- "minutes_read_from": "the examinee's clone"
+ "minutes_read_from": "the examinee's clone",
+ "tokens": {
+  "input_fresh": 169436,
+  "input_cached": 15302144,
+  "output": 34569
+ },
+ "tokens_read_from": "the session's own log"
 }

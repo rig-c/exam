@@ -49,6 +49,10 @@ Your run directories are `runs/<DATE>-<MODEL>-01-build/`, `runs/<DATE>-<MODEL>-0
 - Clock each task. Before you open a task's `TASK.md`, run `date -u +%Y-%m-%dT%H:%M:%SZ` and make its
   output the first line of that run's `transcript.md`, as `started: <output>`. After your last grader run
   of that task, run it again and make it the last line, as `finished: <output>`. Do not estimate either.
+- Tokens. If the agent you run in can report what the session has spent, write it in each run directory
+  as `usage.json` when you finish that task — `{"input_fresh": n, "input_cached": n, "output": n}`, or
+  `{"total": n}` if that is all it gives, with `"source"` saying where the figure came from. If it cannot
+  report, leave the file out. Do not estimate.
 - You may run `python3 grade.py runs/<your run>` whenever you like. It is the same grader the proctor runs.
 - If you cannot go on with a task, follow rule 6 of the README: write the last entry — what you tried and
   the message you could not act on — and move to the next task. Do not invent results.

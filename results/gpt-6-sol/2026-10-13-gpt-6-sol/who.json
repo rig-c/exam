@@ -4,5 +4,11 @@
  "how": "as a sub-agent of a `gpt-5.6-sol` session, which asked for that model by name after first starting, and stopping, a `gpt-6.1-sol` one",
  "counts": "independent sitting",
  "minutes": 14.1,
- "minutes_read_from": "the examinee's clone"
+ "minutes_read_from": "the examinee's clone",
+ "tokens": {
+  "input_fresh": 223190,
+  "input_cached": 15171200,
+  "output": 34451
+ },
+ "tokens_read_from": "the session's own log"
 }

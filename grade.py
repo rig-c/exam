@@ -3,7 +3,7 @@
 
     python3 grade.py runs/<date>-<model>-<task>
 
-The run directory names its task by its last component (…-01-build, …-02-move). Nothing the run pasted is
+The run directory names its task by its last component (…-01-build, …-04-soft). Nothing the run pasted is
 read: the config (and any file it names) is copied beside the task's inputs into .grade/<run>/, built
 there, and every line below is read off what that build wrote. Needs npm, bun and python3; installs the
 pinned packages into ./node_modules on first use.
@@ -12,10 +12,15 @@ import datetime, json, os, re, shutil, statistics, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
-UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
+UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
 KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
 RISE_LINE = 150         # rig px a hand rises above the rest of the body, task 02
 FPS = 12
+STILL_MOVES = 23        # task 03: rig px the back hair travels against the head over the idle — half of what the draft's
+                        # own amplitudes give once its two chains agree (45.9); the same amplitudes cut to a quarter give 17.5
+SOFT = (3.0, 15.0)      # task 04: rig px the soft patch differs from the same build without its physics, on the hop
+PATCH = (8, 0.80)       # task 04: at least 8 of the part's vertices move, and at most 80 % of them — a patch, not the garment
+BUDGET = 700            # task 04: triangles in the whole rig; the recipe's own region spacing, copied, gives 920 here
 
 def run(cmd, cwd, log):
     with open(log, 'a') as f:
@@ -31,6 +36,43 @@ def folds(work, animation, log):
     f = json.load(open(os.path.join(d, 'folds.json')))
     folding = [m['slot'] for m in f['meshes'] if m.get('frames')]
     return folding, json.load(open(os.path.join(d, 'geometry.json')))
+
+def slot_vertices(frame):
+    out = {}
+    for a in frame['attachments']:
+        v = a.get('vertices')
+        if v: out[a['slot']] = v if not isinstance(v[0], list) else [c for p in v for c in p]
+    return out
+
+def travel(geometry, slot, bone):
+    """The furthest any vertex of a slot gets from where it was in the first frame, measured from a bone's origin."""
+    base = None; best = 0.0
+    for f in geometry['frames']:
+        v = slot_vertices(f).get(slot); b = next((x for x in f['bones'] if x['name'] == bone), None)
+        if v is None or b is None: return None
+        rel = [(v[i] - b['worldX'], v[i + 1] - b['worldY']) for i in range(0, len(v), 2)]
+        if base is None: base = rel; continue
+        best = max(best, max(((p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2) ** 0.5 for p, q in zip(rel, base)))
+    return round(best, 3)
+
+def difference(a, b, slot):
+    """Two builds of one rig posed on the same frames: the largest distance between a slot's matching vertices, and how many moved."""
+    best = (0.0, None, 0, 0)
+    for fa, fb in zip(a['frames'], b['frames']):
+        x, y = slot_vertices(fa).get(slot), slot_vertices(fb).get(slot)
+        if x is None or y is None or len(x) != len(y): return None
+        d = [((x[i] - y[i]) ** 2 + (x[i + 1] - y[i + 1]) ** 2) ** 0.5 for i in range(0, len(x), 2)]
+        if best[1] is None or max(d) > best[0]: best = (round(max(d), 3), fa['index'], sum(1 for k in d if k > 0.5), len(d))
+    return best
+
+def pose(work, build, animation, fps, log):
+    out = os.path.join(work, 'pose_' + build.replace('/', '_') + '_' + animation)
+    code = run([os.path.join(BIN, 'rigc'), 'render', '--candidate', build, '--animation', animation, '--fps', str(fps),
+                '--max', '256', '--folds', '--geometry', '--out', out], work, log)
+    if code != 0: return None, None
+    d = next((os.path.join(out, n) for n in sorted(os.listdir(out)) if n.startswith(animation) and os.path.isdir(os.path.join(out, n))), None)
+    if d is None: return None, None
+    return json.load(open(os.path.join(d, 'geometry.json'))), [m['slot'] for m in json.load(open(os.path.join(d, 'folds.json')))['meshes'] if m.get('frames')]
 
 def rise(geometry):
     """The largest rise of any bone's origin above its first-frame height, less the median bone's rise."""
@@ -60,9 +102,9 @@ def main():
     work = os.path.join(ROOT, '.grade', name); shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
     log = os.path.join(work, 'grade.log')
     for f in os.listdir(rundir):
-        if f.endswith('.json') and f != 'result.json': shutil.copy(os.path.join(rundir, f), work)
-    own = os.path.join(ROOT, 'tasks', task, 'inputs')
-    os.symlink(own if os.path.isdir(own) else os.path.join(ROOT, 'tasks', '01-build', 'inputs'), os.path.join(work, 'inputs'))
+        if f.endswith('.json') and f not in ('result.json', 'usage.json'): shutil.copy(os.path.join(rundir, f), work)
+    own = os.path.join(ROOT, 'tasks', task, 'inputs')   # a task without a painting of its own is set on task 01's
+    os.symlink(own if os.path.exists(os.path.join(own, 'painting.png')) else os.path.join(ROOT, 'tasks', '01-build', 'inputs'), os.path.join(work, 'inputs'))
     versions = {p: json.load(open(os.path.join(ROOT, 'node_modules', p, 'package.json')))['version'] for p in ('@rig-c/parts', 'rig-c')}
     res = {'run': name, 'task': task, 'versions': versions, 'lines': {}}
     L = res['lines']
@@ -79,11 +121,37 @@ def main():
         L['checked'] = {'pass': c.get('PASS') is True, 'read': bars}
         u = c.get('RECOMPOSITE_HOLES', {}).get('uncovered_error_px')
         L['whole'] = {'pass': u is not None and u <= UNCOVERED_LINE[task], 'read': f'uncovered_error_px {u} against <= {UNCOVERED_LINE[task]}'}
-        idle_folds, _ = folds(work, 'idle', log)
+        idle_folds, idle_geo = folds(work, 'idle', log)
         L['does_not_fold'] = {'pass': idle_folds == [], 'read': idle_folds}
         if task == '03-correct':
             n = c.get('TEXTURE_STRETCH', {}).get('meshes')
             L['kept'] = {'pass': n is not None and n >= KEPT_MESHES, 'read': f'{n} mesh(es) deformed against >= {KEPT_MESHES}'}
+            t = travel(idle_geo, 'hair_back', 'head') if idle_geo else None
+            L['still_moves'] = {'pass': t is not None and t >= STILL_MOVES, 'read': f'the back hair travels {t} rig px against the head over the idle, against >= {STILL_MOVES}'}
+        if task == '04-soft':
+            tri = c.get('TEXTURE_STRETCH', {}).get('triangles')
+            L['budget'] = {'pass': tri is not None and tri <= BUDGET, 'read': f'{tri} triangles against <= {BUDGET}'}
+            motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
+            given = json.load(open(os.path.join(ROOT, 'tasks', task, 'hop.json')))['animations']['hop']
+            mine = motion['animations'].get('hop')
+            same = mine is not None and mine.get('duration') == given['duration'] and mine.get('tracks') == given['tracks']   # compared as values: 1 and 1.0 are the same key time
+            L['hop_as_given'] = {'pass': bool(same), 'read': 'the built rig holds `hop` exactly as tasks/04-soft/hop.json gives it' if same else ('no animation named hop in the built rig' if mine is None else 'the built rig\'s `hop` is not the one given')}
+            cfg = json.load(open(os.path.join(work, 'config.json')))
+            still = dict(cfg); still['constraints'] = [k for k in cfg.get('constraints', []) if k.get('type') != 'physics']
+            if not still['constraints']: del still['constraints']
+            json.dump(still, open(os.path.join(work, 'config_without_physics.json'), 'w'))
+            code = run([os.path.join(BIN, 'rig-parts'), 'build', '--config', 'config_without_physics.json', '--source', 'inputs/painting.png',
+                        '--full', 'inputs/layers/full', '--head', 'inputs/layers/head', '--out', 'out_without_physics'], work, log)
+            a, hop_folds = pose(work, 'out/check/build', 'hop', 30, log) if same else (None, None)
+            b, _ = pose(work, 'out_without_physics/check/build', 'hop', 30, log) if same and code == 0 else (None, None)
+            d = difference(a, b, 'topwear') if a and b else None
+            if d is None:
+                why = 'not measured: ' + ('the hop is not the one given' if not same else 'the build without its physics did not build, or `topwear` is not a mesh with the same vertices in both')
+                L['soft'] = {'pass': False, 'read': why}; L['a_patch'] = {'pass': False, 'read': why}
+            else:
+                L['soft'] = {'pass': SOFT[0] <= d[0] <= SOFT[1], 'read': f'`topwear` differs from the same build without its physics by {d[0]} rig px at hop frame {d[1]}, against {SOFT[0]} to {SOFT[1]}'}
+                L['a_patch'] = {'pass': d[2] >= PATCH[0] and d[2] <= PATCH[1] * d[3], 'read': f'{d[2]} of {d[3]} `topwear` vertices move over 0.5 rig px, against >= {PATCH[0]} and <= {int(PATCH[1] * 100)} %'}
+            L['hop_does_not_fold'] = {'pass': hop_folds == [], 'read': hop_folds}
         if task == '02-move':
             rig = json.load(open(os.path.join(work, 'out', 'rig', 'rig.json'))); motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
             phys = sorted({k['bone'] for k in rig.get('constraints', []) if k.get('type') == 'physics'})
@@ -104,6 +172,8 @@ def main():
     # not the word wherever it appears
     res['surprises'] = len(re.findall(r'^4\.\s*\*\*Happened:\*\*\s*(?:WTF\?:|SURPRISE:)', open(os.path.join(rundir, 'journal.md')).read(), re.M)) if res['journal'] else None
     res['minutes'] = clock(os.path.join(rundir, 'transcript.md'))
+    up = os.path.join(rundir, 'usage.json')   # what the examinee's agent reported spending, if it reports; not checked
+    res['usage_reported'] = json.load(open(up)) if os.path.exists(up) else None
     res['passed'] = sum(1 for v in L.values() if v['pass']); res['of'] = len(L)
     json.dump(res, open(os.path.join(rundir, 'result.json'), 'w'), indent=1)
     for k, v in L.items(): print(('PASS  ' if v['pass'] else 'FAIL  ') + k + ': ' + json.dumps(v['read']))

@@ -48,6 +48,20 @@ def minutes(r):
     m = r['who'].get('minutes')
     return ('—', '') if m is None else (f'{m:g}', r['who'].get('minutes_read_from', ''))
 
+def k(n): return f'{n / 1000:.0f}k' if n < 1e6 else f'{n / 1e6:.1f}M'
+
+def tokens(r, full):
+    """What the run spent. The proctor's reading (who.json) first; else what the run reported itself, said to be so."""
+    t = r['who'].get('tokens'); src = r['who'].get('tokens_read_from', '')
+    if t is None:
+        rep = [res.get('usage_reported') for res in r['tasks'].values() if res.get('usage_reported')]
+        if not rep: return '—'
+        t = {key: sum(u.get(key, 0) for u in rep) for key in ('input_fresh', 'input_cached', 'output', 'total') if any(key in u for u in rep)}; src = 'the run\'s own report'
+    if 'output' in t and 'input_fresh' in t:
+        s = f"{k(t['input_fresh'] + t['output'])} ({k(t['input_fresh'])} fresh in, {k(t['output'])} out; {k(t.get('input_cached', 0))} cached in)" if full else k(t['input_fresh'] + t['output'])
+    else: s = k(t.get('total', 0)) + ' in all'
+    return s + (f' — {src}' if full and src else '')
+
 def journal(r):
     out = []
     for t in TASKS:
@@ -63,12 +77,12 @@ def versions(r):
 def tables(rs, prefix, full):
     good = [r for r in rs if counted(r)]; rest = [r for r in rs if not counted(r)]
     lines = [f'**{len(good)} independent sitting(s) so far**, each cell the lines passed of the lines graded, linking to the run:', '']
-    head = ['model that did the work', 'run, as submitted'] + TASKS + ['minutes']
+    head = ['model that did the work', 'run, as submitted'] + TASKS + ['minutes', 'tokens']
     if full: head += ['minutes read from', 'journal entries / of them WTF?, per task', 'versions']
     lines += ['| ' + ' | '.join(head) + ' |', '| ' + ' | '.join('---' for _ in head) + ' |']
     for r in good:
         m, src = minutes(r)
-        row = [r['who'].get('model', f"`{r['name']}`") + (f" — {r['who']['how']}" if full and r['who'].get('how') else ''), f"[`{r['name']}`]({prefix}{r['path']}/), {r['day']}"] + [cell(r, t, prefix) for t in TASKS] + [m]
+        row = [r['who'].get('model', f"`{r['name']}`") + (f" — {r['who']['how']}" if full and r['who'].get('how') else ''), f"[`{r['name']}`]({prefix}{r['path']}/), {r['day']}"] + [cell(r, t, prefix) for t in TASKS] + [m, tokens(r, full)]
         if full: row += [src, journal(r), versions(r)]
         lines.append('| ' + ' | '.join(row) + ' |')
     if rest:
@@ -84,8 +98,9 @@ def results_page(rs):
          'the day. Each run holds the files handed in, the proctor\'s regrade of them (`result.json`), its reading',
          '(`READING.md`) and `who.json`. [REPORT.md](REPORT.md) is the proctor\'s account, written by hand.', '']
     L += [l.replace('](results/', '](') for l in tables(rs, '', True)]
-    L += ['', 'Minutes are for the three tasks together: the run\'s own `started:` / `finished:` lines where it has them,',
-          'otherwise what the proctor read and from where. Two rows with the same model are that model sitting the',
+    L += ['', 'Minutes are for the tasks sat, together: the run\'s own `started:` / `finished:` lines where it has them,',
+          'otherwise what the proctor read and from where. Tokens are fresh input plus output, with the cached input a session',
+          're-read on every turn beside them; a dash means nothing recorded them. Two rows with the same model are that model sitting the',
           'exam twice, not two models.', '',
           'A pass says the published documents were enough for that model on that painting. It says nothing about',
           'a model that is not in the table, and little about taste: whether a wave reads as a wave is in the reading.', '']
@@ -93,7 +108,7 @@ def results_page(rs):
 
 def readme_block(rs):
     L = tables(rs, '', False)
-    L += ['', 'Minutes are for the three tasks together. [The full table](results/README.md) has who sat each run and how,',
+    L += ['', 'Minutes are for the tasks sat, together; tokens are fresh input plus output, cached input left out. [The full table](results/README.md) has who sat each run and how,',
           'the journals\' counts and the versions; [the proctor\'s report](results/REPORT.md) says what the journals found',
           'in the tools and in this exam.']
     return '\n'.join(L)

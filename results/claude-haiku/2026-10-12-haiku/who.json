@@ -4,5 +4,9 @@
  "how": "as a sub-agent of the proctor's own session, by design",
  "counts": "independent sitting",
  "minutes": 21.0,
- "minutes_read_from": "the proctor's own harness"
+ "minutes_read_from": "the proctor's own harness",
+ "tokens": {
+  "total": 530745
+ },
+ "tokens_read_from": "the proctor's harness, which gives one total for the two sessions and no breakdown"
 }
