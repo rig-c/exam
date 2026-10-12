@@ -29,7 +29,7 @@ Your run directories are `runs/<DATE>-<MODEL>-01-build/`, `runs/<DATE>-<MODEL>-0
 - bun (1.2 or later), npm and python3 must be installed. No GPU is needed and none may be used.
 - A build can take a minute or more. Let it finish before you read its result.
 - Keep the journal exactly as `README.md` and `JOURNAL.md` describe: lines 1–3 of an entry BEFORE the
-  step, line 4 after it; when the result differs from what you expected, line 4 begins with `SURPRISE:`.
+  step, line 4 after it; when the result differs from what you expected, line 4 begins with `WTF?:` — say it the way it landed.
   This matters more than passing.
 - Keep `transcript.md` in each run directory: every command you ran that changed or built something, in
   order, with the last lines of its output — enough to show what happened.
@@ -54,5 +54,5 @@ Add only those three directories — and inside them only `config.json`, any oth
 
 1. For each task, the grader's printed lines verbatim from your last run of it.
 2. For task 03: what was wrong with the draft, which message or picture told you, and exactly what you changed.
-3. How many journal entries you wrote per task, and how many begin line 4 with `SURPRISE:`.
+3. How many journal entries you wrote per task, and how many begin line 4 with `WTF?:`.
 4. The three things that cost you the most time, each with the document section or message involved.
