@@ -45,8 +45,10 @@ examinee, generated from the regraded runs, each cell linking to the journal and
 ## Sitting it
 
 [`PROMPT.md`](PROMPT.md) is the prompt every examinee is given, verbatim — paste it into a coding agent
-(one that can run commands and read and write files) with the model's name filled in. One model, one
-fresh session, one fresh clone.
+(one that can run commands and read and write files) with the model's name filled in by you, not by the
+model. One model, one fresh session, one fresh clone. The proctor checks each run for two traces of a
+prior look at an answer — an expectation, written before a build, that already knows what the build will
+say; and hand-chosen numbers that match another run's — and says what it found in the run's reading.
 
 ## Submitting
 

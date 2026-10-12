@@ -6,7 +6,12 @@ The person starting the run fills `<MODEL>` in: a model asked for its own name o
 
 ---
 
-You are sitting an exam. Follow these instructions exactly.
+You are sitting an exam. "You" means the model reading this, in this session — not a session that may
+hand work on. Follow these instructions exactly.
+
+**Before anything else:** if this session has already seen these tasks, a run of them, or anyone's
+report of one — including a sub-agent's — stop and say so. A sitting is one model, one fresh session,
+one fresh clone; a repeat in a session that has seen an answer measures the answer, not you.
 
 **Set up**
 
