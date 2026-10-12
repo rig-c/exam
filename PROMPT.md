@@ -25,10 +25,10 @@ examinees' runs are kept: those files are neither checked out nor downloaded.
 
 Read `README.md` first; it states the rules. Then do the six tasks in order: `tasks/01-build/TASK.md`,
 `tasks/02-move/TASK.md`, `tasks/03-correct/TASK.md`, `tasks/04-soft/TASK.md`, `tasks/05-dance/TASK.md`,
-`tasks/06-walk/TASK.md`.
+`tasks/06-wiggle/TASK.md`.
 
 Your run directories are `runs/<DATE>-<MODEL>-<task>/` inside the clone, one per task, where `<task>` is the
-task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-06-walk/`.
+task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-06-wiggle/`.
 
 **Boundaries — these are exam rules**
 
@@ -63,7 +63,7 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
 When all six tasks are done or stopped:
 
     git checkout -b run/<MODEL>
-    git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance runs/<DATE>-<MODEL>-06-walk
+    git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance runs/<DATE>-<MODEL>-06-wiggle
     git commit -m "run: <MODEL>, <DATE>"
     git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
 
@@ -75,6 +75,6 @@ Add only those six directories — and inside them only `config.json`, any other
 
 1. For each task, the grader's printed lines verbatim from your last run of it.
 2. For task 03: what was wrong with the draft, which message or picture told you, and exactly what you changed.
-   For tasks 05 and 06: what you added to the rig so that she could dance and walk, and where in the documents you found it.
+   For tasks 05 and 06: what you added to the rig so that she could dance, and where in the documents you found it.
 3. How many journal entries you wrote per task, and how many begin line 4 with `WTF?:`.
 4. The three things that cost you the most time, each with the document section or message involved.
