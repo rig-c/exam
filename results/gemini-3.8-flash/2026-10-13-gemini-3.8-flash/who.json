@@ -4,5 +4,11 @@
  "how": "itself, in the session it was started in",
  "counts": "independent sitting",
  "minutes": 20.0,
- "minutes_read_from": "the examinee's clone"
+ "minutes_read_from": "the examinee's clone",
+ "tokens": {
+  "input_fresh": 1291007,
+  "input_cached": 23877595,
+  "output": 88001
+ },
+ "tokens_read_from": "the examinee's own account of its session, given after the sitting (175 model calls); not read from a log by the proctor"
 }
