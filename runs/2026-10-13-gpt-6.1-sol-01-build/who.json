@@ -1,4 +1,4 @@
 {
  "model": "Sol 6.1 (`gpt-6.1-sol`)",
- "how": "as a sub-agent of a `gpt-6-astra` session"
+ "how": "as a sub-agent of a `gpt-6-astra` session, which wrote its brief"
 }
