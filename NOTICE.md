@@ -26,22 +26,24 @@ publish that way.
 
 ## See-through
 
-`tasks/01-build/inputs/layers/` holds two See-through decompositions of the
+Each task's `inputs/layers/` holds two See-through decompositions of its
 painting, made with the ComfyUI wrapper. No See-through code or weights are in
 this repository. Project, paper, licences and weights:
 [rig-c/parts `NOTICE.md` §1](https://github.com/rig-c/parts/blob/main/NOTICE.md).
 
 ## Checkpoint
 
-The painting was generated for this exam with `novaAnimeXL_ilV80.safetensors` —
+The paintings were generated for this exam with `novaAnimeXL_ilV80.safetensors` —
 [Nova Anime XL](https://civitai.com/models/376130) "IL v8.0" by Crody, an
-Illustrious-base checkpoint — with no LoRA and no pose control, and upscaled
-with `4x-AnimeSharp.pth`. The checkpoint is not redistributed.
+Illustrious-base checkpoint — with no LoRA, and upscaled with
+`4x-AnimeSharp.pth`; task 03's was posed with
+`controlnet-openpose-sdxl-1.0.safetensors` from `pose_seated.json`, task 01's
+with no pose control. The checkpoint is not redistributed.
 *Painted with Nova Anime XL IL v8.0 by Crody (https://civitai.com/models/376130).*
 **[observed 2026-10-11]** CivitAI's model API reported for model 376130
 `allowCommercialUse: ["RentCivit", "Image", "Rent"]`, `allowNoCredit: true`,
 `allowDerivatives: true` and `allowDifferentLicense: true`; version 1854228 is
 named "IL v8.0" with base model "Illustrious".
 
-`tasks/01-build/inputs/generation.json` records every setting. The prompts name
+Each task's `inputs/generation.json` records every setting. The prompts name
 and describe no existing character.
