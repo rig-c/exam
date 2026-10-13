@@ -27,14 +27,11 @@ publish that way.
 
 ## Task 06's dance
 
-`tasks/06-pose/inputs/toca.pose.json` holds joint positions measured from one
-performance of the *Toca Toca* dance challenge, the video at
-https://www.youtube.com/shorts/HSug-0AAp3k, credited by that URL. Who first
-choreographed the dance is not known to us, so no choreographer is named, and
-this repository claims no authorship of the movement. No frame, still or sound
-of the video is in this repository. The joint data is under this repository's
-licence (CC BY-NC 4.0), so it may not be used commercially.
-`tasks/06-pose/inputs/NOTICE.md` says how the joints were measured.
+`tasks/06-pose/inputs/toca.pose.json` holds joint positions measured from a
+public video of the *Toca Toca* dance challenge,
+https://www.youtube.com/shorts/HSug-0AAp3k, credited by that URL. The dance and
+the video are their creators'; no frame, still or sound of the video is in this
+repository. `tasks/06-pose/inputs/NOTICE.md` says how the joints were measured.
 
 ## See-through
 
