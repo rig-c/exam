@@ -48,8 +48,12 @@ Every item was checked against the installed packages before it was filed.
 | `haiku`, `gpt-6.1-sol`, `gpt-6-sol`, `gemini-3.8-flash`, 02 | the recipe for strands that trail points at example files the package does not ship; values were chosen by hand or taken from `rig-c`'s source | parts#308 — the recipe carries a worked constraint (1.12.0) |
 | every sitting, 03 | the proposal drafts two back-hair chains with opposed amplitudes on one mass, lints nothing, and then fails its own check | [parts#314](https://github.com/rig-c/parts/issues/314) — `propose` now names the pair, the edge and both remedies with their measured figures, one step before the build |
 | `haiku`, `gemini-3.8-flash`, 03 | `CHECK_TEXTURE_STRETCH` names the vertices and not the bones they hang on; two examinees decoded `rig.json` by hand | parts#314 — the line names each vertex's bones and chains |
-| `gemini-3.8-flash`, 02 | the named-animation recipe never says which way a positive `rotate` turns a bone; it read `rig-c`'s source to find out | [parts#317](https://github.com/rig-c/parts/issues/317), open |
+| `gemini-3.8-flash`, 02 | the named-animation recipe never says which way a positive `rotate` turns a bone; it read `rig-c`'s source to find out | [parts#317](https://github.com/rig-c/parts/issues/317) — the recipe says it: counter-clockwise positive, y up, with a measured arm (1.13.1) |
 | `haiku`, 03 | one part's `drift` in `assemble`'s table has no scale; "a seated figure needs `--keypoints`" reads wider than it is | parts#314 — `drift` prints its share, the sentence is narrowed |
+| every sitting, 01 | `assemble.rig_scale` was copied from the examples (0.5); the guide does not say what the value trades | [parts#345](https://github.com/rig-c/parts/issues/345), open |
+| `gpt-6.1-sol`, 02 | a wave that passes the grader read on the examinee's own contact sheet as an arm raised sideways; the worked `wave` is not in the package | parts#345, open |
+| `gpt-6.1-sol` ×2, `codex-direct`, 02 | strand physics lags a fraction of a degree under the idle alone; the answer is in another recipe's *Limits* | parts#345, open |
+| `haiku`, 02 | arm art painted into `topwear` stays with the torso when the arm rises | parts#345, open |
 
 The proctor ran the new lint on task 03's painting from the pull request's source: it stops the drafted
 config with one line that states the cause two solvers had to diagnose, and offers exactly the two
