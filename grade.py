@@ -12,7 +12,7 @@ import datetime, json, os, re, shutil, statistics, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
-UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
+UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200, '06-pose': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
 KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
 RISE_LINE = 150         # rig px a hand rises above the rest of the body, task 02
 FPS = 12
@@ -25,6 +25,16 @@ DANCE = {'seconds': 4.0, 'fps': 24, 'closes': 0.5, 'hand': 100.0, 'body': 15.0, 
                         # task 05: 8 beats at 120 a minute; rig px a frame apart at the loop's ends; rig px each hand's part and every
                         # vertex of the trunk must travel; the share of the figure's changes of speed that repeat every two beats;
                         # rig px the bottom of the legs may leave the feet; triangles
+POSE = {'name': 'toca', 'fps': 30, 'p90': 10.0, 'tilt': 0.5, 'travel': 0.5, 'feet': 6.0, 'slack': 3, 'spans': 4,
+        'end_on': ((('r_shoulder', 'r_elbow'), 395, 401), (('r_knee', 'r_ankle'), 365, 370))}
+                        # task 06, all set on the inputs before the reference solve ran: the animation the grader asks for, at the source's
+                        # rate; degrees a limb bone may miss the dancer's segment on nine frames in ten (a still or mirrored limb misses by at
+                        # least 11.9 on this sequence); the share of the dancer's hip tilt and hip travel the rig must keep; rig px a leg may
+                        # leave its shoe (task 05's); the two spans that point at the camera, frames within `slack` of these, `spans` at most
+POSE_FLAGS = ('--min-score', '--smooth', '--flip', '--short', '--bends', '--bend-tolerance')   # the retarget flags a run may choose
+LIMBS = (('sleeve_r0', 'r_shoulder', 'r_elbow'), ('sleeve_r1', 'r_elbow', 'r_wrist'), ('sleeve_l0', 'l_shoulder', 'l_elbow'),
+         ('sleeve_l1', 'l_elbow', 'l_wrist'), ('leg_r0', 'r_hip', 'r_knee'), ('leg_r1', 'r_knee', 'r_ankle'),
+         ('leg_l0', 'l_hip', 'l_knee'), ('leg_l1', 'l_knee', 'l_ankle'))   # the bones `propose --keypoints` names, and the segment each carries
 
 def run(cmd, cwd, log):
     with open(log, 'a') as f:
@@ -197,6 +207,91 @@ def without_physics(work, log):
                 '--full', 'inputs/layers/full', '--head', 'inputs/layers/head', '--out', 'out_without_physics'], work, log)
     return 'out_without_physics/check/build' if code == 0 else None
 
+def pose_flags(rundir):
+    """The retarget flags a run chose, from its retarget.json ({"flags": [...]}); (flags, None) or (None, why not)."""
+    p = os.path.join(rundir, 'retarget.json')
+    if not os.path.exists(p): return [], None
+    try: flags = json.load(open(p)).get('flags', [])
+    except (ValueError, AttributeError): return None, 'retarget.json is not an object of the form {"flags": [...]}'
+    if not isinstance(flags, list) or not all(isinstance(f, str) for f in flags): return None, 'retarget.json `flags` is not a list of strings'
+    bad = [f for f in flags if f.startswith('--') and f not in POSE_FLAGS]
+    return (None, f"retarget.json names {', '.join(bad)}; a run chooses only {', '.join(POSE_FLAGS)} (the grader sets the rest)") if bad else (flags, None)
+
+def deg(p, q):
+    """The direction from p to q in degrees, counter-clockwise from +x, both points y up."""
+    import math
+    return math.degrees(math.atan2(q[1] - p[1], q[0] - p[0]))
+
+def wrap(d): return (d + 180) % 360 - 180
+
+def rank(v, q):
+    """The nearest-rank q-quantile of a list."""
+    import math
+    s = sorted(v); return s[max(0, min(len(s) - 1, math.ceil(q * len(s)) - 1))]
+
+def picture(at): return (at[0], -at[1])   # a picture point (y down) in a y-up frame: angles then read as the rig's
+
+def limb_errors(geometry, frames, rest_joints):
+    """Per limb bone, the 90th-percentile miss in degrees against the dancer's segment: how far the bone has turned from its
+    setup, less how far the segment has turned from where the painting's keypoints put it. None for a bone the rig lacks."""
+    import math
+    setup = {b['name']: b for b in geometry['setup']['bones']}; out = {}
+    for bone, a, b in LIMBS:
+        if bone not in setup: out[bone] = None; continue
+        b0 = math.degrees(math.atan2(setup[bone]['c'], setup[bone]['a'])); j0 = deg(picture(rest_joints[a]), picture(rest_joints[b])); err = []
+        for f in geometry['frames']:
+            x = next((y for y in f['bones'] if y['name'] == bone), None); k = min(len(frames) - 1, round(f['time'] * POSE['fps']))
+            if x is None: err = None; break
+            j = frames[k]
+            err.append(abs(wrap((math.degrees(math.atan2(x['c'], x['a'])) - b0) - (deg(picture(j[a]), picture(j[b])) - j0))))
+        out[bone] = None if not err else round(rank(err, 0.9), 2)
+    return out
+
+def hip_reads(geometry, frames, rig_per_picture):
+    """The `hip` bone's tilt and travel over the frames against the dancer's hip line and mid-hip: each a p5..p95 range
+    (travel: the diagonal of the p5..p95 box), the rig's beside the dancer's (travel scaled to rig px). None without a `hip`."""
+    import math
+    setup = next((b for b in geometry['setup']['bones'] if b['name'] == 'hip'), None)
+    if setup is None: return None
+    r0 = math.degrees(math.atan2(setup['c'], setup['a'])); tilt, xs, ys = [], [], []
+    for f in geometry['frames']:
+        h = next((b for b in f['bones'] if b['name'] == 'hip'), None)
+        if h is None: return None
+        tilt.append(wrap(math.degrees(math.atan2(h['c'], h['a'])) - r0)); xs.append(h['worldX']); ys.append(h['worldY'])
+    span = lambda v: rank(v, 0.95) - rank(v, 0.05)
+    ptilt = [deg(picture(j['r_hip']), picture(j['l_hip'])) for j in frames]
+    mid = [((j['r_hip'][0] + j['l_hip'][0]) / 2, (j['r_hip'][1] + j['l_hip'][1]) / 2) for j in frames]
+    return {'tilt': round(span(tilt), 2), 'tilt_pose': round(span(ptilt), 2), 'travel': round(math.hypot(span(xs), span(ys)), 1),
+            'travel_pose': round(math.hypot(span([p[0] for p in mid]), span([p[1] for p in mid])) * rig_per_picture, 1)}
+
+def feet(geometry, leg='legwear', foot='shoe', band_=0.04):
+    """How far each leg's end gets from its shoe, read so that a shoe riding its shin is not read as leaving it when the shin
+    turns. At the rest pose, the vertices of every part whose name begins `leg` in the lowest 4 % of their height are split
+    into two legs at the widest gap in x; each leg's end is the middle of its vertices there, and the two vertices of the
+    parts whose names begin `foot` nearest it at rest are its shoe. The largest change, over the frames, in the distance
+    from the end to either of those two vertices — a fixed distance to two points holds the end to its shoe."""
+    import math
+    def joined(atts, g):
+        names = sorted(a['slot'] for a in atts if a['slot'].startswith(g) and a.get('vertices'))
+        return [c for n in names for a in atts if a['slot'] == n for c in (a['vertices'] if not isinstance(a['vertices'][0], list) else [x for p in a['vertices'] for x in p])]
+    a0, b0 = joined(geometry['rest'], leg), joined(geometry['rest'], foot)
+    if not a0 or not b0: return None
+    P = [(a0[i], a0[i + 1]) for i in range(0, len(a0), 2)]; Q = [(b0[i], b0[i + 1]) for i in range(0, len(b0), 2)]
+    lo, hi = min(p[1] for p in P), max(p[1] for p in P); cut = lo + band_ * (hi - lo)   # y up: the lowest band
+    low = sorted((i for i, p in enumerate(P) if p[1] <= cut), key=lambda i: P[i][0])
+    if len(low) < 2: return None
+    gap = max(range(1, len(low)), key=lambda k: P[low[k]][0] - P[low[k - 1]][0])
+    worst = 0.0
+    for e in (low[:gap], low[gap:]):
+        mid = lambda V: (sum(V[2 * i] for i in e) / len(e), sum(V[2 * i + 1] for i in e) / len(e))
+        c0 = mid(a0); near = sorted(range(len(Q)), key=lambda j: math.dist(Q[j], c0))[:2]
+        for f in geometry['frames']:
+            a, b = joined(f['attachments'], leg), joined(f['attachments'], foot)
+            if len(a) != len(a0) or len(b) != len(b0): return None
+            c = mid(a)
+            worst = max([worst] + [abs(math.dist(c, (b[2 * j], b[2 * j + 1])) - math.dist(c0, Q[j])) for j in near])
+    return round(worst, 2)
+
 def clock(path):
     """Minutes between the transcript's `started:` first line and `finished:` last line — the run's own clock."""
     if not os.path.exists(path): return None
@@ -219,7 +314,7 @@ def main():
         if f.endswith('.json') and f not in ('result.json', 'usage.json'): shutil.copy(os.path.join(rundir, f), work)
     own = os.path.join(ROOT, 'tasks', task, 'inputs')   # a task without a painting of its own is set on task 01's
     os.symlink(own if os.path.exists(os.path.join(own, 'painting.png')) else os.path.join(ROOT, 'tasks', '01-build', 'inputs'), os.path.join(work, 'inputs'))
-    versions = {p: json.load(open(os.path.join(ROOT, 'node_modules', p, 'package.json')))['version'] for p in ('@rig-c/parts', 'rig-c')}
+    versions = {p: json.load(open(os.path.join(ROOT, 'node_modules', p, 'package.json')))['version'] for p in ('@rig-c/parts', 'rig-c', '@rig-c/pose') if os.path.exists(os.path.join(ROOT, 'node_modules', p, 'package.json'))}
     res = {'run': name, 'task': task, 'versions': versions, 'lines': {}}
     L = res['lines']
     if not os.path.exists(os.path.join(work, 'config.json')):
@@ -294,6 +389,42 @@ def main():
                 d = difference(a, b, 'topwear') if a else None
                 L['soft_in_the_dance'] = {'pass': d is not None and SOFT[0] <= d[0] <= SOFT[1], 'read': 'not measured: `topwear` is not a mesh with the same vertices in both builds' if d is None else f"`topwear` differs from the same build without its physics by {d[0]} rig px at dance frame {d[1]}, against {SOFT[0]} to {SOFT[1]}"}
             L['dance_does_not_fold'] = {'pass': dance_folds == [], 'read': dance_folds}
+        if task == '06-pose':
+            P = POSE; given = os.path.join(ROOT, 'tasks', task, 'inputs')
+            seq = json.load(open(os.path.join(given, 'toca.pose.json')))
+            frames = [{n: j['at'] for n, j in fr['people'][0]['joints'].items() if j.get('at')} for fr in seq['frames']]
+            for j in frames:
+                j['mid_hip'] = ((j['r_hip'][0] + j['l_hip'][0]) / 2, (j['r_hip'][1] + j['l_hip'][1]) / 2)
+            kp = {n: j['at'] for n, j in json.load(open(os.path.join(given, 'keypoints.json')))['people'][0]['joints'].items() if j.get('at')}
+            flags, why = pose_flags(rundir)
+            no = 'not measured: ' + (why or 'no map.json handed in')
+            code = None
+            if flags is not None and os.path.exists(os.path.join(work, 'map.json')):
+                os.makedirs(os.path.join(work, 'pose'), exist_ok=True)
+                code = run([os.path.join(BIN, 'rig-pose'), 'retarget', '--rig', 'out/rig', '--map', 'map.json', '--pose', os.path.join(given, 'toca.pose.json'),
+                            '--out', 'pose/motion.json', '--name', P['name'], '--build', 'pose/build', '--report', 'pose/report.json'] + flags, work, log)
+                no = 'not measured: rig-pose retarget refused the map (see the log)'
+            L['retargeted'] = {'pass': code == 0, 'read': f"rig-pose retarget exit {code} with flags {' '.join(flags)}" if code is not None else no}
+            g, _ = pose(work, 'pose/build', P['name'], P['fps'], log) if code == 0 else (None, None)
+            if g is None:
+                for k_ in ('limbs_follow', 'hips_tilt', 'hips_travel', 'end_on_reported', 'on_her_feet'): L[k_] = {'pass': False, 'read': no if code != 0 else 'not measured: the retargeted build did not render'}
+            else:
+                import math
+                e = limb_errors(g, frames, kp)
+                L['limbs_follow'] = {'pass': all(v is not None and v <= P['p90'] for v in e.values()), 'read': 'degrees each limb bone misses the dancer\'s segment on nine frames in ten, each against <= ' + str(P['p90']) + ': ' + ', '.join(f'{b} {v}' if v is not None else f'{b} not found' for b, v in e.items())}
+                scale = math.dist(kp['neck'], ((kp['r_hip'][0] + kp['l_hip'][0]) / 2, (kp['r_hip'][1] + kp['l_hip'][1]) / 2)) * json.load(open(os.path.join(work, 'out', 'parts.json')))['scale_rig_per_source'] \
+                    / statistics.median(math.dist(j['neck'], j['mid_hip']) for j in frames)
+                h = hip_reads(g, frames, scale)
+                if h is None:
+                    L['hips_tilt'] = L['hips_travel'] = {'pass': False, 'read': 'not measured: the rig has no bone `hip`'}
+                else:
+                    L['hips_tilt'] = {'pass': h['tilt'] >= P['tilt'] * h['tilt_pose'], 'read': f"`hip` tilts over {h['tilt']} degrees (p5 to p95), the dancer's hip line over {h['tilt_pose']}: against >= {P['tilt']} of it"}
+                    L['hips_travel'] = {'pass': h['travel'] >= P['travel'] * h['travel_pose'], 'read': f"`hip` travels {h['travel']} rig px (the diagonal of its p5 to p95 box), the dancer's mid-hip {h['travel_pose']} at the rig's scale: against >= {P['travel']} of it"}
+                rep = json.load(open(os.path.join(work, 'pose', 'report.json'))).get('endOn', [])
+                found = [any(tuple(s.get('joints', ())) == seg and abs(s['frames'][0] - a) <= P['slack'] and abs(s['frames'][1] - b) <= P['slack'] for s in rep) for seg, a, b in P['end_on']]
+                L['end_on_reported'] = {'pass': all(found) and len(rep) <= P['spans'], 'read': f"the run lists {len(rep)} end-on span(s): " + ('; '.join(f"{'>'.join(s.get('joints', ()))} frames {s['frames'][0]}-{s['frames'][1]}" for s in rep) or 'none') + f" — against both of {'; '.join(f'{seg[0]}>{seg[1]} {a}-{b}' for seg, a, b in P['end_on'])} (each end within {P['slack']} frames), and at most {P['spans']}"}
+                k = feet(g)
+                L['on_her_feet'] = {'pass': k is not None and k <= P['feet'], 'read': f"the end of a leg (every `legwear` part) gets {k} rig px from where it meets its shoe (every `shoe` part), against <= {P['feet']}"}
         if task == '02-move':
             rig = json.load(open(os.path.join(work, 'out', 'rig', 'rig.json'))); motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
             phys = sorted({k['bone'] for k in rig.get('constraints', []) if k.get('type') == 'physics'})

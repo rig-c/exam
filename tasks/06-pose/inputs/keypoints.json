@@ -1,0 +1,136 @@
+{
+  "spec": "spine-parts-keypoints/1",
+  "space": {
+    "units": "painting-px",
+    "origin": "top-left",
+    "y": "down"
+  },
+  "width": 1664,
+  "height": 2432,
+  "source": "hand-placed on the painting of rig-c/exam task 01 (read off gridded crops, not a pose estimator). Elbow and wrist heights come from rig-c/exam task 05's stated fractions: on each handwear part, elbow at 0.54 and wrist at 0.20 of the part's height above its lowest opaque row at rest (assemble's rig/parts, alpha > 8), x at the middle of the part's art on that row. Ankles at y 2110 so they lie on the legwear art; hips and shoulders are estimates under the skirt and sleeves.",
+  "people": [
+    {
+      "id": "a",
+      "joints": {
+        "nose": {
+          "state": "observed",
+          "at": [
+            894,
+            344
+          ]
+        },
+        "neck": {
+          "state": "observed",
+          "at": [
+            880,
+            490
+          ]
+        },
+        "r_shoulder": {
+          "state": "occluded",
+          "at": [
+            690,
+            560
+          ]
+        },
+        "r_elbow": {
+          "state": "observed",
+          "at": [
+            664,
+            847
+          ]
+        },
+        "r_wrist": {
+          "state": "observed",
+          "at": [
+            573,
+            1120
+          ]
+        },
+        "l_shoulder": {
+          "state": "occluded",
+          "at": [
+            1060,
+            550
+          ]
+        },
+        "l_elbow": {
+          "state": "observed",
+          "at": [
+            1100,
+            831
+          ]
+        },
+        "l_wrist": {
+          "state": "observed",
+          "at": [
+            1223,
+            1097
+          ]
+        },
+        "r_hip": {
+          "state": "occluded",
+          "at": [
+            780,
+            1030
+          ]
+        },
+        "r_knee": {
+          "state": "observed",
+          "at": [
+            650,
+            1650
+          ]
+        },
+        "r_ankle": {
+          "state": "observed",
+          "at": [
+            455,
+            2110
+          ]
+        },
+        "l_hip": {
+          "state": "occluded",
+          "at": [
+            970,
+            1030
+          ]
+        },
+        "l_knee": {
+          "state": "observed",
+          "at": [
+            940,
+            1655
+          ]
+        },
+        "l_ankle": {
+          "state": "observed",
+          "at": [
+            850,
+            2110
+          ]
+        },
+        "r_eye": {
+          "state": "observed",
+          "at": [
+            825,
+            275
+          ]
+        },
+        "l_eye": {
+          "state": "observed",
+          "at": [
+            944,
+            294
+          ]
+        },
+        "r_ear": {
+          "state": "missing"
+        },
+        "l_ear": {
+          "state": "missing"
+        }
+      }
+    }
+  ]
+}

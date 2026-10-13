@@ -80,7 +80,7 @@ def journal(r):
 
 def versions(r):
     v = next(iter(r['tasks'].values()))['versions'] if r['tasks'] else {}
-    return f"parts {v.get('@rig-c/parts', '?')}, rig-c {v.get('rig-c', '?')}"
+    return f"parts {v.get('@rig-c/parts', '?')}, rig-c {v.get('rig-c', '?')}" + (f", pose {v['@rig-c/pose']}" if '@rig-c/pose' in v else '')
 
 def tables(rs, prefix, full):
     good = [r for r in rs if counted(r)]; rest = [r for r in rs if not counted(r)]
