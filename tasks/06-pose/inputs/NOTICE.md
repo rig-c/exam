@@ -2,9 +2,12 @@
 
 ## `toca.pose.json` — the dance
 
-- **Source:** *Toca Toca*, a public dance challenge, as posted at
-  https://www.youtube.com/shorts/HSug-0AAp3k — credited here by its URL. The dance and the video are their
-  creators'; this repository claims nothing in them.
+- **Source:** one performance of the *Toca Toca* dance challenge, the video at
+  https://www.youtube.com/shorts/HSug-0AAp3k. That URL is what we know, and it is the only credit given. Who
+  first choreographed the dance, and how far this performance follows or varies earlier ones, is not known to
+  us, so no choreographer is named. This repository claims no authorship of the movement.
+- **Licence:** the joint data is under this repository's licence, CC BY-NC 4.0 (`../../../LICENSE`), so it
+  may not be used commercially.
 - **What is here:** joint positions only — for each of the video's 492 frames (30 frames a second, 1080 × 1920),
   the dancer's body-18 joints by name, each a position in the picture's pixels (y down), a state and the pose
   model's score. No frame, still, crop or sound of the video is in this repository, and none was used to make
