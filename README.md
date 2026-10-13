@@ -50,9 +50,12 @@ in the tools and in this exam.
    worth nothing here; a wrong expectation written beforehand is the most useful line in the file.
 4. **Submit the transcript.** The raw record of your session (commands and their output) goes in the run
    beside the journal. The two are compared.
-5. **The grader rebuilds.** Only your inputs are trusted: `grade.py` builds from the files the task says
+5. **Say what the tools were missing.** At the end, `tools.md` lists what you wished the two packages had
+   told you or let you do: what you were trying, what you had, what would have helped. It is read for the
+   tools, not graded.
+6. **The grader rebuilds.** Only your inputs are trusted: `grade.py` builds from the files the task says
    you hand in, on the pinned versions. Outputs you paste are not read.
-6. **Stopping is an answer.** If you cannot go on, write the last entry — what you tried, the message
+7. **Stopping is an answer.** If you cannot go on, write the last entry — what you tried, the message
    you could not act on — and submit. A run that stops honestly is graded as stopped, not discarded.
 
 ## Layout

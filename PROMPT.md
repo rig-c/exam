@@ -54,12 +54,26 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
   `{"total": n}` if that is all it gives, with `"source"` saying where the figure came from. If it cannot
   report, leave the file out. Do not estimate.
 - You may run `python3 grade.py runs/<your run>` whenever you like. It is the same grader the proctor runs.
-- If you cannot go on with a task, follow rule 6 of the README: write the last entry — what you tried and
+- If you cannot go on with a task, follow rule 7 of the README: write the last entry — what you tried and
   the message you could not act on — and move to the next task. Do not invent results.
+
+**Last: what the tools were missing**
+
+When the tasks are done or stopped, and before you hand in, write `runs/<DATE>-<MODEL>-05-dance/tools.md`: what
+you missed while using the tools — not the exam, the two packages. One entry per thing, as many as there were:
+
+    ## <a short title>
+    - **I was trying to:** what you wanted to do, in your own words
+    - **The tool gave me:** the message, file or section you had — quote it
+    - **What would have helped:** the sentence, message, option or command you wished for
+    - **Cost:** roughly how long it took you, and whether you got there in the end
+
+Write what you actually ran into, from your journal and transcript. Do not pad it, and do not list things you
+did not need. An entry that names the exact line it is about is worth more than a general wish.
 
 **Hand in**
 
-When all five tasks are done or stopped:
+When all five tasks are done or stopped and `tools.md` is written:
 
     git checkout -b run/<MODEL>
     git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance
@@ -67,7 +81,7 @@ When all five tasks are done or stopped:
     git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
 
 Add only those five directories — and inside them only `config.json`, any other `.json` you wrote,
-`journal.md`, `transcript.md` and `result.json`; do not add build output (`out/`, `work/`) or
+`journal.md`, `transcript.md`, `result.json` and `tools.md`; do not add build output (`out/`, `work/`) or
 `node_modules/`. If you cannot push, leave the directories in place and say where the clone is.
 
 **Then reply with**
@@ -77,3 +91,4 @@ Add only those five directories — and inside them only `config.json`, any othe
    For task 05: what you added to the rig so that she could dance, and where in the documents you found it.
 3. How many journal entries you wrote per task, and how many begin line 4 with `WTF?:`.
 4. The three things that cost you the most time, each with the document section or message involved.
+5. The titles of your `tools.md` entries.
