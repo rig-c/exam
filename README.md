@@ -117,6 +117,13 @@ A walk and a hip wiggle were each set as a sixth task on this painting and withd
 them: seen from the front, with her feet apart and her arms at her sides, neither reads as what it is. A
 walk belongs on a figure seen from the side, and that is the next painting.
 
+A later sixth task, motion from a pose (a public dance's joints put on this painting with `@rig-c/pose`), was
+published and withdrawn the same day, before anyone sat it (commit 9188c1b, reverted). It measured the tool
+rather than the examinee: the examinee's part was a map and a few flags, the reference solve passed every
+line in about two minutes, one line was answered by the package's own README, and the ceiling was what a
+turning bone cannot draw. The part of that work that does measure an agent is the polish that follows,
+comparing the rig with the video and closing the gap, and it returns as a task once that gap can be measured.
+
 Both paintings were generated for this exam (each task's `inputs/generation.json` records how) and
 neither is one of the packages' examples: their configs do not fit.
 
