@@ -17,21 +17,12 @@ publish that way.
 
 ## The tools the grader runs
 
-- [`@rig-c/parts`](https://github.com/rig-c/parts),
-  [`rig-c`](https://github.com/rig-c/core) and
-  [`@rig-c/pose`](https://github.com/rig-c/pose), all MIT (their licence, not this
+- [`@rig-c/parts`](https://github.com/rig-c/parts) and
+  [`rig-c`](https://github.com/rig-c/core), both MIT (their licence, not this
   repository's), installed from npm at the
   versions `package.json` pins. Their own notices cover what they depend on; in
   particular the skeleton data `rigc build` writes is in the Spine 4.3 format,
   and rig-c's `NOTICE.md` says what that does and does not involve.
-
-## Task 06's dance
-
-`tasks/06-pose/inputs/toca.pose.json` holds joint positions measured from a
-public video of the *Toca Toca* dance challenge,
-https://www.youtube.com/shorts/HSug-0AAp3k, credited by that URL. The dance and
-the video are their creators'; no frame, still or sound of the video is in this
-repository. `tasks/06-pose/inputs/NOTICE.md` says how the joints were measured.
 
 ## See-through
 

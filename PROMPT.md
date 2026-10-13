@@ -23,19 +23,17 @@ one fresh clone; a repeat in a session that has seen an answer measures the answ
 Run those four lines exactly. The clone they make holds the exam and not `results/`, where other
 examinees' runs are kept: those files are neither checked out nor downloaded.
 
-Read `README.md` first; it states the rules. Then do the six tasks in order: `tasks/01-build/TASK.md`,
-`tasks/02-move/TASK.md`, `tasks/03-correct/TASK.md`, `tasks/04-soft/TASK.md`, `tasks/05-dance/TASK.md`,
-`tasks/06-pose/TASK.md`.
+Read `README.md` first; it states the rules. Then do the five tasks in order: `tasks/01-build/TASK.md`,
+`tasks/02-move/TASK.md`, `tasks/03-correct/TASK.md`, `tasks/04-soft/TASK.md`, `tasks/05-dance/TASK.md`.
 
 Your run directories are `runs/<DATE>-<MODEL>-<task>/` inside the clone, one per task, where `<task>` is the
-task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-06-pose/`.
+task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-05-dance/`.
 
 **Boundaries — these are exam rules**
 
 - Work only inside the clone. Do not read, list or search any other directory on this machine. The
-  exceptions are the three packages `npm ci` installs under the clone's own `node_modules/` (their
-  `README.md`, `docs/`, `--help`) and their public pages at github.com/rig-c/parts, github.com/rig-c/core and
-  github.com/rig-c/pose.
+  exceptions are the two packages `npm ci` installs under the clone's own `node_modules/` (their
+  `README.md`, `docs/`, `--help`) and their public pages at github.com/rig-c/parts and github.com/rig-c/core.
 - `results/` holds other examinees' runs and is not in your clone. Do not fetch it, check it out, read it
   on the web or through git, or read any other branch of this repository or any pull request on it. Do
   not ask a person for help.
@@ -61,8 +59,8 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
 
 **Last: what the tools were missing**
 
-When the tasks are done or stopped, and before you hand in, write `runs/<DATE>-<MODEL>-06-pose/tools.md`: what
-you missed while using the tools — not the exam, the three packages. One entry per thing, as many as there were:
+When the tasks are done or stopped, and before you hand in, write `runs/<DATE>-<MODEL>-05-dance/tools.md`: what
+you missed while using the tools — not the exam, the two packages. One entry per thing, as many as there were:
 
     ## <a short title>
     - **I was trying to:** what you wanted to do, in your own words
@@ -75,14 +73,14 @@ did not need. An entry that names the exact line it is about is worth more than 
 
 **Hand in**
 
-When all six tasks are done or stopped and `tools.md` is written:
+When all five tasks are done or stopped and `tools.md` is written:
 
     git checkout -b run/<MODEL>
-    git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance runs/<DATE>-<MODEL>-06-pose
+    git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance
     git commit -m "run: <MODEL>, <DATE>"
     git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
 
-Add only those six directories — and inside them only `config.json`, any other `.json` you wrote,
+Add only those five directories — and inside them only `config.json`, any other `.json` you wrote,
 `journal.md`, `transcript.md`, `result.json` and `tools.md`; do not add build output (`out/`, `work/`) or
 `node_modules/`. If you cannot push, leave the directories in place and say where the clone is.
 
@@ -91,8 +89,6 @@ Add only those six directories — and inside them only `config.json`, any other
 1. For each task, the grader's printed lines verbatim from your last run of it.
 2. For task 03: what was wrong with the draft, which message or picture told you, and exactly what you changed.
    For task 05: what you added to the rig so that she could dance, and where in the documents you found it.
-   For task 06: what you changed in the rig so that the pose could move it, the flags you chose and why, and the
-   spans your run listed as end-on.
 3. How many journal entries you wrote per task, and how many begin line 4 with `WTF?:`.
 4. The three things that cost you the most time, each with the document section or message involved.
 5. The titles of your `tools.md` entries.
