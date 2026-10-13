@@ -99,10 +99,10 @@ which of it was filed on the tools. A run's own `result.json` is not trusted, an
 Rounds 1 and 2, on `@rig-c/parts` 1.11.0 and `rig-c` 2.47.0: tasks 01 and 02 on one painting, and task 03
 on a second painting of the same character, where the tool's draft does not pass as proposed.
 
-Round 3, on `@rig-c/parts` 1.13.1 and `rig-c` 2.47.1 — the versions `package.json` pins now: task 04, a soft
+Round 3, on `@rig-c/parts` 1.15.0 and `rig-c` 2.47.1 — the versions `package.json` pins now: task 04, a soft
 chest under a triangle budget; task 05, a dance; and one more line on task 03. The tools changed between
 the rounds because of what the first two found: on 1.13.0 `propose` names task 03's fault itself, one step
-before the build, so a result on that task is a result on the versions beside it in the table.
+before the build, so a result on that task is a result on the versions beside it in the table. Since 1.14.0 `check` also reads every animation, the idle included, for folds, and fails a build where one folds — the line tasks 02, 04 and 05 grade is now one the tool reports first.
 
 Tasks 01 to 04 can be passed by following a recipe the documents carry. Task 05 has none: the rig as the
 earlier tasks leave it cannot do what is asked, and what it lacks has to be worked out. Its machine lines
