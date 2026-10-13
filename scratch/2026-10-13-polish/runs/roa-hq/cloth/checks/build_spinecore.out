@@ -1,0 +1,139 @@
+rigc build <scratch>/dancer-2026-10-13/polish1_cloth/rig/rig.json
+  ..    rig    <scratch>/dancer-2026-10-13/polish1_cloth/rig/rig.json
+  ..    motion <scratch>/dancer-2026-10-13/polish1_cloth/rig/motion.json
+  ..    53 part page(s):
+  ..      hair_back                144x210  <- ../../rig/images/hair_back.png
+  ..      shins                    182x289  <- ../../rig/images/shins.png
+  ..      thigh_r                  91x241  <- ../../rig/images/thigh_r.png
+  ..      thigh_l                  88x241  <- ../../rig/images/thigh_l.png
+  ..      shoe_l                   74x116  <- ../../rig/images/shoe_l.png
+  ..      shoe_r                   74x115  <- ../../rig/images/shoe_r.png
+  ..      neck                     53x79  <- ../../rig/images/neck.png
+  ..      bottomwear               217x213  <- ../../rig/images/bottomwear.png
+  ..      topwear                  168x206  <- ../../rig/images/topwear.png
+  ..      K1_topwear               149x191  <- ../../rig/images/K1_topwear.png
+  ..      K2_topwear               147x196  <- ../../rig/images/K2_topwear.png
+  ..      K3_topwear               161x194  <- ../../rig/images/K3_topwear.png
+  ..      K4_topwear               163x194  <- ../../rig/images/K4_topwear.png
+  ..      K0_topwear               167x197  <- ../../rig/images/K0_topwear.png
+  ..      sleevefront_l            27x92  <- ../../rig/images/sleevefront_l.png
+  ..      forearm_r                173x232  <- ../../rig/images/forearm_r.png
+  ..      K2_forearm_r             114x212  <- ../../rig/images/K2_forearm_r.png
+  ..      upperarm_r               113x164  <- ../../rig/images/upperarm_r.png
+  ..      K2_upperarm_r            83x163  <- ../../rig/images/K2_upperarm_r.png
+  ..      forearm_l                167x222  <- ../../rig/images/forearm_l.png
+  ..      upperarm_l               113x175  <- ../../rig/images/upperarm_l.png
+  ..      ear_l                    29x42  <- ../../rig/images/ear_l.png
+  ..      ear_r                    30x42  <- ../../rig/images/ear_r.png
+  ..      face                     114x136  <- ../../rig/images/face.png
+  ..      mouth                    166x98  <- ../../rig/images/mouth.png
+  ..      brow_r                   31x13  <- ../../rig/images/brow_r.png
+  ..      brow_l                   36x12  <- ../../rig/images/brow_l.png
+  ..      eyewhite_r               37x31  <- ../../rig/images/eyewhite_r.png
+  ..      eyewhite_l               40x31  <- ../../rig/images/eyewhite_l.png
+  ..      iris_r                   29x30  <- ../../rig/images/iris_r.png
+  ..      iris_l                   27x30  <- ../../rig/images/iris_l.png
+  ..      lash_r                   45x39  <- ../../rig/images/lash_r.png
+  ..      hairpin                  91x42  <- ../../rig/images/hairpin.png
+  ..      lash_l                   44x35  <- ../../rig/images/lash_l.png
+  ..      hair_front               151x195  <- ../../rig/images/hair_front.png
+  ..      K1_upperarm_r            99x163  <- ../../rig/images/K1_upperarm_r.png
+  ..      K4_upperarm_r            65x154  <- ../../rig/images/K4_upperarm_r.png
+  ..      K0_upperarm_r            86x158  <- ../../rig/images/K0_upperarm_r.png
+  ..      K1_forearm_r             158x130  <- ../../rig/images/K1_forearm_r.png
+  ..      K3_forearm_r             91x221  <- ../../rig/images/K3_forearm_r.png
+  ..      K0_forearm_r             99x247  <- ../../rig/images/K0_forearm_r.png
+  ..      K1_upperarm_l            113x157  <- ../../rig/images/K1_upperarm_l.png
+  ..      K2_upperarm_l            75x140  <- ../../rig/images/K2_upperarm_l.png
+  ..      K3_upperarm_l            117x123  <- ../../rig/images/K3_upperarm_l.png
+  ..      K4_upperarm_l            125x120  <- ../../rig/images/K4_upperarm_l.png
+  ..      K0_upperarm_l            83x151  <- ../../rig/images/K0_upperarm_l.png
+  ..      K1_forearm_l             135x142  <- ../../rig/images/K1_forearm_l.png
+  ..      K0_forearm_l             95x249  <- ../../rig/images/K0_forearm_l.png
+  ..      K2_forearm_l             106x165  <- ../../rig/images/K2_forearm_l.png
+  ..      K3_forearm_l             136x139  <- ../../rig/images/K3_forearm_l.png
+  ..      K4_forearm_l             125x178  <- ../../rig/images/K4_forearm_l.png
+  ..      K3_upperarm_r            83x191  <- ../../rig/images/K3_upperarm_r.png
+  ..      K4_forearm_r             95x231  <- ../../rig/images/K4_forearm_r.png
+  MESH  hair_back    authored 47 vertices / 66 triangles  (budget 444)  bones=[head, bun]  attachments=[hair_back]  covers 100.00% of the art, reaching 36.12px past it
+  MESH  shins        authored 286 vertices / 444 triangles  (budget 444)  bones=[leg_r1, leg_l1]  attachments=[shins]  covers 99.95% of the art, reaching 28.02px past it
+  MESH  neck         authored 12 vertices / 12 triangles  (budget 444)  bones=[head, chest]  attachments=[neck]  covers 100.00% of the art, reaching 10.63px past it
+  MESH  bottomwear   segments 123 vertices / 200 triangles  (budget 444)  bones=[hip, skirt_r0_d, skirt_r1_d, skirt_r2_d, skirt_rm0_d, skirt_rm1_d, skirt_rm2_d, skirt_c0_d, skirt_c1_d, skirt_c2_d, skirt_lm0_d, skirt_lm1_d, skirt_lm2_d, skirt_l0_d, skirt_l1_d, skirt_l2_d]  attachments=[bottomwear]  covers 100.00% of the art, reaching 20.88px past it
+        influence  max 4 bone(s) per vertex, mean 3.95, 0 of 123 vertices (0.00%) on a single bone
+        lattice    cell 20px, 11x11 cells, 100 with art, 100 kept
+  MESH  topwear      authored 54 vertices / 80 triangles  (budget 444)  bones=[chest, hip]  attachments=[topwear]  covers 100.00% of the art, reaching 29.12px past it
+  MESH  topwear      segments 52 vertices / 76 triangles  (budget 444)  bones=[chest, hip]  attachments=[K1_topwear]  covers 100.00% of the art, reaching 32.53px past it
+        influence  max 2 bone(s) per vertex, mean 1.81, 10 of 52 vertices (19.23%) on a single bone
+        lattice    cell 29px, 6x7 cells, 38 with art, 38 kept
+  MESH  topwear      segments 50 vertices / 72 triangles  (budget 444)  bones=[chest, hip]  attachments=[K2_topwear]  covers 100.00% of the art, reaching 29.61px past it
+        influence  max 2 bone(s) per vertex, mean 1.80, 10 of 50 vertices (20.00%) on a single bone
+        lattice    cell 29px, 6x7 cells, 36 with art, 36 kept
+  MESH  topwear      segments 55 vertices / 82 triangles  (budget 444)  bones=[chest, hip]  attachments=[K3_topwear]  covers 100.00% of the art, reaching 35.47px past it
+        influence  max 2 bone(s) per vertex, mean 1.78, 12 of 55 vertices (21.82%) on a single bone
+        lattice    cell 29px, 6x7 cells, 41 with art, 41 kept
+  MESH  topwear      segments 54 vertices / 80 triangles  (budget 444)  bones=[chest, hip]  attachments=[K4_topwear]  covers 100.00% of the art, reaching 27.17px past it
+        influence  max 2 bone(s) per vertex, mean 1.78, 12 of 54 vertices (22.22%) on a single bone
+        lattice    cell 29px, 6x7 cells, 40 with art, 40 kept
+  MESH  topwear      segments 54 vertices / 80 triangles  (budget 444)  bones=[chest, hip]  attachments=[K0_topwear]  covers 100.00% of the art, reaching 33.24px past it
+        influence  max 2 bone(s) per vertex, mean 1.80, 11 of 54 vertices (20.37%) on a single bone
+        lattice    cell 29px, 6x7 cells, 40 with art, 40 kept
+  MESH  hairpin      authored 12 vertices / 12 triangles  (budget 444)  bones=[hairpin]  attachments=[hairpin]  covers 100.00% of the art, reaching 16.12px past it
+  MESH  hair_front   authored 50 vertices / 64 triangles  (budget 444)  bones=[bang_r0, head, bang_c0, bang_r1, bang_l0, bang_l1, bang_c1]  attachments=[hair_front]  covers 100.00% of the art, reaching 35.81px past it
+  ..    validate (spine-core round trip + machine assertions, profile spine)
+  ..    profile spine — 6 renderer-policy and 8 archetype assertion(s) do not apply
+  PASS  A07_ATLAS_TEXT_SHAPE
+  PASS  A08_REGION_NAMES_MATCH_ATTACHMENTS
+  PASS  A52_WEIGHTED_VERTICES_SHARE_ONE_BONE_ORDER
+  PASS  A00_ROUNDTRIP_PARSE
+  PASS  A16_SKELETON_VERSION_4_3
+  PASS  A01_NO_LEGACY_TOPLEVEL_CONSTRAINT_ARRAYS
+  PASS  A02_NO_BONE_TRANSFORM_KEY
+  PASS  A05_CURVE_ARRAY_LENGTH
+  PASS  A03_REGION_WIDTH_HEIGHT_FINITE
+  PASS  A04_MESH_TRIANGLES_AND_ENCODING
+  PASS  A20_MESH_WEIGHTS_COHERENT
+  PASS  A22_MESH_UVS_IN_UNIT_RANGE
+  PASS  A23_PHYSICS_CONSTRAINT_EFFECTIVE
+  PASS  A47_IK_CONSTRAINT_NOT_MUTED_THROUGHOUT
+  PASS  A48_TRANSFORM_CONSTRAINT_NOT_MUTED_THROUGHOUT
+  PASS  A09_ANIMATION_DURATION_MATCHES_SPEC
+  PASS  A10_NO_NAN_AFTER_STEPPING
+  PASS  A17_ATLAS_PAGE_FILES_EXIST
+  PASS  A06_ATLAS_PAGE_SIZE_MATCHES_PNG
+  PASS  A51_BONES_LIE_ALONG_THEIR_DECLARED_AXIS
+  PASS  A18_DETERMINISTIC_EMIT
+  SKIP  A31_DRAW_ORDER_OFFSETS_RESOLVE: no animation carries a drawOrder timeline
+  SKIP  A32_EVENT_KEYS_RESOLVE: no animation carries an event timeline
+  SKIP  A34_CONSTRAINT_TIMELINE_TARGETS: no animation carries a constraint timeline
+  SKIP  A35_DEFORM_KEYS_FIT_THE_ATTACHMENT: no animation carries a deform timeline
+  SKIP  A33_VERTEX_ATTACHMENT_GEOMETRY: the skeleton carries no bounding box, clipping attachment or path
+  SKIP  A36_PATH_CONSTRAINT_EFFECTIVE: the skeleton declares no path constraint
+  SKIP  A37_SLIDER_CONSTRAINT_EFFECTIVE: the skeleton declares no slider constraint
+  SKIP  A40_SLIDERS_COMPOSE_ON_A_SHARED_TARGET: the skeleton declares 0 slider constraints, and one slider has nothing to compose with
+  SKIP  A42_DRIVEN_CONSTRAINTS_UPDATE_AFTER_THEIR_DRIVER: the skeleton declares no slider constraint
+  SKIP  A38_SKIN_MEMBERS_ARE_SKIN_REQUIRED: no skin activates a bone or a constraint, and nothing declares itself skinRequired
+  SKIP  A43_TWO_COLOR_TINT_LOADS_AND_POSES_AS_WRITTEN: no slot declares a "dark" colour and no animation keys an "rgba2" or "rgb2" timeline, so there is no two-colour tint to read back
+  SKIP  A45_SEPARABLE_COLOR_TIMELINES_OWN_THEIR_CHANNELS_AND_POSE_AS_WRITTEN: no animation keys an "rgb" or "alpha" timeline, so there is no separable slot colour to read back
+  SKIP  A44_LINKED_MESH_STATES_NO_GEOMETRY_OF_ITS_OWN: no attachment in this skeleton takes its geometry from another one
+  SKIP  A46_SEQUENCE_ATTACHMENTS_SHOW_THE_FRAME_THE_FILE_STATES: no attachment carries a "sequence" block and no animation keys a "sequence" timeline, so there is no numbered series to read back
+  SKIP  A50_STAGE_BOX_IS_THE_STAGE: nothing asks for a stage box: no rigc-compiled/3 model document beside this skeleton states one (stage.box, from the rig spec's skeleton.stageBox) — a rig that does not ask, or an export, carries no stage in its Spine files to measure
+  PROF  A12_NO_DARK_COLOR: renderer rule, not in profile "spine"
+  PROF  A13_MESH_BUDGET: renderer rule, not in profile "spine"
+  PROF  A14_NO_FULL_FRAME_MESH: renderer rule, not in profile "spine"
+  PROF  A15_IDLE_NO_MESH_BONE_KEYS: renderer rule, not in profile "spine"
+  PROF  A21_MESH_RIM_PINNED: archetype rule, not in profile "spine"
+  PROF  A39_DEFORM_KEEPS_TRIANGLE_WINDING: archetype rule, not in profile "spine"
+  PROF  A19_OVERLAY_PNGS_HAVE_ALPHA: renderer rule, not in profile "spine"
+  PROF  A49_PACKED_FOOTPRINTS_DO_NOT_OVERLAP: renderer rule, not in profile "spine"
+  PROF  A24_AXIS_SPACE_STROKE: archetype rule, not in profile "spine"
+  PROF  A25_DETACHED_BONE_PARENTAGE: archetype rule, not in profile "spine"
+  PROF  A26_SLOT_DRAW_ORDER: archetype rule, not in profile "spine"
+  PROF  A28_RIBBON_ROWS_SHARE_WEIGHTS: archetype rule, not in profile "spine"
+  PROF  A29_STROKE_WITHIN_CONTACT_DEPTH: archetype rule, not in profile "spine"
+  PROF  A30_STROKE_WITHIN_CAP_CONTAINMENT: archetype rule, not in profile "spine"
+  ..    50 assertions: 21 measured (21 passed, 0 failed), 15 skipped, 14 not in profile "spine"
+  ..    pages=53 regions=53 bones=91 slots=35 animations=30 version=4.3.13 regionAttachments=41 meshAttachments=12 physicsConstraints=11 physicsTimelineKeys=0 rig=dancer_painting profile=spine
+rigc: wrote <scratch>/dancer-2026-10-13/polish1_cloth/checks/build_spinecore/skeleton.json
+rigc: wrote <scratch>/dancer-2026-10-13/polish1_cloth/checks/build_spinecore/skeleton.atlas
+rigc: wrote <scratch>/dancer-2026-10-13/polish1_cloth/checks/build_spinecore/skeleton.model.json
+rigc: look at it: rigc preview --candidate <scratch>/dancer-2026-10-13/polish1_cloth/checks/build_spinecore

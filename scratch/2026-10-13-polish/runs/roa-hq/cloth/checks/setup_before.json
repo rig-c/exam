@@ -1,0 +1,1760 @@
+{
+  "spec": "rigc-inspect/1",
+  "poser": "core",
+  "show": [
+    "art"
+  ],
+  "dim": false,
+  "animation": null,
+  "fps": 12,
+  "framing": {
+    "kind": "zoom",
+    "slot": "bottomwear",
+    "pad": 20,
+    "padFrom": "stated"
+  },
+  "coordinates": {
+    "world": "spine world: y up, world units",
+    "image": "the picture: y down, from its top-left corner; pixel (i, j) covers [i, i+1) x [j, j+1), so a position's pixel is its floor",
+    "toPixel": "px = x0 + (x - minX) * scale; py = y0 + (maxY - y) * scale — each tile's own transform",
+    "toWorld": "x = minX + (px - x0) / scale; y = maxY - (py - y0) / scale"
+  },
+  "viewport": {
+    "minX": -129.00001190920585,
+    "minY": 522.9999972992246,
+    "maxX": 127.99998835893507,
+    "maxY": 776.0000097173062,
+    "scale": 2.3346303477587163,
+    "width": 600,
+    "height": 591
+  },
+  "size": {
+    "width": 600,
+    "height": 591
+  },
+  "colours": {
+    "bone": {
+      "rgba": [
+        0,
+        110,
+        255,
+        255
+      ],
+      "meaning": "a bone's line, from its origin to its tip (origin + length along its world x axis)"
+    },
+    "origin": {
+      "rgba": [
+        235,
+        0,
+        190,
+        255
+      ],
+      "meaning": "a bone's origin: a filled 3x3 square centred on the origin's pixel"
+    },
+    "tip": {
+      "rgba": [
+        255,
+        140,
+        0,
+        255
+      ],
+      "meaning": "a bone's tip: a hollow 3x3 square centred on the tip's pixel"
+    },
+    "zero": {
+      "rgba": [
+        255,
+        210,
+        0,
+        255
+      ],
+      "meaning": "a bone of length 0: a hollow 5x5 square around its origin, which is also its tip"
+    },
+    "name": {
+      "rgba": [
+        25,
+        25,
+        25,
+        255
+      ],
+      "meaning": "a name label, starting 4 px right of and 3 px below its origin's pixel: one per pixel, so bones whose origins share a pixel are one label, the first by declaration order and \"+N\" for the rest (the legend's labels list every bone in it); a label that would overprint an earlier one is moved down a line at a time, with a leader back to its origin"
+    },
+    "leader": {
+      "rgba": [
+        120,
+        120,
+        120,
+        255
+      ],
+      "meaning": "a label's leader, from its anchor pixel to the label — drawn where the label was moved to clear an earlier one"
+    },
+    "axisX": {
+      "rgba": [
+        215,
+        30,
+        30,
+        255
+      ],
+      "meaning": "a bone's world x axis from its origin, 24 px long at a world scale of 1"
+    },
+    "axisY": {
+      "rgba": [
+        20,
+        160,
+        40,
+        255
+      ],
+      "meaning": "a bone's world y axis from its origin, 24 px long at a world scale of 1"
+    },
+    "grid": {
+      "rgba": [
+        150,
+        150,
+        150,
+        255
+      ],
+      "meaning": "a grid line at a whole multiple of the step, in world units, with its value at the edge"
+    },
+    "gridZero": {
+      "rgba": [
+        70,
+        70,
+        70,
+        255
+      ],
+      "meaning": "the grid line at world x = 0 or y = 0"
+    },
+    "declared": {
+      "rgba": [
+        0,
+        190,
+        190,
+        255
+      ],
+      "meaning": "an invariants.axes line, through its two bones' origins, across the whole tile"
+    },
+    "held": {
+      "rgba": [
+        0,
+        95,
+        95,
+        255
+      ],
+      "meaning": "the line of a bone an invariants.axes entry holds to its line, in place of the bone colour"
+    },
+    "mesh": {
+      "rgba": [
+        90,
+        30,
+        160,
+        255
+      ],
+      "meaning": "a mesh's triangle edge between two posed vertices — meshes only; a region is not drawn"
+    },
+    "hull": {
+      "rgba": [
+        0,
+        150,
+        90,
+        255
+      ],
+      "meaning": "a mesh's hull, vertex 0 to 1 to … to hull−1 and back, drawn over its triangle edges — meshes only"
+    },
+    "slot": {
+      "rgba": [
+        150,
+        0,
+        120,
+        255
+      ],
+      "meaning": "a slot's place in the posed draw order (0 is drawn first), from the centre of its attachment's box, on a white box"
+    },
+    "slotBack": {
+      "rgba": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "meaning": "the box under a slot number"
+    },
+    "label": {
+      "rgba": [
+        96,
+        96,
+        96,
+        255
+      ],
+      "meaning": "a tile's build and poser (with --compare), time and frame (on a sheet), at its bottom-left corner"
+    },
+    "rule": {
+      "rgba": [
+        176,
+        176,
+        176,
+        255
+      ],
+      "meaning": "the gap between two tiles"
+    }
+  },
+  "tiles": [
+    {
+      "animation": null,
+      "frame": 0,
+      "time": 0,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 600,
+        "height": 591
+      },
+      "transform": {
+        "minX": -129.00001190920585,
+        "maxY": 776.0000097173062,
+        "scale": 2.3346303477587163,
+        "x0": 0,
+        "y0": 0
+      },
+      "bones": [
+        {
+          "name": "root",
+          "parent": null,
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              0,
+              0
+            ],
+            "pixel": [
+              301.1673426644678,
+              1811.6731725470818
+            ]
+          },
+          "tip": {
+            "world": [
+              0,
+              0
+            ],
+            "pixel": [
+              301.1673426644678,
+              1811.6731725470818
+            ]
+          }
+        },
+        {
+          "name": "ground",
+          "parent": "root",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.0000012994857866559753,
+              55.999999999999986
+            ],
+            "pixel": [
+              301.1673396306489,
+              1680.9338730725935
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.0000012994857866559753,
+              55.999999999999986
+            ],
+            "pixel": [
+              301.1673396306489,
+              1680.9338730725935
+            ]
+          }
+        },
+        {
+          "name": "hip",
+          "parent": "root",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000015617034543204847,
+              672.9999999999999
+            ],
+            "pixel": [
+              301.16730620446504,
+              240.46694850546592
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000015617034543204847,
+              672.9999999999999
+            ],
+            "pixel": [
+              301.16730620446504,
+              240.46694850546592
+            ]
+          }
+        },
+        {
+          "name": "chest_ctl",
+          "parent": "hip",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.00002025805520983333,
+              772.9999999999999
+            ],
+            "pixel": [
+              301.1672953693973,
+              7.003913729594298
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.00002025805520983333,
+              772.9999999999999
+            ],
+            "pixel": [
+              301.1672953693973,
+              7.003913729594298
+            ]
+          }
+        },
+        {
+          "name": "chest",
+          "parent": "chest_ctl",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.00002025805520983333,
+              772.9999999999999
+            ],
+            "pixel": [
+              301.1672953693973,
+              7.003913729594298
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.00002025805520983333,
+              772.9999999999999
+            ],
+            "pixel": [
+              301.1672953693973,
+              7.003913729594298
+            ]
+          }
+        },
+        {
+          "name": "neck",
+          "parent": "chest",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000029632916956422864,
+              873.9999999999998
+            ],
+            "pixel": [
+              301.1672734825606,
+              -228.79375139403578
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000029632916956422864,
+              873.9999999999998
+            ],
+            "pixel": [
+              301.1672734825606,
+              -228.79375139403578
+            ]
+          }
+        },
+        {
+          "name": "head_ctl",
+          "parent": "neck",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              1.9999621292713603,
+              944.9999999999997
+            ],
+            "pixel": [
+              305.83651494583285,
+              -394.5525060849044
+            ]
+          },
+          "tip": {
+            "world": [
+              1.9999621292713603,
+              944.9999999999997
+            ],
+            "pixel": [
+              305.83651494583285,
+              -394.5525060849044
+            ]
+          }
+        },
+        {
+          "name": "head",
+          "parent": "head_ctl",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              1.9999621292713603,
+              944.9999999999997
+            ],
+            "pixel": [
+              305.83651494583285,
+              -394.5525060849044
+            ]
+          },
+          "tip": {
+            "world": [
+              1.9999621292713603,
+              944.9999999999997
+            ],
+            "pixel": [
+              305.83651494583285,
+              -394.5525060849044
+            ]
+          }
+        },
+        {
+          "name": "eye_r",
+          "parent": "head",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -28.000044855464743,
+              987.9999999999995
+            ],
+            "pixel": [
+              235.79758820629448,
+              -494.9416110385289
+            ]
+          },
+          "tip": {
+            "world": [
+              -28.000044855464743,
+              987.9999999999995
+            ],
+            "pixel": [
+              235.79758820629448,
+              -494.9416110385289
+            ]
+          }
+        },
+        {
+          "name": "eye_l",
+          "parent": "head",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              30.999955469406704,
+              985.9999999999995
+            ],
+            "pixel": [
+              373.54077948251347,
+              -490.27235034301145
+            ]
+          },
+          "tip": {
+            "world": [
+              30.999955469406704,
+              985.9999999999995
+            ],
+            "pixel": [
+              373.54077948251347,
+              -490.27235034301145
+            ]
+          }
+        },
+        {
+          "name": "brow_r",
+          "parent": "head",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -22.000049403664995,
+              1015.9999999999995
+            ],
+            "pixel": [
+              249.80535967448043,
+              -560.311260775773
+            ]
+          },
+          "tip": {
+            "world": [
+              -22.000049403664995,
+              1015.9999999999995
+            ],
+            "pixel": [
+              249.80535967448043,
+              -560.311260775773
+            ]
+          }
+        },
+        {
+          "name": "brow_l",
+          "parent": "head",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              27.999950758770726,
+              1014.9999999999995
+            ],
+            "pixel": [
+              366.53687744164364,
+              -557.9766304280142
+            ]
+          },
+          "tip": {
+            "world": [
+              27.999950758770726,
+              1014.9999999999995
+            ],
+            "pixel": [
+              366.53687744164364,
+              -557.9766304280142
+            ]
+          }
+        },
+        {
+          "name": "mouth",
+          "parent": "head",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -1.0000393326501498,
+              953.9999999999997
+            ],
+            "pixel": [
+              298.8326204895104,
+              -415.5641792147328
+            ]
+          },
+          "tip": {
+            "world": [
+              -1.0000393326501498,
+              953.9999999999997
+            ],
+            "pixel": [
+              298.8326204895104,
+              -415.5641792147328
+            ]
+          }
+        },
+        {
+          "name": "bun_ctl",
+          "parent": "head",
+          "length": 109,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              1.9999421496773904,
+              1067.9999999999995
+            ],
+            "pixel": [
+              305.83646830086644,
+              -681.7120388592263
+            ]
+          },
+          "tip": {
+            "world": [
+              1.9999573258149703,
+              958.9999999999998
+            ],
+            "pixel": [
+              305.8365037315378,
+              -427.2373309535267
+            ]
+          }
+        },
+        {
+          "name": "bun",
+          "parent": "bun_ctl",
+          "length": 109,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              1.9999421496773904,
+              1067.9999999999995
+            ],
+            "pixel": [
+              305.83646830086644,
+              -681.7120388592263
+            ]
+          },
+          "tip": {
+            "world": [
+              1.9999573258149703,
+              958.9999999999998
+            ],
+            "pixel": [
+              305.8365037315378,
+              -427.2373309535267
+            ]
+          }
+        },
+        {
+          "name": "bang_r0_ctl",
+          "parent": "head",
+          "length": 41.761,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -22.00005979955129,
+              1079.9999999999995
+            ],
+            "pixel": [
+              249.8053354039288,
+              -709.7276030323308
+            ]
+          },
+          "tip": {
+            "world": [
+              -33.999986495848184,
+              1040.0002159462456
+            ],
+            "pixel": [
+              221.7899423678741,
+              -616.3428932766417
+            ]
+          }
+        },
+        {
+          "name": "bang_r0",
+          "parent": "bang_r0_ctl",
+          "length": 41.761,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -22.00005979955129,
+              1079.9999999999995
+            ],
+            "pixel": [
+              249.8053354039288,
+              -709.7276030323308
+            ]
+          },
+          "tip": {
+            "world": [
+              -33.999986495848184,
+              1040.0002159462456
+            ],
+            "pixel": [
+              221.7899423678741,
+              -616.3428932766417
+            ]
+          }
+        },
+        {
+          "name": "bang_r1_ctl",
+          "parent": "bang_r0",
+          "length": 47.854,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -34.000051723772806,
+              1039.9999985196757
+            ],
+            "pixel": [
+              221.78979008478177,
+              -616.3423856659732
+            ]
+          },
+          "tip": {
+            "world": [
+              -43.00005203851606,
+              992.9999437183338
+            ],
+            "pixel": [
+              200.77811622014414,
+              -506.6146313804377
+            ]
+          }
+        },
+        {
+          "name": "bang_r1",
+          "parent": "bang_r1_ctl",
+          "length": 47.854,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -34.000051723772806,
+              1039.9999985196757
+            ],
+            "pixel": [
+              221.78979008478177,
+              -616.3423856659732
+            ]
+          },
+          "tip": {
+            "world": [
+              -43.00005203851606,
+              992.9999437183338
+            ],
+            "pixel": [
+              200.77811622014414,
+              -506.6146313804377
+            ]
+          }
+        },
+        {
+          "name": "bang_c0_ctl",
+          "parent": "head",
+          "length": 41.012,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              3.9999402004487106,
+              1079.9999999999995
+            ],
+            "pixel": [
+              310.50572444565546,
+              -709.7276030323308
+            ]
+          },
+          "tip": {
+            "world": [
+              2.9999513426692976,
+              1039.0001932569824
+            ],
+            "pixel": [
+              308.17112011086306,
+              -614.0082099578404
+            ]
+          }
+        },
+        {
+          "name": "bang_c0",
+          "parent": "bang_c0_ctl",
+          "length": 41.012,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              3.9999402004487106,
+              1079.9999999999995
+            ],
+            "pixel": [
+              310.50572444565546,
+              -709.7276030323308
+            ]
+          },
+          "tip": {
+            "world": [
+              2.9999513426692976,
+              1039.0001932569824
+            ],
+            "pixel": [
+              308.17112011086306,
+              -614.0082099578404
+            ]
+          }
+        },
+        {
+          "name": "bang_c1_ctl",
+          "parent": "bang_c0",
+          "length": 48.042,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              2.9999467099305144,
+              1039.0000033134713
+            ],
+            "pixel": [
+              308.1711092951305,
+              -614.0077665099552
+            ]
+          },
+          "tip": {
+            "world": [
+              0.9999395967424447,
+              990.999652189178
+            ],
+            "pixel": [
+              303.5018319929483,
+              -501.9446900721059
+            ]
+          }
+        },
+        {
+          "name": "bang_c1",
+          "parent": "bang_c1_ctl",
+          "length": 48.042,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              2.9999467099305144,
+              1039.0000033134713
+            ],
+            "pixel": [
+              308.1711092951305,
+              -614.0077665099552
+            ]
+          },
+          "tip": {
+            "world": [
+              0.9999395967424447,
+              990.999652189178
+            ],
+            "pixel": [
+              303.5018319929483,
+              -501.9446900721059
+            ]
+          }
+        },
+        {
+          "name": "bang_l0_ctl",
+          "parent": "head",
+          "length": 40.025,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              29.99994117506305,
+              1073.9999999999995
+            ],
+            "pixel": [
+              371.20611576274626,
+              -695.7198209457785
+            ]
+          },
+          "tip": {
+            "world": [
+              38.99994386823229,
+              1034.999991146759
+            ],
+            "pixel": [
+              392.2177951801294,
+              -604.6692167141443
+            ]
+          }
+        },
+        {
+          "name": "bang_l0",
+          "parent": "bang_l0_ctl",
+          "length": 40.025,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              29.99994117506305,
+              1073.9999999999995
+            ],
+            "pixel": [
+              371.20611576274626,
+              -695.7198209457785
+            ]
+          },
+          "tip": {
+            "world": [
+              38.99994386823229,
+              1034.999991146759
+            ],
+            "pixel": [
+              392.2177951801294,
+              -604.6692167141443
+            ]
+          }
+        },
+        {
+          "name": "bang_l1_ctl",
+          "parent": "bang_l0",
+          "length": 45.541,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              38.99994251907512,
+              1034.9999969931064
+            ],
+            "pixel": [
+              392.21779203034606,
+              -604.6692303632045
+            ]
+          },
+          "tip": {
+            "world": [
+              45.99991454217216,
+              990.0001837833424
+            ],
+            "pixel": [
+              408.5601391489304,
+              -499.61130080021604
+            ]
+          }
+        },
+        {
+          "name": "bang_l1",
+          "parent": "bang_l1_ctl",
+          "length": 45.541,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              38.99994251907512,
+              1034.9999969931064
+            ],
+            "pixel": [
+              392.21779203034606,
+              -604.6692303632045
+            ]
+          },
+          "tip": {
+            "world": [
+              45.99991454217216,
+              990.0001837833424
+            ],
+            "pixel": [
+              408.5601391489304,
+              -499.61130080021604
+            ]
+          }
+        },
+        {
+          "name": "hairpin",
+          "parent": "head",
+          "length": 12,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              27.99993776391286,
+              1094.9999999999995
+            ],
+            "pixel": [
+              366.53684710345414,
+              -744.7470582487115
+            ]
+          },
+          "tip": {
+            "world": [
+              39.99993776391286,
+              1094.9999999999995
+            ],
+            "pixel": [
+              394.5524112765587,
+              -744.7470582487115
+            ]
+          }
+        },
+        {
+          "name": "skirt_r0_ctl",
+          "parent": "hip",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -29.000017891134668,
+              721.9999999999999
+            ],
+            "pixel": [
+              233.4630208102791,
+              126.07006146528883
+            ]
+          },
+          "tip": {
+            "world": [
+              -36.00003773846306,
+              667.9998148979962
+            ],
+            "pixel": [
+              217.1205620397929,
+              252.14053238901474
+            ]
+          }
+        },
+        {
+          "name": "skirt_r0",
+          "parent": "skirt_r0_ctl",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -29.000017891134668,
+              721.9999999999999
+            ],
+            "pixel": [
+              233.4630208102791,
+              126.07006146528883
+            ]
+          },
+          "tip": {
+            "world": [
+              -36.00003773846306,
+              667.9998148979962
+            ],
+            "pixel": [
+              217.1205620397929,
+              252.14053238901474
+            ]
+          }
+        },
+        {
+          "name": "skirt_r1_ctl",
+          "parent": "skirt_r0",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -36.00001369887385,
+              668.0000003463656
+            ],
+            "pixel": [
+              217.1206181633474,
+              252.1400994356236
+            ]
+          },
+          "tip": {
+            "world": [
+              -43.00003354620224,
+              613.9998152443619
+            ],
+            "pixel": [
+              200.77815939286117,
+              378.2105703593495
+            ]
+          }
+        },
+        {
+          "name": "skirt_r1",
+          "parent": "skirt_r1_ctl",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -36.00001369887385,
+              668.0000003463656
+            ],
+            "pixel": [
+              217.1206181633474,
+              252.1400994356236
+            ]
+          },
+          "tip": {
+            "world": [
+              -43.00003354620224,
+              613.9998152443619
+            ],
+            "pixel": [
+              200.77815939286117,
+              378.2105703593495
+            ]
+          }
+        },
+        {
+          "name": "skirt_r2_ctl",
+          "parent": "skirt_r1",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -43.00000950661303,
+              614.0000006927313
+            ],
+            "pixel": [
+              200.7782155164157,
+              378.2101374059584
+            ]
+          },
+          "tip": {
+            "world": [
+              -50.00002935394142,
+              559.9998155907276
+            ],
+            "pixel": [
+              184.43575674592952,
+              504.2806083296843
+            ]
+          }
+        },
+        {
+          "name": "skirt_r2",
+          "parent": "skirt_r2_ctl",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -43.00000950661303,
+              614.0000006927313
+            ],
+            "pixel": [
+              200.7782155164157,
+              378.2101374059584
+            ]
+          },
+          "tip": {
+            "world": [
+              -50.00002935394142,
+              559.9998155907276
+            ],
+            "pixel": [
+              184.43575674592952,
+              504.2806083296843
+            ]
+          }
+        },
+        {
+          "name": "skirt_c0_ctl",
+          "parent": "hip",
+          "length": 54,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000017891134669852803,
+              721.9999999999999
+            ],
+            "pixel": [
+              301.16730089528187,
+              126.07006146528883
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000016638059089863115,
+              667.9999999999999
+            ],
+            "pixel": [
+              301.16730382075013,
+              252.14010024425951
+            ]
+          }
+        },
+        {
+          "name": "skirt_c0",
+          "parent": "skirt_c0_ctl",
+          "length": 54,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000017891134669852803,
+              721.9999999999999
+            ],
+            "pixel": [
+              301.16730089528187,
+              126.07006146528883
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000016638059089863115,
+              667.9999999999999
+            ],
+            "pixel": [
+              301.16730382075013,
+              252.14010024425951
+            ]
+          }
+        },
+        {
+          "name": "skirt_c1_ctl",
+          "parent": "skirt_c0",
+          "length": 54,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000016638059089863115,
+              667.9999999999999
+            ],
+            "pixel": [
+              301.16730382075013,
+              252.14010024425951
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000015384983509873427,
+              613.9999999999999
+            ],
+            "pixel": [
+              301.1673067462184,
+              378.21013902323017
+            ]
+          }
+        },
+        {
+          "name": "skirt_c1",
+          "parent": "skirt_c1_ctl",
+          "length": 54,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000016638059089863115,
+              667.9999999999999
+            ],
+            "pixel": [
+              301.16730382075013,
+              252.14010024425951
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000015384983509873427,
+              613.9999999999999
+            ],
+            "pixel": [
+              301.1673067462184,
+              378.21013902323017
+            ]
+          }
+        },
+        {
+          "name": "skirt_c2_ctl",
+          "parent": "skirt_c1",
+          "length": 54,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000015384983509873427,
+              613.9999999999999
+            ],
+            "pixel": [
+              301.1673067462184,
+              378.21013902323017
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000014131907929883737,
+              559.9999999999999
+            ],
+            "pixel": [
+              301.16730967168667,
+              504.28017780220085
+            ]
+          }
+        },
+        {
+          "name": "skirt_c2",
+          "parent": "skirt_c2_ctl",
+          "length": 54,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -0.000015384983509873427,
+              613.9999999999999
+            ],
+            "pixel": [
+              301.1673067462184,
+              378.21013902323017
+            ]
+          },
+          "tip": {
+            "world": [
+              -0.000014131907929883737,
+              559.9999999999999
+            ],
+            "pixel": [
+              301.16730967168667,
+              504.28017780220085
+            ]
+          }
+        },
+        {
+          "name": "skirt_l0_ctl",
+          "parent": "hip",
+          "length": 54.589,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              27.999982108865332,
+              721.9999999999999
+            ],
+            "pixel": [
+              366.53695063252593,
+              126.07006146528883
+            ]
+          },
+          "tip": {
+            "world": [
+              35.99992926169973,
+              668.000372161933
+            ],
+            "pixel": [
+              385.213870035999,
+              252.13923138371618
+            ]
+          }
+        },
+        {
+          "name": "skirt_l0",
+          "parent": "skirt_l0_ctl",
+          "length": 54.589,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              27.999982108865332,
+              721.9999999999999
+            ],
+            "pixel": [
+              366.53695063252593,
+              126.07006146528883
+            ]
+          },
+          "tip": {
+            "world": [
+              35.99992926169973,
+              668.000372161933
+            ],
+            "pixel": [
+              385.213870035999,
+              252.13923138371618
+            ]
+          }
+        },
+        {
+          "name": "skirt_l1_ctl",
+          "parent": "skirt_l0",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              35.999984217463386,
+              668.0000012106344
+            ],
+            "pixel": [
+              385.21399833739264,
+              252.14009741787538
+            ]
+          },
+          "tip": {
+            "world": [
+              43.00001034760362,
+              613.9998162270383
+            ],
+            "pixel": [
+              401.55647177592203,
+              378.2105680651634
+            ]
+          }
+        },
+        {
+          "name": "skirt_l1",
+          "parent": "skirt_l1_ctl",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              35.999984217463386,
+              668.0000012106344
+            ],
+            "pixel": [
+              385.21399833739264,
+              252.14009741787538
+            ]
+          },
+          "tip": {
+            "world": [
+              43.00001034760362,
+              613.9998162270383
+            ],
+            "pixel": [
+              401.55647177592203,
+              378.2105680651634
+            ]
+          }
+        },
+        {
+          "name": "skirt_l2_ctl",
+          "parent": "skirt_l1",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              42.999986307992835,
+              614.0000016754075
+            ],
+            "pixel": [
+              401.5564156523171,
+              378.2101351117728
+            ]
+          },
+          "tip": {
+            "world": [
+              50.00001243813307,
+              559.9998166918114
+            ],
+            "pixel": [
+              417.8988890908465,
+              504.2806057590608
+            ]
+          }
+        },
+        {
+          "name": "skirt_l2",
+          "parent": "skirt_l2_ctl",
+          "length": 54.452,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              42.999986307992835,
+              614.0000016754075
+            ],
+            "pixel": [
+              401.5564156523171,
+              378.2101351117728
+            ]
+          },
+          "tip": {
+            "world": [
+              50.00001243813307,
+              559.9998166918114
+            ],
+            "pixel": [
+              417.8988890908465,
+              504.2806057590608
+            ]
+          }
+        },
+        {
+          "name": "sleeve_r0",
+          "parent": "chest",
+          "length": 127.144,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -59.90002974430145,
+              875.1999999999998
+            ],
+            "pixel": [
+              161.32291539177186,
+              -231.59530781134634
+            ]
+          },
+          "tip": {
+            "world": [
+              -109.90000085456089,
+              758.3000490166759
+            ],
+            "pixel": [
+              44.5914654507011,
+              41.322865405828125
+            ]
+          }
+        },
+        {
+          "name": "sleeve_r1",
+          "parent": "sleeve_r0",
+          "length": 134.712,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -109.90002143672373,
+              758.300003438453
+            ],
+            "pixel": [
+              44.591417398959095,
+              41.3229718141304
+            ]
+          },
+          "tip": {
+            "world": [
+              -173.5999137788927,
+              639.6001916021623
+            ],
+            "pixel": [
+              -104.12428441203163,
+              318.44315480038387
+            ]
+          }
+        },
+        {
+          "name": "sleeve_l0",
+          "parent": "chest",
+          "length": 136.315,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              60.499970524877746,
+              872.2999999999998
+            ],
+            "pixel": [
+              442.4124098903552,
+              -224.8248798028461
+            ]
+          },
+          "tip": {
+            "world": [
+              112.99982993715574,
+              746.5003767384464
+            ],
+            "pixel": [
+              564.9801749273255,
+              68.87073840018977
+            ]
+          }
+        },
+        {
+          "name": "sleeve_l1",
+          "parent": "sleeve_l0",
+          "length": 127.053,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              112.99998399168948,
+              746.5000075945569
+            ],
+            "pixel": [
+              564.9805345877152,
+              68.87160021471699
+            ]
+          },
+          "tip": {
+            "world": [
+              169.69979667108723,
+              632.8004156969595
+            ],
+            "pixel": [
+              697.3536379812715,
+              334.318117986629
+            ]
+          }
+        },
+        {
+          "name": "leg_r0",
+          "parent": "hip",
+          "length": 277.803,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -45.600015422111674,
+              668.7999999999998
+            ],
+            "pixel": [
+              194.70816280174037,
+              250.27239596605264
+            ]
+          },
+          "tip": {
+            "world": [
+              -44.39998987708391,
+              390.99959183141135
+            ],
+            "pixel": [
+              197.5097788572479,
+              898.8336594961977
+            ]
+          }
+        },
+        {
+          "name": "leg_r1",
+          "parent": "leg_r0",
+          "length": 235.376,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -44.399989691376454,
+              391.0000118361322
+            ],
+            "pixel": [
+              197.5097792908062,
+              898.8326789404301
+            ]
+          },
+          "tip": {
+            "world": [
+              -50.39995420327564,
+              155.70049686122994
+            ],
+            "pixel": [
+              183.50208005585102,
+              1448.1700674137437
+            ]
+          }
+        },
+        {
+          "name": "leg_l0",
+          "parent": "hip",
+          "length": 286.4,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              46.19998417876055,
+              677.3999999999999
+            ],
+            "pixel": [
+              409.02722779417473,
+              230.1945749753276
+            ]
+          },
+          "tip": {
+            "world": [
+              45.899973524015024,
+              391.0001571480329
+            ],
+            "pixel": [
+              408.32681381495485,
+              898.832339690857
+            ]
+          }
+        },
+        {
+          "name": "leg_l1",
+          "parent": "leg_l0",
+          "length": 238.266,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              45.89997536688544,
+              391.0000071460201
+            ],
+            "pixel": [
+              408.32681811737604,
+              898.8326898901082
+            ]
+          },
+          "tip": {
+            "world": [
+              51.499972909432174,
+              152.79982485668165
+            ],
+            "pixel": [
+              421.4007423275799,
+              1454.9420643044562
+            ]
+          }
+        },
+        {
+          "name": "foot_r",
+          "parent": "leg_r1",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              -50.39996743862029,
+              155.70001704269612
+            ],
+            "pixel": [
+              183.50204915621376,
+              1448.171187612654
+            ]
+          },
+          "tip": {
+            "world": [
+              -50.39996743862029,
+              155.70001704269612
+            ],
+            "pixel": [
+              183.50204915621376,
+              1448.171187612654
+            ]
+          }
+        },
+        {
+          "name": "foot_l",
+          "parent": "leg_l1",
+          "length": 0,
+          "zeroLength": true,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              51.49996867886819,
+              152.80000480695912
+            ],
+            "pixel": [
+              421.40073245077684,
+              1454.9416441870771
+            ]
+          },
+          "tip": {
+            "world": [
+              51.49996867886819,
+              152.80000480695912
+            ],
+            "pixel": [
+              421.40073245077684,
+              1454.9416441870771
+            ]
+          }
+        },
+        {
+          "name": "head_up",
+          "parent": "head",
+          "length": 41.959,
+          "zeroLength": false,
+          "undrawn": null,
+          "origin": {
+            "world": [
+              1.9999621292713603,
+              944.9999999999997
+            ],
+            "pixel": [
+              305.83651494583285,
+              -394.5525060849044
+            ]
+          },
+          "tip": {
+            "world": [
+              3.4214721731956503,
+              986.9349135068748
+            ],
+            "pixel": [
+              309.1552154340223,
+              -492.45502778869184
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

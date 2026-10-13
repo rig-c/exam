@@ -1,0 +1,41 @@
+rigc render
+  ..    skeleton <scratch>/dancer-2026-10-13/polish1_cloth/before/build/skeleton.json
+  ..    atlas    <scratch>/dancer-2026-10-13/polish1_cloth/before/build/skeleton.atlas
+  ..    poser    rigc core — <scratch>/dancer-2026-10-13/polish1_cloth/before/build/skeleton.model.json
+  ..    201x256px at 30 fps, 30 set(s) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30
+  ..    idle             101 frame(s), 3.333s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/idle@30fps
+  ..    pose_arms_up     31 frame(s), 1.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/pose_arms_up@30fps
+  ..    pose_hands_behind_head 31 frame(s), 1.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/pose_hands_behind_head@30fps
+  ..    pose_hand_on_hip 31 frame(s), 1.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/pose_hand_on_hip@30fps
+  ..    pose_arms_crossed 31 frame(s), 1.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/pose_arms_crossed@30fps
+  ..    pose_legs_apart  31 frame(s), 1.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/pose_legs_apart@30fps
+  ..    pose_hip_tilt_pos 31 frame(s), 1.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/pose_hip_tilt_pos@30fps
+  ..    pose_hip_tilt_neg 31 frame(s), 1.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/pose_hip_tilt_neg@30fps
+  ..    sweep_elbow_r_pos 451 frame(s), 15.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_elbow_r_pos@30fps
+  ..    sweep_elbow_r_neg 451 frame(s), 15.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_elbow_r_neg@30fps
+  ..    sweep_knee_r_pos 271 frame(s), 9.000s + contact.png + folds.json (1 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_knee_r_pos@30fps
+  ..    folds    "sweep_knee_r_pos": mesh "shins" (slot "shins") folds on 32 frame(s) [239-270] at 30 fps; worst frame 239 (t=7.9667s): 1 of 444 triangle(s) [10] in world box x [-66.23, 5.00] y [420.00, 433.00] (71.22 × 13.00), setup-pose area 72.00 units² = 0.225% of the mesh's; 1 triangle(s) fold on some frame [10]
+  ..    sweep_knee_r_neg 271 frame(s), 9.000s + contact.png + folds.json (1 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_knee_r_neg@30fps
+  ..    folds    "sweep_knee_r_neg": mesh "shins" (slot "shins") folds on 214 frame(s) [57-270] at 30 fps; worst frame 57 (t=1.9000s): 1 of 444 triangle(s) [10] in world box x [-3.51, 5.00] y [394.89, 420.01] (8.50 × 25.10), setup-pose area 72.00 units² = 0.225% of the mesh's; 1 triangle(s) fold on some frame [10]
+  ..    sweep_shoulder_r_out 541 frame(s), 18.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_shoulder_r_out@30fps
+  ..    sweep_shoulder_r_in 181 frame(s), 6.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_shoulder_r_in@30fps
+  ..    sweep_hip_tilt_pos 91 frame(s), 3.000s + contact.png + folds.json (1 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_hip_tilt_pos@30fps
+  ..    folds    "sweep_hip_tilt_pos": mesh "shins" (slot "shins") folds on 16 frame(s) [75-90] at 30 fps; worst frame 75 (t=2.5000s): 2 of 444 triangle(s) [10, 11] in world box x [-1.19, -0.95] y [389.12, 439.12] (0.24 × 49.99), setup-pose area 144.00 units² = 0.450% of the mesh's; 2 triangle(s) fold on some frame [10, 11]
+  ..    sweep_hip_tilt_neg 91 frame(s), 3.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_hip_tilt_neg@30fps
+  ..    sweep_thigh_r_out 181 frame(s), 6.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_thigh_r_out@30fps
+  ..    sweep_thigh_r_in 91 frame(s), 3.000s + contact.png + folds.json (1 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sweep_thigh_r_in@30fps
+  ..    folds    "sweep_thigh_r_in": mesh "shins" (slot "shins") folds on 83 frame(s) [8-90] at 30 fps; worst frame 9 (t=0.3000s): 2 of 444 triangle(s) [10, 11] in world box x [4.99, 6.60] y [408.00, 422.37] (1.60 × 14.36), setup-pose area 144.00 units² = 0.450% of the mesh's; 2 triangle(s) fold on some frame [10, 11]
+  ..    sway             121 frame(s), 4.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/sway@30fps
+  ..    set_K1           16 frame(s), 0.500s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/set_K1@30fps
+  ..    range_K1         121 frame(s), 4.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/range_K1@30fps
+  ..    set_K2           16 frame(s), 0.500s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/set_K2@30fps
+  ..    range_K2         121 frame(s), 4.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/range_K2@30fps
+  ..    set_K3           16 frame(s), 0.500s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/set_K3@30fps
+  ..    range_K3         121 frame(s), 4.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/range_K3@30fps
+  ..    set_K4           16 frame(s), 0.500s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/set_K4@30fps
+  ..    range_K4         121 frame(s), 4.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/range_K4@30fps
+  ..    set_K0           16 frame(s), 0.500s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/set_K0@30fps
+  ..    range_K0         121 frame(s), 4.000s + contact.png + folds.json (0 of 7 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/range_K0@30fps
+  ..    dance            391 frame(s), 13.000s + contact.png + folds.json (1 of 12 mesh(es) fold) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/dance@30fps
+  ..    folds    "dance": mesh "shins" (slot "shins") folds on 270 frame(s) [0-190, 194-220, 339-390] at 30 fps; worst frame 0 (t=0.0000s): 2 of 444 triangle(s) [10, 11] in world box x [-6.73, 12.60] y [403.71, 429.11] (19.32 × 25.40), setup-pose area 144.00 units² = 0.450% of the mesh's; 2 triangle(s) fold on some frame [10, 11]
+rigc: wrote <scratch>/dancer-2026-10-13/polish1_cloth/checks/before_all30/frames.json

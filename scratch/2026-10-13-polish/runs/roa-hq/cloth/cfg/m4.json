@@ -1,0 +1,97 @@
+{
+ "chains": [
+  "r",
+  "rm",
+  "c",
+  "lm",
+  "l"
+ ],
+ "idleFrom": {
+  "rm": "r",
+  "lm": "l"
+ },
+ "rootPy": 30,
+ "tipPy": 196,
+ "rootPx": [
+  62,
+  156
+ ],
+ "tipPx": [
+  18,
+  200
+ ],
+ "waist": [
+  [
+   52,
+   22
+  ],
+  [
+   166,
+   22
+  ]
+ ],
+ "cell": 20,
+ "falloff": {
+  "power": 2,
+  "radius": 10,
+  "maxBones": 4,
+  "minWeight": 0.03
+ },
+ "links": [
+  {
+   "inertia": 0.5,
+   "strength": 100,
+   "damping": 0.975,
+   "mix": 0.6
+  },
+  {
+   "inertia": 0.1,
+   "strength": 400,
+   "damping": 0.95,
+   "mix": 0.6
+  },
+  {
+   "inertia": 0.1,
+   "strength": 400,
+   "damping": 0.95,
+   "mix": 0.6
+  }
+ ],
+ "stops": {
+  "r": {
+   "side": "left",
+   "leg": "leg_r0",
+   "touchWorld": [
+    -83.5,
+    562.5
+   ],
+   "touchLocal": [
+    106.135,
+    -38.359
+   ],
+   "alpha": 5.3,
+   "margin": 4,
+   "flare": 60
+  },
+  "l": {
+   "side": "right",
+   "leg": "leg_l0",
+   "touchWorld": [
+    83.5,
+    562.5
+   ],
+   "touchLocal": [
+    114.861,
+    37.42
+   ],
+   "alpha": 5.5,
+   "margin": 4,
+   "flare": 60
+  }
+ },
+ "cap": [
+  -60,
+  60
+ ],
+ "meshTriangles": 444
+}

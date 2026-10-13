@@ -1,0 +1,1220 @@
+{
+ "spec": "rig-pose-map alternates — DRAFT for rig-c/pose#6 (HQ, 2026-10-13); not a released format — k0 copy with K0 added — polish1_arms copy: K2 left arm moved to forearm_l_mid / upperarm_l_mid (in front of the jacket, behind the right arm), hands split along the painted boundary",
+ "rig": "polish1_arms/build/skeleton.json",
+ "conventions": {
+  "set": "an alternate is a set: every slot in `slots` switches to its attachment together, every slot in `hides` goes empty (null), and nothing of another set stays shown. Selection is driven by `chains` (the arms). `hides` lists every alternate-bearing slot this set does not use, so a direct switch from another set clears that set's slots without the map needing to know which set was showing",
+  "drawn": "per bone: world_deg = the segment's direction in the set painting (Spine world, y up, counter-clockwise from +x), read from the painting's own RTMPose joints (`drawn_from`), NOT from the key skeleton (`pose`), which differs by up to 20.8 deg (K1 forearms; see report). rotate_key_deg = local_deg - setup_local_deg: the bone's rotate key that poses it at its drawn angle. While the set shows, the bone's key is rotate_key_deg + (reference - drawn) — pose#6's rule",
+  "place": "each slot carries its own place in the setup draw order of the built rig (index of 35; `after`/`before` are its neighbours). The place is a property of the SLOT, not a key: switching sets is attachment keys only, no drawOrder timeline. A segment whose measured place differs from the base piece's lives in an extra slot on the same bone at that place (`*_back`, `*_under`); one whose place matches uses the base slot",
+  "evidence": "where the piece and the layer are both alpha >= 250 in the set painting's See-through run: piece_shown_px = pixels where the painting's colour is nearer the piece's layer by more than 30 (sum of RGB), other_shown_px the mirror. assembly/measure.json has every layer",
+  "pivot_error_px": "the bones only rotate, so the art turns about the base rig's joints; this is how far those sit from the set painting's joints at the drawn pose (shoulder: base vs set shoulder; elbow: posed sleeve_*1 origin vs set elbow). 0 at the drawn angle by construction of the attachment offsets; it grows as the bone leaves the drawn angle"
+ },
+ "not_expressible_in_pose6_as_written": [
+  "joint positions: a set's rest pose has its own shoulder and elbow positions (pivot_error_px up to 26.6 px, K3 r elbow); pose#6 carries angles only. Translating sleeve_*0 to the set's shoulder and sleeve_*1 along its parent by the drawn upper-arm length while the set shows would make the pivots exact; rigc can key it (translate), the map has no field for it",
+  "the key skeleton (`pose`) is not the drawn angle: selection by `pose` and rotation by `drawn` must be two fields"
+ ],
+ "alternates": [
+  {
+   "name": "K1_hands_behind_head",
+   "set": true,
+   "pose": "keys2/K1_hands_behind_head.json",
+   "drawn_from": "keys2/inpaint_K1_hands_behind_head/pose_s2.json",
+   "painting": "keys2/inpaint_K1_hands_behind_head/warp_s2.png",
+   "chains": {
+    "sleeve_r": {
+     "bones": [
+      "sleeve_r0",
+      "sleeve_r1"
+     ],
+     "drawn": {
+      "sleeve_r0": {
+       "world_deg": 117.765,
+       "local_deg": 117.765,
+       "setup_local_deg": -113.15717,
+       "rotate_key_deg": -129.078
+      },
+      "sleeve_r1": {
+       "world_deg": 30.366,
+       "local_deg": -87.399,
+       "setup_local_deg": -5.062928,
+       "rotate_key_deg": -82.336
+      }
+     },
+     "elbow_bend_deg": -87.399,
+     "joints_rig_px": {
+      "shoulder": [
+       357.5,
+       322.6
+      ],
+      "elbow": [
+       298.3,
+       210.1
+      ],
+      "wrist": [
+       384.1,
+       159.8
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 18.3,
+      "elbow": 18.3
+     }
+    },
+    "sleeve_l": {
+     "bones": [
+      "sleeve_l0",
+      "sleeve_l1"
+     ],
+     "drawn": {
+      "sleeve_l0": {
+       "world_deg": 56.304,
+       "local_deg": 56.304,
+       "setup_local_deg": -67.347803,
+       "rotate_key_deg": 123.652
+      },
+      "sleeve_l1": {
+       "world_deg": 141.858,
+       "local_deg": 85.554,
+       "setup_local_deg": 3.852352,
+       "rotate_key_deg": 81.702
+      }
+     },
+     "elbow_bend_deg": 85.554,
+     "joints_rig_px": {
+      "shoulder": [
+       472.9,
+       322.6
+      ],
+      "elbow": [
+       544.0,
+       216.0
+      ],
+      "wrist": [
+       461.1,
+       150.9
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 21.5,
+      "elbow": 16.5
+     }
+    }
+   },
+   "slots": {
+    "upperarm_r_under": {
+     "attachment": "K1_upperarm_r",
+     "bone": "sleeve_r0",
+     "segment": "upperarm_r",
+     "place": {
+      "index": 12,
+      "of": 37,
+      "after": "forearm_r_under",
+      "before": "forearm_l_under",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 848,
+       "piece_shown_px": 76,
+       "other_shown_px": 613,
+       "away_from_shoulder_40px": {
+        "overlap_px": 19,
+        "piece_shown_px": 6,
+        "other_shown_px": 7
+       }
+      },
+      "front hair": {
+       "overlap_px": 1,
+       "piece_shown_px": 0,
+       "other_shown_px": 1
+      }
+     }
+    },
+    "forearm_r_back": {
+     "attachment": "K1_forearm_r",
+     "bone": "sleeve_r1",
+     "segment": "forearm_r",
+     "place": {
+      "index": 0,
+      "of": 37,
+      "after": null,
+      "before": "forearm_l_back",
+      "group": "back",
+      "reads": "behind the whole head: drawn before hair_back"
+     },
+     "evidence": {
+      "face": {
+       "overlap_px": 2082,
+       "piece_shown_px": 260,
+       "other_shown_px": 1512
+      },
+      "front hair": {
+       "overlap_px": 2883,
+       "piece_shown_px": 1,
+       "other_shown_px": 2873
+      },
+      "back hair": {
+       "overlap_px": 3632,
+       "piece_shown_px": 479,
+       "other_shown_px": 3075
+      }
+     }
+    },
+    "upperarm_l_under": {
+     "attachment": "K1_upperarm_l",
+     "bone": "sleeve_l0",
+     "segment": "upperarm_l",
+     "place": {
+      "index": 14,
+      "of": 37,
+      "after": "forearm_l_under",
+      "before": "topwear",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 1211,
+       "piece_shown_px": 169,
+       "other_shown_px": 845,
+       "away_from_shoulder_40px": {
+        "overlap_px": 96,
+        "piece_shown_px": 13,
+        "other_shown_px": 45
+       }
+      },
+      "front hair": {
+       "overlap_px": 29,
+       "piece_shown_px": 0,
+       "other_shown_px": 29
+      }
+     }
+    },
+    "forearm_l_back": {
+     "attachment": "K1_forearm_l",
+     "bone": "sleeve_l1",
+     "segment": "forearm_l",
+     "place": {
+      "index": 1,
+      "of": 37,
+      "after": "forearm_r_back",
+      "before": "upperarm_r_back",
+      "group": "back",
+      "reads": "behind the whole head: drawn before hair_back"
+     },
+     "evidence": {
+      "face": {
+       "overlap_px": 1811,
+       "piece_shown_px": 415,
+       "other_shown_px": 1023
+      },
+      "front hair": {
+       "overlap_px": 2541,
+       "piece_shown_px": 7,
+       "other_shown_px": 2515
+      },
+      "back hair": {
+       "overlap_px": 2921,
+       "piece_shown_px": 212,
+       "other_shown_px": 2664
+      }
+     }
+    },
+    "topwear": {
+     "attachment": "K1_topwear",
+     "bones": [
+      "chest",
+      "hip"
+     ],
+     "segment": "torso",
+     "place": {
+      "index": 15,
+      "of": 37,
+      "after": "upperarm_l_under",
+      "before": "sleevefront_l",
+      "group": "base",
+      "reads": "the base topwear's own place"
+     }
+    }
+   },
+   "hides": [
+    "upperarm_r_back",
+    "forearm_r_under",
+    "forearm_l_under",
+    "forearm_r",
+    "upperarm_r",
+    "forearm_l",
+    "upperarm_l",
+    "sleevefront_l",
+    "forearm_l_mid",
+    "upperarm_l_mid"
+   ],
+   "test_animation": "set_K1"
+  },
+  {
+   "name": "K2_hands_low_front",
+   "set": true,
+   "pose": "keys2/K2_hands_low_front.json",
+   "drawn_from": "keys2/inpaint_K2_hands_low_front/pose_s2.json",
+   "painting": "keys2/inpaint_K2_hands_low_front/warp_s2.png",
+   "chains": {
+    "sleeve_r": {
+     "bones": [
+      "sleeve_r0",
+      "sleeve_r1"
+     ],
+     "drawn": {
+      "sleeve_r0": {
+       "world_deg": -81.517,
+       "local_deg": -81.517,
+       "setup_local_deg": -113.15717,
+       "rotate_key_deg": 31.64
+      },
+      "sleeve_r1": {
+       "world_deg": -72.007,
+       "local_deg": 9.51,
+       "setup_local_deg": -5.062928,
+       "rotate_key_deg": 14.573
+      }
+     },
+     "elbow_bend_deg": 9.51,
+     "joints_rig_px": {
+      "shoulder": [
+       358.6,
+       331.6
+      ],
+      "elbow": [
+       378.8,
+       466.6
+      ],
+      "wrist": [
+       416.1,
+       581.6
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 9.6,
+      "elbow": 3.9
+     }
+    },
+    "sleeve_l": {
+     "bones": [
+      "sleeve_l0",
+      "sleeve_l1"
+     ],
+     "drawn": {
+      "sleeve_l0": {
+       "world_deg": -74.404,
+       "local_deg": -74.404,
+       "setup_local_deg": -67.347803,
+       "rotate_key_deg": -7.056
+      },
+      "sleeve_l1": {
+       "world_deg": -121.225,
+       "local_deg": -46.821,
+       "setup_local_deg": 3.852352,
+       "rotate_key_deg": -50.673
+      }
+     },
+     "elbow_bend_deg": -46.821,
+     "joints_rig_px": {
+      "shoulder": [
+       470.7,
+       340.2
+      ],
+      "elbow": [
+       505.2,
+       463.8
+      ],
+      "wrist": [
+       447.7,
+       558.6
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 6.8,
+      "elbow": 13.7
+     }
+    }
+   },
+   "slots": {
+    "upperarm_r": {
+     "attachment": "K2_upperarm_r",
+     "bone": "sleeve_r0",
+     "segment": "upperarm_r",
+     "place": {
+      "index": 20,
+      "of": 37,
+      "after": "forearm_r",
+      "before": "forearm_l",
+      "group": "base",
+      "reads": "the base piece's own place: after topwear, behind ear/face/hair"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 2898,
+       "piece_shown_px": 2224,
+       "other_shown_px": 150,
+       "away_from_shoulder_40px": {
+        "overlap_px": 2324,
+        "piece_shown_px": 1965,
+        "other_shown_px": 79
+       }
+      },
+      "back hair": {
+       "overlap_px": 70,
+       "piece_shown_px": 70,
+       "other_shown_px": 0
+      }
+     }
+    },
+    "forearm_r": {
+     "attachment": "K2_forearm_r",
+     "bone": "sleeve_r1",
+     "segment": "forearm_r",
+     "place": {
+      "index": 19,
+      "of": 37,
+      "after": "upperarm_l_mid",
+      "before": "upperarm_r",
+      "group": "base",
+      "reads": "the base piece's own place: after topwear, behind ear/face/hair"
+     },
+     "evidence": {
+      "bottomwear": {
+       "overlap_px": 8502,
+       "piece_shown_px": 7991,
+       "other_shown_px": 144
+      },
+      "back hair": {
+       "overlap_px": 3301,
+       "piece_shown_px": 3133,
+       "other_shown_px": 44
+      }
+     }
+    },
+    "upperarm_l_mid": {
+     "attachment": "K2_upperarm_l",
+     "bone": "sleeve_l0",
+     "segment": "upperarm_l",
+     "place": {
+      "group": "mid",
+      "reads": "in front of the jacket and the skirt, behind the right arm: the painting draws the left sleeve over the jacket hem, and the video crosses the right forearm over the left one; the upper arm piece is trimmed of what the painting shows as jacket (polish1_arms/work/fix_k2.json)",
+      "index": 18,
+      "of": 37,
+      "after": "forearm_l_mid",
+      "before": "forearm_r"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 2253,
+       "piece_shown_px": 108,
+       "other_shown_px": 1075,
+       "away_from_shoulder_40px": {
+        "overlap_px": 1025,
+        "piece_shown_px": 37,
+        "other_shown_px": 329
+       }
+      },
+      "back hair": {
+       "overlap_px": 145,
+       "piece_shown_px": 109,
+       "other_shown_px": 34
+      }
+     },
+     "evidence_note": "evidence below is the original measure (assembly/measure.json): the forearm had no overlap with topwear in the painting, so its old place against the jacket was never measured; the upper arm's \"other shown\" pixels are the part of the arm layer under the jacket front panel, now cut from the piece"
+    },
+    "forearm_l_mid": {
+     "attachment": "K2_forearm_l",
+     "bone": "sleeve_l1",
+     "segment": "forearm_l",
+     "place": {
+      "group": "mid",
+      "reads": "in front of the jacket and the skirt, behind the right arm: the painting draws the left sleeve over the jacket hem, and the video crosses the right forearm over the left one; the upper arm piece is trimmed of what the painting shows as jacket (polish1_arms/work/fix_k2.json)",
+      "index": 17,
+      "of": 37,
+      "after": "sleevefront_l",
+      "before": "upperarm_l_mid"
+     },
+     "evidence": {
+      "bottomwear": {
+       "overlap_px": 5084,
+       "piece_shown_px": 4592,
+       "other_shown_px": 156
+      },
+      "back hair": {
+       "overlap_px": 1640,
+       "piece_shown_px": 1422,
+       "other_shown_px": 66
+      }
+     },
+     "evidence_note": "evidence below is the original measure (assembly/measure.json): the forearm had no overlap with topwear in the painting, so its old place against the jacket was never measured; the upper arm's \"other shown\" pixels are the part of the arm layer under the jacket front panel, now cut from the piece"
+    },
+    "topwear": {
+     "attachment": "K2_topwear",
+     "bones": [
+      "chest",
+      "hip"
+     ],
+     "segment": "torso",
+     "place": {
+      "index": 15,
+      "of": 37,
+      "after": "upperarm_l_under",
+      "before": "sleevefront_l",
+      "group": "base",
+      "reads": "the base topwear's own place"
+     }
+    }
+   },
+   "hides": [
+    "forearm_l",
+    "forearm_l_back",
+    "forearm_l_under",
+    "forearm_r_back",
+    "forearm_r_under",
+    "sleevefront_l",
+    "upperarm_l",
+    "upperarm_l_under",
+    "upperarm_r_back",
+    "upperarm_r_under"
+   ],
+   "test_animation": "set_K2"
+  },
+  {
+   "name": "K3_v_sign",
+   "set": true,
+   "pose": "keys2/K3_v_sign.json",
+   "drawn_from": "keys2/inpaint_K3_v_sign/pose_s1.json",
+   "painting": "keys2/inpaint_K3_v_sign/warp_s1.png",
+   "chains": {
+    "sleeve_r": {
+     "bones": [
+      "sleeve_r0",
+      "sleeve_r1"
+     ],
+     "drawn": {
+      "sleeve_r0": {
+       "world_deg": 102.023,
+       "local_deg": 102.023,
+       "setup_local_deg": -113.15717,
+       "rotate_key_deg": -144.82
+      },
+      "sleeve_r1": {
+       "world_deg": 77.323,
+       "local_deg": -24.7,
+       "setup_local_deg": -5.062928,
+       "rotate_key_deg": -19.637
+      }
+     },
+     "elbow_bend_deg": -24.7,
+     "joints_rig_px": {
+      "shoulder": [
+       356.4,
+       329.5
+      ],
+      "elbow": [
+       326.6,
+       190.1
+      ],
+      "wrist": [
+       353.4,
+       71.3
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 11.3,
+      "elbow": 26.6
+     }
+    },
+    "sleeve_l": {
+     "bones": [
+      "sleeve_l0",
+      "sleeve_l1"
+     ],
+     "drawn": {
+      "sleeve_l0": {
+       "world_deg": -49.706,
+       "local_deg": -49.706,
+       "setup_local_deg": -67.347803,
+       "rotate_key_deg": 17.642
+      },
+      "sleeve_l1": {
+       "world_deg": -125.538,
+       "local_deg": -75.832,
+       "setup_local_deg": 3.852352,
+       "rotate_key_deg": -79.684
+      }
+     },
+     "elbow_bend_deg": -75.832,
+     "joints_rig_px": {
+      "shoulder": [
+       466.1,
+       353.2
+      ],
+      "elbow": [
+       549.2,
+       451.1
+      ],
+      "wrist": [
+       504.7,
+       513.5
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 14.0,
+      "elbow": 15.8
+     }
+    }
+   },
+   "slots": {
+    "upperarm_r_back": {
+     "attachment": "K3_upperarm_r",
+     "bone": "sleeve_r0",
+     "segment": "upperarm_r",
+     "place": {
+      "index": 2,
+      "of": 37,
+      "after": "forearm_l_back",
+      "before": "hair_back",
+      "group": "back",
+      "reads": "behind the whole head: drawn before hair_back"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 1902,
+       "piece_shown_px": 381,
+       "other_shown_px": 907,
+       "away_from_shoulder_40px": {
+        "overlap_px": 53,
+        "piece_shown_px": 5,
+        "other_shown_px": 34
+       }
+      },
+      "face": {
+       "overlap_px": 201,
+       "piece_shown_px": 59,
+       "other_shown_px": 120
+      },
+      "front hair": {
+       "overlap_px": 1061,
+       "piece_shown_px": 61,
+       "other_shown_px": 989
+      },
+      "back hair": {
+       "overlap_px": 663,
+       "piece_shown_px": 56,
+       "other_shown_px": 599
+      }
+     }
+    },
+    "forearm_r_back": {
+     "attachment": "K3_forearm_r",
+     "bone": "sleeve_r1",
+     "segment": "forearm_r",
+     "place": {
+      "index": 0,
+      "of": 37,
+      "after": null,
+      "before": "forearm_l_back",
+      "group": "back",
+      "reads": "behind the whole head: drawn before hair_back"
+     },
+     "evidence": {
+      "face": {
+       "overlap_px": 65,
+       "piece_shown_px": 0,
+       "other_shown_px": 53
+      },
+      "front hair": {
+       "overlap_px": 615,
+       "piece_shown_px": 0,
+       "other_shown_px": 615
+      },
+      "back hair": {
+       "overlap_px": 930,
+       "piece_shown_px": 0,
+       "other_shown_px": 930
+      }
+     }
+    },
+    "upperarm_l_under": {
+     "attachment": "K3_upperarm_l",
+     "bone": "sleeve_l0",
+     "segment": "upperarm_l",
+     "place": {
+      "index": 14,
+      "of": 37,
+      "after": "forearm_l_under",
+      "before": "topwear",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 2206,
+       "piece_shown_px": 109,
+       "other_shown_px": 683,
+       "away_from_shoulder_40px": {
+        "overlap_px": 490,
+        "piece_shown_px": 7,
+        "other_shown_px": 53
+       }
+      },
+      "back hair": {
+       "overlap_px": 404,
+       "piece_shown_px": 382,
+       "other_shown_px": 18
+      }
+     }
+    },
+    "forearm_l_under": {
+     "attachment": "K3_forearm_l",
+     "bone": "sleeve_l1",
+     "segment": "forearm_l",
+     "place": {
+      "index": 13,
+      "of": 37,
+      "after": "upperarm_r_under",
+      "before": "upperarm_l_under",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "bottomwear": {
+       "overlap_px": 521,
+       "piece_shown_px": 496,
+       "other_shown_px": 22
+      },
+      "back hair": {
+       "overlap_px": 17,
+       "piece_shown_px": 14,
+       "other_shown_px": 3
+      }
+     }
+    },
+    "topwear": {
+     "attachment": "K3_topwear",
+     "bones": [
+      "chest",
+      "hip"
+     ],
+     "segment": "torso",
+     "place": {
+      "index": 15,
+      "of": 37,
+      "after": "upperarm_l_under",
+      "before": "sleevefront_l",
+      "group": "base",
+      "reads": "the base topwear's own place"
+     }
+    }
+   },
+   "hides": [
+    "forearm_l_back",
+    "forearm_r_under",
+    "upperarm_r_under",
+    "forearm_r",
+    "upperarm_r",
+    "forearm_l",
+    "upperarm_l",
+    "sleevefront_l",
+    "forearm_l_mid",
+    "upperarm_l_mid"
+   ],
+   "test_animation": "set_K3"
+  },
+  {
+   "name": "K4_hand_up",
+   "set": true,
+   "pose": "keys2/K4_hand_up.json",
+   "drawn_from": "keys2/inpaint_K4_hand_up/pose_s1.json",
+   "painting": "keys2/inpaint_K4_hand_up/warp_s1.png",
+   "chains": {
+    "sleeve_r": {
+     "bones": [
+      "sleeve_r0",
+      "sleeve_r1"
+     ],
+     "drawn": {
+      "sleeve_r0": {
+       "world_deg": -101.779,
+       "local_deg": -101.779,
+       "setup_local_deg": -113.15717,
+       "rotate_key_deg": 11.378
+      },
+      "sleeve_r1": {
+       "world_deg": -76.82,
+       "local_deg": 24.959,
+       "setup_local_deg": -5.062928,
+       "rotate_key_deg": 30.022
+      }
+     },
+     "elbow_bend_deg": 24.959,
+     "joints_rig_px": {
+      "shoulder": [
+       352.4,
+       342.3
+      ],
+      "elbow": [
+       323.9,
+       479.4
+      ],
+      "wrist": [
+       355.3,
+       613.8
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 3.9,
+      "elbow": 15.5
+     }
+    },
+    "sleeve_l": {
+     "bones": [
+      "sleeve_l0",
+      "sleeve_l1"
+     ],
+     "drawn": {
+      "sleeve_l0": {
+       "world_deg": -35.546,
+       "local_deg": -35.546,
+       "setup_local_deg": -67.347803,
+       "rotate_key_deg": 31.802
+      },
+      "sleeve_l1": {
+       "world_deg": 107.106,
+       "local_deg": 142.652,
+       "setup_local_deg": 3.852352,
+       "rotate_key_deg": 138.8
+      }
+     },
+     "elbow_bend_deg": 142.652,
+     "joints_rig_px": {
+      "shoulder": [
+       475.3,
+       345.1
+      ],
+      "elbow": [
+       575.3,
+       416.6
+      ],
+      "wrist": [
+       541.0,
+       305.1
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 1.9,
+      "elbow": 13.7
+     }
+    }
+   },
+   "slots": {
+    "upperarm_r_under": {
+     "attachment": "K4_upperarm_r",
+     "bone": "sleeve_r0",
+     "segment": "upperarm_r",
+     "place": {
+      "index": 12,
+      "of": 37,
+      "after": "forearm_r_under",
+      "before": "forearm_l_under",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 1563,
+       "piece_shown_px": 120,
+       "other_shown_px": 670,
+       "away_from_shoulder_40px": {
+        "overlap_px": 818,
+        "piece_shown_px": 55,
+        "other_shown_px": 337
+       }
+      }
+     }
+    },
+    "forearm_r_under": {
+     "attachment": "K4_forearm_r",
+     "bone": "sleeve_r1",
+     "segment": "forearm_r",
+     "place": {
+      "index": 11,
+      "of": 37,
+      "after": "bottomwear",
+      "before": "upperarm_r_under",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "bottomwear": {
+       "overlap_px": 5455,
+       "piece_shown_px": 5167,
+       "other_shown_px": 107
+      }
+     }
+    },
+    "upperarm_l_under": {
+     "attachment": "K4_upperarm_l",
+     "bone": "sleeve_l0",
+     "segment": "upperarm_l",
+     "place": {
+      "index": 14,
+      "of": 37,
+      "after": "forearm_l_under",
+      "before": "topwear",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 1920,
+       "piece_shown_px": 224,
+       "other_shown_px": 711,
+       "away_from_shoulder_40px": {
+        "overlap_px": 351,
+        "piece_shown_px": 47,
+        "other_shown_px": 80
+       }
+      }
+     }
+    },
+    "forearm_l_under": {
+     "attachment": "K4_forearm_l",
+     "bone": "sleeve_l1",
+     "segment": "forearm_l",
+     "place": {
+      "index": 13,
+      "of": 37,
+      "after": "upperarm_r_under",
+      "before": "upperarm_l_under",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {}
+    },
+    "topwear": {
+     "attachment": "K4_topwear",
+     "bones": [
+      "chest",
+      "hip"
+     ],
+     "segment": "torso",
+     "place": {
+      "index": 15,
+      "of": 37,
+      "after": "upperarm_l_under",
+      "before": "sleevefront_l",
+      "group": "base",
+      "reads": "the base topwear's own place"
+     }
+    }
+   },
+   "hides": [
+    "forearm_r_back",
+    "forearm_l_back",
+    "upperarm_r_back",
+    "forearm_r",
+    "upperarm_r",
+    "forearm_l",
+    "upperarm_l",
+    "sleevefront_l",
+    "forearm_l_mid",
+    "upperarm_l_mid"
+   ],
+   "test_animation": "set_K4"
+  },
+  {
+   "name": "K0_hands_behind_back",
+   "set": true,
+   "pose": "k0/K0_hands_behind_back.json",
+   "drawn_from": "k0/inpaint_K0_hands_behind_back/pose_s2.json",
+   "painting": "k0/inpaint_K0_hands_behind_back/warp_s2.png",
+   "chains": {
+    "sleeve_r": {
+     "bones": [
+      "sleeve_r0",
+      "sleeve_r1"
+     ],
+     "drawn": {
+      "sleeve_r0": {
+       "world_deg": -99.865,
+       "local_deg": -99.865,
+       "setup_local_deg": -113.15717,
+       "rotate_key_deg": 13.292
+      },
+      "sleeve_r1": {
+       "world_deg": -50.93,
+       "local_deg": 48.935,
+       "setup_local_deg": -5.062928,
+       "rotate_key_deg": 53.998
+      }
+     },
+     "elbow_bend_deg": 48.935,
+     "joints_rig_px": {
+      "shoulder": [
+       353.2,
+       340.4
+      ],
+      "elbow": [
+       330.4,
+       471.8
+      ],
+      "wrist": [
+       367.5,
+       517.5
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 2.9,
+      "elbow": 6.9
+     },
+     "drawn_minus_pose_deg": {
+      "sleeve_r0": -8.4,
+      "sleeve_r1": 11.4
+     },
+     "wrist_hidden": {
+      "rtmpose_score": 0.636,
+      "note": "the wrist is behind the skirt in the painting; RTMPose places it, so the forearm's drawn angle is its guess"
+     }
+    },
+    "sleeve_l": {
+     "bones": [
+      "sleeve_l0",
+      "sleeve_l1"
+     ],
+     "drawn": {
+      "sleeve_l0": {
+       "world_deg": -82.231,
+       "local_deg": -82.231,
+       "setup_local_deg": -67.347803,
+       "rotate_key_deg": -14.883
+      },
+      "sleeve_l1": {
+       "world_deg": -119.399,
+       "local_deg": -37.169,
+       "setup_local_deg": 3.852352,
+       "rotate_key_deg": -41.021
+      }
+     },
+     "elbow_bend_deg": -37.169,
+     "joints_rig_px": {
+      "shoulder": [
+       487.5,
+       340.4
+      ],
+      "elbow": [
+       504.6,
+       466.1
+      ],
+      "wrist": [
+       478.9,
+       511.8
+      ]
+     },
+     "pivot_error_px": {
+      "shoulder": 11.5,
+      "elbow": 16.0
+     },
+     "drawn_minus_pose_deg": {
+      "sleeve_l0": 6.7,
+      "sleeve_l1": 0.1
+     },
+     "wrist_hidden": {
+      "rtmpose_score": 0.627,
+      "note": "the wrist is behind the skirt in the painting; RTMPose places it, so the forearm's drawn angle is its guess"
+     }
+    }
+   },
+   "slots": {
+    "upperarm_r_under": {
+     "attachment": "K0_upperarm_r",
+     "bone": "sleeve_r0",
+     "segment": "upperarm_r",
+     "place": {
+      "index": 12,
+      "of": 37,
+      "after": "forearm_r_under",
+      "before": "forearm_l_under",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 5420,
+       "piece_shown_px": 240,
+       "other_shown_px": 4034,
+       "away_from_shoulder_40px": {
+        "overlap_px": 3315,
+        "piece_shown_px": 107,
+        "other_shown_px": 2325
+       }
+      },
+      "back hair": {
+       "overlap_px": 460,
+       "piece_shown_px": 277,
+       "other_shown_px": 179
+      }
+     }
+    },
+    "forearm_r_back": {
+     "attachment": "K0_forearm_r",
+     "bone": "sleeve_r1",
+     "segment": "forearm_r",
+     "place": {
+      "index": 0,
+      "of": 37,
+      "after": null,
+      "before": "forearm_l_back",
+      "group": "back",
+      "reads": "behind the whole body, legs included: drawn before hair_back"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 440,
+       "piece_shown_px": 0,
+       "other_shown_px": 440,
+       "away_from_shoulder_40px": {
+        "overlap_px": 440,
+        "piece_shown_px": 0,
+        "other_shown_px": 440
+       }
+      },
+      "bottomwear": {
+       "overlap_px": 5560,
+       "piece_shown_px": 0,
+       "other_shown_px": 5456
+      },
+      "legwear": {
+       "overlap_px": 1359,
+       "piece_shown_px": 34,
+       "other_shown_px": 1275
+      },
+      "back hair": {
+       "overlap_px": 1572,
+       "piece_shown_px": 76,
+       "other_shown_px": 1388,
+       "note": "colour tie: the amodal back-hair tail behind the skirt is black like the skirt; not a depth reading"
+      }
+     }
+    },
+    "upperarm_l_under": {
+     "attachment": "K0_upperarm_l",
+     "bone": "sleeve_l0",
+     "segment": "upperarm_l",
+     "place": {
+      "index": 14,
+      "of": 37,
+      "after": "forearm_l_under",
+      "before": "topwear",
+      "group": "under",
+      "reads": "in front of the skirt, behind the jacket: drawn after bottomwear, before topwear"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 4711,
+       "piece_shown_px": 351,
+       "other_shown_px": 3050,
+       "away_from_shoulder_40px": {
+        "overlap_px": 2763,
+        "piece_shown_px": 216,
+        "other_shown_px": 1727
+       }
+      },
+      "back hair": {
+       "overlap_px": 1280,
+       "piece_shown_px": 979,
+       "other_shown_px": 279
+      }
+     }
+    },
+    "forearm_l_back": {
+     "attachment": "K0_forearm_l",
+     "bone": "sleeve_l1",
+     "segment": "forearm_l",
+     "place": {
+      "index": 1,
+      "of": 37,
+      "after": "forearm_r_back",
+      "before": "upperarm_r_back",
+      "group": "back",
+      "reads": "behind the whole body, legs included: drawn before hair_back"
+     },
+     "evidence": {
+      "topwear": {
+       "overlap_px": 439,
+       "piece_shown_px": 0,
+       "other_shown_px": 439,
+       "away_from_shoulder_40px": {
+        "overlap_px": 439,
+        "piece_shown_px": 0,
+        "other_shown_px": 439
+       }
+      },
+      "bottomwear": {
+       "overlap_px": 4432,
+       "piece_shown_px": 0,
+       "other_shown_px": 4376
+      },
+      "legwear": {
+       "overlap_px": 1329,
+       "piece_shown_px": 25,
+       "other_shown_px": 1251
+      },
+      "back hair": {
+       "overlap_px": 698,
+       "piece_shown_px": 0,
+       "other_shown_px": 694,
+       "note": "colour tie: the amodal back-hair tail behind the skirt is black like the skirt; not a depth reading"
+      }
+     }
+    },
+    "topwear": {
+     "attachment": "K0_topwear",
+     "bones": [
+      "chest",
+      "hip"
+     ],
+     "segment": "torso",
+     "place": {
+      "index": 15,
+      "of": 37,
+      "after": "upperarm_l_under",
+      "before": "sleevefront_l",
+      "group": "base",
+      "reads": "the base topwear's own place"
+     }
+    }
+   },
+   "hides": [
+    "upperarm_r_back",
+    "forearm_r_under",
+    "forearm_l_under",
+    "forearm_r",
+    "upperarm_r",
+    "forearm_l",
+    "upperarm_l",
+    "sleevefront_l",
+    "forearm_l_mid",
+    "upperarm_l_mid"
+   ],
+   "test_animation": "set_K0",
+   "reference_window": {
+    "frames": [
+     0,
+     18
+    ],
+    "n": 19,
+    "rule": "contiguous from frame 0 while both wrists stay within 0.15 x frame-0 shoulder width (33.3 px) of frame 0",
+    "first_frame_out": 19,
+    "representative_frame": 11,
+    "wrist_score_median": {
+     "l": 0.71,
+     "r": 0.623
+    }
+   }
+  }
+ ]
+}
