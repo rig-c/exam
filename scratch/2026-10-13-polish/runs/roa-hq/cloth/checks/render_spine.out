@@ -1,7 +1,0 @@
-rigc render
-  ..    skeleton <scratch>/dancer-2026-10-13/polish1_cloth/build/skeleton.json
-  ..    atlas    <scratch>/dancer-2026-10-13/polish1_cloth/build/skeleton.atlas
-  ..    poser    spine-core — --poser spine
-  ..    628x800px at 24 fps, 1 set(s) -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/render_spine
-  ..    dance            313 frame(s), 13.000s + contact.png + geometry.json -> <scratch>/dancer-2026-10-13/polish1_cloth/checks/render_spine/dance@24fps
-rigc: wrote <scratch>/dancer-2026-10-13/polish1_cloth/checks/render_spine/frames.json
