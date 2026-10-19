@@ -17,11 +17,12 @@ one fresh clone; a repeat in a session that has seen an answer measures the answ
 
     git clone --single-branch --branch main --filter=blob:none --sparse https://github.com/rig-c/exam.git exam-<MODEL>
     cd exam-<MODEL>
-    git sparse-checkout set --no-cone '/*' '!/results/'
+    git sparse-checkout set --no-cone '/*' '!/results/' '!/advanced/'
     npm ci
 
 Run those four lines exactly. The clone they make holds the exam and not `results/`, where other
-examinees' runs are kept: those files are neither checked out nor downloaded.
+examinees' runs are kept, nor `advanced/`, which is another edition with runs of its own: those files are
+neither checked out nor downloaded.
 
 Read `README.md` first; it states the rules. Then do the five tasks in order: `tasks/01-build/TASK.md`,
 `tasks/02-move/TASK.md`, `tasks/03-correct/TASK.md`, `tasks/04-soft/TASK.md`, `tasks/05-dance/TASK.md`.

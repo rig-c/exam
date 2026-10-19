@@ -72,6 +72,8 @@ in the tools and in this exam.
                                 who.json beside them says who did the work and what the run counts as.
                                 results/void/ holds runs that are kept and not counted.
     results.py                  writes the tables on this page and in results/README.md from results/
+    advanced/                   the Advanced edition: motion from a pose sequence on a built rig, in three
+                                rounds, with its own prompt, results and tables — see advanced/README.md
 
 ## Sitting it
 
