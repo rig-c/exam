@@ -1,0 +1,5645 @@
+{
+  "spec": "rig-pose-report/1",
+  "rigc": {
+    "version": "2.59.0",
+    "entry": "cli_core.ts — @esotericsoftware/spine-core absent — the round trip and the commands that need it are not available here; see --help"
+  },
+  "rig": "wind_painting",
+  "animation": "run",
+  "frames": 200,
+  "duration": 6.63333,
+  "cleaned": {
+    "spec": "rig-pose-clean/1",
+    "params": {
+      "loop": true,
+      "legs": 5,
+      "rest": 5,
+      "hold": {
+        "speed": 0.015,
+        "reach": 0.03,
+        "minSeconds": 0.5,
+        "blend": 6
+      }
+    },
+    "spikes": {
+      "found": [
+        {
+          "frame": 1,
+          "joint": "l_knee",
+          "t": 0.03333,
+          "bones": [
+            "leg_l0",
+            "leg_l1"
+          ]
+        },
+        {
+          "frame": 2,
+          "joint": "l_knee",
+          "t": 0.06667,
+          "bones": [
+            "leg_l0",
+            "leg_l1"
+          ]
+        },
+        {
+          "frame": 3,
+          "joint": "l_knee",
+          "t": 0.1,
+          "bones": [
+            "leg_l0",
+            "leg_l1"
+          ]
+        },
+        {
+          "frame": 3,
+          "joint": "l_ankle",
+          "t": 0.1,
+          "bone": "leg_l1"
+        },
+        {
+          "frame": 12,
+          "joint": "r_wrist",
+          "t": 0.4,
+          "bone": "sleeve_r1"
+        },
+        {
+          "frame": 16,
+          "joint": "l_ankle",
+          "t": 0.53333,
+          "bone": "leg_l1"
+        },
+        {
+          "frame": 17,
+          "joint": "l_ankle",
+          "t": 0.56667,
+          "bone": "leg_l1"
+        },
+        {
+          "frame": 18,
+          "joint": "l_ankle",
+          "t": 0.6,
+          "bone": "leg_l1"
+        },
+        {
+          "frame": 19,
+          "joint": "l_knee",
+          "t": 0.63333,
+          "bones": [
+            "leg_l0",
+            "leg_l1"
+          ]
+        },
+        {
+          "frame": 19,
+          "joint": "l_ankle",
+          "t": 0.63333,
+          "bone": "leg_l1"
+        }
+      ],
+      "untested": []
+    },
+    "jitter": {
+      "before": 17.0617,
+      "after": 7.9903
+    },
+    "holds": [],
+    "unheld": [],
+    "seams": []
+  },
+  "options": {
+    "minScore": 0.3,
+    "flip": 90,
+    "short": 0.35,
+    "bends": "clamp",
+    "bendTolerance": 0,
+    "switchTolerance": 25,
+    "switchMin": 0.25,
+    "switchAt": "first",
+    "profile": "spine",
+    "legScale": [
+      0.8,
+      1.05
+    ],
+    "plantFeet": true,
+    "stance": 0.07,
+    "floor": null,
+    "raisedByHead": false,
+    "idle": "idle",
+    "carryIdle": false,
+    "merge": null,
+    "reduce": "off",
+    "reduceHip": "off"
+  },
+  "scale": {
+    "factor": 1.781042008794223,
+    "pose": 202.12886513761845,
+    "rig": 360.0000000000005
+  },
+  "holds": [],
+  "short": [
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        13,
+        13
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        0.43333,
+        0.43333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        33,
+        33
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        1.1,
+        1.1
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        53,
+        53
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        1.76667,
+        1.76667
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        73,
+        73
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        2.43333,
+        2.43333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        93,
+        93
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        3.1,
+        3.1
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        113,
+        113
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        3.76667,
+        3.76667
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        133,
+        133
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        4.43333,
+        4.43333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        153,
+        153
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        5.1,
+        5.1
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        173,
+        173
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        5.76667,
+        5.76667
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        193,
+        193
+      ],
+      "minFraction": 0.23947140646867018,
+      "times": [
+        6.43333,
+        6.43333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        8,
+        9
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        0.26667,
+        0.3
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        12,
+        13
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        0.4,
+        0.43333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        28,
+        29
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        0.93333,
+        0.96667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        32,
+        33
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        1.06667,
+        1.1
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        48,
+        49
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        1.6,
+        1.63333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        52,
+        53
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        1.73333,
+        1.76667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        68,
+        69
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        2.26667,
+        2.3
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        72,
+        73
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        2.4,
+        2.43333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        88,
+        89
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        2.93333,
+        2.96667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        92,
+        93
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        3.06667,
+        3.1
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        108,
+        109
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        3.6,
+        3.63333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        112,
+        113
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        3.73333,
+        3.76667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        128,
+        129
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        4.26667,
+        4.3
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        132,
+        133
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        4.4,
+        4.43333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        148,
+        149
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        4.93333,
+        4.96667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        152,
+        153
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        5.06667,
+        5.1
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        168,
+        169
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        5.6,
+        5.63333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        172,
+        173
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        5.73333,
+        5.76667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        188,
+        189
+      ],
+      "minFraction": 0.161229386796644,
+      "times": [
+        6.26667,
+        6.3
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        192,
+        193
+      ],
+      "minFraction": 0.12904888417562724,
+      "times": [
+        6.4,
+        6.43333
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        0,
+        3
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        0,
+        0.1
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        19,
+        23
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        0.63333,
+        0.76667
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        39,
+        43
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        1.3,
+        1.43333
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        59,
+        63
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        1.96667,
+        2.1
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        79,
+        83
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        2.63333,
+        2.76667
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        99,
+        103
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        3.3,
+        3.43333
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        119,
+        123
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        3.96667,
+        4.1
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        139,
+        143
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        4.63333,
+        4.76667
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        159,
+        163
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        5.3,
+        5.43333
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        179,
+        183
+      ],
+      "minFraction": 0.11781098150239332,
+      "times": [
+        5.96667,
+        6.1
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        199,
+        199
+      ],
+      "minFraction": 0.2638314884506172,
+      "times": [
+        6.63333,
+        6.63333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        10,
+        22
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        0.33333,
+        0.73333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        30,
+        42
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        1,
+        1.4
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        50,
+        62
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        1.66667,
+        2.06667
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        70,
+        82
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        2.33333,
+        2.73333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        90,
+        102
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        3,
+        3.4
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        110,
+        122
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        3.66667,
+        4.06667
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        130,
+        142
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        4.33333,
+        4.73333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        150,
+        162
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        5,
+        5.4
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        170,
+        182
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 23.497,
+      "asked": 81.816,
+      "times": [
+        5.66667,
+        6.06667
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        190,
+        196
+      ],
+      "minFraction": 0.23947140646867018,
+      "step": 19.352,
+      "asked": 71.667,
+      "times": [
+        6.33333,
+        6.53333
+      ]
+    },
+    {
+      "chain": "arm_l",
+      "bone": "sleeve_l1",
+      "joints": [
+        "l_elbow",
+        "l_wrist"
+      ],
+      "frames": [
+        198,
+        198
+      ],
+      "minFraction": 0.5279709403137992,
+      "step": 25.367,
+      "asked": 33.608,
+      "times": [
+        6.6,
+        6.6
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        5,
+        16
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        0.16667,
+        0.53333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        25,
+        36
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        0.83333,
+        1.2
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        45,
+        56
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        1.5,
+        1.86667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        65,
+        76
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        2.16667,
+        2.53333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        85,
+        96
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        2.83333,
+        3.2
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        105,
+        116
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        3.5,
+        3.86667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        125,
+        136
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        4.16667,
+        4.53333
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        145,
+        156
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        4.83333,
+        5.2
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        165,
+        176
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        5.5,
+        5.86667
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "frames": [
+        185,
+        196
+      ],
+      "minFraction": 0.12904888417562724,
+      "step": 0.593,
+      "asked": -55.659,
+      "times": [
+        6.16667,
+        6.53333
+      ]
+    }
+  ],
+  "endOn": [
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        19,
+        23
+      ],
+      "seconds": 0.16667,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        0.63333,
+        0.76667
+      ],
+      "spanSeconds": 0.16667
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        39,
+        43
+      ],
+      "seconds": 0.16667,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        1.3,
+        1.43333
+      ],
+      "spanSeconds": 0.16667
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        59,
+        63
+      ],
+      "seconds": 0.16666,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        1.96667,
+        2.1
+      ],
+      "spanSeconds": 0.16666
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        79,
+        83
+      ],
+      "seconds": 0.16667,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        2.63333,
+        2.76667
+      ],
+      "spanSeconds": 0.16667
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        99,
+        103
+      ],
+      "seconds": 0.16667,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        3.3,
+        3.43333
+      ],
+      "spanSeconds": 0.16667
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        119,
+        123
+      ],
+      "seconds": 0.16666,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        3.96667,
+        4.1
+      ],
+      "spanSeconds": 0.16666
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        139,
+        143
+      ],
+      "seconds": 0.16667,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        4.63333,
+        4.76667
+      ],
+      "spanSeconds": 0.16667
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        159,
+        163
+      ],
+      "seconds": 0.16667,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        5.3,
+        5.43333
+      ],
+      "spanSeconds": 0.16667
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "frames": [
+        179,
+        183
+      ],
+      "seconds": 0.16666,
+      "minFraction": 0.11781098150239332,
+      "times": [
+        5.96667,
+        6.1
+      ],
+      "spanSeconds": 0.16666
+    }
+  ],
+  "bends": [],
+  "flips": [],
+  "gate": "52 assertions: 21 measured (21 passed, 0 failed), 17 skipped, 14 not in profile \"spine\"",
+  "landings": [
+    {
+      "bone": "chest",
+      "worst": 0.0007425902856965649,
+      "frame": 171,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 5.7
+    },
+    {
+      "bone": "hip",
+      "worst": 0.0004889986758582765,
+      "frame": 128,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 4.26667
+    },
+    {
+      "bone": "sleeve_r0",
+      "worst": 0.001149692089128962,
+      "frame": 176,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 5.86667
+    },
+    {
+      "bone": "sleeve_r1",
+      "worst": 0.0012677526943321027,
+      "frame": 142,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 4.73333
+    },
+    {
+      "bone": "sleeve_l0",
+      "worst": 0.001014892853717697,
+      "frame": 160,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 5.33333
+    },
+    {
+      "bone": "sleeve_l1",
+      "worst": 0.0015014407004798613,
+      "frame": 140,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 4.66667
+    },
+    {
+      "bone": "leg_r0",
+      "worst": 0.0009054744031260498,
+      "frame": 168,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 5.6
+    },
+    {
+      "bone": "leg_r1",
+      "worst": 0.0010337931581005932,
+      "frame": 153,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 5.1
+    },
+    {
+      "bone": "leg_l0",
+      "worst": 0.0008164002007760018,
+      "frame": 128,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 4.26667
+    },
+    {
+      "bone": "leg_l1",
+      "worst": 0.001134088718259818,
+      "frame": 141,
+      "kind": "angle",
+      "tolerance": 0.01,
+      "t": 4.7
+    },
+    {
+      "bone": "leg_r0",
+      "worst": 0.000001106613903512077,
+      "frame": 129,
+      "kind": "scale",
+      "tolerance": 0.0001,
+      "t": 4.3
+    },
+    {
+      "bone": "leg_r1",
+      "worst": 0.0000010768288379869873,
+      "frame": 141,
+      "kind": "scale",
+      "tolerance": 0.0001,
+      "t": 4.7
+    },
+    {
+      "bone": "leg_l0",
+      "worst": 6.584853292634918e-7,
+      "frame": 172,
+      "kind": "scale",
+      "tolerance": 0.0001,
+      "t": 5.73333
+    },
+    {
+      "bone": "leg_l1",
+      "worst": 0.0000010094914869585025,
+      "frame": 174,
+      "kind": "scale",
+      "tolerance": 0.0001,
+      "t": 5.8
+    },
+    {
+      "bone": "hip",
+      "worst": 0.0005950153360775926,
+      "frame": 156,
+      "kind": "origin",
+      "tolerance": 0.01,
+      "t": 5.2
+    },
+    {
+      "bone": "leg_r1:tip",
+      "worst": 0.006113657391829713,
+      "frame": 168,
+      "kind": "foot",
+      "tolerance": 0.05909515681423923,
+      "t": 5.6
+    },
+    {
+      "bone": "leg_l1:tip",
+      "worst": 0.007112623630316406,
+      "frame": 126,
+      "kind": "foot",
+      "tolerance": 0.05905970320344154,
+      "t": 4.2
+    }
+  ],
+  "posture": {
+    "pelvis": "pelvis",
+    "rigHip": "hip",
+    "rigShoulder": "sleeve_r0+sleeve_l0",
+    "frames": {
+      "tilt": 200,
+      "sway": 200,
+      "of": 200
+    },
+    "tilt": {
+      "reference": {
+        "min": -7.384304203739703,
+        "max": 7.005938522643248,
+        "range": 14.39024272638295
+      },
+      "rig": {
+        "min": -7.383999222144428,
+        "max": 7.006000083424222,
+        "range": 14.38999930556865
+      },
+      "ratio": 0.999983084314912
+    },
+    "sway": {
+      "reference": {
+        "min": -28.585724241147297,
+        "max": 8.112646350057698,
+        "range": 36.69837059120499,
+        "shoulderWidth": 251.6313681956113,
+        "rangeSw": 0.1458417956964598
+      },
+      "rig": {
+        "min": -26.685138022481237,
+        "max": 23.295611000681888,
+        "range": 49.98074902316313,
+        "shoulderWidth": 152.0000004550492,
+        "rangeSw": 0.3288207162732469
+      },
+      "ratio": 1.3619337376014549,
+      "ratioSw": 2.254639794463452
+    },
+    "bounce": [
+      {
+        "side": "r",
+        "frames": [
+          0,
+          2
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597347227246327,
+          "ratio": 0.9715823357998158,
+          "corr": 0.9985738103906846
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834662890032971,
+          "ratio": 0.9111646601712068,
+          "corr": 0.8797611289827494
+        },
+        "eyesNeck": {
+          "reference": 0.8493715534845501,
+          "rig": 0.011091989408813249,
+          "ratio": 0.013059054501305489,
+          "corr": 0.5244651025922714
+        },
+        "times": [
+          0,
+          0.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          10,
+          12
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023153318159089,
+          "ratio": 0.9337279583535343,
+          "corr": 0.9608484790540385
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933823623596263,
+          "ratio": 1.2283902096124932,
+          "corr": 0.85095335356517
+        },
+        "eyesNeck": {
+          "reference": 0.7528182887888092,
+          "rig": 0.05495025861671346,
+          "ratio": 0.0729927253828033,
+          "corr": -0.9769068698005671
+        },
+        "times": [
+          0.33333,
+          0.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          20,
+          22
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597348287566507,
+          "ratio": 0.9715824919517237,
+          "corr": 0.9985737775397863
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834663803581726,
+          "ratio": 0.9111647819611699,
+          "corr": 0.8797614175990811
+        },
+        "eyesNeck": {
+          "reference": 0.8493715528363264,
+          "rig": 0.011091983175275513,
+          "ratio": 0.013059047172272008,
+          "corr": 0.5244652429124095
+        },
+        "times": [
+          0.66667,
+          0.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          30,
+          32
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023143473517656,
+          "ratio": 0.9337273028506857,
+          "corr": 0.9608488145581792
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933813846070825,
+          "ratio": 1.2283893476368541,
+          "corr": 0.8509539892273018
+        },
+        "eyesNeck": {
+          "reference": 0.7528182836718285,
+          "rig": 0.05495032338495217,
+          "ratio": 0.07299281191330143,
+          "corr": -0.9769070122010316
+        },
+        "times": [
+          1,
+          1.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          40,
+          42
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.5973499200061285,
+          "ratio": 0.9715827323588823,
+          "corr": 0.998573794250968
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834665384827802,
+          "ratio": 0.9111649927653553,
+          "corr": 0.8797612705619985
+        },
+        "eyesNeck": {
+          "reference": 0.8493715466269508,
+          "rig": 0.01109198180487826,
+          "ratio": 0.013059045654315904,
+          "corr": 0.5244650972546349
+        },
+        "times": [
+          1.33333,
+          1.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          50,
+          52
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023141486792653,
+          "ratio": 0.9337271705651263,
+          "corr": 0.9608482056208109
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933811753433245,
+          "ratio": 1.2283891631522803,
+          "corr": 0.8509528340102682
+        },
+        "eyesNeck": {
+          "reference": 0.7528182890602804,
+          "rig": 0.05495024854814193,
+          "ratio": 0.07299271198197724,
+          "corr": -0.9769068550933986
+        },
+        "times": [
+          1.66667,
+          1.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          60,
+          62
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597344037134028,
+          "ratio": 0.9715818659963248,
+          "corr": 0.9985737608298965
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834659255546545,
+          "ratio": 0.9111641756388104,
+          "corr": 0.8797615774886387
+        },
+        "eyesNeck": {
+          "reference": 0.8493715473930223,
+          "rig": 0.011091966637765988,
+          "ratio": 0.013059027785673515,
+          "corr": 0.5244655129350164
+        },
+        "times": [
+          2,
+          2.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          70,
+          72
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023117991875253,
+          "ratio": 0.9337256061622593,
+          "corr": 0.9608489821089132
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933788500887962,
+          "ratio": 1.2283871132340562,
+          "corr": 0.8509542963591032
+        },
+        "eyesNeck": {
+          "reference": 0.7528182938559375,
+          "rig": 0.054950017770938255,
+          "ratio": 0.07299240496599001,
+          "corr": -0.9769073270250338
+        },
+        "times": [
+          2.33333,
+          2.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          80,
+          82
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597355043128433,
+          "ratio": 0.9715834868341227,
+          "corr": 0.9985737910910245
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834670530440465,
+          "ratio": 0.9111656787538948,
+          "corr": 0.8797612915286223
+        },
+        "eyesNeck": {
+          "reference": 0.8493715493563008,
+          "rig": 0.011091984395088393,
+          "ratio": 0.013059048661913026,
+          "corr": 0.5244651065014687
+        },
+        "times": [
+          2.66667,
+          2.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          90,
+          92
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023143473479964,
+          "ratio": 0.933727302848176,
+          "corr": 0.9608488145586968
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933813846033212,
+          "ratio": 1.2283893476335384,
+          "corr": 0.8509539892282972
+        },
+        "eyesNeck": {
+          "reference": 0.7528182836719284,
+          "rig": 0.054950323385034784,
+          "ratio": 0.07299281191340147,
+          "corr": -0.9769070122012006
+        },
+        "times": [
+          3,
+          3.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          100,
+          102
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597327933032582,
+          "ratio": 0.9715794943672502,
+          "corr": 0.9985736907551088
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834642661041908,
+          "ratio": 0.9111619633385958,
+          "corr": 0.8797622016191086
+        },
+        "eyesNeck": {
+          "reference": 0.8493715463574125,
+          "rig": 0.011091934254657685,
+          "ratio": 0.013058989675632763,
+          "corr": 0.5244663199638223
+        },
+        "times": [
+          3.33333,
+          3.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          110,
+          112
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023169526250701,
+          "ratio": 0.9337290375650316,
+          "corr": 0.9608484655944723
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933839549379867,
+          "ratio": 1.228391613611653,
+          "corr": 0.8509533197935727
+        },
+        "eyesNeck": {
+          "reference": 0.7528182829305616,
+          "rig": 0.054950235602244095,
+          "ratio": 0.07299269537973295,
+          "corr": -0.9769067780518519
+        },
+        "times": [
+          3.66667,
+          3.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          120,
+          122
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597344037134021,
+          "ratio": 0.9715818659963237,
+          "corr": 0.9985737608298962
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834659255546539,
+          "ratio": 0.9111641756388096,
+          "corr": 0.8797615774886425
+        },
+        "eyesNeck": {
+          "reference": 0.8493715473929967,
+          "rig": 0.011091966637792678,
+          "ratio": 0.013059027785705333,
+          "corr": 0.5244655129314962
+        },
+        "times": [
+          4,
+          4.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          130,
+          132
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023169421974993,
+          "ratio": 0.9337290306218611,
+          "corr": 0.9608483516119115
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933839272416414,
+          "ratio": 1.2283915891948667,
+          "corr": 0.8509530947333729
+        },
+        "eyesNeck": {
+          "reference": 0.7528182863180098,
+          "rig": 0.054950058922662894,
+          "ratio": 0.07299246036041501,
+          "corr": -0.976906708883491
+        },
+        "times": [
+          4.33333,
+          4.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          140,
+          142
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597322228184644,
+          "ratio": 0.9715786542220685,
+          "corr": 0.9985736352971872
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834636056479941,
+          "ratio": 0.9111610828498933,
+          "corr": 0.8797627253378653
+        },
+        "eyesNeck": {
+          "reference": 0.8493715457665133,
+          "rig": 0.01109189623152946,
+          "ratio": 0.013058944918527503,
+          "corr": 0.5244672850441714
+        },
+        "times": [
+          4.66667,
+          4.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          150,
+          152
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023143473479886,
+          "ratio": 0.9337273028481707,
+          "corr": 0.9608488145587001
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933813846033134,
+          "ratio": 1.2283893476335315,
+          "corr": 0.8509539892283035
+        },
+        "eyesNeck": {
+          "reference": 0.7528182836718318,
+          "rig": 0.05495032338514184,
+          "ratio": 0.07299281191355304,
+          "corr": -0.9769070122011789
+        },
+        "times": [
+          5,
+          5.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          160,
+          162
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597352959087553,
+          "ratio": 0.9715831799202623,
+          "corr": 0.9985737756986182
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834667769636042,
+          "ratio": 0.9111653106966161,
+          "corr": 0.8797614260260388
+        },
+        "eyesNeck": {
+          "reference": 0.8493715125621853,
+          "rig": 0.01109194462337962,
+          "ratio": 0.013059002402753107,
+          "corr": 0.524465059127334
+        },
+        "times": [
+          5.33333,
+          5.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          170,
+          172
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023077361936627,
+          "ratio": 0.9337229008285315,
+          "corr": 0.9608494949167714
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933747797759926,
+          "ratio": 1.2283835248920958,
+          "corr": 0.850955269806426
+        },
+        "eyesNeck": {
+          "reference": 0.7528182646407555,
+          "rig": 0.05495043690561728,
+          "ratio": 0.0729929645527923,
+          "corr": -0.9769075593663988
+        },
+        "times": [
+          5.66667,
+          5.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          180,
+          182
+        ],
+        "hip": {
+          "reference": 6.790312034455966,
+          "rig": 6.597344037134021,
+          "ratio": 0.9715818659963237,
+          "corr": 0.9985737608298962
+        },
+        "neck": {
+          "reference": 7.5010184095032235,
+          "rig": 6.834659255546539,
+          "ratio": 0.9111641756388096,
+          "corr": 0.8797615774886425
+        },
+        "eyesNeck": {
+          "reference": 0.8493715473929967,
+          "rig": 0.011091966637792678,
+          "ratio": 0.013059027785705333,
+          "corr": 0.5244655129314962
+        },
+        "times": [
+          6,
+          6.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          190,
+          192
+        ],
+        "hip": {
+          "reference": 15.018457134866631,
+          "rig": 14.023169421974993,
+          "ratio": 0.9337290306218611,
+          "corr": 0.9608483516119115
+        },
+        "neck": {
+          "reference": 11.343157503666374,
+          "rig": 13.933839272416414,
+          "ratio": 1.2283915891948667,
+          "corr": 0.8509530947333729
+        },
+        "eyesNeck": {
+          "reference": 0.7528182863180098,
+          "rig": 0.054950058922662894,
+          "ratio": 0.07299246036041501,
+          "corr": -0.976906708883491
+        },
+        "times": [
+          6.33333,
+          6.4
+        ]
+      }
+    ]
+  },
+  "folds": [
+    {
+      "slot": "bottomwear",
+      "attachment": "bottomwear",
+      "times": [
+        1.4,
+        1.7333333333333334,
+        2.0666666666666664,
+        2.4,
+        2.7333333333333334,
+        3.0666666666666664,
+        3.4,
+        3.7333333333333334,
+        4.066666666666666,
+        4.4,
+        4.733333333333333,
+        5.066666666666666,
+        5.4,
+        5.733333333333333,
+        6.066666666666666,
+        6.4
+      ],
+      "domain": "render"
+    }
+  ],
+  "switches": [],
+  "uncovered": [
+    {
+      "slot": "bottomwear",
+      "attachment": "bottomwear",
+      "chains": [
+        "pelvis"
+      ],
+      "times": [
+        1.4,
+        1.7333333333333334,
+        2.0666666666666664,
+        2.4,
+        2.7333333333333334,
+        3.0666666666666664,
+        3.4,
+        3.7333333333333334,
+        4.066666666666666,
+        4.4,
+        4.733333333333333,
+        5.066666666666666,
+        5.4,
+        5.733333333333333,
+        6.066666666666666,
+        6.4
+      ],
+      "domain": "render"
+    }
+  ],
+  "turns": [],
+  "range": [],
+  "artRange": [],
+  "raised": [],
+  "body": {
+    "standing": {
+      "shoulder": 141.157,
+      "hip": 82.475
+    },
+    "read": {
+      "yaw": {
+        "min": -18.014,
+        "max": 0,
+        "range": 18.014
+      },
+      "opening": {
+        "min": -18.014,
+        "max": 0,
+        "range": 18.014
+      }
+    },
+    "over45": [],
+    "framesOver45": []
+  },
+  "legScale": [
+    {
+      "chain": "leg_r",
+      "bone": "leg_r0",
+      "joints": [
+        "r_hip",
+        "r_knee"
+      ],
+      "straight": 220.60625496443623,
+      "ratio": {
+        "min": 0.6775899897689853,
+        "median": 0.8278041672231455,
+        "max": 1.0547685081780973
+      },
+      "limits": [
+        0.8,
+        1.05
+      ],
+      "low": [
+        [
+          4,
+          8
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          24,
+          28
+        ],
+        [
+          34,
+          37
+        ],
+        [
+          44,
+          48
+        ],
+        [
+          54,
+          57
+        ],
+        [
+          64,
+          68
+        ],
+        [
+          74,
+          77
+        ],
+        [
+          84,
+          88
+        ],
+        [
+          94,
+          97
+        ],
+        [
+          104,
+          108
+        ],
+        [
+          114,
+          117
+        ],
+        [
+          124,
+          128
+        ],
+        [
+          134,
+          137
+        ],
+        [
+          144,
+          148
+        ],
+        [
+          154,
+          157
+        ],
+        [
+          164,
+          168
+        ],
+        [
+          174,
+          177
+        ],
+        [
+          184,
+          188
+        ],
+        [
+          194,
+          197
+        ]
+      ],
+      "high": [
+        [
+          10,
+          10
+        ],
+        [
+          30,
+          30
+        ],
+        [
+          50,
+          50
+        ],
+        [
+          70,
+          70
+        ],
+        [
+          90,
+          90
+        ],
+        [
+          110,
+          110
+        ],
+        [
+          130,
+          130
+        ],
+        [
+          150,
+          150
+        ],
+        [
+          170,
+          170
+        ],
+        [
+          190,
+          190
+        ]
+      ],
+      "clamped": [
+        {
+          "frames": [
+            4,
+            8
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            0.13333,
+            0.26667
+          ]
+        },
+        {
+          "frames": [
+            14,
+            17
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            0.46667,
+            0.56667
+          ]
+        },
+        {
+          "frames": [
+            24,
+            28
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            0.8,
+            0.93333
+          ]
+        },
+        {
+          "frames": [
+            34,
+            37
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            1.13333,
+            1.23333
+          ]
+        },
+        {
+          "frames": [
+            44,
+            48
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            1.46667,
+            1.6
+          ]
+        },
+        {
+          "frames": [
+            54,
+            57
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            1.8,
+            1.9
+          ]
+        },
+        {
+          "frames": [
+            64,
+            68
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            2.13333,
+            2.26667
+          ]
+        },
+        {
+          "frames": [
+            74,
+            77
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            2.46667,
+            2.56667
+          ]
+        },
+        {
+          "frames": [
+            84,
+            88
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            2.8,
+            2.93333
+          ]
+        },
+        {
+          "frames": [
+            94,
+            97
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            3.13333,
+            3.23333
+          ]
+        },
+        {
+          "frames": [
+            104,
+            108
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            3.46667,
+            3.6
+          ]
+        },
+        {
+          "frames": [
+            114,
+            117
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            3.8,
+            3.9
+          ]
+        },
+        {
+          "frames": [
+            124,
+            128
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            4.13333,
+            4.26667
+          ]
+        },
+        {
+          "frames": [
+            134,
+            137
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            4.46667,
+            4.56667
+          ]
+        },
+        {
+          "frames": [
+            144,
+            148
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            4.8,
+            4.93333
+          ]
+        },
+        {
+          "frames": [
+            154,
+            157
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            5.13333,
+            5.23333
+          ]
+        },
+        {
+          "frames": [
+            164,
+            168
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            5.46667,
+            5.6
+          ]
+        },
+        {
+          "frames": [
+            174,
+            177
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            5.8,
+            5.9
+          ]
+        },
+        {
+          "frames": [
+            184,
+            188
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6775899897689853,
+            "max": 0.7941875486458224
+          },
+          "times": [
+            6.13333,
+            6.26667
+          ]
+        },
+        {
+          "frames": [
+            194,
+            197
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.7174318669108923,
+            "max": 0.7802699818024297
+          },
+          "times": [
+            6.46667,
+            6.56667
+          ]
+        },
+        {
+          "frames": [
+            10,
+            10
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            0.33333,
+            0.33333
+          ]
+        },
+        {
+          "frames": [
+            30,
+            30
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            1,
+            1
+          ]
+        },
+        {
+          "frames": [
+            50,
+            50
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            1.66667,
+            1.66667
+          ]
+        },
+        {
+          "frames": [
+            70,
+            70
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            2.33333,
+            2.33333
+          ]
+        },
+        {
+          "frames": [
+            90,
+            90
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            3,
+            3
+          ]
+        },
+        {
+          "frames": [
+            110,
+            110
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            3.66667,
+            3.66667
+          ]
+        },
+        {
+          "frames": [
+            130,
+            130
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            4.33333,
+            4.33333
+          ]
+        },
+        {
+          "frames": [
+            150,
+            150
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            5,
+            5
+          ]
+        },
+        {
+          "frames": [
+            170,
+            170
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            5.66667,
+            5.66667
+          ]
+        },
+        {
+          "frames": [
+            190,
+            190
+          ],
+          "limit": "high",
+          "asked": {
+            "min": 1.0547685081780973,
+            "max": 1.0547685081780973
+          },
+          "times": [
+            6.33333,
+            6.33333
+          ]
+        }
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "bone": "leg_r1",
+      "joints": [
+        "r_knee",
+        "r_ankle"
+      ],
+      "straight": 202.72452662215474,
+      "ratio": {
+        "min": 0.08923377907390331,
+        "median": 0.6914726899340089,
+        "max": 1.0363346964227151
+      },
+      "limits": [
+        0.8,
+        1.05
+      ],
+      "low": [
+        [
+          5,
+          15
+        ],
+        [
+          25,
+          35
+        ],
+        [
+          45,
+          55
+        ],
+        [
+          65,
+          75
+        ],
+        [
+          85,
+          95
+        ],
+        [
+          105,
+          115
+        ],
+        [
+          125,
+          135
+        ],
+        [
+          145,
+          155
+        ],
+        [
+          165,
+          175
+        ],
+        [
+          185,
+          195
+        ]
+      ],
+      "high": [],
+      "clamped": [
+        {
+          "frames": [
+            5,
+            15
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            0.16667,
+            0.5
+          ]
+        },
+        {
+          "frames": [
+            25,
+            35
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            0.83333,
+            1.16667
+          ]
+        },
+        {
+          "frames": [
+            45,
+            55
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            1.5,
+            1.83333
+          ]
+        },
+        {
+          "frames": [
+            65,
+            75
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            2.16667,
+            2.5
+          ]
+        },
+        {
+          "frames": [
+            85,
+            95
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            2.83333,
+            3.16667
+          ]
+        },
+        {
+          "frames": [
+            105,
+            115
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            3.5,
+            3.83333
+          ]
+        },
+        {
+          "frames": [
+            125,
+            135
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            4.16667,
+            4.5
+          ]
+        },
+        {
+          "frames": [
+            145,
+            155
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            4.83333,
+            5.16667
+          ]
+        },
+        {
+          "frames": [
+            165,
+            175
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            5.5,
+            5.83333
+          ]
+        },
+        {
+          "frames": [
+            185,
+            195
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.08923377907390331,
+            "max": 0.702348148797168
+          },
+          "times": [
+            6.16667,
+            6.5
+          ]
+        }
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l0",
+      "joints": [
+        "l_hip",
+        "l_knee"
+      ],
+      "straight": 220.60625496443623,
+      "ratio": {
+        "min": 0.6704489752191587,
+        "median": 0.8022373904128852,
+        "max": 0.9493834781171417
+      },
+      "limits": [
+        0.8,
+        1.05
+      ],
+      "low": [
+        [
+          0,
+          4
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          35,
+          44
+        ],
+        [
+          55,
+          64
+        ],
+        [
+          75,
+          84
+        ],
+        [
+          95,
+          104
+        ],
+        [
+          115,
+          124
+        ],
+        [
+          135,
+          144
+        ],
+        [
+          155,
+          164
+        ],
+        [
+          175,
+          184
+        ],
+        [
+          195,
+          199
+        ]
+      ],
+      "high": [],
+      "clamped": [
+        {
+          "frames": [
+            0,
+            4
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.686385467964508,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            0,
+            0.13333
+          ]
+        },
+        {
+          "frames": [
+            15,
+            24
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            0.5,
+            0.8
+          ]
+        },
+        {
+          "frames": [
+            35,
+            44
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            1.16667,
+            1.46667
+          ]
+        },
+        {
+          "frames": [
+            55,
+            64
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            1.83333,
+            2.13333
+          ]
+        },
+        {
+          "frames": [
+            75,
+            84
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            2.5,
+            2.8
+          ]
+        },
+        {
+          "frames": [
+            95,
+            104
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            3.16667,
+            3.46667
+          ]
+        },
+        {
+          "frames": [
+            115,
+            124
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            3.83333,
+            4.13333
+          ]
+        },
+        {
+          "frames": [
+            135,
+            144
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            4.5,
+            4.8
+          ]
+        },
+        {
+          "frames": [
+            155,
+            164
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            5.16667,
+            5.46667
+          ]
+        },
+        {
+          "frames": [
+            175,
+            184
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7988765894750757
+          },
+          "times": [
+            5.83333,
+            6.13333
+          ]
+        },
+        {
+          "frames": [
+            195,
+            199
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.6704489752191587,
+            "max": 0.7603794350620956
+          },
+          "times": [
+            6.5,
+            6.63333
+          ]
+        }
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "bone": "leg_l1",
+      "joints": [
+        "l_knee",
+        "l_ankle"
+      ],
+      "straight": 202.72452662215474,
+      "ratio": {
+        "min": 0.09400181755548695,
+        "median": 0.7979036958755608,
+        "max": 0.9798984344491701
+      },
+      "limits": [
+        0.8,
+        1.05
+      ],
+      "low": [
+        [
+          0,
+          4
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          35,
+          44
+        ],
+        [
+          55,
+          64
+        ],
+        [
+          75,
+          84
+        ],
+        [
+          95,
+          104
+        ],
+        [
+          115,
+          124
+        ],
+        [
+          135,
+          144
+        ],
+        [
+          155,
+          164
+        ],
+        [
+          175,
+          184
+        ],
+        [
+          195,
+          199
+        ]
+      ],
+      "high": [],
+      "clamped": [
+        {
+          "frames": [
+            0,
+            4
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.5989092834051898
+          },
+          "times": [
+            0,
+            0.13333
+          ]
+        },
+        {
+          "frames": [
+            15,
+            24
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            0.5,
+            0.8
+          ]
+        },
+        {
+          "frames": [
+            35,
+            44
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            1.16667,
+            1.46667
+          ]
+        },
+        {
+          "frames": [
+            55,
+            64
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            1.83333,
+            2.13333
+          ]
+        },
+        {
+          "frames": [
+            75,
+            84
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            2.5,
+            2.8
+          ]
+        },
+        {
+          "frames": [
+            95,
+            104
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            3.16667,
+            3.46667
+          ]
+        },
+        {
+          "frames": [
+            115,
+            124
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            3.83333,
+            4.13333
+          ]
+        },
+        {
+          "frames": [
+            135,
+            144
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            4.5,
+            4.8
+          ]
+        },
+        {
+          "frames": [
+            155,
+            164
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            5.16667,
+            5.46667
+          ]
+        },
+        {
+          "frames": [
+            175,
+            184
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.09400181755548695,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            5.83333,
+            6.13333
+          ]
+        },
+        {
+          "frames": [
+            195,
+            199
+          ],
+          "limit": "low",
+          "asked": {
+            "min": 0.2105121197230978,
+            "max": 0.7667944416179581
+          },
+          "times": [
+            6.5,
+            6.63333
+          ]
+        }
+      ]
+    }
+  ],
+  "pivot": {
+    "bone": "hip",
+    "roots": [
+      "leg_r0",
+      "leg_l0"
+    ],
+    "offset": [
+      5.690197933064939e-16,
+      0
+    ],
+    "distance": 5.690197933064939e-16,
+    "hipWidths": 6.774045158410641e-18
+  },
+  "stance": {
+    "tolerance": 0.07,
+    "release": 0.8,
+    "minSeconds": 0.1,
+    "bounds": [
+      0.92,
+      1.08
+    ],
+    "runs": [
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          0,
+          2
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          0,
+          0.06667
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          10,
+          12
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          0.33333,
+          0.4
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          20,
+          22
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          0.66667,
+          0.73333
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          30,
+          32
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          1,
+          1.06667
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          40,
+          42
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          1.33333,
+          1.4
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          50,
+          52
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          1.66667,
+          1.73333
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          60,
+          62
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          2,
+          2.06667
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          70,
+          72
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          2.33333,
+          2.4
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          80,
+          82
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          2.66667,
+          2.73333
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          90,
+          92
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          3,
+          3.06667
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          100,
+          102
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          3.33333,
+          3.4
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          110,
+          112
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          3.66667,
+          3.73333
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          120,
+          122
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          4,
+          4.06667
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          130,
+          132
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          4.33333,
+          4.4
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          140,
+          142
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          4.66667,
+          4.73333
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          150,
+          152
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          5,
+          5.06667
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          160,
+          162
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          5.33333,
+          5.4
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          170,
+          172
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          5.66667,
+          5.73333
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "l",
+        "frames": [
+          180,
+          182
+        ],
+        "maxHeight": 0.6843000780083317,
+        "k": null,
+        "times": [
+          6,
+          6.06667
+        ]
+      },
+      {
+        "state": "lifted",
+        "side": "r",
+        "frames": [
+          190,
+          192
+        ],
+        "maxHeight": 0.7606852663799953,
+        "k": null,
+        "times": [
+          6.33333,
+          6.4
+        ]
+      }
+    ],
+    "over": []
+  },
+  "feet": {
+    "planted": true,
+    "legLength": {
+      "r": 303.1477145566341,
+      "l": 330.00142372810103
+    },
+    "supports": [
+      {
+        "side": "r",
+        "frames": [
+          0,
+          2
+        ],
+        "times": [
+          0,
+          0.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          10,
+          12
+        ],
+        "times": [
+          0.33333,
+          0.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          20,
+          22
+        ],
+        "times": [
+          0.66667,
+          0.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          30,
+          32
+        ],
+        "times": [
+          1,
+          1.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          40,
+          42
+        ],
+        "times": [
+          1.33333,
+          1.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          50,
+          52
+        ],
+        "times": [
+          1.66667,
+          1.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          60,
+          62
+        ],
+        "times": [
+          2,
+          2.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          70,
+          72
+        ],
+        "times": [
+          2.33333,
+          2.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          80,
+          82
+        ],
+        "times": [
+          2.66667,
+          2.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          90,
+          92
+        ],
+        "times": [
+          3,
+          3.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          100,
+          102
+        ],
+        "times": [
+          3.33333,
+          3.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          110,
+          112
+        ],
+        "times": [
+          3.66667,
+          3.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          120,
+          122
+        ],
+        "times": [
+          4,
+          4.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          130,
+          132
+        ],
+        "times": [
+          4.33333,
+          4.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          140,
+          142
+        ],
+        "times": [
+          4.66667,
+          4.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          150,
+          152
+        ],
+        "times": [
+          5,
+          5.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          160,
+          162
+        ],
+        "times": [
+          5.33333,
+          5.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          170,
+          172
+        ],
+        "times": [
+          5.66667,
+          5.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          180,
+          182
+        ],
+        "times": [
+          6,
+          6.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          190,
+          192
+        ],
+        "times": [
+          6.33333,
+          6.4
+        ]
+      }
+    ],
+    "jumps": [
+      [
+        3,
+        9
+      ],
+      [
+        13,
+        19
+      ],
+      [
+        23,
+        29
+      ],
+      [
+        33,
+        39
+      ],
+      [
+        43,
+        49
+      ],
+      [
+        53,
+        59
+      ],
+      [
+        63,
+        69
+      ],
+      [
+        73,
+        79
+      ],
+      [
+        83,
+        89
+      ],
+      [
+        93,
+        99
+      ],
+      [
+        103,
+        109
+      ],
+      [
+        113,
+        119
+      ],
+      [
+        123,
+        129
+      ],
+      [
+        133,
+        139
+      ],
+      [
+        143,
+        149
+      ],
+      [
+        153,
+        159
+      ],
+      [
+        163,
+        169
+      ],
+      [
+        173,
+        179
+      ],
+      [
+        183,
+        189
+      ],
+      [
+        193,
+        199
+      ]
+    ],
+    "steps": [],
+    "changes": [
+      {
+        "frame": 0,
+        "from": null,
+        "to": "r",
+        "t": 0
+      },
+      {
+        "frame": 10,
+        "from": null,
+        "to": "l",
+        "t": 0.33333
+      },
+      {
+        "frame": 20,
+        "from": null,
+        "to": "r",
+        "t": 0.66667
+      },
+      {
+        "frame": 30,
+        "from": null,
+        "to": "l",
+        "t": 1
+      },
+      {
+        "frame": 40,
+        "from": null,
+        "to": "r",
+        "t": 1.33333
+      },
+      {
+        "frame": 50,
+        "from": null,
+        "to": "l",
+        "t": 1.66667
+      },
+      {
+        "frame": 60,
+        "from": null,
+        "to": "r",
+        "t": 2
+      },
+      {
+        "frame": 70,
+        "from": null,
+        "to": "l",
+        "t": 2.33333
+      },
+      {
+        "frame": 80,
+        "from": null,
+        "to": "r",
+        "t": 2.66667
+      },
+      {
+        "frame": 90,
+        "from": null,
+        "to": "l",
+        "t": 3
+      },
+      {
+        "frame": 100,
+        "from": null,
+        "to": "r",
+        "t": 3.33333
+      },
+      {
+        "frame": 110,
+        "from": null,
+        "to": "l",
+        "t": 3.66667
+      },
+      {
+        "frame": 120,
+        "from": null,
+        "to": "r",
+        "t": 4
+      },
+      {
+        "frame": 130,
+        "from": null,
+        "to": "l",
+        "t": 4.33333
+      },
+      {
+        "frame": 140,
+        "from": null,
+        "to": "r",
+        "t": 4.66667
+      },
+      {
+        "frame": 150,
+        "from": null,
+        "to": "l",
+        "t": 5
+      },
+      {
+        "frame": 160,
+        "from": null,
+        "to": "r",
+        "t": 5.33333
+      },
+      {
+        "frame": 170,
+        "from": null,
+        "to": "l",
+        "t": 5.66667
+      },
+      {
+        "frame": 180,
+        "from": null,
+        "to": "r",
+        "t": 6
+      },
+      {
+        "frame": 190,
+        "from": null,
+        "to": "l",
+        "t": 6.33333
+      }
+    ],
+    "floor": 146.20238040959646,
+    "shifts": [
+      {
+        "side": "r",
+        "frames": [
+          0,
+          2
+        ],
+        "shift": 2.035452153738561,
+        "times": [
+          0,
+          0.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          10,
+          12
+        ],
+        "shift": 2.3894651322412983,
+        "times": [
+          0.33333,
+          0.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          20,
+          22
+        ],
+        "shift": 1.5437946775185765,
+        "times": [
+          0.66667,
+          0.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          30,
+          32
+        ],
+        "shift": 1.897807656021314,
+        "times": [
+          1,
+          1.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          40,
+          42
+        ],
+        "shift": 1.0521372012985921,
+        "times": [
+          1.33333,
+          1.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          50,
+          52
+        ],
+        "shift": 1.4061501798013296,
+        "times": [
+          1.66667,
+          1.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          60,
+          62
+        ],
+        "shift": 0.5604797250786078,
+        "times": [
+          2,
+          2.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          70,
+          72
+        ],
+        "shift": 0.9144927035813453,
+        "times": [
+          2.33333,
+          2.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          80,
+          82
+        ],
+        "shift": 0.06882224885862342,
+        "times": [
+          2.66667,
+          2.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          90,
+          92
+        ],
+        "shift": 0.4228352273613609,
+        "times": [
+          3,
+          3.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          100,
+          102
+        ],
+        "shift": -0.4228352273613609,
+        "times": [
+          3.33333,
+          3.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          110,
+          112
+        ],
+        "shift": -0.06882224885862342,
+        "times": [
+          3.66667,
+          3.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          120,
+          122
+        ],
+        "shift": -0.9144927035813453,
+        "times": [
+          4,
+          4.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          130,
+          132
+        ],
+        "shift": -0.5604797250786078,
+        "times": [
+          4.33333,
+          4.4
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          140,
+          142
+        ],
+        "shift": -1.4061501798013296,
+        "times": [
+          4.66667,
+          4.73333
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          150,
+          152
+        ],
+        "shift": -1.0521372012985921,
+        "times": [
+          5,
+          5.06667
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          160,
+          162
+        ],
+        "shift": -1.897807656021314,
+        "times": [
+          5.33333,
+          5.4
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          170,
+          172
+        ],
+        "shift": -1.5437946775185765,
+        "times": [
+          5.66667,
+          5.73333
+        ]
+      },
+      {
+        "side": "r",
+        "frames": [
+          180,
+          182
+        ],
+        "shift": -2.3894651322412983,
+        "times": [
+          6,
+          6.06667
+        ]
+      },
+      {
+        "side": "l",
+        "frames": [
+          190,
+          192
+        ],
+        "shift": -2.035452153738561,
+        "times": [
+          6.33333,
+          6.4
+        ]
+      }
+    ],
+    "blend": {
+      "bounds": [
+        0.92,
+        1.08
+      ],
+      "runs": [
+        {
+          "side": "r",
+          "frames": [
+            1,
+            2
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            0.03333,
+            0.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            11,
+            12
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            0.36667,
+            0.4
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            21,
+            22
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            0.7,
+            0.73333
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            31,
+            32
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            1.03333,
+            1.06667
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            41,
+            42
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            1.36667,
+            1.4
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            51,
+            52
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            1.7,
+            1.73333
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            61,
+            62
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            2.03333,
+            2.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            71,
+            72
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            2.36667,
+            2.4
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            81,
+            82
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            2.7,
+            2.73333
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            91,
+            92
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            3.03333,
+            3.06667
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            101,
+            102
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            3.36667,
+            3.4
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            111,
+            112
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            3.7,
+            3.73333
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            121,
+            122
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            4.03333,
+            4.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            131,
+            132
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            4.36667,
+            4.4
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            141,
+            142
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            4.7,
+            4.73333
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            151,
+            152
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            5.03333,
+            5.06667
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            161,
+            162
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            5.36667,
+            5.4
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            171,
+            172
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            5.7,
+            5.73333
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            181,
+            182
+          ],
+          "k": {
+            "min": 0.9975798092412582,
+            "max": 1.0013702527028583
+          },
+          "times": [
+            6.03333,
+            6.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            191,
+            192
+          ],
+          "k": {
+            "min": 0.9804058916000441,
+            "max": 0.9990925470416671
+          },
+          "times": [
+            6.36667,
+            6.4
+          ]
+        }
+      ],
+      "over": []
+    },
+    "reading": {
+      "legLength": {
+        "r": 422.2895158678502,
+        "l": 391.9733776328639
+      },
+      "lowest": {
+        "range": 0.0012055411089306745,
+        "legs": 0.0000029610611475803845,
+        "frames": 60
+      },
+      "plants": [
+        {
+          "side": "r",
+          "frames": [
+            0,
+            2
+          ],
+          "vertical": 0.0009053741945592719,
+          "horizontal": 25.376520097205656,
+          "verticalLegs": 0.000002143965598337508,
+          "horizontalLegs": 0.060092706883935275,
+          "times": [
+            0,
+            0.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            10,
+            12
+          ],
+          "vertical": 0.00039407751282283243,
+          "horizontal": 34.410665445007716,
+          "verticalLegs": 0.0000010053680563784087,
+          "horizontalLegs": 0.08778827187911205,
+          "times": [
+            0.33333,
+            0.4
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            20,
+            22
+          ],
+          "vertical": 0.0008864639964656362,
+          "horizontal": 25.37652829437245,
+          "verticalLegs": 0.00000209918542411326,
+          "horizontalLegs": 0.06009272629518392,
+          "times": [
+            0.66667,
+            0.73333
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            30,
+            32
+          ],
+          "vertical": 0.00044596014063813527,
+          "horizontal": 34.410682199757126,
+          "verticalLegs": 0.000001137730688066875,
+          "horizontalLegs": 0.0877883146237227,
+          "times": [
+            1,
+            1.06667
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            40,
+            42
+          ],
+          "vertical": 0.0008949896585193073,
+          "horizontal": 25.376538804803253,
+          "verticalLegs": 0.000002119374563870021,
+          "horizontalLegs": 0.06009275118434269,
+          "times": [
+            1.33333,
+            1.4
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            50,
+            52
+          ],
+          "vertical": 0.00039414245054558705,
+          "horizontal": 34.41064100254107,
+          "verticalLegs": 0.0000010055337250856736,
+          "horizontalLegs": 0.08778820952164586,
+          "times": [
+            1.66667,
+            1.73333
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            60,
+            62
+          ],
+          "vertical": 0.0009465189090747117,
+          "horizontal": 25.376524763253713,
+          "verticalLegs": 0.000002241398077642335,
+          "horizontalLegs": 0.06009271793334067,
+          "times": [
+            2,
+            2.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            70,
+            72
+          ],
+          "vertical": 0.00039414986432007026,
+          "horizontal": 34.41057406106159,
+          "verticalLegs": 0.0000010055526390602092,
+          "horizontalLegs": 0.08778803874096712,
+          "times": [
+            2.33333,
+            2.4
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            80,
+            82
+          ],
+          "vertical": 0.0008407658056341916,
+          "horizontal": 25.376556591324494,
+          "verticalLegs": 0.0000019909701142031146,
+          "horizontalLegs": 0.060092793303601094,
+          "times": [
+            2.66667,
+            2.73333
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            90,
+            92
+          ],
+          "vertical": 0.00044596032537924657,
+          "horizontal": 34.41068219981555,
+          "verticalLegs": 0.0000011377311593772289,
+          "horizontalLegs": 0.08778831462387174,
+          "times": [
+            3,
+            3.06667
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            100,
+            102
+          ],
+          "vertical": 0.0009081487664843735,
+          "horizontal": 25.37644965402069,
+          "verticalLegs": 0.0000021505359057234243,
+          "horizontalLegs": 0.06009254007139952,
+          "times": [
+            3.33333,
+            3.4
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            110,
+            112
+          ],
+          "vertical": 0.00041374081669687257,
+          "horizontal": 34.41069869858701,
+          "verticalLegs": 0.000001055532952761901,
+          "horizontalLegs": 0.08778835671543307,
+          "times": [
+            3.66667,
+            3.73333
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            120,
+            122
+          ],
+          "vertical": 0.0009465189093873505,
+          "horizontal": 25.37652476325372,
+          "verticalLegs": 0.0000022413980783826775,
+          "horizontalLegs": 0.06009271793334069,
+          "times": [
+            4,
+            4.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            130,
+            132
+          ],
+          "vertical": 0.0005021814139070102,
+          "horizontal": 34.41069074939724,
+          "verticalLegs": 0.0000012811620445748002,
+          "horizontalLegs": 0.08778833643551044,
+          "times": [
+            4.33333,
+            4.4
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            140,
+            142
+          ],
+          "vertical": 0.0010719316943266222,
+          "horizontal": 25.3764625617818,
+          "verticalLegs": 0.0000025383810254528524,
+          "horizontalLegs": 0.06009257063754105,
+          "times": [
+            4.66667,
+            4.73333
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            150,
+            152
+          ],
+          "vertical": 0.0004459603257771505,
+          "horizontal": 34.410682199815575,
+          "verticalLegs": 0.0000011377311603923589,
+          "horizontalLegs": 0.08778831462387181,
+          "times": [
+            5,
+            5.06667
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            160,
+            162
+          ],
+          "vertical": 0.0007851336724797875,
+          "horizontal": 25.376563759228368,
+          "verticalLegs": 0.0000018592307954088174,
+          "horizontalLegs": 0.060092810277510234,
+          "times": [
+            5.33333,
+            5.4
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            170,
+            172
+          ],
+          "vertical": 0.0005937716528023884,
+          "horizontal": 34.410643705837835,
+          "verticalLegs": 0.0000015148264823192556,
+          "horizontalLegs": 0.08778821641827945,
+          "times": [
+            5.66667,
+            5.73333
+          ]
+        },
+        {
+          "side": "r",
+          "frames": [
+            180,
+            182
+          ],
+          "vertical": 0.0009465189093873505,
+          "horizontal": 25.37652476325372,
+          "verticalLegs": 0.0000022413980783826775,
+          "horizontalLegs": 0.06009271793334069,
+          "times": [
+            6,
+            6.06667
+          ]
+        },
+        {
+          "side": "l",
+          "frames": [
+            190,
+            192
+          ],
+          "vertical": 0.0005021814139070102,
+          "horizontal": 34.41069074939724,
+          "verticalLegs": 0.0000012811620445748002,
+          "horizontalLegs": 0.08778833643551044,
+          "times": [
+            6.33333,
+            6.4
+          ]
+        }
+      ]
+    },
+    "closure": {
+      "drift": -210.89746253805467,
+      "frames": 200
+    },
+    "jumpEvents": [
+      {
+        "frames": [
+          3,
+          9
+        ],
+        "times": [
+          0.1,
+          0.3
+        ]
+      },
+      {
+        "frames": [
+          13,
+          19
+        ],
+        "times": [
+          0.43333,
+          0.63333
+        ]
+      },
+      {
+        "frames": [
+          23,
+          29
+        ],
+        "times": [
+          0.76667,
+          0.96667
+        ]
+      },
+      {
+        "frames": [
+          33,
+          39
+        ],
+        "times": [
+          1.1,
+          1.3
+        ]
+      },
+      {
+        "frames": [
+          43,
+          49
+        ],
+        "times": [
+          1.43333,
+          1.63333
+        ]
+      },
+      {
+        "frames": [
+          53,
+          59
+        ],
+        "times": [
+          1.76667,
+          1.96667
+        ]
+      },
+      {
+        "frames": [
+          63,
+          69
+        ],
+        "times": [
+          2.1,
+          2.3
+        ]
+      },
+      {
+        "frames": [
+          73,
+          79
+        ],
+        "times": [
+          2.43333,
+          2.63333
+        ]
+      },
+      {
+        "frames": [
+          83,
+          89
+        ],
+        "times": [
+          2.76667,
+          2.96667
+        ]
+      },
+      {
+        "frames": [
+          93,
+          99
+        ],
+        "times": [
+          3.1,
+          3.3
+        ]
+      },
+      {
+        "frames": [
+          103,
+          109
+        ],
+        "times": [
+          3.43333,
+          3.63333
+        ]
+      },
+      {
+        "frames": [
+          113,
+          119
+        ],
+        "times": [
+          3.76667,
+          3.96667
+        ]
+      },
+      {
+        "frames": [
+          123,
+          129
+        ],
+        "times": [
+          4.1,
+          4.3
+        ]
+      },
+      {
+        "frames": [
+          133,
+          139
+        ],
+        "times": [
+          4.43333,
+          4.63333
+        ]
+      },
+      {
+        "frames": [
+          143,
+          149
+        ],
+        "times": [
+          4.76667,
+          4.96667
+        ]
+      },
+      {
+        "frames": [
+          153,
+          159
+        ],
+        "times": [
+          5.1,
+          5.3
+        ]
+      },
+      {
+        "frames": [
+          163,
+          169
+        ],
+        "times": [
+          5.43333,
+          5.63333
+        ]
+      },
+      {
+        "frames": [
+          173,
+          179
+        ],
+        "times": [
+          5.76667,
+          5.96667
+        ]
+      },
+      {
+        "frames": [
+          183,
+          189
+        ],
+        "times": [
+          6.1,
+          6.3
+        ]
+      },
+      {
+        "frames": [
+          193,
+          199
+        ],
+        "times": [
+          6.43333,
+          6.63333
+        ]
+      }
+    ]
+  },
+  "shear": [
+    {
+      "bone": "leg_r0",
+      "shear": 0.0000013244635397313687,
+      "frame": 30,
+      "x": [
+        0.8000000131307766,
+        1.0499999576408934
+      ],
+      "y": [
+        0.9999999857146324,
+        0.9999999984876906
+      ],
+      "t": 1
+    },
+    {
+      "bone": "leg_r1",
+      "shear": 1.7941356046821824,
+      "frame": 28,
+      "x": [
+        0.7999993586424502,
+        1.0363346024135844
+      ],
+      "y": [
+        0.99912318370489,
+        1.0002308146463474
+      ],
+      "t": 0.93333
+    },
+    {
+      "bone": "leg_l0",
+      "shear": 0.0000013273020300630378,
+      "frame": 161,
+      "x": [
+        0.8000000034423889,
+        0.9493830130761542
+      ],
+      "y": [
+        1.0000000023415574,
+        1.000000010598175
+      ],
+      "t": 5.36667
+    },
+    {
+      "bone": "leg_l1",
+      "shear": 4.091748830716952,
+      "frame": 2,
+      "x": [
+        0.7999992990018922,
+        0.9798982667530317
+      ],
+      "y": [
+        0.9953190733594655,
+        0.9999869244543712
+      ],
+      "t": 0.06667
+    },
+    {
+      "bone": "foot_r",
+      "shear": 3.976748338828642,
+      "frame": 15,
+      "x": [
+        0.9955777232840222,
+        1.0010003251410262
+      ],
+      "y": [
+        0.8006420340468465,
+        1.0353420579586057
+      ],
+      "t": 0.5
+    },
+    {
+      "bone": "foot_l",
+      "shear": 6.682962463371325,
+      "frame": 15,
+      "x": [
+        0.9802510649376539,
+        0.9998904590857726
+      ],
+      "y": [
+        0.8078866464846937,
+        0.9800305694310435
+      ],
+      "t": 0.5
+    }
+  ],
+  "idleDropped": null,
+  "idleKeptOut": null,
+  "merged": [],
+  "reduce": null,
+  "frameTimes": [
+    0,
+    0.03333,
+    0.06667,
+    0.1,
+    0.13333,
+    0.16667,
+    0.2,
+    0.23333,
+    0.26667,
+    0.3,
+    0.33333,
+    0.36667,
+    0.4,
+    0.43333,
+    0.46667,
+    0.5,
+    0.53333,
+    0.56667,
+    0.6,
+    0.63333,
+    0.66667,
+    0.7,
+    0.73333,
+    0.76667,
+    0.8,
+    0.83333,
+    0.86667,
+    0.9,
+    0.93333,
+    0.96667,
+    1,
+    1.03333,
+    1.06667,
+    1.1,
+    1.13333,
+    1.16667,
+    1.2,
+    1.23333,
+    1.26667,
+    1.3,
+    1.33333,
+    1.36667,
+    1.4,
+    1.43333,
+    1.46667,
+    1.5,
+    1.53333,
+    1.56667,
+    1.6,
+    1.63333,
+    1.66667,
+    1.7,
+    1.73333,
+    1.76667,
+    1.8,
+    1.83333,
+    1.86667,
+    1.9,
+    1.93333,
+    1.96667,
+    2,
+    2.03333,
+    2.06667,
+    2.1,
+    2.13333,
+    2.16667,
+    2.2,
+    2.23333,
+    2.26667,
+    2.3,
+    2.33333,
+    2.36667,
+    2.4,
+    2.43333,
+    2.46667,
+    2.5,
+    2.53333,
+    2.56667,
+    2.6,
+    2.63333,
+    2.66667,
+    2.7,
+    2.73333,
+    2.76667,
+    2.8,
+    2.83333,
+    2.86667,
+    2.9,
+    2.93333,
+    2.96667,
+    3,
+    3.03333,
+    3.06667,
+    3.1,
+    3.13333,
+    3.16667,
+    3.2,
+    3.23333,
+    3.26667,
+    3.3,
+    3.33333,
+    3.36667,
+    3.4,
+    3.43333,
+    3.46667,
+    3.5,
+    3.53333,
+    3.56667,
+    3.6,
+    3.63333,
+    3.66667,
+    3.7,
+    3.73333,
+    3.76667,
+    3.8,
+    3.83333,
+    3.86667,
+    3.9,
+    3.93333,
+    3.96667,
+    4,
+    4.03333,
+    4.06667,
+    4.1,
+    4.13333,
+    4.16667,
+    4.2,
+    4.23333,
+    4.26667,
+    4.3,
+    4.33333,
+    4.36667,
+    4.4,
+    4.43333,
+    4.46667,
+    4.5,
+    4.53333,
+    4.56667,
+    4.6,
+    4.63333,
+    4.66667,
+    4.7,
+    4.73333,
+    4.76667,
+    4.8,
+    4.83333,
+    4.86667,
+    4.9,
+    4.93333,
+    4.96667,
+    5,
+    5.03333,
+    5.06667,
+    5.1,
+    5.13333,
+    5.16667,
+    5.2,
+    5.23333,
+    5.26667,
+    5.3,
+    5.33333,
+    5.36667,
+    5.4,
+    5.43333,
+    5.46667,
+    5.5,
+    5.53333,
+    5.56667,
+    5.6,
+    5.63333,
+    5.66667,
+    5.7,
+    5.73333,
+    5.76667,
+    5.8,
+    5.83333,
+    5.86667,
+    5.9,
+    5.93333,
+    5.96667,
+    6,
+    6.03333,
+    6.06667,
+    6.1,
+    6.13333,
+    6.16667,
+    6.2,
+    6.23333,
+    6.26667,
+    6.3,
+    6.33333,
+    6.36667,
+    6.4,
+    6.43333,
+    6.46667,
+    6.5,
+    6.53333,
+    6.56667,
+    6.6,
+    6.63333
+  ],
+  "render": {
+    "fps": 30,
+    "frames": 200
+  },
+  "inputs": {
+    "rig": {
+      "path": "inputs/rig/rig.json",
+      "sha256": "ff876843acabb2c173169d799f2b7e1492c0d07b8624b8a1d07ae71983a2d1aa"
+    },
+    "map": {
+      "path": "run/map.json",
+      "sha256": "6e601234dd68a5fff1106c745552032d3312ea1f8c535b73e3a2bf07bf08ebae"
+    },
+    "pose": {
+      "path": "inputs/pose/sequence.json",
+      "sha256": "b2c353adab2a4f62baa56ccd7cc7b7e708e6bea9d6dcfdbe0431db99aff61c84"
+    }
+  }
+}
