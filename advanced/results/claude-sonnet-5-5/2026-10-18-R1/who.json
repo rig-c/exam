@@ -1,0 +1,19 @@
+{
+ "model": "claude-sonnet-5-5",
+ "host": "Claude Code desktop",
+ "how": "a fresh session per round; R1 first, then R2 and R3 in two sessions at once",
+ "round": "R1",
+ "edition": "0.20",
+ "started": "2026-10-18T22:07:50Z",
+ "finished": "2026-10-18T22:15:11Z",
+ "counts": "independent",
+ "shin_scale_p05": 0.631,
+ "shin_scale_p05_read_from": "tools/grade.py --round R1 of edition 0.21, run on this sitting's render geometry by the proctor",
+ "tokens": null,
+ "tokens_read_from": "the run handed in no usage.json",
+ "notes": [],
+ "files": [
+  "after/geometry.json is left out: 10.0 MB, over the 5 MB this directory takes",
+  "absolute paths of the machine the round was sat on are rewritten relative to the package; nothing else in the files is changed"
+ ]
+}

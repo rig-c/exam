@@ -1,4 +1,5 @@
-# The tables in README.md and results/README.md are generated from results/. This holds them current.
+# The tables in README.md and results/README.md are generated from results/, and advanced/'s from
+# advanced/results/. This holds both current.
 name: results pages
 on:
   push: { branches: [main] }
@@ -11,3 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 results.py --check
+      - run: python3 advanced/results.py --check

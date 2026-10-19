@@ -1,0 +1,14 @@
+grade R1
+NOTE  airborne spans: report feet.jumps, 0 span(s)
+NOTE  rig leg length 485.0928 units (setup pose, leg_l0->foot_l, leg_r0->foot_r); hip width 84.0000
+NOTE  sequence leg length 426.70 (95th percentile hip->ankle, mean of sides, the sequence's own units); the sequence carries no camera
+PASS  gate            Gate: build green (52 assertions: 21 measured, 0 failed); 17/17 landings within tolerance (worst at 0.12 of its tolerance)
+PASS  support-foot    Support foot: max |lower foot - floor| 0.0000 leg lengths at frame 104 over 224 grounded frames (floor 94.868 units) [bar <= 0.01]
+PASS  two-feet        Two feet: two-foot frames: max height difference 0.0000 leg lengths at frame 203 over 35 [bar <= 0.02]; lifted frames (sequence ankles > 0.04 apart): 0 of 168 with the lifted foot within 0.01 of the support foot (lowest lift 0.0176 at frame 173) [bar 0]; median rig/sequence lift 0.890 [bar 0.85-1.15]
+PASS  slide           Slide: max |support-foot move - closure - sequence ankle move x report scale 1.77071| 0.00002 leg lengths/frame (foot_l, frame 7->8) over 209 steps (travel: in-place; closure +1.01080 units/frame removed (report feet.closure drift -225.41 over 224 frames)) [bar <= 0.005]
+PASS  floor           Floor: per-cycle floor spread 0.0000 leg lengths over 7 cycles [bar <= 0.01, the support-foot band: the table gives this row no number of its own]
+PASS  jitter          Jitter: limbs 0.988x sequence (0.929 vs 0.941 deg/f^2, 8 bones) [bar <= 1.1], trunk+head 1.000x sequence (0.719 vs 0.719 deg/f^2, chest,head) [bar <= 1.1]; joint pairs from the map
+PASS  folds           Folds: 0 frames fold over 6 mesh(es) [bar 0]
+PASS  pass-through    Pass-through: bottomwear:thigh_r 0 of 224 frames; bottomwear:thigh_l 0 of 224 frames [bar 0]
+PASS  loop            Loop: cycle 1 vs cycle 7: max keyed-bone angle difference 0.0001 deg (sleeve_r1, cycle frame 31) [bar <= 1.0], max hip/foot_l/foot_r world position difference 0.0000 leg lengths (foot_r, cycle frame 31) [bar <= 0.01]
+RESULT PASS (9 pass, 0 fail, 0 skip of 9 rows)

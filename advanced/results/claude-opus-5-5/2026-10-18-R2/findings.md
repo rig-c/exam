@@ -1,0 +1,8 @@
+# Findings — R2 (run)
+
+1. **Translate scale sets three rows at once.** Hip vertical, hip horizontal and rebound scale ~linearly with `SCALE`. Torso (hip→neck, the README example) gives 1.781 → 1.460 / 1.712 / 1.929; a leg (median hip→ankle, folded in a run: 303 px) gives 1.600 → 1.324 / 1.533 / 1.757; shoulder width gives 1.076 → 0.928 / 1.059 / 1.257 (all in band). The rig is proportioned differently from the subject (rig torso/leg 360/485 = 0.74, subject 202/399 = 0.51), so no single "body length" reads the same on both.
+2. **`reach: true` on the trunk doubled the chest's rotation jitter** (2.197× the sequence's mid_hip→mid_shoulder; run/jitter_by_bone.py). Without it the chest is parallel to the pose (1.000×), and the head, measured against the chest, also falls from 1.324× to 1.000×.
+3. **Lift overshoot came from the leg-scale floor.** On grounded frames the free leg's shin is heel-kicked and end-on (asked 0.089–0.6); clamped at 0.8 it is drawn long and pointing up, lifting the foot 1.4–1.6× the picture's on frames 10–12 (0.32× on frame 0, where it points down). `--leg-scale 0.05,1.05` → 0.95–1.00 per frame, median 0.966.
+4. **Feet squashed under the scaled shins** (SHEAR up to 78°; foot_r/foot_l were `noRotationOrReflection`, which still takes scale and shear). Setting them `onlyTranslation` in a copy of the rig (run/rig_v6) draws whole boots; no row moved.
+5. **Folds (bottomwear, 16 frames) disappeared with the lower scale** — the fold followed the hip's height, not any change aimed at it.
+6. **Grounded frames are only 3 per half-cycle** (supports r 0–2, l 10–12); the retarget's jumps are 3–9 · 13–19 (sheet 4–9 · 14–19, within ±1). There are no two-foot frames in this sequence, so the two-foot clause is untested.

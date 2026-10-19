@@ -1,0 +1,19 @@
+grade R2
+NOTE  airborne spans: report feet.jumps, 20 span(s)
+NOTE  rig leg length 485.0928 units (setup pose, leg_l0->foot_l, leg_r0->foot_r); hip width 84.0000
+NOTE  sequence leg length 399.28 (95th percentile hip->ankle, mean of sides, the sequence's own units); the sequence carries no camera
+PASS  gate            Gate: build green (52 assertions: 21 measured, 0 failed); 18/18 landings within tolerance (worst at 0.15 of its tolerance)
+PASS  support-foot    Support foot: max |lower foot - floor| 0.0000 leg lengths at frame 110 over 60 grounded frames (floor 122.026 units) [bar <= 0.01]
+PASS  two-feet        Two feet: two-foot frames: none in the sequence; lifted frames (sequence ankles > 0.04 apart): 0 of 60 with the lifted foot within 0.01 of the support foot (lowest lift 0.3288 at frame 80) [bar 0]; median rig/sequence lift 1.116 [bar 0.85-1.15]
+PASS  slide           Slide: max |support-foot move - closure - sequence ankle move x report scale 1.07585| 0.00003 leg lengths/frame (foot_l, frame 171->172) over 40 steps (travel: in-place; closure -0.08227 units/frame removed (report feet.closure drift 16.37 over 200 frames)) [bar <= 0.005]
+PASS  floor           Floor: per-cycle floor spread 0.0000 leg lengths over 10 cycles [bar <= 0.01, the support-foot band: the table gives this row no number of its own]
+PASS  jitter          Jitter: limbs 1.039x sequence (11.574 vs 11.142 deg/f^2, 8 bones) [bar <= 1.1], trunk+head 1.000x sequence (1.832 vs 1.832 deg/f^2, hip,chest,head) [bar <= 1.1]; joint pairs from the map
+PASS  folds           Folds: 0 frames fold over 6 mesh(es) [bar 0]
+PASS  pass-through    Pass-through: bottomwear:thigh_r 0 of 200 frames; bottomwear:thigh_l 0 of 200 frames [bar 0]
+PASS  loop            Loop: cycle 1 vs cycle 10: max keyed-bone angle difference 0.0082 deg (sleeve_l1, cycle frame 19) [bar <= 1.0], max hip/foot_l/foot_r world position difference 0.0000 leg lengths (foot_l, cycle frame 19) [bar <= 0.01]
+PASS  airborne        Airborne: airborne spans per cycle [2, 2, 2, 2, 2, 2, 2, 2, 2, 2] [bar 2 each]; 0 detected span(s) off the printed spans [(4, 9), (14, 19)] +/- 1 [bar 0]; lowest foot on an airborne frame 0.0456 leg lengths above the floor at frame 139 [bar > 0.01: above the support-foot band]
+PASS  hip-vertical    Hip vertical range: rig/sequence 0.928 (rig 0.0885, sequence 0.0954 leg lengths, median per-cycle width over 10 cycles) [bar 0.85-1.15]
+PASS  hip-horizontal  Hip horizontal range: rig/sequence 1.059 (rig 0.3485, sequence 0.3291 hip widths, median per-cycle width over 10 cycles) [bar 0.85-1.15]
+PASS  rebound         Rebound: median rig/sequence peak upward hip acceleration in the stance windows 1.257 over 19 windows [bar 0.7-1.43]
+PASS  hip-tilt        Hip tilt: rig tilt range 14.390 deg = 1.000 of the sequence's 14.390 [bar >= 0.85], sign agrees (covariance +3.66e+03)
+RESULT PASS (14 pass, 0 fail, 0 skip of 14 rows)
