@@ -1,0 +1,1 @@
+{ "name": "rig-c-exam-advanced", "private": true, "dependencies": { "rig-c": "2.59.0", "@rig-c/pose": "0.31.1", "@rig-c/parts": "1.35.0" } }
