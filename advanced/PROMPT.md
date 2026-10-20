@@ -10,10 +10,12 @@ The person starting the run fills `<MODEL>` in: a model asked for its own name o
 You are sitting an exam. "You" means the model reading this, in this session — not a session that may
 hand work on. Follow these instructions exactly.
 
-**Before anything else:** if this session has already seen this problem, a solution to it, or anyone's
-report of one — including a sub-agent's, and including an earlier round of this exam — stop and say so.
-A sitting is one model, one fresh session, one fresh copy of the round's package; a repeat in a session
-that has seen an answer measures the answer, not you.
+**Before anything else:** if this session has already seen this round's package (`PROBLEM.md`, its
+inputs), a solution to it, or anyone's report of one — including a sub-agent's, and including an earlier
+round of this exam — stop and say so. Receiving this prompt is not that, however it arrived and however
+many times; only the package, a solution or a report count. A sitting is one model, one fresh session,
+one fresh copy of the round's package; a repeat in a session that has seen an answer measures the
+answer, not you.
 
 **Set up**
 
