@@ -73,9 +73,12 @@ def cell(s, prefix, full):
     c = f"[{g['passed']} / {g['of']}]({prefix}{s['path']}/)"
     return c + (' — not: ' + ', '.join(failed) if failed and full else (' FAIL' if failed else ''))
 
+def native(s): return s['who'].get('edition') == '0.21'   # graded on 0.21: the shin-scale row is in result.txt itself
+
 def whatif(s):
     if s is None or s['shin'] is None: return '—'
     v, p = s['shin']; g = s['grade']
+    if native(s): return f"{'**FAIL**' if v == 'FAIL' else 'PASS'} {p:.3f}, graded on 0.21"
     total = g['passed'] + (v == 'PASS')
     return f"{'**FAIL**' if v == 'FAIL' else 'PASS'} {p:.3f} → {total} / {g['of'] + 1}"
 
@@ -89,11 +92,12 @@ def tables(ss, prefix, full):
     graded = sorted({s['grade']['of'] for s in ss if s['round'] == 'R1'})
     failed = sum(s['grade']['verdict'] == 'FAIL' for s in ss)
     ind = sum(s['who'].get('counts') == 'independent' for s in ss)
-    L = [f"**{len(ss)} sitting(s) of {len(models)} model(s), {ind} of them independent**, graded on edition 0.20; each cell the rows passed "
-         f"of the rows graded, linking to the sitting. {failed} of the {len(ss)} failed. The last column is a what-if: edition 0.21's one new row, "
-         f"shin scale (the 5th percentile of the shins' rendered x-scale ≥ {SHIN_BAR}), run on each sitting's own render, with the "
-         f"total it would have made (R1 · R2 · R3 tables are {rows['R1']} · {rows['R2']} · {rows['R3']} rows on 0.21).", '']
-    head = ['model that did the work', 'host'] + [f'{r} {WHAT[r]}' for r in ROUNDS] + ['0.21 shin scale, what-if: R1 · R2 · R3', 'minutes, R1 · R2 · R3']
+    on21 = sum(native(s) for s in ss)
+    L = [f"**{len(ss)} sitting(s) of {len(models)} model(s), {ind} of them independent**, {len(ss) - on21} graded on edition 0.20 and {on21} on 0.21; each cell the rows passed "
+         f"of the rows graded, linking to the sitting. {failed} of the {len(ss)} failed. The shin-scale column is edition 0.21's one new row "
+         f"(the 5th percentile of the shins' rendered x-scale ≥ {SHIN_BAR}): for a 0.20 sitting a what-if, run on its own render, with the "
+         f"total it would have made; for a 0.21 sitting the row as graded, already in its cell (R1 · R2 · R3 tables are {rows['R1']} · {rows['R2']} · {rows['R3']} rows on 0.21).", '']
+    head = ['model that did the work', 'host'] + [f'{r} {WHAT[r]}' for r in ROUNDS] + ['0.21 shin scale (what-if on 0.20): R1 · R2 · R3', 'minutes, R1 · R2 · R3']
     if full: head += ['journal entries / of them WTF?: / tools.md entries, R1 · R2 · R3', 'clock (UTC), R1 · R2 · R3']
     L += ['| ' + ' | '.join(head) + ' |', '| ' + ' | '.join('---' for _ in head) + ' |']
     for model, rr in sorted(models.items()):
@@ -119,8 +123,8 @@ def results_page(ss):
          'and `who.json`. [REPORT.md](REPORT.md) is the proctor\'s account, written by hand.', '']
     L += [l.replace('](results/', '](') for l in tables(ss, '', True)]
     L += ['', 'Minutes are each round\'s own `started:` / `finished:` lines, from the transcript. No sitting handed in a `usage.json`,',
-          'so no tokens are recorded. A what-if cell is the 0.21 row\'s verdict, the 5th percentile it read, and the total the sitting',
-          'would have made with that row added; the verdict of record is the 0.20 one beside it.', '']
+          'so no tokens are in the table; where the proctor read them from a host\'s log they are in that sitting\'s `who.json`. A what-if cell is the 0.21 row\'s verdict, the 5th percentile it read, and the total the sitting',
+          'would have made with that row added; the verdict of record is the 0.20 one beside it. A cell that says "graded on 0.21" is that row as the sitting was graded.', '']
     return '\n'.join(L)
 
 def readme_block(ss):

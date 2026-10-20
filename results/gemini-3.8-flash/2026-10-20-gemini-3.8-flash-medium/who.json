@@ -1,0 +1,21 @@
+{
+ "short": "Gemini 3.8 Flash",
+ "model": "Gemini 3.8 Flash (opened at the host's 'medium' setting; the log records no effort)",
+ "host": "Antigravity Desktop (conversation opened by the proctor through agent-bridge)",
+ "how": "itself; prompt arrived as a peer message",
+ "counts": "independent sitting",
+ "tokens": {
+  "input_fresh": 1577544,
+  "input_cached": 28091451,
+  "output": 99791
+ },
+ "tokens_read_from": "the host's per-call session log, summed over its 209 model calls (whole conversation: the sitting, the hand-in and its acknowledgement; 1,531,136 / 27,965,396 / 97,531 of it up to the hand-in)",
+ "effort_note": "the session log names the model only by an internal placeholder, the same one the earlier Gemini 3.8 Flash sittings in this host carry; it records no effort, so 'medium' is the name the sitting was opened under and is not confirmed by the log",
+ "judge": {
+  "letter": "C",
+  "score": 7,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in"
+ }
+}

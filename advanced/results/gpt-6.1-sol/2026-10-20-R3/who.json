@@ -1,0 +1,34 @@
+{
+ "model": "gpt-6.1-sol",
+ "host": "Codex Desktop (thread opened by the proctor through agent-bridge)",
+ "how": "itself; the exam prompt arrived as a peer message; no stop, no proctor intervention before the hand-in",
+ "round": "R3",
+ "edition": "0.21",
+ "started": "2026-10-20T13:13:10Z",
+ "finished": "2026-10-20T13:21:39Z",
+ "counts": "independent",
+ "shin_scale_p05": 0.757,
+ "shin_scale_p05_read_from": "the shin-scale row of result.txt",
+ "tokens": {
+  "input": 5622466,
+  "cached_input": 5488768,
+  "fresh_input": 133698,
+  "output": 19554,
+  "reasoning_output": 3800
+ },
+ "tokens_read_from": "the host's session log (last token_count, both turns), read by the proctor; the run handed in no usage.json",
+ "notes": [
+  "the examinee declared its own sitting invalid: entry 4's lines 1-3 were written while entry 3's build/render/grade was still running in the background, so entry 3's line 4 landed under entry 4, above entry 4's own line 4. The host log shows every entry's lines 1-3 written before its step, and each line 4 written by its own step's shell right after that step; no line 4 covers more than one step. Neither disqualifier PROMPT.md names occurred",
+  "14 of 17 line-4s were composed in the same shell call as their step, before the model read the step's output (fixed text in entries 3, 5, 13, 14, 15, 16; text keyed on the exit code in 1, 2, 4, 6, 8, 10, 12, 17); only entries 7, 9 and 11 were written after reading. None of the pre-written lines is contradicted by its step's output. The same habit was recorded on this model's R2 (8 of 26)",
+  "before opening PROBLEM.md, in the same tool call, the examinee read the messaging tool's own skill file outside the package (the read the R2 proctor ruled is not exam material); disclosed in transcript and findings",
+  "the final map drops trunk reach and aims head roll on the ear line (ear_r>ear_l) instead of the eye line; the ear-line head swap matches one 10-18 sitting; the host log shows it derived in-session (per-bone jitter calculation, ear scores read from the sequence, README nod paragraph) and no read outside the package other than the skill file",
+  "no rig, physics, art or sequence edit; inputs/ is byte-identical to the public package",
+  "the dance keys no attachment switch: the alternate arm sets are never shown (true of all five 10-18 R3 sittings as well)",
+  "one outbound message, the hand-in reply to the proctor over the channel the prompt arrived on; no sub-agent or delegation call; model gpt-6.1-sol on every turn",
+  "ruled record-only: neither disqualifier PROMPT.md names occurred, the overlap of entries 3 and 4 carried no information either way and was disclosed mid-round, and the same pre-written-line-4 habit is recorded, not voided, on this model's R2"
+ ],
+ "files": [
+  "after/build.out is the run's after/build.log; after/map.json, after/report.json and after/camera.json are the run's; geometry is left out",
+  "absolute paths of the machine the round was sat on are rewritten relative to the package, the messaging script's path is replaced by `<agent-bridge>`, and the bridge receipt in transcript.md is elided to one line; nothing else is changed"
+ ]
+}

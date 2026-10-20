@@ -1,0 +1,28 @@
+{
+ "short": "claude-haiku-5-5",
+ "model": "claude-haiku-5-5 (Haiku 5.5; every assistant message in the session log names it)",
+ "host": "Claude Code subagent started by the proctor",
+ "host_context": "the host delivered the operator's standing instructions and the core repository's own guide with the session, as it does for every subagent started from that session; none of it is task content or an answer, and the examinee opened none of it, but it shaped the hand-in's language and voice and added a co-author line to the commit",
+ "how": "itself; the prompt arrived as the subagent's task",
+ "counts": "independent sitting; journal kept in part (task 01's line 4s were written after its grade, five in one step; markers moved after the fact in 01, 04 and 05)",
+ "tokens": {
+  "input_fresh": 412231,
+  "input_cached": 53490961,
+  "output": 178828
+ },
+ "tokens_read_from": "the subagent's session log, summed over its 208 API responses (fresh input includes 411,815 written to the cache)",
+ "tokens_note": "the host reported 416,651 tokens for the subagent; that is close to the size of the last response (415,893), not a sum over the session, and is not the one used",
+ "judge": {
+  "letter": "G",
+  "score": 5,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in"
+ },
+ "journal_rulings": {
+  "01-build": {
+   "credit": "void",
+   "note": "not credited: entries 3 to 7 had line 4 written in one step after the task's grade, and entry 1's after it too (README rule 3: an entry written after the fact is worth nothing here); lines 1 to 3 stand, the build lines are the grader's and stand, and the sitting counts"
+  }
+ }
+}

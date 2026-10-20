@@ -88,3 +88,55 @@ fifteen sittings, four of the five models, say so.
   files shows it. The prompt now says what it costs.
 - **A quotation is not a source.** Three quotations in one report, each attributed to a README section by
   name, are in neither the README nor any section of it.
+
+## 2026-10-20 — the first Codex sittings, on edition 0.21
+
+One model, `gpt-6.1-sol`, sat R1, R2 and R3, each in a fresh Codex Desktop thread, on edition 0.21 itself: its
+shin-scale row is graded, not a what-if. The proctor regraded each round from the files handed in with the round's
+own `tools/grade.py`; every regrade equals the run's own grade line for line, and its `motion.json`, `report.json`
+and geometry hash the same.
+
+| round | rows | minutes | shin scale (5th percentile, bar 0.4) | journal entries / `WTF?:` |
+| --- | --- | --- | --- | --- |
+| R1 walk | 10 / 10 | 8.7 | 0.631 | 20 / 3 |
+| R2 run | 15 / 15 | 8.1 | 0.405 | 26 / 6 |
+| R3 dance | 14 / 14 | 8.5 | 0.757 | 17 / 2 |
+
+No sub-agent, no model change and no outside session in any of the three; each thread's only outbound messages
+went to the proctor over the channel the prompt came on. No sitting handed in a `usage.json`; the tokens the
+proctor read from the host's log are in each `who.json`.
+
+### The proctor's rulings
+
+None changes a verdict; each is in the sitting's `who.json`.
+
+| sitting | what was found | ruling |
+| --- | --- | --- |
+| R1 | before reading JOURNAL.md it wrote a transcript placeholder with a made-up start time and no journal entry before it, then declared the sitting terminated | **recorded.** The proctor answered that the slip is recorded rather than voiding; it resumed, and the slip is preserved in its run |
+| R2 | before opening PROBLEM.md it read the messaging tool's own skill file outside the package, called that a boundary violation and stopped | **not exam material.** The boundary is about exam material; the channel's own tooling is not it. It was told to record the read and continue, and did. 31 s of its clock is that exchange |
+| R2 | 8 of 26 line 4s were composed in the same shell call as their step, before its output was read; one of them was wrong and was rewritten in place, saying so | **record-only.** Neither disqualifier the prompt names occurred (lines 1–3 after the step; one line 4 for several steps). Filed as [exam#4](https://github.com/rig-c/exam/issues/4) |
+| R2 | the rig spec was changed: one marker bone for the map's scale pair, and the skirt's physics softened; `--leg-scale 0.405` and a 0.95 gain sit on their bars by choice | **within the problem's "Fix?"**, which allows the flags, the map, the rig spec and the physics. The proctor's control with the original physics also passes 15 of 15 with no folds, so the softening is not what cleared the folds, as the run's report says it was |
+| R3 | it declared its own sitting invalid: entry 4 was opened while entry 3's grade was still running, so entry 3's line 4 landed under entry 4 | **record-only.** Every entry's lines 1–3 came before its step and each line 4 came from its own step; the overlap carried no information, was disclosed mid-round, and the same habit is recorded, not voided, on R2. 14 of 17 line 4s were pre-written, which is exam#4 again |
+| R3 | the same skill-file read as R2, in the first tool call | **not exam material**, as on R2; disclosed in its transcript and findings |
+
+The R3 dance is not judged by a person; the Basic edition's dance scores of the same day are in
+[the Basic report](../../results/REPORT.md#what-the-machine-lines-cannot-see).
+
+### What the journals found in the tools
+
+Eight `tools.md` items over the three rounds, none of them the same item twice; the two that recur are the same
+trade seen from two rounds.
+
+| what | rounds |
+| --- | --- |
+| `--reduce` trades ankle precision against smoothing with one tolerance; a reduction that keeps planted contact is wanted | R1 (*Separate ankle precision from smoothing*), R3 (*Reduction that preserves planted contact*) |
+| `reach` starting away from its source joint is not warned about, and its local motion cannot be read | R1 (*Warn when reach starts away from its source joint*), R3 (*Reach compensation needs a local-motion reading*) |
+| `retarget` does not create the parent directories of `--out` and `--report` | R2 |
+| the map's translation scale needs an anatomical recipe | R2 |
+| a reported scale rounded to three places hides a value just under the bar | R2 |
+| the automatic eye-line nod should be optional | R3 |
+
+The parent-directory refusal is the one the 2026-10-18 sittings filed as [pose#239](https://github.com/rig-c/pose/issues/239),
+and the nod is [pose#241](https://github.com/rig-c/pose/issues/241); the reduction and reach items are new.
+Also filed from this day: [exam#5](https://github.com/rig-c/exam/issues/5), a layer-order row, after
+[pose#281](https://github.com/rig-c/pose/issues/281).

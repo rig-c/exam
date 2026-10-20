@@ -1,0 +1,35 @@
+{
+ "model": "gpt-6.1-sol",
+ "host": "Codex Desktop (thread opened by the proctor through agent-bridge)",
+ "how": "itself; the exam prompt arrived as a peer message; a self-reported stop at setup was answered by a proctor ruling and the round continued",
+ "round": "R2",
+ "edition": "0.21",
+ "started": "2026-10-20T12:54:42Z",
+ "finished": "2026-10-20T13:02:45Z",
+ "counts": "independent",
+ "shin_scale_p05": 0.405,
+ "shin_scale_p05_read_from": "the shin-scale row of result.txt: edition 0.21 grades it natively, no what-if",
+ "tokens": {
+  "input": 6783484,
+  "cached_input": 6631040,
+  "fresh_input": 152444,
+  "output": 17944,
+  "reasoning_output": 3486
+ },
+ "tokens_read_from": "the host's session log (last token_count, all three turns), read by the proctor; the run handed in no usage.json",
+ "notes": [
+  "before opening PROBLEM.md the examinee read the messaging tool's own skill file outside the package, reported that read as a boundary violation and stopped; the proctor ruled the channel's tooling is not exam material and told it to continue from the start; the run's started line is the one taken before that read",
+  "the rig spec was changed: one non-art bone (retarget_scale, child of hip) added as the far point of the map's translate.scale pair, and the 25 skirt physics constraints softened (inertia 0.1, damping 0.6, wind and gravity x0.2); no slot, attachment, mesh or image changed, inputs/ is byte-identical to the public package",
+  "two flags sit on their bars by choice: --leg-scale 0.405 puts the shin-scale 5th percentile at 0.405 against >= 0.4 (130 of 400 shin values sit on the clamp), and an empirical 0.95 gain on the marker moved hip-horizontal from 1.185 to 1.130 against <= 1.15",
+  "the proctor's control with the input rig's physics unchanged (marker and flags as handed in) also passes 15 of 15 with 0 folds and every other row identical, so the physics edit is not what cleared the folds; the run attributes the zero to it",
+  "8 of 26 journal entries had line 4 composed in the same shell call as the step, before its output was read (entries 2, 5, 9, 13, 15, 18, 20, 23); entry 23's pre-written success line was wrong and the examinee rewrote it in place and said so",
+  "its two outbound messages both went to the proctor over the channel the prompt arrived on; no other session was contacted",
+  "no sub-agent or delegation tool call in the host log; the model stayed gpt-6.1-sol for every turn",
+  "ruled record-only: the line-4 habit above is not the letter PROMPT.md names as disqualifying (lines 1-3 after the step; one line 4 for several steps), and neither occurred"
+ ],
+ "files": [
+  "after/geometry.json is left out: 9.0 MB, over the 5 MB this directory takes",
+  "after/build.out is the run's after-build.log; after/map.json is the run's calibrated-map.json and after/rig.json the run's calibrated/rig.json, the map and rig spec the final retarget, build and grader consumed; after/calibration.json is the run's record of how the marker was placed",
+  "absolute paths of the machine the round was sat on are rewritten relative to the package, the local path of the messaging script is replaced by `<agent-bridge>`, and the messaging receipt's route details in transcript.md are elided; nothing else in the files is changed"
+ ]
+}

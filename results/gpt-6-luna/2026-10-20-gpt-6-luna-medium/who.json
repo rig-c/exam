@@ -1,0 +1,21 @@
+{
+ "short": "gpt-6-luna",
+ "model": "`gpt-6-luna` (effort: the thread's default; no reasoning effort was set in any turn of the session's log, so the `medium` in the run's name is the name it was given, not a setting the log shows)",
+ "how": "itself; prompt arrived as a peer message; two environment stops before full access, disclosed in the journal",
+ "counts": "independent sitting",
+ "minutes": 29.3,
+ "minutes_read_from": "the examinee's clone (the five runs' own started:/finished: lines, summed; 26.8 without the two environment stops, 2.5 min, that fall inside task 01)",
+ "tokens": {
+  "input_fresh": 307127,
+  "input_cached": 32935680,
+  "output": 92095
+ },
+ "tokens_read_from": "the session's own log (its last token count, which includes the short turns that answered the commander after the sitting)",
+ "judge": {
+  "letter": "B",
+  "score": 0,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in"
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "run": "2026-10-20-gpt-6-luna-medium-03-correct",
+ "task": "03-correct",
+ "versions": {
+  "@rig-c/parts": "1.15.0",
+  "rig-c": "2.47.1"
+ },
+ "lines": {
+  "built": {
+   "pass": true,
+   "read": "rig-parts build exit 0"
+  },
+  "checked": {
+   "pass": true,
+   "read": {
+    "BREATH_VISIBLE": "PASS",
+    "BLINK_NO_HOLE": "PASS",
+    "CHAIN_LAG": "PASS",
+    "TIP_OVER_ROOT": "PASS",
+    "STILL_REGIONS_DARK": "PASS",
+    "TEXTURE_STRETCH": "PASS",
+    "ANIMATIONS_DO_NOT_FOLD": "PASS",
+    "RECOMPOSITE_HOLES": "REPORTED"
+   }
+  },
+  "whole": {
+   "pass": true,
+   "read": "uncovered_error_px 1726 against <= 3500"
+  },
+  "does_not_fold": {
+   "pass": true,
+   "read": []
+  },
+  "kept": {
+   "pass": true,
+   "read": "8 mesh(es) deformed against >= 8"
+  },
+  "still_moves": {
+   "pass": true,
+   "read": "the back hair travels 45.881 rig px against the head over the idle, against >= 23"
+  }
+ },
+ "journal": true,
+ "surprises": 0,
+ "minutes": 2.1,
+ "usage_reported": null,
+ "passed": 6,
+ "of": 6
+}
