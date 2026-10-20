@@ -1,0 +1,81 @@
+{
+ "run": "2026-10-20-gpt-6-luna-medium-05-dance",
+ "task": "05-dance",
+ "versions": {
+  "@rig-c/parts": "1.15.0",
+  "rig-c": "2.47.1"
+ },
+ "lines": {
+  "built": {
+   "pass": false,
+   "read": "rig-parts build exit 1"
+  },
+  "checked": {
+   "pass": false,
+   "read": {
+    "BREATH_VISIBLE": "PASS",
+    "BLINK_NO_HOLE": "PASS",
+    "CHAIN_LAG": "PASS",
+    "TIP_OVER_ROOT": "PASS",
+    "STILL_REGIONS_DARK": "PASS",
+    "TEXTURE_STRETCH": "PASS",
+    "ANIMATIONS_DO_NOT_FOLD": "PASS",
+    "RECOMPOSITE_HOLES": "REPORTED"
+   }
+  },
+  "whole": {
+   "pass": true,
+   "read": "uncovered_error_px 2059 against <= 4200"
+  },
+  "does_not_fold": {
+   "pass": true,
+   "read": []
+  },
+  "budget": {
+   "pass": true,
+   "read": "898 triangles against <= 1000"
+  },
+  "dance_as_timed": {
+   "pass": true,
+   "read": "`dance` lasts 4 s against 4.0"
+  },
+  "closes": {
+   "pass": false,
+   "read": "not measured: the build without its physics did not build"
+  },
+  "both_hands": {
+   "pass": false,
+   "read": "not measured: the build without its physics did not build"
+  },
+  "whole_body": {
+   "pass": false,
+   "read": "not measured: the build without its physics did not build"
+  },
+  "arms_bend_at_the_joints": {
+   "pass": false,
+   "read": "not measured: the build without its physics did not build"
+  },
+  "on_her_feet": {
+   "pass": false,
+   "read": "not measured: the build without its physics did not build"
+  },
+  "keeps_time": {
+   "pass": false,
+   "read": "not measured: the build without its physics did not build"
+  },
+  "soft_in_the_dance": {
+   "pass": false,
+   "read": "not measured: the build without its physics did not build"
+  },
+  "dance_does_not_fold": {
+   "pass": true,
+   "read": []
+  }
+ },
+ "journal": true,
+ "surprises": 1,
+ "minutes": null,
+ "usage_reported": null,
+ "passed": 5,
+ "of": 14
+}
