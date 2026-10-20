@@ -130,32 +130,32 @@ results that differed from their expectation unmarked; the table keeps the grade
 Thirty-six `tools.md` items across the eight sittings, all on task 05, grouped where they say the same thing.
 Every item was read against the installed packages; four did not hold up and are marked.
 
-| what | sittings |
-| --- | --- |
-| a contour or region mesh's triangle count is known only after a full build | 5 — fable, opus, sonnet, flash, argon (flash's figure in its first item is contradicted by its own config; argon's first item names a build that did not happen) |
-| nothing says how to keep a leg on its foot under a moving hip on a `rig-parts` figure | 3 — fable, opus, sonnet |
-| the proposer's sleeve joints are not at the elbow and wrist the task gives | 2 — fable, argon |
-| no easing can be named in an `animations_from` file, so smooth motion needs a hand-written `curve` or dense linear keys | 2 — fable, opus |
-| the weights of a distance-blended arm leak across a bend, and nothing says how far a joint may turn before it kinks | 2 — opus, flash |
-| `animations_from`: the file's schema is not shown beside the field (argon; contradicted — the guide has it), and the path is resolved beside the config without the refusal saying so (haiku) | 2 |
-| a fold is located by triangle and not by the bones that drive it | 1 — astra |
-| `check` reads animations for folds with physics left out | 1 — opus |
-| `render --fps` writes to another folder without `--help` saying so | 1 — opus |
-| `--parts` after a build points somewhere else than after `assemble` | 1 — opus |
-| no reading of how far a limb bends between its joints; the geometry file's layout and the "travel" readings are not described | 2 — opus, haiku |
-| a chain's tip ratio cannot be predicted before the build | 1 — fable |
-| the recipe says where a key moves a hand, not what makes it read as a wave | 1 — fable |
-| a build with physics and a second animation takes three times as long, unannounced | 1 — fable |
-| which chain is which side of the image | 1 — sonnet |
-| no loop or period helper for an animation other than the idle | 1 — flash |
-| which pose file goes to `--keypoints` on a seated figure | 1 — haiku |
-| which bones take the vertices of a contour's bridge between two islands | 1 — haiku |
-| which frames the soft line samples | 1 — haiku |
-| reading `AUTHORING.md` with the reading tool | 1 — haiku |
-| `assemble --help` is refused | 1 — luna |
-| `MOTION.md` is missing (luna; contradicted — it ships in `rig-c`, the package whose README links it) | 1 |
-| `spine-core` is not installed (luna; true, and a devDependency of both packages — its "this limited the comparison build" is contradicted) | 1 |
-| the journal's line 4 has no form for a result that matched; its entry order is easy to break | 2 items — haiku (about the exam, not the tools) |
+| what | sittings | filed as |
+| --- | --- | --- |
+| a contour or region mesh's triangle count is known only after a full build | 5 — fable, opus, sonnet, flash, argon (flash's figure in its first item is contradicted by its own config; argon's first item names a build that did not happen) | [parts#566](https://github.com/rig-c/parts/issues/566), open |
+| nothing says how to keep a leg on its foot under a moving hip on a `rig-parts` figure | 3 — fable, opus, sonnet | [parts#570](https://github.com/rig-c/parts/issues/570), open |
+| the proposer's sleeve joints are not at the elbow and wrist the task gives | 2 — fable, argon | — |
+| no easing can be named in an `animations_from` file, so smooth motion needs a hand-written `curve` or dense linear keys | 2 — fable, opus | — |
+| the weights of a distance-blended arm leak across a bend, and nothing says how far a joint may turn before it kinks | 2 — opus, flash | — |
+| `animations_from`: the file's schema is not shown beside the field (argon; contradicted — the guide has it), and the path is resolved beside the config without the refusal saying so (haiku) | 2 | [parts#569](https://github.com/rig-c/parts/issues/569), open — an example file beside the field, and the refusal says where the path was resolved |
+| a fold is located by triangle and not by the bones that drive it | 1 — astra | [parts#567](https://github.com/rig-c/parts/issues/567), open |
+| `check` reads animations for folds with physics left out | 1 — opus | [parts#568](https://github.com/rig-c/parts/issues/568), open |
+| `render --fps` writes to another folder without `--help` saying so | 1 — opus | [core#1505](https://github.com/rig-c/core/issues/1505), open |
+| `--parts` after a build points somewhere else than after `assemble` | 1 — opus | — |
+| no reading of how far a limb bends between its joints; the geometry file's layout and the "travel" readings are not described | 2 — opus, haiku | — |
+| a chain's tip ratio cannot be predicted before the build | 1 — fable | — |
+| the recipe says where a key moves a hand, not what makes it read as a wave | 1 — fable | — |
+| a build with physics and a second animation takes three times as long, unannounced | 1 — fable | — |
+| which chain is which side of the image | 1 — sonnet | — |
+| no loop or period helper for an animation other than the idle | 1 — flash | [core#1506](https://github.com/rig-c/core/issues/1506), open — the refusal at a cycle boundary names the remedy; no helper is filed |
+| which pose file goes to `--keypoints` on a seated figure | 1 — haiku | — |
+| which bones take the vertices of a contour's bridge between two islands | 1 — haiku | parts#570, open |
+| which frames the soft line samples | 1 — haiku | — |
+| reading `AUTHORING.md` with the reading tool | 1 — haiku | — |
+| `assemble --help` is refused | 1 — luna | — |
+| `MOTION.md` is missing (luna; contradicted — it ships in `rig-c`, the package whose README links it) | 1 | contradicted (see left) |
+| `spine-core` is not installed (luna; true, and a devDependency of both packages — its "this limited the comparison build" is contradicted) | 1 | — |
+| the journal's line 4 has no form for a result that matched; its entry order is easy to break | 2 items — haiku (about the exam, not the tools) | — |
 
 ### What the machine lines cannot see
 
@@ -206,4 +206,8 @@ What this day filed on the exam and the tools:
 | [exam#4](https://github.com/rig-c/exam/issues/4) | line 4 is written after the output is read; a line composed in the step's own shell is a forecast |
 | [exam#5](https://github.com/rig-c/exam/issues/5) | Advanced: a layer-order row, the rig's draw order against the sequence's derived depth order |
 | [exam#6](https://github.com/rig-c/exam/issues/6) | the grader counts `4. **Happened:** WTF?:` while JOURNAL.md says "begin the line with `WTF?:`"; two sittings wrote `4. WTF?:` and were counted 0 |
+| [exam#7](https://github.com/rig-c/exam/issues/7) | Advanced: a figure printed rounded that fails an exact bar should print the comparison's own precision |
+| [exam#9](https://github.com/rig-c/exam/issues/9) | TASK.md 05 describes three marks out of 5; the dance was judged on one mark out of 10 |
 | [pose#281](https://github.com/rig-c/pose/issues/281) | derived depth per segment in the sequence, drawn on the stick figure, so draw order can be read and graded |
+| [pose#284](https://github.com/rig-c/pose/issues/284) | Advanced: `retarget --out` and `--report` do not create parent directories |
+| parts#566, 567, 568, 569, 570 · core#1505, 1506 | the tools items above, one issue each where the third column names it |
