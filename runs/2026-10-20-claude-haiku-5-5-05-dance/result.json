@@ -1,0 +1,81 @@
+{
+ "run": "2026-10-20-claude-haiku-5-5-05-dance",
+ "task": "05-dance",
+ "versions": {
+  "@rig-c/parts": "1.15.0",
+  "rig-c": "2.47.1"
+ },
+ "lines": {
+  "built": {
+   "pass": true,
+   "read": "rig-parts build exit 0"
+  },
+  "checked": {
+   "pass": true,
+   "read": {
+    "BREATH_VISIBLE": "PASS",
+    "BLINK_NO_HOLE": "PASS",
+    "CHAIN_LAG": "PASS",
+    "TIP_OVER_ROOT": "PASS",
+    "STILL_REGIONS_DARK": "PASS",
+    "TEXTURE_STRETCH": "PASS",
+    "ANIMATIONS_DO_NOT_FOLD": "PASS",
+    "RECOMPOSITE_HOLES": "REPORTED"
+   }
+  },
+  "whole": {
+   "pass": true,
+   "read": "uncovered_error_px 2059 against <= 4200"
+  },
+  "does_not_fold": {
+   "pass": true,
+   "read": []
+  },
+  "budget": {
+   "pass": true,
+   "read": "958 triangles against <= 1000"
+  },
+  "dance_as_timed": {
+   "pass": true,
+   "read": "`dance` lasts 4 s against 4.0"
+  },
+  "closes": {
+   "pass": true,
+   "read": "the last frame is 0.0 rig px from the first at its furthest vertex, against <= 0.5 (keys only, physics out)"
+  },
+  "both_hands": {
+   "pass": true,
+   "read": "`handwear_l` travels 661.7 rig px and `handwear_r` 459.3 at their furthest vertex, measured from the middle of `topwear`, each against >= 100.0"
+  },
+  "whole_body": {
+   "pass": true,
+   "read": "the vertex of `topwear` that travels least travels 18.1 rig px, measured from the middle of `shoes`, against >= 15.0"
+  },
+  "arms_bend_at_the_joints": {
+   "pass": true,
+   "read": "along its own length an upper arm or a forearm bends at most 3.4 degrees more than at rest, against <= 8.0"
+  },
+  "on_her_feet": {
+   "pass": false,
+   "read": "the end of a leg (`legwear`) gets 20.62 rig px from where it meets `shoes`, against <= 6.0"
+  },
+  "keeps_time": {
+   "pass": true,
+   "read": "1.0 of the variation in how fast she moves repeats every two beats, against >= 0.5"
+  },
+  "soft_in_the_dance": {
+   "pass": true,
+   "read": "`topwear` differs from the same build without its physics by 4.415 rig px at dance frame 36, against 3.0 to 15.0"
+  },
+  "dance_does_not_fold": {
+   "pass": true,
+   "read": []
+  }
+ },
+ "journal": true,
+ "surprises": 0,
+ "minutes": null,
+ "usage_reported": null,
+ "passed": 13,
+ "of": 14
+}
