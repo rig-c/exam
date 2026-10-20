@@ -127,7 +127,7 @@ results that differed from their expectation unmarked; the table keeps the grade
 
 ### What the journals found in the tools
 
-Thirty-six `tools.md` items across the eight sittings, all on task 05, grouped where they say the same thing.
+Thirty-six `tools.md` items across the eight sittings, handed in under task 05's directory as the prompt asks and reaching back over all five tasks, grouped where they say the same thing.
 Every item was read against the installed packages; four did not hold up and are marked.
 
 | what | sittings | filed as |
