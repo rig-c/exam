@@ -1,0 +1,41 @@
+{
+ "run": "2026-10-20-claude-fable-5-1-01-build",
+ "task": "01-build",
+ "versions": {
+  "@rig-c/parts": "1.15.0",
+  "rig-c": "2.47.1"
+ },
+ "lines": {
+  "built": {
+   "pass": true,
+   "read": "rig-parts build exit 0"
+  },
+  "checked": {
+   "pass": true,
+   "read": {
+    "BREATH_VISIBLE": "PASS",
+    "BLINK_NO_HOLE": "PASS",
+    "CHAIN_LAG": "PASS",
+    "TIP_OVER_ROOT": "PASS",
+    "STILL_REGIONS_DARK": "PASS",
+    "TEXTURE_STRETCH": "PASS",
+    "ANIMATIONS_DO_NOT_FOLD": "PASS",
+    "RECOMPOSITE_HOLES": "REPORTED"
+   }
+  },
+  "whole": {
+   "pass": true,
+   "read": "uncovered_error_px 2059 against <= 4200"
+  },
+  "does_not_fold": {
+   "pass": true,
+   "read": []
+  }
+ },
+ "journal": true,
+ "surprises": 1,
+ "minutes": null,
+ "usage_reported": null,
+ "passed": 4,
+ "of": 4
+}
