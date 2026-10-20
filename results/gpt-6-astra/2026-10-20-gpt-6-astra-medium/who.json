@@ -1,0 +1,21 @@
+{
+ "short": "gpt-6-astra",
+ "model": "gpt-6-astra (the thread's default effort; the log records none)",
+ "host": "Codex Desktop (thread opened by the proctor through agent-bridge)",
+ "how": "itself; prompt arrived as a peer message",
+ "counts": "independent sitting",
+ "tokens": {
+  "input_fresh": 159737,
+  "input_cached": 12153216,
+  "output": 25787
+ },
+ "tokens_read_from": "the session log's last token count (whole thread, both turns; output includes 6,320 reasoning tokens)",
+ "effort_note": "every settings record in the session log has reasoning_effort null; the 'medium' in the run's name is not confirmed by it",
+ "judge": {
+  "letter": "A",
+  "score": 4,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in"
+ }
+}

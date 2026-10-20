@@ -1,0 +1,25 @@
+{
+ "short": "Gemini 4 Argon (high)",
+ "model": "gemini-4-argon-high",
+ "host": "Antigravity Desktop (conversation opened by the proctor through agent-bridge)",
+ "how": "itself; prompt arrived as a peer message",
+ "counts": "independent sitting",
+ "tokens": {
+  "input_fresh": 1405769,
+  "input_cached": 17500579,
+  "output": 158170
+ },
+ "tokens_read_from": "the host's per-call session log, summed over its 142 model calls (whole conversation: the sitting, the hand-in and its acknowledgement; 1,402,566 / 17,372,616 / 157,966 of it up to the hand-in). The session was compacted twice during the sitting; whatever those two compactions cost is not in the per-call rows",
+ "effort_note": "the session log names the model only by an internal placeholder, the same one this host's other gemini-4-argon-high conversations carry; it records no effort setting, so 'high' is the name the sitting was opened under and is not confirmed by the log",
+ "files": [
+  "05-dance/transcript.md: one absolute path of the machine the exam was sat on, inside a quoted error message, is rewritten to <clone>/; nothing else in the files is changed",
+  "result.json in each task is the proctor's regrade; the run's own differs only in minutes, which it left empty because it graded each task before writing its finished: line"
+ ],
+ "judge": {
+  "letter": "H",
+  "score": 3,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in"
+ }
+}

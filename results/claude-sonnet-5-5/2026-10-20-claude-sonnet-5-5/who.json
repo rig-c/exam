@@ -1,0 +1,21 @@
+{
+ "short": "claude-sonnet-5-5",
+ "model": "claude-sonnet-5-5 (the identifier on every assistant message of the session log)",
+ "host": "Claude Code subagent started by the proctor",
+ "host_context": "the host delivered the operator's standing instructions, the core repository's own guide and an index of the operator's notes with the session, as it does for every subagent started from the proctor's session; the index carries one-line pointers about the exam (its editions, proctoring precedents) and no task content, value or answer; the examinee opened none of the notes the index points to",
+ "how": "itself, as a Claude Code subagent started by the proctor; no sub-agent of its own",
+ "counts": "independent sitting",
+ "tokens": {
+  "input_fresh": 271854,
+  "input_cached": 15112460,
+  "output": 58316
+ },
+ "tokens_read_from": "the subagent's session log, every assistant message's usage summed once per message: input_fresh is uncached input (162) plus cache writes (271,692). The harness's own figure for the subagent, 275,048, is the size of its last turn (context plus output), not its spend",
+ "judge": {
+  "letter": "D",
+  "score": 6,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in"
+ }
+}

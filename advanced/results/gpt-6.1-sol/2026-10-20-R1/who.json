@@ -1,0 +1,24 @@
+{
+ "model": "gpt-6.1-sol",
+ "host": "Codex Desktop (thread opened by the proctor through agent-bridge)",
+ "how": "itself; the exam prompt arrived as a peer message, the journal slip at setup is disclosed in the run",
+ "round": "R1",
+ "edition": "0.21",
+ "started": "2026-10-20T12:38:41Z",
+ "finished": "2026-10-20T12:47:20Z",
+ "counts": "independent",
+ "shin_scale_p05": 0.631,
+ "shin_scale_p05_read_from": "the shin-scale row of result.txt: edition 0.21 grades it natively, no what-if",
+ "tokens": {"input": 6176892, "cached_input": 6046976, "fresh_input": 129916, "output": 20007, "reasoning_output": 3027},
+ "tokens_read_from": "the host's session log (last token_count), read by the proctor; the run handed in no usage.json",
+ "notes": [
+  "before reading JOURNAL.md the examinee created run/ and wrote a transcript placeholder carrying a made-up start time (00:00:00Z) with no journal entry before it; it declared the sitting terminated, the proctor answered that the slip is recorded rather than voiding, and it resumed; the slip and the placeholder are preserved in its run (journal entry 1, transcript commands 2-5)",
+  "its two outbound messages both went to the proctor over the channel the prompt arrived on; no other session was contacted",
+  "no sub-agent or delegation tool call in the host log; the model stayed gpt-6.1-sol for every turn"
+ ],
+ "files": [
+  "after/geometry.json is left out: 10.0 MB, over the 5 MB this directory takes",
+  "after/build.out is the run's after/build.log; after/map.json is the run's map-parallel.json, the map the final retarget and the grader consumed",
+  "absolute paths of the machine the round was sat on are rewritten relative to the package, and the local path of the messaging script in transcript.md is replaced by `<agent-bridge>`; nothing else in the files is changed"
+ ]
+}

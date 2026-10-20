@@ -1,0 +1,23 @@
+{
+ "short": "claude-fable-5-1",
+ "model": "claude-fable-5-1 (Fable 5.1; every assistant message in the session log names it)",
+ "host": "Claude Code subagent started by the proctor",
+ "host_context": "the host delivered the operator's standing instructions, the core repository's own guide and an index of the operator's notes with the session, as it does for every subagent started from the proctor's session; the index carries one-line pointers about the exam (its editions, proctoring precedents) and no task content, value or answer; the examinee opened none of it with a tool, and it added a co-author line to the commit, which the examinee disclosed",
+ "how": "itself; the prompt arrived as the subagent's task",
+ "counts": "independent sitting",
+ "tokens": {
+  "input_fresh": 572367,
+  "input_cached": 11632469,
+  "output": 69885
+ },
+ "tokens_read_from": "the subagent's session log, summed over its 60 API responses (fresh input includes 570,477 written to the cache)",
+ "tokens_note": "the host reported 308,792 tokens for the subagent; that is a different count and is not the one used",
+ "judge": {
+  "letter": "E",
+  "score": 9,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in",
+  "words": "oh, this one reads as a dance"
+ }
+}

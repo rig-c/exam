@@ -1,0 +1,28 @@
+{
+ "short": "claude-opus-5-5",
+ "model": "claude-opus-5-5 (the identifier on every assistant message of the session log)",
+ "host": "Claude Code subagent started by the proctor; branch pushed by the proctor at the examinee's request",
+ "host_context": "inferred, not read from the log: the commit's co-author line and the hand-in's own words (\"the Co-Authored-By trailer your instructions require\") show the session carried the operator's standing instructions, as every subagent started from the proctor's session does; that context carries no task content, value or answer",
+ "how": "itself, as a Claude Code subagent started by the proctor; no sub-agent of its own. It committed the run on a local branch and left the push to the proctor",
+ "counts": "independent sitting",
+ "tokens": {
+  "input_fresh": 493181,
+  "input_cached": 23537048,
+  "output": 91021
+ },
+ "tokens_read_from": "the subagent's session log, every assistant message's usage summed once per message: input_fresh is uncached input (208) plus cache writes (492,973). The harness's own figure for the subagent, 335,936, is the size of its last turn (context plus output), not its spend",
+ "journal_note": "task 05's journal was edited after its last grader run: the WTF?: marker was moved to the start of line 4 in four entries and added to three more; the regrade counts 7 where the last grader run before the edit counted 1. The journal states the edit itself, at its end",
+ "judge": {
+  "letter": "F",
+  "score": 3,
+  "of": 10,
+  "judged": "2026-10-21",
+  "how": "one person, clips A to H in one sitting, the model behind each letter not known until every score was in"
+ },
+ "journal_rulings": {
+  "05-dance": {
+   "surprises": 1,
+   "note": "published as 1, the grader's count at the run's last grade: four more surprises written mid-line and three left unmarked were relabelled after that grade and the edit is stated at the journal's end; the regrade of the edited file counts 7, which is result.json's figure"
+  }
+ }
+}
