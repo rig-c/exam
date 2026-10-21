@@ -1,0 +1,56 @@
+{
+  "prompt_id": "bfe712c8-cddf-4756-9edd-5a23a0fa8dbf",
+  "image": "inputs/st_input_full.png",
+  "elapsed_s": 229.5,
+  "vram_free_before_gb": {
+    "cuda:0": 14.46,
+    "cuda:1": 10.8
+  },
+  "vram_free_low_gb": {
+    "cuda:0": 4.44,
+    "cuda:1": 10.8
+  },
+  "prefix": "exam_mannequin_full_87190bae",
+  "seed": 42,
+  "resolution": 1024,
+  "steps": 30,
+  "quant": "none",
+  "offload": true,
+  "lama": false,
+  "layer_count": 29,
+  "layer_names": [
+    "front hair",
+    "back hair",
+    "neckwear",
+    "bottomwear",
+    "legwear",
+    "footwear",
+    "tail",
+    "objects",
+    "headwear",
+    "eyewear",
+    "earwear",
+    "eyewhite-r",
+    "eyewhite-l",
+    "irides-r",
+    "irides-l",
+    "eyelash-r",
+    "eyelash-l",
+    "eyebrow-r",
+    "eyebrow-l",
+    "ears-r",
+    "ears-l",
+    "wings",
+    "handwear-r",
+    "handwear-l",
+    "topwear",
+    "face",
+    "nose",
+    "mouth",
+    "neck"
+  ],
+  "canvas": [
+    1024,
+    1024
+  ]
+}
