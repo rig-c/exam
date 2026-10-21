@@ -1,0 +1,137 @@
+{
+ "spec": "spine-parts-keypoints/1",
+ "space": {
+  "units": "painting-px",
+  "origin": "top-left",
+  "y": "down"
+ },
+ "width": 1664,
+ "height": 2432,
+ "source": "DWPose (dw-ll_ucoco_384, ComfyUI DWPreprocessor, resolution 1024, bbox_detector None \u2014 the default yolox bbox found no person on all 8 seeds) on this painting, sides normalised to frontal; then every body joint moved by eye to the ball/seam centre on 5x zooms (rig px x2): DWPose put the hips on the pelvis 64 px above the hip domes and the shoulders on the torso edge, not the balls; nose/eyes/ears marked missing (a blank head has none); r_knee then moved 3 px outward (348 -> 345) so both knees sit outside their hip-ankle line and the ik bends them outward, mirror-symmetric",
+ "people": [
+  {
+   "id": "a",
+   "joints": {
+    "nose": {
+     "state": "missing"
+    },
+    "neck": {
+     "state": "observed",
+     "at": [
+      834,
+      504
+     ],
+     "score": 1.0
+    },
+    "r_shoulder": {
+     "state": "observed",
+     "at": [
+      652,
+      572
+     ],
+     "score": 1.0
+    },
+    "r_elbow": {
+     "state": "observed",
+     "at": [
+      506,
+      848
+     ],
+     "score": 1.0
+    },
+    "r_wrist": {
+     "state": "observed",
+     "at": [
+      330,
+      1094
+     ],
+     "score": 1.0
+    },
+    "l_shoulder": {
+     "state": "observed",
+     "at": [
+      1010,
+      570
+     ],
+     "score": 1.0
+    },
+    "l_elbow": {
+     "state": "observed",
+     "at": [
+      1156,
+      846
+     ],
+     "score": 1.0
+    },
+    "l_wrist": {
+     "state": "observed",
+     "at": [
+      1322,
+      1092
+     ],
+     "score": 1.0
+    },
+    "r_hip": {
+     "state": "observed",
+     "at": [
+      748,
+      1246
+     ],
+     "score": 1.0
+    },
+    "r_knee": {
+     "state": "observed",
+     "at": [
+      690,
+      1728
+     ],
+     "score": 1.0
+    },
+    "r_ankle": {
+     "state": "observed",
+     "at": [
+      640,
+      2216
+     ],
+     "score": 1.0
+    },
+    "l_hip": {
+     "state": "observed",
+     "at": [
+      908,
+      1246
+     ],
+     "score": 1.0
+    },
+    "l_knee": {
+     "state": "observed",
+     "at": [
+      966,
+      1732
+     ],
+     "score": 1.0
+    },
+    "l_ankle": {
+     "state": "observed",
+     "at": [
+      1014,
+      2216
+     ],
+     "score": 1.0
+    },
+    "r_eye": {
+     "state": "missing"
+    },
+    "l_eye": {
+     "state": "missing"
+    },
+    "r_ear": {
+     "state": "missing"
+    },
+    "l_ear": {
+     "state": "missing"
+    }
+   }
+  }
+ ]
+}
