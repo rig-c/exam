@@ -1,5 +1,5 @@
 {
- "note": "The parts grade.py's lines read on this fixture, by role (python3 grade.py runs/<run> --fixture mannequin). Where tasks/05-dance/TASK.md names the painted figure's parts, TASK-mannequin.md names these.",
+ "note": "The parts grade.py's lines read on this fixture, by role (tasks/05-dance/fixture.json names this fixture). Where tasks/05-dance/TASK-round3.md names the painted figure's parts, TASK.md (Round 4) names these.",
  "05-dance": {
   "hands": ["hand_l", "hand_r"],
   "trunk": "topwear",
@@ -10,8 +10,8 @@
   ],
   "arms": ["upperarm_l", "forearm_l", "upperarm_r", "forearm_r"],
   "not_read": {
-   "budget": "not read on this fixture: the rig is given and has no mesh to count (TASK-mannequin.md)",
-   "soft_in_the_dance": "not read on this fixture: the rig is given and has no physics (TASK-mannequin.md)"
+   "budget": "not read on this fixture: the rig is given and has no mesh to count (tasks/05-dance/TASK.md)",
+   "soft_in_the_dance": "not read on this fixture: the rig is given and has no physics (tasks/05-dance/TASK.md)"
   }
  }
 }

@@ -39,6 +39,8 @@ Kept, and not counted — 2 run(s):
 Minutes are for the tasks sat, together; tokens are fresh input plus output, cached input left out; the dance is judged by a person who does not know whose clip it is. [The full table](results/README.md) has who sat each run and how,
 the journals' counts and the versions; [the proctor's report](results/REPORT.md) says what the journals found
 in the tools and in this exam.
+
+Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-round3.md`); none yet on Round 4's, the mannequin (`tasks/05-dance/TASK.md`; dry run pending).
 <!-- results:end -->
 
 ## Rules
@@ -112,7 +114,7 @@ which of it was filed on the tools. A run's own `result.json` is not trusted, an
 Rounds 1 and 2, on `@rig-c/parts` 1.11.0 and `rig-c` 2.47.0: tasks 01 and 02 on one painting, and task 03
 on a second painting of the same character, where the tool's draft does not pass as proposed.
 
-Round 3, on `@rig-c/parts` 1.15.0 and `rig-c` 2.47.1 — the versions `package.json` pins now: task 04, a soft
+Round 3, on `@rig-c/parts` 1.15.0 and `rig-c` 2.47.1: task 04, a soft
 chest under a triangle budget; task 05, a dance; and one more line on task 03. The tools changed between
 the rounds because of what the first two found: on 1.13.0 `propose` names task 03's fault itself, one step
 before the build, so a result on that task is a result on the versions beside it in the table. Since 1.14.0 `check` also reads every animation, the idle included, for folds, and fails a build where one folds — the line tasks 02, 04 and 05 grade is now one the tool reports first.
@@ -122,6 +124,15 @@ earlier tasks leave it cannot do what is asked, and what it lacks has to be work
 read only whether the dance holds together — the loop closes, the feet stay under her, the arms bend at
 their joints and nowhere else, the motion keeps the beat. Whether it is a dance is scored by a person from
 a clip with a letter on it and no name, and that score sits beside the lines without changing them.
+
+Round 4, on `@rig-c/parts` 1.58.0 and `rig-c` 2.67.2 — the versions `package.json` pins now: tasks 01 to 04
+unchanged, and task 05 set on a wooden mannequin that comes already rigged (`fixtures/mannequin/`), so the dance
+is the work and the rig is not. On Round 3 the clocks showed that the time went into building legs that could
+dance at all, five different ways. The painted figure's task 05 is kept as `tasks/05-dance/TASK-round3.md` for
+the runs filed on it. On the new versions the tools' own documented path passes tasks 01 to 04. Between 1.15.0 and 1.58.0
+`check` came to refuse an arm mesh weighted off its chain, which every Round 3 config carried from the 1.15.0 draft, so a
+Round 3 config does not build on Round 4's versions; each row of the tables names the versions it was graded on.
+**Round 4's task 05: dry run pending** — the proctor's dry run on the new task has not been sat yet.
 
 A walk and a hip wiggle were each set as a sixth task on this painting and withdrawn before anyone sat
 them: seen from the front, with her feet apart and her arms at her sides, neither reads as what it is. A
