@@ -91,7 +91,8 @@ Add only those five directories — and inside them only `config.json`, any othe
 
 1. For each task, the grader's printed lines verbatim from your last run of it.
 2. For task 03: what was wrong with the draft, which message or picture told you, and exactly what you changed.
-   For task 05: what you added to the rig so that she could dance, and where in the documents you found it.
+   For task 05: which bones and constraints your `dance` keys (and how the feet stay planted), and where in the
+   documents — the fixture's README or the packages' — you found each.
 3. How many journal entries you wrote per task, and how many begin line 4 with `WTF?:`.
 4. The three things that cost you the most time, each with the document section or message involved.
 5. The titles of your `tools.md` entries.
