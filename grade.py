@@ -208,6 +208,12 @@ def clock(path):
     d = (t(b.group(1)) - t(a.group(1))).total_seconds()
     return round(d / 60, 1) if d >= 0 else None
 
+def surprises(journal):
+    """Entries whose fourth line begins with WTF?: (SURPRISE: in the form before 2026-10-13), as JOURNAL.md asks —
+    after the `4.` and the template's optional `**Happened:**` label, so `4. WTF?:` counts as well as
+    `4. **Happened:** WTF?:`; not the word wherever it appears."""
+    return len(re.findall(r'^4\.\s*(?:\*\*Happened:\*\*\s*)?(?:WTF\?:|SURPRISE:)', journal, re.M))
+
 def main():
     rundir = os.path.abspath(sys.argv[1]); name = os.path.basename(rundir.rstrip('/'))
     task = next((t for t in sorted(os.listdir(os.path.join(ROOT, 'tasks'))) if name.endswith(t)), None)
@@ -310,9 +316,7 @@ def main():
     else:
         for k in ('checked', 'whole', 'does_not_fold'): L[k] = {'pass': False, 'read': 'the build wrote no check.json'}
     res['journal'] = os.path.exists(os.path.join(rundir, 'journal.md'))
-    # an entry's fourth line that begins with WTF?: (SURPRISE: in the form before 2026-10-13), as the form asks —
-    # not the word wherever it appears
-    res['surprises'] = len(re.findall(r'^4\.\s*\*\*Happened:\*\*\s*(?:WTF\?:|SURPRISE:)', open(os.path.join(rundir, 'journal.md')).read(), re.M)) if res['journal'] else None
+    res['surprises'] = surprises(open(os.path.join(rundir, 'journal.md')).read()) if res['journal'] else None
     res['minutes'] = clock(os.path.join(rundir, 'transcript.md'))
     up = os.path.join(rundir, 'usage.json')   # what the examinee's agent reported spending, if it reports; not checked
     res['usage_reported'] = json.load(open(up)) if os.path.exists(up) else None

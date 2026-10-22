@@ -11,6 +11,8 @@ Write lines 1–3 **before** the step and line 4 **after** it.
 4. **Happened:** what the step actually produced. If it differs from line 2, begin the line with
    `WTF?:` and say in one sentence what you now think you misread — or that nothing told you. Say it
    the way it landed. Politeness is not graded here; a line that understates the surprise hides it.
+   The grader counts a line 4 written `4. **Happened:** WTF?: …` or `4. WTF?: …`; a `WTF?:` anywhere
+   else in the line is not counted.
 
 ## At the end
 

@@ -33,7 +33,7 @@
   }
  },
  "journal": true,
- "surprises": 0,
+ "surprises": 1,
  "minutes": 12.6,
  "usage_reported": null,
  "passed": 4,

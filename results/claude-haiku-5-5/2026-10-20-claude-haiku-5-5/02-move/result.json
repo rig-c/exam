@@ -50,7 +50,7 @@
   }
  },
  "journal": true,
- "surprises": 0,
+ "surprises": 1,
  "minutes": 13.3,
  "usage_reported": null,
  "passed": 7,
