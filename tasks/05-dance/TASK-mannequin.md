@@ -1,9 +1,10 @@
 # Task 05 — dance, on the mannequin (DRAFT)
 
 > **Draft for the next Basic edition (issue #10).** It sits beside `TASK.md`, which is the task the current
-> round sits and is unchanged. Nothing here is graded yet: `grade.py` still reads `TASK.md`'s part names
-> (`handwear_*`, `shoes`, `legwear`), which this rig does not have, and the root `package.json` still pins the
-> current round's versions. Both change when this text replaces `TASK.md`.
+> round sits and is unchanged. Nothing here is graded yet. `grade.py` reads this rig's part names when it is told
+> the run sits on the fixture (`python3 grade.py runs/<run> --fixture mannequin`; the names are in
+> `../../fixtures/mannequin/grade-roles.json`), but the root `package.json` still pins the current round's
+> versions. That changes when this text replaces `TASK.md`.
 
 A wooden artist's mannequin, already rigged: `../../fixtures/mannequin/`. Its README names every joint, its
 range, the bone that turns it, and how the feet are held.
@@ -55,7 +56,9 @@ Travel is the diagonal of the box a vertex's path fills over the loop. Task 05's
 `soft_in_the_dance` lines, and task 04's hop, are not read here: there is no mesh or physics to author.
 
 The arm and leg lines name this rig's parts (`upperarm_*`, `forearm_*`, `hand_*`, `shin_*`, `foot_*`) where
-`TASK.md` names the painted figure's; how the grader reads them on rigid parts is set when the grader is.
+`TASK.md` names the painted figure's. Every arm part here is rigid on one bone and turns only at a joint that
+declares its range, so **Arms bend at the joints** has nothing to read: the grader reports it SKIP, with that
+reason, and does not count it. `budget` and `soft_in_the_dance` are reported SKIP the same way.
 
 ## And a judge
 
