@@ -345,8 +345,10 @@ def main():
             a, dance_folds = pose(work, 'out/check/build', 'dance', D['fps'], log) if timed else (None, None)
             b, _ = pose(work, bare, 'dance', D['fps'], log) if bare else (None, None)
             no = 'not measured: ' + ('there is no `dance` of the given length' if not timed else 'the build without its physics did not build')
+            rigid = rigid_arms(work, R['arms'])   # read off the rig, not the dance: it holds whether or not a dance was measured
             if b is None:
                 for k in ('closes', 'both_hands', 'whole_body', 'arms_bend_at_the_joints', 'on_her_feet', 'keeps_time', 'soft_in_the_dance'): L[k] = {'pass': False, 'read': no}
+                if rigid: L['arms_bend_at_the_joints'] = {'skip': rigid}
             else:
                 g = loop_gap(b)
                 L['closes'] = {'pass': g is not None and g <= D['closes'], 'read': f"the last frame is {g} rig px from the first at its furthest vertex, against <= {D['closes']} (keys only, physics out)"}
@@ -357,7 +359,6 @@ def main():
                 L['both_hands'] = {'pass': all(v is not None and v >= D['hand'] for v in h.values()), 'read': f"`{h0}` travels {h[h0]} rig px and `{h1}` {h[h1]} at their furthest vertex, measured from the middle of `{trunk}`, each against >= {D['hand']}"}
                 t = paths(Bf, trunk, against=fb); t = None if t is None else round(min(t), 1)
                 L['whole_body'] = {'pass': t is not None and t >= D['body'], 'read': f"the vertex of `{trunk}` that travels least travels {t} rig px, measured from the middle of " + (f"`{fb}`" if len(feet) == 1 else ' and '.join(f'`{s_}`' for s_ in feet)) + f", against >= {D['body']}"}
-                rigid = rigid_arms(work, R['arms'])
                 if rigid:
                     L['arms_bend_at_the_joints'] = {'skip': rigid}
                 else:
