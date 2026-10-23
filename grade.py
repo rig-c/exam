@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
 UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
 KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
-RISE_LINE = 150         # rig px a hand rises above the rest of the body, task 02
+RISE_LINE = 150         # rig px a bone rises above the median of the bones, task 02 (rise())
 FPS = 12
 STILL_MOVES = 23        # task 03: rig px the back hair travels against the head over the idle — half of what the draft's
                         # own amplitudes give once its two chains agree (45.9); the same amplitudes cut to a quarter give 17.5
