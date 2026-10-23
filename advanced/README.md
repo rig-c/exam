@@ -62,7 +62,8 @@ Each round is a directory that is a whole package: what the examinee is given an
 In each: `PROBLEM.md` (the situation, the tools, the pass table, the rules, what to hand in and what to
 answer), `JOURNAL.md` (the journal's form), `PROMPT.md` (the same prompt as [the one here](PROMPT.md)),
 `package.json` (the pinned versions), `tools/grade.py` (the grader) and `inputs/` (the rig, the pose
-sequence, the stick figure).
+sequence, the stick figure; R2 also `inputs/pose/airborne.json`, the airborne spans the proctor read from the
+source video, which the grader reads beside the sequence and holds to `--cycle`).
 
 The rig is the same character in all three, built as a 2D rig cut at its elbows and knees, with hair and
 a skirt on physics. Its legs are 2D and face-on, so a knee that comes toward the camera has to be drawn
@@ -132,6 +133,7 @@ transcript, and anything noted against it.
 
     PROMPT.md                   the prompt every examinee is given, verbatim, once per round
     R1/ R2/ R3/                 the three packages, each exactly what the examinee is given
+    tools/test_shared.py        checks that every grader carries the same bar-comparison block, byte for byte
     results/                    every sitting that has been read:
                                 results/<model>/<date>-<round>/ holds the files handed in (journal.md,
                                 transcript.md, tools.md, report.md, findings.md, after/report.json, the

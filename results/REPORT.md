@@ -176,7 +176,7 @@ letters were matched to models. The clip and the score are in each run's `05-dan
 | `gemini-4-argon-high` | 14 / 14 | 3 |
 | `gpt-6-luna` | 5 / 14 (the build failed) | 0 |
 
-The judge used one mark out of 10 for the whole clip, not the three marks out of 5 that TASK.md describes, and
+The judge used one mark out of 10 for the whole clip, not the three marks out of 5 that TASK.md described (Round 3's text, now `tasks/05-dance/TASK-round3.md`), and
 gave the rubric in one line (translated): half the mark is whether the joints read as a human's, half is the dance
 itself; most of them read as flailing, and one understood the beat.
 
