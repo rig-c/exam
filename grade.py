@@ -262,8 +262,17 @@ def rigid_arms(work, arms):
 def surprises(journal):
     """Entries whose fourth line begins with WTF?: (SURPRISE: in the form before 2026-10-13), as JOURNAL.md asks —
     after the `4.` and the template's optional `**Happened:**` label, so `4. WTF?:` counts as well as
-    `4. **Happened:** WTF?:`; not the word wherever it appears."""
-    return len(re.findall(r'^4\.\s*(?:\*\*Happened:\*\*\s*)?(?:WTF\?:|SURPRISE:)', journal, re.M))
+    `4. **Happened:** WTF?:` and tools/journal.py's `4. **Happened** (<UTC>): WTF?:`; not the word wherever it appears."""
+    return len(re.findall(r'^4\.\s*(?:\*\*Happened(?::\*\*|\*\* \(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ\):)\s*)?(?:WTF\?:|SURPRISE:)', journal, re.M))
+
+def journal_chain(rundir):
+    """tools/journal.py's own verify line for the run directory (one implementation): `journal: chain intact, N entries,
+    M WTF`, `journal: first broken link at entry K (…)` or `journal: not kept (no chain)`. It changes no line."""
+    import importlib.util
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location('journal', os.path.join(ROOT, 'tools', 'journal.py'))
+    journal = importlib.util.module_from_spec(spec); spec.loader.exec_module(journal)
+    return journal.verify(rundir)[0]
 
 def main():
     args = sys.argv[1:]; fx = None
@@ -399,6 +408,7 @@ def main():
         for k in ('checked', 'whole', 'does_not_fold'): L[k] = {'pass': False, 'read': 'the build wrote no check.json'}
     res['journal'] = os.path.exists(os.path.join(rundir, 'journal.md'))
     res['surprises'] = surprises(open(os.path.join(rundir, 'journal.md')).read()) if res['journal'] else None
+    res['journal_chain'] = journal_chain(rundir)   # whether tools/journal.py wrote the journal, unedited since; `journal` and `surprises` are read as before
     res['minutes'] = clock(os.path.join(rundir, 'transcript.md'))
     up = os.path.join(rundir, 'usage.json')   # what the examinee's agent reported spending, if it reports; not checked
     res['usage_reported'] = json.load(open(up)) if os.path.exists(up) else None
@@ -408,6 +418,7 @@ def main():
     if skipped: res['skipped'] = skipped
     json.dump(res, open(os.path.join(rundir, 'result.json'), 'w'), indent=1)
     for k, v in L.items(): print(('SKIP  ' + k + ': ' + json.dumps(v['skip'])) if 'skip' in v else (('PASS  ' if v['pass'] else 'FAIL  ') + k + ': ' + json.dumps(v['read'])))
+    print(res['journal_chain'])
     print('clock: ' + (f"{res['minutes']} min by the run's own started:/finished: lines" if res['minutes'] is not None else 'no started:/finished: lines in transcript.md'))
     print(f"{res['passed']} of {res['of']} line(s)" + (f", {len(skipped)} skipped ({', '.join(skipped)})" if skipped else '') + f"; journal {'present, ' + str(res['surprises']) + ' entry(ies) whose line 4 begins WTF?:' if res['journal'] else 'ABSENT'}; log {os.path.relpath(log, ROOT)}")
 

@@ -1,6 +1,7 @@
 # Regrade every run a pull request against `main` adds or changes, from the files it hands in.
 # The grader and the tasks come from the base branch; from the pull request only a run's own
-# config.json, other .json it wrote, journal.md and transcript.md are taken. A run's result.json
+# config.json, other .json it wrote, journal.md, transcript.md and .journal/ (the chain
+# tools/journal.py keeps) are taken. A run's result.json
 # is not read. The job is green when the grading ran — the lines themselves are in the summary.
 name: grade
 on:
@@ -41,6 +42,7 @@ jobs:
             for f in "$d"*.json "$d"journal.md "$d"transcript.md; do
               [ -f "$f" ] && [ "$(basename "$f")" != result.json ] && cp "$f" "graded/$name/"
             done
+            [ -d "$d.journal" ] && cp -R "$d.journal" "graded/$name/"
             mkdir -p runs && rm -rf "runs/$name" && cp -R "graded/$name" "runs/$name"
             echo "### $name" >> "$GITHUB_STEP_SUMMARY"
             echo '```' >> "$GITHUB_STEP_SUMMARY"
