@@ -186,10 +186,16 @@ def profile_block(rs):
     L = ['| model | sittings | lines passed, of lines graded | minutes for the tasks sat |', '| --- | --- | --- | --- |']
     for group, rr in sorted(by.items()):
         name = rr[0]['who'].get('short') or rr[0]['who'].get('model', group)
-        passed = sum(res['passed'] for r in rr for res in r['tasks'].values()); of = sum(res['of'] for r in rr for res in r['tasks'].values())
+        old = [res for r in rr for t, res in r['tasks'].items() if not (t in PAINTED and painting(res) != OLD_PAINTING)]   # never summed with Round 5's painting
+        passed = sum(res['passed'] for res in old); of = sum(res['of'] for res in old)
         mins = sorted(float(minutes(r)[0]) for r in rr if minutes(r)[0] != '—')
         span = '—' if not mins else (f'{mins[0]:g}' if len(mins) == 1 else f'{mins[0]:g} to {mins[-1]:g}')
         L.append(f"| [{name}]({site}results/{group}/) | {len(rr)} | {passed} / {of} | {span} |")
+    new = {g: [res for r in rr for t, res in r['tasks'].items() if t in PAINTED and painting(res) == NEW_PAINTING] for g, rr in sorted(by.items())}
+    if any(new.values()):
+        L += ['', "On Round 5's painting, tasks 01, 02 and 04 (not summed with the table above):", '', '| model | lines passed, of lines graded |', '| --- | --- |']
+        for g, xs in new.items():
+            if xs: L.append(f"| [{by[g][0]['who'].get('short') or by[g][0]['who'].get('model', g)}]({site}results/{g}/) | {sum(x['passed'] for x in xs)} / {sum(x['of'] for x in xs)} |")
     return '\n'.join(L)
 
 def main():
