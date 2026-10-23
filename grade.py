@@ -14,19 +14,23 @@ file its config.json names copied beside them, and its lines read the part names
 where the task's own lines name the painted figure's. A line the fixture's rig cannot discriminate is
 reported SKIP with its reason: it is kept out of the lines counted, and listed in result.json under `skipped`.
 """
-import datetime, json, os, re, shutil, statistics, subprocess, sys
+import datetime, json, os, re, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
-UNCOVERED_LINE = {'01-build': 4200, '02-move': 4200, '03-correct': 3500, '04-soft': 4200, '05-dance': 4200}   # rig px; about twice what the proposed plan leaves (2,059; 1,726)
+UNCOVERED_LINE = {'01-build': 3700, '02-move': 3700, '03-correct': 3500, '04-soft': 3700, '05-dance': 4200}   # rig px; about twice what the proposed plan
+                        # leaves, rounded up to the next 100: Round 5's painting 1,812 (01, 02, 04), task 03's 1,726; 05 is the fixture's own
 KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
-RISE_LINE = 150         # rig px a bone rises above the median of the bones, task 02 (rise())
+GESTURE = {'part': 'face', 'against': 'bottomwear', 'floor': 22}
+                        # task 02: rig px the face's furthest vertex travels from the middle of the skirt. The idle's own travel
+                        # (9.1) plus half of what a reference gesture adds (35.0: head −8°, chest −3° and −6 px, no limb keyed), rounded down
 FPS = 12
 STILL_MOVES = 23        # task 03: rig px the back hair travels against the head over the idle — half of what the draft's
                         # own amplitudes give once its two chains agree (45.9); the same amplitudes cut to a quarter give 17.5
 SOFT = (3.0, 15.0)      # task 04: rig px the soft patch differs from the same build without its physics, on the hop
 PATCH = (8, 0.80)       # task 04: at least 8 of the part's vertices move, and at most 80 % of them — a patch, not the garment
-BUDGET = 700            # task 04: triangles in the whole rig; the recipe's own region spacing, copied, gives 920 here
+BUDGET = 700            # task 04: triangles in the whole rig; on Round 5's painting the recipe's own region spacing, copied,
+                        # gives 935 and the same region at spacing 10 gives 697, rounded up to the next 50 (the old painting: 920)
 DANCE = {'seconds': 4.0, 'fps': 24, 'closes': 0.5, 'hand': 100.0, 'body': 15.0, 'time': 0.5, 'ankle': 6.0, 'budget': 1000}
                         # task 05: 8 beats at 120 a minute; rig px a frame apart at the loop's ends; rig px each hand's part and every
                         # vertex of the trunk must travel; the share of the figure's changes of speed that repeat every two beats;
@@ -84,14 +88,31 @@ def pose(work, build, animation, fps, log):
     if d is None: return None, None
     return json.load(open(os.path.join(d, 'geometry.json'))), [m['slot'] for m in json.load(open(os.path.join(d, 'folds.json')))['meshes'] if m.get('frames')]
 
-def rise(geometry):
-    """The largest rise of any bone's origin above its first-frame height, less the median bone's rise."""
-    frames = geometry['frames']; first = {b['name']: b['worldY'] for b in frames[0]['bones']}
-    best = 0.0
-    for f in frames:
-        d = [b['worldY'] - first[b['name']] for b in f['bones']]
-        best = max(best, max(d) - statistics.median(d))
-    return round(best, 1)
+def holds_together(work, animation, log):
+    """Task 02: the frames over which a pair of parts that meet opens, read by rigc render --seam on the parts check's own
+    floor (more cells than the opening's box is long). The pairs are named here, whatever path the rig was made by: every
+    limb joint the build's check declares, and the top with each upper arm (the arm part, where the arm is not cut).
+    Returns ({pair: {frames, max_px}} for each pair that opens, [pairs not read]), or None when the render fails."""
+    c = json.load(open(os.path.join(work, 'out', 'check', 'check.json'))).get('SEAM_OVER_MOTION', {})
+    slots = {s['name'] for s in json.load(open(os.path.join(work, 'out', 'rig', 'rig.json'))).get('slots', [])}
+    pairs = [(p['a'], p['b']) for p in c.get('pairs', [])]
+    for s in ('r', 'l'):
+        arm = next((n for n in (f'upperarm_{s}', f'handwear_{s}') if n in slots), None)
+        if arm and 'topwear' in slots and ('topwear', arm) not in pairs: pairs.append(('topwear', arm))
+    out = os.path.join(work, 'seam_' + animation)
+    code = run([os.path.join(BIN, 'rigc'), 'render', '--candidate', 'out/check/build', '--animation', animation, '--fps', str(FPS),
+                '--seam', ','.join(f'{a}:{b}' for a, b in pairs), '--out', out], work, log)
+    sj = os.path.join(out, animation, 'seam.json')
+    if code != 0 or not os.path.exists(sj): return None
+    opens, unread = {}, []
+    for p in json.load(open(sj))['pairs']:
+        if p.get('status') != 'read': unread.append(f"{p['a']}|{p['b']}"); continue
+        fr, mx = set(), 0
+        for kind in ('gap', 'ghost'):
+            for h in p[kind]['frames']:
+                if h['px'] > round(max(h['box'][2] - h['box'][0], h['box'][3] - h['box'][1]) / h['cell']): fr.add(h['index']); mx = max(mx, h['px'])
+        if fr: opens[f"{p['a']}|{p['b']}"] = {'frames': len(fr), 'max_px': mx}
+    return opens, unread
 
 def band(rest, lo, hi):
     """Indices of a part's vertices between two fractions of its height at the rest pose, measured from its bottom (y up)."""
@@ -339,6 +360,10 @@ def main():
         os.symlink(own if os.path.exists(os.path.join(own, 'painting.png')) else os.path.join(ROOT, 'tasks', '01-build', 'inputs'), os.path.join(work, 'inputs'))
     versions = {p: json.load(open(os.path.join(ROOT, 'node_modules', p, 'package.json')))['version'] for p in ('@rig-c/parts', 'rig-c')}
     res = {'run': name, 'task': task, 'versions': versions, 'lines': {}}
+    pp = os.path.join(work, 'inputs', 'painting.png')   # which painting the run was graded on: the results split their columns by it
+    if os.path.exists(pp):
+        import hashlib
+        res['painting'] = hashlib.sha256(open(pp, 'rb').read()).hexdigest()
     if fx: res['fixture'] = fx
     R = roles(task, fixture)
     L = res['lines']
@@ -430,15 +455,18 @@ def main():
             rig = json.load(open(os.path.join(work, 'out', 'rig', 'rig.json'))); motion = json.load(open(os.path.join(work, 'out', 'rig', 'motion.json')))
             phys = sorted({k['bone'] for k in rig.get('constraints', []) if k.get('type') == 'physics'})
             L['trails'] = {'pass': len(phys) >= 2, 'read': f'{len(phys)} bone(s) on a physics constraint: ' + ', '.join(phys)}
-            best = None
+            G = GESTURE; best = None
             for an, a in motion['animations'].items():
                 if an == 'idle' or a.get('duration', 0) < 1: continue
                 fl, geo = folds(work, an, log)
                 if geo is None: continue
-                r = rise(geo)
-                if best is None or r > best['rise']: best = {'animation': an, 'duration': a['duration'], 'rise': r, 'folds': fl}
-            L['moves'] = {'pass': best is not None and best['rise'] >= RISE_LINE, 'read': best or 'no animation beside the idle of at least 1 s'}
-            L['moves_without_folding'] = {'pass': best is not None and best['folds'] == [], 'read': None if best is None else best['folds']}
+                p = paths(geo, G['part'], against=G['against']); r = None if p is None else round(max(p), 1)
+                if r is not None and (best is None or r > best['travel']): best = {'animation': an, 'duration': a['duration'], 'travel': r, 'folds': fl}
+            L['gestures'] = {'pass': best is not None and best['travel'] >= G['floor'], 'read': f"`{best['animation']}`: `{G['part']}` travels {best['travel']} rig px at its furthest vertex, measured from the middle of `{G['against']}`, against >= {G['floor']}" if best else 'no animation beside the idle of at least 1 s in which `face` and `bottomwear` are both drawn'}
+            h = holds_together(work, best['animation'], log) if best else None
+            L['holds_together'] = {'pass': h is not None and h[0] == {} and h[1] == [], 'read': 'not measured: ' + ('no gesture' if best is None else 'rigc render --seam failed') if h is None else
+                                   {'opens': h[0], 'not_read': h[1], 'against': '0 frames open on every pair, every pair read'}}
+            L['gesture_without_folding'] = {'pass': best is not None and best['folds'] == [], 'read': None if best is None else best['folds']}
     else:
         for k in ('checked', 'whole', 'does_not_fold'): L[k] = {'pass': False, 'read': 'the build wrote no check.json'}
     res['journal'] = os.path.exists(os.path.join(rundir, 'journal.md'))
