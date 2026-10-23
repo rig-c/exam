@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Grade one run: rebuild from the files it hands in, on the pinned versions, and write result.json.
 
-    python3 grade.py runs/<date>-<model>-<task> [--fixture <name>]
+    python3 grade.py runs/<date>-<model>-<task> [--fixture <name>|none]
 
 The run directory names its task by its last component (…-01-build, …-04-soft). Nothing the run pasted is
 read: the config (and any file it names) is copied beside the task's inputs into .grade/<run>/, built
 there, and every line below is read off what that build wrote. Needs npm, bun and python3; installs the
 pinned packages into ./node_modules on first use.
 
-A run set on a fixture (`--fixture mannequin`: fixtures/<name>/) is built on that fixture's inputs, with every
+A run set on a fixture (fixtures/<name>/: the one tasks/<task>/fixture.json names, or `--fixture <name>`;
+`--fixture none` grades a task on its own inputs, as Round 3's task 05 was) is built on that fixture's inputs, with every
 file its config.json names copied beside them, and its lines read the part names in fixtures/<name>/grade-roles.json
 where the task's own lines name the painted figure's. A line the fixture's rig cannot discriminate is
 reported SKIP with its reason: it is kept out of the lines counted, and listed in result.json under `skipped`.
@@ -267,12 +268,15 @@ def surprises(journal):
 def main():
     args = sys.argv[1:]; fx = None
     if '--fixture' in args:
-        i = args.index('--fixture'); fx = args[i + 1] if i + 1 < len(args) else None; del args[i:i + 2]
-        if not fx or not os.path.isfile(os.path.join(ROOT, 'fixtures', fx, 'config.json')): sys.exit(f'--fixture {fx}: no fixtures/{fx}/config.json')
-    fixture = os.path.join(ROOT, 'fixtures', fx) if fx else None
+        i = args.index('--fixture'); fx = args[i + 1] if i + 1 < len(args) else ''; del args[i:i + 2]
     rundir = os.path.abspath(args[0]); name = os.path.basename(rundir.rstrip('/'))
     task = next((t for t in sorted(os.listdir(os.path.join(ROOT, 'tasks'))) if name.endswith(t)), None)
     if task is None: sys.exit(f'{name}: the run directory must end with a task name, one of ' + ', '.join(sorted(os.listdir(os.path.join(ROOT, "tasks")))))
+    own_fx = os.path.join(ROOT, 'tasks', task, 'fixture.json')   # a task set on a fixture names it; --fixture none grades on the task's own inputs
+    if fx is None and os.path.exists(own_fx): fx = json.load(open(own_fx))['fixture']
+    if fx == 'none': fx = None
+    if fx is not None and not os.path.isfile(os.path.join(ROOT, 'fixtures', fx, 'config.json')): sys.exit(f'--fixture {fx}: no fixtures/{fx}/config.json')
+    fixture = os.path.join(ROOT, 'fixtures', fx) if fx else None
     if not os.path.isdir(BIN) and subprocess.run(['npm', 'ci'], cwd=ROOT).returncode != 0: sys.exit('npm ci failed')
     work = os.path.join(ROOT, '.grade', name); shutil.rmtree(work, ignore_errors=True); os.makedirs(work)
     log = os.path.join(work, 'grade.log')

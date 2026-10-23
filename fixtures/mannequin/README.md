@@ -30,9 +30,9 @@ It exits 0 and its check line is:
 The rig is in `out/rig/rig.json` and `out/rig/motion.json`, the gated Spine data in
 `out/check/build/skeleton.{json,atlas,png}`.
 
-**Tools.** Built with `@rig-c/parts` 1.49.1 and the `rig-c` it installs, 2.64.1 (`@rig-c/core` 2.64.1). These
-are not the versions the root `package.json` pins for the current round (`@rig-c/parts` 1.15.0, `rig-c`
-2.47.1); a task set on this rig pins these. Rig px = painting px × 0.5 (832×1216).
+**Tools.** Built with `@rig-c/parts` 1.49.1 and the `rig-c` it installs, 2.64.1 (`@rig-c/core` 2.64.1), and
+measured again on the versions the root `package.json` pins for Round 4 (`@rig-c/parts` 1.58.0, `rig-c`
+2.67.2): the same exit and the same check line. Rig px = painting px × 0.5 (832×1216).
 
 ## The joints
 

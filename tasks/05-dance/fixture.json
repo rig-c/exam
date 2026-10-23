@@ -1,0 +1,4 @@
+{
+ "fixture": "mannequin",
+ "note": "Round 4 sets task 05 on the wooden mannequin (fixtures/mannequin/); grade.py reads this file, so `python3 grade.py runs/<run>` needs no flag. Round 3 runs of task 05 were graded on the painted figure: `--fixture none`."
+}
