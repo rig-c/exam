@@ -119,10 +119,10 @@ chest under a triangle budget; task 05, a dance; and one more line on task 03. T
 the rounds because of what the first two found: on 1.13.0 `propose` names task 03's fault itself, one step
 before the build, so a result on that task is a result on the versions beside it in the table. Since 1.14.0 `check` also reads every animation, the idle included, for folds, and fails a build where one folds — the line tasks 02, 04 and 05 grade is now one the tool reports first.
 
-Tasks 01 to 04 can be passed by following a recipe the documents carry. Task 05 has none: the rig as the
-earlier tasks leave it cannot do what is asked, and what it lacks has to be worked out. Its machine lines
-read only whether the dance holds together — the loop closes, the feet stay under her, the arms bend at
-their joints and nowhere else, the motion keeps the beat. Whether it is a dance is scored by a person from
+Tasks 01 to 04 can be passed by following a recipe the documents carry. In Round 3, task 05 had none: the
+rig as the earlier tasks leave it could not do what was asked, and what it lacked had to be worked out. Its
+machine lines read only whether the dance holds together — the loop closes, the feet stay under her, the
+arms bend at their joints and nowhere else, the motion keeps the beat. Whether it is a dance is scored by a person from
 a clip with a letter on it and no name, and that score sits beside the lines without changing them.
 
 Round 4, on `@rig-c/parts` 1.58.0 and `rig-c` 2.67.2 — the versions `package.json` pins now: tasks 01 to 04
@@ -132,7 +132,9 @@ dance at all, five different ways. The painted figure's task 05 is kept as `task
 the runs filed on it. On the new versions the tools' own documented path passes tasks 01 to 04. Between 1.15.0 and 1.58.0
 `check` came to refuse an arm mesh weighted off its chain, which every Round 3 config carried from the 1.15.0 draft, so a
 Round 3 config does not build on Round 4's versions; each row of the tables names the versions it was graded on.
-**Round 4's task 05: dry run pending** — the proctor's dry run on the new task has not been sat yet.
+Task 05's lines on the mannequin read the same things on its parts, except the arm line: every arm part is
+rigid on one bone and turns only at a ranged joint, so that line is SKIP with its reason, as are the budget and
+the soft line (no mesh, no physics to author). **Round 4's task 05: dry run pending** — the proctor's dry run on the new task has not been sat yet.
 
 A walk and a hip wiggle were each set as a sixth task on this painting and withdrawn before anyone sat
 them: seen from the front, with her feet apart and her arms at her sides, neither reads as what it is. A
