@@ -464,8 +464,8 @@ def main():
                 if r is not None and (best is None or r > best['travel']): best = {'animation': an, 'duration': a['duration'], 'travel': r, 'folds': fl}
             L['gestures'] = {'pass': best is not None and best['travel'] >= G['floor'], 'read': f"`{best['animation']}`: `{G['part']}` travels {best['travel']} rig px at its furthest vertex, measured from the middle of `{G['against']}`, against >= {G['floor']}" if best else 'no animation beside the idle of at least 1 s in which `face` and `bottomwear` are both drawn'}
             h = holds_together(work, best['animation'], log) if best else None
-            L['holds_together'] = {'pass': h is not None and h[0] == {}, 'read': 'not measured: ' + ('no gesture' if best is None else 'rigc render --seam failed') if h is None else
-                                   {'opens': h[0], 'not_read': h[1], 'against': '0 frames open on every pair'}}
+            L['holds_together'] = {'pass': h is not None and h[0] == {} and h[1] == [], 'read': 'not measured: ' + ('no gesture' if best is None else 'rigc render --seam failed') if h is None else
+                                   {'opens': h[0], 'not_read': h[1], 'against': '0 frames open on every pair, every pair read'}}
             L['gesture_without_folding'] = {'pass': best is not None and best['folds'] == [], 'read': None if best is None else best['folds']}
     else:
         for k in ('checked', 'whole', 'does_not_fold'): L[k] = {'pass': False, 'read': 'the build wrote no check.json'}

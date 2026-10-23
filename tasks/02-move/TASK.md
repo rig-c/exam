@@ -30,7 +30,7 @@ Task 01's four, on this config, and:
 | --- | --- |
 | **Trails** | the built rig holds physics constraints on at least two bones, and gates green |
 | **Gestures** | an animation other than `idle`, at least 1 s, in which `face`'s furthest vertex travels at least 22 rig px measured from the middle of `bottomwear` |
-| **Holds together** | over that animation at 12 fps, no frame opens on any pair of parts the grader names: every limb joint the build's check declares, and `topwear` with each upper arm (the arm part, where the arm is not cut). Read with `rigc render --seam`, a frame opening when its gap or its ghost holds more cells than its box is long — the parts check's own floor for a seam over motion |
+| **Holds together** | over that animation at 12 fps, every pair of parts the grader names is read, and no frame opens on any of them: every limb joint the build's check declares, and `topwear` with each upper arm (the arm part, where the arm is not cut). Read with `rigc render --seam`, a frame opening when its gap or its ghost holds more cells than its box is long — the parts check's own floor for a seam over motion |
 | **Gesture without folding** | `rigc render --folds` over that animation names no mesh |
 
 The 22 is the idle's own travel of `face` on this painting (9.1 rig px) and half of what a reference gesture adds

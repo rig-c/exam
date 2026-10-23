@@ -27,7 +27,7 @@ exits 0. The package's documents say what a config holds and how to arrive at on
 | --- | --- |
 | **Built** | the command above exits 0 from your `config.json` alone, on the pinned versions |
 | **Checked** | the build's `check` says PASS; the grader prints each bar's status |
-| **Whole** | the build's own count of painting pixels no part holds (`uncovered_error_px`) is at most 4,200 |
+| **Whole** | the build's own count of painting pixels no part holds (`uncovered_error_px`) is at most 3,700 |
 | **Does not fold** | `rigc render --folds` over the idle names no mesh |
 
 A person looks at one contact sheet of the idle for every run; that reading is recorded beside the
