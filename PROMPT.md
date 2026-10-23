@@ -44,21 +44,29 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
   instructions say about delegating. The name on the run is the model that did the work.
 - bun (1.2 or later), npm and python3 must be installed. No GPU is needed and none may be used.
 - A build can take a minute or more. Let it finish before you read its result.
-- Keep the journal exactly as `README.md` and `JOURNAL.md` describe: lines 1–3 of an entry BEFORE the
-  step, line 4 after it; when the result differs from what you expected, line 4 begins with `WTF?:` — say it the way it landed.
-  This matters more than passing.
-- Keep `transcript.md` in each run directory: every command you ran that changed or built something, in
-  order, with the last lines of its output — enough to show what happened.
-- Clock each task. Before you open a task's `TASK.md`, run `date -u +%Y-%m-%dT%H:%M:%SZ` and make its
-  output the first line of that run's `transcript.md`, as `started: <output>`. After your last grader run
-  of that task, run it again and make it the last line, as `finished: <output>`. Do not estimate either.
+- Keep the journal exactly as `README.md` and `JOURNAL.md` describe, and keep it only with
+  `tools/journal.py` (`python3 tools/journal.py --help`), one run directory at a time
+  (`python3 tools/journal.py --run runs/<DATE>-<MODEL>-<task> …`). Every step is three calls, each a command
+  of its own, never chained in one shell line: `open` (lines 1–3) BEFORE the step, `run -- <command>` for the step itself, then `close`
+  (line 4) after you have read its output; when the result differs from what you expected, line 4 begins
+  with `WTF?:` — say it the way it landed. Every command that builds, renders, measures or grades is a
+  step: a build, a render, a measurement, a grader run. The four set-up lines above need no entry. This
+  matters more than passing: a task whose journal chain is not intact, or that `tools/journal.py` did not
+  write, is `journal: not kept` (`python3 tools/journal.py --run runs/<run> verify` prints which), and
+  that disqualifies the task.
+- `tools/journal.py` also writes each run directory's `transcript.md`: every step's command, its start
+  and end, its exit code and the last lines of its output. Do not write either file by hand.
+- Clock each task. Before you open a task's `TASK.md`, run `python3 tools/journal.py --run runs/<run> start`:
+  it makes `started: <UTC time>` the first line of that run's `transcript.md`. After your last grader run
+  of that task, run `python3 tools/journal.py --run runs/<run> finish`, which makes `finished: <UTC time>`
+  the last line.
 - Tokens. If the agent you run in can report what the session has spent, write it in each run directory
   as `usage.json` when you finish that task — `{"input_fresh": n, "input_cached": n, "output": n}`, or
   `{"total": n}` if that is all it gives, with `"source"` saying where the figure came from. If it cannot
   report, leave the file out. Do not estimate.
 - You may run `python3 grade.py runs/<your run>` whenever you like. It is the same grader the proctor runs.
 - If you cannot go on with a task, follow rule 7 of the README: write the last entry — what you tried and
-  the message you could not act on — and move to the next task. Do not invent results.
+  the message you could not act on (`close` it if its step ran) — and move to the next task. Do not invent results.
 
 **Last: what the tools were missing**
 
@@ -84,7 +92,7 @@ When all five tasks are done or stopped and `tools.md` is written:
     git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
 
 Add only those five directories — and inside them only `config.json`, any other `.json` you wrote,
-`journal.md`, `transcript.md`, `result.json` and `tools.md`; do not add build output (`out/`, `work/`) or
+`journal.md`, `transcript.md`, `.journal/` (the chain `tools/journal.py` keeps), `result.json` and `tools.md`; do not add build output (`out/`, `work/`) or
 `node_modules/`. If you cannot push, leave the directories in place and say where the clone is.
 
 **Then reply with**

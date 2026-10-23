@@ -1,5 +1,5 @@
 <!-- For a run. Target `main`. Add only runs/<date>-<model>-<task>/ directories, and in them
-     only config.json, other .json you wrote, journal.md, transcript.md, tools.md (in the last task's
+     only config.json, other .json you wrote, journal.md, transcript.md, .journal/, tools.md (in the last task's
      directory) and result.json if you like —
      it is not read). -->
 

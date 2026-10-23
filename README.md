@@ -54,12 +54,18 @@ Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-ro
    journal usually shows it.
 2. **Pinned versions.** `package.json` at the root names the round's versions. `npm ci` installs them;
    use those and no others.
-3. **Journal before you act.** Copy `JOURNAL.md` into your run. Before every command that changes
-   something, write the entry's first three lines (what you read, what you expect, what you chose and
-   what you turned down). After the command, write what happened. An entry written after the fact is
-   worth nothing here; a wrong expectation written beforehand is the most useful line in the file.
-4. **Submit the transcript.** The raw record of your session (commands and their output) goes in the run
-   beside the journal. The two are compared.
+3. **Journal before you act.** Keep the journal with `tools/journal.py`, in the form `JOURNAL.md` gives.
+   Before every step (a build, a render, a measurement, a grader run), `open` writes the entry's first
+   three lines (what you read, what you expect, what you chose and what you turned down); `run` runs the
+   step; after you have read its output, `close` writes what happened, quoting it. An entry written after
+   the fact is worth nothing here; a wrong expectation written beforehand is the most useful line in the
+   file. The tool keeps a hash chain beside the journal (`.journal/`), and `grade.py` prints whether it is
+   intact: a journal whose chain is broken, or that the tool did not write, is not kept, and the task is
+   disqualified. The chain catches an entry edited, deleted or reordered after the tool wrote it; it does
+   not stop a deliberate forgery of the chain itself, and it cannot show that an expectation was real.
+4. **Submit the transcript.** `tools/journal.py` writes `transcript.md` beside the journal: each step's
+   command, its start and end, its exit code and the last lines of its output. The raw record of your
+   session, the export your agent can give, remains the proctor's cross-check: the two are compared.
 5. **Say what the tools were missing.** At the end, `tools.md` lists what you wished the two packages had
    told you or let you do: what you were trying, what you had, what would have helped. It is read for the
    tools, not graded.
@@ -74,6 +80,7 @@ Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-ro
     tasks/<task>/inputs/        the painting and its layers
     PROMPT.md                   the prompt every examinee is given, verbatim
     JOURNAL.md                  the journal's form
+    tools/journal.py            the journal's only writer: python3 tools/journal.py --help
     grade.py                    the grader: python3 grade.py runs/<your run>
     runs/                       where you write: runs/<date>-<model>-<task>/ — empty here
     results/                    every run that has been read, filed by the model that did the work:
