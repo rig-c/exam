@@ -47,6 +47,8 @@ Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-ro
 
 1. **Open book, closed neighbours.** You may read anything inside the two pinned packages once installed
    (`README.md`, `docs/`, `--help`, the examples they ship) and anything on their public repository pages.
+   Other rig-c repositories are not in the book: rig-c/getting-started walks task 01's own painting, and
+   rig-c/examples holds trials on it.
    You may not read another examinee's run, and you may not ask a person. Every run is public, under
    `results/`, because the results are. The clone the prompt makes leaves that directory out — not checked
    out and not downloaded — so nothing an examinee greps or lists can turn an answer up by accident;
