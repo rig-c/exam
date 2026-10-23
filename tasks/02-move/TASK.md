@@ -8,8 +8,10 @@ The same inputs as task 01 (`../01-build/inputs/`), and your own `config.json` f
 
 ## Do
 
-1. **A wave.** Give the rig one animation beside its idle in which she raises a hand and waves: at least
-   one second long, the hand rising at least 150 rig px above where the rest of her body is.
+1. **A wave.** Give the rig one animation beside its idle in which she waves: at least one second long,
+   in which a bone rises at least 150 rig px more than the median of the bones does. What is measured is
+   where the bones are, not the drawing: a wave that turns only the forearm can lift the hand a long way while
+   no bone rises that far.
 2. **Hair that trails.** Make the hair strands that hang free lag the head when it moves, on physics
    rather than keys — at least two bones.
 
