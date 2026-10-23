@@ -54,7 +54,7 @@ Every row of R1 plus the R2 rows: the table below lists R1's ten rows first (Gat
 | Rebound | the ratio by which the pelvis rises again after landing is at least 0.7 and at most 1 ÷ 0.7 (≈ 1.43) |
 | Hip tilt | the tilt range of the thigh-root line is ≥ 85 % of the tilt range of the sequence's pelvis line, and the covariance of the two tilt series > 0 (the signs agree) |
 
-Airborne frames (per cycle, pose frames, both ends included): **4–9 · 14–19**, read by the proctor from the original video before any sitting (the same values are in `R2_AIR_REFERENCE` in `tools/grade.py`). A cycle is 20 frames and repeats 10 times over the 200 frames of the sequence, so in sequence frames cycle k (counting from 0) has 4+20k–9+20k · 14+20k–19+20k.
+Airborne frames (per cycle, pose frames, both ends included): **4–9 · 14–19**, read by the proctor from the original video before any sitting (the same values are in `inputs/pose/airborne.json`, which the grader reads beside the sequence and holds to `--cycle`). A cycle is 20 frames and repeats 10 times over the 200 frames of the sequence, so in sequence frames cycle k (counting from 0) has 4+20k–9+20k · 14+20k–19+20k.
 
 Jitter and loop are already in the R1 rows of the table above (the same rows, not counted twice): jitter has the same ratio cap as R1 (≤ 1.1× the sequence); a run gets no extra allowance. Loop keeps both of R1's clauses, angle and position, as they are.
 
