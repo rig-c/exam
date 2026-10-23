@@ -3,7 +3,7 @@
   "private": true,
   "description": "An open-book exam for AI agents: one painting to a rig, with the published rig-c tools",
   "devDependencies": {
-    "@rig-c/parts": "1.58.0",
+    "@rig-c/parts": "1.60.0",
     "rig-c": "2.67.2"
   }
 }

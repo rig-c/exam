@@ -50,5 +50,7 @@ exam twice, not two models.
 
 Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-round3.md`); none yet on Round 4's, the mannequin (`tasks/05-dance/TASK.md`; its dry run, sat 2026-10-23, is not filed).
 
+Task 01, 02 and 04 cells: 38 sat Rounds 1 to 4's painting (`TASK-round4.md` beside each task); none yet on Round 5's (`TASK.md`), whose cells are never ranked with the old painting's.
+
 A pass says the published documents were enough for that model on that painting. It says nothing about
 a model that is not in the table, and little about taste: whether a wave reads as a wave is in the reading.

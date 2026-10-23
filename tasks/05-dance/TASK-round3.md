@@ -2,7 +2,8 @@
 
 > **Round 3's task 05**, kept for the runs filed on it (on `@rig-c/parts` 1.15.0 and `rig-c` 2.47.1). Round 4
 > sets task 05 on the wooden mannequin: [`TASK.md`](TASK.md). To regrade a Round 3 run, check out those
-> versions and run `python3 grade.py runs/<run> --fixture none`.
+> versions and run `python3 grade.py runs/<run> --fixture none`. Its painting left the tree with Round 5; check out
+> commit `f96b6b0` for it.
 
 The painting of task 01, and your rig for it from task 04 — soft chest and all.
 
