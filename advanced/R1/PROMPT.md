@@ -29,7 +29,8 @@ inside the package.
 
 - Work only inside the package directory. Do not read, list or search any other directory on this
   machine. The exceptions are the three packages `npm install` puts under the package's own
-  `node_modules/` (their `README.md`, `docs/`, `--help`) and their public pages.
+  `node_modules/` (their `README.md`, `docs/`, `--help`) and their public pages. Other rig-c repositories
+  are not among them: do not read github.com/rig-c/getting-started or github.com/rig-c/examples.
 - Do not read another examinee's `run/`, any other copy of this exam, any branch of a repository that
   holds it, or any pull request on one. Do not ask a person for help, and do not message any session
   outside this one.
