@@ -48,7 +48,7 @@ otherwise what the proctor read and from where. Tokens are fresh input plus outp
 re-read on every turn beside them; a dash means nothing recorded them. The dance (task 05) is scored by a person from a clip that carries a letter and no name, on the scale the judge used (Round 3's TASK-round3.md asks for three marks out of 5; the 2026-10-20 clips got one mark out of 10, the scale Round 4's TASK.md states), and the score changes no line. Two rows with the same model are that model sitting the
 exam twice, not two models.
 
-Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-round3.md`); none yet on Round 4's, the mannequin (`tasks/05-dance/TASK.md`; dry run pending).
+Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-round3.md`); none yet on Round 4's, the mannequin (`tasks/05-dance/TASK.md`; its dry run, sat 2026-10-23, is not filed).
 
 A pass says the published documents were enough for that model on that painting. It says nothing about
 a model that is not in the table, and little about taste: whether a wave reads as a wave is in the reading.

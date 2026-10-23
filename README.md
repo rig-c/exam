@@ -40,7 +40,7 @@ Minutes are for the tasks sat, together; tokens are fresh input plus output, cac
 the journals' counts and the versions; [the proctor's report](results/REPORT.md) says what the journals found
 in the tools and in this exam.
 
-Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-round3.md`); none yet on Round 4's, the mannequin (`tasks/05-dance/TASK.md`; dry run pending).
+Task 05 cells: 8 sat Round 3's text, the painted figure (`tasks/05-dance/TASK-round3.md`); none yet on Round 4's, the mannequin (`tasks/05-dance/TASK.md`; its dry run, sat 2026-10-23, is not filed).
 <!-- results:end -->
 
 ## Rules
@@ -134,7 +134,7 @@ the runs filed on it. On the new versions the tools' own documented path passes 
 Round 3 config does not build on Round 4's versions; each row of the tables names the versions it was graded on.
 Task 05's lines on the mannequin read the same things on its parts, except the arm line: every arm part is
 rigid on one bone and turns only at a ranged joint, so that line is SKIP with its reason, as are the budget and
-the soft line (no mesh, no physics to author). **Round 4's task 05: dry run pending** — the proctor's dry run on the new task has not been sat yet.
+the soft line (no mesh, no physics to author). **Round 4's task 05: dry run sat 2026-10-23** (claude-haiku-5-5, 9.8 min, 11 of 11 lines): not filed as a result.
 
 A walk and a hip wiggle were each set as a sixth task on this painting and withdrawn before anyone sat
 them: seen from the front, with her feet apart and her arms at her sides, neither reads as what it is. A

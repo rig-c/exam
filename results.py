@@ -127,7 +127,7 @@ def task05_text(rs):
         t = r['tasks'].get('05-dance')
         if t is None: continue
         n['TASK-round3.md' if t.get('versions', {}).get('@rig-c/parts') == '1.15.0' else 'TASK.md'] += 1
-    r4 = f"{n['TASK.md']} on Round 4\'s, the mannequin (`tasks/05-dance/TASK.md`)" if n['TASK.md'] else "none yet on Round 4\'s, the mannequin (`tasks/05-dance/TASK.md`; dry run pending)"
+    r4 = f"{n['TASK.md']} on Round 4\'s, the mannequin (`tasks/05-dance/TASK.md`)" if n['TASK.md'] else "none yet on Round 4\'s, the mannequin (`tasks/05-dance/TASK.md`; its dry run, sat 2026-10-23, is not filed)"
     return f"Task 05 cells: {n['TASK-round3.md']} sat Round 3\'s text, the painted figure (`tasks/05-dance/TASK-round3.md`); {r4}."
 
 def results_page(rs):
