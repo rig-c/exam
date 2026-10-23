@@ -274,6 +274,41 @@ def journal_chain(rundir):
     journal = importlib.util.module_from_spec(spec); spec.loader.exec_module(journal)
     return journal.verify(rundir)[0]
 
+GUIDE = {   # rig-c/getting-started's motions on task 01's painting, as its scripts write them by default: 24 fps, a key per frame
+    'hello.ts': {'duration': 4.75, 'tracks': None},   # step 9b
+    'wave.ts': {'duration': 3, 'tracks': {('chest', 'rotate'), ('sleeve_r0', 'rotate'), ('sleeve_r1', 'rotate'),
+                                          ('sleeve_l0', 'rotate'), ('sleeve_l1', 'rotate'), ('hip', 'translate')}}}   # step 9, through rig-pose
+
+def guide_shaped(a):
+    """The guide's script whose output an animation has the shape of, or None: hello.ts's own note; or the script's duration,
+    one key per frame at 24 fps on every track from 0 to the end, and (for the wave) the guide's map's six tracks."""
+    if not isinstance(a, dict) or not isinstance(a.get('tracks'), list) or not a['tracks']: return None
+    if str(a.get('note', '')).startswith('scripts/hello.ts'): return 'hello.ts'
+    for script, g in GUIDE.items():
+        n = round(g['duration'] * 24) + 1
+        if a.get('duration') != g['duration']: continue
+        if g['tracks'] is not None and {(t.get('bone'), t.get('property')) for t in a['tracks']} != g['tracks']: continue
+        if all(len(t.get('keys') or []) == n and all(abs(k.get('t', -1) - i / 24) < 1e-4 for i, k in enumerate(t['keys'])) for t in a['tracks']):
+            return script
+    return None
+
+def from_the_guide(rundir):
+    """Each handed-in animation (in any .json file's `animations`, at any depth) shaped as the guide's scripts write it,
+    as `file:animation (script)`. A note for the proctor, not a line: it changes no line and no count."""
+    hits = []
+    def walk(f, o):
+        if isinstance(o, dict):
+            if isinstance(o.get('animations'), dict):
+                hits.extend(f'{f}:{an} ({s})' for an, a in o['animations'].items() if (s := guide_shaped(a)))
+            for v in o.values(): walk(f, v)
+        elif isinstance(o, list):
+            for v in o: walk(f, v)
+    for f in sorted(os.listdir(rundir)):
+        if f.endswith('.json') and f not in ('result.json', 'usage.json'):
+            try: walk(f, json.load(open(os.path.join(rundir, f))))
+            except (OSError, ValueError): pass
+    return hits
+
 def main():
     args = sys.argv[1:]; fx = None
     if '--fixture' in args:
@@ -409,8 +444,9 @@ def main():
     res['journal'] = os.path.exists(os.path.join(rundir, 'journal.md'))
     res['surprises'] = surprises(open(os.path.join(rundir, 'journal.md')).read()) if res['journal'] else None
     res['journal_chain'] = journal_chain(rundir)   # whether tools/journal.py wrote the journal, unedited since; `journal` and `surprises` are read as before
+    res['from_the_guide'] = from_the_guide(rundir)   # a note, not a line: hand-ins shaped as rig-c/getting-started's scripts write them
     res['minutes'] = clock(os.path.join(rundir, 'transcript.md'))
-    up = os.path.join(rundir, 'usage.json')   # what the examinee's agent reported spending, if it reports; not checked
+    up =os.path.join(rundir, 'usage.json')   # what the examinee's agent reported spending, if it reports; not checked
     res['usage_reported'] = json.load(open(up)) if os.path.exists(up) else None
     skipped = {k: v['skip'] for k, v in L.items() if 'skip' in v}   # neither passed nor failed: not counted in `of`
     res['lines'] = {k: v for k, v in L.items() if 'skip' not in v}
@@ -419,6 +455,7 @@ def main():
     json.dump(res, open(os.path.join(rundir, 'result.json'), 'w'), indent=1)
     for k, v in L.items(): print(('SKIP  ' + k + ': ' + json.dumps(v['skip'])) if 'skip' in v else (('PASS  ' if v['pass'] else 'FAIL  ') + k + ': ' + json.dumps(v['read'])))
     print(res['journal_chain'])
+    print(('NOTE  from the guide: ' + ', '.join(res['from_the_guide'])) if res['from_the_guide'] else "note: no animation handed in has the shape of the guide's scripts")
     print('clock: ' + (f"{res['minutes']} min by the run's own started:/finished: lines" if res['minutes'] is not None else 'no started:/finished: lines in transcript.md'))
     print(f"{res['passed']} of {res['of']} line(s)" + (f", {len(skipped)} skipped ({', '.join(skipped)})" if skipped else '') + f"; journal {'present, ' + str(res['surprises']) + ' entry(ies) whose line 4 begins WTF?:' if res['journal'] else 'ABSENT'}; log {os.path.relpath(log, ROOT)}")
 
