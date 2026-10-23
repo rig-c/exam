@@ -1,0 +1,7 @@
+{
+  "spec": "advanced-airborne-reference/1",
+  "cycle": 20,
+  "spans": [[4, 9], [14, 19]],
+  "frames": "pose frames of inputs/pose/sequence.json, counted from the start of each cycle, both ends included",
+  "read": "by the proctor from the source video before any sitting (2026-10-18), source clip frames 40-59 (cycle frame k = clip frame 40 + k): both feet off the floor, no foot touching its own floor reflection"
+}

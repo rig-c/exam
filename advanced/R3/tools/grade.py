@@ -7,7 +7,7 @@ usage:
                    [--folds <folds.json>] [--passthrough <pass-through.json or render stdout>]
                    [--map <map.json>] [--camera <camera.json>]
                    [--feet <left>,<right>] [--hip <bone>] [--trunk <bone>,<bone>,...]
-                   [--jumps a-b,c-d] [--person <id>]
+                   [--jumps a-b,c-d] [--person <id>] [--airborne <airborne.json>]
 
 Inputs, and where each comes from:
   --geometry     `rigc render --geometry`: geometry.json of the animation being graded
@@ -30,6 +30,9 @@ Inputs, and where each comes from:
                  bone the retarget keys is held to the limb bar
   --jumps        override for the airborne spans (pose frames, inclusive); by default they are the
                  report's feet.jumps. A run that uses it says so.
+  --airborne     R2: the airborne spans the proctor read from the source video for one cycle, the
+                 round's inputs/pose/airborne.json; by default the airborne.json beside --sequence.
+                 A span outside --cycle, or a file read for another cycle, refuses the row by name.
 
 Prints one line per row of the round's table — R1: 10 rows, R2: R1's 10 and R2's 5, R3: 14 — each
 PASS, FAIL or SKIP with its figure and its bar, then a RESULT line. A row whose input is absent
@@ -74,12 +77,12 @@ BAR_REBOUND = (0.7, 1 / 0.7)  # rebound ratio, two-sided: 0.7 .. 1/0.7 (about 1.
 BAR_TILT = 0.85            # hip tilt range, share of the sequence's
 BAR_JUMP_SPANS_R3 = 3      # R3 (dance): exact number of airborne jump spans in the sequence
 BAR_AIR_MATCH = 1          # R2: each detected airborne span within the printed span +/- 1 frame
-# R2: the airborne spans the grader read from the source video before the exam, as printed in
-# R2/PROBLEM.md, for one cycle (pose frames, inclusive, cycle-relative). None until they are
-# printed: the row then reports SKIP naming this constant, never a pass. Read 2026-10-18 from the
-# source clip's frames 40-59 (cycle frame k = clip frame 40 + k): both feet off the floor, no foot
-# touching its own floor reflection.
-R2_AIR_REFERENCE = [(4, 9), (14, 19)]
+# R2: the airborne spans the proctor read from the source video before the exam are not in this
+# file. They are the round's package file inputs/pose/airborne.json (the one beside --sequence;
+# --airborne names another), with the cycle they were read for, and the row is refused by name when
+# a span lies outside --cycle (exam#11). R2_AIR_REFERENCE stays None; an in-process caller may set
+# it to one cycle's spans in place of the file, and they are held to --cycle the same way.
+R2_AIR_REFERENCE = None
 
 GEOMETRY_SPEC = 'rigc-geometry/1'
 REPORT_SPEC = 'rig-pose-report/1'
@@ -88,6 +91,83 @@ FOLDS_SPEC = 'rigc-folds/1'
 PASS_SPEC = 'rigc-pass-through/1'
 CAMERA_SPEC = 'rig-pose-camera/1'
 MAP_SPEC = 'rig-pose-map/1'
+
+
+# --- shared with the other edition's grader (exam#11) ---
+# Every edition's tools/grade.py carries this block byte for byte; advanced/tools/test_shared.py
+# extracts it from each grader and checks it. Change it in every grader at once, or not at all.
+import json as _shared_json
+
+
+def meets(value, op, bar):
+    """True when value op bar. op is '<=', '<', '>=', '>', or 'in' with bar = (lo, hi), both ends
+    included. Every measured real figure is held to its bar here and nowhere else. The comparison is
+    exact, as the PROBLEM tables state the bars: exam#11 measured no tolerance that covers a float
+    render error at a bar without also passing a boundary control. A value that prints as its bar
+    shows its full precision instead (shown). Integer counts and empty-list conditions do not come here."""
+    if op == 'in':
+        lo, hi = bar
+        return lo <= value <= hi
+    if op == '<=':
+        return value <= bar
+    if op == '<':
+        return value < bar
+    if op == '>=':
+        return value >= bar
+    if op == '>':
+        return value > bar
+    raise ValueError(f'meets: op {op!r} is not <=, <, >=, > or in')
+
+
+def shown(value, spec, bars):
+    """value formatted with spec (as the row prints it). When that text is the text of one of the
+    row's bars at the same spec, the value lies within the printed rounding of the bar, and the
+    value the comparison saw follows in full: 0.400 (0.3999993). Otherwise the text alone."""
+    text = format(value, spec)
+    if any(text == format(b, spec) for b in bars):
+        return f'{text} ({float(value)!r})'
+    return text
+
+
+AIRBORNE_SPEC = 'advanced-airborne-reference/1'
+
+
+def spans_outside(spans, cycle, source):
+    """None when every span (a, b) lies in one cycle of `cycle` frames (0 <= a <= b < cycle);
+    otherwise the refusal, naming the source and the first span that does not."""
+    if not (isinstance(cycle, int) and cycle > 0):
+        return f'{source}: the spans are cycle-relative and --cycle is {cycle!r}'
+    for a, b in spans:
+        if not (0 <= a <= b < cycle):
+            return f'{source}: span {a}-{b} lies outside the declared --cycle {cycle} (cycle frames 0-{cycle - 1})'
+    return None
+
+
+def airborne_reference(path, cycle):
+    """(spans, None) or (None, refusal). The round's airborne spans for one cycle, as the file at
+    path holds them ({spec, cycle, spans: [[a, b], ...]}, pose frames, both ends included). Refused
+    by name when a span lies outside --cycle or the file was read for another cycle."""
+    try:
+        with open(path, encoding='utf-8') as fh:
+            doc = _shared_json.load(fh)
+    except OSError:
+        return None, f'{path} is not on disk: the airborne spans are the round\'s package file inputs/pose/airborne.json'
+    except ValueError as e:
+        return None, f'{path} is not JSON ({e})'
+    if not isinstance(doc, dict) or doc.get('spec') != AIRBORNE_SPEC:
+        return None, f'{path}: spec is not {AIRBORNE_SPEC}'
+    raw, declared = doc.get('spans'), doc.get('cycle')
+    if (not isinstance(raw, list) or not raw
+            or not all(isinstance(s, list) and len(s) == 2 and all(type(v) is int for v in s) for s in raw)):
+        return None, f'{path}: spans is not a list of [first, last] pose frames'
+    spans = [tuple(s) for s in raw]
+    why = spans_outside(spans, cycle, path)
+    if why:
+        return None, why
+    if declared != cycle:
+        return None, f'{path}: the spans were read for a {declared!r}-frame cycle, --cycle is {cycle}'
+    return spans, None
+# --- end shared ---
 
 
 class Skip(Exception):
@@ -585,10 +665,10 @@ def row_gate(c):
     need(c.rep is not None, f'build green ({n} assertions, {f} failed); the landings are read from the report: {c.rep_why}')
     lands = c.rep.get('landings') or []
     need(lands, '--report lists no landing')
-    off = [l for l in lands if not (l['worst'] <= l['tolerance'])]
+    off = [l for l in lands if not meets(l['worst'], '<=', l['tolerance'])]
     if off:
         l = off[0]
-        return False, f'build green; {len(off)} of {len(lands)} landing(s) past tolerance, first {l["bone"]} {l["kind"]} worst {l["worst"]:.4g} > {l["tolerance"]:.4g} at frame {l["frame"]}'
+        return False, f'build green; {len(off)} of {len(lands)} landing(s) past tolerance, first {l["bone"]} {l["kind"]} worst {shown(l["worst"], ".4g", (l["tolerance"],))} > {l["tolerance"]:.4g} at frame {l["frame"]}'
     share = max(l['worst'] / l['tolerance'] if l['tolerance'] else 0 for l in lands)
     return True, f'build green ({n} assertions: {m} measured, {f} failed); {len(lands)}/{len(lands)} landings within tolerance (worst at {share:.2f} of its tolerance)'
 
@@ -597,7 +677,7 @@ def row_support_foot(c):
     F, lows = floor_reading(c)
     worst = max(lows, key=lambda i: abs(lows[i] - F))
     dev = abs(lows[worst] - F) / c.L
-    return dev <= BAR_FLOOR_BAND, f'max |lower foot - floor| {dev:.4f} leg lengths at frame {worst} over {len(lows)} grounded frames (floor {F:.3f} units) [bar <= {BAR_FLOOR_BAND}]'
+    return meets(dev, '<=', BAR_FLOOR_BAND), f'max |lower foot - floor| {shown(dev, ".4f", (BAR_FLOOR_BAND,))} leg lengths at frame {worst} over {len(lows)} grounded frames (floor {F:.3f} units) [bar <= {BAR_FLOOR_BAND}]'
 
 
 def row_two_feet(c):
@@ -625,19 +705,19 @@ def row_two_feet(c):
     parts, ok = [], True
     if both:
         v, i = max(both)
-        ok &= v <= BAR_TWO_FEET
-        parts.append(f'two-foot frames: max height difference {v:.4f} leg lengths at frame {i} over {len(both)} [bar <= {BAR_TWO_FEET}]')
+        ok &= meets(v, '<=', BAR_TWO_FEET)
+        parts.append(f'two-foot frames: max height difference {shown(v, ".4f", (BAR_TWO_FEET,))} leg lengths at frame {i} over {len(both)} [bar <= {BAR_TWO_FEET}]')
     else:
         parts.append('two-foot frames: none in the sequence')
     if lifted:
-        planted = [(rl, i) for rl, _, i in lifted if rl <= BAR_FLOOR_BAND]
+        planted = [(rl, i) for rl, _, i in lifted if meets(rl, '<=', BAR_FLOOR_BAND)]
         lo_lift, lo_i = min((rl, i) for rl, _, i in lifted)
         ratio = median([rl / sl for rl, sl, _ in lifted])
         lo, hi = BAR_LIFT_RATIO
-        ok &= not planted and lo <= ratio <= hi
+        ok &= not planted and meets(ratio, 'in', (lo, hi))
         parts.append(f'lifted frames (sequence ankles > {LIFT_FLOOR:g} apart): {len(planted)} of {len(lifted)} with the lifted foot '
-                     f'within {BAR_FLOOR_BAND} of the support foot (lowest lift {lo_lift:.4f} at frame {lo_i}) [bar 0]; '
-                     f'median rig/sequence lift {ratio:.3f} [bar {lo}-{hi}]')
+                     f'within {BAR_FLOOR_BAND} of the support foot (lowest lift {shown(lo_lift, ".4f", (BAR_FLOOR_BAND,))} at frame {lo_i}) [bar 0]; '
+                     f'median rig/sequence lift {shown(ratio, ".3f", (lo, hi))} [bar {lo}-{hi}]')
     else:
         parts.append(f'lifted frames: none in the sequence (ankles > {LIFT_FLOOR:g} apart)')
     return ok, '; '.join(parts)
@@ -659,7 +739,7 @@ def row_shin_scale(c):
     need(xs, '--geometry has no frame')
     p05 = percentile([x for x, _, _ in xs], 0.05)
     lo, lo_i, lo_n = min(xs)
-    return p05 >= BAR_SHIN_SCALE, (f'5th percentile shin x-scale {p05:.3f} over {len(c.geo.frames)} frames x {len(SHIN_BONES)} shins '
+    return meets(p05, '>=', BAR_SHIN_SCALE), (f'5th percentile shin x-scale {shown(p05, ".3f", (BAR_SHIN_SCALE,))} over {len(c.geo.frames)} frames x {len(SHIN_BONES)} shins '
                                    f'({", ".join(SHIN_BONES)}; 1.0 = setup length); min {lo:.3f} at frame {lo_i} ({lo_n}) [bar >= {BAR_SHIN_SCALE}]')
 
 
@@ -718,14 +798,14 @@ def row_slide(c):
             cand.append((abs(dfx - per - dax * sf) / c.L, i, s))
         need(cand, 'no two consecutive grounded frames with sequence ankles')
         v, i, s = max(cand)
-        return v <= BAR_SLIDE, (f'max |support-foot move - closure - sequence ankle move x report scale {sf:.5f}| {v:.5f} leg lengths/frame ({s}, frame {i - 1}->{i}) '
+        return meets(v, '<=', BAR_SLIDE), (f'max |support-foot move - closure - sequence ankle move x report scale {sf:.5f}| {shown(v, ".5f", (BAR_SLIDE,))} leg lengths/frame ({s}, frame {i - 1}->{i}) '
                                 f'over {len(cand)} steps (travel: in-place; {cl_text}) [bar <= {BAR_SLIDE}]')
     moves = []
     for i, s, _ in pairs:
         moves.append((abs(foot_x(c, i, s) - foot_x(c, i - 1, s)) / c.L, i, s))
     need(moves, 'no two consecutive grounded frames')
     v, i, s = max(moves)
-    return v <= BAR_SLIDE, f'max support-foot move {v:.5f} leg lengths/frame ({s}, frame {i - 1}->{i}) over {len(moves)} steps [bar <= {BAR_SLIDE}]'
+    return meets(v, '<=', BAR_SLIDE), f'max support-foot move {shown(v, ".5f", (BAR_SLIDE,))} leg lengths/frame ({s}, frame {i - 1}->{i}) over {len(moves)} steps [bar <= {BAR_SLIDE}]'
 
 
 def row_floor(c):
@@ -742,7 +822,7 @@ def row_floor(c):
                 floors.append(median(vals))
         need(len(floors) >= 2, 'fewer than two support spans have a grounded frame')
         spread = (max(floors) - min(floors)) / c.L
-        return spread <= BAR_FLOOR_BAND, (f'per-support-span floor spread {spread:.4f} leg lengths over {len(floors)} spans '
+        return meets(spread, '<=', BAR_FLOOR_BAND), (f'per-support-span floor spread {shown(spread, ".4f", (BAR_FLOOR_BAND,))} leg lengths over {len(floors)} spans '
                                           f'[bar <= {BAR_FLOOR_BAND}, the support-foot band: the table gives this row no number of its own]')
     cycles = full_cycles(c)
     need(len(cycles) >= 2, f'{c.N} frames hold {len(cycles)} full cycle(s) of {c.cycle}: two are needed')
@@ -753,7 +833,7 @@ def row_floor(c):
             floors.append(median(vals))
     need(len(floors) >= 2, 'fewer than two cycles have a grounded frame')
     spread = (max(floors) - min(floors)) / c.L
-    return spread <= BAR_FLOOR_BAND, (f'per-cycle floor spread {spread:.4f} leg lengths over {len(floors)} cycles '
+    return meets(spread, '<=', BAR_FLOOR_BAND), (f'per-cycle floor spread {shown(spread, ".4f", (BAR_FLOOR_BAND,))} leg lengths over {len(floors)} cycles '
                                       f'[bar <= {BAR_FLOOR_BAND}, the support-foot band: the table gives this row no number of its own]')
 
 
@@ -821,9 +901,9 @@ def row_jitter(c):
     need(jl is not None and jt is not None and jl_seq and jt_seq, 'fewer than three frames with non-zero sequence motion')
     rl = jl / jl_seq
     rt = jt / jt_seq
-    ok = rl <= BAR_JITTER_RATIO and rt <= BAR_JITTER_RATIO
-    return ok, (f'limbs {rl:.3f}x sequence ({jl:.3f} vs {jl_seq:.3f} deg/f^2, {len(limbs)} bones) [bar <= {BAR_JITTER_RATIO}], '
-                f'trunk+head {rt:.3f}x sequence ({jt:.3f} vs {jt_seq:.3f} deg/f^2, {",".join(trunk)}) [bar <= {BAR_JITTER_RATIO}]; '
+    ok = meets(rl, '<=', BAR_JITTER_RATIO) and meets(rt, '<=', BAR_JITTER_RATIO)
+    return ok, (f'limbs {shown(rl, ".3f", (BAR_JITTER_RATIO,))}x sequence ({jl:.3f} vs {jl_seq:.3f} deg/f^2, {len(limbs)} bones) [bar <= {BAR_JITTER_RATIO}], '
+                f'trunk+head {shown(rt, ".3f", (BAR_JITTER_RATIO,))}x sequence ({jt:.3f} vs {jt_seq:.3f} deg/f^2, {",".join(trunk)}) [bar <= {BAR_JITTER_RATIO}]; '
                 f'joint pairs from the map')
 
 
@@ -911,9 +991,9 @@ def row_loop(c):
     dp, bp, ip = worst_p
     where = f' ({b}, cycle frame {i})' if b else ''
     where_p = f' ({bp}, cycle frame {ip})' if bp else ''
-    return d <= BAR_LOOP and dp <= BAR_LOOP_POS, (
-        f'cycle 1 vs cycle {len(cycles)}: max keyed-bone angle difference {d:.4f} deg{where} [bar <= {BAR_LOOP}], '
-        f'max {"/".join(placed)} world position difference {dp:.4f} leg lengths{where_p} [bar <= {BAR_LOOP_POS}]')
+    return meets(d, '<=', BAR_LOOP) and meets(dp, '<=', BAR_LOOP_POS), (
+        f'cycle 1 vs cycle {len(cycles)}: max keyed-bone angle difference {shown(d, ".4f", (BAR_LOOP,))} deg{where} [bar <= {BAR_LOOP}], '
+        f'max {"/".join(placed)} world position difference {shown(dp, ".4f", (BAR_LOOP_POS,))} leg lengths{where_p} [bar <= {BAR_LOOP_POS}]')
 
 
 # ---------------------------------------------------------------- R2 / R3 rows
@@ -934,27 +1014,27 @@ def row_airborne(c):
                 continue
             for i in fs:   # every frame of the span: both feet above the floor
                 low = (min(foot_y(c, i, c.foot_l), foot_y(c, i, c.foot_r)) - F) / c.L
-                if not low > 0.0:
+                if not meets(low, '>', 0.0):
                     grounded_on.append((low, i))
             best_i = max(fs, key=lambda i: ((foot_y(c, i, c.foot_l) + foot_y(c, i, c.foot_r)) / 2 - F) / c.L)
             peak_mean = ((foot_y(c, best_i, c.foot_l) + foot_y(c, best_i, c.foot_r)) / 2 - F) / c.L
             peaks.append((peak_mean, best_i, f'{a}-{b}'))
         worst_peak, worst_i, worst_sp = min(peaks)
-        ok &= not grounded_on and worst_peak > BAR_FLOOR_BAND
+        ok &= not grounded_on and meets(worst_peak, '>', BAR_FLOOR_BAND)
         frames_n = sum(min(b + 1, c.N) - a for a, b in spans)
         parts.append(f'{len(grounded_on)} of {frames_n} span frame(s) with a foot not above the floor'
                      + (f' (first frame {min(grounded_on, key=lambda t: t[1])[1]})' if grounded_on else '') + ' [bar 0]')
-        parts.append(f'min peak airborne foot height {worst_peak:.4f} leg lengths above the floor at frame {worst_i} (span {worst_sp}) '
+        parts.append(f'min peak airborne foot height {shown(worst_peak, ".4f", (BAR_FLOOR_BAND,))} leg lengths above the floor at frame {worst_i} (span {worst_sp}) '
                      f'[bar > {BAR_FLOOR_BAND}: above the support-foot band]')
         return ok, '; '.join(parts)
     cycles = full_cycles(c)
     need(cycles, f'{c.N} frames hold no full cycle of {c.cycle}')
-    need(R2_AIR_REFERENCE is not None,
-         'R2_AIR_REFERENCE is not printed yet: the airborne spans read from the source video go in R2/PROBLEM.md and grade.py before the exam')
+    printed, why = r2_air_reference(c)
+    need(printed is not None, why)
     counts = [sum(1 for x, _ in c.jumps if a <= x < b) for a, b in cycles]
     ok = all(n == 2 for n in counts)
     # Each detected span within a printed span +/- BAR_AIR_MATCH frames (the printed spans repeat per cycle).
-    ref = [(a + k * c.cycle, b + k * c.cycle) for k in range(len(cycles)) for a, b in R2_AIR_REFERENCE]
+    ref = [(a + k * c.cycle, b + k * c.cycle) for k in range(len(cycles)) for a, b in printed]
     off = []
     for x, y in c.jumps:
         if x >= c.N:
@@ -970,16 +1050,32 @@ def row_airborne(c):
         if lowest is None or h < lowest[0]:
             lowest = (h, i)
     parts = [f'airborne spans per cycle {counts} [bar 2 each]',
-             f'{len(off)} detected span(s) off the printed spans {R2_AIR_REFERENCE} +/- {BAR_AIR_MATCH}'
+             f'{len(off)} detected span(s) off the printed spans {printed} +/- {BAR_AIR_MATCH}'
              + (f' (first {off[0][0]}-{off[0][1]})' if off else '') + ' [bar 0]']
     if lowest is None:
         ok = False
         parts.append('no airborne frame inside the geometry')
     else:
-        ok &= lowest[0] > BAR_FLOOR_BAND
-        parts.append(f'lowest foot on an airborne frame {lowest[0]:.4f} leg lengths above the floor at frame {lowest[1]} '
+        ok &= meets(lowest[0], '>', BAR_FLOOR_BAND)
+        parts.append(f'lowest foot on an airborne frame {shown(lowest[0], ".4f", (BAR_FLOOR_BAND,))} leg lengths above the floor at frame {lowest[1]} '
                      f'[bar > {BAR_FLOOR_BAND}: above the support-foot band]')
     return ok, '; '.join(parts)
+
+
+def r2_air_reference(c):
+    """(spans, None) or (None, refusal): R2's printed airborne spans for one cycle of --cycle frames."""
+    if R2_AIR_REFERENCE is not None:
+        why = spans_outside(R2_AIR_REFERENCE, c.cycle, 'R2_AIR_REFERENCE')
+        return (None, why) if why else (list(R2_AIR_REFERENCE), None)
+    path = getattr(c.args, 'airborne', None)
+    if path is None:
+        if c.args.sequence is None:
+            return None, '--airborne not given and no --sequence: the airborne spans are the airborne.json beside the sequence'
+        path = os.path.join(os.path.dirname(c.args.sequence), 'airborne.json')
+    spans, why = airborne_reference(path, c.cycle)
+    if spans is None and not os.path.isfile(path):
+        why += ' (nor is R2_AIR_REFERENCE set in-process)'
+    return spans, why
 
 
 def hip_series(c):
@@ -1039,7 +1135,7 @@ def width_ratio(c, axis, rig_unit, seq_unit, label, unit_name):
         ratio = median(ratios)
         wr, ws = median(wrs), median(wss)
         lo, hi = BAR_HIP_RATIO
-        return lo <= ratio <= hi, (f'rig/sequence {ratio:.3f} (rig {wr:.4f}, sequence {ws:.4f} {unit_name}, '
+        return meets(ratio, 'in', (lo, hi)), (f'rig/sequence {shown(ratio, ".3f", (lo, hi))} (rig {wr:.4f}, sequence {ws:.4f} {unit_name}, '
                                    f'median per-span width over {len(ratios)} spans) [bar {lo}-{hi}]')
     cycles = full_cycles(c)
     need(cycles, f'{c.N} frames hold no full cycle of {c.cycle}')
@@ -1049,7 +1145,7 @@ def width_ratio(c, axis, rig_unit, seq_unit, label, unit_name):
     need(ws > 0, f'the sequence\'s hip has no {label} width')
     ratio = wr / ws
     lo, hi = BAR_HIP_RATIO
-    return lo <= ratio <= hi, (f'rig/sequence {ratio:.3f} (rig {wr:.4f}, sequence {ws:.4f} {unit_name}, '
+    return meets(ratio, 'in', (lo, hi)), (f'rig/sequence {shown(ratio, ".3f", (lo, hi))} (rig {wr:.4f}, sequence {ws:.4f} {unit_name}, '
                                f'median per-cycle width over {len(cycles)} cycles) [bar {lo}-{hi}]')
 
 
@@ -1085,7 +1181,7 @@ def row_rebound(c):
     need(ratios, 'no stance window where the sequence\'s hip accelerates upward')
     v = median(ratios)
     lo, hi = BAR_REBOUND
-    return lo <= v <= hi, (f'median rig/sequence peak upward hip acceleration in the stance windows {v:.3f} '
+    return meets(v, 'in', (lo, hi)), (f'median rig/sequence peak upward hip acceleration in the stance windows {shown(v, ".3f", (lo, hi))} '
                            f'over {len(ratios)} windows [bar {lo}-{hi:.2f}]')
 
 
@@ -1112,9 +1208,9 @@ def row_hip_tilt(c):
     ms, mr = statistics.mean(st), statistics.mean(rt)
     cov = sum((a - ms) * (b - mr) for a, b in zip(st, rt))
     share = rr / rs
-    ok = share >= BAR_TILT and cov > 0
+    ok = meets(share, '>=', BAR_TILT) and meets(cov, '>', 0)
     note = f'; {left_out} frame(s) with an inferred hip left out' if left_out else ''
-    return ok, (f'rig tilt range {rr:.3f} deg = {share:.3f} of the sequence\'s {rs:.3f} [bar >= {BAR_TILT}], '
+    return ok, (f'rig tilt range {rr:.3f} deg = {shown(share, ".3f", (BAR_TILT,))} of the sequence\'s {rs:.3f} [bar >= {BAR_TILT}], '
                 f'sign {"agrees" if cov > 0 else "DISAGREES"} (covariance {cov:+.3g}){note}')
 
 
@@ -1181,6 +1277,7 @@ def main(argv=None):
     ap.add_argument('--hip', default='hip')
     ap.add_argument('--trunk')
     ap.add_argument('--jumps')
+    ap.add_argument('--airborne', help='R2: the round\'s inputs/pose/airborne.json (default: the airborne.json beside --sequence)')
     ap.add_argument('--person')
     a = ap.parse_args(argv)
     c = build_ctx(a)
