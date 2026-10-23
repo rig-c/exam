@@ -365,7 +365,15 @@ def cmd_finish(j, a):
 
 
 def verify(run):
-    """(line, exit code). The one implementation of the chain check; the edition's grader calls it."""
+    """(line, exit code). The one implementation of the chain check; the edition's grader calls it.
+    A ledger whose records are not what journal.py writes reports a broken chain; it never raises."""
+    try:
+        return _verify(run)
+    except (AttributeError, TypeError, KeyError, ValueError, IndexError) as e:
+        return f'journal: first broken link (chain ledger malformed: {type(e).__name__})', 1
+
+
+def _verify(run):
     j = Journal(run)
     try:
         recs = j.ledger()
@@ -380,12 +388,15 @@ def verify(run):
         pos[fname] = 0
     prev, entry, wtf, last_entry, st = GENESIS, 0, 0, 0, {'open': None, 'ran': False}
     for i, r in enumerate(recs):
-        entry = r.get('entry', last_entry)
+        entry = r.get('entry', last_entry) if isinstance(r, dict) else last_entry
+        if not isinstance(entry, int) or isinstance(entry, bool):
+            entry = last_entry
         broken = lambda why: (f'journal: first broken link at entry {entry} ({why})', 1)
-        try:
-            fname, kind, length = r['file'], r['kind'], int(r['length'])
-        except (KeyError, TypeError, ValueError):
+        if not (isinstance(r, dict) and isinstance(r.get('file'), str) and isinstance(r.get('kind'), str)
+                and isinstance(r.get('length'), int) and not isinstance(r.get('length'), bool) and r['length'] >= 0
+                and isinstance(r.get('hash'), str) and isinstance(r.get('prev'), str)):
             return broken(f'ledger line {i + 1} is malformed')
+        fname, kind, length = r['file'], r['kind'], r['length']
         if r.get('seq') != i + 1 or r.get('prev') != prev:
             return broken(f'ledger line {i + 1} is out of order')
         if fname not in data:
