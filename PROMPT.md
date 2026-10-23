@@ -37,6 +37,8 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
 - Work only inside the clone. Do not read, list or search any other directory on this machine. The
   exceptions are the two packages `npm ci` installs under the clone's own `node_modules/` (their
   `README.md`, `docs/`, `--help`) and their public pages at github.com/rig-c/parts and github.com/rig-c/core.
+  Other rig-c repositories are not among them: do not read github.com/rig-c/getting-started or
+  github.com/rig-c/examples.
 - `results/` holds other examinees' runs and is not in your clone. Do not fetch it, check it out, read it
   on the web or through git, or read any other branch of this repository or any pull request on it. Do
   not ask a person for help.
