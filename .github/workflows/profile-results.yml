@@ -1,0 +1,72 @@
+name: profile results
+on:
+  push:
+    branches: [main]
+    paths: ['results/**', 'advanced/results/**']
+  workflow_dispatch:
+
+# The exam token only reads this repo. The owner-provisioned PAT below can write
+# contents and pull requests in rig-c/.github only (see ../README.md).
+permissions:
+  contents: read
+concurrency:
+  group: exam-profile-results
+  cancel-in-progress: false
+jobs:
+  profile:
+    if: github.repository == 'rig-c/exam' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the exam at the triggering SHA
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: exam
+          persist-credentials: false
+      - name: Require the profile token
+        env:
+          PROFILE_TOKEN: ${{ secrets.PROFILE_RESULTS_TOKEN }}
+        run: |
+          if [ -z "$PROFILE_TOKEN" ]; then
+            echo '::error::Owner must provision PROFILE_RESULTS_TOKEN; see .github/README.md'
+            exit 1
+          fi
+      - name: Check out the organisation profile base
+        uses: actions/checkout@v4
+        with:
+          repository: rig-c/.github
+          ref: main
+          path: profile
+          token: ${{ secrets.PROFILE_RESULTS_TOKEN }}
+          persist-credentials: false
+      - name: Generate and splice both tables and counts
+        run: python3 -B exam/tools/profile_results.py profile/profile/README.md
+      # Always let the action compare its fixed branch to the base: it also
+      # closes an obsolete PR if a later result change removes the entire diff.
+      - name: Open or update the one profile PR
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+        with:
+          token: ${{ secrets.PROFILE_RESULTS_TOKEN }}
+          path: profile
+          base: main
+          branch: codex/exam-profile-results
+          delete-branch: true
+          add-paths: profile/README.md
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          commit-message: |
+            docs(profile): exam tables at ${{ github.sha }}
+
+            Co-Authored-By: Naru <342599188+fj-naru[bot]@users.noreply.github.com>
+          title: 'docs(profile): exam tables at ${{ github.sha }}'
+          body: |
+            Refresh both exam tables and the derived Basic/Advanced counts from
+            [rig-c/exam at ${{ github.sha }}](https://github.com/rig-c/exam/commit/${{ github.sha }}).
+
+            The table blocks are the exact stdout of `python3 results.py --profile`
+            and `python3 advanced/results.py --profile` at that commit. The summary
+            follows their model/sitting selection; shin-scale what-ifs do not
+            change recorded grades. Other profile text is preserved.
+
+            Review the generated diff and merge by human sign. This workflow
+            neither merges nor enables auto-merge.
