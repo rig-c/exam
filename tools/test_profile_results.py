@@ -1,7 +1,5 @@
 """Targeted profile splice/count/workflow contracts; never runs Git or writes remotely."""
-import os
 from pathlib import Path
-import shlex
 import subprocess
 import sys
 import tempfile
@@ -201,87 +199,66 @@ class CountTests(unittest.TestCase):
             self.assertIn('1 of 3 displayed round cells', s)
 
 
-class WorkflowTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.workflow = yaml.load((ROOT / '.github/workflows/profile-results.yml').read_text(),
-                                 Loader=yaml.BaseLoader)
-        cls.job = cls.workflow['jobs']['profile']
-        cls.steps = cls.job['steps']
+class CliTests(unittest.TestCase):
+    def command(self, *args):
+        return subprocess.run([sys.executable, '-B', str(ROOT / 'tools/profile_results.py'), *map(str, args)],
+                              cwd=ROOT, capture_output=True)
 
-    def test_main_results_push_and_manual_dispatch_only(self):
-        self.assertEqual(set(self.workflow['on']), {'push', 'workflow_dispatch'})
-        self.assertEqual(self.workflow['on']['push'],
-                         {'branches': ['main'], 'paths': ['results/**', 'advanced/results/**']})
-        self.assertIn("github.ref == 'refs/heads/main'", self.job['if'])
-        self.assertIn("github.repository == 'rig-c/exam'", self.job['if'])
-        self.assertEqual(self.workflow['permissions'], {'contents': 'read'})
-        self.assertEqual(self.workflow['concurrency'],
-                         {'group': 'exam-profile-results', 'cancel-in-progress': 'false'})
-
-    def test_checkouts_bind_source_sha_and_profile_only_pat(self):
-        checkouts = [s['with'] for s in self.steps if s.get('uses', '').startswith('actions/checkout@')]
-        self.assertEqual(len(checkouts), 2)
-        source, target = checkouts
-        self.assertEqual(source['ref'], '${{ github.sha }}')
-        self.assertNotIn('token', source)
-        self.assertEqual(target['repository'], 'rig-c/.github')
-        self.assertEqual(target['ref'], 'main')
-        self.assertEqual(target['token'], '${{ secrets.PROFILE_RESULTS_TOKEN }}')
-        self.assertTrue(all(c['persist-credentials'] == 'false' for c in checkouts))
-        guard = next(s for s in self.steps if s.get('name') == 'Require the profile token')
-        self.assertIn('exit 1', guard['run'])
-        self.assertNotIn('$PROFILE_TOKEN\n', guard['run'])
-
-    def test_token_presence_check_fails_without_printing_a_token(self):
-        guard = next(s for s in self.steps if s.get('name') == 'Require the profile token')
-        env = dict(os.environ)
-        for value, code in (('', 1), ('local-test-not-a-real-token', 0)):
-            env['PROFILE_TOKEN'] = value
-            result = subprocess.run(['bash', '-eu', '-c', guard['run']], env=env, capture_output=True)
-            self.assertEqual(result.returncode, code)
-            if value:
-                self.assertEqual(result.stdout + result.stderr, b'')
-            else:
-                self.assertIn(b'Owner must provision PROFILE_RESULTS_TOKEN', result.stdout)
-
-    def test_one_fixed_pr_branch_scoped_path_and_no_merge(self):
-        actions = [s for s in self.steps if s.get('uses', '').startswith('peter-evans/create-pull-request@')]
-        self.assertEqual(len(actions), 1)
-        step = actions[0]; config = step['with']
-        self.assertNotIn('if', step)  # let the action retire a PR whose diff disappeared
-        self.assertEqual(config['branch'], 'codex/exam-profile-results')
-        self.assertNotIn('branch-suffix', config)
-        self.assertEqual(config['base'], 'main')
-        self.assertEqual(config['path'], 'profile')
-        self.assertEqual(config['add-paths'], 'profile/README.md')
-        self.assertEqual(config['token'], '${{ secrets.PROFILE_RESULTS_TOKEN }}')
-        self.assertEqual(config['delete-branch'], 'true')
-        self.assertEqual(config['title'], 'docs(profile): exam tables at ${{ github.sha }}')
-        self.assertIn('Co-Authored-By: Naru <342599188+fj-naru[bot]@users.noreply.github.com>',
-                      config['commit-message'])
-        self.assertFalse(any('merge' in s.get('run', '') for s in self.steps))
-        self.assertEqual(len(step['uses'].split('@')[1].split()[0]), 40)
-
-    def test_actual_generation_step_runs_locally_and_second_run_is_noop(self):
-        step = next(s for s in self.steps if s.get('name') == 'Generate and splice both tables and counts')
+    def test_cli_updates_then_preserves_bytes_and_mtime_on_noop(self):
         with tempfile.TemporaryDirectory(dir=SCRATCH) as tmp:
-            base = Path(tmp)
-            (base / 'exam').symlink_to(ROOT, target_is_directory=True)
-            dest = base / 'profile/profile/README.md'
-            dest.parent.mkdir(parents=True)
-            dest.write_bytes(FIXTURE.read_bytes())
-            command = shlex.split(step['run'])
-            first = subprocess.run(command, cwd=base, capture_output=True, check=True)
-            self.assertEqual(first.stdout, b'profile_results: updated\n')
-            frozen = dest.read_bytes(), dest.stat().st_mtime_ns
-            second = subprocess.run(command, cwd=base, capture_output=True, check=True)
-            self.assertEqual(second.stdout, b'profile_results: unchanged\n')
-            self.assertEqual((dest.read_bytes(), dest.stat().st_mtime_ns), frozen)
+            path = Path(tmp) / 'README.md'
+            path.write_bytes(FIXTURE.read_bytes())
+            first = self.command(path)
+            self.assertEqual((first.returncode, first.stdout), (0, b'profile_results: updated\n'))
+            frozen = path.read_bytes(), path.stat().st_mtime_ns
+            second = self.command(path)
+            self.assertEqual((second.returncode, second.stdout), (0, b'profile_results: unchanged\n'))
+            self.assertEqual((path.read_bytes(), path.stat().st_mtime_ns), frozen)
             for name, script in (('exam', 'results.py'), ('exam-advanced', 'advanced/results.py')):
-                r = profile.region(dest.read_bytes(), name)
+                r = profile.region(path.read_bytes(), name)
                 expected = subprocess.check_output([sys.executable, '-B', str(ROOT / script), '--profile'])
-                self.assertEqual(dest.read_bytes()[r[1]:r[2]], expected)
+                self.assertEqual(path.read_bytes()[r[1]:r[2]], expected)
+
+    def test_cli_bad_marker_exits_one_without_writing(self):
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as tmp:
+            path = Path(tmp) / 'README.md'
+            bad = FIXTURE.read_bytes().replace(b'<!-- exam:end -->', b'')
+            path.write_bytes(bad)
+            result = self.command(path)
+            self.assertEqual(result.returncode, 1)
+            self.assertIn(b'need exactly one start then one end marker', result.stderr)
+            self.assertEqual(path.read_bytes(), bad)
+
+    def test_cli_requires_an_existing_destination(self):
+        self.assertEqual(self.command().returncode, 2)
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as tmp:
+            path = Path(tmp) / 'missing.md'
+            result = self.command(path)
+            self.assertEqual(result.returncode, 1)
+            self.assertFalse(path.exists())
+
+    def test_generator_failure_prevents_a_destination_write(self):
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as tmp:
+            path = Path(tmp) / 'README.md'
+            before = FIXTURE.read_bytes()
+            path.write_bytes(before)
+            failure = subprocess.CalledProcessError(7, ['results.py', '--profile'])
+            with patch.object(profile, 'generated', side_effect=failure):
+                with self.assertRaises(subprocess.CalledProcessError):
+                    profile.update(path)
+            self.assertEqual(path.read_bytes(), before)
+
+    def test_exam_has_only_read_only_test_ci_and_no_refresh_secret(self):
+        self.assertFalse((ROOT / '.github/workflows/profile-results.yml').exists())
+        ci = yaml.load((ROOT / '.github/workflows/profile-results-test.yml').read_text(),
+                       Loader=yaml.BaseLoader)
+        self.assertEqual(ci['permissions'], {'contents': 'read'})
+        self.assertEqual(set(ci['on']), {'push', 'pull_request'})
+        self.assertNotIn('secrets.', str(ci))
+        readme = (ROOT / '.github/README.md').read_text()
+        self.assertNotIn('PROFILE_RESULTS_TOKEN', readme)
+        self.assertIn('no additional secrets are needed', readme)
+        self.assertIn('rig-c/.github', readme)
 
 
 if __name__ == '__main__':

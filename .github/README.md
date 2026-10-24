@@ -1,48 +1,19 @@
 # Profile results automation
 
-`profile-results.yml` runs on a push to `main` that touches `results/**` or
-`advanced/results/**`, or on **Run workflow** with `main` selected. It checks out
-the triggering exam SHA and `rig-c/.github`'s `main`, runs both `--profile` CLIs,
-and updates only `profile/README.md` in the profile checkout. A dispatch on any
-other branch is skipped. Runs share one concurrency group.
+The refresh workflow lives in **[rig-c/.github](https://github.com/rig-c/.github)**,
+where it runs daily and on `workflow_dispatch`. This repository supplies the two
+table generators and `tools/profile_results.py`; it does not publish to the
+profile on results pushes. The profile workflow checks out public exam `main`,
+records the actual exam checkout SHA, and updates its own `profile/README.md`
+through one fixed-branch PR. Review and merge remain a human sign.
 
-The destination is one PR on the fixed branch `codex/exam-profile-results`, titled
-`docs(profile): exam tables at <exam-sha>`. Reserve that branch for this workflow.
-The pinned [create-pull-request action](https://github.com/peter-evans/create-pull-request/tree/22a9089034f40e5a961c8808d113e2c98fb63676)
-updates the existing PR when necessary; an identical result produces no new
-commit or PR. If the base already contains the entire generated change, it closes
-an obsolete PR and deletes the automation branch. There is no auto-merge: review
-and merge remain a human sign in `rig-c/.github`.
-
-## Owner configuration
-
-The owner provisions the token and secret; this repository's tooling never creates
-either. The workflow fails with a setup message if the secret is missing.
-
-1. In GitHub **Settings → Developer settings → Personal access tokens → Fine-grained
-   tokens**, generate a token with **Resource owner: rig-c**. The token's user must
-   already have the necessary access to `rig-c/.github`.
-2. Under **Repository access**, select **Only select repositories**, and select
-   **`.github` only** (`rig-c/.github`). Do not select `rig-c/exam` or all repositories.
-3. Under **Repository permissions**, set exactly:
-   - **Contents: Read and write** (checkout and update the automation branch).
-   - **Pull requests: Read and write** (find, open, update or close its PR).
-   - **Metadata: Read-only** is included automatically by GitHub.
-   Leave every other optional permission unset. In particular, no Actions,
-   Workflows, Issues, Administration or organisation permission is needed: the
-   destination change contains only `profile/README.md`, with no labels or reviewers
-   assigned. Choose an expiration and obtain org approval if the org requires it.
-4. In **rig-c/exam → Settings → Secrets and variables → Actions → Repository
-   secrets**, create **`PROFILE_RESULTS_TOKEN`** containing that token. If using an
-   organisation Actions secret instead, expose it to **rig-c/exam only**. This
-   secret name must match the workflow. Rotate its value when the PAT expires.
-5. Once provisioned and the workflow is on `main`, use **Actions → profile results
-   → Run workflow → main** for the initial migration, then inspect the profile PR.
-
-The exam's normal `GITHUB_TOKEN` has only `contents: read`; it checks out the exam.
-The PAT is passed only to the profile checkout and PR action (and a presence check
-that never prints its value). Credentials are not persisted by either checkout.
-See GitHub's [fine-grained PAT configuration](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
+The workflow uses only its repository's default `GITHUB_TOKEN` with
+`contents: write` and `pull-requests: write`; **no additional secrets are needed**.
+Polling means a results change can wait up to a day for the next scheduled run,
+plus any GitHub scheduler delay. A manual dispatch can refresh sooner. Checks on
+`GITHUB_TOKEN`-created PRs do not run automatically; the signer must run or approve
+the appropriate checks before merging. The destination workflow's README explains
+dispatch setup and the first-run default-branch requirement.
 
 ## Generated regions and migration
 
@@ -111,7 +82,6 @@ PYTHONPATH=work/profile-pydeps python3 -B -m unittest discover -s tools -p 'test
 `profile-results-test.yml` runs this targeted suite in CI. The fixture is the
 two-pair public profile read for this change. Tests cover the real CLI outputs,
 both legacy migrations, preservation, malformed/missing/duplicate markers,
-counting edge cases, workflow configuration, and executing the workflow's actual
-splice step twice with no write on the second run. Tests use `work/profile-tests/`
-and never invoke Git or publish. The remote checkout/commit/PR action still needs
-an owner-provisioned token and a real main-branch run for end-to-end confirmation.
+counting edge cases, the local CLI, and its second-run no-op. Tests use
+`work/profile-tests/` and never invoke Git or publish. The profile repository owns
+the refresh workflow's contracts and remote checkout/commit/PR verification.
