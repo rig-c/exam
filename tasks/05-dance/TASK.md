@@ -18,7 +18,9 @@ The rig builds as given, on the versions the root `package.json` pins (`@rig-c/p
     rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out
 
 and ends `check: PASS; 9 of 14 bar(s) measured, 5 skipped (BLINK_NO_HOLE, TIP_OVER_ROOT, TEXTURE_STRETCH,
-FEET_STAY_LEVEL, STRESS_OFF_CHAIN)`. The feet are planted: two iks hold the ankles on targets under `root`, so
+FEET_STAY_LEVEL, STRESS_OFF_CHAIN)`. That is the idle-only check; with a `dance` that poses the legs,
+`FEET_STAY_LEVEL` is also measured and the check ends `check: PASS; 10 of 14 bar(s) measured, 4 skipped` —
+both counts describe passing builds. The feet are planted: two iks hold the ankles on targets under `root`, so
 the hip can move and the feet stay where they are. There are no legs to construct.
 
 The music is 120 beats a minute. Eight beats are 4.0 seconds.
@@ -57,7 +59,8 @@ Travel is the diagonal of the box a vertex's path fills over the loop. Task 05's
 The arm and leg lines name this rig's parts (`upperarm_*`, `forearm_*`, `hand_*`, `shin_*`, `foot_*`) where
 `TASK.md` names the painted figure's. Every arm part here is rigid on one bone and turns only at a joint that
 declares its range, so **Arms bend at the joints** has nothing to read: the grader reports it SKIP, with that
-reason, and does not count it. `budget` and `soft_in_the_dance` are reported SKIP the same way.
+reason, and does not count it. Keying the elbows or wrists does not change that SKIP: on this rig the line
+has nothing to read, whatever is keyed. `budget` and `soft_in_the_dance` are reported SKIP the same way.
 
 ## And a judge
 
