@@ -13,7 +13,7 @@ range, the bone that turns it, and how the feet are held.
 The fixture, as it is in the repository: the painting and its layers, the ball-joint caps, and `config.json`
 with the rig and an idle. Nothing else: no keys, no pose, no reference clip.
 
-The rig builds as given, on the versions the root `package.json` pins (`@rig-c/parts` 1.58.0, `rig-c` 2.67.2):
+The rig builds as given, on the versions the root `package.json` pins (`@rig-c/parts` 1.60.0, `rig-c` 2.67.2):
 
     rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out
 
