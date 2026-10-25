@@ -3,6 +3,7 @@ import contextlib
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -145,6 +146,185 @@ class FiledResultsTests(unittest.TestCase):
                     self.fail('filed pages are stale (details deliberately withheld)')
         self.assertTrue(before == [(p.read_bytes(), p.stat().st_mtime_ns) for p in paths],
                         'check must preserve page bytes and timestamps')
+
+
+class JournalTests(unittest.TestCase):
+    """Exercise the real journal CLI on copied code and synthetic executables only."""
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.scratch = Path(self.temp.name)
+        self.clone = self.scratch / 'clone with spaces'
+        self.script = self.clone / 'tools/journal.py'
+        self.script.parent.mkdir(parents=True)
+        self.script.write_bytes((ROOT / 'tools/journal.py').read_bytes())
+        self.bin = self.clone / 'node_modules/.bin'
+        self.inherited = self.scratch / 'inherited bin'
+        self.inherited.mkdir()
+        self.run_dir = self.scratch / 'run'
+        self.env = dict(os.environ, PATH=str(self.inherited), EXAM_TEST_MARKER='synthetic-value')
+
+    def command(self, *args, expected=0, cwd=None, env=None):
+        result = subprocess.run([sys.executable, '-B', str(self.script), '--run', str(self.run_dir), *args],
+                                cwd=cwd or self.clone, env=self.env if env is None else env,
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, expected, 'synthetic journal call failed: ' + result.stderr)
+        return result
+
+    def open_entry(self):
+        self.command('start')
+        self.command('open', '--read', 'synthetic instructions', '--expect', 'synthetic fixture output',
+                     '--chose', 'run the fixture instead of a package build')
+
+    def executable(self, directory, name='exam-probe', label='clone'):
+        directory.mkdir(parents=True, exist_ok=True)
+        path = directory / name
+        path.write_text(f'#!{sys.executable}\n'
+                        'import json, os, sys\n'
+                        f'print(json.dumps({{"label": {label!r}, "args": sys.argv[1:], '
+                        '"marker": os.environ.get("EXAM_TEST_MARKER"), '
+                        '"path": os.environ.get("PATH"), "cwd": os.getcwd()}))\n')
+        path.chmod(0o700)
+        return path
+
+    def close_and_verify(self, output):
+        self.command('close', '--happened', output.strip())
+        self.command('end', '--guessed', 'none', '--missing', 'none')
+        self.command('finish')
+        result = self.command('verify')
+        self.assertEqual(result.stdout, 'journal: chain intact, 1 entries, 0 WTF\n')
+
+    def test_bare_clone_command_without_bin_on_inherited_path(self):
+        self.executable(self.bin)
+        self.open_entry()
+        result = self.command('run', '--', 'exam-probe')
+        actual = json.loads(result.stdout)
+        self.assertEqual(actual['label'], 'clone')
+        self.assertEqual(actual['path'], str(self.bin) + os.pathsep + str(self.inherited))
+        self.assertEqual(actual['marker'], 'synthetic-value')
+        self.close_and_verify(result.stdout)
+
+    def test_clone_bin_precedes_inherited_namesake(self):
+        self.executable(self.bin)
+        self.executable(self.inherited, label='inherited')
+        self.open_entry()
+        self.assertEqual(json.loads(self.command('run', '--', 'exam-probe').stdout)['label'], 'clone')
+
+    def test_absent_clone_bin_preserves_inherited_lookup(self):
+        self.executable(self.inherited, label='inherited')
+        self.assertFalse(self.bin.exists())
+        self.open_entry()
+        self.assertEqual(json.loads(self.command('run', '--', 'exam-probe').stdout)['label'], 'inherited')
+
+    def test_unset_path_uses_system_default_after_clone_bin(self):
+        self.executable(self.bin)
+        env = self.env.copy()
+        del env['PATH']
+        self.open_entry()
+        actual = json.loads(self.command('run', '--', 'exam-probe', env=env).stdout)
+        self.assertEqual(actual['path'], str(self.bin) + os.pathsep + os.defpath)
+
+    def test_explicit_empty_path_is_preserved_as_tail(self):
+        self.executable(self.bin)
+        self.open_entry()
+        actual = json.loads(self.command('run', '--', 'exam-probe', env=dict(self.env, PATH='')).stdout)
+        self.assertEqual(actual['path'], str(self.bin) + os.pathsep)
+
+    def test_bin_is_anchored_to_clone_and_cwd_is_preserved(self):
+        self.executable(self.bin)
+        nested = self.clone / 'nested directory'
+        self.executable(nested / 'node_modules/.bin', label='cwd-decoy')
+        self.open_entry()
+        actual = json.loads(self.command('run', '--', 'exam-probe', cwd=nested).stdout)
+        self.assertEqual(actual['label'], 'clone')
+        self.assertEqual(Path(actual['cwd']).resolve(), nested.resolve())
+
+    def test_child_environment_is_a_copy_without_parent_mutation(self):
+        spec = importlib.util.spec_from_file_location('synthetic_journal', self.script)
+        journal = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(journal)
+        with patch.dict(os.environ, {'PATH': 'synthetic-tail', 'EXAM_TEST_MARKER': 'synthetic-value'}, clear=True):
+            before = dict(os.environ)
+            child = journal.command_environment()
+            self.assertEqual(dict(os.environ), before)
+            self.assertEqual(child, dict(before, PATH=str(self.bin) + os.pathsep + 'synthetic-tail'))
+            child['EXAM_TEST_MARKER'] = 'changed-child'
+            self.assertEqual(dict(os.environ), before)
+
+    def test_shell_metacharacters_and_spaces_are_literal_arguments(self):
+        self.executable(self.bin)
+        marker = self.scratch / 'must-not-exist'
+        arguments = ['two words', '; touch ' + str(marker), '$(touch ' + str(marker) + ')',
+                     'grade.py', 'python3 -c "print(123)"', '| cat', '> output']
+        self.open_entry()
+        result = self.command('run', '--', 'exam-probe', *arguments)
+        self.assertEqual(json.loads(result.stdout)['args'], arguments)
+        self.assertFalse(marker.exists())
+        self.close_and_verify(result.stdout)
+
+    def test_explicit_shell_works_with_child_path(self):
+        self.executable(self.bin)
+        self.open_entry()
+        result = self.command('run', '--', '/bin/sh', '-c', 'exam-probe')
+        self.assertEqual(json.loads(result.stdout)['label'], 'clone')
+        self.close_and_verify(result.stdout)
+
+    def test_missing_command_returns_127_and_keeps_a_valid_step(self):
+        self.open_entry()
+        result = self.command('run', '--', 'exam-missing-command', expected=127)
+        self.assertIn('could not start exam-missing-command', result.stdout)
+        self.close_and_verify(result.stdout)
+
+    def test_nonzero_exit_is_preserved(self):
+        self.open_entry()
+        result = self.command('run', '--', sys.executable, '-c',
+                              'print("synthetic fixture failed"); raise SystemExit(7)', expected=7)
+        self.close_and_verify(result.stdout)
+        recs = [json.loads(line) for line in (self.run_dir / '.journal/chain.jsonl').read_text().splitlines()]
+        self.assertEqual(next(r['exit'] for r in recs if r['kind'] == 'step'), 7)
+
+    def test_refused_run_does_not_execute(self):
+        marker = self.scratch / 'must-not-exist'
+        result = self.command('run', '--', sys.executable, '-c',
+                              'from pathlib import Path; Path(' + repr(str(marker)) + ').touch()', expected=2)
+        self.assertIn('no entry is open', result.stderr)
+        self.assertFalse(marker.exists())
+
+    def test_journal_transcript_and_step_output_tampering_is_rejected(self):
+        self.open_entry()
+        result = self.command('run', '--', sys.executable, '-c', 'print("synthetic fixture output")')
+        self.close_and_verify(result.stdout)
+        for name in ('journal.md', 'transcript.md', '.journal/step-1.out'):
+            with self.subTest(file=name):
+                path = self.run_dir / name
+                original = path.read_bytes()
+                try:
+                    path.write_bytes(original + b'changed\n')
+                    checked = self.command('verify', expected=1)
+                    self.assertIn('first broken link', checked.stdout)
+                finally:
+                    path.write_bytes(original)
+        self.command('verify')
+
+    def test_no_chain_is_not_kept(self):
+        self.assertEqual(self.command('verify', expected=1).stdout, 'journal: not kept (no chain)\n')
+
+    def test_chain_does_not_claim_to_detect_an_unrecorded_grader(self):
+        # Synthetic grade.py only prints; no exam result or real grader is touched.
+        grader = self.clone / 'grade.py'
+        grader.write_text('print("synthetic grader output")\n')
+        direct = [sys.executable, '-B', str(grader)]
+        subprocess.run(direct, check=True, capture_output=True)  # before start, no entry
+        self.open_entry()
+        result = self.command('run', '--', *direct)  # wrapped
+        self.close_and_verify(result.stdout)
+        subprocess.run(direct, check=True, capture_output=True)  # after finish, no entry
+        checked = self.command('verify')
+        self.assertEqual(checked.stdout, 'journal: chain intact, 1 entries, 0 WTF\n')
+        transcript = (self.run_dir / 'transcript.md').read_text()
+        self.assertEqual(transcript.count('- argv:'), 1)
+        self.assertEqual(transcript.count('## Step '), 1)
 
 
 if __name__ == '__main__':

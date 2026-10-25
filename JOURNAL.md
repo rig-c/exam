@@ -19,6 +19,16 @@ not write or edit `journal.md`, `transcript.md` or `.journal/` by hand: a journa
 tools/journal.py --run runs/<run> verify` does not print as intact, or that the tool did not write, is
 `journal: not kept`, and the task is disqualified.
 
+`run` prepends this clone's `node_modules/.bin` to the child PATH, so installed package commands can
+be named directly; the inherited PATH tail, other environment values, arguments and cwd are preserved.
+For a pipeline or redirection, explicitly pass a shell as the command (`run -- sh -c '…'`).
+
+**Ruling, 2026-10-25:** a grader outside an entry is an omission to record; it does not alone disqualify
+an intact tool-written chain. A grader before `start` or after `finish` also leaves the task clock
+incomplete. Preserve the original journal and clock; disclose the event instead of repairing them.
+The chain checks only what this tool recorded. The [proctor checklist](PROCTOR.md) compares actual host
+commands where available and records unavailable or partial evidence separately from chain integrity.
+
 ## Entry <n>
 
 1. **Read:** which document, section or message this step rests on (path and heading, or the message quoted).

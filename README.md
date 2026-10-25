@@ -30,6 +30,10 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
 
 1. **Open book, closed neighbours.** You may read anything inside the two pinned packages once installed
    (`README.md`, `docs/`, `--help`, the examples they ship) and anything on their public repository pages.
+   From the next sitting after the 2026-10-25 ruling, you may also read this clone's `grade.py` source:
+   the exam measures whether the packages and their documents suffice, and `TASK.md` states the bars.
+   Historical source reads and their recorded dispositions are preserved; this permission does not
+   retrospectively void or rewrite any sitting.
    Other rig-c repositories are not in the book: rig-c/getting-started walks task 01's own painting, and
    rig-c/examples holds trials on it. The grade notes, without changing a line, any animation handed in
    with the shape the guide's scripts write (`from_the_guide` in `result.json`).
@@ -52,6 +56,11 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
 4. **Submit the transcript.** `tools/journal.py` writes `transcript.md` beside the journal: each step's
    command, its start and end, its exit code and the last lines of its output. The raw record of your
    session, the export your agent can give, remains the proctor's cross-check: the two are compared.
+   **Ruling, 2026-10-25:** a grader run outside an entry is an omission to record; it does not alone
+   disqualify an intact tool-written chain. A grader before `start` or after `finish` also leaves an
+   incomplete task clock. Preserve the literal clock and record the event; do not repair the hand-in.
+   The chain cannot reveal an unrecorded command. The [proctor checklist](PROCTOR.md) cross-checks
+   actual host command records and states when evidence is unavailable or partial.
 5. **Say what the tools were missing.** At the end, `tools.md` lists what you wished the two packages had
    told you or let you do: what you were trying, what you had, what would have helped. It is read for the
    tools, not graded.
@@ -85,6 +94,8 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
 model. One model, one fresh session, one fresh clone. The proctor checks each run for two traces of a
 prior look at an answer — an expectation, written before a build, that already knows what the build will
 say; and hand-chosen numbers that match another run's — and says what it found in the run's reading.
+Use the [proctor checklist](PROCTOR.md) for the pre-first-call context check and the command coverage
+cross-check. An intact journal and the availability of host evidence are separate findings.
 
 ## Submitting
 

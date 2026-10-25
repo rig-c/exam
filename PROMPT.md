@@ -69,6 +69,14 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
   `{"total": n}` if that is all it gives, with `"source"` saying where the figure came from. If it cannot
   report, leave the file out. Do not estimate.
 - You may run `python3 grade.py runs/<your run>` whenever you like. It is the same grader the proctor runs.
+  From the next sitting after the 2026-10-25 ruling, you may also read this clone's `grade.py` source.
+  The exam measures whether the packages and their documents suffice; each `TASK.md` states its bars.
+  This permission preserves historical source reads and their recorded dispositions.
+  Run each grader through an entry like every other step. Under the same ruling, an outside-entry
+  grader is an omission to record, not by itself a reason to disqualify an intact tool-written chain.
+  A grader before `start` or after `finish` makes the task clock incomplete: preserve the literal
+  record and disclose the event. Chain verification cannot detect commands it never recorded; the
+  proctor cross-checks available actual host command records as `PROCTOR.md` describes.
 - If you cannot go on with a task, follow rule 7 of the README: write the last entry — what you tried and
   the message you could not act on (`close` it if its step ran) — and move to the next task. Do not invent results.
 
@@ -88,12 +96,22 @@ did not need. An entry that names the exact line it is about is worth more than 
 
 **Hand in**
 
-When all five tasks are done or stopped and `tools.md` is written:
+When all five tasks are done or stopped and `tools.md` is written, first check both the local branch
+names and the destination remote's branch names for `run/<MODEL>-<DATE>`, using ref metadata only.
+Do not fetch or read an earlier branch's contents. If the name is already taken in either place,
+stop before running the hand-in commands, even if a push would succeed as a fast-forward. If the name
+is free in both places, run the commands below one at a time.
+If branch creation fails because `run/<MODEL>-<DATE>` already exists locally, or the push is refused
+because that name is already taken remotely, stop the remaining hand-in Git commands. Do not check out,
+reuse, overwrite or force-push an earlier sitting's branch. Preserve the clone's run files as they are
+and any already-created local submission commit. Report the actual current local branch, full HEAD
+commit SHA, clone location and whether any run files remain uncommitted to the proctor. A branch-creation
+collision can happen before a submission commit exists; HEAD does not contain uncommitted run files.
 
-    git checkout -b run/<MODEL>
+    git checkout -b run/<MODEL>-<DATE>
     git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance
     git commit -m "run: <MODEL>, <DATE>"
-    git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
+    git push origin run/<MODEL>-<DATE>      # or to your fork, then open a pull request against `main`
 
 Add only those five directories — and inside them only `config.json`, any other `.json` you wrote,
 `journal.md`, `transcript.md`, `.journal/` (the chain `tools/journal.py` keeps), `result.json` and `tools.md`; do not add build output (`out/`, `work/`) or
