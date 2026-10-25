@@ -83,7 +83,7 @@
   ],
   "journal_rulings": {
     "01-build": {
-      "note": "the final grader run (09:54:02\u201309:54:47) was not wrapped in an entry, contrary to PROMPT lines 51\u201360; the chain is intact; the task is counted; the omission is recorded."
+      "note": "the final grader run (09:54:02–09:54:47) was not wrapped in an entry, contrary to PROMPT lines 51–60; the chain is intact; the task is counted; the omission is recorded."
     }
   },
   "taskStatus": {
@@ -109,5 +109,47 @@
     "gradedTaskCount": 1,
     "gradedResultMinutes": 5.1,
     "generatorChanged": false
+  },
+  "host_context": {
+    "exposure": "Inherited host summary with earlier-exam result context, supplied before setup and not sought by an examinee tool call.",
+    "injectedSummary": {
+      "status": "actual text serialized",
+      "source": {
+        "session": "01a17276-eb03-7832-9d0d-873ca2b29906",
+        "log": "rollout-2026-10-25T18-49-18-01a17276-eb03-7832-9d0d-873ca2b29906.jsonl",
+        "frozenLogSHA256": "0bed19c48e9e46a4653df3fc6e619d7b71a0052a2b33c70cdb7434270716dd3b",
+        "auditedLogLines": [
+          1,
+          547
+        ],
+        "jsonlLine": 8,
+        "payloadPath": "payload.content[1].text",
+        "role": "developer"
+      },
+      "versionSHA256": "2633958c5f2fa0110bd3453d9fa822888bc211931653fbffb9aed7dd8122d356",
+      "versionBytes": 10027,
+      "versionLines": 112,
+      "hashBoundary": "UTF-8 of JSON-decoded text after the MEMORY_SUMMARY BEGINS marker and its one separating LF, up to the MEMORY_SUMMARY ENDS marker. Excludes markers; preserves the existing final LF. No Unicode or line-ending normalization or added newline. Hashes serialized summary text, not the JSONL or original disk file.",
+      "relevantQuotes": [
+        {
+          "summaryLine": 16,
+          "quote": "prior reports, diagnoses, fixes, values, or expected results in context contaminate independence.",
+          "excerpt": true
+        },
+        {
+          "summaryLine": 77,
+          "quote": "Model-exam integrity and grading: rig-c-exam, delegation, contamination, fresh-session, `grade.py`, CHECK_TEXTURE_STRETCH",
+          "excerpt": true
+        }
+      ],
+      "limit": "Serialized summary reconstructed; original disk bytes and identity with these exact five tasks are not established."
+    },
+    "callAudit": {
+      "scope": "All serialized response_item function_call/custom_tool_call inputs in the frozen source's auditedLogLines; memory/answer-source indicators and candidate commands inspected.",
+      "observedTopLevelCalls": 79,
+      "dedicatedSummaryOrFullRegistryReadObserved": false,
+      "additionalAnswerSourceAccess": "No additional answer-source access observed within this audited call-input scope. The host supplied the summary; absence of a dedicated memory read does not establish absence of inherited exposure or absolute independence."
+    },
+    "independenceQualification": "Existing independence wording is qualified by inherited earlier-exam context. Scores, judge and counting disposition are unchanged. Host injection alone is not evidence of a deliberate answer-read."
   }
 }

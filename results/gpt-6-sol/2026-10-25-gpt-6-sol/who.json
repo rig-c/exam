@@ -73,5 +73,48 @@
     "of": 10,
     "judged": "2026-10-25",
     "how": "one person, clips A to F in one sitting, the model behind each letter not known until every score was in; the scale given: 3 reads as grotesque, 5 as flailing, above that it looks like dancing"
+  },
+  "host_context": {
+    "exposure": "Inherited host summary with earlier-exam result context, supplied before setup and not sought by an examinee tool call.",
+    "injectedSummary": {
+      "status": "actual text serialized",
+      "source": {
+        "session": "01a17239-3dd9-7311-8493-a2f0b83c8806",
+        "log": "rollout-2026-10-25T17-41-56-01a17239-3dd9-7311-8493-a2f0b83c8806.jsonl",
+        "frozenLogSHA256": "b29551fe155badddff6b640429a30c2e58a6198fe9d011c2a8374423d2627051",
+        "auditedLogLines": [
+          1,
+          1005
+        ],
+        "jsonlLine": 8,
+        "payloadPath": "payload.content[1].text",
+        "role": "developer"
+      },
+      "versionSHA256": "97815476e615b20b6c5b7c8cad9fa60833abadd9b07b1bb7166a13ee406cf1c6",
+      "versionBytes": 9162,
+      "versionLines": 106,
+      "hashBoundary": "UTF-8 of JSON-decoded text after the MEMORY_SUMMARY BEGINS marker and its one separating LF, up to the MEMORY_SUMMARY ENDS marker. Excludes markers; preserves the existing final LF. No Unicode or line-ending normalization or added newline. Hashes serialized summary text, not the JSONL or original disk file.",
+      "relevantQuotes": [
+        {
+          "summaryLine": 15,
+          "quote": "prior reports, diagnoses, fixes, values, or expected results in context contaminate independence.",
+          "excerpt": true
+        },
+        {
+          "summaryLine": 66,
+          "quote": "Model-exam integrity and grading: rig-c-exam, delegation, contamination, fresh-session, `grade.py`, CHECK_TEXTURE_STRETCH",
+          "excerpt": true
+        }
+      ],
+      "limit": "Serialized summary reconstructed; original disk bytes and identity with these exact five tasks are not established."
+    },
+    "callAudit": {
+      "scope": "All serialized response_item function_call/custom_tool_call inputs in the frozen source's auditedLogLines; memory/answer-source indicators and candidate commands inspected.",
+      "observedTopLevelCalls": 156,
+      "dedicatedSummaryOrFullRegistryReadObserved": false,
+      "additionalAnswerSourceAccess": "No additional answer-source access observed within this audited call-input scope. The host supplied the summary; absence of a dedicated memory read does not establish absence of inherited exposure or absolute independence.",
+      "existingRequiredREADMEExposure": "Existing task-05 rubric exposure is retained; this disclosure adds the inherited host memory separately."
+    },
+    "independenceQualification": "Existing independence wording is qualified by inherited earlier-exam context. Scores, judge and counting disposition are unchanged. Host injection alone is not evidence of a deliberate answer-read."
   }
 }

@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6-astra",
+  "model_id": "gpt-6-astra",
+  "session": "01a172d4-4322-73f2-b061-12ac1533246f",
+  "how": "Fresh Codex Desktop session; exact model verified from both frozen turn_context records (JSONL lines 11 and 37).",
+  "counts": "stopped before setup because of host memory exposure; not an independent sitting",
+  "tasksStarted": 0,
+  "tasksSubmitted": 0,
+  "resultsCount": 0,
+  "minutes": null,
+  "minutes_read_from": "No task started; session lifecycle is not task duration.",
+  "sessionLogSHA256": "d6890b5f2d95060a5bccb5b0afc9ff1fcc5c6a4bfe60dfe9d6e99831722fe8d9",
+  "proctorRuling": "HQ acknowledged STOP and ended the sitting at frozen JSONL line 38. No continued attempt, numeric failure, result.json or score is invented.",
+  "host_context": {
+    "exposure": "Inherited host summary with earlier-exam result context, supplied before setup and not sought by an examinee tool call.",
+    "injectedSummary": {
+      "status": "actual text serialized",
+      "source": {
+        "session": "01a172d4-4322-73f2-b061-12ac1533246f",
+        "log": "rollout-2026-10-25T20-31-15-01a172d4-4322-73f2-b061-12ac1533246f.jsonl",
+        "frozenLogSHA256": "d6890b5f2d95060a5bccb5b0afc9ff1fcc5c6a4bfe60dfe9d6e99831722fe8d9",
+        "auditedLogLines": [
+          1,
+          44
+        ],
+        "jsonlLine": 8,
+        "payloadPath": "payload.content[1].text",
+        "role": "developer"
+      },
+      "versionSHA256": "2633958c5f2fa0110bd3453d9fa822888bc211931653fbffb9aed7dd8122d356",
+      "versionBytes": 10027,
+      "versionLines": 112,
+      "hashBoundary": "UTF-8 of JSON-decoded text after the MEMORY_SUMMARY BEGINS marker and its one separating LF, up to the MEMORY_SUMMARY ENDS marker. Excludes markers; preserves the existing final LF. No Unicode or line-ending normalization or added newline. Hashes serialized summary text, not the JSONL or original disk file.",
+      "relevantQuotes": [
+        {
+          "summaryLine": 16,
+          "quote": "prior reports, diagnoses, fixes, values, or expected results in context contaminate independence.",
+          "excerpt": true
+        },
+        {
+          "summaryLine": 77,
+          "quote": "Model-exam integrity and grading: rig-c-exam, delegation, contamination, fresh-session, `grade.py`, CHECK_TEXTURE_STRETCH",
+          "excerpt": true
+        }
+      ],
+      "limit": "Serialized summary reconstructed; original disk bytes and identity with these exact five tasks are not established."
+    },
+    "callAudit": {
+      "scope": "All serialized response_item function_call/custom_tool_call inputs in the frozen source's auditedLogLines; memory/answer-source indicators and candidate commands inspected.",
+      "observedTopLevelCalls": 2,
+      "dedicatedSummaryOrFullRegistryReadObserved": false,
+      "additionalAnswerSourceAccess": "No additional answer-source access observed within this audited call-input scope. The host supplied the summary; absence of a dedicated memory read does not establish absence of inherited exposure or absolute independence.",
+      "stopEvidence": {
+        "skillReadCallLine": 20,
+        "stopReplyCallLine": 25,
+        "HQDispositionLine": 38,
+        "observedExamSetupCalls": 0,
+        "observedExamBuildCalls": 0,
+        "observedTaskFileReadCalls": 0
+      }
+    },
+    "independenceQualification": "Stopped before setup because of inherited host-memory exposure; not counted as an independent sitting. No tasks, results, grades or judge exist for this sitting."
+  }
+}

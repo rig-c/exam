@@ -80,7 +80,7 @@
     "Raw journal.md, transcript.md and .journal bytes preserved exactly, including recorded machine paths.",
     "All contact sheets from each regrade inspected before render receipts removed this worker's numbered frames.",
     "Human dance judgement is pending; contact-sheet reading is not that judgement.",
-    "Task04 and task05 clocks overlap (04 10:07:12\u201310:07:17Z within 05 10:07:08\u201310:07:20Z); task-duration sum is not a non-overlapping elapsed-time measure.",
+    "Task04 and task05 clocks overlap (04 10:07:12–10:07:17Z within 05 10:07:08–10:07:20Z); task-duration sum is not a non-overlapping elapsed-time measure.",
     "HQ approved a scoped raw hash-chain path-integrity exception for unedited submitted journal.md, transcript.md and .journal/ evidence in this results subtree only. Recorded machine paths are retained byte-for-byte to preserve chain integrity. Proctor-authored files use normalized paths and contain no home-directory paths; the exception does not extend to other content."
   ],
   "followupCommit": "69b2da99c88ed8653b4ab022769825f84b499755",
@@ -212,5 +212,53 @@
     "gradedResultMinutes": 9.4,
     "generatorChanged": false,
     "overlapNote": "Task04 and task05 clocks overlap; sum is not non-overlapping elapsed sitting time."
+  },
+  "host_context": {
+    "exposure": "Inherited host summary with earlier-exam result context, supplied before setup and not sought by an examinee tool call.",
+    "injectedSummary": {
+      "status": "actual text serialized",
+      "source": {
+        "session": "01a1727d-67db-7ff2-a6fe-48f3af6a32d7",
+        "log": "rollout-2026-10-25T18-56-23-01a1727d-67db-7ff2-a6fe-48f3af6a32d7.jsonl",
+        "frozenLogSHA256": "d3e61b48bf7924cdb57416a2aa6fbb3fe36ad2fc1ca0c6ba0204bf31b58f8358",
+        "auditedLogLines": [
+          1,
+          728
+        ],
+        "jsonlLine": 8,
+        "payloadPath": "payload.content[1].text",
+        "role": "developer",
+        "recordedSessionLogComparison": {
+          "recordedSessionLogSHA256": "e3988bce32d9d3320320a38ceaf5e525896171257f77a503a8218d220c13ea90",
+          "submittedPrefixLines": 718,
+          "exactPrefixMatch": true,
+          "auditedOriginalLines": 728
+        }
+      },
+      "versionSHA256": "2633958c5f2fa0110bd3453d9fa822888bc211931653fbffb9aed7dd8122d356",
+      "versionBytes": 10027,
+      "versionLines": 112,
+      "hashBoundary": "UTF-8 of JSON-decoded text after the MEMORY_SUMMARY BEGINS marker and its one separating LF, up to the MEMORY_SUMMARY ENDS marker. Excludes markers; preserves the existing final LF. No Unicode or line-ending normalization or added newline. Hashes serialized summary text, not the JSONL or original disk file.",
+      "relevantQuotes": [
+        {
+          "summaryLine": 16,
+          "quote": "prior reports, diagnoses, fixes, values, or expected results in context contaminate independence.",
+          "excerpt": true
+        },
+        {
+          "summaryLine": 77,
+          "quote": "Model-exam integrity and grading: rig-c-exam, delegation, contamination, fresh-session, `grade.py`, CHECK_TEXTURE_STRETCH",
+          "excerpt": true
+        }
+      ],
+      "limit": "Serialized summary reconstructed; original disk bytes and identity with these exact five tasks are not established."
+    },
+    "callAudit": {
+      "scope": "All serialized response_item function_call/custom_tool_call inputs in the frozen source's auditedLogLines; memory/answer-source indicators and candidate commands inspected.",
+      "observedTopLevelCalls": 100,
+      "dedicatedSummaryOrFullRegistryReadObserved": false,
+      "additionalAnswerSourceAccess": "No additional answer-source access observed within this audited call-input scope. The host supplied the summary; absence of a dedicated memory read does not establish absence of inherited exposure or absolute independence."
+    },
+    "independenceQualification": "Existing independence wording is qualified by inherited earlier-exam context. Scores, judge and counting disposition are unchanged. Host injection alone is not evidence of a deliberate answer-read."
   }
 }
