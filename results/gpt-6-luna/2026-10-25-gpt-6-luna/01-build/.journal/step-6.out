@@ -1,0 +1,89 @@
+config /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-luna-r2/exam-gpt-6-luna/runs/2026-10-25-gpt-6-luna-01-build/config.json: replaced bones
+wrote proposal.json (23 bone entries, 6 meshes) and render/landmarks.png (+_head) under runs/2026-10-25-gpt-6-luna-01-build/work
+note: head frame: the bar runs through eye_r [395.0, 181.0] and eye_l [454.0, 176.0], the eye bones' origins, 59.211 px; roll 4.844 degrees (Spine's, counter-clockwise) — the line the rig turns the face bones to and declares as invariants.axes; eye midpoint [424.5, 178.5]
+note: head pitch: the nose sits — (not read: no part tagged nose) of the way from the eye midpoint to the mouth (frontal 0.474..0.630); the stem, eye midpoint -> mouth, is 0.569 of the bar (frontal 0.510..0.675); frontal ranges read on demo, scarf, the rig-c/trailer character; the turn is not reported (src/propose.ts FRONTAL_REFERENCE says why)
+note: breath: chest translatey 10.56 px peak to peak (amp 5.28, base 5.28) = 2.5 % of the torso's length, 422.0 px (neck [416, 258] -> hip [416, 680]), once per 40-frame idle at 12 fps
+note: hair_front (head:front hair): bang_r, bang_c, bang_l are a template, not its locks — columns at 0.25, 0.5 and 0.75 of the face box's width, along the head's down axis (the eye line's perpendicular, roll 4.844 degrees), each rooted on the part's art; the opaque shape does not separate the locks painted inside one mass of hair, so a lock that runs elsewhere is not followed — move the chains onto the locks
+note: limb arm_r: handwear_r (full:handwear-r) is cut at the r_elbow joint into upperarm_r on sleeve_r0 and forearm_r (with the hand) on sleeve_r1, each rigid on its link with weight 1 — a bend is a rotation at the joint; assemble with this limbs block cuts the layer, and the forearm carries a cap past the elbow (its line counts the cap's pixels, and names any the layer does not hold)
+note: limb arm_l: handwear_l (full:handwear-l) is cut at the l_elbow joint into upperarm_l on sleeve_l0 and forearm_l (with the hand) on sleeve_l1, each rigid on its link with weight 1 — a bend is a rotation at the joint; assemble with this limbs block cuts the layer, and the forearm carries a cap past the elbow (its line counts the cap's pixels, and names any the layer does not hold)
+note: topwear ends at y=436 (hip 680): no robe chains -- add a sash chain by hand if one hangs
+note: legwear: no leg chain — r_ankle at [305.0, 1080.0] lies on the art of no legwear part within 15 px, so it does not say which part its leg is; the trunk rule places it
+note: legwear (full:legwear): no rule -> region on hip
+note: trunk segments (neck, topwear, bottomwear): laid along neck -> hip, the line the chest was placed on (0.0 degrees off the screen's downward vertical, positive towards +x): each [bone, from, to] segment the rule drafts down the screen runs along that line instead, and the waist segment across it
+note: mesh spacing: grid 29 = round(H / 37), H 1087 rig px the height of every part's box together (rows 49 to 1136), in place of a tenth of each part's short side (hair_back 17 -> 29, hair_front 16 -> 29, hairpin 9 -> 29, neck 6 -> 29, topwear 18 -> 29, bottomwear 22 -> 29; kept, already as coarse: none); r is the part's own. Calibrated on three figures of similar size (H 1106-1185 rig px, issue #265 Stage A), where every check bar passed at this divisor and the idle moved by up to 1.427 rig px against the finer lattice — no bar reads that. propose --grid-rule part drafts the part's own spacing
+note: keypoints: person "a" from "estimated by eye from the supplied painting for this exam sitting", painting 1664x2432 px to the 832x1216 rig by the overlay's map (x * 832/1664, y * 1216/2432); a joint with a position places its bone in place of the rule, a joint without one leaves the bone to its rule, and no bone is authored from a joint that no rule places
+note: neck observed at [416.0, 257.5]: used as given for bone neck
+note: r_hip occluded at [371.0, 680.0]: used as the producer's estimate for bone hip, the midpoint of r_hip and l_hip — a point between two joints, not a joint
+note: l_hip occluded at [461.0, 680.0]: used as the producer's estimate for bone hip, the midpoint of r_hip and l_hip — a point between two joints, not a joint
+note: chest: its rule, half way from neck to hip, taken along the line from neck [416.0, 257.5] to hip [416.0, 680.0] rather than down the screen
+note: r_shoulder observed at [325.0, 275.0]: used as given for chain sleeve_r, link 0 (the wrist lies on handwear_r)
+note: r_elbow observed at [303.0, 398.0]: used as given for chain sleeve_r, link 1 (the wrist lies on handwear_r)
+note: r_wrist observed at [165.0, 500.0]: used as given for chain sleeve_r, the tip (the wrist lies on handwear_r)
+note: l_shoulder observed at [507.0, 275.0]: used as given for chain sleeve_l, link 0 (the wrist lies on handwear_l)
+note: l_elbow observed at [529.0, 398.0]: used as given for chain sleeve_l, link 1 (the wrist lies on handwear_l)
+note: l_wrist observed at [670.0, 500.0]: used as given for chain sleeve_l, the tip (the wrist lies on handwear_l)
+note: r_eye observed at [390.0, 175.0]: bone eye_r is measured off eyewhite_r (its box centre [395.0, 181.0]) and is not moved; the joint is 7.8 px from it
+note: l_eye observed at [442.0, 175.0]: bone eye_l is measured off eyewhite_l (its box centre [454.0, 176.5]) and is not moved; the joint is 12.1 px from it
+note: no rule reads nose observed at [416.0, 175.0], r_knee observed at [310.0, 875.0], r_ankle observed at [305.0, 1080.0], l_knee observed at [520.0, 875.0], l_ankle observed at [530.0, 1080.0], r_ear occluded at [361.0, 175.0], l_ear occluded at [471.0, 175.0] — no bone is authored from them
+lint rule set: joints (person "a") — the torso is read along the line from the neck joint [416.0, 257.5] to the midpoint of r_hip and l_hip [416.0, 680.0]: the chest strictly between them, the hip past the chest, and the hip nearer the hips than the neck; the two screen-y torso rules do not run, and the off-art check is unchanged
+lint chain sleeve_r: each link and the tip must advance from r_shoulder [325.0, 275.0] toward r_wrist [165.0, 500.0]
+lint chain sleeve_l: each link and the tip must advance from l_shoulder [507.0, 275.0] toward l_wrist [670.0, 500.0]
+LINT skirt_r0 at [349, 700] is off the art of mesh 'bottomwear'
+LINT skirt_r1 at [349, 678] is off the art of mesh 'bottomwear'
+LINT skirt_r2 at [349, 655] is off the art of mesh 'bottomwear'
+LINT skirt_c0 at [403, 700] is off the art of mesh 'bottomwear'
+LINT skirt_c1 at [403, 678] is off the art of mesh 'bottomwear'
+LINT skirt_c2 at [403, 655] is off the art of mesh 'bottomwear'
+LINT skirt_l0 at [457, 700] is off the art of mesh 'bottomwear'
+LINT skirt_l1 at [457, 678] is off the art of mesh 'bottomwear'
+LINT skirt_l2 at [457, 655] is off the art of mesh 'bottomwear'
+LINT hairback_r and hairback_l on mesh 'hair_back' squeeze it: swung together, every other bone held, edge 27-26 of triangle 135 closes to 0.407 times its rest length at idle frame 22 (max(ratio, 1/ratio) 2.455; <= 1.926544 is required, check's TEXTURE_STRETCH bar) — vertex 27 rides hairback_r2 0.73841, vertex 26 rides hairback_l2 0.89913; alone, hairback_r reads 1.420 and hairback_l 1.424. Their tips are 55.0 px apart and their amplitudes are opposed (hairback_r [0.6, 1.4, 2.4], hairback_l [-0.6, -1.4, -2.4]), so their tips swing towards each other and apart: give both the same sign (then 1.051), or drop one chain
+10 LINT line(s) over 6 mesh(es) and the hip
+coverage hip [deforms]: checked, clean — read by hip-not-past-chest, hip-nearer-neck
+coverage chest [deforms]: checked, clean — read by chest-not-between, hip-not-past-chest
+coverage neck [control]: not checked — its role is control (binds nothing; keyed by motion.tracks[3]): it binds nothing, so there is no art to hold it to, and a control may sit off the art by design
+coverage head [deforms]: not checked — bound by the explicit [bone, from, to] segments meshes.hair_back.segments[0], meshes.hair_front.segments[0], meshes.neck.segments[1]: a segment is a line, not an origin, and the off-art check reads origins; bound rigidly by regions.ear_r, regions.ear_l, regions.face: no check reads a region's bone
+coverage eye_r [deforms]: not checked — bound rigidly by regions.eyewhite_r, regions.iris_r, regions.lash_r: no check reads a region's bone
+coverage eye_l [deforms]: not checked — bound rigidly by regions.eyewhite_l, regions.iris_l, regions.lash_l: no check reads a region's bone
+coverage brow_r [deforms]: not checked — bound rigidly by regions.brow_r: no check reads a region's bone
+coverage brow_l [deforms]: not checked — bound rigidly by regions.brow_l: no check reads a region's bone
+coverage mouth [deforms]: not checked — bound rigidly by regions.mouth: no check reads a region's bone
+coverage hairback_r0 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_l on mesh 'hair_back'
+coverage hairback_r1 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_l on mesh 'hair_back'
+coverage hairback_r2 [deforms]: checked, LINT — read by off-art on mesh 'hair_back', squeeze with hairback_l on mesh 'hair_back'; named by 1 LINT line(s)
+coverage hairback_l0 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_r on mesh 'hair_back'
+coverage hairback_l1 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_r on mesh 'hair_back'
+coverage hairback_l2 [deforms]: checked, LINT — read by off-art on mesh 'hair_back', squeeze with hairback_r on mesh 'hair_back'; named by 1 LINT line(s)
+coverage bang_r0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_r1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_c0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_c1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_l0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_l1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock2 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock3 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock1_0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage lock1_1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage lock1_2 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage lock1_3 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage hairpin [deforms]: not checked — bound by the explicit [bone, from, to] segments meshes.hairpin.segments[0], meshes.hairpin.segments[1]: a segment is a line, not an origin, and the off-art check reads origins
+coverage hairpin_tassel0 [deforms]: checked, clean — read by off-art on mesh 'hairpin'
+coverage hairpin_tassel1 [deforms]: checked, clean — read by off-art on mesh 'hairpin'
+coverage sleeve_r0 [deforms]: checked, clean — read by chain-not-advancing along r_shoulder -> r_wrist
+coverage sleeve_r1 [deforms]: checked, clean — read by chain-not-advancing along r_shoulder -> r_wrist
+coverage sleeve_l0 [deforms]: checked, clean — read by chain-not-advancing along l_shoulder -> l_wrist
+coverage sleeve_l1 [deforms]: checked, clean — read by chain-not-advancing along l_shoulder -> l_wrist
+coverage skirt_r0 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_r1 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_r2 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_c0 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_c1 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_c2 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_l0 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_l1 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage skirt_l2 [deforms]: checked, LINT — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'; named by 1 LINT line(s)
+coverage leg-chain choice: 0 chains — legwear: no leg chain — r_ankle at [305.0, 1080.0] lies on the art of no legwear part within 15 px, so it does not say which part its leg is; the trunk rule places it
+coverage: 45 bone(s) — 26 checked and clean, 11 checked with a LINT line, 8 not checked; roles 0 target, 44 deforms, 1 control, 0 unclassified
+wrote basis.json (45 bone record(s) by the basis of their origin: 6 joint, 34 mask, 4 ratio, 1 derived) under runs/2026-10-25-gpt-6-luna-01-build/work

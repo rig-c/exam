@@ -1,0 +1,135 @@
+{
+  "sourceCheckSHA256": "cdf971e47903fae204dbbe12d290e2ca9e1b545c074022bec96ab71527b4db09",
+  "PASS": false,
+  "TIP_OVER_ROOT": {
+    "status": "FAIL",
+    "instrument": "geometry",
+    "parts": [
+      {
+        "part": "forearm_l",
+        "unmeasured": "a limb segment (config.limbs.arm_l), rigid on its one bone \"sleeve_l1\": it turns at its joint and does not hang, so it is not held to the bar"
+      },
+      {
+        "part": "upperarm_l",
+        "unmeasured": "a limb segment (config.limbs.arm_l), rigid on its one bone \"sleeve_l0\": it turns at its joint and does not hang, so it is not held to the bar"
+      },
+      {
+        "part": "bottomwear",
+        "root_rig_px": 2.313,
+        "tip_rig_px": 0.679,
+        "ratio": 0.294
+      },
+      {
+        "part": "forearm_r",
+        "unmeasured": "a limb segment (config.limbs.arm_r), rigid on its one bone \"sleeve_r1\": it turns at its joint and does not hang, so it is not held to the bar"
+      },
+      {
+        "part": "upperarm_r",
+        "unmeasured": "a limb segment (config.limbs.arm_r), rigid on its one bone \"sleeve_r0\": it turns at its joint and does not hang, so it is not held to the bar"
+      }
+    ],
+    "ratio_floor": 1.4725
+  },
+  "seam_mean": 0.165,
+  "seam_px_over_40": 97,
+  "seam_px_over_80": 0,
+  "seam_frame_scale": 1.009799,
+  "seam_pairs": [
+    {
+      "parts": [
+        "foot_l",
+        "foot_r"
+      ],
+      "px_over_40": 76,
+      "px_over_80": 0,
+      "frame_box": [
+        174,
+        1068,
+        209,
+        1153
+      ],
+      "rig_box": [
+        372,
+        1103,
+        408,
+        1188
+      ],
+      "cut": {
+        "from": "full:footwear",
+        "differing_copies_px": 0
+      },
+      "picture": "seam/01_foot_l_foot_r.png"
+    },
+    {
+      "parts": [
+        "shin_l",
+        "shin_r"
+      ],
+      "px_over_40": 15,
+      "px_over_80": 0,
+      "frame_box": [
+        122,
+        807,
+        251,
+        895
+      ],
+      "rig_box": [
+        321,
+        844,
+        449,
+        932
+      ],
+      "cut": {
+        "from": "full:legwear",
+        "differing_copies_px": 0
+      },
+      "picture": "seam/02_shin_l_shin_r.png"
+    },
+    {
+      "parts": [
+        "shin_r",
+        "thigh_r"
+      ],
+      "px_over_40": 4,
+      "px_over_80": 0,
+      "frame_box": [
+        122,
+        802,
+        125,
+        807
+      ],
+      "rig_box": [
+        321,
+        839,
+        325,
+        845
+      ],
+      "cut": {
+        "from": "full:legwear",
+        "differing_copies_px": 0
+      },
+      "picture": "seam/03_shin_r_thigh_r.png"
+    },
+    {
+      "parts": [
+        "brow_r",
+        "hair_front"
+      ],
+      "px_over_40": 2,
+      "px_over_80": 0,
+      "frame_box": [
+        179,
+        150,
+        180,
+        152
+      ],
+      "rig_box": [
+        377,
+        193,
+        379,
+        196
+      ],
+      "picture": "seam/04_brow_r_hair_front.png"
+    }
+  ]
+}

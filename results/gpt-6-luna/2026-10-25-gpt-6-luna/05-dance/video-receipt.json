@@ -1,0 +1,56 @@
+{
+  "spec": "exam-blind-dance-clip/1",
+  "sourceFrames": 97,
+  "closingDuplicateOmitted": true,
+  "encodedFrames": 288,
+  "repetitions": 3,
+  "sourcePreview": {
+    "sha256": "9fe4e6ad6703f7d378caf2e50f25306e29648db656dda76f644284f2a899c651",
+    "seconds": 4,
+    "frames": 96
+  },
+  "scale": 3,
+  "filter": "nearest",
+  "audio": true,
+  "clickTrack": {
+    "bpm": 120,
+    "beats": 24,
+    "spacingSeconds": 0.5,
+    "firstBeatSeconds": 0,
+    "toneHz": 1000,
+    "sampleRate": 48000,
+    "WAV_SHA256": "1b3db2a40645d4e0aa8c1158bc72d6d1af20efa6c06fa38b63707ca8375f98fb"
+  },
+  "streams": [
+    {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 562,
+      "height": 768,
+      "sample_aspect_ratio": "1:1",
+      "r_frame_rate": "24/1",
+      "duration": "12.000000",
+      "nb_frames": "288"
+    },
+    {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "channels": 1,
+      "r_frame_rate": "0/0",
+      "duration": "12.000000",
+      "nb_frames": "564"
+    }
+  ],
+  "bytes": 988939,
+  "sha256": "e4404914262d93218b072c93c65d074aae4331f28c40ef442a73c73b896f3aba",
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "humanJudgement": null,
+  "command": "ffmpeg -stream_loop 2 -i <four-second-preview>.mp4 -i <120bpm-12s-click>.wav -t 12 -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 128k -map_metadata -1 <blind-clip>.mp4",
+  "decodedClickCheck": {
+    "clicks": 24,
+    "maxTimingErrorSeconds": 4.166666666671759e-05,
+    "thresholdPCM16": 1500,
+    "groupGapSeconds": 0.1
+  }
+}

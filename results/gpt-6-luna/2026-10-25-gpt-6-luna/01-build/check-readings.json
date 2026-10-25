@@ -1,0 +1,37 @@
+{
+  "sourceCheckSHA256": "346fd2cbfcf6eeb28b0f801dd30d1cb4170368f83edae7913cf364961f7e2eb6",
+  "PASS": false,
+  "TIP_OVER_ROOT": {
+    "status": "FAIL",
+    "instrument": "geometry",
+    "parts": [
+      {
+        "part": "forearm_l",
+        "unmeasured": "a limb segment (config.limbs.arm_l), rigid on its one bone \"sleeve_l1\": it turns at its joint and does not hang, so it is not held to the bar"
+      },
+      {
+        "part": "upperarm_l",
+        "unmeasured": "a limb segment (config.limbs.arm_l), rigid on its one bone \"sleeve_l0\": it turns at its joint and does not hang, so it is not held to the bar"
+      },
+      {
+        "part": "forearm_r",
+        "unmeasured": "a limb segment (config.limbs.arm_r), rigid on its one bone \"sleeve_r1\": it turns at its joint and does not hang, so it is not held to the bar"
+      },
+      {
+        "part": "upperarm_r",
+        "unmeasured": "a limb segment (config.limbs.arm_r), rigid on its one bone \"sleeve_r0\": it turns at its joint and does not hang, so it is not held to the bar"
+      },
+      {
+        "part": "bottomwear",
+        "root_rig_px": 19.981,
+        "tip_rig_px": 11.466,
+        "ratio": 0.574
+      }
+    ],
+    "ratio_floor": 1.4725
+  },
+  "seam_mean": 0.099,
+  "seam_px_over_40": 1,
+  "seam_px_over_80": 0,
+  "seam_frame_scale": 1.028243
+}

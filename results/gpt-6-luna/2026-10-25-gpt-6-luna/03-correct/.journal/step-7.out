@@ -1,0 +1,10 @@
+FAIL  built: "rig-parts build exit 1"
+FAIL  checked: {"BREATH_VISIBLE": "PASS", "BLINK_NO_HOLE": "PASS", "CHAIN_LAG": "PASS", "TIP_OVER_ROOT": "FAIL", "STILL_REGIONS_DARK": "PASS", "TEXTURE_STRETCH": "PASS", "ANIMATIONS_DO_NOT_FOLD": "PASS", "FEET_STAY_LEVEL": "SKIP", "STRESS_OFF_CHAIN": "SKIP", "LIMB_ONE_BONE": "PASS", "SEAM_OVER_MOTION": "CLEAR", "RECOMPOSITE_HOLES": "REPORTED"}
+PASS  whole: "uncovered_error_px 1762 against <= 3500"
+PASS  does_not_fold: []
+FAIL  kept: "6 mesh(es) deformed against >= 8"
+PASS  still_moves: "the back hair travels 45.881 rig px against the head over the idle, against >= 23"
+journal: chain intact, 7 entries, 3 WTF
+note: no animation handed in has the shape of the guide's scripts
+clock: no started:/finished: lines in transcript.md
+3 of 6 line(s); journal present, 3 entry(ies) whose line 4 begins WTF?:; log .grade/2026-10-25-gpt-6-luna-03-correct/grade.log

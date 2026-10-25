@@ -1,23 +1,60 @@
 {
   "spec": "exam-blind-dance-clip/1",
-  "source": "proctor grade pose_out_check_build_dance/dance@24fps",
   "sourceFrames": 97,
-  "encodedFrames": 96,
   "closingDuplicateOmitted": true,
+  "encodedFrames": 288,
+  "repetitions": 3,
+  "sourcePreview": {
+    "sha256": "0681604c38ad47b536a6799f4ac0afdad1cc8770a1d800249cace6ab43c0fd67",
+    "seconds": 4,
+    "frames": 96,
+    "paddingPixels": [
+      0,
+      0
+    ]
+  },
   "scale": 3,
   "filter": "nearest",
-  "audio": false,
-  "stream": {
-    "codec_name": "h264",
-    "width": 576,
-    "height": 768,
-    "sample_aspect_ratio": "1:1",
-    "r_frame_rate": "24/1",
-    "duration": "4.000000",
-    "nb_frames": "96"
+  "audio": true,
+  "clickTrack": {
+    "bpm": 120,
+    "beats": 24,
+    "spacingSeconds": 0.5,
+    "firstBeatSeconds": 0,
+    "toneHz": 1000,
+    "sampleRate": 48000,
+    "WAV_SHA256": "1b3db2a40645d4e0aa8c1158bc72d6d1af20efa6c06fa38b63707ca8375f98fb"
   },
-  "bytes": 414397,
-  "sha256": "0681604c38ad47b536a6799f4ac0afdad1cc8770a1d800249cace6ab43c0fd67",
+  "streams": [
+    {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 576,
+      "height": 768,
+      "sample_aspect_ratio": "1:1",
+      "r_frame_rate": "24/1",
+      "duration": "12.000000",
+      "nb_frames": "288"
+    },
+    {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "channels": 1,
+      "r_frame_rate": "0/0",
+      "duration": "12.000000",
+      "nb_frames": "564"
+    }
+  ],
+  "bytes": 1266239,
+  "sha256": "93ca3f6327d55104d11caaa7d159df52b6014f71b6a1ed6f74839732f44219cc",
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
   "humanJudgement": null,
-  "command": "ffmpeg -framerate 24 -i <grade>/pose_out_check_build_dance/dance@24fps/f%04d.png -frames:v 96 -vf scale=iw*3:ih*3:flags=neighbor,setsar=1 -c:v libx264 -threads 2 -pix_fmt yuv420p -crf 18 -an -map_metadata -1 <blind-clip>.mp4"
+  "command": "ffmpeg -stream_loop 2 -i <four-second-preview>.mp4 -i <120bpm-12s-click>.wav -t 12 -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 128k -map_metadata -1 <blind-clip>.mp4",
+  "decodedClickCheck": {
+    "clicks": 24,
+    "maxTimingErrorSeconds": 4.166666666671759e-05,
+    "thresholdPCM16": 1500,
+    "groupGapSeconds": 0.1
+  }
 }

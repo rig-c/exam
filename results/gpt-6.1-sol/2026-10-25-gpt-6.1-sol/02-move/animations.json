@@ -1,0 +1,41 @@
+{
+  "spec": "rigc-motion/1",
+  "animations": {
+    "greeting": {
+      "duration": 2.4,
+      "loop": true,
+      "tracks": [
+        {
+          "bone": "head",
+          "property": "rotate",
+          "keys": [
+            {
+              "t": 0,
+              "v": [
+                0
+              ]
+            },
+            {
+              "t": 0.6,
+              "v": [
+                8
+              ]
+            },
+            {
+              "t": 1.8,
+              "v": [
+                -8
+              ]
+            },
+            {
+              "t": 2.4,
+              "v": [
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
