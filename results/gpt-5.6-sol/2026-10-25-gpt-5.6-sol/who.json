@@ -77,7 +77,13 @@
     "04-soft",
     "05-dance"
   ],
-  "judge": null,
+  "judge": {
+    "letter": "B",
+    "score": 7,
+    "of": 10,
+    "judged": "2026-10-25",
+    "how": "one person, clips A to F in one sitting, the model behind each letter not known until every score was in; the scale given: 3 reads as grotesque, 5 as flailing, above that it looks like dancing"
+  },
   "proctorNotes": [
     "Only completed answer inputs independently regraded; no result.json fabricated for unsat/stopped tasks.",
     "Raw journal.md, transcript.md and .journal bytes preserved exactly, including recorded machine paths.",
