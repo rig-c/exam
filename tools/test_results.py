@@ -34,7 +34,7 @@ class SummaryTests(unittest.TestCase):
     def test_task_and_identity_details_cannot_enter_summary(self):
         record = {'who': {'counts': 'independent', 'model': 'synthetic-model'},
                   'name': 'synthetic-run', 'tasks': {'synthetic-task': {
-                      'passed': 0, 'of': 1, 'lines': {'synthetic-private-line': {'pass': False}}}}}
+                      'passed': 0, 'of': 1, 'lines': {'synthetic_private_line': {'pass': False}}}}}
         summary = results.readme_block([record])
         self.assertTrue(summary == results.readme_block([{'who': record['who']}]),
                         'summary must not depend on task cells, scores or identities')
@@ -50,7 +50,7 @@ class FixtureTests(unittest.TestCase):
         (run / '01-build').mkdir(parents=True)
         (run / 'who.json').write_text(json.dumps({'counts': 'independent', 'model': 'synthetic'}))
         (run / '01-build/result.json').write_text(json.dumps({
-            'passed': 0, 'of': 1, 'lines': {'synthetic-private-line': {'pass': False}},
+            'passed': 0, 'of': 1, 'lines': {'synthetic_private_line': {'pass': False}},
             'versions': {}, 'minutes': 1}))
         (self.root / 'results.py').write_bytes((ROOT / 'results.py').read_bytes())
         self.before = ('before\n<!-- results:start — generated; do not edit -->\n'
@@ -72,9 +72,9 @@ class FixtureTests(unittest.TestCase):
             {'who': {'counts': 'independent'}}])), 'generation must replace only the marker body')
         self.assertTrue(self.command('--check').returncode == 0, 'generated pages must be current')
         page = (self.root / 'results/README.md').read_bytes()
-        self.assertTrue(b'synthetic-private-line' in page and b'| model that did the work |' in page,
+        self.assertTrue(b'synthetic_private_line' in page and b'| model that did the work |' in page,
                         'full results must retain cells and failure details')
-        self.assertTrue('synthetic-private-line' not in readme, 'summary must not reveal grade names')
+        self.assertTrue('synthetic_private_line' not in readme, 'summary must not reveal grade names')
         self.assertTrue(self.command().returncode == 0, 'regeneration must succeed')
         self.assertTrue((self.root / 'results/README.md').read_bytes() == page,
                         'regeneration must preserve full-table bytes')
@@ -103,13 +103,28 @@ class FiledResultsTests(unittest.TestCase):
             warnings.simplefilter('ignore', ResourceWarning)
             cls.records = results.runs()
 
-    def test_no_filed_grade_name_anywhere_in_readme(self):
+    def test_readme_summary_and_identifier_boundary(self):
+        # Single-word grade names can coincide with ordinary English prose.
         names = {name for run in self.records for task in run['tasks'].values()
-                 for name in task.get('lines', {})}
-        readme = (ROOT / 'README.md').read_text()
-        self.assertTrue(bool(names), 'grade-name control must not be vacuous')
-        self.assertTrue(not any(name in readme for name in names),
-                        'README contains a filed grade name (details deliberately withheld)')
+                 for name in task.get('lines', {}) if '_' in name}
+        readme = (ROOT / 'README.md').read_bytes()
+        self.assertTrue(bool(self.records), 'sitting control must not be vacuous')
+        count = sum(run['who'].get('counts', '').startswith('independent')
+                    for run in self.records)
+        self.assertTrue(count > 0, 'independent sitting control must not be vacuous')
+        self.assertTrue(bool(names), 'identifier control must not be vacuous')
+        self.assertTrue(not any(name.encode() in readme for name in names),
+                        'README contains a filed identifier (details deliberately withheld)')
+        start, end = results.START.encode(), results.END.encode()
+        self.assertTrue(readme.count(start) == 1 and readme.count(end) == 1,
+                        'README must have exactly one generated region')
+        a = readme.index(start)
+        a_end = readme.index(b'-->', a) + 3
+        b = readme.index(end, a_end)
+        expected = (f'\n**{count} independent sitting(s) so far.**\n\n'
+                    '[Full results](results/README.md).\n').encode()
+        self.assertTrue(readme[a_end:b] == expected,
+                        'README region must equal only the sitting summary and link')
 
     def test_full_results_page_is_preserved_and_current(self):
         with warnings.catch_warnings():

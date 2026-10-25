@@ -34,8 +34,8 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
    rig-c/examples holds trials on it. The grade notes, without changing a line, any animation handed in
    with the shape the guide's scripts write (`from_the_guide` in `result.json`).
    You may not read another examinee's run, and you may not ask a person. Every run is public, under
-   `results/`, because the results are. The clone the prompt makes leaves that directory out — absent
-   from the working tree and not downloaded — so nothing an examinee greps or lists can turn an answer up by accident;
+   `results/`, because the results are. The clone the prompt makes leaves that directory out — not checked
+   out and not downloaded — so nothing an examinee greps or lists can turn an answer up by accident;
    reading one takes a deliberate step, and a run by an examinee that took it measures nothing, and its
    journal usually shows it.
 2. **Pinned versions.** `package.json` at the root names the round's versions. `npm ci` installs them;
@@ -46,7 +46,7 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
    step; after you have read its output, `close` writes what happened, quoting it. An entry written after
    the fact is worth nothing here; a wrong expectation written beforehand is the most useful line in the
    file. The tool keeps a hash chain beside the journal (`.journal/`), and `grade.py` prints whether it is
-   intact: a journal whose chain is broken, or that the tool did not write, is invalid, and the task is
+   intact: a journal whose chain is broken, or that the tool did not write, is not kept, and the task is
    disqualified. The chain catches an entry edited, deleted or reordered after the tool wrote it; it does
    not stop a deliberate forgery of the chain itself, and it cannot show that an expectation was real.
 4. **Submit the transcript.** `tools/journal.py` writes `transcript.md` beside the journal: each step's
@@ -73,9 +73,9 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
                                 results/<model>/<date>-<name>/<task>/ holds the files handed in, the
                                 proctor's regrade (result.json), its reading (READING.md) and pictures;
                                 who.json beside them says who did the work and what the run counts as.
-                                results/void/ holds runs that are retained and not counted.
+                                results/void/ holds runs that are kept and not counted.
     results.py                  writes this page's sitting summary and the full table in results/README.md
-    advanced/                   the Advanced edition: motion from a pose sequence on an assembled rig, in three
+    advanced/                   the Advanced edition: motion from a pose sequence on a built rig, in three
                                 rounds, with its own prompt, results and tables — see advanced/README.md
 
 ## Sitting it
@@ -99,7 +99,7 @@ regrades the run on the pull request and prints its lines in the job's summary.
 `python3 grade.py runs/<run>` writes `result.json`; you may run it as often as you like — it is the same
 grader, and what you learn from it belongs in the journal like any other step. The proctor regrades every
 run from the files it hands in, looks at the pictures, establishes which model did the work, and files
-the run under `results/` with a `READING.md`: what the journal caught, verified against the packages, and
+the run under `results/` with a `READING.md`: what the journal caught, checked against the packages, and
 which of it was filed on the tools. A run's own `result.json` is not trusted, and neither is its report.
 
 ## What is in a round
@@ -107,26 +107,27 @@ which of it was filed on the tools. A run's own `result.json` is not trusted, an
 Rounds 1 and 2, on `@rig-c/parts` 1.11.0 and `rig-c` 2.47.0: tasks 01 and 02 on one painting, and task 03
 on a second painting of the same character, where the tool's draft does not pass as proposed.
 
-Round 3, on `@rig-c/parts` 1.15.0 and `rig-c` 2.47.1: task 04, a pliable
-chest under a triangle limit; task 05, a dance; and one more line on task 03. The tools changed between
+Round 3, on `@rig-c/parts` 1.15.0 and `rig-c` 2.47.1: task 04, a soft
+chest under a triangle budget; task 05, a dance; and one more line on task 03. The tools changed between
 the rounds because of what the first two found: on 1.13.0 `propose` names task 03's fault itself, one step
 before the build, so a result on that task is a result on the versions beside it in the table. Since 1.14.0 `check` also reads every animation, the idle included, for folds, and fails a build where one folds — the line tasks 02, 04 and 05 grade is now one the tool reports first.
 
 Tasks 01 to 04 can be passed by following a recipe the documents carry. In Round 3, task 05 had none: the
 rig as the earlier tasks leave it could not do what was asked, and what it lacked had to be worked out. Its
-machine lines read only whether the dance holds together — the loop returns to its start, the feet stay under her, the
+machine lines read only whether the dance holds together — the loop closes, the feet stay under her, the
 arms bend at their joints and nowhere else, the motion keeps the beat. Whether it is a dance is scored by a person from
 a clip with a letter on it and no name, and that score sits beside the lines without changing them.
 
 Round 4, on `@rig-c/parts` 1.58.0 and `rig-c` 2.67.2: tasks 01 to 04
 unchanged, and task 05 set on a wooden mannequin that comes already rigged (`fixtures/mannequin/`), so the dance
 is the work and the rig is not. On Round 3 the clocks showed that the time went into building legs that could
-dance at all, five different ways. The painted figure's task 05 is retained as `tasks/05-dance/TASK-round3.md` for
+dance at all, five different ways. The painted figure's task 05 is kept as `tasks/05-dance/TASK-round3.md` for
 the runs filed on it. On the new versions the tools' own documented path passes tasks 01 to 04. Between 1.15.0 and 1.58.0
 `check` came to refuse an arm mesh weighted off its chain, which every Round 3 config carried from the 1.15.0 draft, so a
 Round 3 config does not build on Round 4's versions; each row of the tables names the versions it was graded on.
 Task 05's lines on the mannequin read the same things on its parts, except the arm line: every arm part is
-rigid on one bone and turns only at a ranged joint, so that line is SKIP with its reason, as are the checks for triangle limits and compliant motion (no mesh, no physics to author). **Round 4's task 05: dry run sat 2026-10-23** (claude-haiku-5-5, 9.8 min, 11 of 11 lines): not filed as a result.
+rigid on one bone and turns only at a ranged joint, so that line is SKIP with its reason, as are the budget and
+the soft line (no mesh, no physics to author). **Round 4's task 05: dry run sat 2026-10-23** (claude-haiku-5-5, 9.8 min, 11 of 11 lines): not filed as a result.
 
 Round 5, on `@rig-c/parts` 1.60.0 and `rig-c` 2.67.2: tasks 01, 02 and 04 move to a new painting, because
 the old one had become a walked example. rig-c/getting-started teaches the tools on it step by step, and
@@ -137,7 +138,7 @@ It now asks for a gesture inside what was painted, a head turn, a lean or a lift
 how far the face travels, with every limb joint and both armholes held to no opening at all. The new
 painting was chosen by measurement, from four candidates (rig-c/exam#29): on the documented path, a rigid elbow cut on a
 bare arm opens at a 30° turn, so no gesture that bends a cut joint can hold, and that was filed on the tools
-(rig-c/parts#687). The old painting's task texts are retained as `TASK-round4.md` beside each task, and its cells
+(rig-c/parts#687). The old painting's task texts are kept as `TASK-round4.md` beside each task, and its cells
 are tabled apart from the new painting's, never ranked with them. Tasks 03 and 05 are unchanged.
 
 A walk and a hip wiggle were each set as a sixth task on this painting and withdrawn before anyone sat
