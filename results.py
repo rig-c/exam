@@ -171,11 +171,9 @@ def results_page(rs):
     return '\n'.join(L)
 
 def readme_block(rs):
-    L = tables(rs, '', False)
-    L += ['', 'Minutes are for the tasks sat, together; tokens are fresh input plus output, cached input left out; the dance is judged by a person who does not know whose clip it is. [The full table](results/README.md) has who sat each run and how,',
-          'the journals\' counts and the versions; [the proctor\'s report](results/REPORT.md) says what the journals found',
-          'in the tools and in this exam.', '', task05_text(rs), '', painting_text(rs)]
-    return '\n'.join(L)
+    """Only the sitting count belongs in the examinee's checkout; details stay in results/."""
+    return (f'**{sum(counted(r) for r in rs)} independent sitting(s) so far.**\n\n'
+            '[Full results](results/README.md).')
 
 def profile_block(rs):
     """A short table for the organisation's front page: one row per model that did the work, counted sittings only."""
