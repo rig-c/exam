@@ -1,0 +1,134 @@
+{
+  "model": "gpt-6-astra",
+  "model_id": "gpt-6-astra",
+  "how": "fresh Codex retake; two serialized turn_context records name gpt-6-astra; effort unavailable (null)",
+  "counts": "independent sitting",
+  "session": "01a172d6-aaeb-7410-849c-82747fa5456f",
+  "sourceCommit": "0cbe0699584b928fb8ca3c537a36743b5dfe5874",
+  "submittedCommit": "b564796dad8b1fc211cba1d8241822e6f0b9206e",
+  "sourceVerification": "Operator verified remote run/gpt-6-astra at b564796dad8b1fc211cba1d8241822e6f0b9206e and its ancestry merge into base ead680f, with unchanged grader/tasks/fixtures/pins/journal/PROMPT. Published @rig-c/parts 1.60.0 / rig-c 2.67.2 pins, installed versions, and on-disk grader/package-lock hashes were verified before grading.",
+  "promptSHA256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6",
+  "README_SHA256": "7758944ad683699ee3afe1936880b54f11d41ac00400d99652b0a4ae21a1f423",
+  "JOURNAL_SHA256": "2e30a9bbec3ffda0cc5e853cb2ce43c95bb6897ef37cd1ea16d6fb31c8e7ac67",
+  "packageLockSHA256": "28974e02dc759d2aafb8b5f32d3d4afce12b18abd1a43231e927451b2ec1ebdb",
+  "sessionLogSHA256": "40a373b429e952aa890213e99479afc2f7cce6faf39c68a48c4fdc08e6c49c2d",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "versions": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "modelContexts": [
+    {
+      "model": "gpt-6-astra",
+      "turn": "01a172d6-cc91-7803-9cdb-b8751a503827",
+      "scope": "solve/report"
+    },
+    {
+      "model": "gpt-6-astra",
+      "turn": "01a172e4-6b6e-7870-8be6-34b6bdfc490b",
+      "scope": "post-hand-in acknowledgement"
+    }
+  ],
+  "reasoningEffort": {
+    "status": "unavailable",
+    "source": "turn_context collaboration settings record null; no effort inferred"
+  },
+  "minutes": 13.3,
+  "minutes_read_from": "sum of final transcript-clock grader minutes, rounded per task; raw UTC clocks below",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T11:34:26Z",
+      "finished": "2026-10-25T11:36:52Z",
+      "seconds": 146.0
+    },
+    "02-move": {
+      "started": "2026-10-25T11:36:53Z",
+      "finished": "2026-10-25T11:38:24Z",
+      "seconds": 91.0
+    },
+    "03-correct": {
+      "started": "2026-10-25T11:38:24Z",
+      "finished": "2026-10-25T11:41:03Z",
+      "seconds": 159.0
+    },
+    "04-soft": {
+      "started": "2026-10-25T11:41:04Z",
+      "finished": "2026-10-25T11:43:44Z",
+      "seconds": 160.0
+    },
+    "05-dance": {
+      "started": "2026-10-25T11:43:44Z",
+      "finished": "2026-10-25T11:47:49Z",
+      "seconds": 245.0
+    }
+  },
+  "rawTaskSeconds": 801.0,
+  "tokens": {
+    "input_fresh": 143328,
+    "input_cached": 11811968,
+    "output": 18108
+  },
+  "tokens_read_from": "frozen solve/report turn counter (line 719), cross-checked against 108 usage records; cached input subtracted from input for fresh; post-hand-in ACK excluded; no estimate",
+  "journal": {
+    "entries": 13,
+    "WTF": 1,
+    "chains": "all five intact",
+    "perTaskEntries": [
+      4,
+      1,
+      4,
+      3,
+      1
+    ],
+    "perTaskWTF": [
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  "canonicalExamTextMatchedInSessionLog": true,
+  "host_context": {
+    "scope": "frozen retake log, solving/report turn through 11:48:51Z; ACK turn begins 11:48:54Z",
+    "initialPrefix": {
+      "lines": [
+        1,
+        18
+      ],
+      "SHA256": "f6b50fecf76fa9bd538ac4189fed828043db665cada62c2588b034a8ab3464f7",
+      "match": "exact byte match with existing active-retake prefix receipt"
+    },
+    "directObservation": "No actual MEMORY_SUMMARY body serialized in the full solving/report context; none in this frozen ACK segment either. No dedicated memory lookup observed.",
+    "configuration": "HQ/owner reports use_memories=false before creation through hand-in, restored true afterward. Proctor neither read nor changed that configuration.",
+    "limit": "Log absence is not proof of runtime non-injection or a never-injected whole-thread claim. Historical first sitting 01a172d4 is a separate void record and is unchanged."
+  },
+  "transportDisclosure": {
+    "task05Finished": "2026-10-25T11:47:49Z",
+    "commitObserved": "2026-10-25T11:48:02.010Z",
+    "skillReadOutput": "2026-10-25T11:48:11.089Z",
+    "pushSuccessOutput": "2026-10-25T11:48:13.161Z",
+    "solveReportComplete": "2026-10-25T11:48:51.278Z",
+    "ruling": "Requested transport/reporting exception: outside-clone agent-bridge skill read after all task finishes and hand-in commit, while push was in flight; success was confirmed later. Disclosed by examinee, no submitted answer change or answer access observed. Not described as after confirmed push."
+  },
+  "accessAudit": "All 107 serialized top-level calls and nested tools inspected. No observed answer-source read, delegation, dedicated memory lookup, or unwrapped grader. All five grader invocations journal-wrapped. This bounded call audit does not prove absolute independence.",
+  "cheatingTraces": {
+    "prebuildForeknowledge": "Task01 and03 precise squeeze predictions were read from actual proposer LINT before repair; task02 references TASK and physics recipe; task04 expects an uncertain budget then logs397 as WTF before refining; task05 derives names/ranges/IK from fixture. No unexplained precise prior-output foreknowledge observed.",
+    "authoredNumericMatch": "Compared 118 prior filed input JSON files: no exact authored patch tuple, full dance key-track, or greeting timing match. Supplied task/reference, recipe/default, and proposer values excluded; shared generic values alone are not copying evidence."
+  },
+  "task05FixtureContract": {
+    "onlyConfigChange": "motion.animations_from",
+    "allOtherFixtureFieldsIdentical": true,
+    "onlyAddedMotion": "dance",
+    "keyedConstraints": [],
+    "keyedTrackCount": 10
+  },
+  "judge": null,
+  "proctorNotes": [
+    "Independent local Mac regrades on pinned published packages; explicit proctor exception, no Nova or full suites. Examinee configs were not repaired.",
+    "Original hand-in inputs, journal chain, transcript and step-output bytes preserved. Selfgrades and full raw grading/session audit remain private. HQ-approved scoped raw-evidence path-integrity exception: original journal-chain, transcript and captured step-output paths are retained byte-for-byte under this result root; new proctor prose and receipts use normalized paths.",
+    "Machine claim 38/38 and journal claim 1 WTF reproduced; three mannequin lines are SKIP, not passes. Four dance seam warnings remain outside the graded bars.",
+    "Every generated contact sheet was read before this lane receipted and deleted its own numbered frames. Private dance clip receipt includes 24 decoded AAC onsets. No previous Astra judge mark reused.",
+    "Observed wall times are from a shared host, not an isolated speed benchmark."
+  ]
+}

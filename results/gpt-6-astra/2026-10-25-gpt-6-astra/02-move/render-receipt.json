@@ -1,0 +1,205 @@
+{
+  "spec": "exam-proctor-render-receipt/1",
+  "task": "02-move",
+  "command": "python3 grade.py results/gpt-6-astra/2026-10-25-gpt-6-astra/02-move",
+  "graderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "groups": [
+    {
+      "directory": "folds_greet/greet",
+      "frames": 30,
+      "orderedPNG_SHA256": "4c7b8d65946e1f71637c86f78e5d210661f58e1a352ca249b76f292768920587",
+      "viewport": {
+        "x": -349.99938707664415,
+        "y": 32.005334616096206,
+        "width": 717.2761213413921,
+        "height": 1187.855965365402,
+        "scale": 0.21551434472213188,
+        "pixelWidth": 155,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "greet",
+          "animation": "greet",
+          "fps": 12,
+          "sampled": 30,
+          "written": 30,
+          "stride": 1,
+          "duration": 2.4166666666666665,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "72e5d1512b3dafde1e3d151cfe0f89fe9ae2b65c232186af0d1c8b5029b1cbca",
+      "folds.json_SHA256": "e1b13afb4a6ad8d17812ba566086b9e5c0925a26a79ad9ab99cdcfae6f6b9f35"
+    },
+    {
+      "directory": "folds_idle/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "e0da8f08fb313d49742af84264d21dde2407e478c288fd78192d81002b5f8718",
+      "viewport": {
+        "x": -349.99938707664415,
+        "y": 32.005334616096206,
+        "width": 717.2761213413921,
+        "height": 1187.855965365402,
+        "scale": 0.21551434472213188,
+        "pixelWidth": 155,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "2be2c95da9d0a138747210821b3a21e196fcfc0dd1fa6fcf17bf752d26849381",
+      "folds.json_SHA256": "d9851c7a6c9e3b61455a2d31d428963358c983dd40a33cadb04bbee50728c19a"
+    },
+    {
+      "directory": "out/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "9dfd59da441601d87603bc27954a8af01f407245f9a16bd6bb87b3b595a4c411",
+      "viewport": {
+        "x": -349.99938707664415,
+        "y": 32.005334616096206,
+        "width": 717.2761213413921,
+        "height": 1187.855965365402,
+        "scale": 0.5387858618053297,
+        "pixelWidth": 386,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "97e6759578cb9509f0370b9f729b970d8798819ad477f876013350b88cf7dba5"
+    },
+    {
+      "directory": "seam_greet/greet",
+      "frames": 30,
+      "orderedPNG_SHA256": "4c7b8d65946e1f71637c86f78e5d210661f58e1a352ca249b76f292768920587",
+      "viewport": {
+        "x": -349.99938707664415,
+        "y": 32.005334616096206,
+        "width": 717.2761213413921,
+        "height": 1187.855965365402,
+        "scale": 0.21551434472213188,
+        "pixelWidth": 155,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "greet",
+          "animation": "greet",
+          "fps": 12,
+          "sampled": 30,
+          "written": 30,
+          "stride": 1,
+          "duration": 2.4166666666666665,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ]
+    }
+  ],
+  "numberedFramesDeletedAfterSheetReading": true,
+  "retainedSheets": [
+    "pictures/folds_greet-greet.png",
+    "pictures/folds_idle-idle.png",
+    "pictures/seam_greet-greet.png"
+  ],
+  "commands": [
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation idle --fps 12 --folds --geometry --out <proctor-root>/.grade/02-move/folds_idle",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation greet --fps 12 --folds --geometry --out <proctor-root>/.grade/02-move/folds_greet",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation greet --fps 12 --seam topwear:handwear_r,topwear:handwear_l --out <proctor-root>/.grade/02-move/seam_greet"
+  ],
+  "cwd": ".grade/02-move",
+  "examinedSheets": [
+    {
+      "source": "folds_greet/greet/contact.png",
+      "retained": "pictures/check-folds_greet-greet-contact.png",
+      "sha256": "d2d680962c36e957269fabc393e223622dc5140fd05c9468bdea5c854600cae5",
+      "read": true
+    },
+    {
+      "source": "folds_idle/idle/contact.png",
+      "retained": "pictures/check-folds_idle-idle-contact.png",
+      "sha256": "09ccedee1a314b4e41131d717792761696690e0bd63c769e9513fab468f0f33d",
+      "read": true
+    },
+    {
+      "source": "out/check/contact.png",
+      "retained": "pictures/check-out-check-contact.png",
+      "sha256": "b97a7cbcdef62ee91324048d181102801fba0c6c98e09d347cfc01f386586e86",
+      "read": true
+    },
+    {
+      "source": "out/check/idle_frames/idle/contact.png",
+      "retained": "pictures/check-out-check-idle_frames-idle-contact.png",
+      "sha256": "b97a7cbcdef62ee91324048d181102801fba0c6c98e09d347cfc01f386586e86",
+      "read": true
+    },
+    {
+      "source": "seam_greet/greet/contact.png",
+      "retained": "pictures/check-seam_greet-greet-contact.png",
+      "sha256": "d2d680962c36e957269fabc393e223622dc5140fd05c9468bdea5c854600cae5",
+      "read": true
+    }
+  ],
+  "cleanupScriptSHA256": "2413d8174d819c28a6dd43c2981929df1a7e3947964c75b03df4e9fb100bcbca",
+  "rawGradeLogSHA256": "d13f100e6ce9da932de8d440943eff8e0ee4b9fb61782ce973b8da108f8f5a6f",
+  "allNumberedFramesRemaining": 0
+}
