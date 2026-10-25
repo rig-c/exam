@@ -1,0 +1,5 @@
+## Put the posed joint angle beside a seam warning
+- **I was trying to:** understand the left knee seam warning in a dance whose IK, foot-contact line and overall check passed, and decide whether my dip exceeded the declared joint range.
+- **The tool gave me:** `[check]     WARN seam "thigh_l|shin_l" opens on 33 frame(s) [0-2, 4-7, 11-14, 16-19, 23-26, 28-31, 35-38, 40-43, 47-48] max 47 px in "dance"` and `SEAM_OVER_RANGE: PASS`. These appear in task05 entry1 output through the grader build log; the journal end records the inspection.
+- **What would have helped:** a check diagnostic that prints the posed relative joint angle at the worst seam frame, its declared range, and a direct path to that frame's seam overlay. Then I could distinguish a range excursion from a seam that opens inside the tested range without deriving angles myself.
+- **Cost:** about one minute reading the build warnings and inspecting the existing contact sheet after the grader. I confirmed the dance passes the machine lines; I did not resolve the residual seam warnings and did not change the supplied rig.
