@@ -1,0 +1,5 @@
+{
+  "key": "2026-10-25-gpt-5.6-luna-03-correct",
+  "assemble": {"rig_scale": 0.5},
+  "seethrough": {"resolution": 1024, "steps": 30, "seed": 42, "offload": true, "head_box": [538, 158, 1100, 720]}
+}
