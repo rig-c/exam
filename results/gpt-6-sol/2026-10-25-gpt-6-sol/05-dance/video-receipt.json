@@ -1,0 +1,23 @@
+{
+  "spec": "exam-blind-dance-clip/1",
+  "source": "proctor grade pose_out_check_build_dance/dance@24fps",
+  "sourceFrames": 97,
+  "encodedFrames": 96,
+  "closingDuplicateOmitted": true,
+  "scale": 3,
+  "filter": "nearest",
+  "audio": false,
+  "stream": {
+    "codec_name": "h264",
+    "width": 576,
+    "height": 768,
+    "sample_aspect_ratio": "1:1",
+    "r_frame_rate": "24/1",
+    "duration": "4.000000",
+    "nb_frames": "96"
+  },
+  "bytes": 414397,
+  "sha256": "0681604c38ad47b536a6799f4ac0afdad1cc8770a1d800249cace6ab43c0fd67",
+  "humanJudgement": null,
+  "command": "ffmpeg -framerate 24 -i <grade>/pose_out_check_build_dance/dance@24fps/f%04d.png -frames:v 96 -vf scale=iw*3:ih*3:flags=neighbor,setsar=1 -c:v libx264 -threads 2 -pix_fmt yuv420p -crf 18 -an -map_metadata -1 <blind-clip>.mp4"
+}

@@ -1,0 +1,81 @@
+{
+  "model": "gpt-6.1-sol",
+  "session": "01a17239-17cc-79d2-8155-a6dca7372e27",
+  "how": "fresh Codex Desktop session; model and effort read from turn_context",
+  "counts": "stopped before any task — exam defect #42",
+  "promptCommit": "3b007bdf2084874458c4f3ee9db60d90239e9d6c",
+  "promptSHA256": "6d3b4740ec41169ec014588d628b3029a0010ffdfeee28227e3550b18b8a886c",
+  "deliveredPromptSHA256": "b9103a2e866951fcaf4fa96a47cc62b01f221726323aa8824e10e5a3be7a537e",
+  "README_SHA256": "6bb67918d856bdf4b6016399b3848dcbbdea026d267c4a9146f75d32cc4944ed",
+  "effortContexts": [
+    {
+      "model": "gpt-6.1-sol",
+      "effort": null
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "effort": null
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "effort": null
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "effort": null
+    }
+  ],
+  "tasksStarted": 0,
+  "tasksSubmitted": 0,
+  "subagentInvocations": [],
+  "toolsObserved": [
+    "exec_command",
+    "write_stdin"
+  ],
+  "subagentAudit": "custom tool orchestration and function-call inputs inspected; no delegation invocation observed",
+  "lifecycle": [
+    {
+      "timestamp": "2026-10-25T08:42:35.847Z",
+      "type": "task_started"
+    },
+    {
+      "timestamp": "2026-10-25T08:42:49.520Z",
+      "type": "task_complete"
+    },
+    {
+      "timestamp": "2026-10-25T08:43:18.568Z",
+      "type": "task_started"
+    },
+    {
+      "timestamp": "2026-10-25T08:43:22.044Z",
+      "type": "task_complete"
+    },
+    {
+      "timestamp": "2026-10-25T08:43:46.785Z",
+      "type": "task_started"
+    },
+    {
+      "timestamp": "2026-10-25T08:44:27.173Z",
+      "type": "task_complete"
+    },
+    {
+      "timestamp": "2026-10-25T08:45:02.606Z",
+      "type": "task_started"
+    },
+    {
+      "timestamp": "2026-10-25T08:45:08.001Z",
+      "type": "task_complete"
+    }
+  ],
+  "minutes": null,
+  "minutes_read_from": "No task transcript exists because no task was started. Session lifecycle is not task duration.",
+  "proctorRuling": "HQ directed results/void, not a numeric failure; defect #42 resolved by PR #43 at c014e3cf.",
+  "close": "Codex bridge close unsupported; retained and never reused for another sitting.",
+  "tokens": {
+    "input_fresh": 62381,
+    "input_cached": 521472,
+    "output": 1477
+  },
+  "tokens_read_from": "session cumulative total_token_usage at hand-in",
+  "sessionLogSHA256": "0334d2c4378ce79a5d8efc5f227dad960f9bc69321fe6a592d1b040620640bb4"
+}

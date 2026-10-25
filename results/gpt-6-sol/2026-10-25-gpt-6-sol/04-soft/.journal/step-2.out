@@ -1,0 +1,2 @@
+  FAIL  CONTOUR_COVERAGE: contour mesh "topwear" — 8 of 27280 art pixel(s) (alpha above 8) lie outside the mesh at tolerance 2 px and margin 1 px; every art pixel inside is required — art is never clipped, so raise the margin or lower the tolerance (see rig-parts guide CONTOUR_COVERAGE)
+refused: 1 problem(s)
