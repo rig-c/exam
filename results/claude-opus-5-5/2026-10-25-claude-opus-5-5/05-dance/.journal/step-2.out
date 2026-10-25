@@ -1,0 +1,9 @@
+rigc render
+  ..    skeleton /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-05-dance/work/out/check/build/skeleton.json
+  ..    atlas    /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-05-dance/work/out/check/build/skeleton.atlas
+  ..    poser    rigc core — /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-05-dance/work/out/check/build/skeleton.model.json
+  ..    450x512px at 12 fps, 1 set(s) -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-05-dance/work/render1
+  ..    physics: none in this rig — it declares no physics constraint, so no frame steps one
+  ..    dance            49 frame(s), 4.000s + contact.png + seam.json (1 of 1 pair(s) open) -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-05-dance/work/render1/dance
+  ..    seam     "dance": seam "thigh_l" | "shin_l" opens on 49 of 49 frame(s) read [0-48] at 12 fps, max 43 px — gap on 33 frame(s) [0-2, 5-7, 10-14, 17-19, 22-26, 29-31, 34-38, 41-43, 46-48], worst frame 0 (t=0.0000s): 1 px (1.00 units² at 1.0000 units a px) in world box x [156.00, 157.01] y [357.00, 358.01] (1.00 × 1.00); ghost on 49 frame(s) [0-48], worst frame 0 (t=0.0000s): 43 px (43.00 units² at 1.0000 units a px) in world box x [126.00, 163.01] y [351.00, 361.01] (37.00 × 10.00)
+rigc: wrote /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-05-dance/work/render1/frames.json

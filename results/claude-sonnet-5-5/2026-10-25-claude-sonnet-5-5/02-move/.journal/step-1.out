@@ -1,0 +1,11 @@
+exit=0
+rig-parts build: runs/2026-10-25-claude-sonnet-5-5-02-move/config.json -> runs/2026-10-25-claude-sonnet-5-5-02-move/out, seam rule near-white, projection rule core, page edges free, pack shape polygon
+[rig]   animations beside the idle, from /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-sonnet-5-5/exam-claude-sonnet-5-5/runs/2026-10-25-claude-sonnet-5-5-02-move/animations.json as written: look
+[check] rig-parts check: runs/2026-10-25-claude-sonnet-5-5-02-move/out/rig -> runs/2026-10-25-claude-sonnet-5-5-02-move/out/check
+[check]   beside the idle: 1 animation(s), look — built and gated by rigc with the rig; ANIMATIONS_DO_NOT_FOLD reads each for folds and FEET_STAY_LEVEL for how far the feet turn, every other bar here reads the idle
+[check]   TIP_OVER_ROOT: PASS — instrument geometry; parts part handwear_l, root_rig_px 1.369, tip_rig_px 6.911, ratio 5.05 | part handwear_r, root_rig_px 1.162, tip_rig_px 6.885, ratio 5.923 | part bottomwear, root_rig_px 0.202, tip_rig_px 0.589, ratio 2.912; ratio_floor 1.4725
+[check]   TEXTURE_STRETCH: PASS — meshes 8; triangles 616; frames 41; severity 1.119; severity_ceiling 1.926544; worst slot hairpin, triangle 11, vertices 20 | 19 | 18, edge 20 | 19, frame 0, ratio 0.894; max_ratio 1.111; min_ratio 0.894; per_mesh slot hair_back, triangles 138, max_ratio 1.064, max_at triangle 128 (vertices 90 93 91), edge 90-93, idle frame 26, min_ratio 0.939, min_at triangle 128
+[check]   ANIMATIONS_DO_NOT_FOLD: PASS — 2 animation(s) read by rigc render --folds at 12 fps, with its 14 physics constraint(s) on and off (idle, look): 0 folding mesh(es), 0 not declared in may_fold (<= 0)
+[check]   CLOTH_SETTLES: CLEAR — 4 physics chain(s) read by their tip on the idle as rendered (41 frame(s) at 12 fps over 3.333 s, physics on): 0 of them settle before the loop's length — 0 warning(s), never a bar; a chain settles at the first frame from which its tip moves slower than 0.01694 rig px/s to the idle's last frame — half the slowest tip an idle key drives on the public examples (scarf
+[check] check: PASS; 11 of 12 bar(s) measured, 1 skipped (FEET_STAY_LEVEL); 0 warning(s) (CLOTH_SETTLES, not a bar)
+build: PASS — the packed atlas is the artifact; parts/ and rig/ are the intermediates it was made from

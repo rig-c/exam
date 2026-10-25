@@ -1,0 +1,208 @@
+{
+  "model": "claude-fable-5-1",
+  "model_id": "claude-fable-5-1",
+  "how": "HQ-created Claude sitting; every serialized assistant model field audited by phase, with streaming chunks deduplicated",
+  "counts": "independent sitting; host and protocol boundaries disclosed",
+  "session": "3d35e33f-14e1-4696-91df-5d00c95db2d0",
+  "appSession": "local_babf4854-8f9d-4015-881c-4c2a4fb70d9b",
+  "sourceCommit": "0cbe0699584b928fb8ca3c537a36743b5dfe5874",
+  "submittedCommit": "91c0ef95055d47fbd14d89343154ca9153b8ddc6",
+  "sourceVerification": "Operator verified exact desktop identity, local hand-in commit/remote disposition and unchanged original grader/tasks/fixtures/pins. Grading retains the original0cbe sitting source; on-disk grader/PROMPT/JOURNAL/lock hashes and installed1.60.0/2.67.2 versions verified.",
+  "handin": {
+    "localBranch": "run/claude-fable-5-1-2026-10-25",
+    "remoteRef": "run/claude-fable-5-1-2026-10-25",
+    "remoteSHAAtCapture": "91c0ef95055d47fbd14d89343154ca9153b8ddc6",
+    "remoteMatched": true,
+    "collection": "frozen local commit archive",
+    "pushChronology": [
+      {
+        "callEvent": "submitted-session.jsonl:1345",
+        "callTime": "2026-10-25T12:15:41.477Z",
+        "resultEvent": "submitted-session.jsonl:1346",
+        "resultTime": "2026-10-25T12:15:42.256Z",
+        "disposition": "rejected"
+      },
+      {
+        "callEvent": "submitted-session.jsonl:1363",
+        "callTime": "2026-10-25T12:15:52.926Z",
+        "resultEvent": "submitted-session.jsonl:1364",
+        "resultTime": "2026-10-25T12:16:04.820Z",
+        "disposition": "new remote ref confirmed by stdout"
+      }
+    ]
+  },
+  "handinNote": "Initial push was rejected; local branch was renamed to the dated name and the matching dated remote ref then succeeded. Alternate ref is a literal-prompt deviation, non-void under HQ.",
+  "promptSHA256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6",
+  "README_SHA256": "7758944ad683699ee3afe1936880b54f11d41ac00400d99652b0a4ae21a1f423",
+  "JOURNAL_SHA256": "2e30a9bbec3ffda0cc5e853cb2ce43c95bb6897ef37cd1ea16d6fb31c8e7ac67",
+  "packageLockSHA256": "28974e02dc759d2aafb8b5f32d3d4afce12b18abd1a43231e927451b2ec1ebdb",
+  "sessionLogSHA256": "5a61a5a4e372e2f008d23e3672059feb29872e52d684eb8f897849614339e381",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "versions": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "assistantModelPhases": [
+    {
+      "phase": "prelude",
+      "model": "claude-opus-5-5",
+      "records": 1,
+      "uniqueIDs": 1
+    },
+    {
+      "phase": "solve/report",
+      "model": "claude-fable-5-1",
+      "records": 194,
+      "uniqueIDs": 92
+    }
+  ],
+  "unknownAssistantModelMarkers": [],
+  "modelPhaseBoundary": "Fable exam message is frozen line48; preceding Opus message is ready-only with no tool call",
+  "tokens": {
+    "input_fresh": 363519,
+    "input_cached": 26274664,
+    "output": 86816
+  },
+  "tokens_read_from": "deduplicated native Claude assistant message.id usage; fresh=input_tokens+cache_creation_input_tokens; cached=cache_read_input_tokens; cache breakdowns not added twice",
+  "tokenScope": {
+    "phase": "solve/report only",
+    "uniqueAPIMessages": 92,
+    "streamingProof": "All chunks per message.id carry identical complete usage/model/phase; raw iteration sums/cache-creation breakdowns cross-checked.",
+    "preludeExcluded": true,
+    "excludedPrelude": {
+      "model": "claude-opus-5-5",
+      "phase": "ready-only hold before the examination",
+      "uniqueAPIMessages": 1,
+      "tokens": {
+        "input_fresh": 68109,
+        "input_cached": 45308,
+        "output": 4
+      }
+    }
+  },
+  "minutes": 40.6,
+  "minutes_read_from": "sum of final grader per-task transcript-clock minutes, each rounded; raw UTC/seconds retained below",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T11:33:41Z",
+      "finished": "2026-10-25T11:41:36Z",
+      "seconds": 475.0
+    },
+    "02-move": {
+      "started": "2026-10-25T11:41:56Z",
+      "finished": "2026-10-25T11:49:55Z",
+      "seconds": 479.0
+    },
+    "03-correct": {
+      "started": "2026-10-25T11:49:55Z",
+      "finished": "2026-10-25T11:56:44Z",
+      "seconds": 409.0
+    },
+    "04-soft": {
+      "started": "2026-10-25T11:56:44Z",
+      "finished": "2026-10-25T12:01:36Z",
+      "seconds": 292.0
+    },
+    "05-dance": {
+      "started": "2026-10-25T12:01:36Z",
+      "finished": "2026-10-25T12:14:38Z",
+      "seconds": 782.0
+    }
+  },
+  "rawTaskSeconds": 2437.0,
+  "graderInvocationAudit": {
+    "actualInvocations": 7,
+    "matchedEntries": 7,
+    "outsideEntry": 0,
+    "beforeStart": 0,
+    "afterFinish": 0,
+    "clockBoundaryUnavailable": 0,
+    "coverage": "All first-occurrence tool_use.id Bash input bodies in the frozen submitted log were inspected for grader executions, including compound journal commands. Returned result evidence establishes the listed executions. Shell text/prose and source reads are not counted; no additional grader execution identified in that inspected trace. Does not claim unavailable runtime intervals or unrecorded external wrappers were observed.",
+    "coverageLimit": "Frozen log coverage only; no new collector, no live process trace or proof of nonserialized host context. Own persisted-output Reads are represented by returned log text, whose host truncation is retained as a gap.",
+    "clockLimit": "No listed grader invocation falls outside the retained literal task clocks; non-grader omissions remain separately disclosed."
+  },
+  "host_context": {
+    "provenance": "automatic instructions attachments and first host API request-shape/blob references before first assistant/tool activity; not inferred from current files",
+    "globalGuide": {
+      "bytes": 57649,
+      "sha256": "0cec1b5a99ec4a3cd9721925f79369167ca165214a66403a1524196f8df59201",
+      "quote": "판정선은 측정 전에 적는다.",
+      "quoteLine": 239,
+      "delivery": "automatic instructions attachment; not an observed examinee Read"
+    },
+    "ancestorGuide": {
+      "bytes": 36868,
+      "sha256": "cd9f9438103a561b5576507745bef4cbdc115bfef31c5549095017350648c646",
+      "delivery": "automatic instructions attachment; not an observed examinee Read"
+    },
+    "backgroundQuote": "This session is an independent exam sitting. Its first message is only a hold; the exam prompt arrives as the next message. No person is available to help during the sitting.",
+    "observedCategories": "private persona/role, HQ/delegation/verification workflows; explicit examination background and host shared-notes suggestion; no task-specific answer/config/grader hint found in the historical guide text",
+    "currentComparison": "Serialized historical global guide differs from the later58000-byte current snapshot: it lacks the later model-exam policy line. Current mtime/text is not historical proof.",
+    "soughtVsInherited": "Global/ancestor instructions were automatically attached, with no dedicated examinee global-guide/memory Read observed. Deliberate outside-clone operations are separately disclosed in accessAudit.",
+    "firstRequestCoverage": [
+      {
+        "phase": "prelude",
+        "missingBlobReferences": 0,
+        "shapeCoverage": "serialized"
+      },
+      {
+        "phase": "solve/report",
+        "missingBlobReferences": 1,
+        "shapeCoverage": "serialized"
+      }
+    ],
+    "coverageGap": "Only serialized request/context and submitted-log activity are observed. Missing references/truncation remain gaps; no absence-of-runtime-memory or absolute independence claim.",
+    "initialCallPoints": [
+      {
+        "phase": "prelude",
+        "requestEvent": "submitted-session.jsonl:29",
+        "time": "2026-10-25T11:31:42.605Z",
+        "model": "claude-opus-5-5",
+        "firstAssistantEvent": "submitted-session.jsonl:35",
+        "firstToolEvent": null
+      },
+      {
+        "phase": "solve/report",
+        "requestEvent": "submitted-session.jsonl:58",
+        "time": "2026-10-25T11:32:36.561Z",
+        "model": "claude-fable-5-1",
+        "firstAssistantEvent": "submitted-session.jsonl:64",
+        "firstToolEvent": "submitted-session.jsonl:66"
+      }
+    ]
+  },
+  "accessAudit": {
+    "observedUniqueToolCalls": 143,
+    "scope": "all first-occurrence tool_use.id inputs in the frozen submitted log; replayed tool blocks/null timestamps do not create executions",
+    "otherExamineeAnswerContentReadObserved": false,
+    "delegationObserved": false,
+    "dedicatedMemoryReadObserved": false,
+    "boundaryDisclosures": [
+      "Some package output was read through this session’s own host-persisted tool-result files outside the clone; those are distinct from sought global-guide/memory reads."
+    ],
+    "limit": "An intact chain proves recorded entries, not complete command coverage. Shell bundling, direct numeric-output inspections and literal boundary exceptions are disclosed; grade.py source reads are source reads and not retroactively voided.",
+    "graderSourceReads": "Clone grade.py source reads were observed in this sitting. Historical source reads are retained without retroactive void under HQ ruling."
+  },
+  "numericAudit": "No exact full authored animation or contour placement/sampling tuple matched the 168 compared prior filed task-level JSON files. Given task references, proposer values, recipe/defaults and generic loop constants are excluded as copying evidence.",
+  "task05FixtureContract": {
+    "configDifferences": [
+      "motion.animations_from",
+      "motion.animations_from_note"
+    ],
+    "rigStructureIdentical": true,
+    "extraAnnotationOnly": true
+  },
+  "judge": null,
+  "proctorNotes": [
+    "HQ-approved scoped raw-evidence path-integrity exception: original journal/.journal/transcript/captured-step bytes and their paths are preserved under this result root; this exception does not authorize secrets or private host text. New prose/receipts normalize paths.",
+    "Selfgrades, full native logs/context, call arrays and detailed audits remain private. No examinee answer repair, Git/push/message or new agent by proctor.",
+    "Explicit local Mac proctor exception; shared-host wall times are not isolated performance measurements. No Nova/GPU/full suite.",
+    "Literal WTF marker counts are retained, with unmarked mismatches noted in READINGS rather than silently recredited.",
+    "All generated sheets were inspected; native frames were hashed/deleted after readings and private judge-clip creation. Human judgement is empty; no old mark reused."
+  ],
+  "effort": {
+    "value": "high",
+    "evidence": "Every observed native assistant top-level effort/perTurnEffort and serialized API request params.output_config.effort is high; Fable ready-only Opus prelude and Fable solve both retained privately. Native Claude request contexts are used; no Codex turn_context asserted."
+  },
+  "taskClockLimit": "Native line671 reads task03 TASK.md at11:49:38.823Z before its literal start11:49:55Z, while task02 clock remains open; task03 clock excludes that initial read. Journal approximation25s is preserved; native interval is about16s. Separate grader-before-start flag remains zero."
+}

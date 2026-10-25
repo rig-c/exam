@@ -1,0 +1,205 @@
+{
+  "spec": "exam-proctor-render-receipt/1",
+  "task": "02-move",
+  "command": "python3 grade.py results/claude-fable-5-1/2026-10-25-claude-fable-5-1/02-move",
+  "graderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "groups": [
+    {
+      "directory": "folds_glance/glance",
+      "frames": 25,
+      "orderedPNG_SHA256": "9c990bc8a10318dcc6a044a79217f3bb7c19ed662e136fd6316b88256cade9eb",
+      "viewport": {
+        "x": -350.0998219656191,
+        "y": 31.904899727121233,
+        "width": 713.8431396008964,
+        "height": 1190.5677073677261,
+        "scale": 0.2150234702451326,
+        "pixelWidth": 153,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "glance",
+          "animation": "glance",
+          "fps": 12,
+          "sampled": 25,
+          "written": 25,
+          "stride": 1,
+          "duration": 2,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "b7a2b9dab3681a39f82715b50a136d72a58c878af329baf368816b3a4cd8c534",
+      "folds.json_SHA256": "3efb4bcb3af46b94974814cdb2f32aad78390a8b5e1c86e2233cad9d6b205035"
+    },
+    {
+      "directory": "folds_idle/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "b909e2ba28fe613c939c589f826fde3ff7382f722b67b2a9e3644ff57d15536b",
+      "viewport": {
+        "x": -350.0998219656191,
+        "y": 31.904899727121233,
+        "width": 713.8431396008964,
+        "height": 1190.5677073677261,
+        "scale": 0.2150234702451326,
+        "pixelWidth": 153,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "140aaee01ad9c4f2ce9dc984d1c32afcbd543a6328c083b1d1f31bc6fba8df49",
+      "folds.json_SHA256": "c0bf1a153e686d858869d6fdfad6c736d77d6eaf207c9a92b4d773d4dfe6707b"
+    },
+    {
+      "directory": "out/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "213acda870a9cb231a1b490868eec2687bc61b9afd11ef1d87a4c0546dfdf090",
+      "viewport": {
+        "x": -350.0998219656191,
+        "y": 31.904899727121233,
+        "width": 713.8431396008964,
+        "height": 1190.5677073677261,
+        "scale": 0.5375586756128315,
+        "pixelWidth": 384,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "6089fa8c1d757745457d78d7f96d579af328d89c37bdaa1cdd08395ca23b82cb"
+    },
+    {
+      "directory": "seam_glance/glance",
+      "frames": 25,
+      "orderedPNG_SHA256": "9c990bc8a10318dcc6a044a79217f3bb7c19ed662e136fd6316b88256cade9eb",
+      "viewport": {
+        "x": -350.0998219656191,
+        "y": 31.904899727121233,
+        "width": 713.8431396008964,
+        "height": 1190.5677073677261,
+        "scale": 0.2150234702451326,
+        "pixelWidth": 153,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "glance",
+          "animation": "glance",
+          "fps": 12,
+          "sampled": 25,
+          "written": 25,
+          "stride": 1,
+          "duration": 2,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ]
+    }
+  ],
+  "numberedFramesDeletedAfterSheetReading": true,
+  "retainedSheets": [
+    "pictures/folds_glance-glance.png",
+    "pictures/folds_idle-idle.png",
+    "pictures/seam_glance-glance.png"
+  ],
+  "commands": [
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation idle --fps 12 --folds --geometry --out <proctor-root>/.grade/02-move/folds_idle",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation glance --fps 12 --folds --geometry --out <proctor-root>/.grade/02-move/folds_glance",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation glance --fps 12 --seam topwear:handwear_r,topwear:handwear_l --out <proctor-root>/.grade/02-move/seam_glance"
+  ],
+  "cwd": ".grade/02-move",
+  "examinedSheets": [
+    {
+      "source": "folds_glance/glance/contact.png",
+      "sha256": "5742865dc7e709fe75b6985ddca80353de78d094b33103d26d8a6a294c474bd5",
+      "retained": "pictures/seam_glance-glance.png",
+      "read": true
+    },
+    {
+      "source": "folds_idle/idle/contact.png",
+      "sha256": "27ab23cd6c68e5e1121e1ae9bfab03440e0eed00576d8a1f64f4a551055c0531",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "out/check/contact.png",
+      "sha256": "27ab23cd6c68e5e1121e1ae9bfab03440e0eed00576d8a1f64f4a551055c0531",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "out/check/idle_frames/idle/contact.png",
+      "sha256": "27ab23cd6c68e5e1121e1ae9bfab03440e0eed00576d8a1f64f4a551055c0531",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "seam_glance/glance/contact.png",
+      "sha256": "5742865dc7e709fe75b6985ddca80353de78d094b33103d26d8a6a294c474bd5",
+      "retained": "pictures/seam_glance-glance.png",
+      "read": true
+    }
+  ],
+  "cleanupScriptSHA256": "2413d8174d819c28a6dd43c2981929df1a7e3947964c75b03df4e9fb100bcbca",
+  "rawGradeLogSHA256": "b4bc132a15c5f7a87ae219d751d9f9382ac95abe69042f9a471e936e5324eb9d",
+  "allNumberedFramesRemaining": 0
+}

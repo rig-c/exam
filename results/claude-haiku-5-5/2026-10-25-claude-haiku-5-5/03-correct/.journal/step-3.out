@@ -1,0 +1,7 @@
+config /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-haiku-5-5/exam-claude-haiku-5-5/runs/2026-10-25-claude-haiku-5-5-03-correct/config.json: added seethrough.head_box
+rig-parts propose --head-box: tasks/03-correct/inputs/layers/full
+  painting 1664x2432; head layers back hair 35884 px, headwear 1522 px, face 11566 px, front hair 14425 px
+  inside the painting, no shift
+  back hair: without "back hair" the box is [515, 165, 1068, 718], 553x553 ("back hair" adds 9 px to the side, 3% of the box's area; pass --no-back-hair to leave it out)
+  head_box [538, 158, 1100, 720], 562x562
+{"head_box":[538,158,1100,720]}

@@ -1,0 +1,8 @@
+p_head topwear handwear_l read frames open 0 max_px 0
+p_head topwear handwear_r read frames open 0 max_px 0
+p_rot topwear handwear_l read frames open 0 max_px 0
+p_rot topwear handwear_r read frames open 0 max_px 0
+p_trans topwear handwear_l read frames open 18 max_px 20
+p_trans topwear handwear_r read frames open 0 max_px 0
+p_headrot topwear handwear_l read frames open 0 max_px 0
+p_headrot topwear handwear_r read frames open 0 max_px 0

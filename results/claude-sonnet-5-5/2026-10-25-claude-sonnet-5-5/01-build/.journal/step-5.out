@@ -1,0 +1,2 @@
+  FAIL  USAGE: --full and --head draft the turn control while proposing; --from-config proposes nothing (see rig-parts guide USAGE)
+rig-parts --help lists the commands

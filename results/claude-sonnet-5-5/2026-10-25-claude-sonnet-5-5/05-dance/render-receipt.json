@@ -1,0 +1,238 @@
+{
+  "spec": "exam-proctor-render-receipt/1",
+  "task": "05-dance",
+  "command": "python3 grade.py results/claude-sonnet-5-5/2026-10-25-claude-sonnet-5-5/05-dance",
+  "graderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "groups": [
+    {
+      "directory": "folds_idle/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "fe00340ad27cc856e80f464f69f6f7c0ac429920ab5df747533acf8369682572",
+      "viewport": {
+        "x": -547.704291572251,
+        "y": -16.865161696943048,
+        "width": 1089.7589425201686,
+        "height": 1184.3549957199534,
+        "scale": 0.21615140808721886,
+        "pixelWidth": 236,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "bc288205972dd1476d483216aaccd260e0340b3d16547fc00d10bf629f39a437",
+      "folds.json_SHA256": "9cfceb7eae5e338a40aa22087729f9c82bfe7d7e829e3a1fc59d5c9725a3dfc5"
+    },
+    {
+      "directory": "out/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "2fccb4d2033bb9ea19550ea51dc217f5789aa90ed3ca72816887897361069319",
+      "viewport": {
+        "x": -547.704291572251,
+        "y": -16.865161696943048,
+        "width": 1089.7589425201686,
+        "height": 1184.3549957199534,
+        "scale": 0.5403785202180471,
+        "pixelWidth": 589,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "40cd5eeca3d079a61d5b7398fa2eb0784479d379f78cbcfe4da45b4927503a9b"
+    },
+    {
+      "directory": "out_without_physics/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "2fccb4d2033bb9ea19550ea51dc217f5789aa90ed3ca72816887897361069319",
+      "viewport": {
+        "x": -547.704291572251,
+        "y": -16.865161696943048,
+        "width": 1089.7589425201686,
+        "height": 1184.3549957199534,
+        "scale": 0.5403785202180471,
+        "pixelWidth": 589,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "40cd5eeca3d079a61d5b7398fa2eb0784479d379f78cbcfe4da45b4927503a9b"
+    },
+    {
+      "directory": "pose_out_check_build_dance/dance@24fps",
+      "frames": 97,
+      "orderedPNG_SHA256": "302f34853a09ecb421d31c05f82f20d40f5aeb9aa5f3451c5808672cf937139d",
+      "viewport": {
+        "x": -547.704291572251,
+        "y": -16.865161696943048,
+        "width": 1089.7589425201686,
+        "height": 1184.3549957199534,
+        "scale": 0.21615140808721886,
+        "pixelWidth": 236,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "dance@24fps",
+          "animation": "dance",
+          "fps": 24,
+          "sampled": 97,
+          "written": 97,
+          "stride": 1,
+          "duration": 4
+        }
+      ],
+      "geometry.json_SHA256": "42da1226869b87959e9c9fab9f0e4515f3c27f99f7b7bede5b6acbc0102464bd",
+      "folds.json_SHA256": "2a723adf7e98b83f176f4b37cbe600923e15d736f8fd1b29db4f0b66761a8941"
+    },
+    {
+      "directory": "pose_out_without_physics_check_build_dance/dance@24fps",
+      "frames": 97,
+      "orderedPNG_SHA256": "302f34853a09ecb421d31c05f82f20d40f5aeb9aa5f3451c5808672cf937139d",
+      "viewport": {
+        "x": -547.704291572251,
+        "y": -16.865161696943048,
+        "width": 1089.7589425201686,
+        "height": 1184.3549957199534,
+        "scale": 0.21615140808721886,
+        "pixelWidth": 236,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "dance@24fps",
+          "animation": "dance",
+          "fps": 24,
+          "sampled": 97,
+          "written": 97,
+          "stride": 1,
+          "duration": 4
+        }
+      ],
+      "geometry.json_SHA256": "42da1226869b87959e9c9fab9f0e4515f3c27f99f7b7bede5b6acbc0102464bd",
+      "folds.json_SHA256": "2a723adf7e98b83f176f4b37cbe600923e15d736f8fd1b29db4f0b66761a8941"
+    }
+  ],
+  "numberedFramesDeletedAfterSheetReading": true,
+  "retainedSheets": [
+    "pictures/folds_idle-idle.png",
+    "pictures/out_without_physics-check.png",
+    "pictures/out_without_physics-check-idle_frames-idle.png",
+    "pictures/pose_out_check_build_dance-dance@24fps.png",
+    "pictures/pose_out_without_physics_check_build_dance-dance@24fps.png"
+  ],
+  "commands": [
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation idle --fps 12 --folds --geometry --out <proctor-root>/.grade/05-dance/folds_idle",
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config_without_physics.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out_without_physics",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation dance --fps 24 --max 256 --folds --geometry --out <proctor-root>/.grade/05-dance/pose_out_check_build_dance",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out_without_physics/check/build --animation dance --fps 24 --max 256 --folds --geometry --out <proctor-root>/.grade/05-dance/pose_out_without_physics_check_build_dance"
+  ],
+  "cwd": ".grade/05-dance",
+  "examinedSheets": [
+    {
+      "source": "folds_idle/idle/contact.png",
+      "sha256": "e82e810861c84c0b557f966df0643eba9b8aa3e8dc872a1c6517ebb3f6d2a75e",
+      "retained": "pictures/out_without_physics-check.png",
+      "read": true
+    },
+    {
+      "source": "out/check/contact.png",
+      "sha256": "e82e810861c84c0b557f966df0643eba9b8aa3e8dc872a1c6517ebb3f6d2a75e",
+      "retained": "pictures/out_without_physics-check.png",
+      "read": true
+    },
+    {
+      "source": "out/check/idle_frames/idle/contact.png",
+      "sha256": "e82e810861c84c0b557f966df0643eba9b8aa3e8dc872a1c6517ebb3f6d2a75e",
+      "retained": "pictures/out_without_physics-check.png",
+      "read": true
+    },
+    {
+      "source": "out_without_physics/check/contact.png",
+      "sha256": "e82e810861c84c0b557f966df0643eba9b8aa3e8dc872a1c6517ebb3f6d2a75e",
+      "retained": "pictures/out_without_physics-check.png",
+      "read": true
+    },
+    {
+      "source": "out_without_physics/check/idle_frames/idle/contact.png",
+      "sha256": "e82e810861c84c0b557f966df0643eba9b8aa3e8dc872a1c6517ebb3f6d2a75e",
+      "retained": "pictures/out_without_physics-check.png",
+      "read": true
+    },
+    {
+      "source": "pose_out_check_build_dance/dance@24fps/contact.png",
+      "sha256": "726182ce9c8b70555720fe10ffdddaa05c14fc9673476174d8645a98c04fbd6a",
+      "retained": "pictures/pose_out_without_physics_check_build_dance-dance@24fps.png",
+      "read": true
+    },
+    {
+      "source": "pose_out_without_physics_check_build_dance/dance@24fps/contact.png",
+      "sha256": "726182ce9c8b70555720fe10ffdddaa05c14fc9673476174d8645a98c04fbd6a",
+      "retained": "pictures/pose_out_without_physics_check_build_dance-dance@24fps.png",
+      "read": true
+    }
+  ],
+  "cleanupScriptSHA256": "2413d8174d819c28a6dd43c2981929df1a7e3947964c75b03df4e9fb100bcbca",
+  "rawGradeLogSHA256": "13d9f61e52e91f19544586bfe3bf78c65081c1e5a6e8eaf16a1cadd209521be1",
+  "allNumberedFramesRemaining": 0
+}

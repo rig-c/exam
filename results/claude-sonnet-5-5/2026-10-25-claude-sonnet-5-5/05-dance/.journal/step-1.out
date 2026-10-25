@@ -1,0 +1,11 @@
+exit=0
+rig-parts build: runs/2026-10-25-claude-sonnet-5-5-05-dance/config.json -> runs/2026-10-25-claude-sonnet-5-5-05-dance/out, seam rule near-white, projection rule core, page edges free, pack shape polygon
+[rig]   animations beside the idle, from /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-sonnet-5-5/exam-claude-sonnet-5-5/runs/2026-10-25-claude-sonnet-5-5-05-dance/animations.json as written: dance
+[check] rig-parts check: runs/2026-10-25-claude-sonnet-5-5-05-dance/out/rig -> runs/2026-10-25-claude-sonnet-5-5-05-dance/out/check
+[check]   beside the idle: 1 animation(s), dance — built and gated by rigc with the rig; ANIMATIONS_DO_NOT_FOLD reads each for folds and FEET_STAY_LEVEL for how far the feet turn, every other bar here reads the idle
+[check]   ANIMATIONS_DO_NOT_FOLD: PASS — 2 animation(s) read by rigc render --folds at 12 fps (idle, dance): 0 folding mesh(es), 0 not declared in may_fold (<= 0)
+[check]   FEET_STAY_LEVEL: PASS — 2 animation(s) read by rigc render --folds --geometry at 12 fps (idle, dance): each foot's drawing within ±10 degrees of its setup pose while a bone above it is turned, HQ's line (rig-c/parts#347 ruling 4), not a figure measured here
+[check]   SEAM_OVER_RANGE: PASS — 9 joint(s) bent to their declared range's ends and middle; at each, the pose against the same pose with the joint's own art drawn under the limb, on the rest-pose seam's bar (mean |d| <= 1.0, <= 50 rig px over 40) at frame scale 1.023141
+[check]   SEAM_OVER_MOTION: WARN — 9 declared pair(s) in 2 animation(s) (idle, dance), read by rigc render --seam at 12 fps on the build as played: 2 warning(s), never a bar; a frame opens when its gap or its ghost holds more cells than its box is long (rig-c's cell, its box's longer side) — thicker than one cell; a crack one cell deep is the half-opacity cut moving by less than a cell, and is not reported
+[check] check: PASS; 10 of 14 bar(s) measured, 4 skipped (BLINK_NO_HOLE, TIP_OVER_ROOT, TEXTURE_STRETCH, STRESS_OFF_CHAIN); 2 warning(s) (SEAM_OVER_MOTION, not a bar)
+build: PASS — the packed atlas is the artifact; parts/ and rig/ are the intermediates it was made from
