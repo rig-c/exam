@@ -1,0 +1,12 @@
+{
+  "clip_sha256": "0c8160f5797c45d5b93124dd7dd13d34b1b82b5ef130a7ce6c8a02e6f1887682",
+  "clip_location": "Held privately by the proctor for blind judging",
+  "seconds": 12,
+  "loops": 3,
+  "fps": 24,
+  "bpm_click_track": 120,
+  "click_each_beat": true,
+  "ordered_png_bytes_sha256": "4dcbf39cc688c5005f0ef40698343063143ed3e1bad39db88a9ec217a242c6d8",
+  "human_judge": null,
+  "limits": "A static contact sheet does not verify click timing or human dance quality. No human mark assigned."
+}

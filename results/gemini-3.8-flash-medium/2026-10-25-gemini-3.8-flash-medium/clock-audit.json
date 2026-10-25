@@ -1,0 +1,105 @@
+{
+  "sum_literal_clock_seconds": 2009,
+  "sum_literal_clock_minutes": 33.483333333333334,
+  "rounded_literal_total_1dp": 33.5,
+  "qualification": "Literal submitted clocks finish too early; not complete-task benchmark time. No native elapsed/arrival/commit time substituted.",
+  "unlogged_grader_calls": 5,
+  "counting": "independent retained by proctor ruling; clock/journal coverage findings remain",
+  "tasks": [
+    {
+      "task": "01-build",
+      "run": "2026-10-25-gemini-3.8-flash-medium-01-build",
+      "started_UTC": "2026-10-25T08:59:21Z",
+      "finished_UTC": "2026-10-25T09:05:58Z",
+      "literal_clock_seconds": 397.0,
+      "subsequent_unjournalled_grader_calls": [
+        {
+          "native_step": 110,
+          "native_command_start_UTC": "2026-10-25T09:06:05.454001Z",
+          "native_command_end_UTC": "2026-10-25T09:07:01.023421Z",
+          "after_finished": true,
+          "journal_wrapped": false
+        }
+      ],
+      "observed_unlogged_count": 1,
+      "clock_compliance": "finish precedes last grader; noncompliant",
+      "duration_policy": "Retain literal submitted clock, explicitly early; do not extend or substitute native elapsed."
+    },
+    {
+      "task": "02-move",
+      "run": "2026-10-25-gemini-3.8-flash-medium-02-move",
+      "started_UTC": "2026-10-25T09:07:05Z",
+      "finished_UTC": "2026-10-25T09:14:22Z",
+      "literal_clock_seconds": 437.0,
+      "subsequent_unjournalled_grader_calls": [
+        {
+          "native_step": 230,
+          "native_command_start_UTC": "2026-10-25T09:14:34.598461Z",
+          "native_command_end_UTC": "2026-10-25T09:15:40.535315Z",
+          "after_finished": true,
+          "journal_wrapped": false
+        }
+      ],
+      "observed_unlogged_count": 1,
+      "clock_compliance": "finish precedes last grader; noncompliant",
+      "duration_policy": "Retain literal submitted clock, explicitly early; do not extend or substitute native elapsed."
+    },
+    {
+      "task": "03-correct",
+      "run": "2026-10-25-gemini-3.8-flash-medium-03-correct",
+      "started_UTC": "2026-10-25T09:15:46Z",
+      "finished_UTC": "2026-10-25T09:19:34Z",
+      "literal_clock_seconds": 228.0,
+      "subsequent_unjournalled_grader_calls": [
+        {
+          "native_step": 296,
+          "native_command_start_UTC": "2026-10-25T09:19:45.151242Z",
+          "native_command_end_UTC": "2026-10-25T09:20:27.185077Z",
+          "after_finished": true,
+          "journal_wrapped": false
+        }
+      ],
+      "observed_unlogged_count": 1,
+      "clock_compliance": "finish precedes last grader; noncompliant",
+      "duration_policy": "Retain literal submitted clock, explicitly early; do not extend or substitute native elapsed."
+    },
+    {
+      "task": "04-soft",
+      "run": "2026-10-25-gemini-3.8-flash-medium-04-soft",
+      "started_UTC": "2026-10-25T09:20:32Z",
+      "finished_UTC": "2026-10-25T09:28:28Z",
+      "literal_clock_seconds": 476.0,
+      "subsequent_unjournalled_grader_calls": [
+        {
+          "native_step": 433,
+          "native_command_start_UTC": "2026-10-25T09:28:32.426133Z",
+          "native_command_end_UTC": "2026-10-25T09:30:03.116874Z",
+          "after_finished": true,
+          "journal_wrapped": false
+        }
+      ],
+      "observed_unlogged_count": 1,
+      "clock_compliance": "finish precedes last grader; noncompliant",
+      "duration_policy": "Retain literal submitted clock, explicitly early; do not extend or substitute native elapsed."
+    },
+    {
+      "task": "05-dance",
+      "run": "2026-10-25-gemini-3.8-flash-medium-05-dance",
+      "started_UTC": "2026-10-25T09:30:06Z",
+      "finished_UTC": "2026-10-25T09:37:57Z",
+      "literal_clock_seconds": 471.0,
+      "subsequent_unjournalled_grader_calls": [
+        {
+          "native_step": 495,
+          "native_command_start_UTC": "2026-10-25T09:38:00.656634Z",
+          "native_command_end_UTC": "2026-10-25T09:40:27.824226Z",
+          "after_finished": true,
+          "journal_wrapped": false
+        }
+      ],
+      "observed_unlogged_count": 1,
+      "clock_compliance": "finish precedes last grader; noncompliant",
+      "duration_policy": "Retain literal submitted clock, explicitly early; do not extend or substitute native elapsed."
+    }
+  ]
+}

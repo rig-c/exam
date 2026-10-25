@@ -1,0 +1,9 @@
+mesh-stats: hair_back — lattice 94 vertices, 138 triangles
+mesh-stats: hairpin — lattice 23 vertices, 22 triangles
+mesh-stats: handwear_l — lattice 54 vertices, 68 triangles
+mesh-stats: handwear_r — lattice 56 vertices, 70 triangles
+mesh-stats: neck — lattice 15 vertices, 16 triangles
+mesh-stats: bottomwear — lattice 84 vertices, 130 triangles
+mesh-stats: topwear — contour 112 vertices, 188 triangles
+mesh-stats: hair_front — lattice 63 vertices, 80 triangles
+mesh-stats: total 712 triangles over 8 mesh(es)

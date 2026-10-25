@@ -1,0 +1,444 @@
+{
+  "initial_exam_HEAD": "0643977fb2adb99eb91fc48cceb166b1b587b3bf",
+  "exam_contract_base": "c014e3cf529535546d2d77349ceca1d35f343b42",
+  "handin_HEAD": "e0baff467bec581ed14ddec648480271b0d01ef4",
+  "push_status": "Rejected against an older remote branch; no force push; local exact commit is authoritative. Withdrawn remote130 not used.",
+  "source_before_copy_after_all_match": true,
+  "original_handed_in_file_count": 53,
+  "contract_and_static_files_frozen": 231,
+  "source_manifest_sha256": "4b2ac38fd049b4ad819cce84e953339c9edf990f9bbda7069b3c83d0eb5795ff",
+  "authoritative_source": "Exact local committed leaf OIDs supplied by the parent Git inventory; independent blob-header SHA1 and SHA256 match for every handed-in file. Parent verified no non-runs changes relative to initial HEAD. No withdrawn historical remote candidate used.",
+  "inventory_proof": {
+    "runs_sha256": "30da1abbc70ef80cbb4009c9b989b040e5284d32b3c54e51d6c6b48dad3cff04",
+    "contract_sha256": "7be2258cc77fa0a0be78e5b428075be8af4301c0d5a7978512aa2adcce75502a",
+    "source": "Parent git ls-tree -r --full-tree exact local commit"
+  },
+  "public_views": [
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/chain.jsonl",
+      "public_path": "01-build/.journal/chain.jsonl",
+      "commit_blob": "8413f363c04538edba523a1de46c73732fe1b0bd",
+      "original_sha256": "d8cdee483896a63ce7ad28fdf7f0896da862245cdf86719263bff683898c38dd",
+      "public_sha256": "d8cdee483896a63ce7ad28fdf7f0896da862245cdf86719263bff683898c38dd",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/lock",
+      "public_path": "01-build/.journal/lock",
+      "commit_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/step-1.out",
+      "public_path": "01-build/.journal/step-1.out",
+      "commit_blob": "29b0c53e2a7635e5972d706ca486662b139d962c",
+      "original_sha256": "33c9cbf76d31420d7527afc4293b7ebd09983a3ff59218fe49534b13c5abca27",
+      "public_sha256": "0260155f11494a48078b54096d1685fff18fdc0f636291ce7fb838f5f68a4058",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/step-2.out",
+      "public_path": "01-build/.journal/step-2.out",
+      "commit_blob": "9c783ce7d5cb62c6260555f1789f709b7c107e4e",
+      "original_sha256": "87cb7301cf33d7c131962a04104e65420a7f95d61f84d2a54a3110e0d1030d85",
+      "public_sha256": "87cb7301cf33d7c131962a04104e65420a7f95d61f84d2a54a3110e0d1030d85",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/step-3.out",
+      "public_path": "01-build/.journal/step-3.out",
+      "commit_blob": "9409c11bfd2c48295db9fe381265af3eb410f7d2",
+      "original_sha256": "ba96942edcc47aab85a86f22d29f32c633b23269994f928fbf26d471ba462353",
+      "public_sha256": "089d7a2123e185672c76d79a265f8afc0f449a964fabf54162cbc3fa2eb69c17",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/step-4.out",
+      "public_path": "01-build/.journal/step-4.out",
+      "commit_blob": "7119be8b6d9be2801677d616c531753da48626e1",
+      "original_sha256": "238bcf5ba1714d82134a888ffeb2428dfe44e9fe8ae067bfe2227f7b708ec03f",
+      "public_sha256": "238bcf5ba1714d82134a888ffeb2428dfe44e9fe8ae067bfe2227f7b708ec03f",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/step-5.out",
+      "public_path": "01-build/.journal/step-5.out",
+      "commit_blob": "26c7468f160f28fc40ae070c600dbd18417a662c",
+      "original_sha256": "f404a86f7971aac27e1968b97df2113168c3947e4355fb07ccc1aabd0e7f127a",
+      "public_sha256": "46589fdc3a2a0eb9c6bc6d6951a81b1fbd91dda88272c78f41e9dde6e496da63",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/.journal/step-6.out",
+      "public_path": "01-build/.journal/step-6.out",
+      "commit_blob": "5aaf2ac8e65d91b82812827efca5c1da024a3a81",
+      "original_sha256": "0567e7218ead93ce275b666d7ade9cedb7b66c5ee5c00a7db7431082ed8d724d",
+      "public_sha256": "0567e7218ead93ce275b666d7ade9cedb7b66c5ee5c00a7db7431082ed8d724d",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/config.json",
+      "public_path": "01-build/config.json",
+      "commit_blob": "afe8729f087b955bee72a63a5dd2835214be10b1",
+      "original_sha256": "b991a99512ca3664db5fd9b6408ee954c08b5042a23da308a44422febbc94245",
+      "public_sha256": "b991a99512ca3664db5fd9b6408ee954c08b5042a23da308a44422febbc94245",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/journal.md",
+      "public_path": "01-build/journal.md",
+      "commit_blob": "01c05ca2a37adb579d4088f4789f53b79d11dadc",
+      "original_sha256": "c76aa3c8446b46401852cdc13260720ae9289b2bc0e7ae1301ff91da542e896a",
+      "public_sha256": "c76aa3c8446b46401852cdc13260720ae9289b2bc0e7ae1301ff91da542e896a",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/result.json",
+      "public_path": "01-build/submitted/result.json",
+      "commit_blob": "99929e7b2dbb501ff83eef25cda09ae1f243f7a9",
+      "original_sha256": "a35ad7b037ac8da2c8a2750f190317639ba97b152f21ec6e3a849ce1cfad2a7d",
+      "public_sha256": "a35ad7b037ac8da2c8a2750f190317639ba97b152f21ec6e3a849ce1cfad2a7d",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-01-build/transcript.md",
+      "public_path": "01-build/transcript.md",
+      "commit_blob": "174b35e9827ef48f0b43d8ca4c09ce08e1ddaf9c",
+      "original_sha256": "2a2dfe986a91ee5ad0a269c5d22dba9497bd532e4c7d8301e35656a571301150",
+      "public_sha256": "2a2dfe986a91ee5ad0a269c5d22dba9497bd532e4c7d8301e35656a571301150",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/.journal/chain.jsonl",
+      "public_path": "02-move/.journal/chain.jsonl",
+      "commit_blob": "d2156af4bad748d21b896f363807cbf42dd6fa10",
+      "original_sha256": "80665c995377e67f6e45e01d427741f91a4e7d53a6b4070e27f14a72b83d939d",
+      "public_sha256": "80665c995377e67f6e45e01d427741f91a4e7d53a6b4070e27f14a72b83d939d",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/.journal/lock",
+      "public_path": "02-move/.journal/lock",
+      "commit_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/.journal/step-1.out",
+      "public_path": "02-move/.journal/step-1.out",
+      "commit_blob": "8b6c4abde88f261baba7de62a5d4af7b6798fb09",
+      "original_sha256": "0b7d84d0bf714632beee3b47a649e42b6359cd0aaec1c7d150da111d83fb259f",
+      "public_sha256": "cd73e816d568d906633776d2b05e0963d84ee13f8ca583e47bc5f45661835068",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/.journal/step-2.out",
+      "public_path": "02-move/.journal/step-2.out",
+      "commit_blob": "dc61f5e75b1e981e5b18e59d7ece3ef1ebea8783",
+      "original_sha256": "299995d9845dc3eda03541e8f61d069b78e03e703e06f4eec38c1c304c8c366c",
+      "public_sha256": "a9c162bdd2378baa38d3b7ff1b8f1367af550965da05cb0e9d3a82489944d841",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/.journal/step-3.out",
+      "public_path": "02-move/.journal/step-3.out",
+      "commit_blob": "778dabf499abe99a05489e23d4341c5c04f9652d",
+      "original_sha256": "12ef4898e599f64948ea2ca5f74d0456fe25ef905cfecc237e07ef7a2c6cf2e8",
+      "public_sha256": "12ef4898e599f64948ea2ca5f74d0456fe25ef905cfecc237e07ef7a2c6cf2e8",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/.journal/step-4.out",
+      "public_path": "02-move/.journal/step-4.out",
+      "commit_blob": "ca211d190dbb2ad47798ca8d717b2f794a4170aa",
+      "original_sha256": "548efea1d6ad153adb6707e72bdfa68c3eabe6115121ddf48dcabeb5eb9e46d7",
+      "public_sha256": "548efea1d6ad153adb6707e72bdfa68c3eabe6115121ddf48dcabeb5eb9e46d7",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/animations.json",
+      "public_path": "02-move/animations.json",
+      "commit_blob": "b75a55dc0b10617468e56fc2ed255776c5d6efbf",
+      "original_sha256": "0b8d2e63b5dbec7648030eb5db4c7fe9dc1e9e412b3c05e276bb50e434f36d32",
+      "public_sha256": "0b8d2e63b5dbec7648030eb5db4c7fe9dc1e9e412b3c05e276bb50e434f36d32",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/config.json",
+      "public_path": "02-move/config.json",
+      "commit_blob": "aca9f082dc0e65251771e6a9a765b2faf530a8ce",
+      "original_sha256": "fca26a38e85c4e482f6dc909a272d9d9110f947afeda3d3ea9279d42ce5b6ea2",
+      "public_sha256": "fca26a38e85c4e482f6dc909a272d9d9110f947afeda3d3ea9279d42ce5b6ea2",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/journal.md",
+      "public_path": "02-move/journal.md",
+      "commit_blob": "0df6cf4f6a34785cba64ca024ade09b3db71f9ab",
+      "original_sha256": "7965b2b8d16bdeb4c76afe9bfda3bb8af0df2391b5f93fbe9bc40c787284e3a6",
+      "public_sha256": "7965b2b8d16bdeb4c76afe9bfda3bb8af0df2391b5f93fbe9bc40c787284e3a6",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/result.json",
+      "public_path": "02-move/submitted/result.json",
+      "commit_blob": "e52a99066c0a62b5a9312b790529d53afdef17a6",
+      "original_sha256": "59a47efdcdf3dab7421ea36ce1ff2709a4b8fe50f04759c7f0fac04a472b454f",
+      "public_sha256": "59a47efdcdf3dab7421ea36ce1ff2709a4b8fe50f04759c7f0fac04a472b454f",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-02-move/transcript.md",
+      "public_path": "02-move/transcript.md",
+      "commit_blob": "263819d7a078d37a6cf5054c6d96e98448bc14bc",
+      "original_sha256": "56e7fd9f7c844cb1de287ed60ab9b3f69334d1e18277aa9dec3934f03d67f85c",
+      "public_sha256": "d38b5ec8dbf461a7e95990226ceccd8c4592f860e89724f5d3ca7f530c23d1b3",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/.journal/chain.jsonl",
+      "public_path": "03-correct/.journal/chain.jsonl",
+      "commit_blob": "8a958086dd6bf4a9898ad8a5e1f7bb6cfa291e1c",
+      "original_sha256": "2671d67a27e9be4c82afd262339fca23915f8136986bdd1cde37293412783048",
+      "public_sha256": "2671d67a27e9be4c82afd262339fca23915f8136986bdd1cde37293412783048",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/.journal/lock",
+      "public_path": "03-correct/.journal/lock",
+      "commit_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/.journal/step-1.out",
+      "public_path": "03-correct/.journal/step-1.out",
+      "commit_blob": "35d46aca3389ee8fa0ba29a35dad585468c0b4e0",
+      "original_sha256": "c20204e2f8e41a2d8498c3ee03320edfd4cedeacd4309d801e472d8273d01fc7",
+      "public_sha256": "38782844658a0024ea8679485852c168ee5df7dabe6ce2da9d16d747b47e8dd9",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/.journal/step-2.out",
+      "public_path": "03-correct/.journal/step-2.out",
+      "commit_blob": "bdda1c9abc10be66a528143531b20526d26fb213",
+      "original_sha256": "0271c79551040d2c0dbe0a47d301d109ee7d3df879dd9887c4e0b6cee418043d",
+      "public_sha256": "0271c79551040d2c0dbe0a47d301d109ee7d3df879dd9887c4e0b6cee418043d",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/.journal/step-3.out",
+      "public_path": "03-correct/.journal/step-3.out",
+      "commit_blob": "b9afedc69c325d6745eb5cdfbdd28f3621fe5495",
+      "original_sha256": "8ae5680b1619b571687692fa16e72ff6d6e6ef4176f070d18fa274ab59fabadf",
+      "public_sha256": "c9f576c1f7a72665b7770b9d5d5e75037c0418334438015fe83c6574499637c9",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/.journal/step-4.out",
+      "public_path": "03-correct/.journal/step-4.out",
+      "commit_blob": "013a1ceb7299d51df5849ec2fedbdefb08a61547",
+      "original_sha256": "3eb824021f6cce4835341c354d19a4b79e501534fe6cff7e1646132346841fcd",
+      "public_sha256": "3eb824021f6cce4835341c354d19a4b79e501534fe6cff7e1646132346841fcd",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/.journal/step-5.out",
+      "public_path": "03-correct/.journal/step-5.out",
+      "commit_blob": "6826dd5088e5e48ec0f5dccc62ae2d6246708717",
+      "original_sha256": "1ba20e5706693ceac9a96e6b47bb5c79e510058ebad7382b67384cd3d48af47f",
+      "public_sha256": "1ba20e5706693ceac9a96e6b47bb5c79e510058ebad7382b67384cd3d48af47f",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/config.json",
+      "public_path": "03-correct/config.json",
+      "commit_blob": "39086cc37d9b22a1b67b3bb56ce01d90c7c26f75",
+      "original_sha256": "2838d0050864a38bf213c518cf757bd51bd9c3737ed6478764b112be939507f9",
+      "public_sha256": "2838d0050864a38bf213c518cf757bd51bd9c3737ed6478764b112be939507f9",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/journal.md",
+      "public_path": "03-correct/journal.md",
+      "commit_blob": "7846811fb9bfc44910acb0acbd7b59a41e3543d7",
+      "original_sha256": "3b03817ec22a288923b579b14ed872931548e4ef4c0d44cc811126bbf63248a9",
+      "public_sha256": "3b03817ec22a288923b579b14ed872931548e4ef4c0d44cc811126bbf63248a9",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/result.json",
+      "public_path": "03-correct/submitted/result.json",
+      "commit_blob": "83abeff43d551f99122abd3a5bdd647cb0716cdf",
+      "original_sha256": "6ff4154d20af15b75fd8711cd30b5cbcb01af6fd55b23618583916b25623c443",
+      "public_sha256": "6ff4154d20af15b75fd8711cd30b5cbcb01af6fd55b23618583916b25623c443",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-03-correct/transcript.md",
+      "public_path": "03-correct/transcript.md",
+      "commit_blob": "905e6f3f1b5385cd36387b66f38483536dcfdb3c",
+      "original_sha256": "69fc2b6ff700a98251b7faf3b78998fbb03b23cdd988e8b8123f23e1a41dd5f8",
+      "public_sha256": "69fc2b6ff700a98251b7faf3b78998fbb03b23cdd988e8b8123f23e1a41dd5f8",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/.journal/chain.jsonl",
+      "public_path": "04-soft/.journal/chain.jsonl",
+      "commit_blob": "7bd84a2f45d2ad185e3248c8627b508cd2b57471",
+      "original_sha256": "87fa236a62c2ff1d0fa0fecf96b9d8bff169534bef958b48889045d36c2b342f",
+      "public_sha256": "87fa236a62c2ff1d0fa0fecf96b9d8bff169534bef958b48889045d36c2b342f",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/.journal/lock",
+      "public_path": "04-soft/.journal/lock",
+      "commit_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/.journal/step-1.out",
+      "public_path": "04-soft/.journal/step-1.out",
+      "commit_blob": "fc76bfeb24b5c7e1dda7e7908e4550530a459fb3",
+      "original_sha256": "4f4b33a59bcd39b46cac0432865f259e982cdcc98ba18a378a7da8778be6963a",
+      "public_sha256": "4f4b33a59bcd39b46cac0432865f259e982cdcc98ba18a378a7da8778be6963a",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/.journal/step-2.out",
+      "public_path": "04-soft/.journal/step-2.out",
+      "commit_blob": "97af90d69fe69da3f1c2726fe813a1318a04390e",
+      "original_sha256": "07ae5eab10931aa5651024dbdb33a341a2ca09ca5b3d5dd57dfde9061a0a52b9",
+      "public_sha256": "07ae5eab10931aa5651024dbdb33a341a2ca09ca5b3d5dd57dfde9061a0a52b9",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/.journal/step-3.out",
+      "public_path": "04-soft/.journal/step-3.out",
+      "commit_blob": "88ab6326471b7eb07d609764a1aeff33c9607818",
+      "original_sha256": "1fa1ff01ae2abb325f7fe827ccc22f9741996ad7fc0a51366638ea8a27ed8591",
+      "public_sha256": "1fa1ff01ae2abb325f7fe827ccc22f9741996ad7fc0a51366638ea8a27ed8591",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/config.json",
+      "public_path": "04-soft/config.json",
+      "commit_blob": "b6d4a7ea2775fef23c2171fb68b23b84fdd27538",
+      "original_sha256": "6e7ac3f96824331ea10e111434f827715bc4268e1cbe861b17193a0c9a40e88a",
+      "public_sha256": "6e7ac3f96824331ea10e111434f827715bc4268e1cbe861b17193a0c9a40e88a",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/hop.json",
+      "public_path": "04-soft/hop.json",
+      "commit_blob": "b821e98a14bcd08a0f1d211c1c4d61d5659fac31",
+      "original_sha256": "ddc8920d26863c4bf8f15fb6dee7f2ca4e19e0600e644a8ea03dbc984256a730",
+      "public_sha256": "ddc8920d26863c4bf8f15fb6dee7f2ca4e19e0600e644a8ea03dbc984256a730",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/journal.md",
+      "public_path": "04-soft/journal.md",
+      "commit_blob": "e9539a2d72b11ead098f91188143a8a8e1535329",
+      "original_sha256": "2487d351d42bb81f04194c576cbc9889af298189eb0a56959519823a8b6a4e60",
+      "public_sha256": "2487d351d42bb81f04194c576cbc9889af298189eb0a56959519823a8b6a4e60",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/result.json",
+      "public_path": "04-soft/submitted/result.json",
+      "commit_blob": "e1e1cbec9cab96bb125c0b67769f374bea61254d",
+      "original_sha256": "e8846674efaec386d78bead586f5c29319b5120e79363795429886281008dca6",
+      "public_sha256": "e8846674efaec386d78bead586f5c29319b5120e79363795429886281008dca6",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-04-soft/transcript.md",
+      "public_path": "04-soft/transcript.md",
+      "commit_blob": "c34bc279d14076b1a11582bc0dd913a045b3d6a2",
+      "original_sha256": "f26416d6cf8a5c592213933ab6ea36a550b8b356d2dc5003e1bb8e0bd85b2cd0",
+      "public_sha256": "f26416d6cf8a5c592213933ab6ea36a550b8b356d2dc5003e1bb8e0bd85b2cd0",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/.journal/chain.jsonl",
+      "public_path": "05-dance/.journal/chain.jsonl",
+      "commit_blob": "38eebd5030bde07ae97f672d1a04503428faf6e9",
+      "original_sha256": "385f188bbf48225d8ba2bcdd6cac8f4adb1d70c53a33b049c1c92703f32e0021",
+      "public_sha256": "385f188bbf48225d8ba2bcdd6cac8f4adb1d70c53a33b049c1c92703f32e0021",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/.journal/lock",
+      "public_path": "05-dance/.journal/lock",
+      "commit_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/.journal/step-1.out",
+      "public_path": "05-dance/.journal/step-1.out",
+      "commit_blob": "5b2d80c00aa82040e4ea51137d4b8485150795a6",
+      "original_sha256": "2b9dbab02c2886672cb2300bf1e9a923dc550f6f5fae8b49fc34146a38e612eb",
+      "public_sha256": "2b9dbab02c2886672cb2300bf1e9a923dc550f6f5fae8b49fc34146a38e612eb",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/config.json",
+      "public_path": "05-dance/config.json",
+      "commit_blob": "103e5fdbc0c22828c680cd212c45439b521396d7",
+      "original_sha256": "1d3e07e42549100542f9a062c96c920e4f11cefd638c6f98d0982f9a9144b692",
+      "public_sha256": "1d3e07e42549100542f9a062c96c920e4f11cefd638c6f98d0982f9a9144b692",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/dance.json",
+      "public_path": "05-dance/dance.json",
+      "commit_blob": "29890329e4619a786a525a3ef189a865beba8bfa",
+      "original_sha256": "5d3c67c1df4bbbf855b963bd5d87f57a188120ff00ea5faf91ebee60e3b7eff2",
+      "public_sha256": "5d3c67c1df4bbbf855b963bd5d87f57a188120ff00ea5faf91ebee60e3b7eff2",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/journal.md",
+      "public_path": "05-dance/journal.md",
+      "commit_blob": "573781230da301aab1d5afa4af9b6ab60eaee1f7",
+      "original_sha256": "97fe7071eab9ae24658e9ee891b4e6908da24e8a09b6689c892a4a0a5b584b54",
+      "public_sha256": "97fe7071eab9ae24658e9ee891b4e6908da24e8a09b6689c892a4a0a5b584b54",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/result.json",
+      "public_path": "05-dance/submitted/result.json",
+      "commit_blob": "13555a9aa73d5835d068980e2ecfb6cdd3a81644",
+      "original_sha256": "4dff1304cbf04540292f6a1d13a561dc669dbb3738eee2831007507d11041838",
+      "public_sha256": "4dff1304cbf04540292f6a1d13a561dc669dbb3738eee2831007507d11041838",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/tools.md",
+      "public_path": "05-dance/tools.md",
+      "commit_blob": "173ac36a9a57f725f48fc0f8c4265f8187c70813",
+      "original_sha256": "8710313d6e3cc9bc4ca10eac86390fbde84a98e55191bb9d01fdcfe302227754",
+      "public_sha256": "8710313d6e3cc9bc4ca10eac86390fbde84a98e55191bb9d01fdcfe302227754",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-4-argon-high-05-dance/transcript.md",
+      "public_path": "05-dance/transcript.md",
+      "commit_blob": "3580822264750cbe08ee5f6ea4d9b29ef36318b5",
+      "original_sha256": "c29032a35378e7411592d24750be1d5bf7d39493137dbb580404bec0364ca940",
+      "public_sha256": "c29032a35378e7411592d24750be1d5bf7d39493137dbb580404bec0364ca940",
+      "privacy_redacted": false
+    }
+  ],
+  "privacy_redaction_count": 8,
+  "chain_validation_scope": "Original frozen files only. Public redacted transcripts/output views are not a byte-identical chain replay source. Chain hashes are preserved, never recomputed."
+}

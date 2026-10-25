@@ -1,0 +1,153 @@
+{
+  "sum_literal_clock_seconds": 2394,
+  "sum_literal_clock_minutes": 39.9,
+  "source": "Exactly one started: and one finished: anchor in each original handed-in transcript; not arrival, commit or native elapsed.",
+  "native_grader_calls": 6,
+  "unwrapped_grader_calls": 0,
+  "graders_after_finish": 0,
+  "submitted_result_minutes_explanation": "The submitted grader results precede finish, so their minutes fields are null. Independent regrade reads the already-complete frozen transcript; original result bytes remain separate.",
+  "tasks": [
+    {
+      "run": "2026-10-25-gemini-4-argon-high-01-build",
+      "started_UTC": "2026-10-25T09:20:02Z",
+      "finished_UTC": "2026-10-25T09:27:51Z",
+      "literal_seconds": 469,
+      "grader_calls": [
+        {
+          "step": 73,
+          "journal_run_wrapper": true,
+          "startedAt": "2026-10-25T09:26:47.136961Z",
+          "completedAt": "2026-10-25T09:27:21.560233Z",
+          "run": "2026-10-25-gemini-4-argon-high-01-build"
+        }
+      ],
+      "grader_after_finish_count": 0,
+      "submitted_result_minutes": null,
+      "unwrapped_grader_count": 0,
+      "task_reads": [
+        {
+          "step": 20,
+          "task": "01-build",
+          "read_startedAt": "2026-10-25T09:20:28.907946Z",
+          "read_completedAt": "2026-10-25T09:20:28.910423Z"
+        }
+      ],
+      "task_read_before_clock_start": false
+    },
+    {
+      "run": "2026-10-25-gemini-4-argon-high-02-move",
+      "started_UTC": "2026-10-25T09:28:02Z",
+      "finished_UTC": "2026-10-25T09:39:16Z",
+      "literal_seconds": 674,
+      "grader_calls": [
+        {
+          "step": 130,
+          "journal_run_wrapper": true,
+          "startedAt": "2026-10-25T09:35:41.347128Z",
+          "completedAt": "2026-10-25T09:36:54.319673Z",
+          "run": "2026-10-25-gemini-4-argon-high-02-move"
+        },
+        {
+          "step": 140,
+          "journal_run_wrapper": true,
+          "startedAt": "2026-10-25T09:37:59.247275Z",
+          "completedAt": "2026-10-25T09:38:53.187864Z",
+          "run": "2026-10-25-gemini-4-argon-high-02-move"
+        }
+      ],
+      "grader_after_finish_count": 0,
+      "submitted_result_minutes": null,
+      "unwrapped_grader_count": 0,
+      "task_reads": [
+        {
+          "step": 83,
+          "task": "02-move",
+          "read_startedAt": "2026-10-25T09:28:09.675199Z",
+          "read_completedAt": "2026-10-25T09:28:09.677795Z"
+        }
+      ],
+      "task_read_before_clock_start": false
+    },
+    {
+      "run": "2026-10-25-gemini-4-argon-high-03-correct",
+      "started_UTC": "2026-10-25T09:39:25Z",
+      "finished_UTC": "2026-10-25T09:45:17Z",
+      "literal_seconds": 352,
+      "grader_calls": [
+        {
+          "step": 190,
+          "journal_run_wrapper": true,
+          "startedAt": "2026-10-25T09:43:37.654011Z",
+          "completedAt": "2026-10-25T09:44:24.379395Z",
+          "run": "2026-10-25-gemini-4-argon-high-03-correct"
+        }
+      ],
+      "grader_after_finish_count": 0,
+      "submitted_result_minutes": null,
+      "unwrapped_grader_count": 0,
+      "task_reads": [
+        {
+          "step": 150,
+          "task": "03-correct",
+          "read_startedAt": "2026-10-25T09:39:32.852720Z",
+          "read_completedAt": "2026-10-25T09:39:32.857598Z"
+        }
+      ],
+      "task_read_before_clock_start": false
+    },
+    {
+      "run": "2026-10-25-gemini-4-argon-high-04-soft",
+      "started_UTC": "2026-10-25T09:46:06Z",
+      "finished_UTC": "2026-10-25T09:52:41Z",
+      "literal_seconds": 395,
+      "grader_calls": [
+        {
+          "step": 226,
+          "journal_run_wrapper": true,
+          "startedAt": "2026-10-25T09:50:14.961536Z",
+          "completedAt": "2026-10-25T09:52:14.044077Z",
+          "run": "2026-10-25-gemini-4-argon-high-04-soft"
+        }
+      ],
+      "grader_after_finish_count": 0,
+      "submitted_result_minutes": null,
+      "unwrapped_grader_count": 0,
+      "task_reads": [
+        {
+          "step": 200,
+          "task": "04-soft",
+          "read_startedAt": "2026-10-25T09:46:32.666204Z",
+          "read_completedAt": "2026-10-25T09:46:32.677381Z"
+        }
+      ],
+      "task_read_before_clock_start": false
+    },
+    {
+      "run": "2026-10-25-gemini-4-argon-high-05-dance",
+      "started_UTC": "2026-10-25T09:52:50Z",
+      "finished_UTC": "2026-10-25T10:01:14Z",
+      "literal_seconds": 504,
+      "grader_calls": [
+        {
+          "step": 249,
+          "journal_run_wrapper": true,
+          "startedAt": "2026-10-25T09:56:47.231090Z",
+          "completedAt": "2026-10-25T10:00:45.470022Z",
+          "run": "2026-10-25-gemini-4-argon-high-05-dance"
+        }
+      ],
+      "grader_after_finish_count": 0,
+      "submitted_result_minutes": null,
+      "unwrapped_grader_count": 0,
+      "task_reads": [
+        {
+          "step": 236,
+          "task": "05-dance",
+          "read_startedAt": "2026-10-25T09:53:00.278931Z",
+          "read_completedAt": "2026-10-25T09:53:00.296765Z"
+        }
+      ],
+      "task_read_before_clock_start": false
+    }
+  ]
+}

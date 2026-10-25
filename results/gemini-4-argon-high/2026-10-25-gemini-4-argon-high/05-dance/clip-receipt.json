@@ -1,0 +1,13 @@
+{
+  "sha256": "1f7b68afa5ff90bfa6e69787c05f3ff3c6947a92bc51a20f204ed76194c409e6",
+  "bytes": 443541,
+  "source": "Independent pinned rebuild of the frozen submitted dance, private blind-judging copy",
+  "fps": 24,
+  "loop_seconds": 4,
+  "loops": 3,
+  "clip_seconds": 12,
+  "click_bpm": 120,
+  "human_judge": null,
+  "visual_manifest_sha256": "29309a218c004a5b382bb7a5b609866a351c8780c75970aea25436830397f811",
+  "limitations": "No proctor taste or audible beat mark assigned; sheet inspection is separate from human audiovisual judgment."
+}

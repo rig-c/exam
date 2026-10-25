@@ -1,0 +1,105 @@
+{
+  "source_before": {
+    "README.md": {
+      "bytes": 12657,
+      "sha256": "c5204b21856f9e4c1b28d572cef72d9313f9a18560a981f526f66d72c1a97f2f"
+    },
+    "PROMPT.md": {
+      "bytes": 7422,
+      "sha256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6"
+    },
+    "JOURNAL.md": {
+      "bytes": 2621,
+      "sha256": "2e30a9bbec3ffda0cc5e853cb2ce43c95bb6897ef37cd1ea16d6fb31c8e7ac67"
+    },
+    "grade.py": {
+      "bytes": 37764,
+      "sha256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff"
+    },
+    "results.py": {
+      "bytes": 15283,
+      "sha256": "e8dce23b0f879e5c57df155458d83854fa63a7d1cc8eabe88efe4564e9616776"
+    },
+    "package.json": {
+      "bytes": 233,
+      "sha256": "be6c0d7038f62016598c14c05711c3d0576823a34116cc689a74c8ad18502c68"
+    },
+    "package-lock.json": {
+      "bytes": 2514,
+      "sha256": "28974e02dc759d2aafb8b5f32d3d4afce12b18abd1a43231e927451b2ec1ebdb"
+    },
+    "tools/journal.py": {
+      "bytes": 23898,
+      "sha256": "2ea6aa86e54c674b3e3f4f9a58185706a385f0486c82f309d997851a3d957b8d"
+    },
+    "runs/.gitkeep": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "source_after": {
+    "README.md": {
+      "bytes": 12657,
+      "sha256": "c5204b21856f9e4c1b28d572cef72d9313f9a18560a981f526f66d72c1a97f2f"
+    },
+    "PROMPT.md": {
+      "bytes": 7422,
+      "sha256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6"
+    },
+    "JOURNAL.md": {
+      "bytes": 2621,
+      "sha256": "2e30a9bbec3ffda0cc5e853cb2ce43c95bb6897ef37cd1ea16d6fb31c8e7ac67"
+    },
+    "grade.py": {
+      "bytes": 37764,
+      "sha256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff"
+    },
+    "results.py": {
+      "bytes": 15283,
+      "sha256": "e8dce23b0f879e5c57df155458d83854fa63a7d1cc8eabe88efe4564e9616776"
+    },
+    "package.json": {
+      "bytes": 233,
+      "sha256": "be6c0d7038f62016598c14c05711c3d0576823a34116cc689a74c8ad18502c68"
+    },
+    "package-lock.json": {
+      "bytes": 2514,
+      "sha256": "28974e02dc759d2aafb8b5f32d3d4afce12b18abd1a43231e927451b2ec1ebdb"
+    },
+    "tools/journal.py": {
+      "bytes": 23898,
+      "sha256": "2ea6aa86e54c674b3e3f4f9a58185706a385f0486c82f309d997851a3d957b8d"
+    },
+    "runs/.gitkeep": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "source_stable": true,
+  "copied_contract_files": [
+    "README.md",
+    "PROMPT.md",
+    "JOURNAL.md",
+    "grade.py",
+    "results.py",
+    "package.json",
+    "package-lock.json",
+    "tools/journal.py"
+  ],
+  "handed_in_task_directories": [],
+  "handed_in_artifacts": [],
+  "excluded_scaffolding": [
+    "runs/.gitkeep"
+  ],
+  "allowlist": [
+    "config.json",
+    "other handed-in *.json",
+    "journal.md",
+    "transcript.md",
+    "tools.md",
+    ".journal/**"
+  ],
+  "measurement_policy": "Only this frozen copy may be examined; no task input handed in, so rebuild/regrade/render are not applicable",
+  "freeze_method": "source before/copy/after hashes and native terminal ownership boundary; no chmod or original writes",
+  "clone_HEAD": "0643977fb2adb99eb91fc48cceb166b1b587b3bf"
+}

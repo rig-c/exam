@@ -1,0 +1,58 @@
+{
+  "model": "gemini-4-argon-high",
+  "short": "Gemini 4 Argon (High)",
+  "how": "Antigravity desktop; all 126 native per-generator chatModel.model records audited",
+  "counts": "independent",
+  "initial_exam_HEAD": "0643977fb2adb99eb91fc48cceb166b1b587b3bf",
+  "exam_contract_base": "c014e3cf529535546d2d77349ceca1d35f343b42",
+  "handin_HEAD": "e0baff467bec581ed14ddec648480271b0d01ef4",
+  "handin_transport": "Local exact commit; push rejected against an older remote branch. No force push. Withdrawn historical remote candidate not used.",
+  "minutes": 39.9,
+  "minutes_read_from": "2394 literal submitted started:/finished: seconds; all five clock anchors verified, task reads after start and final grader before finish.",
+  "literal_clock_seconds": 2394,
+  "judge": null,
+  "journal_rulings": {
+    "01-build": {
+      "credit": "kept",
+      "outside_entry_grader_count": 0,
+      "grader_after_finish_count": 0,
+      "note": "Original tool-written chain verifies intact. Recorded TASK read follows start and all recorded graders precede finish; no outside-entry grader invocation observed."
+    },
+    "02-move": {
+      "credit": "kept",
+      "outside_entry_grader_count": 0,
+      "grader_after_finish_count": 0,
+      "note": "Original tool-written chain verifies intact. Recorded TASK read follows start and all recorded graders precede finish; no outside-entry grader invocation observed."
+    },
+    "03-correct": {
+      "credit": "kept",
+      "outside_entry_grader_count": 0,
+      "grader_after_finish_count": 0,
+      "note": "Original tool-written chain verifies intact. Recorded TASK read follows start and all recorded graders precede finish; no outside-entry grader invocation observed."
+    },
+    "04-soft": {
+      "credit": "kept",
+      "outside_entry_grader_count": 0,
+      "grader_after_finish_count": 0,
+      "note": "Original tool-written chain verifies intact. Recorded TASK read follows start and all recorded graders precede finish; no outside-entry grader invocation observed."
+    },
+    "05-dance": {
+      "credit": "kept",
+      "outside_entry_grader_count": 0,
+      "grader_after_finish_count": 0,
+      "note": "Original tool-written chain verifies intact. Recorded TASK read follows start and all recorded graders precede finish; no outside-entry grader invocation observed."
+    }
+  },
+  "standing_context": {
+    "global_file_present": true,
+    "global_file_sha256": "0f584349be90f52dbe0f88dce689f4a274b8c779fc9a13667e93dbf1b65f4cfb",
+    "executors_with_customizations_metadata": 12,
+    "customization_load_limit": "Native customization-load presence is distinct from direct injection proof.",
+    "direct_prompt_evidence": "The last generator chatModel.systemPrompt contains the exact whole global persona/standing-instruction file. Earlier 125 prompt bodies are unavailable, not inferred.",
+    "systemPrompt_generators_available": 1,
+    "historical_prompt_generators_unavailable": 125
+  },
+  "public_copy_note": "Original immutable hand-in bytes and original chain verification remain private. 8 public text views redact host-local paths; chain/output hashes are preserved, never repaired. These public views are not a byte-identical chain replay source.",
+  "tokens": null,
+  "tokens_read_from": "No complete verifiable per-task token report supplied; no estimate."
+}

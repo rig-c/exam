@@ -1,0 +1,31 @@
+{
+  "spec": "rigc-motion/1",
+  "animations": {
+    "bow": {
+      "duration": 2.0,
+      "loop": true,
+      "tracks": [
+        {
+          "bone": "neck",
+          "property": "rotate",
+          "keys": [
+            { "t": 0.0, "v": [0] },
+            { "t": 0.5, "v": [2] },
+            { "t": 1.5, "v": [-2] },
+            { "t": 2.0, "v": [0] }
+          ]
+        },
+        {
+          "bone": "head",
+          "property": "rotate",
+          "keys": [
+            { "t": 0.0, "v": [0] },
+            { "t": 0.5, "v": [7] },
+            { "t": 1.5, "v": [-7] },
+            { "t": 2.0, "v": [0] }
+          ]
+        }
+      ]
+    }
+  }
+}

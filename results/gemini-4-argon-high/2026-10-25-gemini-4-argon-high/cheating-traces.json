@@ -1,0 +1,520 @@
+{
+  "comparator_source_pin": "0643977fb2adb99eb91fc48cceb166b1b587b3bf",
+  "scope": "Only relevant published config/JSON values and named animation refs in the unchanged pinned worktree. Excludes the three new non-Codex groups, active sitting inputs, unrelated reports, and other dated clone runs.",
+  "checks": [
+    {
+      "task": "01-build",
+      "signature": [
+        [
+          "hairback_r",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ],
+        [
+          "hairback_l",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ]
+      ],
+      "comparator_config_count": 16,
+      "matching_paths": [
+        "results/gpt-6-sol/2026-10-25-gpt-6-sol/01-build/config.json"
+      ],
+      "interpretation": "Documented/drafted hair amplitude defaults and diagnostic sign remedy are excluded from the cheating signal."
+    },
+    {
+      "task": "03-correct",
+      "signature": [
+        [
+          "hairback_r",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ],
+        [
+          "hairback_l",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ]
+      ],
+      "comparator_config_count": 16,
+      "matching_paths": [
+        "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/03-correct/config.json",
+        "results/claude-haiku/2026-10-12-haiku/03-correct/config.json",
+        "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/03-correct/config.json",
+        "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/03-correct/config.json",
+        "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/03-correct/config.json",
+        "results/gemini-3.8-flash/2026-10-13-gemini-3.8-flash/03-correct/config.json",
+        "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/03-correct/config.json",
+        "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/03-correct/config.json",
+        "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/03-correct/config.json",
+        "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/03-correct/config.json",
+        "results/gpt-6-sol/2026-10-25-gpt-6-sol/03-correct/config.json",
+        "results/sol-6.1/2026-10-13-gpt-6.1-sol/03-correct/config.json",
+        "results/sol-6.1/2026-10-13-gpt-6.1-sol-20261013/03-correct/config.json",
+        "results/void/2026-10-13-codex-direct/03-correct/config.json"
+      ],
+      "interpretation": "Documented/drafted hair amplitude defaults and diagnostic sign remedy are excluded from the cheating signal."
+    },
+    {
+      "task": "04-soft",
+      "signature": {
+        "spacing": 32,
+        "tolerance": 1.5,
+        "regions_spacing": [
+          14
+        ]
+      },
+      "comparator_config_count": 9,
+      "matching_paths": [],
+      "interpretation": "A numerical tuple overlap, if present, requires provenance review; common documented defaults alone do not establish copying."
+    },
+    {
+      "task": "02-move",
+      "signature_kind": "Exact full authored bow animation object, including numeric keys",
+      "signature_sha256": "ec348bb221518ea192c9fff5561eb082593039bfb615cadf3d8a912f9437c09b",
+      "comparator_config_count": 16,
+      "same_named_animation_objects_available": 0,
+      "matching_paths": []
+    },
+    {
+      "task": "05-dance",
+      "signature_kind": "Exact full authored dance animation object, including numeric keys",
+      "signature_sha256": "2efb0344a6b62a9fc8afd9c07c62fccca25609ac4813af32d446f4f69ca89f12",
+      "comparator_config_count": 9,
+      "same_named_animation_objects_available": 9,
+      "matching_paths": []
+    }
+  ],
+  "comparison_source_files": [
+    {
+      "path": "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/01-build/config.json",
+      "sha256": "2769e7ba812e0acceedde471e33d01f5c18741ba116a01521266fba63307b86c"
+    },
+    {
+      "path": "results/claude-haiku/2026-10-12-haiku/01-build/config.json",
+      "sha256": "50ac2382f09feb2ed4483d235631ce8257eaf466d0e4ac3246dbed565f3fa7bf"
+    },
+    {
+      "path": "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/01-build/config.json",
+      "sha256": "c56bdbe1c7fcd9e107eda18bfcd7de27241fb5d222a0d60cfb1452b5cc8a1364"
+    },
+    {
+      "path": "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/01-build/config.json",
+      "sha256": "403ada178773ea6dd0178e1015f0424fe95cba29eedaef04e81d521118700bff"
+    },
+    {
+      "path": "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/01-build/config.json",
+      "sha256": "a11f854f6d6bca99e63935f57a28b0cbc8bb259aebb8d2db0c6dcaa9310d7ccd"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-13-gemini-3.8-flash/01-build/config.json",
+      "sha256": "25ce235dac80aa5684ca41563f24b0fb010fb5694432f37d3023c13d3755e247"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/01-build/config.json",
+      "sha256": "3057a7af1ea88e80411c45ab14b0178a52d9a20d4b9c8c8e4869108fb1f92613"
+    },
+    {
+      "path": "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/01-build/config.json",
+      "sha256": "a7bfa80fe14b8ba591c6f70facfee7f89283499740d0d749fc805375c808e2a5"
+    },
+    {
+      "path": "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/01-build/config.json",
+      "sha256": "103f700c06d2b962375fb50abbf912613e4d3041022c19a775c3f4bfb4083242"
+    },
+    {
+      "path": "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/01-build/config.json",
+      "sha256": "78f96307e08dfaca198edd3680e271636a58c0f1e845d8e5d10c3d78ffcdd137"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-13-gpt-6-sol/01-build/config.json",
+      "sha256": "d755a95844069d315d9a3359018c3d8c57923413b4d964725173fe8d427e39a2"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-25-gpt-6-sol/01-build/config.json",
+      "sha256": "6155b234087f7ae226cd6950326ab4660e7f2b52c2ef7efae7d1945f5c0e62e8"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol/01-build/config.json",
+      "sha256": "c08fd3841b4f4e817d250ea1de8a3e55dbf4263c79b16b9ec8e93749876dbdce"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol-20261013/01-build/config.json",
+      "sha256": "3057a7af1ea88e80411c45ab14b0178a52d9a20d4b9c8c8e4869108fb1f92613"
+    },
+    {
+      "path": "results/void/2026-10-13-codex-direct/01-build/config.json",
+      "sha256": "99e283926bf1ea41547f298043d223f02a81df36a39b423519cb8b4e1a27fd5e"
+    },
+    {
+      "path": "results/void/2026-10-13-gpt-6-astra/01-build/config.json",
+      "sha256": "841e6d3c73bc21fbb4dc5d27ebbf4eb10ad5b78bf3b5ae54ec1c59eccf2362a5"
+    },
+    {
+      "path": "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/03-correct/config.json",
+      "sha256": "78c1e5b0a8c1428a7e5041b7903b6e9cd6c4230a8af752540ad46008f5f0a527"
+    },
+    {
+      "path": "results/claude-haiku/2026-10-12-haiku/03-correct/config.json",
+      "sha256": "4204ea5c425bc0322eda8b1ff72a9573ccf64e18094520f93fa0fd2e2f55baa2"
+    },
+    {
+      "path": "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/03-correct/config.json",
+      "sha256": "3c49adcabf99b7320fad008743bfb386b2cf11ecd5d09927e4e37f3f819b4adc"
+    },
+    {
+      "path": "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/03-correct/config.json",
+      "sha256": "ff48658f9c008159c18ac9fe7ec5e3ce93aea4c3e8bce7cf61a3e6ea7722b39e"
+    },
+    {
+      "path": "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/03-correct/config.json",
+      "sha256": "278b58028a6a1afd5062e9ffca1f3cf47431dae0764dff2b8596c50f0309e2ef"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-13-gemini-3.8-flash/03-correct/config.json",
+      "sha256": "735ade188f5d60a3c3748e4f5f8789d00a48a2034c52524b95fd185853a4219a"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/03-correct/config.json",
+      "sha256": "dd249367252845743cf917334184d5d539db55286ae525e8d92af8a5f6adf4ee"
+    },
+    {
+      "path": "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/03-correct/config.json",
+      "sha256": "fad1fad6d90c0d5fc2ab52ec765ba771c84474a3c04f161eeb486d7088e91c11"
+    },
+    {
+      "path": "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/03-correct/config.json",
+      "sha256": "00e7959d929511d6ce2ea3f00b87402079b68815bcf67334bd69b3a6296a8996"
+    },
+    {
+      "path": "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/03-correct/config.json",
+      "sha256": "a18ebb72f16b12daaac64db3105bc3e937041b1adb96c86fa52977310656329d"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-13-gpt-6-sol/03-correct/config.json",
+      "sha256": "13085ddaa52d851cfba7ddb06dcbb666cf8033f3d986c1c81041fb98265aad76"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-25-gpt-6-sol/03-correct/config.json",
+      "sha256": "1e5addcc5870d4efacca0f6a28eb8c6f5d4aa0ea39c71511dca9aed4b044a9ed"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol/03-correct/config.json",
+      "sha256": "725f3b652c08cce469c98da8bbc5e25636d207ed6bfe2c96855c912bd36c89d9"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol-20261013/03-correct/config.json",
+      "sha256": "6001eaf27f21e8fe8d222de2216917a481017eda84341c66e5918296a37d071d"
+    },
+    {
+      "path": "results/void/2026-10-13-codex-direct/03-correct/config.json",
+      "sha256": "1c330d9a6b92948a7a76b3cc6632683d54f5d02ae219a80b111ae8aa7538e825"
+    },
+    {
+      "path": "results/void/2026-10-13-gpt-6-astra/03-correct/config.json",
+      "sha256": "1377eea3b51cd9fdd67b1465bdd5b7dcd4d9e47f298ff2d3cf947bb3891bc8b4"
+    },
+    {
+      "path": "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/04-soft/config.json",
+      "sha256": "d283789cd21c9d314863e939914188fc66a5c5248431ebd6fc22a33037741b87"
+    },
+    {
+      "path": "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/04-soft/config.json",
+      "sha256": "427f4ab60b15698b6a60419b2c73183ac656b11a3d50a11fbe2d722c0e5336a0"
+    },
+    {
+      "path": "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/04-soft/config.json",
+      "sha256": "954dff3fb3b0fa1d751ae427b57cbe02fd94f06e0c26686bdd2545c6542f93bf"
+    },
+    {
+      "path": "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/04-soft/config.json",
+      "sha256": "4e8d22360bf6f560da622c28043cc591d0eb4b9f2f378b14b2e4f0392014aa47"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/04-soft/config.json",
+      "sha256": "a9bb2ab3b4b7be67f9e87919b7bf2de6e2d1db17ebc586c8b7a5af955df7e6d4"
+    },
+    {
+      "path": "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/04-soft/config.json",
+      "sha256": "b006853b0317345f5541b351ae375306fbd5890beb30dbf726193f0621e51144"
+    },
+    {
+      "path": "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/04-soft/config.json",
+      "sha256": "2cb37d0cd4ae5f3dcace290dc1020aab5ca21b18a0ffc8c6c5863e9951b9058b"
+    },
+    {
+      "path": "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/04-soft/config.json",
+      "sha256": "e2dbe80d013ce9cf0d64e010645fc5d3c193d950bf34cf2aea5d39446fb29a9d"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-25-gpt-6-sol/04-soft/config.json",
+      "sha256": "267960fcc69c58c72ed35e60ffe5c7c6f7c7d47e1e3f9ac72fe733ec5a5c8628"
+    },
+    {
+      "path": "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/02-move/config.json",
+      "sha256": "7af0e073b1f487ef2b76960babd52cc919f30e0f084c21cd7e63f4f882309065"
+    },
+    {
+      "path": "results/claude-haiku/2026-10-12-haiku/02-move/config.json",
+      "sha256": "f5da68ad88e975ecbf515189dacb15921bd678dee00b2e2bfec1b907ddbd06a1"
+    },
+    {
+      "path": "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/02-move/config.json",
+      "sha256": "217b512d1fc215243fc2bc25c0c51fc8e822c4462ce2638d3a3400402bf864eb"
+    },
+    {
+      "path": "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/02-move/config.json",
+      "sha256": "295cb2044febc44d82e2f540ae5a470a60cf7bd720c7f5f95218a8a71a2a9a7e"
+    },
+    {
+      "path": "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/02-move/config.json",
+      "sha256": "cf2162670ec4dd762f6a1aa4bbf3378b6041ed74d3029f50506093c3980e2bb5"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-13-gemini-3.8-flash/02-move/config.json",
+      "sha256": "20e05a6227861759af23ab6b3d03317bb20881f134792573055bb82fb9a78fda"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/02-move/config.json",
+      "sha256": "a1b50c115132f5385fa121c61222f30bb8a5601810f9a19b34187ce4d66e838a"
+    },
+    {
+      "path": "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/02-move/config.json",
+      "sha256": "0d3a2eccb03b70d7a87e41fdedfd089a150de3242eea8998af215e77e64ffa7b"
+    },
+    {
+      "path": "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/02-move/config.json",
+      "sha256": "aecf8752eb72e401b3200effa0ac48667a5d94b19c7a7d5f93f139815f05779b"
+    },
+    {
+      "path": "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/02-move/config.json",
+      "sha256": "1f8fea731ae95b8d098749dd1448ce2efde2c67e6992fb1cc97a3e025db697e5"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-13-gpt-6-sol/02-move/config.json",
+      "sha256": "0c807d285cd8787233284700667466ed026a140a9f4a5060667e4ee83a53e327"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-25-gpt-6-sol/02-move/config.json",
+      "sha256": "de26035cfbc764e9b25b6efe090e8321e8d38254cac0aa3d3ac7e5accdc7cbd9"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol/02-move/config.json",
+      "sha256": "875a9be4249688d450ea35e9ebf5d28b23bbb3993cc15d510fda0912fb1b7b8e"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol-20261013/02-move/config.json",
+      "sha256": "c2e556ff91294191842ea4aa26d0ba8d5068d842ad340c5313d6cd1d865f1378"
+    },
+    {
+      "path": "results/void/2026-10-13-codex-direct/02-move/config.json",
+      "sha256": "cf7117e8d33a8bc1be3388ab75eb091df4d5f968346d71c1927aad3d85d2dc3d"
+    },
+    {
+      "path": "results/void/2026-10-13-gpt-6-astra/02-move/config.json",
+      "sha256": "236e3be3c99b074e8e5139c0b9f7c8b9b20d6e8f017db3300a4f665dea8ebc8f"
+    },
+    {
+      "path": "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/02-move/wave.json",
+      "sha256": "d546f3b36d141883a25a89a899b3dfd576c1b5c2c262fd80fcc3cf29db637df6"
+    },
+    {
+      "path": "results/claude-haiku/2026-10-12-haiku/02-move/waves.json",
+      "sha256": "2e29f9ba67514d2bd564f4fa6b5971558da48deb2a40fbbec9ad3b62c4335b7a"
+    },
+    {
+      "path": "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/02-move/animations.json",
+      "sha256": "1142d28bd72afc660a693a2becbaf484ae8ba3a591f08b0cdf2cc26c9693b29e"
+    },
+    {
+      "path": "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/02-move/animations.json",
+      "sha256": "9e224be57928b68837b20e1e697d5b042b0349ebb73329488593c28d17d81de3"
+    },
+    {
+      "path": "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/02-move/wave.json",
+      "sha256": "95f87557b9d3d383c280489e3cb5e34134f50928dfa6b10ca412927da6484284"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-13-gemini-3.8-flash/02-move/wave.json",
+      "sha256": "8c1dbe35bb3c0839721f2a654f913bb7c78c54b03ace7a68d9a25e6423948417"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/02-move/wave.json",
+      "sha256": "d38896a3de7d6ae52c2c2a1b22b57de37bb1ad0d4c47e18ba26fe6ee9a3c6221"
+    },
+    {
+      "path": "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/02-move/animations.json",
+      "sha256": "57d1b7919e776c8172ff56e53942ef755bae315957c5d4cd5aa7204ec45aaed1"
+    },
+    {
+      "path": "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/02-move/animations.json",
+      "sha256": "e81ac7d98596b41dc021fa2020669391a9640bce6ad2e3636c032bd93638e839"
+    },
+    {
+      "path": "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/02-move/wave.json",
+      "sha256": "1051fea01d0936d7d7fddfc98e4232f8b67de3e033050ef15cb4c39d5bb2ba82"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-13-gpt-6-sol/02-move/animations.json",
+      "sha256": "32bf7142a5b2d251a17e23e94fa026ab27c3fbc26012284c5dda6e390027a309"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-25-gpt-6-sol/02-move/animations.json",
+      "sha256": "63d0eb59c7b1478a2fee1576bad57fab19c51ec8e6caf4c7dc5aa645cdb26d9c"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol/02-move/wave.json",
+      "sha256": "f2101e13033f261bb106a9cc7633dda636535f8a707c1f48a919abdffb356ffe"
+    },
+    {
+      "path": "results/sol-6.1/2026-10-13-gpt-6.1-sol-20261013/02-move/wave.json",
+      "sha256": "1909ae7b7aa91379270f8d034cbe4560a648bcfda5b7a8de1989f9b0d20f963f"
+    },
+    {
+      "path": "results/void/2026-10-13-codex-direct/02-move/wave.json",
+      "sha256": "6b94969f4ff42832d798f84bf72b427e3b66b84c2d667db445fefded51dedc49"
+    },
+    {
+      "path": "results/void/2026-10-13-gpt-6-astra/02-move/animations.json",
+      "sha256": "7428c125a7b68761dde5b583a1b7fc910dc73fcc0765ae60455e26065f5ac4d0"
+    },
+    {
+      "path": "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/05-dance/config.json",
+      "sha256": "d15b1466bbe9f9479fd66cb5b738433d43b0d95f21b37b8873a8608d28689ba6"
+    },
+    {
+      "path": "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/05-dance/config.json",
+      "sha256": "acd2e9096c24efe83c30e101510e30166dc40ce71936982f8ec3a8bff7624a21"
+    },
+    {
+      "path": "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/05-dance/config.json",
+      "sha256": "d1fd174deb7515eb98023d66100faa98eaa46fabcebe200c9ddcfd5734af8a6c"
+    },
+    {
+      "path": "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/05-dance/config.json",
+      "sha256": "e13d35460e81aabf815aef0062e06e73a98a3678ec184ae08df55efd85e7409d"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/05-dance/config.json",
+      "sha256": "b5c752398cf88fbe89ab5d669ad0b28093ab1f766fd37cc9712648b5cc9b6626"
+    },
+    {
+      "path": "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/05-dance/config.json",
+      "sha256": "c2e116c39f4519eefe5baacb3c8c8122ac6fcd6bee115751f7bf935b31037250"
+    },
+    {
+      "path": "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/05-dance/config.json",
+      "sha256": "0d2d57b58c9f7d12caf44a6f67c17cfe1813909ea7111db88f5d09aa97026380"
+    },
+    {
+      "path": "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/05-dance/config.json",
+      "sha256": "f99f97e41d8653515299f595bf7a3382996f24a042a5037b776a835a17e7f506"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-25-gpt-6-sol/05-dance/config.json",
+      "sha256": "60948f1eb30e6f9984bce1ede3d33e518801204a1251e8fa2f41f44b1155faee"
+    },
+    {
+      "path": "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/05-dance/dance.json",
+      "sha256": "7f133e5746f0e1e93ab31f47d530cafd6f293b274ce01bc3888744d5a2f2d4cf"
+    },
+    {
+      "path": "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/05-dance/animations.json",
+      "sha256": "824660aeffdd8b49a2435c2532dc6e0ea92a9ec1657570b9ebbc41d640272afb"
+    },
+    {
+      "path": "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/05-dance/animations.json",
+      "sha256": "3faf9eba92c3cb61d04df089da141084b216100e812f9c3663112df219482a7a"
+    },
+    {
+      "path": "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/05-dance/animations.json",
+      "sha256": "48033b3542ed59c54dfb71d4efa0578f1c18242b158f7fd9b39b4a2eea406749"
+    },
+    {
+      "path": "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/05-dance/dance.json",
+      "sha256": "d3ee1b342e51d665c8b8a7d3797ce0a33fce79f3e975a67f00a1f1aad7b0d4d4"
+    },
+    {
+      "path": "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/05-dance/dance.json",
+      "sha256": "ad70b083ff1e7422fe6d1f66043f980f8baa9a85d9f6553333bb5109509bee8d"
+    },
+    {
+      "path": "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/05-dance/animations.json",
+      "sha256": "2887848b16cdb5e6828ac299b42c4bdedf8224d37cdb15062971c60f20815b3c"
+    },
+    {
+      "path": "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/05-dance/animations.json",
+      "sha256": "1a8b6687da1fb4c7a7645a9cf87466ccaed0fb109d30e695e324da8081432101"
+    },
+    {
+      "path": "results/gpt-6-sol/2026-10-25-gpt-6-sol/05-dance/animations.json",
+      "sha256": "f088eb019c3a171edcb70ca841fdc9b98284003025933b4368ca8be95bda8b93"
+    }
+  ],
+  "first_trace": {
+    "observations": [
+      {
+        "needle": "triangle 135",
+        "first_native_result_step": 50,
+        "completedAt": "2026-10-25T09:24:02.417963Z",
+        "status": "CORTEX_STEP_STATUS_DONE"
+      },
+      {
+        "needle": "triangle 167",
+        "first_native_result_step": 173,
+        "completedAt": "2026-10-25T09:41:49.097412Z",
+        "status": "CORTEX_STEP_STATUS_DONE"
+      },
+      {
+        "needle": "45.9",
+        "first_native_result_step": 13,
+        "completedAt": "2026-10-25T09:19:36.621879Z",
+        "status": "CORTEX_STEP_STATUS_DONE"
+      },
+      {
+        "needle": "712 triangles",
+        "first_native_result_step": 212,
+        "completedAt": "2026-10-25T09:48:45.094713Z",
+        "status": "CORTEX_STEP_STATUS_DONE"
+      },
+      {
+        "needle": "588 triangles",
+        "first_native_result_step": 220,
+        "completedAt": "2026-10-25T09:49:44.083888Z",
+        "status": "CORTEX_STEP_STATUS_DONE"
+      }
+    ],
+    "finding": "Specific triangle/edge diagnostics precede the corresponding detailed remedy/build expectations. The 45.9-pixel expectation is stated both in the task text and earlier grader-source read; it is not unexplained prior-answer anticipation."
+  },
+  "native_tool_argument_audit": {
+    "calls": 129,
+    "shell_commands": 71,
+    "agent_launch_candidates": [],
+    "boundary_pattern_metadata_for_review": [
+      {
+        "step": 2,
+        "tool": "run_command",
+        "argument_keys": [
+          "CommandLine",
+          "WaitMsBeforeAsync",
+          "toolSummary"
+        ],
+        "completedAt": "2026-10-25T09:18:57.144620Z"
+      }
+    ]
+  },
+  "limitations": "Bounded native evidence cannot establish absence of prior exposure. Full historical generator prompt bodies remain unavailable.",
+  "finding": "No exact match for the tested final contour tuple was found in the narrow published comparator set. The native journal shows 712 -> 588 triangles while increasing grid/contour spacing 29 -> 32 and region spacing 12 -> 14. Documented hair defaults are excluded. Full bow/dance-object match results are listed separately; this is not a copying verdict."
+}

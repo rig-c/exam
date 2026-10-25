@@ -1,0 +1,425 @@
+{
+  "initial_exam_HEAD": "c014e3cf529535546d2d77349ceca1d35f343b42",
+  "handin_HEAD": "63867522bb5a178c7760a911fffda8033151fc13",
+  "source_before_copy_after_all_match": true,
+  "original_handed_in_file_count": 59,
+  "source_manifest_sha256": "e241f59d1398021b9d8ee74a0ed519f5159dc98f2de08f78e516a2652433e608",
+  "authoritative_source": "Immutable submitted commit and private hash-frozen original bytes",
+  "public_views": [
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/chain.jsonl",
+      "public_path": "01-build/.journal/chain.jsonl",
+      "original_sha256": "ed78607d0906590771bdbd40478ed742fa568f085c5133160aabd211575f2274",
+      "public_sha256": "ed78607d0906590771bdbd40478ed742fa568f085c5133160aabd211575f2274",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/lock",
+      "public_path": "01-build/.journal/lock",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/step-1.out",
+      "public_path": "01-build/.journal/step-1.out",
+      "original_sha256": "e21acaf76d0bf9cdfab7a927995b3553552841341714b746731d7514456e871b",
+      "public_sha256": "4906c8895cff3db73c730ea6bec2116df7035f24bcbe7bf4e59064d96af110a0",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/step-2.out",
+      "public_path": "01-build/.journal/step-2.out",
+      "original_sha256": "ca59c21ac941095bf9b508c012a2c18d198fdcfc1e7231471ec85a3a08128938",
+      "public_sha256": "ca59c21ac941095bf9b508c012a2c18d198fdcfc1e7231471ec85a3a08128938",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/step-3.out",
+      "public_path": "01-build/.journal/step-3.out",
+      "original_sha256": "25c10b1cd77507c98a1bdca2eb7c0502e0b97f586c36114e475071100cb91721",
+      "public_sha256": "46255b1073f81390eb42b9ea1e17791ef69f69398c7efb37809676eacf76348e",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/step-4.out",
+      "public_path": "01-build/.journal/step-4.out",
+      "original_sha256": "8dac63c8162a15a20ba6eb401c5ad079103818e3a97f064ac9eb12752c4ad0e9",
+      "public_sha256": "8dac63c8162a15a20ba6eb401c5ad079103818e3a97f064ac9eb12752c4ad0e9",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/step-5.out",
+      "public_path": "01-build/.journal/step-5.out",
+      "original_sha256": "820b0bf4f290063917b83f70e47e8fc89e9dc959527cfc76ea78ab62e61bb5d0",
+      "public_sha256": "cad25abbd5f4d7f764834bb8a2455cb0bc484424a3493c2f449430c101cf8867",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/.journal/step-6.out",
+      "public_path": "01-build/.journal/step-6.out",
+      "original_sha256": "638301f6cb693db8163d00dbb8eadbc38bfdd108823f9ddc7ee1954d9fc265de",
+      "public_sha256": "638301f6cb693db8163d00dbb8eadbc38bfdd108823f9ddc7ee1954d9fc265de",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/config.json",
+      "public_path": "01-build/config.json",
+      "original_sha256": "b397f3e6f35fbc28c853918a8f6369a6596ee07d19842d69c1be0e5fad213b21",
+      "public_sha256": "b397f3e6f35fbc28c853918a8f6369a6596ee07d19842d69c1be0e5fad213b21",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/journal.md",
+      "public_path": "01-build/journal.md",
+      "original_sha256": "318e781184addcf67ab7545d3ce3f1415e433fb36b44915991a3ade68edae9c6",
+      "public_sha256": "318e781184addcf67ab7545d3ce3f1415e433fb36b44915991a3ade68edae9c6",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/result.json",
+      "public_path": "01-build/submitted/result.json",
+      "original_sha256": "66309192a21bccc7253f38d0ec36a74838a99588803491f580185942481bb65b",
+      "public_sha256": "66309192a21bccc7253f38d0ec36a74838a99588803491f580185942481bb65b",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-01-build/transcript.md",
+      "public_path": "01-build/transcript.md",
+      "original_sha256": "29b97b197f9259ce7560b46341bbe042c5092dd31a8d6702074e01b00baa031f",
+      "public_sha256": "29b97b197f9259ce7560b46341bbe042c5092dd31a8d6702074e01b00baa031f",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/.journal/chain.jsonl",
+      "public_path": "02-move/.journal/chain.jsonl",
+      "original_sha256": "321182037a3177bd9ddda9c56cf6da670b5120c519802806f5f61b873cb2f260",
+      "public_sha256": "321182037a3177bd9ddda9c56cf6da670b5120c519802806f5f61b873cb2f260",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/.journal/lock",
+      "public_path": "02-move/.journal/lock",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/.journal/step-1.out",
+      "public_path": "02-move/.journal/step-1.out",
+      "original_sha256": "b15e012c3e8f3dee0ca245a828659148bb4d8066b7e5ddb8571f235f128e47a6",
+      "public_sha256": "b15e012c3e8f3dee0ca245a828659148bb4d8066b7e5ddb8571f235f128e47a6",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/.journal/step-2.out",
+      "public_path": "02-move/.journal/step-2.out",
+      "original_sha256": "a5c14f6cf51918b3e36cf4588da4e071b2b141f060e391f1afca34e24f9ea6c2",
+      "public_sha256": "a5c14f6cf51918b3e36cf4588da4e071b2b141f060e391f1afca34e24f9ea6c2",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/.journal/step-3.out",
+      "public_path": "02-move/.journal/step-3.out",
+      "original_sha256": "19bf7ff51e6b6fb5d3468826c182957d345b1a12a89a672ea5cb2b84ac7e5bf8",
+      "public_sha256": "19bf7ff51e6b6fb5d3468826c182957d345b1a12a89a672ea5cb2b84ac7e5bf8",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/.journal/step-4.out",
+      "public_path": "02-move/.journal/step-4.out",
+      "original_sha256": "911fb8e35fbf5c4ed7a7521e92fa271cb3e7f3eaf63f7f7a382d733eb5cd637e",
+      "public_sha256": "b3dc0b44bfa37121d1796d355aa001f6c15de6c891e78afee1dbdfffce35a608",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/.journal/step-5.out",
+      "public_path": "02-move/.journal/step-5.out",
+      "original_sha256": "d4d08ee2d2b64088f2a9fb06052466cba903cfd1a780781406175f3d0e00315c",
+      "public_sha256": "d4d08ee2d2b64088f2a9fb06052466cba903cfd1a780781406175f3d0e00315c",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/animations.json",
+      "public_path": "02-move/animations.json",
+      "original_sha256": "79ad0186d1e6539ba3fb1ae92559f2e2f58d4a0580f8cf678f6348025939f61f",
+      "public_sha256": "79ad0186d1e6539ba3fb1ae92559f2e2f58d4a0580f8cf678f6348025939f61f",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/config.json",
+      "public_path": "02-move/config.json",
+      "original_sha256": "cbbc028df84d3496e3d47ce12a842bb6a33df03eadf966b3e48c547542c50b97",
+      "public_sha256": "cbbc028df84d3496e3d47ce12a842bb6a33df03eadf966b3e48c547542c50b97",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/journal.md",
+      "public_path": "02-move/journal.md",
+      "original_sha256": "634bf5b87ecb2aa27e131d1dbedd05cc63160e1fe2c6bb1363d8d558c954f368",
+      "public_sha256": "634bf5b87ecb2aa27e131d1dbedd05cc63160e1fe2c6bb1363d8d558c954f368",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/result.json",
+      "public_path": "02-move/submitted/result.json",
+      "original_sha256": "210f6f51af15554af8996cc2877b64d4073cd68455a45a49a8e5496889bb8ca8",
+      "public_sha256": "210f6f51af15554af8996cc2877b64d4073cd68455a45a49a8e5496889bb8ca8",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-02-move/transcript.md",
+      "public_path": "02-move/transcript.md",
+      "original_sha256": "9dd50eac94fa81d9db926f6d24b7d959a5ed12218baca4d66026a248e3c93a95",
+      "public_sha256": "9dd50eac94fa81d9db926f6d24b7d959a5ed12218baca4d66026a248e3c93a95",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/chain.jsonl",
+      "public_path": "03-correct/.journal/chain.jsonl",
+      "original_sha256": "07a07289ec1ecd623c384c8756d070c2565f8d7de25f030567cc6c058b5bf3eb",
+      "public_sha256": "07a07289ec1ecd623c384c8756d070c2565f8d7de25f030567cc6c058b5bf3eb",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/lock",
+      "public_path": "03-correct/.journal/lock",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/step-1.out",
+      "public_path": "03-correct/.journal/step-1.out",
+      "original_sha256": "95e3efb72b0874890885d541b93fdab364f97d72ef6e954736b6af6840c82deb",
+      "public_sha256": "07d5098fa269ff2e277ba8488184ce8f87c8b590001cf46d5fdf5e060389205a",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/step-2.out",
+      "public_path": "03-correct/.journal/step-2.out",
+      "original_sha256": "65ea068b537d5ceab184c2cdf76ddfa5fbdb1876efdbdf1e60a0facba13ff5bb",
+      "public_sha256": "65ea068b537d5ceab184c2cdf76ddfa5fbdb1876efdbdf1e60a0facba13ff5bb",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/step-3.out",
+      "public_path": "03-correct/.journal/step-3.out",
+      "original_sha256": "861c79f89d3217f967beafc5c881999c7d6f61c66b37ad7ad778434da0fb42e0",
+      "public_sha256": "253ddd921626b46f473d933406009e9479624dc1c31586722145c69a3bf03873",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/step-4.out",
+      "public_path": "03-correct/.journal/step-4.out",
+      "original_sha256": "0bdc4b568d22e9239603d93ae85a0be56568c80670fbde230f794377269d7672",
+      "public_sha256": "0bdc4b568d22e9239603d93ae85a0be56568c80670fbde230f794377269d7672",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/step-5.out",
+      "public_path": "03-correct/.journal/step-5.out",
+      "original_sha256": "725b9461a4229fd0dece1f794a6086da7c254d7797e2359c51d3cc1c10da9853",
+      "public_sha256": "88c053b1e9a5e63e8842fe231bd9070d4e0425b1accf7e3f96043b8ca0ee7219",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/.journal/step-6.out",
+      "public_path": "03-correct/.journal/step-6.out",
+      "original_sha256": "471ffa01eb559be36b7927589c2df3bec8fdcda8d403ada5dd57757d65960387",
+      "public_sha256": "471ffa01eb559be36b7927589c2df3bec8fdcda8d403ada5dd57757d65960387",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/config.json",
+      "public_path": "03-correct/config.json",
+      "original_sha256": "728b374d7d927e66a094f78b9d07e1f8e9d029f8cdd4b3da334c0b7fed9d5fe4",
+      "public_sha256": "728b374d7d927e66a094f78b9d07e1f8e9d029f8cdd4b3da334c0b7fed9d5fe4",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/journal.md",
+      "public_path": "03-correct/journal.md",
+      "original_sha256": "5103c84a318ee226d4c94947937d9f33365e654d4ee2c995fb0a2eebd14f41e8",
+      "public_sha256": "5103c84a318ee226d4c94947937d9f33365e654d4ee2c995fb0a2eebd14f41e8",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/result.json",
+      "public_path": "03-correct/submitted/result.json",
+      "original_sha256": "7b560dfe6510cd5743ccf703b3c8a34fcc0246834520d7c491f9dbf62f5bb01b",
+      "public_sha256": "7b560dfe6510cd5743ccf703b3c8a34fcc0246834520d7c491f9dbf62f5bb01b",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-03-correct/transcript.md",
+      "public_path": "03-correct/transcript.md",
+      "original_sha256": "a45b149834c027f12c640d0e6c91e73a10e373d642d8ee730ca74f85b0d6792a",
+      "public_sha256": "a45b149834c027f12c640d0e6c91e73a10e373d642d8ee730ca74f85b0d6792a",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/.journal/chain.jsonl",
+      "public_path": "04-soft/.journal/chain.jsonl",
+      "original_sha256": "b99c3e6f01e0557bc32f9a28b1098cb8da9773fac41f3dad809316fd0979e4c4",
+      "public_sha256": "b99c3e6f01e0557bc32f9a28b1098cb8da9773fac41f3dad809316fd0979e4c4",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/.journal/lock",
+      "public_path": "04-soft/.journal/lock",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/.journal/step-1.out",
+      "public_path": "04-soft/.journal/step-1.out",
+      "original_sha256": "dddd7e84d549f5a8bd9f335f831ff009b2de9a89603937868a52a0ddabf3c50e",
+      "public_sha256": "99479fc23b77f08d306595f7b6685b4a97d2ad12dded135451fe2943692ae3da",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/.journal/step-2.out",
+      "public_path": "04-soft/.journal/step-2.out",
+      "original_sha256": "d24f5bf94add6f85a2058428e27d9b64866f9dc3ad6feb1c3885b0b3aeb9dc8f",
+      "public_sha256": "89cfd41315ffbca4c6b3437b434cd3bf6f17544ceda6a354dc7653ba047a7c0e",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/.journal/step-3.out",
+      "public_path": "04-soft/.journal/step-3.out",
+      "original_sha256": "72704f380375736fa864d3fa956776c4debfa223609f3b348ae70113ee71d9ef",
+      "public_sha256": "72704f380375736fa864d3fa956776c4debfa223609f3b348ae70113ee71d9ef",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/.journal/step-4.out",
+      "public_path": "04-soft/.journal/step-4.out",
+      "original_sha256": "c450ead0a5cfda630c094c081d6b75e82ca3c33c66cd1e5622bd8e9804358cd4",
+      "public_sha256": "679a5b3b01ca6b83f8b51486a1b02efb8b60f00be848b7ee97691a7205196e18",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/.journal/step-5.out",
+      "public_path": "04-soft/.journal/step-5.out",
+      "original_sha256": "c97f5f7b6cf03cb3b6fd861b019ea95fcb64c3883487f328511c2a12f6def910",
+      "public_sha256": "c97f5f7b6cf03cb3b6fd861b019ea95fcb64c3883487f328511c2a12f6def910",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/config.json",
+      "public_path": "04-soft/config.json",
+      "original_sha256": "0790489b8a019becf9197c870aac2f75143bb2402b3ef5553e5b52515be31e8f",
+      "public_sha256": "0790489b8a019becf9197c870aac2f75143bb2402b3ef5553e5b52515be31e8f",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/hop.json",
+      "public_path": "04-soft/hop.json",
+      "original_sha256": "866f2b61df9b04ff4a74e47a7c2f73c01058a48ec85225535bd8b84acb85cc4b",
+      "public_sha256": "866f2b61df9b04ff4a74e47a7c2f73c01058a48ec85225535bd8b84acb85cc4b",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/journal.md",
+      "public_path": "04-soft/journal.md",
+      "original_sha256": "41183e86f9288caae8e33d97caae3cf638fe2d0a006ceacf29cf83dcc6e0ed7b",
+      "public_sha256": "41183e86f9288caae8e33d97caae3cf638fe2d0a006ceacf29cf83dcc6e0ed7b",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/result.json",
+      "public_path": "04-soft/submitted/result.json",
+      "original_sha256": "7f84cca1bd4a194718a049c3708729d1bebde4f8d628fc718d9b0dc3408deff8",
+      "public_sha256": "7f84cca1bd4a194718a049c3708729d1bebde4f8d628fc718d9b0dc3408deff8",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-04-soft/transcript.md",
+      "public_path": "04-soft/transcript.md",
+      "original_sha256": "44b527f6335c650507409238a83a2d81666612f779f28a4d22472b3495047b7a",
+      "public_sha256": "44b527f6335c650507409238a83a2d81666612f779f28a4d22472b3495047b7a",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/.journal/chain.jsonl",
+      "public_path": "05-dance/.journal/chain.jsonl",
+      "original_sha256": "579afa46c6a41c6251c98d7de99e09b699d3caed0cc897de4b70785ac2f905a7",
+      "public_sha256": "579afa46c6a41c6251c98d7de99e09b699d3caed0cc897de4b70785ac2f905a7",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/.journal/lock",
+      "public_path": "05-dance/.journal/lock",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/.journal/step-1.out",
+      "public_path": "05-dance/.journal/step-1.out",
+      "original_sha256": "d966bc50b82ec74936a91b72e94e968020e2d8e71b89f2757d0e257b5dd7fe2c",
+      "public_sha256": "629d3b474b8f63579ece2fad9e1397556018d7b4d0a77d520134fe6baedf8b0b",
+      "privacy_redacted": true
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/.journal/step-2.out",
+      "public_path": "05-dance/.journal/step-2.out",
+      "original_sha256": "9327335f038f77203394b9df19d3b44c481fbd6b1ccac2ae0563af406c0f29b8",
+      "public_sha256": "9327335f038f77203394b9df19d3b44c481fbd6b1ccac2ae0563af406c0f29b8",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/.journal/step-3.out",
+      "public_path": "05-dance/.journal/step-3.out",
+      "original_sha256": "09d9262a4472325fd248d08b2b28ec9c0b09fc5c2b275b1ef8a5ef12dc643136",
+      "public_sha256": "09d9262a4472325fd248d08b2b28ec9c0b09fc5c2b275b1ef8a5ef12dc643136",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/config.json",
+      "public_path": "05-dance/config.json",
+      "original_sha256": "4d3c1ddf6b336f1349b92cb8dbde50cb87f9337c0d0915b99af461483e5637c2",
+      "public_sha256": "4d3c1ddf6b336f1349b92cb8dbde50cb87f9337c0d0915b99af461483e5637c2",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/dance.json",
+      "public_path": "05-dance/dance.json",
+      "original_sha256": "9bba76d4fbaa7971bcc87b94095ce89d6d46266506a7165957915b15979a2ea3",
+      "public_sha256": "9bba76d4fbaa7971bcc87b94095ce89d6d46266506a7165957915b15979a2ea3",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/journal.md",
+      "public_path": "05-dance/journal.md",
+      "original_sha256": "5d9c13a5b624c51f7b44c5dc29be61d9a024b691c97c3ab7edfd70eb77b42174",
+      "public_sha256": "5d9c13a5b624c51f7b44c5dc29be61d9a024b691c97c3ab7edfd70eb77b42174",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/result.json",
+      "public_path": "05-dance/submitted/result.json",
+      "original_sha256": "a60a9ecdef1c4e4a9c3cc1180776c5659a043ac906ef3fe37c10b60e69557950",
+      "public_sha256": "a60a9ecdef1c4e4a9c3cc1180776c5659a043ac906ef3fe37c10b60e69557950",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/tools.md",
+      "public_path": "05-dance/tools.md",
+      "original_sha256": "9dbbae9c417bf92f2b577e4fd0131b56304fa00fcf037a95c85ae28caf57d4e4",
+      "public_sha256": "9dbbae9c417bf92f2b577e4fd0131b56304fa00fcf037a95c85ae28caf57d4e4",
+      "privacy_redacted": false
+    },
+    {
+      "original_path": "runs/2026-10-25-gemini-3.8-flash-medium-05-dance/transcript.md",
+      "public_path": "05-dance/transcript.md",
+      "original_sha256": "11c1807124008071e63dce1c83da3d3bd87879a9809ef12711bda36c722eaaa9",
+      "public_sha256": "98a52c3d046f8c99ff62d96ddbd534d67201a36d31d5e2c103e272529473ddf0",
+      "privacy_redacted": true
+    }
+  ],
+  "privacy_redaction_count": 12,
+  "chain_validation_scope": "Original frozen files only. Public redacted transcripts/output views are not a byte-identical chain replay source. Chain hashes are preserved, never recomputed."
+}
