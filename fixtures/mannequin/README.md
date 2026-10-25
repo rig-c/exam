@@ -2,7 +2,7 @@
 
 A rig of a wooden artist's mannequin painting (SDXL base 1.0 + 4x-AnimeSharp upscale, frontal, legs apart,
 1664×2432), made for a task whose subject is the motion, not the rig: every joint a dance needs is already
-in it, and the feet are planted by the rig itself. Everything here was made for this exam; see *Licence*.
+in it, with fixed ankle targets and the reach limits below. Everything here was made for this exam; see *Licence*.
 
 ## What is in the folder
 
@@ -54,12 +54,75 @@ declares `range [-45, 45]`, and `check`'s `SEAM_OVER_RANGE` poses it at -45, 0 a
 `topwear` (chest), `pelvis`, `upperarm_*`, `forearm_*`, `hand_*`, `thigh_*`, `shin_*` and `foot_*`.
 
 **Feet are planted by the rig.** `foot_r_tgt` and `foot_l_tgt` are bones under `root` at the ankles. Two iks,
-`leg_r_ik` and `leg_l_ik`, run over `[leg_*0, leg_*1]` at mix 1, and both knees bend outward. Move or dip `hip`
-and the feet stay put. To pose a leg by hand, key the ik's mix to 0 in the animation
+`leg_r_ik` and `leg_l_ik`, run over `[leg_*0, leg_*1]` at mix 1, and both knees bend outward. The targets stay
+put; the legs can reach them only within their available length. To pose a leg by hand, key the ik's mix to 0 in the animation
 (`"ik": [{"constraint": "leg_r_ik", "keys": [{"t": 0, "mix": 0}]}]`).
 
-**Signs.** Spine rotation is counter-clockwise. A positive `sleeve_r0` lowers the right arm and a positive
-`sleeve_l0` raises the left.
+### Planted-leg reach
+
+Near setup, with no hip rotation, the hip can rise only about **0.02 rig px** and move sideways only about
+**0.2 rig px** before one leg straightens. Sideways travel beyond that tiny slack needs a dip: a **10 rig px**
+sideways shift needs about **1.2 rig px** of lowering. The knees are nearly straight at rest, with a little
+positive slack, not exactly zero. These are geometric limits, not a dance recipe or a guarantee of drawing contact.
+
+The source is [config.json](config.json), whose bone positions are already in rig px. The hip bone is at
+`(414,623)` in image coordinates; the right and left hip joints are offset from it by `b_r=(-40,0)` and
+`b_l=(40,0)`. Use y-up coordinates for animation: positive `translatey` raises the hip. With unchanged root,
+unit scales, fixed targets, IK mix 1, softness 0 and no stretch, the target offsets from those joints are
+`q_r=(-54,-485)` and `q_l=(53,-485)`.
+
+The pinned parts 1.60.0 writer rounds local offsets/angles to six decimals and bone lengths to three.
+The core 2.67.2 two-bone IK uses the distance to the child's origin as its first link, not the rounded
+parent `length` field. The resulting approximate lengths are:
+
+| side | first link | second link | outer reach | inner reach |
+| --- | --- | --- | --- | --- |
+| right | 242.738542 | 245.277 | 488.015542 | 2.538458 |
+| left | 244.724335 | 243.187 | 487.911335 | 1.537335 |
+
+For hip translation `t=(x,y)` and rotation `theta`, let `R(theta)` be the usual CCW rotation. **Both** legs
+need `inner_s <= norm(q_s - t - (R(theta)-I)b_s) <= outer_s`. Rotation moves the two hip joints differently;
+using only the hip bone's origin misses that offset. With no hip rotation:
+
+```text
+right: inner_r^2 <= (x+54)^2 + (y+485)^2 <= 488.015542^2
+left:  inner_l^2 <= (x-53)^2 + (y+485)^2 <= 487.911335^2
+```
+
+Near setup, `y_max(x) = min_s(sqrt(outer_s^2 - (x-q_s.x)^2) - 485)` when both square roots exist.
+
+| hip x shift | greatest hip y shift near setup |
+| --- | --- |
+| 0 | 0.018731 |
+| 10 | -1.199246 |
+| -10 | -1.173098 |
+
+At `y=0`, the shared horizontal interval is approximately `[-0.220962, 0.167972]` rig px. These figures
+describe the written geometry before runtime float32 rounding; they are not extra grading thresholds.
+
+**What the ankle line reads.** `grade.py`'s `on_her_feet` uses attachment vertices, not the IK target or
+shin bone tip. For each `shin_*`, it selects vertices in the lowest 4% of its height in **frame 0**, averages
+their positions, and selects the nearest `foot_*` vertex in that frame. Keeping those indices, it measures
+the largest change in their relative offset across the animation, rounded to two decimals. Each shin is
+read separately. A reachable target does not guarantee that this drawing-based distance stays within
+the task's existing six-pixel bar; a foot staying level is also a different reading.
+
+### Signs
+
+Rotation keys **add to the local setup rotation**. Positive is counter-clockwise in y-up coordinates;
+image y goes down. A positive `sleeve_r0` lowers the right arm and a positive `sleeve_l0` raises the left.
+With all other bones held at setup:
+
+| bone | local setup rotation (degrees) | a positive rotation delta |
+| --- | --- | --- |
+| `sleeve_r1` | -7.703526 | turns the forearm CCW; its wrist initially moves image-right/down |
+| `sleeve_l1` | 6.133157 | turns the forearm CCW; its wrist initially moves image-right/up |
+| `hand_r` | 125.581718 | turns the hand frame CCW from its upright rest orientation |
+| `hand_l` | 55.988651 | turns the hand frame CCW from its upright rest orientation |
+
+The wrist setup rotations cancel the forearms' rest turns, so both hand frames have world rotation 0 at
+setup. A positive wrist delta takes the frame's +x axis toward +y; negative reverses it. Parent motion
+carries the frame with it. “Positive bends inward” is not a pose-independent rule for either joint.
 
 **Idle.** A breath on `chest` (`translatey`, 9.28 px peak to peak), plus sways on `neck`, `head` and both sleeve
 chains. It lasts 40 frames at 12 fps.

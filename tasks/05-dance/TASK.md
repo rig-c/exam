@@ -20,8 +20,9 @@ The rig builds as given, on the versions the root `package.json` pins (`@rig-c/p
 and ends `check: PASS; 9 of 14 bar(s) measured, 5 skipped (BLINK_NO_HOLE, TIP_OVER_ROOT, TEXTURE_STRETCH,
 FEET_STAY_LEVEL, STRESS_OFF_CHAIN)`. That is the idle-only check; with a `dance` that poses the legs,
 `FEET_STAY_LEVEL` is also measured and the check ends `check: PASS; 10 of 14 bar(s) measured, 4 skipped` —
-both counts describe passing builds. The feet are planted: two iks hold the ankles on targets under `root`, so
-the hip can move and the feet stay where they are. There are no legs to construct.
+both counts describe passing builds. Two iks aim the ankles at fixed targets under `root`; hip movement
+must stay within the fixture's [planted-leg reach](../../fixtures/mannequin/README.md#planted-leg-reach).
+The targets staying fixed does not guarantee drawing contact. There are no legs to construct.
 
 The music is 120 beats a minute. Eight beats are 4.0 seconds.
 
@@ -36,6 +37,19 @@ Use the bones the rig has. Do not add bones, parts, meshes or physics; the rig i
 
 `config.json` (the fixture's, with `dance` added), the motion file it names if you move the motion out of it,
 `journal.md`, and the transcript.
+
+## Timing
+
+This grader rebuilds and samples the rig. A tool's 120-second wait can end before the grader does: one
+recorded invocation was moved to the background at that limit and completed successfully afterward.
+The [timing audit](https://github.com/rig-c/exam/issues/58#issuecomment-6398236249) records **seven command
+intervals of 106–197 seconds** on 2026-10-25. These are historical shared-host observations, not an expected
+runtime range for every machine or run. The grader itself does not impose a 120-second subprocess timeout.
+The audit citation is provenance only; it does not expand the exam's permitted reading.
+
+Use the host's supported longer wait or background-completion mechanism. Read the **same invocation's**
+completed output and result before closing its journal entry and finishing the task clock. A wait ending
+does not mean the grader failed; do not launch a duplicate while it is still running.
 
 ## Pass lines
 
