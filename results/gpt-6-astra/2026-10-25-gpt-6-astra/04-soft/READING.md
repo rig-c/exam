@@ -1,0 +1,9 @@
+# Reading — task 04
+
+Independent regrade: **9 / 9**. The base four lines pass with 1812 uncovered pixels. The exact supplied hop is retained. The complete rig has 483 triangles against 700. Physics-on topwear differs 6.61 rig px at hop frame 14 (required 3–15), and 35/113 vertices move over .5 rig px (required at least 8 and at most 80%). Neither hop nor idle folds.
+
+The journal has the sitting's only WTF: grid 50 plus its contour patch counted 397 triangles, much less than expected. The examinee then measured grid 40 at 483 before running the final grade. The patch centre 425/335, band 22 and spacing 14 are authored choices; documented radius 28 and physics/default values are excluded from the numerical audit. No exact distinctive patch tuple was found in the compared prior inputs.
+
+Every generated contact sheet and the physics-on/off landing frame 14 were inspected before native-frame deletion. The earlier claim that the OFF contact sheet cuts off heads is retracted: a read-only direct PNG comparison verifies that both sheets are 617×517, frame 0 is identical, and the head band (local y 0–30) is identical in all 31 cells. The only differences are localized to chest regions within local x 34–44 and y 31–44 (77×129 cell tiling; exclusive bounds 45). The tool-preview appearance did not establish clipping in the produced PNGs. No root cause or rig-c bug is inferred. The unchanged 6.61 rig-px bar comes from the grader’s paired geometry measurement, not the tool previews. Both source images and render receipts are preserved exactly; no native frames were regenerated.
+
+The chain is intact: 3 entries / 1 WTF; clock 160 s (grader 2.7 min). Machine lines match the selfgrade. See [render receipt](render-receipt.json); it lists the retained sheets and the commands for both builds. [who.json](../who.json) records the sitting-wide limits.
