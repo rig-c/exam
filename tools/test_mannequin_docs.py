@@ -1,9 +1,15 @@
-"""Fixture documentation contracts: Euclidean geometry, no poser or grader execution."""
+"""Fixture docs: geometry and file closure, no product build or grader main execution."""
+import ast
+from contextlib import ExitStack
 import datetime
 import json
 import math
+import os
 from pathlib import Path
 import re
+import shlex
+import shutil
+import tempfile
 import unittest
 
 
@@ -184,6 +190,163 @@ class MannequinDocsTests(unittest.TestCase):
     def test_pages_ci_runs_the_documentation_contract(self):
         workflow = (ROOT / '.github/workflows/pages.yml').read_text()
         self.assertIn("python3 -B -m unittest discover -s tools -p 'test_mannequin_docs.py' -v", workflow)
+
+
+def missing_config_files(config_path):
+    """File-presence oracle for the example, not a config validator or a build."""
+    config = json.loads(config_path.read_text())
+    paths = [segment['cap'] for limb in config['limbs'].values()
+             for segment in limb['segments'] if 'cap' in segment]
+    if 'animations_from' in config['motion']:
+        paths.append(config['motion']['animations_from'])
+    return sorted(str((config_path.parent / path).resolve()) for path in paths
+                  if not (config_path.parent / path).is_file())
+
+
+class ManualBuildDocsTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.readme = (ROOT / 'README.md').read_text()
+        cls.manual = cls.readme.split('### Manual build from clone root\n', 1)[1].split('\n## ', 1)[0]
+        shell = cls.manual.split('```sh\n', 1)[1].split('\n```', 1)[0]
+        cls.commands = [shlex.split(line) for line in shell.replace('\\\n', '').splitlines() if line.strip()]
+        # Compile only this pure selector: no grade.py import, main, npm or staging side effects.
+        tree = ast.parse((ROOT / 'grade.py').read_text())
+        selector = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == 'named_paths')
+        namespace = {'os': os}
+        exec(compile(ast.Module(body=[selector], type_ignores=[]), 'grade.py:named_paths', 'exec'), namespace)
+        cls.named_paths = staticmethod(namespace['named_paths'])
+        main = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == 'main')
+        fixture_branch = next(node for node in main.body if isinstance(node, ast.If)
+                              and isinstance(node.test, ast.Name) and node.test.id == 'fixture')
+        run_json_copy = next(node for node in main.body if isinstance(node, ast.For)
+                             and ast.unparse(node.iter) == 'os.listdir(rundir)')
+        # Execute these exact staging blocks only in the test's scratch namespace.
+        cls.copy_run_json = compile(ast.Module(body=[run_json_copy], type_ignores=[]), 'grade.py:run-json-copy', 'exec')
+        cls.stage_fixture = compile(ast.Module(body=[fixture_branch], type_ignores=[]), 'grade.py:fixture-staging', 'exec')
+        # Evaluate only the real no-fixture input choice, never its symlink call.
+        choice = fixture_branch.orelse[0].value.args[0]
+        cls.input_choice = compile(ast.Expression(body=choice), 'grade.py:input-choice', 'eval')
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.clone = Path(temporary.name)
+        # Copy only the example's config and small cap files, not the input artwork.
+        source = self.clone / 'fixtures/mannequin'
+        source.mkdir(parents=True)
+        shutil.copy2(FIXTURE / 'config.json', source / 'config.json')
+        shutil.copytree(FIXTURE / 'caps', source / 'caps')
+        self.run = self.clone / self.commands[2][0].split('=', 1)[1]
+        self.run.parent.mkdir()
+        # Follow the documented mkdir/cp operations without running its shell or build.
+        self.run.mkdir()
+        for command in self.commands[4:6]:
+            source = self.clone / command[-2]
+            target = Path(command[-1].replace('$run', str(self.run)))
+            if command[1] == '-R':
+                shutil.copytree(source, target)
+            else:
+                shutil.copy2(source, target)
+        self.config = self.run / 'config.json'
+        self.caps = [segment['cap'] for limb in json.loads(self.config.read_text())['limbs'].values()
+                     for segment in limb['segments'] if 'cap' in segment]
+
+    def test_documented_command_and_complete_copy(self):
+        self.assertEqual(self.commands[:4], [['('], ['set', '-e'], ['run=runs/example-05-dance'], ['mkdir', '$run']])
+        self.assertEqual(self.commands[4:6], [['cp', 'fixtures/mannequin/config.json', '$run/config.json'],
+                                             ['cp', '-R', 'fixtures/mannequin/caps', '$run/caps']])
+        self.assertEqual(self.commands[-1], [')'])
+        command = self.commands[6]
+        self.assertEqual(command[:2], ['./node_modules/.bin/rig-parts', 'build'])
+        flags = dict(zip(command[2::2], command[3::2]))
+        self.assertEqual(flags, {'--config': '$run/config.json', '--source': 'fixtures/mannequin/inputs/painting.png',
+                                 '--full': 'fixtures/mannequin/inputs/layers/full', '--head': 'fixtures/mannequin/inputs/layers/head',
+                                 '--out': '$run/out'})
+        self.assertTrue((ROOT / flags['--source']).is_file())
+        for flag in ('--full', '--head'):
+            self.assertTrue((ROOT / flags[flag] / 'layers.json').is_file())
+        self.assertEqual(self.config.read_bytes(), (FIXTURE / 'config.json').read_bytes())
+        self.assertEqual(len(self.caps), 9)
+        self.assertEqual(missing_config_files(self.config), [])
+        for cap in self.caps:
+            self.assertEqual((self.run / cap).read_bytes(), (FIXTURE / cap).read_bytes())
+
+    def test_missing_cap_and_wrong_base_plants(self):
+        cap = self.caps[0]
+        (self.run / cap).unlink()
+        self.assertEqual(missing_config_files(self.config), [str(self.run / cap)])
+        # The original cap still exists under the fixture cwd; that cannot repair this copy.
+        self.assertTrue((self.clone / 'fixtures/mannequin' / cap).is_file())
+        shutil.rmtree(self.run / 'caps')
+        self.assertEqual(missing_config_files(self.config), sorted(str(self.run / p) for p in self.caps))
+
+    def test_motion_path_is_beside_config(self):
+        config = json.loads(self.config.read_text())
+        config['motion']['animations_from'] = 'motion.json'
+        self.config.write_text(json.dumps(config))
+        # Empty synthetic motion tests only file placement; it supplies no answer keys.
+        motion = '{"spec": "rigc-motion/1", "animations": {}}\n'
+        (self.clone / 'motion.json').write_text(motion)
+        self.assertEqual(missing_config_files(self.config), [str(self.run / 'motion.json')])
+        (self.run / 'motion.json').write_text(motion)
+        self.assertEqual(missing_config_files(self.config), [])
+
+    def test_actual_named_paths_and_staging_distinction(self):
+        config = json.loads(self.config.read_text())
+        config['motion']['animations_from'] = 'motion.json'
+        self.config.write_text(json.dumps(config))
+        (self.run / 'motion.json').write_text('{"spec": "rigc-motion/1", "animations": {}}\n')
+        for excluded in ('result.json', 'usage.json'):
+            (self.run / excluded).write_text('{}')
+        (self.run / 'nested').mkdir()
+        (self.run / 'nested/motion.json').write_text('{}')
+        staged = self.clone / 'staged'
+        staged.mkdir()
+        fixture = self.clone / 'fixtures/mannequin'
+        (fixture / 'inputs').mkdir()  # The real branch links inputs; no artwork is needed here.
+        namespace = {'os': os, 'shutil': shutil, 'json': json, 'rundir': str(self.run),
+                     'work': str(staged), 'fixture': str(fixture), 'named_paths': self.named_paths}
+        # Phase 1: the actual top-level JSON copy leaves all nine caps missing.
+        exec(self.copy_run_json, namespace)
+        self.assertEqual(sorted(p.name for p in staged.iterdir()), ['config.json', 'motion.json'])
+        self.assertEqual(missing_config_files(staged / 'config.json'), sorted(str(staged / p) for p in self.caps))
+        selected = self.named_paths(json.loads((fixture / 'config.json').read_text()), fixture)
+        selected = sorted(set(selected) | set(self.named_paths(config, fixture)))
+        self.assertEqual(selected, sorted(self.caps))
+        # Phase 2: the actual fixture branch supplies caps and links the empty inputs.
+        with ExitStack() as opened:
+            # The source uses json.load(open(...)); close its reads after this isolated block.
+            namespace['open'] = lambda *args, **kwargs: opened.enter_context(open(*args, **kwargs))
+            exec(self.stage_fixture, namespace)
+        self.assertEqual(missing_config_files(staged / 'config.json'), [])
+        self.assertTrue((staged / 'inputs').is_symlink())
+        self.assertEqual((staged / 'inputs').resolve(), fixture / 'inputs')
+        for cap in self.caps:
+            self.assertEqual((staged / cap).read_bytes(), (fixture / cap).read_bytes())
+
+        # These are selector exclusions, not claims that the package refuses these paths.
+        (self.run / '..local.json').write_text('{}')
+        candidates = {'nested': [self.caps[0], './' + self.caps[0], 'caps/../' + self.caps[0], 'caps'],
+                      'excluded': [str(self.config), '../fixtures/mannequin/config.json', '.',
+                                   '..local.json', 'missing.json']}
+        self.assertEqual(self.named_paths(candidates, self.run), ['caps', self.caps[0]])
+
+    def test_input_roots_and_documentation_links(self):
+        for task, expected in [('01-build', '01-build'), ('02-move', '01-build'),
+                               ('03-correct', '03-correct'), ('04-soft', '01-build')]:
+            own = os.path.join(ROOT, 'tasks', task, 'inputs')
+            selected = eval(self.input_choice, {'os': os, 'ROOT': str(ROOT), 'own': own})
+            self.assertEqual(Path(selected), ROOT / 'tasks' / expected / 'inputs')
+        self.assertEqual(json.loads((ROOT / 'tasks/05-dance/fixture.json').read_text())['fixture'], 'mannequin')
+        rows = table(self.manual, '| task | `--source` | `--full` | `--head` |')
+        self.assertEqual([row[0] for row in rows], ['01, 02, 04', '03', '05'])
+        for row, base in zip(rows, ('tasks/01-build/inputs', 'tasks/03-correct/inputs', 'fixtures/mannequin/inputs')):
+            self.assertEqual(row[1:], [base + '/painting.png', base + '/layers/full', base + '/layers/head'])
+        for path in (FIXTURE / 'README.md', ROOT / 'tasks/05-dance/TASK.md'):
+            self.assertIn('../../README.md#manual-build-from-clone-root', path.read_text())
+        self.assertIn('it is not an additional required hand-in', self.manual)
+        self.assertIn('A manual package build does not perform this staging.', self.manual)
 
 
 if __name__ == '__main__':
