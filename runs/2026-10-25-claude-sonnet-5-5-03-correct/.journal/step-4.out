@@ -1,0 +1,4 @@
+wrote runs/2026-10-25-claude-sonnet-5-5-03-correct/work/render/landmarks_config.png (+_head)
+0 LINT line(s) over 8 mesh(es) and the hip
+coverage leg-chain choice: 0 chains — no keypoints supplied; leg placement requires hip, knee and ankle positions
+coverage: 45 bone(s) — 37 checked and clean, 0 checked with a LINT line, 8 not checked; roles 0 target, 44 deforms, 1 control, 0 unclassified

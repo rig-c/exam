@@ -1,0 +1,10 @@
+exit=0
+rig-parts build: runs/2026-10-25-claude-sonnet-5-5-03-correct/config.json -> runs/2026-10-25-claude-sonnet-5-5-03-correct/out, seam rule near-white, projection rule core, page edges free, pack shape polygon
+[check] rig-parts check: runs/2026-10-25-claude-sonnet-5-5-03-correct/out/rig -> runs/2026-10-25-claude-sonnet-5-5-03-correct/out/check
+[check]   loop: idle 41 frame(s) at 12 fps, f0000 vs f0040 (t = 3.333333333333333s): max |d| 0 (0 required)
+[check]   seam: setup pose at 504x1216, scale 1.0098: mean |d| 0.148 (<= 1.0), 2 px over 40, 1.96 rig px (the count / s²; <= 50), 0 px over 80 (reported)
+[check]   TIP_OVER_ROOT: PASS — instrument geometry; parts part handwear_l, root_rig_px 1.233, tip_rig_px 5.888, ratio 4.776 | part bottomwear, root_rig_px 0.351, tip_rig_px 1.264, ratio 3.604 | part handwear_r, root_rig_px 1.229, tip_rig_px 5.117, ratio 4.165; ratio_floor 1.4725
+[check]   TEXTURE_STRETCH: PASS — meshes 8; triangles 722; frames 41; severity 1.126; severity_ceiling 1.926544; worst slot hair_front, triangle 86, vertices 31 | 36 | 32, edge 36 | 32, frame 22, ratio 0.888; max_ratio 1.114; min_ratio 0.888; per_mesh slot hair_back, triangles 178, max_ratio 1.045, max_at triangle 136 (vertices 104 107 105), edge 107-105, idle frame 2, min_ratio 0.957, min_at triangle 136 (vertices 104 107 105), edge 107-105, idle frame 22, severity 1.045 | slot hairpin, triangl
+[check]   SEAM_OVER_MOTION: SKIP — no neighbour pair is declared: parts.json holds no limb segment below a joint (config.limbs) and no --requirements seam names two parts
+[check] check: PASS; 11 of 12 bar(s) measured, 1 skipped (FEET_STAY_LEVEL)
+build: PASS — the packed atlas is the artifact; parts/ and rig/ are the intermediates it was made from
