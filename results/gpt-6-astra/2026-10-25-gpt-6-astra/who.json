@@ -123,7 +123,13 @@
     "keyedConstraints": [],
     "keyedTrackCount": 10
   },
-  "judge": null,
+  "judge": {
+    "letter": "V",
+    "score": 6,
+    "of": 10,
+    "judged": "2026-10-25",
+    "how": "one person, clips V to Z in one sitting, the model behind each letter not known until every score was in; the scale given: 3 reads as grotesque, 5 as flailing, above that it looks like dancing"
+  },
   "proctorNotes": [
     "Independent local Mac regrades on pinned published packages; explicit proctor exception, no Nova or full suites. Examinee configs were not repaired.",
     "Original hand-in inputs, journal chain, transcript and step-output bytes preserved. Selfgrades and full raw grading/session audit remain private. HQ-approved scoped raw-evidence path-integrity exception: original journal-chain, transcript and captured step-output paths are retained byte-for-byte under this result root; new proctor prose and receipts use normalized paths.",

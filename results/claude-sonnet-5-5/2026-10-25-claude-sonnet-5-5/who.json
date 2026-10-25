@@ -155,13 +155,19 @@
     "rigStructureIdentical": true,
     "extraAnnotationOnly": false
   },
-  "judge": null,
+  "judge": {
+    "letter": "W",
+    "score": 5,
+    "of": 10,
+    "judged": "2026-10-25",
+    "how": "one person, clips V to Z in one sitting, the model behind each letter not known until every score was in; the scale given: 3 reads as grotesque, 5 as flailing, above that it looks like dancing"
+  },
   "proctorNotes": [
     "HQ-approved scoped raw-evidence path-integrity exception: original journal/.journal/transcript/captured-step bytes and their paths are preserved under this result root; this exception does not authorize secrets or private host text. New prose/receipts normalize paths.",
     "Selfgrades, full native logs/context, call arrays and detailed audits remain private. No examinee answer repair, Git/push/message or new agent by proctor.",
     "Explicit local Mac proctor exception; shared-host wall times are not isolated performance measurements. No Nova/GPU/full suite.",
     "Literal WTF marker counts are retained, with unmarked mismatches noted in READINGS rather than silently recredited.",
-    "All generated sheets were inspected; native frames were hashed/deleted after readings and private judge-clip creation. Human judgement is empty; no old mark reused."
+    "All generated sheets were inspected; native frames were hashed/deleted after readings and private judge-clip creation. Owner-receipted blind judgement: clip W, 5/10, judged2026-10-25 in the V-to-Z batch; the model-to-letter map was withheld until all scores were in. No previous mark reused."
   ],
   "effort": {
     "value": "high",
