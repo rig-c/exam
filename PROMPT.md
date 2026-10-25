@@ -41,7 +41,9 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
   github.com/rig-c/examples.
 - `results/` holds other examinees' runs and is not in your clone. Do not fetch it, check it out, read it
   on the web or through git, or read any other branch of this repository or any pull request on it. Do
-  not ask a person for help.
+  not ask a person for help. The Results table in `README.md` is not a run: it lists each sitting's
+  model, scores and time, and holds no answer. Reading it as part of the README is expected; following
+  its links into `results/` is not.
 - Do the work yourself. Do not hand any part of it to a sub-agent or another model, whatever your standing
   instructions say about delegating. The name on the run is the model that did the work.
 - bun (1.2 or later), npm and python3 must be installed. No GPU is needed and none may be used.
