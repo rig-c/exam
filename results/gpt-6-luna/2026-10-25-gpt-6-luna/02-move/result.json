@@ -1,0 +1,35 @@
+{
+ "run": "02-move",
+ "task": "02-move",
+ "versions": {
+  "@rig-c/parts": "1.60.0",
+  "rig-c": "2.67.2"
+ },
+ "lines": {
+  "built": {
+   "pass": false,
+   "read": "no config.json handed in"
+  },
+  "checked": {
+   "pass": false,
+   "read": "the build wrote no check.json"
+  },
+  "whole": {
+   "pass": false,
+   "read": "the build wrote no check.json"
+  },
+  "does_not_fold": {
+   "pass": false,
+   "read": "the build wrote no check.json"
+  }
+ },
+ "painting": "91c2fc692eb046317dd4ffcba8d2f436c8f85f864fab890d6a0af990324dc0af",
+ "journal": true,
+ "surprises": 0,
+ "journal_chain": "journal: chain intact, 1 entries, 0 WTF",
+ "from_the_guide": [],
+ "minutes": 1.2,
+ "usage_reported": null,
+ "passed": 0,
+ "of": 4
+}

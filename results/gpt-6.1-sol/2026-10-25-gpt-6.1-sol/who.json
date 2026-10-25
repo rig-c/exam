@@ -1,0 +1,81 @@
+{
+  "model": "gpt-6.1-sol",
+  "model_id": "gpt-6.1-sol",
+  "how": "fresh Codex Desktop session after exam #43; model verified from turn_context.model; effort not recorded",
+  "counts": "independent sitting",
+  "session": "01a17247-db96-7543-a5c2-2717fbf43a63",
+  "sourceCommit": "c014e3cf529535546d2d77349ceca1d35f343b42",
+  "submittedCommit": "74a6e42efa4f4f45e6e06a6bdb7a927df2281222",
+  "promptSHA256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6",
+  "README_SHA256": "fd3d3f5d635812f121ee802ded66aaf0848f3d2808dce2cc1ae7344580e3bd46",
+  "sessionLogSHA256": "9f25d28c3e0990d1433cd7505b16963fb25a887eaad0d27e711d4a2ce36723ec",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "modelContexts": [
+    {
+      "model": "gpt-6.1-sol"
+    },
+    {
+      "model": "gpt-6.1-sol"
+    }
+  ],
+  "reasoningEffort": {
+    "status": "not recorded",
+    "source": "turn_context has no effort setting"
+  },
+  "subagents": {
+    "observedInvocations": 0,
+    "source": "reviewed custom-tool orchestration and function calls"
+  },
+  "minutes": 18.1,
+  "minutes_read_from": "sum of grader per-task transcript-clock minutes, rounded to one decimal per task; raw UTC stamps and seconds retained below",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T08:58:31Z",
+      "finished": "2026-10-25T09:01:51Z",
+      "seconds": 200.0
+    },
+    "02-move": {
+      "started": "2026-10-25T09:01:51Z",
+      "finished": "2026-10-25T09:05:29Z",
+      "seconds": 218.0
+    },
+    "03-correct": {
+      "started": "2026-10-25T09:05:30Z",
+      "finished": "2026-10-25T09:08:45Z",
+      "seconds": 195.0
+    },
+    "04-soft": {
+      "started": "2026-10-25T09:08:46Z",
+      "finished": "2026-10-25T09:11:42Z",
+      "seconds": 176.0
+    },
+    "05-dance": {
+      "started": "2026-10-25T09:11:42Z",
+      "finished": "2026-10-25T09:16:48Z",
+      "seconds": 306.0
+    }
+  },
+  "rawTaskSeconds": 1095.0,
+  "proctorNotes": [
+    "The transcripts contain the sitting machine absolute paths as recorded, unedited; HQ approved the scoped integrity exception for raw hash-chained evidence under results only.",
+    "The post-fix required README contains only the sitting count and a link, not prior-run scores or rubric names. No forbidden-answer read was observed.",
+    "Human dance judgement is intentionally empty.",
+    "These are observed task wall times on a shared local host, not isolated speed-test measurements."
+  ],
+  "cheatingTraces": {
+    "prebuildForeknowledge": "Specific failure details occur after actual tool output; no unexplained advance failure details observed.",
+    "authoredNumericMatch": "Compared authored values with prior filed answers while excluding documented defaults and tool measurements; no suspicious exact authored-answer reuse observed."
+  },
+  "close": "Codex bridge close unsupported; the ended sitting is recorded and will not be reused.",
+  "tokens": {
+    "input_fresh": 159879,
+    "input_cached": 12661376,
+    "output": 22608
+  },
+  "tokens_read_from": "submitted session log cumulative total_token_usage",
+  "canonicalExamTextMatchedInSessionLog": true,
+  "task05FixtureContract": {
+    "onlyConfigChange": "motion.animations_from",
+    "allOtherFixtureFieldsIdentical": true
+  }
+}

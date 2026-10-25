@@ -1,0 +1,53 @@
+{
+ "run": "03-correct",
+ "task": "03-correct",
+ "versions": {
+  "@rig-c/parts": "1.60.0",
+  "rig-c": "2.67.2"
+ },
+ "lines": {
+  "built": {
+   "pass": true,
+   "read": "rig-parts build exit 0"
+  },
+  "checked": {
+   "pass": true,
+   "read": {
+    "BREATH_VISIBLE": "PASS",
+    "BLINK_NO_HOLE": "PASS",
+    "CHAIN_LAG": "PASS",
+    "TIP_OVER_ROOT": "PASS",
+    "STILL_REGIONS_DARK": "PASS",
+    "TEXTURE_STRETCH": "PASS",
+    "ANIMATIONS_DO_NOT_FOLD": "PASS",
+    "STRESS_OFF_CHAIN": "PASS",
+    "RECOMPOSITE_HOLES": "REPORTED"
+   }
+  },
+  "whole": {
+   "pass": true,
+   "read": "uncovered_error_px 1726 against <= 3500"
+  },
+  "does_not_fold": {
+   "pass": true,
+   "read": []
+  },
+  "kept": {
+   "pass": true,
+   "read": "8 mesh(es) deformed against >= 8"
+  },
+  "still_moves": {
+   "pass": true,
+   "read": "the back hair travels 45.881 rig px against the head over the idle, against >= 23"
+  }
+ },
+ "painting": "56510b0b40d38d413eb60d36d3ee809f5eb83bb8ffd9494a7a6c9843bb2221a3",
+ "journal": true,
+ "surprises": 0,
+ "journal_chain": "journal: chain intact, 4 entries, 0 WTF",
+ "from_the_guide": [],
+ "minutes": 3.2,
+ "usage_reported": null,
+ "passed": 6,
+ "of": 6
+}

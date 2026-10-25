@@ -1,0 +1,14 @@
+started: 2026-10-25T09:18:08Z
+
+## Step 1 (entry 1)
+
+- argv: ["python3", "-c", "import json; d=json.load(open(\"runs/2026-10-25-gpt-6-luna-01-build/result.json\")); print(d)"]
+- start: 2026-10-25T09:18:20Z
+- end: 2026-10-25T09:18:20Z
+- exit: 0
+- output: .journal/step-1.out, 913 bytes, sha256 2215fb25c46cc46b32c24586089f92370af454125e13c056dbe16de138b3e710
+- last lines:
+
+    {'run': '2026-10-25-gpt-6-luna-01-build', 'task': '01-build', 'versions': {'@rig-c/parts': '1.60.0', 'rig-c': '2.67.2'}, 'lines': {'built': {'pass': False, 'read': 'rig-parts build exit 1'}, 'checked': {'pass': False, 'read': {'BREATH_VISIBLE': 'PASS', 'BLINK_NO_HOLE': 'PASS', 'CHAIN_LAG': 'PASS', 'TIP_OVER_ROOT': 'FAIL', 'STILL_REGIONS_DARK': 'PASS', 'TEXTURE_STRETCH': 'PASS', 'ANIMATIONS_DO_NOT_FOLD': 'PASS', 'STRESS_OFF_CHAIN': 'SKIP', 'LIMB_ONE_BONE': 'PASS', 'SEAM_OVER_MOTION': 'CLEAR', 'RECOMPOSITE_HOLES': 'REPORTED'}}, 'whole': {'pass': True, 'read': 'uncovered_error_px 1816 against <= 3700'}, 'does_not_fold': {'pass': True, 'read': []}}, 'painting': '91c2fc692eb046317dd4ffcba8d2f436c8f85f864fab890d6a0af990324dc0af', 'journal': True, 'surprises': 7, 'journal_chain': 'journal: chain intact, 12 entries, 7 WTF', 'from_the_guide': [], 'minutes': 10.8, 'usage_reported': None, 'passed': 2, 'of': 4}
+
+finished: 2026-10-25T09:18:28Z

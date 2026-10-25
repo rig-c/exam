@@ -2,7 +2,7 @@
 
 Independent rebuild: 11 / 11 measured lines; three fixture-specific SKIPs. Journal chain intact, two entries, zero WTF. Task clock: 2.9 minutes from the submitted started:/finished: lines.
 
-The native 24fps dance sheet, physics-free counterpart and idle sheets were read. The whole mannequin remains in frame and repeats the shoulder/hip motif. This reading does not assign a dance-quality score. The blind 4-second clip was delivered privately; its stream/hash receipt is adjacent, and the human judgement remains empty.
+The native 24fps dance sheet, physics-free counterpart and idle sheets were read. The whole mannequin remains in frame and repeats the shoulder/hip motif. This reading does not assign a dance-quality score. The original four-second silent preview was superseded before human judging. TASK.md requires three loops and a click on every beat: the corrected private judging clip is 12 seconds with 24 clicks at 120 BPM; its stream/hash receipt is adjacent, and the human judgement remains empty.
 
 **Rubric exposure:** before any task, this sitting read the then-required README containing prior results and task-05 grade-line names absent from TASK.md. HQ directed that the run continue and be graded with this flag. Its machine result must not be represented as a clean rubric-blind comparison. Later post-fix sessions are distinct.
 

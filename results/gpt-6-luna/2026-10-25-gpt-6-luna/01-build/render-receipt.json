@@ -1,0 +1,86 @@
+{
+  "spec": "exam-proctor-render-receipt/1",
+  "task": "01-build",
+  "command": "python3 grade.py results/gpt-6-luna/2026-10-25-gpt-6-luna/01-build",
+  "graderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "groups": [
+    {
+      "directory": "folds_idle/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "c27237066916f87618ad2ee68196e5628af8eaa89ee74bee9c0aaf842a7dfe7c",
+      "viewport": {
+        "x": -348.2402612056739,
+        "y": 31.758797867507774,
+        "width": 709.9651108135519,
+        "height": 1194.5124575772895,
+        "scale": 0.2143133781285289,
+        "pixelWidth": 152,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "b638e86b60122bc69ee147598d6a757b0f06e1fc19a6728ea1759831a2d50718",
+      "folds.json_SHA256": "ecffc149a40328a4bacaa867c839f6f4adbb6bf2ab9a51f8161dc959291dac13"
+    },
+    {
+      "directory": "out/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "4fe4aa6fde3b389cafeff77520931f8010aa14af690bbc2f98ec9b1622951499",
+      "viewport": {
+        "x": -348.2402612056739,
+        "y": 31.758797867507774,
+        "width": 709.9651108135519,
+        "height": 1194.5124575772895,
+        "scale": 0.5357834453213223,
+        "pixelWidth": 380,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "fe79f3c85a1615275e594c7614e7b816e39f1e1f1105acc020f2876703815bab"
+    }
+  ],
+  "numberedFramesDeletedAfterSheetReading": true,
+  "retainedSheets": [
+    "pictures/folds_idle-idle.png"
+  ],
+  "commands": [
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation idle --fps 12 --folds --geometry --out <proctor-root>/.grade/01-build/folds_idle"
+  ],
+  "cwd": ".grade/01-build"
+}
