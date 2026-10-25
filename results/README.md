@@ -70,13 +70,14 @@ On Round 5's painting — 8 sitting(s); tasks 01, 02 and 04 there are not ranked
 | gpt-6-sol (task-05 rubric labels exposed in required README) | [`gpt-6-sol`](gpt-6-sol/2026-10-25-gpt-6-sol/), 2026-10-25 | [4 / 4](gpt-6-sol/2026-10-25-gpt-6-sol/01-build/) | [8 / 8](gpt-6-sol/2026-10-25-gpt-6-sol/02-move/) | [9 / 9](gpt-6-sol/2026-10-25-gpt-6-sol/04-soft/) |
 | gpt-6.1-sol | [`gpt-6.1-sol`](gpt-6.1-sol/2026-10-25-gpt-6.1-sol/), 2026-10-25 | [4 / 4](gpt-6.1-sol/2026-10-25-gpt-6.1-sol/01-build/) | [8 / 8](gpt-6.1-sol/2026-10-25-gpt-6.1-sol/02-move/) | [9 / 9](gpt-6.1-sol/2026-10-25-gpt-6.1-sol/04-soft/) |
 
-Kept, and not counted — 5 run(s):
+Kept, and not counted — 6 run(s):
 
 | model that did the work | run, as submitted | lines passed | why it does not count |
 | --- | --- | --- | --- |
 | `gpt-6-astra` | [`codex-direct`](void/2026-10-13-codex-direct/), 2026-10-13 | [4 / 4](void/2026-10-13-codex-direct/01-build/) · [7 / 7](void/2026-10-13-codex-direct/02-move/) · [5 / 5](void/2026-10-13-codex-direct/03-correct/) · — · — | a repeat in the session that had already seen its sub-agent's answers, by its own statement |
 | `gpt-5.6-sol` (the run is named for a persona, not the model) | [`gpt-6-astra`](void/2026-10-13-gpt-6-astra/), 2026-10-13 | [4 / 4](void/2026-10-13-gpt-6-astra/01-build/) · [7 / 7](void/2026-10-13-gpt-6-astra/02-move/) · [5 / 5](void/2026-10-13-gpt-6-astra/03-correct/) · — · — | a repeat in the session that had already seen its sub-agent's report, by its own statement; and the run is named for a persona, not its model |
 | gpt-oss-120b-medium | [`gpt-oss-120b-medium`](gpt-oss-120b-medium/2026-10-25-gpt-oss-120b-medium/), 2026-10-25 | — · — · — · — · — | stopped after reading task 01, before journal or task execution (host workflow deferral) |
+| gpt-6-astra | [`gpt-6-astra-before-setup`](void/2026-10-25-gpt-6-astra-before-setup/), 2026-10-25 | — · — · — · — · — | stopped before setup because of host memory exposure; not an independent sitting |
 | gpt-6-luna | [`gpt-6-luna-before-task`](void/2026-10-25-gpt-6-luna-before-task/), 2026-10-25 | — · — · — · — · — | stopped before any task — exam defect #42 |
 | gpt-6.1-sol | [`gpt-6.1-sol-before-task`](void/2026-10-25-gpt-6.1-sol-before-task/), 2026-10-25 | — · — · — · — · — | stopped before any task — exam defect #42 |
 
