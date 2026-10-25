@@ -1,0 +1,70 @@
+{
+  "model": "gpt-6-sol (task-05 rubric labels exposed in required README)",
+  "model_id": "gpt-6-sol",
+  "how": "fresh Codex Desktop session; no delegation observed; pre-fix README exposure flagged",
+  "counts": "independent execution; task-05 rubric exposure, not a clean rubric-blind sitting",
+  "session": "01a17239-3dd9-7311-8493-a2f0b83c8806",
+  "effortContexts": [
+    {
+      "model": "gpt-6-sol",
+      "effort": null
+    }
+  ],
+  "sourceCommit": "3b007bdf2084874458c4f3ee9db60d90239e9d6c",
+  "submittedCommit": "2731e411ede918d8f3c32529e2524e4465bea53b",
+  "promptSHA256": "6d3b4740ec41169ec014588d628b3029a0010ffdfeee28227e3550b18b8a886c",
+  "deliveredPromptSHA256": "00c5a2a6200142802d4492e44e4710df2706c3580a0947a52e6258b2fd14b8b6",
+  "README_SHA256": "6bb67918d856bdf4b6016399b3848dcbbdea026d267c4a9146f75d32cc4944ed",
+  "sessionLogSHA256": "b29551fe155badddff6b640429a30c2e58a6198fe9d011c2a8374423d2627051",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "rubricExposure": {
+    "task": "05-dance",
+    "source": "required pre-fix README results table",
+    "gradeLineNamesVisible": true,
+    "ruling": "Continue and independently grade; flag the exposure. New post-fix sittings are separate."
+  },
+  "subagents": {
+    "observedInvocations": 0,
+    "audit": "session custom-tool orchestration and function inputs inspected"
+  },
+  "minutes": 13.9,
+  "minutes_read_from": "submitted transcript started:/finished: UTC lines; grader reads each task clock",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T08:43:07Z",
+      "finished": "2026-10-25T08:46:46Z"
+    },
+    "02-move": {
+      "started": "2026-10-25T08:46:47Z",
+      "finished": "2026-10-25T08:49:17Z"
+    },
+    "03-correct": {
+      "started": "2026-10-25T08:49:20Z",
+      "finished": "2026-10-25T08:51:46Z"
+    },
+    "04-soft": {
+      "started": "2026-10-25T08:51:48Z",
+      "finished": "2026-10-25T08:54:16Z"
+    },
+    "05-dance": {
+      "started": "2026-10-25T08:54:20Z",
+      "finished": "2026-10-25T08:57:11Z"
+    }
+  },
+  "tokens": {
+    "input_fresh": 191813,
+    "input_cached": 18372608,
+    "output": 27022
+  },
+  "tokens_read_from": "submitted session log cumulative total_token_usage",
+  "proctorNotes": [
+    "The transcripts contain the sitting machine absolute paths as recorded, unedited; HQ approved a scoped integrity exception for raw hash-chained evidence under results only.",
+    "Task-05 human dance judgement is intentionally empty.",
+    "Recorded minutes are task wall time from transcripts, not commit timestamps or an isolated throughput benchmark."
+  ],
+  "cheatingTraces": {
+    "prebuildForeknowledge": "No such trace observed: specific failure details enter expectations after proposer output.",
+    "authoredNumericMatch": "Patch center379,335 matched none of61 earlier filed configs checked. Documented defaults are not treated as evidence. Ongoing answers were not read."
+  },
+  "close": "Codex bridge close unsupported; sitting recorded as ended, no further prompt sent."
+}

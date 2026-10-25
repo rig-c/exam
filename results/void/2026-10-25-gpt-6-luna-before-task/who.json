@@ -1,0 +1,45 @@
+{
+  "model": "gpt-6-luna",
+  "session": "01a17239-5096-7f83-821b-9bb78651b860",
+  "how": "fresh Codex Desktop session; model and effort read from turn_context",
+  "counts": "stopped before any task — exam defect #42",
+  "promptCommit": "3b007bdf2084874458c4f3ee9db60d90239e9d6c",
+  "promptSHA256": "6d3b4740ec41169ec014588d628b3029a0010ffdfeee28227e3550b18b8a886c",
+  "deliveredPromptSHA256": "31907db3a735256dc6bacbaf8f8282d35f29f91d2e3fbd7b1328b2cb72c4aea7",
+  "README_SHA256": "6bb67918d856bdf4b6016399b3848dcbbdea026d267c4a9146f75d32cc4944ed",
+  "effortContexts": [
+    {
+      "model": "gpt-6-luna",
+      "effort": null
+    }
+  ],
+  "tasksStarted": 0,
+  "tasksSubmitted": 0,
+  "subagentInvocations": [],
+  "toolsObserved": [
+    "exec_command",
+    "write_stdin"
+  ],
+  "subagentAudit": "custom tool orchestration and function-call inputs inspected; no delegation invocation observed",
+  "lifecycle": [
+    {
+      "timestamp": "2026-10-25T08:42:37.320Z",
+      "type": "task_started"
+    },
+    {
+      "timestamp": "2026-10-25T08:43:25.866Z",
+      "type": "task_complete"
+    }
+  ],
+  "minutes": null,
+  "minutes_read_from": "No task transcript exists because no task was started. Session lifecycle is not task duration.",
+  "proctorRuling": "HQ directed results/void, not a numeric failure; defect #42 resolved by PR #43 at c014e3cf.",
+  "close": "Codex bridge close unsupported; retained and never reused for another sitting.",
+  "tokens": {
+    "input_fresh": 54493,
+    "input_cached": 405888,
+    "output": 2028
+  },
+  "tokens_read_from": "session cumulative total_token_usage at hand-in",
+  "sessionLogSHA256": "68fa19cedee23f523d0b9eff8c9fafc3079672bc06818ddc1c57e9418ec86c88"
+}

@@ -1,0 +1,170 @@
+{
+  "spec": "exam-proctor-render-receipt/1",
+  "task": "02-move",
+  "command": "python3 grade.py results/gpt-6-sol/2026-10-25-gpt-6-sol/02-move",
+  "graderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "groups": [
+    {
+      "directory": "folds_idle/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "0e75cef7f16a83e8cb9f03d0904d0b98f49276e4cc1e0edd4299b74dc81502df",
+      "viewport": {
+        "x": -349.99941779372745,
+        "y": 32.00530389901288,
+        "width": 717.2761827755587,
+        "height": 1187.8567947266517,
+        "scale": 0.2155141942500825,
+        "pixelWidth": 155,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "b9af6c11090c412f68fcffceb574e3e11341e43f5541b9853b01b7d742950866",
+      "folds.json_SHA256": "c1e97dd305004eba2aac4b6557fab288a144584788cc11423a4d5730186abc3f"
+    },
+    {
+      "directory": "folds_nod/nod",
+      "frames": 25,
+      "orderedPNG_SHA256": "f0441742fc985fec5563bdbce094c57af77104d7543a7a258aa88d20dc0d84d2",
+      "viewport": {
+        "x": -349.99941779372745,
+        "y": 32.00530389901288,
+        "width": 717.2761827755587,
+        "height": 1187.8567947266517,
+        "scale": 0.2155141942500825,
+        "pixelWidth": 155,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "nod",
+          "animation": "nod",
+          "fps": 12,
+          "sampled": 25,
+          "written": 25,
+          "stride": 1,
+          "duration": 2,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "35684e15ac0a417742626d45c013b3a376f0415f7d14152c037b792e21bde710",
+      "folds.json_SHA256": "dec1f596d33903f5582f9ca1984fb9b548096eeed36923562a05d34014c854bf"
+    },
+    {
+      "directory": "out/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "109ef3ec5ee08f9708200286e98c1963055d52361011d883bbf9a90cf67778d6",
+      "viewport": {
+        "x": -349.99941779372745,
+        "y": 32.00530389901288,
+        "width": 717.2761827755587,
+        "height": 1187.8567947266517,
+        "scale": 0.5387854856252062,
+        "pixelWidth": 386,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "f9928dae81a5722aaaaa5cbaa31a55a1dff6d046a9cd64e6546b44e54dc4b268"
+    },
+    {
+      "directory": "seam_nod/nod",
+      "frames": 25,
+      "orderedPNG_SHA256": "f0441742fc985fec5563bdbce094c57af77104d7543a7a258aa88d20dc0d84d2",
+      "viewport": {
+        "x": -349.99941779372745,
+        "y": 32.00530389901288,
+        "width": 717.2761827755587,
+        "height": 1187.8567947266517,
+        "scale": 0.2155141942500825,
+        "pixelWidth": 155,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "nod",
+          "animation": "nod",
+          "fps": 12,
+          "sampled": 25,
+          "written": 25,
+          "stride": 1,
+          "duration": 2,
+          "physics": {
+            "stepped": 6,
+            "fps": 12
+          }
+        }
+      ]
+    }
+  ],
+  "numberedFramesDeletedAfterSheetReading": true,
+  "retainedSheets": [
+    "pictures/folds_idle-idle.png",
+    "pictures/folds_nod-nod.png",
+    "pictures/seam_nod-nod.png"
+  ],
+  "commands": [
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation idle --fps 12 --folds --geometry --out <proctor-root>/.grade/02-move/folds_idle",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation nod --fps 12 --folds --geometry --out <proctor-root>/.grade/02-move/folds_nod",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation nod --fps 12 --seam topwear:handwear_r,topwear:handwear_l --out <proctor-root>/.grade/02-move/seam_nod"
+  ],
+  "cwd": ".grade/02-move"
+}

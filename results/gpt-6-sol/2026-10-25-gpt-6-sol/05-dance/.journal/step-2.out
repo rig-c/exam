@@ -1,0 +1,8 @@
+rigc render
+  ..    skeleton /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-sol/exam-gpt-6-sol/.grade/2026-10-25-gpt-6-sol-05-dance/out/check/build/skeleton.json
+  ..    atlas    /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-sol/exam-gpt-6-sol/.grade/2026-10-25-gpt-6-sol-05-dance/out/check/build/skeleton.atlas
+  ..    poser    rigc core — /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-sol/exam-gpt-6-sol/.grade/2026-10-25-gpt-6-sol-05-dance/out/check/build/skeleton.model.json
+  ..    192x256px at 4 fps, 1 set(s) -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-sol/exam-gpt-6-sol/runs/2026-10-25-gpt-6-sol-05-dance/work/render
+  ..    physics: none in this rig — it declares no physics constraint, so no frame steps one
+  ..    dance            17 frame(s), 4.000s + contact.png -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-sol/exam-gpt-6-sol/runs/2026-10-25-gpt-6-sol-05-dance/work/render/dance@4fps
+rigc: wrote /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-sol/exam-gpt-6-sol/runs/2026-10-25-gpt-6-sol-05-dance/work/render/frames.json
