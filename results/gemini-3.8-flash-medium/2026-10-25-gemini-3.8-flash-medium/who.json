@@ -9,7 +9,13 @@
   "minutes_read_from": "2009 literal submitted started:/finished: seconds; early finishes exclude five later unjournalled grader calls, so this is not a compliant complete-task duration.",
   "literal_clock_seconds": 2009,
   "literal_clock_minutes_rounded_1dp": 33.5,
-  "judge": null,
+  "judge": {
+    "letter": "F",
+    "score": 4,
+    "of": 10,
+    "judged": "2026-10-25",
+    "how": "one person, clips A to F in one sitting, the model behind each letter not known until every score was in; the scale given: 3 reads as grotesque, 5 as flailing, above that it looks like dancing"
+  },
   "journal_rulings": {
     "01-build": {
       "credit": "kept",
