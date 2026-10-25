@@ -72,12 +72,15 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
 ## Layout
 
     tasks/<task>/TASK.md        the problem, what you are given, what you hand in, the pass lines
-    tasks/<task>/inputs/        the painting and its layers
+    tasks/<task>/inputs/        task-local painting and layers, when supplied (input roots below)
+    fixtures/mannequin/         task 05's supplied config, inputs/ and caps/
     PROMPT.md                   the prompt every examinee is given, verbatim
     JOURNAL.md                  the journal's form
     tools/journal.py            the journal's only writer: python3 tools/journal.py --help
     grade.py                    the grader: python3 grade.py runs/<your run>
     runs/                       where you write: runs/<date>-<model>-<task>/ — empty here
+    runs/<run>/config.json      your hand-in config; <run> ends with its task name
+    runs/<run>/*.json           a separate motion file, if the config names one
     results/                    every run that has been read, filed by the model that did the work:
                                 results/<model>/<date>-<name>/<task>/ holds the files handed in, the
                                 proctor's regrade (result.json), its reading (READING.md) and pictures;
@@ -86,6 +89,62 @@ stylised character with cut joints and alternates, motion retargeted onto it, fe
     results.py                  writes this page's sitting summary and the full table in results/README.md
     advanced/                   the Advanced edition: motion from a pose sequence on a built rig, in three
                                 rounds, with its own prompt, results and tables — see advanced/README.md
+
+### Manual build from clone root
+
+`runs/<run>/` is the hand-in directory. It does not change the package CLI's working directory or asset
+base. In a manual `rig-parts build`, relative `--config`, `--source`, `--full`, `--head` and `--out` paths
+are read from the shell's working directory. Paths **inside** the config, including limb `cap` images
+and `motion.animations_from`, resolve from the directory containing that config.
+
+For task 05, this example copies the supplied idle rig into a **new** run directory and builds it from
+the clone root, after `npm ci` and with Bun on PATH. Choose an unused run name. The subshell stops if
+`mkdir` fails, so pasting it again cannot overwrite an existing run's config.
+
+```sh
+(
+  set -e
+  run=runs/example-05-dance
+  mkdir "$run"
+  cp fixtures/mannequin/config.json "$run/config.json"
+  cp -R fixtures/mannequin/caps "$run/caps"
+  ./node_modules/.bin/rig-parts build \
+    --config "$run/config.json" \
+    --source fixtures/mannequin/inputs/painting.png \
+    --full fixtures/mannequin/inputs/layers/full \
+    --head fixtures/mannequin/inputs/layers/head \
+    --out "$run/out"
+)
+```
+
+The copied config still names `caps/*.png`, so those images must be beside it as `runs/example-05-dance/caps/`
+for this manual build. Changing cwd does not supply a missing config-relative cap. If you separate your
+authored motion into `dance.json`, put it beside the config and set `motion.animations_from` to `"dance.json"`.
+Keep the supplied fixture unchanged; edit your run's config. The command above builds the supplied idle,
+not a completed dance. `out/` is generated output, not a hand-in input.
+
+The grader prepares a different layout: it copies the run's **top-level `.json` files** except `result.json`
+and `usage.json` beside an isolated working config and links in the fixture's inputs. It also stages named
+fixture assets, such as caps: `grade.py`'s `named_paths` recursively examines strings in both the supplied
+fixture config and the run config, normalizes relative paths, and selects those that exist under the fixture
+directory, excluding `.` and paths starting with `..`. Absolute paths are excluded from that selection.
+Existing destinations and paths under `inputs` are skipped when copying. This is the grader's staging
+selection, not a package path refusal rule. A manual package build does not perform this staging.
+**The local `caps/` copy is for manual builds; it is not an additional required hand-in.** Follow the task's
+hand-in list, including its separate motion file when used.
+
+For tasks without a fixture, the grader uses that task's `inputs/` if it contains `painting.png`, otherwise
+task 01's inputs. On the current tasks, the explicit manual input roots are:
+
+| task | `--source` | `--full` | `--head` |
+| --- | --- | --- | --- |
+| 01, 02, 04 | `tasks/01-build/inputs/painting.png` | `tasks/01-build/inputs/layers/full` | `tasks/01-build/inputs/layers/head` |
+| 03 | `tasks/03-correct/inputs/painting.png` | `tasks/03-correct/inputs/layers/full` | `tasks/03-correct/inputs/layers/head` |
+| 05 | `fixtures/mannequin/inputs/painting.png` | `fixtures/mannequin/inputs/layers/full` | `fixtures/mannequin/inputs/layers/head` |
+
+Supply the chosen task's run config and output paths explicitly too. Task 03 has its own painting; task
+02 and task 04 currently use task 01's. The fixture's [folder guide](fixtures/mannequin/README.md#what-is-in-the-folder)
+also gives the build command for a shell already inside `fixtures/mannequin/`.
 
 ## Sitting it
 

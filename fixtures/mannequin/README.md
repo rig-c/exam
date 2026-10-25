@@ -16,10 +16,17 @@ in it, with fixed ankle targets and the reach limits below. Everything here was 
 | `caps/*.png` | the ball joints' upper halves, one per limb joint (painted for this rig) |
 | `config.json` | the rig-parts config: bones, limbs, ranges, iks and the idle |
 
-The build is not shipped: it is made from these files, the same way `grade.py` builds every run. From this
-folder, on the pinned tools:
+The build is not shipped: it is made from these files. With the shell's working directory set to
+`fixtures/mannequin/`, on the pinned tools:
 
     rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out
+
+For a copied run config, use the [manual build from clone root](../../README.md#manual-build-from-clone-root).
+Limb `cap` paths and `motion.animations_from` are relative to the config's directory. Copying this config
+to `runs/<run>/config.json` therefore needs its unchanged `caps/` beside it for a manual build, and a separate
+authored motion file beside it if named there. Keep these supplied files unchanged. The grader stages the
+fixture inputs and named fixture assets beside its isolated config; a manual `rig-parts build` does not.
+The local cap copies are for manual builds, not additional required hand-in files.
 
 It exits 0 and its check line is:
 
