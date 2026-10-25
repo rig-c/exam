@@ -15,4 +15,7 @@ jobs:
       - run: python3 -B -m unittest discover -s tools -p 'test_results.py'
         env:
           TMPDIR: ${{ runner.temp }}
+      - run: python3 -B -m unittest discover -s tools -p 'test_mannequin_docs.py' -v
+        env:
+          TMPDIR: ${{ runner.temp }}
       - run: python3 advanced/results.py --check
