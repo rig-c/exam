@@ -1,0 +1,4 @@
+  FAIL  CONFIG_FIELD_PRESENT: config.seethrough.steps — is absent and required (see rig-parts guide CONFIG_FIELD_PRESENT)
+  FAIL  CONFIG_FIELD_PRESENT: config.seethrough.seed — is absent and required (see rig-parts guide CONFIG_FIELD_PRESENT)
+  FAIL  CONFIG_FIELD_PRESENT: config.seethrough.offload — is absent and required (see rig-parts guide CONFIG_FIELD_PRESENT)
+refused: 3 problem(s)
