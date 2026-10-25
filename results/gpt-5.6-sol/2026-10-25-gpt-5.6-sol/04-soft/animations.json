@@ -1,0 +1,22 @@
+{
+  "spec": "rigc-motion/1",
+  "animations": {
+    "hop": {
+      "duration": 1.0,
+      "tracks": [
+        {
+          "bone": "hip",
+          "property": "translatey",
+          "keys": [
+            { "t": 0, "v": [0] },
+            { "t": 0.12, "v": [-5] },
+            { "t": 0.3, "v": [24] },
+            { "t": 0.45, "v": [-6] },
+            { "t": 0.55, "v": [0] },
+            { "t": 1.0, "v": [0] }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "model": "gpt-5.6-sol",
+  "model_id": "gpt-5.6-sol",
+  "how": "fresh Codex session; model verified from frozen turn_context.model; reasoning effort unavailable",
+  "counts": "independent sitting",
+  "session": "01a17270-754e-7221-85aa-f226749156d9",
+  "sourceCommit": "0643977fb2adb99eb91fc48cceb166b1b587b3bf",
+  "submittedCommit": "7c3535564fd7a2c9dc3e3a653d1dd5789c1fc042",
+  "promptSHA256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6",
+  "README_SHA256": "c5204b21856f9e4c1b28d572cef72d9313f9a18560a981f526f66d72c1a97f2f",
+  "sessionLogSHA256": "b03e0c4a8fdb495168d04ca3e593151d1ab5e57bb7056a6b62225a483f31a796",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "versions": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "modelContexts": [
+    {
+      "line": 11,
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": null
+    },
+    {
+      "line": 1094,
+      "model": "gpt-5.6-sol",
+      "reasoningEffort": null
+    }
+  ],
+  "reasoningEffort": {
+    "status": "not recorded",
+    "value": null
+  },
+  "subagents": {
+    "observedInvocations": 0,
+    "scope": "all 181 frozen response-item tool calls reviewed; no solve delegation observed"
+  },
+  "minutes": 22.3,
+  "minutes_read_from": "sum of each task transcript clock rounded to one decimal, including all stop records; raw seconds retained. results.py prefers the sum of graded result.json minutes when all are available and uses who.minutes only as fallback. The two scopes differ; neither is an isolated performance benchmark.",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T09:42:52Z",
+      "finished": "2026-10-25T09:46:01Z",
+      "seconds": 189.0
+    },
+    "02-move": {
+      "started": "2026-10-25T09:46:03Z",
+      "finished": "2026-10-25T09:51:01Z",
+      "seconds": 298.0
+    },
+    "03-correct": {
+      "started": "2026-10-25T09:51:03Z",
+      "finished": "2026-10-25T09:54:22Z",
+      "seconds": 199.0
+    },
+    "04-soft": {
+      "started": "2026-10-25T09:54:24Z",
+      "finished": "2026-10-25T09:58:53Z",
+      "seconds": 269.0
+    },
+    "05-dance": {
+      "started": "2026-10-25T09:58:55Z",
+      "finished": "2026-10-25T10:05:21Z",
+      "seconds": 386.0
+    }
+  },
+  "rawTaskSeconds": 1341.0,
+  "tokens": {
+    "input_fresh": 265096,
+    "input_cached": 27769216,
+    "output": 36092
+  },
+  "tokens_read_from": "frozen session first solve/report turn cumulative at raw line 1089; cached input is a subset of total input and reasoning a subset of output; later transport/acknowledgment turn excluded",
+  "gradedTasks": [
+    "01-build",
+    "02-move",
+    "03-correct",
+    "04-soft",
+    "05-dance"
+  ],
+  "judge": null,
+  "proctorNotes": [
+    "Only completed answer inputs independently regraded; no result.json fabricated for unsat/stopped tasks.",
+    "Raw journal.md, transcript.md and .journal bytes preserved exactly, including recorded machine paths.",
+    "All contact sheets from each regrade inspected before render receipts removed this worker's numbered frames.",
+    "Human dance judgement is pending; contact-sheet reading is not that judgement.",
+    "The pinned cli_core.ts entry reports @esotericsoftware/spine-core absent: A00_ROUNDTRIP_PARSE was not run. Machine success does not establish that round-trip parse.",
+    "HQ approved a scoped raw hash-chain path-integrity exception for unedited submitted journal.md, transcript.md and .journal/ evidence in this results subtree only. Recorded machine paths are retained byte-for-byte to preserve chain integrity. Proctor-authored files use normalized paths and contain no home-directory paths; the exception does not extend to other content."
+  ],
+  "taskStatus": {
+    "01-build": "sat; independent machine regrade completed",
+    "02-move": "sat; independent machine regrade completed",
+    "03-correct": "sat; independent machine regrade completed",
+    "04-soft": "sat; independent machine regrade completed",
+    "05-dance": "sat; independent machine regrade completed"
+  },
+  "canonicalExamTextMatchedInSessionLog": true,
+  "journal_rulings": {
+    "01-build": {
+      "note": "Planner/proposer calls that rendered landmarks and measured lint were not wrapped in entries; the chain is intact; the task is counted; the omission is recorded. No unwrapped grader execution was observed."
+    },
+    "03-correct": {
+      "note": "Planner/proposer calls that rendered landmarks and measured lint were not wrapped in entries; the chain is intact; the task is counted; the omission is recorded. No unwrapped grader execution was observed."
+    }
+  },
+  "journalProtocolEvidence": {
+    "01-build": {
+      "rawCallLines": [
+        110,
+        122,
+        146,
+        172
+      ]
+    },
+    "03-correct": {
+      "rawCallLines": [
+        434,
+        464,
+        492
+      ]
+    },
+    "actualGraders": 6,
+    "wrappedGraders": 6
+  },
+  "cheatingTraces": {
+    "readAudit": "No observed command fetched or read results/, advanced/, other-answer branches/PRs, getting-started or examples; only excluded sparse paths reference results/advanced. No solve delegation tool or nested tools found. Bridge reply is requested hand-in transport. This is bounded to the frozen export, not provider-side prior context.",
+    "numericAudit": {
+      "priorAnswerJSON": 119,
+      "priorConfigs": 74,
+      "priorDanceDefinitions": 11,
+      "identicalCompleteAuthoredDance": [],
+      "matchingPriorContourCenter403_330": [],
+      "excluded": "Documented recipe/default/reference values and tool-proposed values; common isolated integer angles are not copying evidence."
+    }
+  },
+  "blindDanceClip": {
+    "label": "A",
+    "path": "final-codex-clip-a-judge.mp4",
+    "distribution": "private HQ review only",
+    "seconds": 12,
+    "loops": 3,
+    "frames": 288,
+    "fps": 24,
+    "clicks": 24,
+    "sha256": "1433aaa88d37fb2f27cb2d4e199d25d7ac40da0a136327361fdd38cafc1d0001",
+    "humanJudgement": null,
+    "receipt": "05-dance/clip-receipt.json"
+  },
+  "task05FixtureContract": {
+    "onlyConfigChange": "motion.animations_from",
+    "allOtherFixtureFieldsIdentical": true
+  },
+  "minutesScope": {
+    "who": "all five task clocks including stopped/not-sat tasks; per-task minutes rounded before summing",
+    "rawTaskSeconds": 1341.0,
+    "stopInclusiveMinutes": 22.3,
+    "resultsTable": "graded result.json minutes only when all such results have minutes; who.minutes is fallback",
+    "gradedTaskCount": 5,
+    "gradedResultMinutes": 22.3,
+    "generatorChanged": false
+  }
+}

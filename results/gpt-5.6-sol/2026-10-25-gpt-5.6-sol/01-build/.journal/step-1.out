@@ -1,0 +1,49 @@
+rig-parts assemble: 22 part(s) on a 832x1216 rig (0.5 rig px per source px), seam rule near-white, projection rule core
+  hair_back   head:back hair   173x417   @ 338,  49 op= 35177 vis=  3331 src=  1214/  1214 unproj= 2117 drift=    0 (0.0% of core) merged=14454 seam=4
+  hairpin     full:headwear    136x89    @ 348,  63 op=  1359 vis=   500 src=     0/     0 unproj=  500 drift=    0 (no core) merged=0 seam=117
+  handwear_l  full:handwear-l  247x283   @ 478, 265 op= 16320 vis= 13415 src=  8612/  8612 unproj= 4803 drift=    2 (0.0% of core) merged=0 seam=46
+  handwear_r  full:handwear-r  255x273   @ 120, 267 op= 15734 vis= 13424 src=  8743/  8748 unproj= 4681 drift=   14 (0.2% of core) merged=0 seam=80
+  legwear     full:legwear     315x541   @ 276, 518 op= 71208 vis= 50076 src= 41532/ 41532 unproj= 8544 drift=    0 (0.0% of core) merged=0 seam=50
+  shoes       full:footwear    375x131   @ 259,1005 op= 13351 vis= 13351 src= 10005/ 10005 unproj= 3346 drift=   51 (0.5% of core) merged=0 seam=31
+  neck        head:neck        65x65     @ 397, 212 op=  2756 vis=  1957 src=  1354/  1358 unproj=  603 drift=   54 (4.0% of core) merged=0 seam=11
+  bottomwear  full:bottomwear  272x220   @ 267, 417 op= 42045 vis= 41200 src= 37532/ 37532 unproj= 3668 drift=    0 (0.0% of core) merged=0 seam=32
+  topwear     full:topwear     178x190   @ 338, 246 op= 27280 vis= 26475 src= 22344/ 22767 unproj= 4131 drift=  802 (3.5% of core) merged=0 seam=825
+  ear_r       head:ears-r      30x32     @ 364, 182 op=   648 vis=    74 src=     0/     0 unproj=   74 drift=    0 (no core) merged=0 seam=4
+  ear_l       head:ears-l      30x36     @ 458, 168 op=   713 vis=    80 src=     0/     0 unproj=   80 drift=    0 (no core) merged=0 seam=1
+  face        head:face        105x124   @ 370, 114 op=  9863 vis=  5323 src=  3630/  3635 unproj= 1693 drift=   54 (1.5% of core) merged=0 seam=76
+  eyewhite_r  head:eyewhite-r  26x16     @ 382, 173 op=   283 vis=   143 src=    11/    11 unproj=  132 drift=    0 (0.0% of core) merged=0 seam=0
+  eyewhite_l  head:eyewhite-l  28x13     @ 440, 170 op=   258 vis=   141 src=    12/    12 unproj=  129 drift=    0 (0.0% of core) merged=0 seam=0
+  mouth       head:mouth       26x8      @ 414, 208 op=    74 vis=    74 src=     0/     0 unproj=   74 drift=    0 (no core) merged=0 seam=2
+  iris_r      head:irides-r    16x14     @ 391, 174 op=   163 vis=   162 src=    32/    32 unproj=  130 drift=    0 (0.0% of core) merged=0 seam=4
+  iris_l      head:irides-l    16x12     @ 442, 169 op=   158 vis=   129 src=    24/    24 unproj=  105 drift=    0 (0.0% of core) merged=0 seam=10
+  brow_l      head:eyebrow-l   31x5      @ 433, 152 op=    28 vis=    13 src=     0/     0 unproj=   13 drift=    0 (no core) merged=0 seam=0
+  lash_r      head:eyelash-r   31x20     @ 377, 170 op=   149 vis=   140 src=     0/     0 unproj=  140 drift=    0 (no core) merged=0 seam=1
+  brow_r      head:eyebrow-r   33x12     @ 379, 153 op=    70 vis=    37 src=     0/     0 unproj=   37 drift=    0 (no core) merged=0 seam=0
+  lash_l      head:eyelash-l   37x18     @ 437, 165 op=   218 vis=   193 src=     0/     0 unproj=  193 drift=    0 (no core) merged=0 seam=0
+  hair_front  head:front hair  157x260   @ 349,  79 op= 13792 vis= 13792 src=  8435/  8439 unproj= 5283 drift=   58 (0.7% of core) merged=1271 seam=51
+  fringe pushed back: "hairpin" 47 px, where the painting shows "hair_back" 47 px
+  fringe pushed back: "shoes" 3 px, where the painting shows "legwear" 3 px
+  fringe pushed back: "neck" 2 px, where the painting shows "hair_back" 2 px
+  fringe pushed back: "bottomwear" 11 px, where the painting shows "legwear" 11 px
+  fringe pushed back: "topwear" 204 px, where the painting shows "bottomwear" 176 px, "hair_back" 21 px, "handwear_r" 4 px, "neck" 3 px
+  fringe pushed back: "face" 6 px, where the painting shows "hair_back" 5 px, "ear_r" 1 px
+  fringe pushed back: "eyewhite_r" 5 px, where the painting shows "face" 5 px
+  fringe pushed back: "mouth" 1 px, where the painting shows "face" 1 px
+  fringe pushed back: "iris_r" 3 px, where the painting shows "face" 3 px
+  fringe pushed back: "iris_l" 3 px, where the painting shows "eyewhite_l" 3 px
+  fringe pushed back: "brow_l" 32 px, where the painting shows "face" 32 px
+  fringe pushed back: "lash_r" 22 px, where the painting shows "face" 19 px, "eyewhite_r" 3 px
+  fringe pushed back: "brow_r" 7 px, where the painting shows "face" 7 px
+  fringe pushed back: "lash_l" 11 px, where the painting shows "face" 9 px, "eyewhite_l" 1 px, "iris_l" 1 px
+  fringe pushed back: "hair_front" 94 px, where the painting shows "face" 43 px, "topwear" 37 px, "ear_l" 8 px, "handwear_r" 4 px, "ear_r" 2 px
+  pixels: opaque 251647 = visible 184030 + occluded 67617 (26.9%); taken from the painting 143480 (57.0%); visible but not projected 40476 (16.1%)
+  ghost px removed: 2181 over 58 layer(s)
+recomposite vs source: mean |d|=1.09, within 8: 97.6%, error px > 40: 7465, uncovered error px: 1812
+uncovered holes (8-connected): 672, the largest 5 listed
+  uncovered hole 1: 94 px at 458,203 11x53 (between "hair_front" 56 px, "hair_back" 17 px, "topwear" 16 px, "ear_l" 4 px, "face" 4 px)
+  uncovered hole 2: 54 px at 447,68 23x10 (between "hairpin" 24 px, "hair_back" 1 px)
+  uncovered hole 3: 46 px at 381,50 31x35 (between "hair_back" 63 px)
+  uncovered hole 4: 38 px at 477,238 5x23 (between "hair_front" 29 px, "topwear" 4 px)
+  uncovered hole 5: 37 px at 362,86 23x36 (between "hair_back" 61 px, "hair_front" 30 px)
+uncovered error by cause: no layer (alpha <= 8 on every layer; only assemble.patches from the painting can cover): 29 px in 10 component(s) (largest 17 px at 462,74 6x4); on a layer (alpha > 8 on a layer, below covered alpha 128 in the parts): 1783 px in 673 component(s) (largest 94 px at 458,203 11x53)
+wrote runs/2026-10-25-gpt-5.6-sol-01-build/work/rig/parts.json, 22 PNG(s) in runs/2026-10-25-gpt-5.6-sol-01-build/work/rig/parts, runs/2026-10-25-gpt-5.6-sol-01-build/work/render/recomposite_rig.png, runs/2026-10-25-gpt-5.6-sol-01-build/work/render/recomposite_error_rig.png (uncovered error px red, covered error px blue, the painting grey)

@@ -1,0 +1,51 @@
+wrote runs/2026-10-25-gpt-5.6-terra-01-build/work/render/landmarks_config.png (+_head)
+0 LINT line(s) over 8 mesh(es) and the hip
+coverage hip [deforms]: checked, clean — read by hip-not-below-chest, hip-too-high
+coverage chest [deforms]: checked, clean — read by hip-not-below-chest
+coverage neck [control]: not checked — its role is control (binds nothing; keyed by motion.tracks[3]): it binds nothing, so there is no art to hold it to, and a control may sit off the art by design
+coverage head [deforms]: not checked — bound by the explicit [bone, from, to] segments meshes.hair_back.segments[0], meshes.hair_front.segments[0], meshes.neck.segments[1]: a segment is a line, not an origin, and the off-art check reads origins; bound rigidly by regions.ear_r, regions.ear_l, regions.face: no check reads a region's bone
+coverage eye_r [deforms]: not checked — bound rigidly by regions.eyewhite_r, regions.iris_r, regions.lash_r: no check reads a region's bone
+coverage eye_l [deforms]: not checked — bound rigidly by regions.eyewhite_l, regions.iris_l, regions.lash_l: no check reads a region's bone
+coverage brow_r [deforms]: not checked — bound rigidly by regions.brow_r: no check reads a region's bone
+coverage brow_l [deforms]: not checked — bound rigidly by regions.brow_l: no check reads a region's bone
+coverage mouth [deforms]: not checked — bound rigidly by regions.mouth: no check reads a region's bone
+coverage hairback_r0 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_l on mesh 'hair_back'
+coverage hairback_r1 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_l on mesh 'hair_back'
+coverage hairback_r2 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_l on mesh 'hair_back'
+coverage hairback_l0 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_r on mesh 'hair_back'
+coverage hairback_l1 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_r on mesh 'hair_back'
+coverage hairback_l2 [deforms]: checked, clean — read by off-art on mesh 'hair_back', squeeze with hairback_r on mesh 'hair_back'
+coverage bang_r0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_r1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_c0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_c1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_l0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage bang_l1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with lock on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock2 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock3 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock1_ on mesh 'hair_front'
+coverage lock1_0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage lock1_1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage lock1_2 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage lock1_3 [deforms]: checked, clean — read by off-art on mesh 'hair_front', squeeze with bang_r on mesh 'hair_front', squeeze with bang_c on mesh 'hair_front', squeeze with bang_l on mesh 'hair_front', squeeze with lock on mesh 'hair_front'
+coverage hairpin [deforms]: not checked — bound by the explicit [bone, from, to] segments meshes.hairpin.segments[0], meshes.hairpin.segments[1]: a segment is a line, not an origin, and the off-art check reads origins
+coverage hairpin_tassel0 [deforms]: checked, clean — read by off-art on mesh 'hairpin'
+coverage hairpin_tassel1 [deforms]: checked, clean — read by off-art on mesh 'hairpin'
+coverage sleeve_r0 [deforms]: checked, clean — read by off-art on mesh 'handwear_r'
+coverage sleeve_r1 [deforms]: checked, clean — read by off-art on mesh 'handwear_r'
+coverage sleeve_r2 [deforms]: checked, clean — read by off-art on mesh 'handwear_r'
+coverage sleeve_l0 [deforms]: checked, clean — read by off-art on mesh 'handwear_l'
+coverage sleeve_l1 [deforms]: checked, clean — read by off-art on mesh 'handwear_l'
+coverage sleeve_l2 [deforms]: checked, clean — read by off-art on mesh 'handwear_l'
+coverage skirt_r0 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_r1 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_r2 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_c0 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_c1 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_c2 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_l0 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'
+coverage skirt_l1 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'
+coverage skirt_l2 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'
+coverage leg-chain choice: 0 chains — no keypoints supplied; leg placement requires hip, knee and ankle positions
+coverage: 47 bone(s) — 39 checked and clean, 0 checked with a LINT line, 8 not checked; roles 0 target, 46 deforms, 1 control, 0 unclassified

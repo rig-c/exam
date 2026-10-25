@@ -1,0 +1,113 @@
+{
+  "model": "gpt-5.6-terra",
+  "model_id": "gpt-5.6-terra",
+  "how": "fresh Codex session; model verified from frozen turn_context.model; reasoning effort unavailable",
+  "counts": "independent sitting",
+  "session": "01a17276-eb03-7832-9d0d-873ca2b29906",
+  "sourceCommit": "564d526676c1234c13b9cc5902b3435eff19e00f",
+  "submittedCommit": "a050e8b2f89337fcfa66b965139c5c0f4354420c",
+  "promptSHA256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6",
+  "README_SHA256": "c5204b21856f9e4c1b28d572cef72d9313f9a18560a981f526f66d72c1a97f2f",
+  "sessionLogSHA256": "0bed19c48e9e46a4653df3fc6e619d7b71a0052a2b33c70cdb7434270716dd3b",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "versions": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "modelContexts": [
+    {
+      "line": 11,
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": null
+    },
+    {
+      "line": 538,
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": null
+    }
+  ],
+  "reasoningEffort": {
+    "status": "not recorded",
+    "value": null
+  },
+  "subagents": {
+    "observedInvocations": 0,
+    "scope": "all 79 frozen response-item tool calls reviewed; no solve delegation observed"
+  },
+  "minutes": 5.8,
+  "minutes_read_from": "sum of each task transcript clock rounded to one decimal, including all stop records; raw seconds retained. results.py prefers the sum of graded result.json minutes when all are available and uses who.minutes only as fallback. The two scopes differ; neither is an isolated performance benchmark.",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T09:49:49Z",
+      "finished": "2026-10-25T09:54:57Z",
+      "seconds": 308.0
+    },
+    "02-move": {
+      "started": "2026-10-25T09:54:59Z",
+      "finished": "2026-10-25T09:55:12Z",
+      "seconds": 13.0
+    },
+    "03-correct": {
+      "started": "2026-10-25T09:55:14Z",
+      "finished": "2026-10-25T09:55:25Z",
+      "seconds": 11.0
+    },
+    "04-soft": {
+      "started": "2026-10-25T09:55:27Z",
+      "finished": "2026-10-25T09:55:30Z",
+      "seconds": 3.0
+    },
+    "05-dance": {
+      "started": "2026-10-25T09:55:32Z",
+      "finished": "2026-10-25T09:55:43Z",
+      "seconds": 11.0
+    }
+  },
+  "rawTaskSeconds": 346.0,
+  "tokens": {
+    "input_fresh": 171201,
+    "input_cached": 7209984,
+    "output": 16984
+  },
+  "tokens_read_from": "frozen session first solve/report turn cumulative at raw line 533; cached input is a subset of total input and reasoning a subset of output; later transport/acknowledgment turn excluded",
+  "gradedTasks": [
+    "01-build"
+  ],
+  "judge": null,
+  "proctorNotes": [
+    "Only completed answer inputs independently regraded; no result.json fabricated for unsat/stopped tasks.",
+    "Raw journal.md, transcript.md and .journal bytes preserved exactly, including recorded machine paths.",
+    "All contact sheets from each regrade inspected before render receipts removed this worker's numbered frames.",
+    "Human dance judgement is pending; contact-sheet reading is not that judgement.",
+    "HQ approved a scoped raw hash-chain path-integrity exception for unedited submitted journal.md, transcript.md and .journal/ evidence in this results subtree only. Recorded machine paths are retained byte-for-byte to preserve chain integrity. Proctor-authored files use normalized paths and contain no home-directory paths; the exception does not extend to other content."
+  ],
+  "journal_rulings": {
+    "01-build": {
+      "note": "the final grader run (09:54:02\u201309:54:47) was not wrapped in an entry, contrary to PROMPT lines 51\u201360; the chain is intact; the task is counted; the omission is recorded."
+    }
+  },
+  "taskStatus": {
+    "02-move": "not sat: task opened and stop record submitted; no authored answer/build/grade; original stop evidence retained",
+    "03-correct": "not sat: task opened and stop record submitted; no authored answer/build/grade; original stop evidence retained",
+    "04-soft": "not sat: task opened and stop record submitted; no authored answer/build/grade; original stop evidence retained",
+    "05-dance": "not sat: task opened and stop record submitted; no authored answer/build/grade; original stop evidence retained"
+  },
+  "tokensBoundary": {
+    "rawLine": 533,
+    "turn": "exam and report",
+    "excludes": "post-submission acknowledgment"
+  },
+  "cheatingTraces": {
+    "readAudit": "Separate frozen audit reviewed all 79 calls; no prohibited answer read or delegation observed.",
+    "numericAudit": "No additional authored-answer numeric signature beyond tool-proposed skeleton/mesh and diagnostic same-sign repair; these are excluded as copying evidence."
+  },
+  "minutesScope": {
+    "who": "all five task clocks including stopped/not-sat tasks; per-task minutes rounded before summing",
+    "rawTaskSeconds": 346.0,
+    "stopInclusiveMinutes": 5.8,
+    "resultsTable": "graded result.json minutes only when all such results have minutes; who.minutes is fallback",
+    "gradedTaskCount": 1,
+    "gradedResultMinutes": 5.1,
+    "generatorChanged": false
+  }
+}

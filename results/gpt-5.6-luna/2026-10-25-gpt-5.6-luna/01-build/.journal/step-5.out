@@ -1,0 +1,2 @@
+  FAIL  CONFIG_FIELD_TYPE: config.seethrough — is absent or not an object; the existing See-through settings are required before writing head_box (see rig-parts guide CONFIG_FIELD_TYPE)
+refused: 1 problem(s)

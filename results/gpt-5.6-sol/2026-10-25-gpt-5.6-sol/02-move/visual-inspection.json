@@ -1,0 +1,32 @@
+{
+  "allContactSheetsReadBeforeReceipt": true,
+  "sheets": [
+    {
+      "path": "folds_gesture/gesture/contact.png",
+      "sha256": "6c59e92dbcb8e1b45c44baf4fb9e610de9fcda138b80e3383194ce0e92a64985",
+      "retainedAs": "pictures/folds_gesture-gesture.png"
+    },
+    {
+      "path": "folds_idle/idle/contact.png",
+      "sha256": "89d6ba18a5174580181ce3c9f7e4e2c1c94386671a0af2792d1bf183c1ef51b9",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/contact.png",
+      "sha256": "573d0f659094385412da8c7d64954480ef9ff7e6f16ed7e4c780e7265e73bac5",
+      "retainedAs": "pictures/check-out-check-contact.png"
+    },
+    {
+      "path": "out/check/idle_frames/idle/contact.png",
+      "sha256": "573d0f659094385412da8c7d64954480ef9ff7e6f16ed7e4c780e7265e73bac5",
+      "retainedAs": "pictures/check-out-check-contact.png"
+    },
+    {
+      "path": "seam_gesture/gesture/contact.png",
+      "sha256": "6c59e92dbcb8e1b45c44baf4fb9e610de9fcda138b80e3383194ce0e92a64985",
+      "retainedAs": "pictures/folds_gesture-gesture.png"
+    }
+  ],
+  "observation": "Five sheets inspected. Gesture leans and turns the head toward image-right then returns, while the lower body and arms remain in the painted pose. Full silhouette remains visible, no gross mesh inversion; seam oracle reads all named pairs with zero open frames. Idle differences between build-check and independent renderer retained as distinct sheets.",
+  "limit": "Contact-sheet visual inspection at supplied scale; not a human dance score or a proof of continuous playback."
+}

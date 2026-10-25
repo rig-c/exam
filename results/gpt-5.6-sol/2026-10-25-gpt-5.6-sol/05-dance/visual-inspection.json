@@ -1,0 +1,42 @@
+{
+  "allContactSheetsReadBeforeReceipt": true,
+  "sheets": [
+    {
+      "path": "folds_idle/idle/contact.png",
+      "sha256": "7ec2cb23507001c94a0588535d9a4ffce6ab04e4492d91d0530e0a002f402bdb",
+      "retainedAs": "pictures/out_without_physics-check.png"
+    },
+    {
+      "path": "out/check/contact.png",
+      "sha256": "7ec2cb23507001c94a0588535d9a4ffce6ab04e4492d91d0530e0a002f402bdb",
+      "retainedAs": "pictures/out_without_physics-check.png"
+    },
+    {
+      "path": "out/check/idle_frames/idle/contact.png",
+      "sha256": "7ec2cb23507001c94a0588535d9a4ffce6ab04e4492d91d0530e0a002f402bdb",
+      "retainedAs": "pictures/out_without_physics-check.png"
+    },
+    {
+      "path": "out_without_physics/check/contact.png",
+      "sha256": "7ec2cb23507001c94a0588535d9a4ffce6ab04e4492d91d0530e0a002f402bdb",
+      "retainedAs": "pictures/out_without_physics-check.png"
+    },
+    {
+      "path": "out_without_physics/check/idle_frames/idle/contact.png",
+      "sha256": "7ec2cb23507001c94a0588535d9a4ffce6ab04e4492d91d0530e0a002f402bdb",
+      "retainedAs": "pictures/out_without_physics-check.png"
+    },
+    {
+      "path": "pose_out_check_build_dance/dance@24fps/contact.png",
+      "sha256": "b615512a223890ed862d034317d10c9dd1991cdd21bee2bcbf520cd5ad58356e",
+      "retainedAs": "pictures/pose_out_without_physics_check_build_dance-dance@24fps.png"
+    },
+    {
+      "path": "pose_out_without_physics_check_build_dance/dance@24fps/contact.png",
+      "sha256": "b615512a223890ed862d034317d10c9dd1991cdd21bee2bcbf520cd5ad58356e",
+      "retainedAs": "pictures/pose_out_without_physics_check_build_dance-dance@24fps.png"
+    }
+  ],
+  "observation": "Seven sheets inspected. Idle stays upright; dance repeats an alternating arm, torso and hip sway four times while feet remain in the same floor region. Figure stays visible throughout the sheets. Small joint cracks are below dependable sheet-scale visual resolution; retain the measured forearm_r|hand_r and neckpiece|headpiece motion warnings. No human dance or beat mark assigned.",
+  "limit": "Contact-sheet visual inspection at supplied scale; not a human dance score or a proof of continuous playback."
+}
