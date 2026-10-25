@@ -1,0 +1,9 @@
+exit=0
+rig-parts build: runs/2026-10-25-claude-sonnet-5-5-04-soft/config.json -> runs/2026-10-25-claude-sonnet-5-5-04-soft/out, seam rule near-white, projection rule core, page edges free, pack shape polygon
+[check] rig-parts check: runs/2026-10-25-claude-sonnet-5-5-04-soft/out/rig -> runs/2026-10-25-claude-sonnet-5-5-04-soft/out/check
+[check]   beside the idle: 1 animation(s), hop — built and gated by rigc with the rig; ANIMATIONS_DO_NOT_FOLD reads each for folds and FEET_STAY_LEVEL for how far the feet turn, every other bar here reads the idle
+[check]   TEXTURE_STRETCH: PASS — meshes 8; triangles 638; frames 41; severity 1.119; severity_ceiling 1.926544; worst slot hairpin, triangle 11, vertices 20 | 19 | 18, edge 20 | 19, frame 0, ratio 0.894; max_ratio 1.111; min_ratio 0.894; per_mesh slot hair_back, triangles 138, max_ratio 1.048, max_at triangle 128 (vertices 90 93 91), edge 90-93, idle frame 22, min_ratio 0.954, min_at triangle 128
+[check]   ANIMATIONS_DO_NOT_FOLD: PASS — 2 animation(s) read by rigc render --folds at 12 fps, with its 1 physics constraint(s) on and off (idle, hop): 0 folding mesh(es), 0 not declared in may_fold (<= 0)
+[check]   STRESS_OFF_CHAIN: PASS — tags handwear; turns 90 | -90 | 180; parts_read 2; reading 1; worst part handwear_r, link sleeve_r0_ctl, turn 180; bar 1; per_part part handwear_l, link sleeve_l0_ctl, links 3, off_chain none, poses turn 90, reading 1, worst triangle 47, edge 25 | 49, ratio 1 | turn -90, reading 1, worst triangle 47, edge 25 | 49, ratio 1 | turn 180, reading 1, worst triangle 47,
+[check] check: PASS; 11 of 12 bar(s) measured, 1 skipped (FEET_STAY_LEVEL); 0 warning(s) (CLOTH_SETTLES, not a bar)
+build: PASS — the packed atlas is the artifact; parts/ and rig/ are the intermediates it was made from

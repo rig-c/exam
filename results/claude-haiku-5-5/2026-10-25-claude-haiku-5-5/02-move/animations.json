@@ -1,0 +1,13 @@
+{
+  "spec": "rigc-motion/1",
+  "animations": {
+    "gesture": {
+      "duration": 2,
+      "loop": false,
+      "tracks": [
+        {"bone": "head", "property": "rotate", "keys": [{"t": 0, "v": [0]}, {"t": 1, "v": [-14]}, {"t": 2, "v": [0]}]},
+        {"bone": "chest", "property": "rotate", "keys": [{"t": 0, "v": [0]}, {"t": 1, "v": [-1]}, {"t": 2, "v": [0]}]}
+      ]
+    }
+  }
+}

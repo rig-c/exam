@@ -1,0 +1,250 @@
+{
+  "spec": "exam-proctor-render-receipt/1",
+  "task": "04-soft",
+  "command": "python3 grade.py results/claude-sonnet-5-5/2026-10-25-claude-sonnet-5-5/04-soft",
+  "graderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "groups": [
+    {
+      "directory": "folds_idle/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "f447bf189c80191ac05c262dbf65dbe54bb6006c365bf1147d61c07bb5779d43",
+      "viewport": {
+        "x": -350.7647219215453,
+        "y": 31.240000076823755,
+        "width": 715.1729388103604,
+        "height": 1208.519997925758,
+        "scale": 0.21182934534752038,
+        "pixelWidth": 151,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 1,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "7ab45d692a741850a99c1c7d45685e37c204e190a93bf6bf6b819004440dc826",
+      "folds.json_SHA256": "4141dbcdd8b2a4c8eb26a43eae3b54da8a2d191f8b8f09cb70c1461d56614151"
+    },
+    {
+      "directory": "out/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "6edd797571a624057c48a7728616ae678038504111ec846abc89886d928bd30d",
+      "viewport": {
+        "x": -350.7647219215453,
+        "y": 31.240000076823755,
+        "width": 715.1729388103604,
+        "height": 1208.519997925758,
+        "scale": 0.529573363368801,
+        "pixelWidth": 379,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333,
+          "physics": {
+            "stepped": 1,
+            "fps": 12
+          }
+        }
+      ],
+      "geometry.json_SHA256": "52905639d79cc700085950c3db95aab2f2f92575c00459877f00691fc010dfe2"
+    },
+    {
+      "directory": "out_without_physics/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "e7dbb32c5789092eb3778b8d2eedfb3ad98f7825b551bef8689f34cb238c8024",
+      "viewport": {
+        "x": -350.7647219215453,
+        "y": 31.240000076823755,
+        "width": 715.1729388103604,
+        "height": 1208.519997925758,
+        "scale": 0.529573363368801,
+        "pixelWidth": 379,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "0980dde9d19d0eaab8870b4d355d95db7ee2574bfd126735fe5d9637c55ed233"
+    },
+    {
+      "directory": "pose_out_check_build_hop/hop@30fps",
+      "frames": 31,
+      "orderedPNG_SHA256": "634388f571c0956bbf7dec1614e6df663a3d5200c65d9303b9b2f6f94f573615",
+      "viewport": {
+        "x": -350.7647219215453,
+        "y": 31.240000076823755,
+        "width": 715.1729388103604,
+        "height": 1208.519997925758,
+        "scale": 0.21182934534752038,
+        "pixelWidth": 151,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "hop@30fps",
+          "animation": "hop",
+          "fps": 30,
+          "sampled": 31,
+          "written": 31,
+          "stride": 1,
+          "duration": 1,
+          "physics": {
+            "stepped": 1,
+            "fps": 30
+          }
+        }
+      ],
+      "geometry.json_SHA256": "e0ecc621c049dde3a592c79d1641ea6f27f9e76bd94fb82bc4544f8661996169",
+      "folds.json_SHA256": "12f4f24ffd9094e7dc305ecf793bf8c0deea9c3e5ec91f0f7e4bfa3a262bd8db"
+    },
+    {
+      "directory": "pose_out_without_physics_check_build_hop/hop@30fps",
+      "frames": 31,
+      "orderedPNG_SHA256": "11fcaf47052e6a1be1feefc41801308a62b9ac90a7b805ff60386f441067575e",
+      "viewport": {
+        "x": -350.7647219215453,
+        "y": 31.240000076823755,
+        "width": 715.1729388103604,
+        "height": 1208.519997925758,
+        "scale": 0.21182934534752038,
+        "pixelWidth": 151,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "hop@30fps",
+          "animation": "hop",
+          "fps": 30,
+          "sampled": 31,
+          "written": 31,
+          "stride": 1,
+          "duration": 1
+        }
+      ],
+      "geometry.json_SHA256": "951063e6b4384f23ac5b1e763785750fbc5e3dcf26153ae8e9bfc49e1aca25a8",
+      "folds.json_SHA256": "12f4f24ffd9094e7dc305ecf793bf8c0deea9c3e5ec91f0f7e4bfa3a262bd8db"
+    }
+  ],
+  "numberedFramesDeletedAfterSheetReading": true,
+  "retainedSheets": [
+    "pictures/folds_idle-idle.png",
+    "pictures/out_without_physics-check.png",
+    "pictures/out_without_physics-check-idle_frames-idle.png",
+    "pictures/pose_out_check_build_hop-hop@30fps.png",
+    "pictures/pose_out_without_physics_check_build_hop-hop@30fps.png"
+  ],
+  "commands": [
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation idle --fps 12 --folds --geometry --out <proctor-root>/.grade/04-soft/folds_idle",
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config_without_physics.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out_without_physics",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation hop --fps 30 --max 256 --folds --geometry --out <proctor-root>/.grade/04-soft/pose_out_check_build_hop",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out_without_physics/check/build --animation hop --fps 30 --max 256 --folds --geometry --out <proctor-root>/.grade/04-soft/pose_out_without_physics_check_build_hop"
+  ],
+  "cwd": ".grade/04-soft",
+  "examinedSheets": [
+    {
+      "source": "folds_idle/idle/contact.png",
+      "sha256": "af75ba451973589d2e41a98f629572040ef0f563272a91e4d99201eaa9587860",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "out/check/contact.png",
+      "sha256": "af75ba451973589d2e41a98f629572040ef0f563272a91e4d99201eaa9587860",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "out/check/idle_frames/idle/contact.png",
+      "sha256": "af75ba451973589d2e41a98f629572040ef0f563272a91e4d99201eaa9587860",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "out_without_physics/check/contact.png",
+      "sha256": "adb7f83f2c942b2d08bdf1cf0917d0b2378af023377af323a26ff3ec7a9c3d0b",
+      "retained": "pictures/out_without_physics-check.png",
+      "read": true
+    },
+    {
+      "source": "out_without_physics/check/idle_frames/idle/contact.png",
+      "sha256": "adb7f83f2c942b2d08bdf1cf0917d0b2378af023377af323a26ff3ec7a9c3d0b",
+      "retained": "pictures/out_without_physics-check.png",
+      "read": true
+    },
+    {
+      "source": "pose_out_check_build_hop/hop@30fps/contact.png",
+      "sha256": "77e3acbb74a7952b613e865e151d454fd01ff870620121b853fc999e83aee751",
+      "retained": "pictures/pose_out_check_build_hop-hop@30fps.png",
+      "read": true
+    },
+    {
+      "source": "pose_out_without_physics_check_build_hop/hop@30fps/contact.png",
+      "sha256": "9503137658b8060fe952db33b6c43ba73cd7bbaea4de0fbcd3ce2aaee46b2f52",
+      "retained": "pictures/pose_out_without_physics_check_build_hop-hop@30fps.png",
+      "read": true
+    }
+  ],
+  "cleanupScriptSHA256": "2413d8174d819c28a6dd43c2981929df1a7e3947964c75b03df4e9fb100bcbca",
+  "rawGradeLogSHA256": "458d6ebe5783f252734de393db1e20194ee8d37ae4eb2d44d4615baffe43fba0",
+  "allNumberedFramesRemaining": 0
+}

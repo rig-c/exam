@@ -1,0 +1,10 @@
+  pixels: opaque 310012 = visible 208962 + occluded 101050 (32.6%); taken from the painting 146975 (47.4%); visible but not projected 61967 (20.0%)
+recomposite vs source: mean |d|=1.09, within 8: 97.9%, error px > 40: 6164, uncovered error px: 1726
+uncovered holes (8-connected): 444, the largest 5 listed
+  uncovered hole 1: 154 px at 321,1077 18x35 (between "shoes" 40 px, "legwear" 21 px)
+  uncovered hole 2: 150 px at 353,296 32x24 (between "hair_back" 68 px, "hairpin" 27 px, "handwear_r" 15 px, "topwear" 3 px, "hair_front" 3 px)
+  uncovered hole 3: 100 px at 401,1068 9x31 (between "legwear" 24 px, "shoes" 20 px)
+  uncovered hole 4: 48 px at 493,518 8x23 (between "handwear_l" 28 px, "bottomwear" 14 px)
+  uncovered hole 5: 37 px at 325,103 31x31 (between "hair_back" 63 px)
+uncovered error by cause: no layer (alpha <= 8 on every layer; only assemble.patches from the painting can cover): 186 px in 14 component(s) (largest 100 px at 324,1078 14x22); on a layer (alpha > 8 on a layer, below covered alpha 128 in the parts): 1540 px in 449 component(s) (largest 146 px at 353,296 32x24)
+wrote runs/2026-10-25-claude-sonnet-5-5-03-correct/work/rig/parts.json, 22 PNG(s) in runs/2026-10-25-claude-sonnet-5-5-03-correct/work/rig/parts, runs/2026-10-25-claude-sonnet-5-5-03-correct/work/render/recomposite_rig.png, runs/2026-10-25-claude-sonnet-5-5-03-correct/work/render/recomposite_error_rig.png (uncovered error px red, covered error px blue, the painting grey)

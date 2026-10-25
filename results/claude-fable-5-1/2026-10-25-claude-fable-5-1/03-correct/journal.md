@@ -1,0 +1,48 @@
+# Journal
+
+## Entry 1 (opened 2026-10-25T11:50:39Z)
+
+1. **Read:** Disclosure first: I read tasks/03-correct/TASK.md about 25 s before running start (11:49:30 vs started 11:49:55), while closing task 02 — the order PROMPT asks is start, then TASK.md. TASK.md: 'what the tool proposes does not pass its own check as proposed … say in the journal which of [the tool's messages and pictures] you decided from'. AUTHORING §3 'A posed figure': 'Sitting alone does not call for [--keypoints]: a seated figure whose skirt starts at the waist has its hip there (issue #314: a seated character proposed without joints, its hip placed and lint clean, built green once its back-hair chains were fixed)'; and the control skeleton (inputs/pose_seated.json's shape) 'is not that file'. §4 step 6 for --propose-plan.
+2. **Expect:** exit 0; a plan of about 20-22 rows with the face group from the head run; notes on the near-empty accessory tags, nose never planned, and possibly a note on headwear (a hair ribbon) or neckwear (a green ribbon tie, which may hold real pixels this time); config.json gains assemble.plan and extend_below_crop.
+3. **Chose / turned down:** The same documented path as task 01, without --keypoints: the Kept line wants the proposal's eight meshes deformed, and --keypoints would cut the arms and legs into rigid limb regions; the figure is seated with her skirt at the waist, the case §3 says needs no joints. Config written by hand first (named here): key, seethrough from inputs/seethrough.json, rig_scale 0.5.
+4. **Happened** (2026-10-25T11:51:49Z): exit 0, as expected: 'added assemble.plan' and 'added assemble.extend_below_crop'; 22 rows (the same part set as task 01, handwear_r drawn after topwear this time — the hand in her lap lies over the top); 'headwear: head run 5 rig px < 0.8 x full run 2146 -> full-run layer' (the hair ribbon, as hairpin); the six accessory tags 'in no plan row' at 65-73 px; nose never planned (head run 235 px).
+
+## Entry 2 (opened 2026-10-25T11:51:54Z)
+
+1. **Read:** AUTHORING §4 step 7 (assemble --out work: read the uncovered hole and uncovered: lines) and §5's assemble row; TASK.md Whole line: uncovered_error_px at most 3,500, grade.py's comment: the proposed plan leaves 1,726 on this painting. §3 rig_scale: H should be about 1,100-1,200 rig px — from the part boxes assemble prints I will read the seated figure's H.
+2. **Expect:** exit 0; 22 parts with their boxes; 'recomposite vs source … uncovered error px' near 1,726; a few hundred holes, the largest under ~100 px; the parts' boxes spanning about 900 rig px top to bottom (a seated figure at 0.5).
+3. **Chose / turned down:** Assemble into scratch/03/work at rig_scale 0.5 and read H off the boxes before deciding whether to raise rig_scale. Turned down measuring the layers' alpha boxes by a script first: assemble prints every part's box anyway.
+4. **Happened** (2026-10-25T11:52:49Z): exit 0; 'uncovered error px: 1726', the figure grade.py's comment names, under 3,500; 'uncovered holes (8-connected): 444', the largest 154 px between shoes and legwear. Not quite as expected: the boxes span y 94 (hair_back) to 1201 (shoes), H about 1107 rig px — inside the calibration band, not the ~900 I guessed, so rig_scale 0.5 stays. Also a 'drift: "bottomwear" refuses 21999 px of full:bottomwear (its colour more than 90 off the painting' line, which §5 says no bar reads.
+
+## Entry 3 (opened 2026-10-25T11:52:55Z)
+
+1. **Read:** AUTHORING §4 step 7: propose --parts … --write-config; README 'What is in a round': 'on 1.13.0 propose names task 03's fault itself, one step before the build'; TASK.md Still moves: 'The draft's own amplitudes give 45.9 once what is wrong with them is put right'; §3 'A posed figure' issue #314: a seated character 'built green once its back-hair chains were fixed'. Task 01's step 4 on the same character printed the hairback squeeze LINT.
+2. **Expect:** exit 0 (LINT lines do not fail a plain propose); 8 meshes drafted; notes including mesh spacing with H about 1107 (grid 30); at least one LINT line, most likely the same squeeze on hair_back between hairback_r and hairback_l with opposed amplitudes, and possibly an off-art link on a chain over the seated figure; config gains bones, meshes, regions, motion, proposed_rig_scale.
+3. **Chose / turned down:** Let --write-config paste the draft, then read every LINT line and the landmarks overlay before correcting. Turned down --keypoints (the Kept line and §3's seated case) and turned down pre-emptively flipping a sign before the tool names the fault.
+4. **Happened** (2026-10-25T11:53:34Z): exit 0, as expected: 'wrote proposal.json (22 bone entries, 8 meshes)', 'mesh spacing: grid 30 = round(H / 37), H 1107 rig px', and the one LINT line I expected, far worse than task 01's: 'LINT hairback_r and hairback_l on mesh hair_back squeeze it: swung together, every other bone held, edge 37-117 of triangle 167 closes to 0.064 times its rest length at idle frame 22 (max(ratio, 1/ratio) 15.572; <= 1.926544 is required, check's TEXTURE_STRETCH bar) … Their tips are 39.0 px apart and their amplitudes are opposed … give both the same sign (then 1.046), or drop one chain'. On this low ponytail the two chains' tips are 39 px apart (55 on task 01), so the opposed swing closes an edge to 6 % of its length. Decided from that LINT message. Correction by hand (named here): hairback_l amps sign flipped to [0.6, 1.4, 2.4], note beside it.
+
+## Entry 4 (opened 2026-10-25T11:53:46Z)
+
+1. **Read:** AUTHORING §4 step 8 (propose --from-config until no LINT line, exit 0); the LINT's remedy 'give both the same sign (then 1.046)'; the overlay scratch/03/work/render/landmarks.png, which I looked at: hip on the belt line (y ~509), chest above it, the two hairback chains running down the low ponytail behind the torso and ending near each other above the skirt, sleeves along both arms.
+2. **Expect:** exit 0 and '0 LINT line(s) over 8 mesh(es) and the hip'; coverage 37 clean, 0 LINT, 8 not checked.
+3. **Chose / turned down:** Re-lint the corrected config before building. Turned down dropping a chain or shrinking the amplitudes: the Still moves line wants the back hair's travel kept (>= 23 rig px; 45.9 with the draft's own amplitudes agreeing).
+4. **Happened** (2026-10-25T11:54:02Z): exit 0, as expected: '0 LINT line(s) over 8 mesh(es) and the hip'; 'coverage: 45 bone(s) — 37 checked and clean, 0 checked with a LINT line, 8 not checked'.
+
+## Entry 5 (opened 2026-10-25T11:54:09Z)
+
+1. **Read:** TASK.md 'Do' (the build command) and its pass lines Kept (>= 8 meshes deformed) and Still moves (back hair >= 23 rig px against head over the idle); AUTHORING §5 check row and §7 TEXTURE_STRETCH (severity <= 1.926544); task 01's build on the same path printed check: PASS with 8 meshes.
+2. **Expect:** exit 0; 8 mesh lines at cover 1.00000; TEXTURE_STRETCH PASS with hair_back's severity near the LINT's 1.046 and 8 meshes counted; ANIMATIONS_DO_NOT_FOLD 0 folding; RECOMPOSITE_HOLES uncovered_error_px 1726; check: PASS 11 of 11; build: PASS in about a minute.
+3. **Chose / turned down:** Build with the one correction (the sign of hairback_l's amplitudes). Turned down also raising the blink.still split the lash_r note offered: the note says no clear row exists, and BLINK_NO_HOLE is measured, not guessed.
+4. **Happened** (2026-10-25T11:55:16Z): exit 0, as expected: 8 mesh lines at 'cover 1.00000', 'TEXTURE_STRETCH: PASS — meshes 8; triangles 722; frames 41; severity 1.126' with hair_back at max_ratio 1.045 (the LINT said 1.046), 'ANIMATIONS_DO_NOT_FOLD: PASS … 0 folding mesh(es)', 'RECOMPOSITE_HOLES: REPORTED — error_px 6164; uncovered_error_px 1726', 'check: PASS; 11 of 11 bar(s) measured', 'build: PASS'.
+
+## Entry 6 (opened 2026-10-25T11:55:22Z)
+
+1. **Read:** TASK.md pass lines, grade.py: kept reads check.json's TEXTURE_STRETCH.meshes >= 8; still_moves reads travel(idle geometry, 'hair_back', 'head') >= 23 — the furthest any hair_back vertex gets from its first-frame place, measured from head's origin; TASK.md says the draft's own amplitudes give 45.9 once put right.
+2. **Expect:** exit 0; 6 of 6 lines: built, checked, whole (1726 <= 3500), does_not_fold [], kept '8 mesh(es) deformed against >= 8', still_moves about 45.9 rig px against >= 23; chain intact, 6 entries, 0 WTF.
+3. **Chose / turned down:** Grade now. Turned down building --loop or a sheet: no line reads them.
+4. **Happened** (2026-10-25T11:56:31Z): exit 0, as expected: 'PASS  kept: "8 mesh(es) deformed against >= 8"', 'PASS  still_moves: "the back hair travels 45.881 rig px against the head over the idle, against >= 23"' (TASK.md's 45.9), 'PASS  whole: "uncovered_error_px 1726 against <= 3500"', '6 of 6 line(s)', 'journal: chain intact, 6 entries, 0 WTF'.
+
+## At the end (2026-10-25T11:56:38Z)
+
+- **Where I guessed:** assemble.rig_scale 0.5 again from §3's sentence for a 1664x2432 painting; I guessed the seated figure would read about 900 rig px tall and it read 1107 (assemble's boxes, then propose's mesh spacing note), so the guess was wrong and harmless. Nothing else was authored: the one correction is the sign of hairback_l's amplitudes, the LINT line's own first remedy.
+- **What I could not find:** Whether the sign of a chain's amplitudes has a meaning on its own (which way is 'toward the other chain'), so that a corrector could choose which chain to flip; I flipped the left to match the right because the LINT names that pair and either choice gives the same squeeze figure. Whether the drift line's 21,999 refused bottomwear pixels (the suspender skirt's colour off the painting) cost anything — §5 says no bar reads it, and the build passed.

@@ -1,0 +1,142 @@
+rig-parts build: runs/2026-10-25-claude-haiku-5-5-05-dance/config.json -> runs/2026-10-25-claude-haiku-5-5-05-dance/work/base, seam rule near-white, projection rule core, page edges free, pack shape polygon
+[assemble] rig-parts assemble: 16 part(s) on a 832x1216 rig (0.5 rig px per source px), seam rule near-white, projection rule core
+[assemble]   foot_r      full:footwear    72x95     @ 268,1088 op=  4543 vis=  4098 src=  3157/  3157 unproj=  941 drift=    0 (0.0% of core) merged=0 seam=73
+[assemble]   shin_r      full:legwear     71x262    @ 303, 842 op= 12523 vis= 11808 src=  9925/  9925 unproj= 1883 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   thigh_r     full:legwear     89x268    @ 325, 599 op= 13877 vis= 13877 src= 11567/ 11567 unproj= 2310 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   foot_l      full:footwear    69x96     @ 485,1089 op=  4612 vis=  4243 src=  3333/  3333 unproj=  910 drift=    0 (0.0% of core) merged=0 seam=58
+[assemble]   shin_l      full:legwear     74x259    @ 456, 846 op= 13107 vis= 12502 src= 10634/ 10634 unproj= 1868 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   thigh_l     full:legwear     88x269    @ 414, 599 op= 14126 vis= 14126 src= 11786/ 11786 unproj= 2340 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   topwear     full:topwear     150x352   @ 342, 249 op= 25095 vis= 25095 src= 22629/ 22629 unproj= 2466 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   pelvis      full:topwear     126x145   @ 354, 456 op= 16796 vis= 16796 src= 15368/ 15368 unproj= 1428 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   hand_r      full:handwear-r  73x101    @ 103, 536 op=  3014 vis=  2821 src=  1901/  1901 unproj=  920 drift=    0 (0.0% of core) merged=0 seam=2
+[assemble]   forearm_r   full:handwear-r  110x144   @ 157, 410 op=  5746 vis=  5438 src=  4176/  4176 unproj= 1262 drift=    0 (0.0% of core) merged=0 seam=1
+[assemble]   upperarm_r  full:handwear-r  106x171   @ 240, 259 op=  6909 vis=  6909 src=  5334/  5334 unproj= 1575 drift=    0 (0.0% of core) merged=0 seam=1
+[assemble]   hand_l      full:handwear-l  75x94     @ 652, 537 op=  2888 vis=  2764 src=  1829/  1829 unproj=  935 drift=    0 (0.0% of core) merged=0 seam=1
+[assemble]   forearm_l   full:handwear-l  108x143   @ 563, 408 op=  6117 vis=  5765 src=  4492/  4492 unproj= 1273 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   upperarm_l  full:handwear-l  102x168   @ 489, 262 op=  7010 vis=  7010 src=  5386/  5386 unproj= 1624 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   headpiece   head:face        70x114    @ 382, 107 op=  6258 vis=  5834 src=  4849/  4850 unproj=  985 drift=    4 (0.1% of core) merged=0 seam=18
+[assemble]   neckpiece   full:neck        99x58     @ 368, 200 op=  2744 vis=  2744 src=  1783/  1783 unproj=  961 drift=    0 (0.0% of core) merged=0 seam=0
+[assemble]   cut: "topwear" opaque 40504 = "topwear" 23708 + "pelvis" 16796; band 1387 px held by both
+[assemble]   limb cut: "handwear_r" opaque 15168 = "upperarm_r" 6909 + "forearm_r" 5438 + "hand_r" 2821
+[assemble]   limb cap: "arm_r" joint "elbow" at [253, 424], on "forearm_r": a disc of radius 13.9625 px (the limb 27.925 px across the joint line), box [239, 410, 28, 28] — on the upper side of the line 304 px from the cap image, 4 px from the layer, none missing
+[assemble]   limb cap: "arm_r" joint "wrist" at [165, 547], on "hand_r": a disc of radius 11.311 px (the limb 22.622 px across the joint line), box [154, 536, 22, 22] — on the upper side of the line 166 px from the cap image, 27 px from the layer, 3 px missing — the layer has no pixel there (hidden in the painting, or past the limb's outline), and the tool invents none: paint them into a 22x22 image whose pixel (i, j) is rig pixel (154 + i, 536 + j), and name it in the segment's "cap"
+[assemble]   LINT "hand_r" cap at [165, 547] (limb "arm_r", joint "wrist", radius 11.311 px): short_px left 3, right 0: no layer gives them — 3 px of the disc on the upper side of the cut, where the layer of "handwear_r" has no pixel of the limb; the rest of the disc is filled, 166 px from the cap image, 27 px from "hand_r"'s layer, 0 px from "forearm_r"; under cap_shape "disc" the disc is the half-width about the joint, 10.613 px, and 1 of them lie within it
+[assemble]   limb cut: "handwear_l" opaque 15539 = "upperarm_l" 7010 + "forearm_l" 5765 + "hand_l" 2764
+[assemble]   limb cap: "arm_l" joint "elbow" at [578, 423], on "forearm_l": a disc of radius 15.0775 px (the limb 30.155 px across the joint line), box [563, 408, 30, 30] — on the upper side of the line 324 px from the cap image, 29 px from the layer, 5 px missing — the layer has no pixel there (hidden in the painting, or past the limb's outline), and the tool invents none: paint them into a 30x30 image whose pixel (i, j) is rig pixel (563 + i, 408 + j), and name it in the segment's "cap"
+[assemble]   LINT "forearm_l" cap at [578, 423] (limb "arm_l", joint "elbow", radius 15.0775 px): short_px left 5, right 0: no layer gives them — 5 px of the disc on the upper side of the cut, where the layer of "handwear_l" has no pixel of the limb; the rest of the disc is filled, 324 px from the cap image, 29 px from "forearm_l"'s layer, 0 px from "upperarm_l"; under cap_shape "disc" the disc is the half-width about the joint, 15.077 px, and 5 of them lie within it
+[assemble]   limb cap: "arm_l" joint "wrist" at [661, 546], on "hand_l": a disc of radius 8.8195 px (the limb 17.639 px across the joint line), box [652, 537, 18, 18] — on the upper side of the line 124 px from the cap image, 0 px from the layer, none missing
+[assemble]   limb cut: "legwear" opaque 52314 = "thigh_r" 13877 + "shin_r" 11808 + "thigh_l" 14126 + "shin_l" 12503
+[assemble]   limb cap: "leg_r" joint "knee" at [345, 864], on "shin_r": a disc of radius 21.6475 px (the limb 43.295 px across the joint line), box [323, 842, 44, 44] — on the upper side of the line 636 px from the cap image, 80 px from the layer, 22 px missing — the layer has no pixel there (hidden in the painting, or past the limb's outline), and the tool invents none: paint them into a 44x44 image whose pixel (i, j) is rig pixel (323 + i, 842 + j), and name it in the segment's "cap"
+[assemble]   LINT "shin_r" cap at [345, 864] (limb "leg_r", joint "knee", radius 21.6475 px): short_px left 18, right 4: no layer gives them — 22 px of the disc on the upper side of the cut, where the layer of "legwear" has no pixel of the limb; the rest of the disc is filled, 636 px from the cap image, 80 px from "shin_r"'s layer, 0 px from "thigh_r"; under cap_shape "disc" the disc is the half-width about the joint, 19.163 px, and none of them lies within it
+[assemble]   limb cap: "leg_l" joint "knee" at [483, 866], on "shin_l": a disc of radius 20.102 px (the limb 40.204 px across the joint line), box [463, 846, 40, 40] — on the upper side of the line 484 px from the cap image, 123 px from the layer, 29 px missing — the layer has no pixel there (hidden in the painting, or past the limb's outline), and the tool invents none: paint them into a 40x40 image whose pixel (i, j) is rig pixel (463 + i, 846 + j), and name it in the segment's "cap"
+[assemble]   LINT "shin_l" cap at [483, 866] (limb "leg_l", joint "knee", radius 20.102 px): short_px left 4, right 25: no layer gives them — 29 px of the disc on the upper side of the cut, where the layer of "legwear" has no pixel of the limb; the rest of the disc is filled, 484 px from the cap image, 123 px from "shin_l"'s layer, 0 px from "thigh_l"; under cap_shape "disc" the disc is the half-width about the joint, 18.059 px, and 4 of them lie within it
+[assemble]   limb cut: "footwear" opaque 8337 = "foot_r" 4098 + "foot_l" 4239
+[assemble]   limb cap: "leg_r" joint "ankle" at [320, 1108], on "foot_r": a disc of radius 20.1535 px (the limb 40.307 px across the joint line), box [300, 1088, 40, 40] — on the upper side of the line 576 px from the cap image, 1 px from the layer, 46 px from "shin_r", 17 px missing — the layer has no pixel there (hidden in the painting, or past the limb's outline), and the tool invents none: paint them into a 40x40 image whose pixel (i, j) is rig pixel (300 + i, 1088 + j), and name it in the segment's "cap"
+[assemble]   LINT "foot_r" cap at [320, 1108] (limb "leg_r", joint "ankle", radius 20.1535 px): short_px left 9, right 8: no layer gives them — 17 px of the disc on the upper side of the cut, where neither the layer of "footwear" nor that of "legwear" has a pixel of the limb; the rest of the disc is filled, 576 px from the cap image, 1 px from "foot_r"'s layer, 46 px from "shin_r"; under cap_shape "disc" the disc is the half-width about the joint, 20.153 px, and 17 of them lie within it
+[assemble]   limb cap: "leg_l" joint "ankle" at [507, 1108], on "foot_l": a disc of radius 18.56 px (the limb 37.12 px across the joint line), box [488, 1089, 38, 38] — on the upper side of the line 538 px from the cap image, 0 px from the layer, none missing
+[assemble]   limb cut: "neck" opaque 2745 = "neckpiece" 2745
+[assemble]   limb cut: "face" opaque 5834 = "headpiece" 5834
+[assemble]   limb cap: "neck" joint "nape" at [417, 205], on "headpiece": a disc of radius 16.5 px (the limb 33 px across the joint line), box [400, 188, 34, 34] — on the upper side of the line 424 px from the cap image, 0 px from the layer, none missing
+[assemble]   fringe pushed back: "neckpiece" 1 px, where the painting shows "headpiece" 1 px
+[assemble]   pixels: opaque 145365 = visible 141830 + occluded 3535 (2.4%); taken from the painting 118149 (81.3%); visible but not projected 23681 (16.3%)
+[assemble]   ghost px removed: 391 over 58 layer(s)
+[assemble] recomposite vs source: mean |d|=0.19, within 8: 99.4%, error px > 40: 796, uncovered error px: 73
+[assemble] uncovered holes (8-connected): 28, the largest 5 listed
+[assemble]   uncovered hole 1: 26 px at 383,112 16x22 (between "headpiece" 38 px)
+[assemble]   uncovered hole 2: 10 px at 382,137 1x10 (between "headpiece" 12 px)
+[assemble]   uncovered hole 3: 3 px at 410,107 3x1 (between "headpiece" 5 px)
+[assemble]   uncovered hole 4: 3 px at 397,200 3x1 (between "headpiece" 8 px)
+[assemble]   uncovered hole 5: 3 px at 654,551 3x3 (between "hand_l" 7 px)
+[assemble] uncovered error by cause: no layer (alpha <= 8 on every layer; only assemble.patches from the painting can cover): 6 px in 6 component(s) (largest 1 px at 497,856 1x1); on a layer (alpha > 8 on a layer, below covered alpha 128 in the parts): 67 px in 23 component(s) (largest 26 px at 383,112 16x22)
+[assemble] wrote runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/parts.json, 16 PNG(s) in runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/parts, runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/recomposite_rig.png, runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/recomposite_error_rig.png (uncovered error px red, covered error px blue, the painting grey)
+[rig] rig-parts rig: mannequin, rig 832x1216, 16 part(s)
+[rig]   bones 19 (0 control) slots 16 meshes 0 regions 16 vertices 0; idle 3.3333333333333335 s, 7 track(s), 63 key(s)
+[rig]   face axis: none — parts.json holds no part tagged eyewhite-r or eyewhite-l (a cut's piece is not counted), so there is no eye line; the face bones keep the page's axes
+[rig]   idle keys ctl: 0 mesh-driving bone(s) keyed by the idle, each keyed through a same-origin <bone>_ctl parent
+[rig]   rigc build --profile rig-play --pack --page-edges free --pack-shape polygon: exit 0
+[rig]     ..    52 assertions: 21 measured (21 passed, 0 failed), 31 skipped, 0 not in profile "rig-play"
+[rig]     ..    here: 42 rule(s) on the model side over the document, 9 of the round trip's own restated over the emitted text; not run: A00_ROUNDTRIP_PARSE — spine-core's parse, which only the entry that links spine-core runs, on build and validate: installed, the same `rigc` once @esotericsoftware/spine-core is installed beside the package; from a source checkout, `bun cli.ts`
+[rig]     ..    52 assertions: 22 measured (22 passed, 0 failed), 30 skipped, 0 not in profile "rig-play"
+[rig]     ..    here: 42 rule(s) on the model side over the document, 9 of the round trip's own restated over the emitted text; not run: A00_ROUNDTRIP_PARSE — spine-core's parse, which only the entry that links spine-core runs, on build and validate: installed, the same `rigc` once @esotericsoftware/spine-core is installed beside the package; from a source checkout, `bun cli.ts`
+[rig] rig-parts rig: wrote runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/rig/rig.json, motion.json, mesh_report.json and 16 image(s) under runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/rig/images
+[check] rig-parts check: runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/rig -> runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check
+[check]   rigc 2.67.2 at /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-haiku-5-5/exam-claude-haiku-5-5/node_modules/.bin/rigc; entry: cli_core.ts — @esotericsoftware/spine-core absent — the round trip and the commands that need it are not available here; see --help
+[check]   gate rig-play (rigc build --profile rig-play --pack --page-edges free --pack-shape polygon), verbatim:
+[check]   ..    52 assertions: 21 measured (21 passed, 0 failed), 31 skipped, 0 not in profile "rig-play"
+[check]   ..    pages=16 regions=16 bones=19 slots=16 animations=1 version=4.3.13 regionAttachments=16 meshAttachments=0 physicsConstraints=0 rig=mannequin_painting profile=rig-play
+[check]   ..    here: 42 rule(s) on the model side over the document, 9 of the round trip's own restated over the emitted text; not run: A00_ROUNDTRIP_PARSE — spine-core's parse, which only the entry that links spine-core runs, on build and validate: installed, the same `rigc` once @esotericsoftware/spine-core is installed beside the package; from a source checkout, `bun cli.ts`
+[check]   ..    pack: skeleton.png 349x1029, 16 region(s), 83.3% covered, padding 2, page edges free, shape polygon
+[check]   ..    52 assertions: 22 measured (22 passed, 0 failed), 30 skipped, 0 not in profile "rig-play"
+[check]   ..    pages=1 regions=16 bones=19 slots=16 animations=1 version=4.3.13 regionAttachments=16 meshAttachments=0 physicsConstraints=0 rig=mannequin_painting profile=rig-play
+[check]   ..    here: 42 rule(s) on the model side over the document, 9 of the round trip's own restated over the emitted text; not run: A00_ROUNDTRIP_PARSE — spine-core's parse, which only the entry that links spine-core runs, on build and validate: installed, the same `rigc` once @esotericsoftware/spine-core is installed beside the package; from a source checkout, `bun cli.ts`
+[check]   pack: skeleton.png 349x1029, 16 region(s), 83.3% covered, padding 2, page edges free, shape polygon; page opaque 40.7% (alpha > 0) — spineboy yardstick 1024x256, 40 region(s), 45.8% opaque (alpha > 0), a reference and not a bar
+[check]   loop: idle 41 frame(s) at 12 fps, f0000 vs f0040 (t = 3.333333333333333s): max |d| 0 (0 required)
+[check]   seam: setup pose at 745x1216, scale 1.0368: mean |d| 0.074 (<= 1.0), 3 px over 40, 2.79 rig px (the count / s²; <= 50), 0 px over 80 (reported)
+[check]   BREATH_VISIBLE: PASS — torso_parts topwear | pelvis; torso_heat_mean 5.397; torso_floor 3.809; feet_parts foot_r | foot_l; feet_heat_max 0; feet_ceiling 0
+[check]   BLINK_NO_HOLE: SKIP — no part comes from a See-through "eyewhite" layer, so there is no eye to look behind
+[check]   CHAIN_LAG: PASS — chains neck > head: period 3.333s, phase 0.080 0.120, amp 1.000 1.500 | sleeve_r0 > sleeve_r1: period 3.333s, phase 0.220 0.300, amp 1.000 1.500 | sleeve_l0 > sleeve_l1: period 3.333s, phase 0.270 0.350, amp 1.000 1.500; lags neck > head +0.040 | sleeve_r0 > sleeve_r1 +0.080 | sleeve_l0 > sleeve_l1 +0.080; min_step 0.04; step_floor 0.001; other_period none; unread none; first_violation null
+[check]   TIP_OVER_ROOT: SKIP — none of "hand_r", "forearm_r", "upperarm_r", "hand_l", "forearm_l", "upperarm_l" could be measured: hand_r: a limb segment (config.limbs.arm_r), rigid on its one bone "hand_r": it turns at its joint and does not hang, so it is not held to the bar; forearm_r: a limb segment (config.limbs.arm_r), rigid on its one bone "sleeve_r1": it turns at its joint and does not hang, so it is not held to the bar; upperarm_r: a limb segment (config.limbs.arm_r), rigid on its one bone "sleeve_r0": it turns at its joint and does not hang, so it is not held to the bar; hand_l: a limb segment (config.limbs.arm_l), rigid on its one bone "hand_l": it turns at its joint and does not hang, so it is not held to the bar; forearm_l: a limb segment (config.limbs.arm_l), rigid on its one bone "sleeve_l1": it turns at its joint and does not hang, so it is not held to the bar; upperarm_l: a limb segment (config.limbs.arm_l), rigid on its one bone "sleeve_l0": it turns at its joint and does not hang, so it is not held to the bar
+[check]   STILL_REGIONS_DARK: PASS — face parts headpiece, head_bone head, instrument geometry, still_slots slot headpiece, max_rig_px 4.399e-13, rms_rig_px 9.493e-14, max_rig_px 4.399e-13, at null, rms_rig_px 9.493e-14, tolerance_rig_px 2.251e-11, crossing slot neckpiece, depth_rig_px 0.6, area_rig_px2 8.535, frame 35, driven_slots none; feet parts foot_r | foot_l, instrument geometry, still_slots slot foot_r, max_rig_px 0, rms_rig_px 0 | slot foot_l, max_rig_px 0, rms_rig_px 0, max_rig_px 0, at null, rms_rig_px 0, tolerance_rig_px 2.814e-12, crossing none
+[check]   TEXTURE_STRETCH: SKIP — the rig draws no mesh attachment (every slot is a region), so there is no triangle to stretch
+[check]   ANIMATIONS_DO_NOT_FOLD: PASS — 1 animation(s) read by rigc render --folds at 12 fps (idle): 0 folding mesh(es), 0 not declared in may_fold (<= 0)
+[check]   FEET_STAY_LEVEL: SKIP — no frame of "idle" turns a bone above "foot_r" (which "foot_r" rides), "foot_l" (which "foot_l" rides), so no foot was seen while its leg was posed; 1 animation(s) read by rigc render --folds --geometry at 12 fps (idle)
+[check]     foot  "foot_r" on "foot_r" (hangs from "leg_r1"): SKIP, 0 posed frame(s), so nothing was measured
+[check]     foot  "foot_l" on "foot_l" (hangs from "leg_l1"): SKIP, 0 posed frame(s), so nothing was measured
+[check]   STRESS_OFF_CHAIN: SKIP — "hand_r": a limb segment (config.limbs.arm_r), held to its one bone "hand_r" by LIMB_ONE_BONE, so it turns rigidly by construction; "forearm_r": a limb segment (config.limbs.arm_r), held to its one bone "sleeve_r1" by LIMB_ONE_BONE, so it turns rigidly by construction; "upperarm_r": a limb segment (config.limbs.arm_r), held to its one bone "sleeve_r0" by LIMB_ONE_BONE, so it turns rigidly by construction; "hand_l": a limb segment (config.limbs.arm_l), held to its one bone "hand_l" by LIMB_ONE_BONE, so it turns rigidly by construction; "forearm_l": a limb segment (config.limbs.arm_l), held to its one bone "sleeve_l1" by LIMB_ONE_BONE, so it turns rigidly by construction; "upperarm_l": a limb segment (config.limbs.arm_l), held to its one bone "sleeve_l0" by LIMB_ONE_BONE, so it turns rigidly by construction
+[check]   LIMB_ONE_BONE: PASS — 14 limb part(s), each bound in rig.json to its one bone with weight 1 (a region on it, or a mesh weighted to it alone)
+[check]     limb  "foot_r" (leg_r) on "foot_r": PASS
+[check]     limb  "shin_r" (leg_r) on "leg_r1": PASS
+[check]     limb  "thigh_r" (leg_r) on "leg_r0": PASS
+[check]     limb  "foot_l" (leg_l) on "foot_l": PASS
+[check]     limb  "shin_l" (leg_l) on "leg_l1": PASS
+[check]     limb  "thigh_l" (leg_l) on "leg_l0": PASS
+[check]     limb  "hand_r" (arm_r) on "hand_r": PASS
+[check]     limb  "forearm_r" (arm_r) on "sleeve_r1": PASS
+[check]     limb  "upperarm_r" (arm_r) on "sleeve_r0": PASS
+[check]     limb  "hand_l" (arm_l) on "hand_l": PASS
+[check]     limb  "forearm_l" (arm_l) on "sleeve_l1": PASS
+[check]     limb  "upperarm_l" (arm_l) on "sleeve_l0": PASS
+[check]     limb  "headpiece" (neck) on "head": PASS
+[check]     limb  "neckpiece" (neck) on "neck": PASS
+[check]   SEAM_OVER_RANGE: PASS — 9 joint(s) bent to their declared range's ends and middle; at each, the pose against the same pose with the joint's own art drawn under the limb, on the rest-pose seam's bar (mean |d| <= 1.0, <= 50 rig px over 40) at frame scale 1.023141
+[check]     joint "ankle" (leg_r, "foot_r" on "foot_r", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 7.819 px left, 17.593 px right (a reading)
+[check]     joint "ankle" (leg_r, "foot_r" on "foot_r", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 11.729 px left, 12.706 px right (a reading)
+[check]     joint "ankle" (leg_r, "foot_r" on "foot_r", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 10.751 px left, 5.864 px right (a reading)
+[check]     joint "knee" (leg_r, "shin_r" on "leg_r1", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 10.751 px left, 16.615 px right (a reading)
+[check]     joint "knee" (leg_r, "shin_r" on "leg_r1", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 10.751 px left, 16.615 px right (a reading)
+[check]     joint "knee" (leg_r, "shin_r" on "leg_r1", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 10.751 px left, 16.615 px right (a reading)
+[check]     joint "ankle" (leg_l, "foot_l" on "foot_l", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 2.932 px left, 5.864 px right (a reading)
+[check]     joint "ankle" (leg_l, "foot_l" on "foot_l", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 2.932 px left, 5.864 px right (a reading)
+[check]     joint "ankle" (leg_l, "foot_l" on "foot_l", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 8.796 px left, 24.435 px right (a reading)
+[check]     joint "knee" (leg_l, "shin_l" on "leg_l1", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 4.887 px left, 9.774 px right (a reading)
+[check]     joint "knee" (leg_l, "shin_l" on "leg_l1", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 4.887 px left, 9.774 px right (a reading)
+[check]     joint "knee" (leg_l, "shin_l" on "leg_l1", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 4.887 px left, 9.774 px right (a reading)
+[check]     joint "wrist" (arm_r, "hand_r" on "hand_r", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 21.502 px left, 7.819 px right (a reading)
+[check]     joint "wrist" (arm_r, "hand_r" on "hand_r", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 7.819 px left, 7.819 px right (a reading)
+[check]     joint "wrist" (arm_r, "hand_r" on "hand_r", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 7.819 px left, 9.774 px right (a reading)
+[check]     joint "elbow" (arm_r, "forearm_r" on "sleeve_r1", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 29.321 px left, 14.661 px right (a reading)
+[check]     joint "elbow" (arm_r, "forearm_r" on "sleeve_r1", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 14.661 px left, 14.661 px right (a reading)
+[check]     joint "elbow" (arm_r, "forearm_r" on "sleeve_r1", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 14.661 px left, 14.661 px right (a reading)
+[check]     joint "wrist" (arm_l, "hand_l" on "hand_l", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 19.548 px left, 5.864 px right (a reading)
+[check]     joint "wrist" (arm_l, "hand_l" on "hand_l", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 8.796 px left, 9.774 px right (a reading)
+[check]     joint "wrist" (arm_l, "hand_l" on "hand_l", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 8.796 px left, 19.548 px right (a reading)
+[check]     joint "elbow" (arm_l, "forearm_l" on "sleeve_l1", range [-45, 45]) at -45°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 16.615 px left, 10.751 px right (a reading)
+[check]     joint "elbow" (arm_l, "forearm_l" on "sleeve_l1", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 10.751 px left, 10.751 px right (a reading)
+[check]     joint "elbow" (arm_l, "forearm_l" on "sleeve_l1", range [-45, 45]) at 45°: PASS — mean |d| 0/255, 2 frame px over 40 (0 over 80), 1.91 rig px; contour step 10.751 px left, 11.729 px right (a reading)
+[check]     joint "nape" (neck, "headpiece" on "head", range [-45, 45]) at -45°: PASS — mean |d| 0.002/255, 27 frame px over 40 (16 over 80), 25.79 rig px; contour step 14.661 px left, 14.661 px right (a reading)
+[check]     joint "nape" (neck, "headpiece" on "head", range [-45, 45]) at 0°: PASS — mean |d| 0/255, 0 frame px over 40 (0 over 80), 0.00 rig px; contour step 18.57 px left, 17.593 px right (a reading)
+[check]     joint "nape" (neck, "headpiece" on "head", range [-45, 45]) at 45°: PASS — mean |d| 0.001/255, 11 frame px over 40 (4 over 80), 10.51 rig px; contour step 11.729 px left, 34.208 px right (a reading)
+[check]   SEAM_OVER_MOTION: CLEAR — 9 declared pair(s) in 1 animation(s) (idle), read by rigc render --seam at 12 fps on the build as played: 0 warning(s), never a bar; a frame opens when its gap or its ghost holds more cells than its box is long (rig-c's cell, its box's longer side) — thicker than one cell; a crack one cell deep is the half-opacity cut moving by less than a cell, and is not reported
+[check]     seam "upperarm_r|forearm_r" in "idle": under the floor — rigc names 1 frame(s) open [29], each opening one cell thick
+[check]     seam "upperarm_l|forearm_l" in "idle": under the floor — rigc names 4 frame(s) open [3, 8, 25, 37], each opening one cell thick
+[check]     seam "neckpiece|headpiece" in "idle": under the floor — rigc names 24 frame(s) open [6, 8-18, 23, 28-32, 34-39], each opening one cell thick
+[check]   CLOTH_SETTLES: SKIP — the rig declares no physics constraint (rig.json's constraints, motion.json's physics), so there is no chain to read
+[check]   RECOMPOSITE_HOLES: REPORTED — error_px 796; uncovered_error_px 73; hole_count 28; largest px 26, box 383,112 16x22, borders headpiece 38 px
+[check]   gate: rig-play green (cli_core.ts, rigc's own validator)
+[check]   wrote runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/gate_spine-html.txt, runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/contact.png, runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/motion_heat.png, runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/check.json, runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/build/, runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/idle_frames/
+[check] check: PASS; 9 of 14 bar(s) measured, 5 skipped (BLINK_NO_HOLE, TIP_OVER_ROOT, TEXTURE_STRETCH, FEET_STAY_LEVEL, STRESS_OFF_CHAIN); 0 warning(s) (SEAM_OVER_MOTION, not a bar)
+build: PASS — the packed atlas is the artifact; parts/ and rig/ are the intermediates it was made from
+  pack: skeleton.png 349x1029, 16 region(s), 83.3% covered, padding 2, page edges free, shape polygon; page opaque 40.7% (alpha > 0) — spineboy yardstick 1024x256, 40 region(s), 45.8% opaque (alpha > 0), a reference and not a bar
+  runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/build/skeleton.json
+  runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/build/skeleton.atlas
+  runs/2026-10-25-claude-haiku-5-5-05-dance/work/base/check/build/skeleton.png

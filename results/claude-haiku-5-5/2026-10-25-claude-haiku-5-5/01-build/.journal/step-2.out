@@ -1,0 +1,3 @@
+rig-parts inputs: tasks/01-build/inputs/painting.png (1664x2432) -> runs/2026-10-25-claude-haiku-5-5-01-build/work/inputs
+  st_input_full.png 2432x2432: the painting at x 384, white either side (384 + 384 px)
+  no seethrough.head_box in the config, so no st_input_head.png: run the full See-through pass, then `propose --head-box`, then this again

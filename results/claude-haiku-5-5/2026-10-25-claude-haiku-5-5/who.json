@@ -1,0 +1,176 @@
+{
+  "model": "claude-haiku-5-5",
+  "model_id": "claude-haiku-5-5",
+  "how": "HQ-created Claude sitting; every serialized assistant model field audited by phase, with streaming chunks deduplicated",
+  "counts": "independent sitting; host and protocol boundaries disclosed",
+  "session": "c1be51b5-3847-410e-bfc6-bffac937c093",
+  "appSession": "local_4533ea6b-00da-49da-9276-7009358a27a0",
+  "sourceCommit": "0cbe0699584b928fb8ca3c537a36743b5dfe5874",
+  "submittedCommit": "6b88e15a73629d4058d963a51bdd0095b20e19db",
+  "sourceVerification": "Operator verified exact desktop identity, local hand-in commit/remote disposition and unchanged original grader/tasks/fixtures/pins. Grading retains the original0cbe sitting source; on-disk grader/PROMPT/JOURNAL/lock hashes and installed1.60.0/2.67.2 versions verified.",
+  "handin": {
+    "localBranch": "run/claude-haiku-5-5",
+    "remoteRef": "run/claude-haiku-5-5",
+    "remoteSHAAtCapture": "87ca6a86ee03b2d669db84d1bcae033544882d45",
+    "remoteMatched": false,
+    "collection": "frozen local commit archive",
+    "pushChronology": [
+      {
+        "callEvent": "submitted-session.jsonl:2191",
+        "callTime": "2026-10-25T12:12:50.500Z",
+        "resultEvent": "submitted-session.jsonl:2192",
+        "resultTime": "2026-10-25T12:12:51.199Z",
+        "disposition": "rejected"
+      }
+    ]
+  },
+  "handinNote": "Initial push to the literal branch was rejected; frozen local hand-in collected, with no successful remote submission claimed.",
+  "promptSHA256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6",
+  "README_SHA256": "7758944ad683699ee3afe1936880b54f11d41ac00400d99652b0a4ae21a1f423",
+  "JOURNAL_SHA256": "2e30a9bbec3ffda0cc5e853cb2ce43c95bb6897ef37cd1ea16d6fb31c8e7ac67",
+  "packageLockSHA256": "28974e02dc759d2aafb8b5f32d3d4afce12b18abd1a43231e927451b2ec1ebdb",
+  "sessionLogSHA256": "a6adc962fb9dbe2f9d0307a8c98a656099aed69504d1cc7cb041b83f6a89c001",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "versions": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "assistantModelPhases": [
+    {
+      "phase": "solve/report",
+      "model": "claude-haiku-5-5",
+      "records": 367,
+      "uniqueIDs": 183
+    }
+  ],
+  "unknownAssistantModelMarkers": [],
+  "modelPhaseBoundary": "all observed assistant records belong to the assigned examination model",
+  "tokens": {
+    "input_fresh": 437311,
+    "input_cached": 56415650,
+    "output": 158614
+  },
+  "tokens_read_from": "deduplicated native Claude assistant message.id usage; fresh=input_tokens+cache_creation_input_tokens; cached=cache_read_input_tokens; cache breakdowns not added twice",
+  "tokenScope": {
+    "phase": "solve/report only",
+    "uniqueAPIMessages": 183,
+    "streamingProof": "All chunks per message.id carry identical complete usage/model/phase; raw iteration sums/cache-creation breakdowns cross-checked.",
+    "preludeExcluded": false
+  },
+  "minutes": 42.5,
+  "minutes_read_from": "sum of final grader per-task transcript-clock minutes, each rounded; raw UTC/seconds retained below",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T11:28:43Z",
+      "finished": "2026-10-25T11:36:01Z",
+      "seconds": 438.0
+    },
+    "02-move": {
+      "started": "2026-10-25T11:36:06Z",
+      "finished": "2026-10-25T11:46:57Z",
+      "seconds": 651.0
+    },
+    "03-correct": {
+      "started": "2026-10-25T11:47:03Z",
+      "finished": "2026-10-25T11:59:29Z",
+      "seconds": 746.0
+    },
+    "04-soft": {
+      "started": "2026-10-25T11:59:42Z",
+      "finished": "2026-10-25T12:05:29Z",
+      "seconds": 347.0
+    },
+    "05-dance": {
+      "started": "2026-10-25T12:05:33Z",
+      "finished": "2026-10-25T12:11:43Z",
+      "seconds": 370.0
+    }
+  },
+  "rawTaskSeconds": 2552.0,
+  "graderInvocationAudit": {
+    "actualInvocations": 7,
+    "matchedEntries": 7,
+    "outsideEntry": 0,
+    "beforeStart": 0,
+    "afterFinish": 0,
+    "clockBoundaryUnavailable": 0,
+    "coverage": "All first-occurrence tool_use.id Bash input bodies in the frozen submitted log were inspected for grader executions, including compound journal commands. Returned result evidence establishes the listed executions. Shell text/prose and source reads are not counted; no additional grader execution identified in that inspected trace. Does not claim unavailable runtime intervals or unrecorded external wrappers were observed.",
+    "coverageLimit": "Frozen log coverage only; no new collector, no live process trace or proof of nonserialized host context. Own persisted-output Reads are represented by returned log text, whose host truncation is retained as a gap.",
+    "clockLimit": "No listed grader invocation falls outside the retained literal task clocks; non-grader omissions remain separately disclosed."
+  },
+  "host_context": {
+    "provenance": "automatic instructions attachments and first host API request-shape/blob references before first assistant/tool activity; not inferred from current files",
+    "globalGuide": {
+      "bytes": 57649,
+      "sha256": "0cec1b5a99ec4a3cd9721925f79369167ca165214a66403a1524196f8df59201",
+      "quote": "판정선은 측정 전에 적는다.",
+      "quoteLine": 239,
+      "delivery": "automatic instructions attachment; not an observed examinee Read"
+    },
+    "ancestorGuide": {
+      "bytes": 36868,
+      "sha256": "cd9f9438103a561b5576507745bef4cbdc115bfef31c5549095017350648c646",
+      "delivery": "automatic instructions attachment; not an observed examinee Read"
+    },
+    "backgroundQuote": "This session is an independent exam sitting. The prompt below is the whole task; there is no other context to know, and no person is available to help during the sitting.",
+    "observedCategories": "private persona/role, HQ/delegation/verification workflows; explicit examination background and host shared-notes suggestion; no task-specific answer/config/grader hint found in the historical guide text",
+    "currentComparison": "Serialized historical global guide differs from the later58000-byte current snapshot: it lacks the later model-exam policy line. Current mtime/text is not historical proof.",
+    "soughtVsInherited": "Global/ancestor instructions were automatically attached, with no dedicated examinee global-guide/memory Read observed. Deliberate outside-clone operations are separately disclosed in accessAudit.",
+    "firstRequestCoverage": [
+      {
+        "phase": "solve/report",
+        "missingBlobReferences": 0,
+        "shapeCoverage": "serialized"
+      }
+    ],
+    "coverageGap": "Only serialized request/context and submitted-log activity are observed. Missing references/truncation remain gaps; no absence-of-runtime-memory or absolute independence claim.",
+    "initialCallPoints": [
+      {
+        "phase": "solve/report",
+        "requestEvent": "submitted-session.jsonl:28",
+        "time": "2026-10-25T11:28:02.608Z",
+        "model": "claude-haiku-5-5",
+        "firstAssistantEvent": "submitted-session.jsonl:34",
+        "firstToolEvent": "submitted-session.jsonl:35"
+      }
+    ]
+  },
+  "accessAudit": {
+    "observedUniqueToolCalls": 257,
+    "scope": "all first-occurrence tool_use.id inputs in the frozen submitted log; replayed tool blocks/null timestamps do not create executions",
+    "otherExamineeAnswerContentReadObserved": false,
+    "delegationObserved": false,
+    "dedicatedMemoryReadObserved": false,
+    "boundaryDisclosures": [
+      "A mistyped relative package-entry source read resolved outside the clone and returned No such file; no external file content was obtained. Own background-grader output was later read through the host output path."
+    ],
+    "limit": "An intact chain proves recorded entries, not complete command coverage. Shell bundling, direct numeric-output inspections and literal boundary exceptions are disclosed; grade.py source reads are source reads and not retroactively voided.",
+    "graderSourceReads": "Clone grade.py source reads were observed in this sitting. Historical source reads are retained without retroactive void under HQ ruling. Haiku disclosed reading its header/constants before tasks02–05."
+  },
+  "numericAudit": "No exact full authored animation or contour placement/sampling tuple matched the 168 compared prior filed task-level JSON files. Given task references, proposer values, recipe/defaults and generic loop constants are excluded as copying evidence. One simple ±3-degree chest-rotation timeline matches a prior filed dance track; this generic beat pattern alone does not establish copying. It is retained in the private comparison, not silently discarded.",
+  "task05FixtureContract": {
+    "configDifferences": [
+      "motion.animations_from"
+    ],
+    "rigStructureIdentical": true,
+    "extraAnnotationOnly": false
+  },
+  "judge": {
+    "letter": "Y",
+    "score": 7,
+    "of": 10,
+    "judged": "2026-10-25",
+    "how": "one person, clips V to Z in one sitting, the model behind each letter not known until every score was in; the scale given: 3 reads as grotesque, 5 as flailing, above that it looks like dancing"
+  },
+  "proctorNotes": [
+    "HQ-approved scoped raw-evidence path-integrity exception: original journal/.journal/transcript/captured-step bytes and their paths are preserved under this result root; this exception does not authorize secrets or private host text. New prose/receipts normalize paths.",
+    "Selfgrades, full native logs/context, call arrays and detailed audits remain private. No examinee answer repair, Git/push/message or new agent by proctor.",
+    "Explicit local Mac proctor exception; shared-host wall times are not isolated performance measurements. No Nova/GPU/full suite.",
+    "Literal WTF marker counts are retained, with unmarked mismatches noted in READINGS rather than silently recredited.",
+    "All generated sheets were inspected; native frames were hashed/deleted after readings and private judge-clip creation. Owner-receipted blind judgement: clip Y, 7/10, judged2026-10-25 in the V-to-Z batch; the model-to-letter map was withheld until all scores were in. No previous mark reused."
+  ],
+  "effort": {
+    "value": "high",
+    "evidence": "Every observed native assistant top-level effort/perTurnEffort and serialized API request params.output_config.effort is high; Fable ready-only Opus prelude and Fable solve both retained privately. Native Claude request contexts are used; no Codex turn_context asserted."
+  }
+}

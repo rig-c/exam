@@ -1,0 +1,12 @@
+PASS  built: "rig-parts build exit 0"
+PASS  checked: {"BREATH_VISIBLE": "PASS", "BLINK_NO_HOLE": "PASS", "CHAIN_LAG": "PASS", "TIP_OVER_ROOT": "PASS", "STILL_REGIONS_DARK": "PASS", "TEXTURE_STRETCH": "PASS", "ANIMATIONS_DO_NOT_FOLD": "PASS", "FEET_STAY_LEVEL": "SKIP", "STRESS_OFF_CHAIN": "PASS", "CLOTH_SETTLES": "CLEAR", "RECOMPOSITE_HOLES": "REPORTED"}
+PASS  whole: "uncovered_error_px 1812 against <= 3700"
+PASS  does_not_fold: []
+PASS  trails: "14 bone(s) on a physics constraint: hairback_l0, hairback_l1, hairback_l2, hairback_r0, hairback_r1, hairback_r2, lock0, lock1, lock1_0, lock1_1, lock1_2, lock1_3, lock2, lock3"
+PASS  gestures: "`look`: `face` travels 66.3 rig px at its furthest vertex, measured from the middle of `bottomwear`, against >= 22"
+FAIL  holds_together: {"opens": {"topwear|handwear_l": {"frames": 12, "max_px": 35}}, "not_read": [], "against": "0 frames open on every pair, every pair read"}
+PASS  gesture_without_folding: []
+journal: chain intact, 2 entries, 0 WTF
+note: no animation handed in has the shape of the guide's scripts
+clock: no started:/finished: lines in transcript.md
+7 of 8 line(s); journal present, 0 entry(ies) whose line 4 begins WTF?:; log .grade/2026-10-25-claude-sonnet-5-5-02-move/grade.log

@@ -1,0 +1,66 @@
+{
+ "run": "02-move",
+ "task": "02-move",
+ "versions": {
+  "@rig-c/parts": "1.60.0",
+  "rig-c": "2.67.2"
+ },
+ "lines": {
+  "built": {
+   "pass": true,
+   "read": "rig-parts build exit 0"
+  },
+  "checked": {
+   "pass": true,
+   "read": {
+    "BREATH_VISIBLE": "PASS",
+    "BLINK_NO_HOLE": "PASS",
+    "CHAIN_LAG": "PASS",
+    "TIP_OVER_ROOT": "PASS",
+    "STILL_REGIONS_DARK": "PASS",
+    "TEXTURE_STRETCH": "PASS",
+    "ANIMATIONS_DO_NOT_FOLD": "PASS",
+    "STRESS_OFF_CHAIN": "PASS",
+    "CLOTH_SETTLES": "CLEAR",
+    "RECOMPOSITE_HOLES": "REPORTED"
+   }
+  },
+  "whole": {
+   "pass": true,
+   "read": "uncovered_error_px 1812 against <= 3700"
+  },
+  "does_not_fold": {
+   "pass": true,
+   "read": []
+  },
+  "trails": {
+   "pass": true,
+   "read": "18 bone(s) on a physics constraint: bang_c0, bang_c1, bang_l0, bang_l1, bang_r0, bang_r1, hairback_l0_0, hairback_l0_1, hairback_l0_2, hairback_r0_0, hairback_r0_1, hairback_r0_2, lock1t0_0, lock1t0_1, lock1t0_2, lockt0_0, lockt0_1, lockt0_2"
+  },
+  "gestures": {
+   "pass": true,
+   "read": "`gesture`: `face` travels 35.1 rig px at its furthest vertex, measured from the middle of `bottomwear`, against >= 22"
+  },
+  "holds_together": {
+   "pass": true,
+   "read": {
+    "opens": {},
+    "not_read": [],
+    "against": "0 frames open on every pair, every pair read"
+   }
+  },
+  "gesture_without_folding": {
+   "pass": true,
+   "read": []
+  }
+ },
+ "painting": "91c2fc692eb046317dd4ffcba8d2f436c8f85f864fab890d6a0af990324dc0af",
+ "journal": true,
+ "surprises": 5,
+ "journal_chain": "journal: chain intact, 10 entries, 5 WTF",
+ "from_the_guide": [],
+ "minutes": 10.8,
+ "usage_reported": null,
+ "passed": 8,
+ "of": 8
+}

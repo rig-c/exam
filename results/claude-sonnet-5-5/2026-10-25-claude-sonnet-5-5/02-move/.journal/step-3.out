@@ -1,0 +1,4 @@
+exit=0
+  runs/2026-10-25-claude-sonnet-5-5-02-move/probe/out/check/build/skeleton.json
+  runs/2026-10-25-claude-sonnet-5-5-02-move/probe/out/check/build/skeleton.atlas
+  runs/2026-10-25-claude-sonnet-5-5-02-move/probe/out/check/build/skeleton.png

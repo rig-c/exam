@@ -1,0 +1,10 @@
+rigc render
+  ..    skeleton /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-02-move/out/check/build/skeleton.json
+  ..    atlas    /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-02-move/out/check/build/skeleton.atlas
+  ..    poser    rigc core — /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-02-move/out/check/build/skeleton.model.json
+  ..    155x256px at 12 fps, 1 set(s) -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-02-move/work/lean
+  ..    lean             25 frame(s), 2.000s + contact.png + geometry.json + seam.json (2 of 2 pair(s) open) -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-02-move/work/lean/lean
+  ..    physics: 14 constraint(s) stepped at 12 fps
+  ..    seam     "lean": seam "topwear" | "handwear_l" opens on 17 of 25 frame(s) read [4-20] at 12 fps, max 3 px — no gap; ghost on 17 frame(s) [4-20], worst frame 5 (t=0.4167s): 3 px (3.00 units² at 1.0000 units a px) in world box x [86.00, 96.01] y [945.00, 949.01] (10.00 × 4.00)
+  ..    seam     "lean": seam "topwear" | "handwear_r" opens on 19 of 25 frame(s) read [3-21] at 12 fps, max 8 px — gap on 9 frame(s) [8-16], worst frame 8 (t=0.6667s): 1 px (1.00 units² at 1.0000 units a px) in world box x [-72.01, -71.00] y [939.00, 940.01] (1.00 × 1.00); ghost on 19 frame(s) [3-21], worst frame 7 (t=0.5833s): 8 px (8.00 units² at 1.0000 units a px) in world box x [-77.01, -58.00] y [821.00, 940.01] (19.00 × 119.00)
+rigc: wrote /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-claude-opus-5-5/exam-claude-opus-5-5/runs/2026-10-25-claude-opus-5-5-02-move/work/lean/frames.json

@@ -1,0 +1,109 @@
+{
+  "spec": "exam-proctor-render-receipt/1",
+  "task": "03-correct",
+  "command": "python3 grade.py results/claude-sonnet-5-5/2026-10-25-claude-sonnet-5-5/03-correct",
+  "graderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "groups": [
+    {
+      "directory": "folds_idle/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "0fe581e4bdbbef532c256ed34e677d6fdfcbb7d5b5663097d568fdd0da462713",
+      "viewport": {
+        "x": -218.13360633316543,
+        "y": -33.86013719907419,
+        "width": 509.0539215326829,
+        "height": 1211.2237043750029,
+        "scale": 0.21135649762741163,
+        "pixelWidth": 108,
+        "pixelHeight": 256
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "1d117fb9c1e4dd9dde11f05a15d46f1f77fa44ab1012065380ccaa3da6b2f475",
+      "folds.json_SHA256": "8d05c60366450d4b6c6b1143c7dfc3dda29cf4e6deb42ed3e29051289112b113"
+    },
+    {
+      "directory": "out/check/idle_frames/idle",
+      "frames": 41,
+      "orderedPNG_SHA256": "e249976a45beba94397331540971a5a38955f90fe68443b074ee89b9753a05b8",
+      "viewport": {
+        "x": -218.13360633316543,
+        "y": -33.86013719907419,
+        "width": 509.0539215326829,
+        "height": 1211.2237043750029,
+        "scale": 0.528391244068529,
+        "pixelWidth": 269,
+        "pixelHeight": 640
+      },
+      "background": [
+        232,
+        232,
+        232,
+        255
+      ],
+      "sets": [
+        {
+          "dir": "idle",
+          "animation": "idle",
+          "fps": 12,
+          "sampled": 41,
+          "written": 41,
+          "stride": 1,
+          "duration": 3.333333333333333
+        }
+      ],
+      "geometry.json_SHA256": "6d8633c85a55aeb694034c54094e4c71ab05c88f137b7aa84a734ecc3ecc46a8"
+    }
+  ],
+  "numberedFramesDeletedAfterSheetReading": true,
+  "retainedSheets": [
+    "pictures/folds_idle-idle.png"
+  ],
+  "commands": [
+    "<proctor-root>/node_modules/.bin/rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out",
+    "<proctor-root>/node_modules/.bin/rigc render --candidate out/check/build --animation idle --fps 12 --folds --geometry --out <proctor-root>/.grade/03-correct/folds_idle"
+  ],
+  "cwd": ".grade/03-correct",
+  "examinedSheets": [
+    {
+      "source": "folds_idle/idle/contact.png",
+      "sha256": "8e1376dfbe10ea5c3ebb974478cdac2ba5cd4567ffcae1ae39a0d29a4c5cf5cf",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "out/check/contact.png",
+      "sha256": "8e1376dfbe10ea5c3ebb974478cdac2ba5cd4567ffcae1ae39a0d29a4c5cf5cf",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    },
+    {
+      "source": "out/check/idle_frames/idle/contact.png",
+      "sha256": "8e1376dfbe10ea5c3ebb974478cdac2ba5cd4567ffcae1ae39a0d29a4c5cf5cf",
+      "retained": "pictures/folds_idle-idle.png",
+      "read": true
+    }
+  ],
+  "cleanupScriptSHA256": "2413d8174d819c28a6dd43c2981929df1a7e3947964c75b03df4e9fb100bcbca",
+  "rawGradeLogSHA256": "dd322181c7a533c06e58dca072cc8cbfc6921944f7b406b4ccd5c0b5af619f89",
+  "allNumberedFramesRemaining": 0
+}

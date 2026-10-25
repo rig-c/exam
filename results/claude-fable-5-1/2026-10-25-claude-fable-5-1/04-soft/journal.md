@@ -1,0 +1,34 @@
+# Journal
+
+## Entry 1 (opened 2026-10-25T11:57:33Z)
+
+1. **Read:** TASK.md Budget (<= 700 triangles) and 'Read what it costs before you copy it'; AUTHORING 'Recipe: a soft region driven by physics' (the three pieces: a bone under chest, a contour mesh with a circle region handing the patch to it, a physics constraint; 'Before the first build, count them: rig-parts mesh-stats --config config.json --parts work/rig') and §4 'Counting the triangles before a build'. Task 01's build counted 616 triangles with topwear a 92-triangle lattice.
+2. **Expect:** exit 0; one line per mesh, 'mesh-stats: topwear — contour N vertices, T triangles' with T a few hundred, and 'mesh-stats: total' somewhere near 700 — grade.py's comment says the recipe's spacing 6 gives 935 and spacing 10 gives 697 on this painting, so with region spacing 10 I expect about 690-700, right at the line.
+3. **Chose / turned down:** Config by hand (named here): task 01's config plus chest_jiggle under chest at [403, 328], topwear in contour mode (tolerance 1, margin 1, spacing 29 = its old grid, stray 4) with one circle region r 28, band 16, region spacing 10 on chest_jiggle, bust_phys with the recipe's values, and motion.animations_from = hop.json (tasks/04-soft/hop.json copied verbatim). Count with mesh-stats against task 01's assembled parts (the same inputs and plan) before building. Turned down starting from task 02's config: its hair physics and gesture add nothing the lines read and the hop would drive them.
+4. **Happened** (2026-10-25T11:58:07Z): WTF?: 'mesh-stats: topwear — contour 154 vertices, 253 triangles' and 'mesh-stats: total 777 triangles over 8 mesh(es)' — 77 over the budget, where I expected about 697 from grade.py's comment; the comment's 'same region at spacing 10' must sit on a coarser surround than my copy of the recipe's tolerance 1 / margin 1 outline (154 vertices, where the lattice had 61). Nothing in the recipe said what the dense outline at tolerance 1 costs beside the region.
+
+## Entry 2 (opened 2026-10-25T11:58:07Z)
+
+1. **Read:** The mesh-stats total 777 against TASK.md's 700; AUTHORING 'A contour mesh': the outline is dense at tolerance 1 (more vertices than the lattice at the same spacing on 13 of 14 parts) and 'the smallest margin that covered every art pixel was … 1 at tolerance 1 and 1.5'; §3 meshes.<part>.grid: a coarser lattice is the author's.
+2. **Expect:** exit 0; topwear's contour down to roughly 170-190 triangles, hair_back and bottomwear to about 90 each at grid 36; total about 620-650, under 700.
+3. **Chose / turned down:** Hand edits (named here): topwear contour tolerance 1.5, margin 1.5, spacing 36, region spacing 12; hair_back and bottomwear grid 29 -> 36. Count again before building. Turned down shrinking the region's band or radius: the band is what absorbs the patch's travel, and the patch line needs vertices inside the circle.
+4. **Happened** (2026-10-25T11:58:26Z): exit 0, as expected: 'mesh-stats: topwear — contour 101 vertices, 167 triangles', hair_back and bottomwear 92 each, 'mesh-stats: total 607 triangles over 8 mesh(es)' — 93 under the budget.
+
+## Entry 3 (opened 2026-10-25T11:58:33Z)
+
+1. **Read:** TASK.md 'Do' and the pass lines Soft (3-15 rig px on hop against the build without physics), A patch, Hop does not fold, Budget; AUTHORING soft-region recipe: on reference-sample the same hop moved the bust 6.702 rig px with these values, and its 'Limits': the band caps the displacement, values that carry the patch past the band stretch the band's triangles; the contour refusals table (CONTOUR_COVERAGE, CONTOUR_ONE_ISLAND).
+2. **Expect:** exit 0; the rig stage prints topwear as a contour mesh (about 167 triangles) and 'animations beside the idle … hop'; check: PASS with TEXTURE_STRETCH triangles 607, ANIMATIONS_DO_NOT_FOLD reading idle and hop with the physics on and off, 0 folding; CLOTH_SETTLES reads 1 chain; build: PASS. A possible CONTOUR_COVERAGE refusal on topwear at tolerance 1.5 / margin 1.5 is the risk.
+3. **Chose / turned down:** Build as counted. Turned down a mesh-draft or further coarsening: 607 is well inside the budget.
+4. **Happened** (2026-10-25T11:59:40Z): exit 0, as expected: 'mesh topwear v= 101 t= 167 hull= 33 contour tol=1.5 margin=1.5 spacing=36 … cover 1.00000 … region bust->chest_jiggle reaches 46 (23 whole)', 'animations beside the idle, from …/hop.json as written: hop', 'TEXTURE_STRETCH: PASS — meshes 8; triangles 607', 'ANIMATIONS_DO_NOT_FOLD: PASS — 2 animation(s) … with its 1 physics constraint(s) on and off (idle, hop): 0 folding mesh(es)', 'check: PASS; 11 of 11 bar(s) measured', 'build: PASS'. No contour refusal at 1.5/1.5.
+
+## Entry 4 (opened 2026-10-25T11:59:46Z)
+
+1. **Read:** TASK.md pass lines; grade.py: without_physics() rebuilds the config with every physics constraint removed, pose() renders both on hop at 30 fps, difference() takes topwear's largest vertex distance (3 to 15) and the count moving over 0.5 px (>= 8 and <= 80 %); the recipe measured 6.702 rig px for these values on the same hop.
+2. **Expect:** exit 0; 9 of 9: task 01's four, hop_as_given, soft about 5-8 rig px at the landing frame (~frame 13-14 at 30 fps), a_patch with the region's 46 reached vertices (of 101) moving — 23 to 46 of 101, under 80 %, budget 607 <= 700, hop_does_not_fold []; chain intact, 4 entries, 1 WTF.
+3. **Chose / turned down:** Grade now. Turned down rendering hop with --geometry myself first: the grader prints the same difference.
+4. **Happened** (2026-10-25T12:01:13Z): exit 0, as expected: 'PASS  soft: "`topwear` differs from the same build without its physics by 6.61 rig px at hop frame 14, against 3.0 to 15.0"' (the recipe's 6.702 on reference-sample), 'PASS  a_patch: "38 of 101 `topwear` vertices move over 0.5 rig px', 'PASS  budget: "607 triangles against <= 700"', 'PASS  hop_as_given', 'PASS  hop_does_not_fold: []', '9 of 9 line(s)', 'journal: chain intact, 4 entries, 1 WTF'.
+
+## At the end (2026-10-25T12:01:26Z)
+
+- **Where I guessed:** The bust circle's centre [403, 328] and the jiggle bone's place: read off task 01's bones (chest at [403, 346], neck at [424, 258]) and topwear's box (y 246-436), not off any picture of the bust; r 28, band 16 and every physics value are the recipe's. The budget trims — tolerance/margin 1.5, background spacing 36, region spacing 12, hair_back and bottomwear at grid 36 — were chosen to land under 700 by one mesh-stats round, not derived.
+- **What I could not find:** What the contour outline costs at the recipe's tolerance 1 beside a region (the first count was 777 against grade.py's comment of 697 at region spacing 10), so that a first copy of the recipe could be sized to a budget without a measuring round; whether the 1.5/1.5 outline window the generated-shape survey gives holds on a real topwear (it did here, cover 1.00000).
