@@ -1,0 +1,71 @@
+wrote proposal.json (23 bone entries, 8 meshes) and render/landmarks.png (+_head) under runs/2026-10-25-claude-haiku-5-5-02-move/work
+note: head frame: the bar runs through eye_r [395.0, 181.0] and eye_l [454.0, 176.0], the eye bones' origins, 59.211 px; roll 4.844 degrees (Spine's, counter-clockwise) — the line the rig turns the face bones to and declares as invariants.axes; eye midpoint [424.5, 178.5]
+note: head pitch: the nose sits — (not read: no part tagged nose) of the way from the eye midpoint to the mouth (frontal 0.474..0.630); the stem, eye midpoint -> mouth, is 0.569 of the bar (frontal 0.510..0.675); frontal ranges read on demo, scarf, the rig-c/trailer character; the turn is not reported (src/propose.ts FRONTAL_REFERENCE says why)
+note: breath: chest translatey 4.44 px peak to peak (amp 2.22, base 2.22) = 2.5 % of the torso's length, 177.2 px (neck [424, 258] -> hip [403, 434]), once per 40-frame idle at 12 fps
+note: hair_back (back hair): config.cloth."back hair" -> 2 tree(s) per side of the eye axis, from head, rooted on the eye line and tipped 4 px above its bottom, 3 link(s) each (hairback_r0_, hairback_r1_, hairback_l0_, hairback_l1_); 12 constraint(s), physics on every link, wind 1 -> 8 and gravity 4 -> 24 root to tip (multipliers of the consumer's environment; no direction is drafted), no idle key; the recipe's own defaults, measured on its synthetic fixture (AUTHORING §3): length_ratio 0.5, strength 100/100/50
+note: hair_front (head:front hair): bang_r, bang_c, bang_l are a template, not its locks — columns at 0.25, 0.5 and 0.75 of the face box's width, along the head's down axis (the eye line's perpendicular, roll 4.844 degrees), each rooted on the part's art; the opaque shape does not separate the locks painted inside one mass of hair, so a lock that runs elsewhere is not followed — move the chains onto the locks
+note: hair_front (head:front hair): config.cloth."front hair" -> bang_r, bang_c, bang_l carry physics on both links (bang_r and bang_l the edge's strength, bang_c the trunk's; wind and gravity on the recipe's root-to-tip ramp over their two links) and no idle key; the recipe's chains, links and split shape the hanging strands, not the fringe
+note: hair_front (front hair): config.cloth."front hair" -> 1 tree(s) on the strand at x 370, from head, rooted 0.22 face heights above the eye line and tipped 5 px below the strand, 3 link(s) each (lockt0_); 4 constraint(s), physics on every link, wind 1 -> 6 and gravity 2 -> 12 root to tip (multipliers of the consumer's environment; no direction is drafted), no idle key; the recipe's own defaults, measured on its synthetic fixture (AUTHORING §3): length_ratio 0.5, strength 100/100/50
+note: hair_front (front hair): config.cloth."front hair" -> 1 tree(s) on the strand at x 484, from head, rooted 0.22 face heights above the eye line and tipped 5 px below the strand, 3 link(s) each (lock1t0_); 4 constraint(s), physics on every link, wind 1 -> 6 and gravity 2 -> 12 root to tip (multipliers of the consumer's environment; no direction is drafted), no idle key; the recipe's own defaults, measured on its synthetic fixture (AUTHORING §3): length_ratio 0.5, strength 100/100/50
+note: hairpin (full:headwear): wraps a tail config.cloth."back hair" drafts — 874 of its 1359 px lie over hair_back's art, nearest hair_back's spans head's fixed segment 852, hairback_l0_0 19, hairback_l1_0 3 px — so its mesh's segments are those spans and it rides the links hairback_l0_0, hairback_l1_0 with the tail, not head; no headwear bone, pendant or strand chain is drafted for it (issue #391)
+note: handwear is two blobs: one sleeve chain per mesh, and nothing on chest
+note: topwear ends at y=436 (hip 434): no robe chains -- add a sash chain by hand if one hangs
+note: bottomwear (full:bottomwear): its art starts 71.1 px below chest's origin, so it hangs from the waist — its mesh takes the hip line and its skirt chains, no chest segment, and the breath does not carry its root
+note: legwear (full:legwear): no rule -> region on hip
+note: mesh spacing: grid 29 = round(H / 37), H 1087 rig px the height of every part's box together (rows 49 to 1136), in place of a tenth of each part's short side (hair_back 17 -> 29, hair_front 16 -> 29, hairpin 9 -> 29, neck 6 -> 29, handwear_r 26 -> 29, handwear_l 25 -> 29, topwear 18 -> 29, bottomwear 22 -> 29; kept, already as coarse: none); r is the part's own. Calibrated on three figures of similar size (H 1106-1185 rig px, issue #265 Stage A), where every check bar passed at this divisor and the idle moved by up to 1.427 rig px against the finer lattice — no bar reads that. propose --grid-rule part drafts the part's own spacing
+LINT hairback_r0_, hairback_r1_ on mesh 'hair_back' (side r): 2 tree(s) for 1 visible hair mass(es) (mass 0 columns x=375..424, y=286..459); outside mass columns: hairback_r0_0 at [360, 179] (outside x=375..424) — draft one tree per visible hair mass, rooted at that mass's top row and inside its columns
+LINT hairback_l0_, hairback_l1_ on mesh 'hair_back' (side l): 2 tree(s) for 1 visible hair mass(es) (mass 0 columns x=425..496, y=286..465) — draft one tree per visible hair mass, rooted at that mass's top row and inside its columns
+2 LINT line(s) over 8 mesh(es) and the hip
+coverage hip [deforms]: checked, clean — read by hip-not-below-chest, hip-too-high
+coverage chest [deforms]: checked, clean — read by hip-not-below-chest
+coverage neck [control]: not checked — its role is control (binds nothing; keyed by motion.tracks[3]): it binds nothing, so there is no art to hold it to, and a control may sit off the art by design
+coverage head [deforms]: not checked — bound by the explicit [bone, from, to] segments meshes.hair_back.segments[0], meshes.hair_front.segments[0], meshes.hairpin.segments[0], meshes.neck.segments[1]: a segment is a line, not an origin, and the off-art check reads origins; bound rigidly by regions.ear_r, regions.ear_l, regions.face: no check reads a region's bone
+coverage eye_r [deforms]: not checked — bound rigidly by regions.eyewhite_r, regions.iris_r, regions.lash_r: no check reads a region's bone
+coverage eye_l [deforms]: not checked — bound rigidly by regions.eyewhite_l, regions.iris_l, regions.lash_l: no check reads a region's bone
+coverage brow_r [deforms]: not checked — bound rigidly by regions.brow_r: no check reads a region's bone
+coverage brow_l [deforms]: not checked — bound rigidly by regions.brow_l: no check reads a region's bone
+coverage mouth [deforms]: not checked — bound rigidly by regions.mouth: no check reads a region's bone
+coverage hairback_r0_0 [deforms]: checked, LINT — read by off-art on mesh 'hair_back'; named by 1 LINT line(s)
+coverage hairback_r0_1 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_r0_2 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_r1_0 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_r1_1 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_r1_2 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_l0_0 [deforms]: checked, LINT — read by off-art on mesh 'hair_back'; named by 1 LINT line(s)
+coverage hairback_l0_1 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_l0_2 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_l1_0 [deforms]: checked, LINT — read by off-art on mesh 'hair_back'; named by 1 LINT line(s)
+coverage hairback_l1_1 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage hairback_l1_2 [deforms]: checked, clean — read by off-art on mesh 'hair_back'
+coverage bang_r0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front'
+coverage bang_r1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front'
+coverage bang_c0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front'
+coverage bang_c1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front'
+coverage bang_l0 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front'
+coverage bang_l1 [deforms]: checked, clean — read by off-art on mesh 'hair_front', off-lock on mesh 'hair_front'
+coverage lockt0_0 [deforms]: checked, clean — read by off-art on mesh 'hair_front'
+coverage lockt0_1 [deforms]: checked, clean — read by off-art on mesh 'hair_front'
+coverage lockt0_2 [deforms]: checked, clean — read by off-art on mesh 'hair_front'
+coverage lock1t0_0 [deforms]: checked, clean — read by off-art on mesh 'hair_front'
+coverage lock1t0_1 [deforms]: checked, clean — read by off-art on mesh 'hair_front'
+coverage lock1t0_2 [deforms]: checked, clean — read by off-art on mesh 'hair_front'
+coverage sleeve_r0 [deforms]: checked, clean — read by off-art on mesh 'handwear_r'
+coverage sleeve_r1 [deforms]: checked, clean — read by off-art on mesh 'handwear_r'
+coverage sleeve_r2 [deforms]: checked, clean — read by off-art on mesh 'handwear_r'
+coverage sleeve_l0 [deforms]: checked, clean — read by off-art on mesh 'handwear_l'
+coverage sleeve_l1 [deforms]: checked, clean — read by off-art on mesh 'handwear_l'
+coverage sleeve_l2 [deforms]: checked, clean — read by off-art on mesh 'handwear_l'
+coverage skirt_r0 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_r1 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_r2 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_c0 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_c1 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_c2 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_l on mesh 'bottomwear'
+coverage skirt_l0 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'
+coverage skirt_l1 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'
+coverage skirt_l2 [deforms]: checked, clean — read by off-art on mesh 'bottomwear', squeeze with skirt_r on mesh 'bottomwear', squeeze with skirt_c on mesh 'bottomwear'
+coverage leg-chain choice: 0 chains — no keypoints supplied; leg placement requires hip, knee and ankle positions
+coverage: 48 bone(s) — 38 checked and clean, 3 checked with a LINT line, 7 not checked; roles 0 target, 47 deforms, 1 control, 0 unclassified
+wrote basis.json (48 bone record(s) by the basis of their origin: 0 joint, 41 mask, 6 ratio, 1 derived) under runs/2026-10-25-claude-haiku-5-5-02-move/work
+wrote runs/2026-10-25-claude-haiku-5-5-02-move/work/config_cloth.json: runs/2026-10-25-claude-haiku-5-5-02-move/config.json's text with bones["hairback_r"] removed, bones["hairback_l"] removed, bones["lock"] removed, bones["lock1_"] removed, bones["hairpin"] removed, bones["hairpin_tassel"] removed, bones["hairback_r0_"] inserted, bones["hairback_r1_"] inserted, bones["hairback_l0_"] inserted, bones["hairback_l1_"] inserted, bones["lockt0_"] inserted, bones["lock1t0_"] inserted, meshes.hair_back, meshes.hair_front, meshes.hairpin, motion.tracks["hairback_r"] removed, motion.tracks["bang_r"] removed, motion.tracks["bang_c"] removed, motion.tracks["bang_l"] removed, motion.tracks["lock"] removed, motion.tracks["lock1_"] removed, motion.tracks["hairpin_tassel"] removed, constraints spliced in from the draft; every other byte as read
+note: motion.animations_from "animations.json" written as stated; the loader resolves each against the directory the config sits in, runs/2026-10-25-claude-haiku-5-5-02-move/work for runs/2026-10-25-claude-haiku-5-5-02-move/work/config_cloth.json, not runs/2026-10-25-claude-haiku-5-5-02-move; put the config beside runs/2026-10-25-claude-haiku-5-5-02-move/config.json or rewrite them

@@ -1,0 +1,2 @@
+  FAIL  PROPOSE_WRITE_CONFIG_FRESH: runs/2026-10-25-claude-haiku-5-5-02-move/config.json — exists; the config is written to a new file, never over the --cloth config or an earlier one (see rig-parts guide PROPOSE_WRITE_CONFIG_FRESH)
+refused: 1 problem(s)
