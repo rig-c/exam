@@ -96,12 +96,22 @@ did not need. An entry that names the exact line it is about is worth more than 
 
 **Hand in**
 
-When all five tasks are done or stopped and `tools.md` is written:
+When all five tasks are done or stopped and `tools.md` is written, first check both the local branch
+names and the destination remote's branch names for `run/<MODEL>-<DATE>`, using ref metadata only.
+Do not fetch or read an earlier branch's contents. If the name is already taken in either place,
+stop before running the hand-in commands, even if a push would succeed as a fast-forward. If the name
+is free in both places, run the commands below one at a time.
+If branch creation fails because `run/<MODEL>-<DATE>` already exists locally, or the push is refused
+because that name is already taken remotely, stop the remaining hand-in Git commands. Do not check out,
+reuse, overwrite or force-push an earlier sitting's branch. Preserve the clone's run files as they are
+and any already-created local submission commit. Report the actual current local branch, full HEAD
+commit SHA, clone location and whether any run files remain uncommitted to the proctor. A branch-creation
+collision can happen before a submission commit exists; HEAD does not contain uncommitted run files.
 
-    git checkout -b run/<MODEL>
+    git checkout -b run/<MODEL>-<DATE>
     git add runs/<DATE>-<MODEL>-01-build runs/<DATE>-<MODEL>-02-move runs/<DATE>-<MODEL>-03-correct runs/<DATE>-<MODEL>-04-soft runs/<DATE>-<MODEL>-05-dance
     git commit -m "run: <MODEL>, <DATE>"
-    git push origin run/<MODEL>      # or to your fork, then open a pull request against `main`
+    git push origin run/<MODEL>-<DATE>      # or to your fork, then open a pull request against `main`
 
 Add only those five directories — and inside them only `config.json`, any other `.json` you wrote,
 `journal.md`, `transcript.md`, `.journal/` (the chain `tools/journal.py` keeps), `result.json` and `tools.md`; do not add build output (`out/`, `work/`) or
