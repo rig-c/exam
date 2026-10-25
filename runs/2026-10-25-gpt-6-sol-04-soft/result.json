@@ -1,0 +1,66 @@
+{
+ "run": "2026-10-25-gpt-6-sol-04-soft",
+ "task": "04-soft",
+ "versions": {
+  "@rig-c/parts": "1.60.0",
+  "rig-c": "2.67.2"
+ },
+ "lines": {
+  "built": {
+   "pass": true,
+   "read": "rig-parts build exit 0"
+  },
+  "checked": {
+   "pass": true,
+   "read": {
+    "BREATH_VISIBLE": "PASS",
+    "BLINK_NO_HOLE": "PASS",
+    "CHAIN_LAG": "PASS",
+    "TIP_OVER_ROOT": "PASS",
+    "STILL_REGIONS_DARK": "PASS",
+    "TEXTURE_STRETCH": "PASS",
+    "ANIMATIONS_DO_NOT_FOLD": "PASS",
+    "STRESS_OFF_CHAIN": "PASS",
+    "CLOTH_SETTLES": "CLEAR",
+    "RECOMPOSITE_HOLES": "REPORTED"
+   }
+  },
+  "whole": {
+   "pass": true,
+   "read": "uncovered_error_px 1812 against <= 3700"
+  },
+  "does_not_fold": {
+   "pass": true,
+   "read": []
+  },
+  "budget": {
+   "pass": true,
+   "read": "646 triangles against <= 700"
+  },
+  "hop_as_given": {
+   "pass": true,
+   "read": "the built rig holds `hop` exactly as tasks/04-soft/hop.json gives it"
+  },
+  "soft": {
+   "pass": true,
+   "read": "`topwear` differs from the same build without its physics by 6.61 rig px at hop frame 14, against 3.0 to 15.0"
+  },
+  "a_patch": {
+   "pass": true,
+   "read": "32 of 77 `topwear` vertices move over 0.5 rig px, against >= 8 and <= 80 %"
+  },
+  "hop_does_not_fold": {
+   "pass": true,
+   "read": []
+  }
+ },
+ "painting": "91c2fc692eb046317dd4ffcba8d2f436c8f85f864fab890d6a0af990324dc0af",
+ "journal": true,
+ "surprises": 1,
+ "journal_chain": "journal: chain intact, 5 entries, 1 WTF",
+ "from_the_guide": [],
+ "minutes": null,
+ "usage_reported": null,
+ "passed": 9,
+ "of": 9
+}
