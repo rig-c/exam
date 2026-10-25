@@ -1,0 +1,4 @@
+rig-parts build: runs/2026-10-25-gpt-5.6-sol-05-dance/config.json -> runs/2026-10-25-gpt-5.6-sol-05-dance/out, seam rule near-white, projection rule core, page edges free, pack shape polygon
+[assemble]   FAIL  CONFIG_KEY_KNOWN: config.assemble.animations_from — is not a field here; known: rig_scale, plan, extend_below_crop, patches, cuts, alternates, head_face_underfill — a project's own record goes under a key beginning "x-" (any JSON, read by nothing), a remark under note or <name>_note (a string) (see rig-parts guide CONFIG_KEY_KNOWN)
+[assemble] refused: 1 problem(s)
+build: stopped at assemble; no later stage ran

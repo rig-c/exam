@@ -1,0 +1,51 @@
+rig-parts assemble: 22 part(s) on a 832x1216 rig (0.5 rig px per source px), seam rule near-white, projection rule core
+  hair_back   head:back hair   211x524   @ 304,  94 op= 48129 vis=  5515 src=  1924/  1924 unproj= 3591 drift=    0 (0.0% of core) merged=18186 seam=42
+  hairpin     full:headwear    77x65     @ 360, 270 op=  2029 vis=  1004 src=    59/   115 unproj=  945 drift=   56 (48.7% of core) merged=0 seam=117
+  handwear_l  full:handwear-l  168x362   @ 483, 324 op= 19834 vis= 17609 src= 13411/ 13418 unproj= 4198 drift=   19 (0.1% of core) merged=0 seam=26
+  shoes       full:footwear    136x116   @ 295,1085 op= 10944 vis= 10662 src=  7730/  7730 unproj= 2932 drift=    6 (0.1% of core) merged=0 seam=9
+  legwear     full:legwear     238x484   @ 288, 621 op= 61562 vis= 30402 src= 25725/ 25725 unproj= 4677 drift=    0 (0.0% of core) merged=0 seam=13
+  neck        head:neck        52x65     @ 396, 261 op=  2715 vis=  1789 src=  1233/  1235 unproj=  556 drift=   35 (2.8% of core) merged=0 seam=4
+  bottomwear  full:bottomwear  325x326   @ 249, 486 op= 75233 vis= 66263 src= 38750/ 60740 unproj=27513 drift=21999 (36.2% of core) merged=0 seam=22338
+  topwear     full:topwear     162x228   @ 345, 290 op= 29886 vis= 27587 src= 24331/ 24338 unproj= 3256 drift=  189 (0.8% of core) merged=0 seam=44
+  handwear_r  full:handwear-r  143x374   @ 284, 312 op= 19543 vis= 18992 src= 14540/ 14624 unproj= 4452 drift=  148 (1.0% of core) merged=0 seam=274
+  ear_r       head:ears-r      30x35     @ 343, 227 op=   548 vis=   146 src=     9/     9 unproj=  137 drift=    0 (0.0% of core) merged=0 seam=9
+  ear_l       head:ears-l      23x42     @ 457, 195 op=   642 vis=   143 src=     2/    11 unproj=  141 drift=    9 (81.8% of core) merged=0 seam=40
+  face        head:face        132x163   @ 332, 126 op= 16165 vis=  7315 src=  5384/  5391 unproj= 1931 drift=   28 (0.5% of core) merged=0 seam=83
+  mouth       head:mouth       144x109   @ 405, 251 op=    50 vis=    50 src=     0/     0 unproj=   50 drift=    0 (no core) merged=0 seam=0
+  eyewhite_r  head:eyewhite-r  31x27     @ 358, 218 op=   606 vis=   250 src=    44/    44 unproj=  206 drift=    0 (0.0% of core) merged=0 seam=0
+  eyewhite_l  head:eyewhite-l  32x26     @ 423, 194 op=   618 vis=   233 src=    31/    52 unproj=  202 drift=   21 (40.4% of core) merged=0 seam=35
+  iris_r      head:irides-r    22x22     @ 366, 219 op=   351 vis=   339 src=   130/   130 unproj=  209 drift=    2 (1.5% of core) merged=0 seam=7
+  iris_l      head:irides-l    22x25     @ 424, 196 op=   424 vis=   386 src=   171/   173 unproj=  215 drift=    3 (1.7% of core) merged=0 seam=13
+  lash_l      head:eyelash-l   48x27     @ 414, 188 op=   416 vis=   337 src=     0/     0 unproj=  337 drift=    0 (no core) merged=0 seam=3
+  lash_r      head:eyelash-r   35x35     @ 355, 209 op=   365 vis=   365 src=     2/     2 unproj=  363 drift=    0 (0.0% of core) merged=0 seam=5
+  brow_l      head:eyebrow-l   48x17     @ 405, 172 op=   435 vis=   255 src=    37/    37 unproj=  218 drift=    0 (0.0% of core) merged=0 seam=5
+  brow_r      head:eyebrow-r   33x23     @ 347, 191 op=   347 vis=   150 src=    30/    30 unproj=  120 drift=    0 (0.0% of core) merged=0 seam=0
+  hair_front  head:front hair  160x297   @ 315,  97 op= 19170 vis= 19170 src= 13432/ 13436 unproj= 5718 drift=    0 (0.0% of core) merged=1118 seam=67
+  fringe pushed back: "hairpin" 26 px, where the painting shows "hair_back" 26 px
+  fringe pushed back: "legwear" 14 px, where the painting shows "shoes" 14 px
+  fringe pushed back: "bottomwear" 393 px, where the painting shows "legwear" 393 px
+  fringe pushed back: "topwear" 47 px, where the painting shows "bottomwear" 15 px, "hair_back" 11 px, "handwear_l" 11 px, "neck" 9 px, "hairpin" 1 px
+  fringe pushed back: "handwear_r" 192 px, where the painting shows "bottomwear" 113 px, "topwear" 79 px
+  fringe pushed back: "ear_l" 6 px, where the painting shows "hair_back" 6 px
+  fringe pushed back: "face" 20 px, where the painting shows "neck" 19 px, "ear_r" 1 px
+  fringe pushed back: "eyewhite_r" 6 px, where the painting shows "face" 6 px
+  fringe pushed back: "eyewhite_l" 2 px, where the painting shows "face" 2 px
+  fringe pushed back: "iris_r" 7 px, where the painting shows "face" 6 px, "eyewhite_r" 1 px
+  fringe pushed back: "iris_l" 5 px, where the painting shows "eyewhite_l" 3 px, "face" 2 px
+  fringe pushed back: "lash_l" 47 px, where the painting shows "face" 47 px
+  fringe pushed back: "lash_r" 17 px, where the painting shows "face" 14 px, "eyewhite_r" 2 px, "iris_r" 1 px
+  fringe pushed back: "brow_l" 6 px, where the painting shows "face" 6 px
+  fringe pushed back: "brow_r" 8 px, where the painting shows "face" 8 px
+  fringe pushed back: "hair_front" 109 px, where the painting shows "face" 42 px, "handwear_r" 34 px, "topwear" 31 px, "brow_r" 2 px
+  pixels: opaque 310012 = visible 208962 + occluded 101050 (32.6%); taken from the painting 146975 (47.4%); visible but not projected 61967 (20.0%)
+  ghost px removed: 1008 over 58 layer(s)
+recomposite vs source: mean |d|=1.09, within 8: 97.9%, error px > 40: 6164, uncovered error px: 1726
+uncovered holes (8-connected): 444, the largest 5 listed
+  uncovered hole 1: 154 px at 321,1077 18x35 (between "shoes" 40 px, "legwear" 21 px)
+  uncovered hole 2: 150 px at 353,296 32x24 (between "hair_back" 68 px, "hairpin" 27 px, "handwear_r" 15 px, "topwear" 3 px, "hair_front" 3 px)
+  uncovered hole 3: 100 px at 401,1068 9x31 (between "legwear" 24 px, "shoes" 20 px)
+  uncovered hole 4: 48 px at 493,518 8x23 (between "handwear_l" 28 px, "bottomwear" 14 px)
+  uncovered hole 5: 37 px at 325,103 31x31 (between "hair_back" 63 px)
+uncovered error by cause: no layer (alpha <= 8 on every layer; only assemble.patches from the painting can cover): 186 px in 14 component(s) (largest 100 px at 324,1078 14x22); on a layer (alpha > 8 on a layer, below covered alpha 128 in the parts): 1540 px in 449 component(s) (largest 146 px at 353,296 32x24)
+drift: "bottomwear" refuses 21999 px of full:bottomwear (its colour more than 90 off the painting, max channel), in a body of 21971 px at 298,653 215x153 (at least 211.5 px past a 5x5 opening); by the plan's draw order "bottomwear" holds 21971 px of it (the top-most part at alpha >= 250); the painting is within 90 of "legwear" (21839 px at alpha >= 250, drawn behind "bottomwear")
+wrote runs/2026-10-25-gpt-5.6-sol-03-correct/work/rig/parts.json, 22 PNG(s) in runs/2026-10-25-gpt-5.6-sol-03-correct/work/rig/parts, runs/2026-10-25-gpt-5.6-sol-03-correct/work/render/recomposite_rig.png, runs/2026-10-25-gpt-5.6-sol-03-correct/work/render/recomposite_error_rig.png (uncovered error px red, covered error px blue, the painting grey)
