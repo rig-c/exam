@@ -41,7 +41,10 @@ second. Better still, make the step show what it made: run -- sh -c 'CMD && ls -
 What a step is. Each command that builds, renders, measures or grades is a step and runs through `run`:
 a build, a retarget, a render, a measurement script, a grader run, a script that writes evidence frames. A file you write by hand is not a step by itself: name it in line 3 of the step that first uses it.
 For a pipeline or redirection, give the shell as the command: run -- sh -c 'a | b > out.txt'.
-The command runs in the current directory, with its output shown live and saved; `run` exits with the
+The command runs in the current directory. Its child environment prepends this clone's absolute
+node_modules/.bin to the inherited PATH (or os.defpath if PATH is unset), so bare installed package
+commands work without a shell or a global PATH edit. Other environment values and arguments are kept.
+Its output is shown live and saved; `run` exits with the
 command's own exit code (127 if it could not be started, 128+N if a signal N ended it).
 
 On disk, inside the run directory:
@@ -64,6 +67,8 @@ It prints exactly one line:
 The chain shows what was changed after the tool wrote it; it does not stop someone who rewrites the
 ledger on purpose, and it cannot show that line 2 was a real expectation. Do not edit, move or delete
 anything in the run directory's .journal/, journal.md or transcript.md by hand.
+It cannot reveal commands that ran outside this tool: the proctor cross-checks actual host command
+records, where available, as PROCTOR.md describes. An intact chain is not proof of complete step coverage.
 """
 import argparse
 import fcntl
@@ -107,6 +112,14 @@ def block_hash(prev, kind, entry, fname, data):
 def indent(text):
     """Keep a multi-line text inside its markdown list item."""
     return '\n   '.join(text.strip().splitlines()) if text.strip() else '(empty)'
+
+
+def command_environment():
+    """Resolve installed commands in this clone without changing the parent environment."""
+    env = os.environ.copy()
+    clone_bin = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'node_modules', '.bin')
+    env['PATH'] = clone_bin + os.pathsep + env.get('PATH', os.defpath)
+    return env
 
 
 class Journal:
@@ -268,7 +281,8 @@ def cmd_run(j, a):
     code = None
     with open(out, 'wb') as cap:
         try:
-            p = subprocess.Popen(a.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            p = subprocess.Popen(a.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                 env=command_environment())
         except OSError as e:
             msg = f'journal.py: could not start {a.command[0]}: {e}\n'.encode()
             cap.write(msg); sys.stdout.buffer.write(msg); sys.stdout.flush()

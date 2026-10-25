@@ -15,8 +15,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / 'tools/fixtures/profile-before-summary.md'
-SCRATCH = ROOT / 'work/profile-tests'
-SCRATCH.mkdir(parents=True, exist_ok=True)
+SCRATCH = Path(tempfile.gettempdir())
 
 
 class SpliceTests(unittest.TestCase):

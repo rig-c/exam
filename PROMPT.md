@@ -69,6 +69,14 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
   `{"total": n}` if that is all it gives, with `"source"` saying where the figure came from. If it cannot
   report, leave the file out. Do not estimate.
 - You may run `python3 grade.py runs/<your run>` whenever you like. It is the same grader the proctor runs.
+  From the next sitting after the 2026-10-25 ruling, you may also read this clone's `grade.py` source.
+  The exam measures whether the packages and their documents suffice; each `TASK.md` states its bars.
+  This permission preserves historical source reads and their recorded dispositions.
+  Run each grader through an entry like every other step. Under the same ruling, an outside-entry
+  grader is an omission to record, not by itself a reason to disqualify an intact tool-written chain.
+  A grader before `start` or after `finish` makes the task clock incomplete: preserve the literal
+  record and disclose the event. Chain verification cannot detect commands it never recorded; the
+  proctor cross-checks available actual host command records as `PROCTOR.md` describes.
 - If you cannot go on with a task, follow rule 7 of the README: write the last entry — what you tried and
   the message you could not act on (`close` it if its step ran) — and move to the next task. Do not invent results.
 

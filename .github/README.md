@@ -71,17 +71,18 @@ not change tables or grade any run:
 
 ## Local targeted verification
 
-No Node install, grader, build or full exam suite is needed. Keep dependencies and
-temporary files in the ignored work directory:
+No Node install, grader, build or full exam suite is needed. Set `TMPDIR` to an existing directory
+outside all repositories and keep dependencies there as well:
 
 ```sh
-python3 -m pip install --no-cache-dir --target work/profile-pydeps -r .github/requirements-profile-tests.txt
-PYTHONPATH=work/profile-pydeps python3 -B -m unittest discover -s tools -p 'test_profile_results.py' -v
+python3 -m pip install --no-cache-dir --target "$TMPDIR/profile-pydeps" -r .github/requirements-profile-tests.txt
+PYTHONPATH="$TMPDIR/profile-pydeps" python3 -B -m unittest discover -s tools -p 'test_profile_results.py' -v
 ```
 
 `profile-results-test.yml` runs this targeted suite in CI. The fixture is the
 two-pair public profile read for this change. Tests cover the real CLI outputs,
 both legacy migrations, preservation, malformed/missing/duplicate markers,
 counting edge cases, the local CLI, and its second-run no-op. Tests use
-`work/profile-tests/` and never invoke Git or publish. The profile repository owns
+temporary directories under `TMPDIR` and never invoke Git or publish. CI uses the runner's external
+temporary directory by default. The profile repository owns
 the refresh workflow's contracts and remote checkout/commit/PR verification.
