@@ -1,0 +1,48 @@
+{
+  "spec": "rigc-motion/1",
+  "animations": {
+    "glance": {
+      "duration": 2.0,
+      "loop": false,
+      "note": "a head turn alone: head keyed (the bone the idle leaves alone; the idle keys head_ctl); rotate is degrees CCW y-up. The first draft also leaned chest -2 degrees and lowered it 4 px, and the grader's rigc render --seam read a ghost of up to 18 px on topwear|handwear_l over 18 frames: topwear's shoulder vertices are weighted partly to the hip segment while handwear_l rides the sleeve chain under chest, so the top lagged the arm. Chest keys removed; head widened from -8/+6 to -9/+7 to keep the face's travel clear of 22 rig px.",
+      "tracks": [
+        {
+          "bone": "head",
+          "property": "rotate",
+          "keys": [
+            {
+              "t": 0,
+              "v": [
+                0
+              ]
+            },
+            {
+              "t": 0.5,
+              "v": [
+                -9
+              ]
+            },
+            {
+              "t": 1.0,
+              "v": [
+                -9
+              ]
+            },
+            {
+              "t": 1.5,
+              "v": [
+                7
+              ]
+            },
+            {
+              "t": 2.0,
+              "v": [
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
