@@ -1,0 +1,22 @@
+{
+  "allContactSheetsReadBeforeReceipt": true,
+  "sheets": [
+    {
+      "path": "folds_idle/idle/contact.png",
+      "sha256": "16f1eacc5306eefd96ad049fe855aea62efea01f5e9b6899057a35fce9930ecf",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/contact.png",
+      "sha256": "16f1eacc5306eefd96ad049fe855aea62efea01f5e9b6899057a35fce9930ecf",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/idle_frames/idle/contact.png",
+      "sha256": "16f1eacc5306eefd96ad049fe855aea62efea01f5e9b6899057a35fce9930ecf",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    }
+  ],
+  "observation": "Three idle sheets inspected. Figure remains visible in the painted standing pose across subtle chest/head/hair movement and blink; no gross inversion at sheet scale. All four machine bars pass, with uncovered error1812. No continuous-playback or human quality mark assigned.",
+  "limit": "Contact-sheet visual inspection at supplied scale; not a human dance score or a proof of continuous playback."
+}

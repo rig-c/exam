@@ -1,0 +1,8 @@
+rigc render
+  ..    skeleton /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-5.6-terra/exam-gpt-5.6-terra/runs/2026-10-25-gpt-5.6-terra-01-build/out/check/build/skeleton.json
+  ..    atlas    /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-5.6-terra/exam-gpt-5.6-terra/runs/2026-10-25-gpt-5.6-terra-01-build/out/check/build/skeleton.atlas
+  ..    poser    rigc core — /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-5.6-terra/exam-gpt-5.6-terra/runs/2026-10-25-gpt-5.6-terra-01-build/out/check/build/skeleton.model.json
+  ..    154x256px at 12 fps, 1 set(s) -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-5.6-terra/exam-gpt-5.6-terra/runs/2026-10-25-gpt-5.6-terra-01-build/folds
+  ..    physics: none in this rig — it declares no physics constraint, so no frame steps one
+  ..    idle             41 frame(s), 3.333s + contact.png + folds.json (0 of 8 mesh(es) fold) -> /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-5.6-terra/exam-gpt-5.6-terra/runs/2026-10-25-gpt-5.6-terra-01-build/folds/idle
+rigc: wrote /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-5.6-terra/exam-gpt-5.6-terra/runs/2026-10-25-gpt-5.6-terra-01-build/folds/frames.json

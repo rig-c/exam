@@ -1,0 +1,212 @@
+{
+  "source": "out/check/check.json from independent pinned regrade",
+  "PASS": true,
+  "SEAM_OVER_RANGE": {
+    "status": "PASS",
+    "joints": 9,
+    "degrees": [
+      -45,
+      0,
+      45
+    ],
+    "bar": {
+      "mean": 1,
+      "rig_px_over_40": 50,
+      "level": 40
+    }
+  },
+  "SEAM_OVER_MOTION": {
+    "status": "WARN",
+    "fps": 12,
+    "warningRows": [
+      {
+        "pair": "forearm_r|hand_r",
+        "animation": "dance",
+        "status": "read",
+        "drawn": 49,
+        "banded": 49,
+        "opens": [
+          2,
+          3,
+          4,
+          14,
+          15,
+          16,
+          26,
+          27,
+          28,
+          38,
+          39,
+          40
+        ],
+        "px": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3,
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "max_px": 5,
+        "under_floor": [
+          1,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          25,
+          29,
+          31,
+          32,
+          33,
+          34,
+          35,
+          37,
+          41,
+          43,
+          44,
+          45,
+          46,
+          47
+        ]
+      },
+      {
+        "pair": "neckpiece|headpiece",
+        "animation": "dance",
+        "status": "read",
+        "drawn": 49,
+        "banded": 49,
+        "opens": [
+          3,
+          8,
+          10,
+          15,
+          20,
+          22,
+          27,
+          32,
+          34,
+          39,
+          44,
+          46
+        ],
+        "px": [
+          20,
+          7,
+          7,
+          20,
+          7,
+          7,
+          20,
+          7,
+          7,
+          20,
+          7,
+          7
+        ],
+        "max_px": 20,
+        "under_floor": [
+          1,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11,
+          13,
+          14,
+          16,
+          17,
+          19,
+          21,
+          23,
+          25,
+          26,
+          28,
+          29,
+          31,
+          33,
+          35,
+          37,
+          38,
+          40,
+          41,
+          43,
+          45,
+          47
+        ]
+      }
+    ]
+  },
+  "FEET_STAY_LEVEL": {
+    "status": "PASS",
+    "animations": [
+      "idle",
+      "dance"
+    ],
+    "fps": 12,
+    "physics_left_out": 0,
+    "bar_degrees": 10,
+    "bar": "HQ's line (rig-c/parts#347 ruling 4), not a figure measured here",
+    "feet": [
+      {
+        "part": "foot_r",
+        "bone": "foot_r",
+        "hangs_from": "leg_r1",
+        "status": "PASS",
+        "frames_posed": 41,
+        "worst": {
+          "animation": "dance",
+          "frame": 1,
+          "time": 0.08333333333333333,
+          "degrees": 0,
+          "turned": "leg_r1",
+          "turned_degrees": 0.326557,
+          "through": [
+            {
+              "bone": "foot_r",
+              "inherit": "noRotationOrReflection"
+            }
+          ]
+        }
+      },
+      {
+        "part": "foot_l",
+        "bone": "foot_l",
+        "hangs_from": "leg_l1",
+        "status": "PASS",
+        "frames_posed": 42,
+        "worst": {
+          "animation": "dance",
+          "frame": 1,
+          "time": 0.08333333333333333,
+          "degrees": 0,
+          "turned": "leg_l1",
+          "turned_degrees": 1.290943,
+          "through": [
+            {
+              "bone": "foot_l",
+              "inherit": "noRotationOrReflection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "roundTripLimit": "cli_core.ts without @esotericsoftware/spine-core; A00_ROUNDTRIP_PARSE not run"
+}

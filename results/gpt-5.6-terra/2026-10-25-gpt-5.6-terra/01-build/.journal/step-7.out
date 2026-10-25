@@ -1,0 +1,2 @@
+  FAIL  USAGE: propose needs --out <dir> (see rig-parts guide USAGE)
+rig-parts --help lists the commands

@@ -1,0 +1,42 @@
+{
+  "allContactSheetsReadBeforeReceipt": true,
+  "sheets": [
+    {
+      "path": "folds_idle/idle/contact.png",
+      "sha256": "68510d8e3faaaa6d28589cce2a5112061c161ed27a2b372b6b98d8519c10bad4",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/contact.png",
+      "sha256": "68510d8e3faaaa6d28589cce2a5112061c161ed27a2b372b6b98d8519c10bad4",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/idle_frames/idle/contact.png",
+      "sha256": "68510d8e3faaaa6d28589cce2a5112061c161ed27a2b372b6b98d8519c10bad4",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out_without_physics/check/contact.png",
+      "sha256": "0e39f3279aef72e0f7a3a1e610f81fe90cc16a6e257000bd791b9a6dac2ff575",
+      "retainedAs": "pictures/out_without_physics-check.png"
+    },
+    {
+      "path": "out_without_physics/check/idle_frames/idle/contact.png",
+      "sha256": "0e39f3279aef72e0f7a3a1e610f81fe90cc16a6e257000bd791b9a6dac2ff575",
+      "retainedAs": "pictures/out_without_physics-check.png"
+    },
+    {
+      "path": "pose_out_check_build_hop/hop@30fps/contact.png",
+      "sha256": "5d07737ce3f2506cb23b00370a05dc3d8d4fe3dffc6a72cb6844339a5b6b37d3",
+      "retainedAs": "pictures/pose_out_check_build_hop-hop@30fps.png"
+    },
+    {
+      "path": "pose_out_without_physics_check_build_hop/hop@30fps/contact.png",
+      "sha256": "8ec91004c0a8f808a12577ad572538c11ffe1b8b2b857565e5c1f18f90893d24",
+      "retainedAs": "pictures/pose_out_without_physics_check_build_hop-hop@30fps.png"
+    }
+  ],
+  "observation": "Seven sheets inspected: idle and hop, with and without physics. The hop body rises, lands and settles; no gross mesh inversion is visible at sheet scale. The two hop renders use exactly the same fixed viewport, confirmed in frames.json. Patch displacement is small at sheet scale; geometry measures 6.61 px at frame14, 23/109 vertices >0.5 px and 687 triangles. Continuous playback and human quality are not scored.",
+  "limit": "Contact-sheet visual inspection at supplied scale; not a human dance score or a proof of continuous playback."
+}

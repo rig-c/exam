@@ -1,0 +1,22 @@
+{
+  "allContactSheetsReadBeforeReceipt": true,
+  "sheets": [
+    {
+      "path": "folds_idle/idle/contact.png",
+      "sha256": "3249571d9a6bf5263c1d7623d4ac630e945511f31b099f9a163663f1a9f58604",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/contact.png",
+      "sha256": "3249571d9a6bf5263c1d7623d4ac630e945511f31b099f9a163663f1a9f58604",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/idle_frames/idle/contact.png",
+      "sha256": "3249571d9a6bf5263c1d7623d4ac630e945511f31b099f9a163663f1a9f58604",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    }
+  ],
+  "observation": "Three identical sheets inspected. Seated figure stays in frame, hair sweeps across the idle and the blink is visible; no gross inversion visible at contact-sheet scale. Eight deforming meshes retained and measured hair motion is 45.881 rig px. Same-sign repair follows the proposer diagnostic, not a reduction of motion.",
+  "limit": "Contact-sheet visual inspection at supplied scale; not a human dance score or a proof of continuous playback."
+}

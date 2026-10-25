@@ -1,0 +1,11 @@
+{
+  "allContactSheetsReadBeforeReceipt": true,
+  "sourceSheetPaths": [
+    "folds_idle/idle/contact.png",
+    "out/check/contact.png",
+    "out/check/idle_frames/idle/contact.png"
+  ],
+  "retainedSheet": "pictures/folds_idle-idle.png",
+  "retainedSheetSHA256": "16f1eacc5306eefd96ad049fe855aea62efea01f5e9b6899057a35fce9930ecf",
+  "observation": "All three idle sheets inspected before receipt. Full figure remains visible across breathing, hair/head motion and blink; no gross inversion visible at sheet scale. Continuous playback and human quality are not scored."
+}

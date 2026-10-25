@@ -1,0 +1,20 @@
+{
+  "spec": "rigc-motion/1",
+  "animations": {
+    "gesture": {
+      "duration": 2,
+      "loop": true,
+      "tracks": [
+        { "bone": "chest", "property": "rotate", "keys": [
+          { "t": 0, "v": [0] }, { "t": 0.5, "v": [3] }, { "t": 1.5, "v": [3] }, { "t": 2, "v": [0] }
+        ] },
+        { "bone": "chest", "property": "translatey", "keys": [
+          { "t": 0, "v": [0] }, { "t": 0.5, "v": [-6] }, { "t": 1.5, "v": [-6] }, { "t": 2, "v": [0] }
+        ] },
+        { "bone": "head", "property": "rotate", "keys": [
+          { "t": 0, "v": [0] }, { "t": 0.5, "v": [8] }, { "t": 1.5, "v": [8] }, { "t": 2, "v": [0] }
+        ] }
+      ]
+    }
+  }
+}

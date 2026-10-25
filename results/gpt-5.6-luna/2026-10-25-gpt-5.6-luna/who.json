@@ -1,0 +1,216 @@
+{
+  "model": "gpt-5.6-luna",
+  "model_id": "gpt-5.6-luna",
+  "how": "fresh Codex session; model verified from frozen turn_context.model; reasoning effort unavailable",
+  "counts": "independent sitting",
+  "session": "01a1727d-67db-7ff2-a6fe-48f3af6a32d7",
+  "sourceCommit": "564d526676c1234c13b9cc5902b3435eff19e00f",
+  "submittedCommit": "c6c945cdc3513040317fd31ea8360db28ad1d788",
+  "promptSHA256": "5bc3749fa33cb569d0f5694118007cebf7572d2080b850d0a4d905c5965fb5c6",
+  "README_SHA256": "c5204b21856f9e4c1b28d572cef72d9313f9a18560a981f526f66d72c1a97f2f",
+  "sessionLogSHA256": "e3988bce32d9d3320320a38ceaf5e525896171257f77a503a8218d220c13ea90",
+  "proctorGraderSHA256": "ec5324049ecc11e58ddd33082a881996f4d4749872ede4bfd010fe2def4d0dff",
+  "versions": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "modelContexts": [
+    {
+      "line": 11,
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": null
+    },
+    {
+      "line": 693,
+      "model": "gpt-5.6-luna",
+      "reasoningEffort": null
+    }
+  ],
+  "reasoningEffort": {
+    "status": "not recorded",
+    "value": null
+  },
+  "subagents": {
+    "observedInvocations": 0,
+    "scope": "all 99 frozen response-item tool calls reviewed; no solve delegation observed"
+  },
+  "minutes": 10.3,
+  "minutes_read_from": "sum of each task transcript clock rounded to one decimal, including all stop records; raw seconds retained. results.py prefers the sum of graded result.json minutes when all are available and uses who.minutes only as fallback. The two scopes differ; neither is an isolated performance benchmark.",
+  "taskClocks": {
+    "01-build": {
+      "started": "2026-10-25T09:57:10Z",
+      "finished": "2026-10-25T10:03:26Z",
+      "seconds": 376.0
+    },
+    "02-move": {
+      "started": "2026-10-25T10:03:28Z",
+      "finished": "2026-10-25T10:06:32Z",
+      "seconds": 184.0
+    },
+    "03-correct": {
+      "started": "2026-10-25T10:06:32Z",
+      "finished": "2026-10-25T10:07:08Z",
+      "seconds": 36.0
+    },
+    "04-soft": {
+      "started": "2026-10-25T10:07:12Z",
+      "finished": "2026-10-25T10:07:17Z",
+      "seconds": 5.0
+    },
+    "05-dance": {
+      "started": "2026-10-25T10:07:08Z",
+      "finished": "2026-10-25T10:07:20Z",
+      "seconds": 12.0
+    }
+  },
+  "rawTaskSeconds": 613.0,
+  "tokens": {
+    "input_fresh": 169890,
+    "input_cached": 11107456,
+    "output": 24025
+  },
+  "tokens_read_from": "frozen session first solve/report turn cumulative at raw line 688; cached input is a subset of total input and reasoning a subset of output; later transport/acknowledgment turn excluded",
+  "gradedTasks": [
+    "01-build",
+    "02-move"
+  ],
+  "judge": null,
+  "proctorNotes": [
+    "Only completed answer inputs independently regraded; no result.json fabricated for unsat/stopped tasks.",
+    "Raw journal.md, transcript.md and .journal bytes preserved exactly, including recorded machine paths.",
+    "All contact sheets from each regrade inspected before render receipts removed this worker's numbered frames.",
+    "Human dance judgement is pending; contact-sheet reading is not that judgement.",
+    "Task04 and task05 clocks overlap (04 10:07:12\u201310:07:17Z within 05 10:07:08\u201310:07:20Z); task-duration sum is not a non-overlapping elapsed-time measure.",
+    "HQ approved a scoped raw hash-chain path-integrity exception for unedited submitted journal.md, transcript.md and .journal/ evidence in this results subtree only. Recorded machine paths are retained byte-for-byte to preserve chain integrity. Proctor-authored files use normalized paths and contain no home-directory paths; the exception does not extend to other content."
+  ],
+  "followupCommit": "69b2da99c88ed8653b4ab022769825f84b499755",
+  "followupDifference": {
+    "sourceForGrading": "first submitted commit c6c945cdc3513040317fd31ea8360db28ad1d788",
+    "deletedFiles": 45,
+    "deletedCategories": {
+      "numberedPNG": 41,
+      "contactPNG": 1,
+      "framesJSON": 1,
+      "foldsJSON": 1,
+      "answerMarkdown": 1
+    },
+    "addedFiles": 0,
+    "changedSurvivingFiles": 0,
+    "removedPaths": [
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/frames.json",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/contact.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0000.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0001.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0002.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0003.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0004.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0005.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0006.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0007.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0008.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0009.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0010.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0011.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0012.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0013.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0014.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0015.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0016.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0017.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0018.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0019.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0020.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0021.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0022.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0023.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0024.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0025.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0026.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0027.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0028.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0029.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0030.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0031.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0032.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0033.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0034.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0035.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0036.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0037.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0038.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0039.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/f0040.png",
+      "runs/2026-10-25-gpt-5.6-luna-01-build/folds/idle/folds.json",
+      "runs/2026-10-25-gpt-5.6-luna-05-dance/answer.md"
+    ],
+    "allAllowedHandinBytesEqual": true,
+    "note": "Follow-up only removes unallowed outputs. No config, proposal, animation, journal, transcript, result or tools content changed. Only allowed files from first submission were filed."
+  },
+  "taskStatus": {
+    "01-build": "sat; independent machine regrade completed",
+    "02-move": "sat; seam failure retained, no later promised repair exists",
+    "03-correct": "planner stop after head-box and plan proposal; partial config retained, no rig build or grade; not scored",
+    "04-soft": "stop record only; true placeholder, no authored answer or build; not sat",
+    "05-dance": "stop record only and tools feedback; true placeholder, no fixture/dance answer or build; not sat"
+  },
+  "canonicalExamTextMatchedInSessionLog": true,
+  "journalProtocolEvidence": {
+    "actualGraders": 2,
+    "wrappedGraders": 2,
+    "refusedGradeAttempts": [
+      {
+        "line": 513,
+        "reason": "entry 1 still open; && prevents grader"
+      },
+      {
+        "line": 520,
+        "reason": "tools.journal.py missing; && prevents grader"
+      },
+      {
+        "line": 534,
+        "reason": "close quote rule refused; && prevents grader"
+      }
+    ],
+    "note": "Many open/run/close actions share a shell invocation contrary to the separate-call instruction. Chains intact; originals preserved. The task02 failure close does not begin WTF?:; the grader therefore counts zero WTF."
+  },
+  "tokensBoundary": {
+    "rawLine": 688,
+    "turn": "01a1727d-7cc4-7262-add2-5088e510560a",
+    "counter": {
+      "input_tokens": 11277346,
+      "cached_input_tokens": 11107456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 24025,
+      "reasoning_output_tokens": 4150,
+      "total_tokens": 11301371
+    },
+    "firstTurnResponseUsageSumMatches": true,
+    "fullExportFinalCounterLine": 716,
+    "fullExportFinalCounter": {
+      "input_tokens": 11814585,
+      "cached_input_tokens": 11635968,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 25180,
+      "reasoning_output_tokens": 4595,
+      "total_tokens": 11839765
+    },
+    "note": "Use first solve/report turn cumulative, excluding later acknowledgment or hand-in transport/cleanup turn; Luna first actual Git hand-in occurs in second turn."
+  },
+  "cheatingTraces": {
+    "readAudit": "No observed command fetched or read results/, advanced/, other-answer branches/PRs, getting-started or examples; only excluded sparse paths reference results/advanced. No solve delegation tool or nested tools found. Bridge reply is requested hand-in transport. This is bounded to the frozen export, not provider-side prior context.",
+    "numericAudit": {
+      "identicalCompleteAuthoredGesture": [],
+      "documentedMagnitudeOverlap": "head8/chest3 and magnitude6 are given by the task reference; frozen y is +6 rather than reference lowering -6; isolated overlap is not evidence of copying."
+    }
+  },
+  "minutesScope": {
+    "who": "all five task clocks including stopped/not-sat tasks; per-task minutes rounded before summing",
+    "rawTaskSeconds": 613.0,
+    "stopInclusiveMinutes": 10.3,
+    "resultsTable": "graded result.json minutes only when all such results have minutes; who.minutes is fallback",
+    "gradedTaskCount": 2,
+    "gradedResultMinutes": 9.4,
+    "generatorChanged": false,
+    "overlapNote": "Task04 and task05 clocks overlap; sum is not non-overlapping elapsed sitting time."
+  }
+}

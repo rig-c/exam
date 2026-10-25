@@ -1,0 +1,32 @@
+{
+  "allContactSheetsReadBeforeReceipt": true,
+  "sheets": [
+    {
+      "path": "folds_gesture/gesture/contact.png",
+      "sha256": "fcf65801fcd4c030b1056657cfa20df43f4007b7bd3a72c64fdccb22ad215209",
+      "retainedAs": "pictures/folds_gesture-gesture.png"
+    },
+    {
+      "path": "folds_idle/idle/contact.png",
+      "sha256": "e6f731a435770efc78e19bef0873460d2d36d4724c689953ab4c58086fad09f4",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/contact.png",
+      "sha256": "e6f731a435770efc78e19bef0873460d2d36d4724c689953ab4c58086fad09f4",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "out/check/idle_frames/idle/contact.png",
+      "sha256": "e6f731a435770efc78e19bef0873460d2d36d4724c689953ab4c58086fad09f4",
+      "retainedAs": "pictures/folds_idle-idle.png"
+    },
+    {
+      "path": "seam_gesture/gesture/contact.png",
+      "sha256": "fcf65801fcd4c030b1056657cfa20df43f4007b7bd3a72c64fdccb22ad215209",
+      "retainedAs": "pictures/folds_gesture-gesture.png"
+    }
+  ],
+  "observation": "Five sheets inspected. Head and chest turn and lift through the middle of the gesture, then return; the figure remains visible. No gross mesh inversion at contact-sheet scale, but that scale cannot certify the armhole seam. Exact seam reading fails topwear|handwear_l:15 open frames, max40 px. The frozen answer retains the failed chest motion; no repair or human mark was added.",
+  "limit": "Contact-sheet visual inspection at supplied scale; not a human dance score or a proof of continuous playback."
+}

@@ -1,0 +1,2 @@
+  FAIL  LAYERS_INPUT_KIND: inputs/layers/full — does not exist; a .psd file or a See-through wrapper output directory is required (see rig-parts guide LAYERS_INPUT_KIND)
+refused: 1 problem(s)
