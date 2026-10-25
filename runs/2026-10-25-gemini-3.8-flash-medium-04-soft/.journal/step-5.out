@@ -1,0 +1,13 @@
+PASS  built: "rig-parts build exit 0"
+PASS  checked: {"BREATH_VISIBLE": "PASS", "BLINK_NO_HOLE": "PASS", "CHAIN_LAG": "PASS", "TIP_OVER_ROOT": "PASS", "STILL_REGIONS_DARK": "PASS", "TEXTURE_STRETCH": "PASS", "ANIMATIONS_DO_NOT_FOLD": "PASS", "STRESS_OFF_CHAIN": "PASS", "CLOTH_SETTLES": "CLEAR", "RECOMPOSITE_HOLES": "REPORTED"}
+PASS  whole: "uncovered_error_px 1812 against <= 3700"
+PASS  does_not_fold: []
+PASS  budget: "690 triangles against <= 700"
+PASS  hop_as_given: "the built rig holds `hop` exactly as tasks/04-soft/hop.json gives it"
+PASS  soft: "`topwear` differs from the same build without its physics by 6.61 rig px at hop frame 14, against 3.0 to 15.0"
+PASS  a_patch: "38 of 101 `topwear` vertices move over 0.5 rig px, against >= 8 and <= 80 %"
+PASS  hop_does_not_fold: []
+journal: chain intact, 5 entries, 0 WTF
+note: no animation handed in has the shape of the guide's scripts
+clock: no started:/finished: lines in transcript.md
+9 of 9 line(s); journal present, 0 entry(ies) whose line 4 begins WTF?:; log .grade/2026-10-25-gemini-3.8-flash-medium-04-soft/grade.log

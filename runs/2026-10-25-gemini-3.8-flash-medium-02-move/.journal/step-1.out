@@ -1,0 +1,2 @@
+  FAIL  PROPOSE_WRITE_CONFIG_CONFLICT: config.motion.tracks[5] "hairback_l" — motion.tracks entry "hairback_l" is the recipe's, and it was changed by hand: it holds amps [0.6,1.4,2.4] where the draft removes the entry (the recipe drafts that part afresh), so the write would drop the hand edit; take the draft by removing the hand edit (or the entry), or leave the recipe out for that part (its config.cloth block) (see rig-parts guide PROPOSE_WRITE_CONFIG_CONFLICT)
+refused: 1 problem(s)
