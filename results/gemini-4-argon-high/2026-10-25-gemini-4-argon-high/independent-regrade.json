@@ -1,0 +1,161 @@
+{
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "handin_HEAD": "e0baff467bec581ed14ddec648480271b0d01ef4",
+  "producer_checkpoint_job": "20261025T101732Z-8aa805b3998041a292e495a0b601d9f4",
+  "bootstrap_exit": 0,
+  "independent_grading_job": "20261025T102438Z-ac66e95b75a14273adf9083b31800671",
+  "grading_and_visual_job_exit": 0,
+  "total_machine_passed": 38,
+  "total_machine_of": 38,
+  "human_judge": null,
+  "results": [
+    {
+      "task": "01-build",
+      "passed": 4,
+      "of": 4,
+      "independent_sha256": "4b659a030e10af9bbe4e8c371f25e75bc421fe279ad9b214059e35ccd002a5f1",
+      "submitted_sha256": "a35ad7b037ac8da2c8a2750f190317639ba97b152f21ec6e3a849ce1cfad2a7d",
+      "grader_stdout_sha256": "fcb869a6501b88261e5aff1f2ec079720023f17101f174ac3e2d1aa001bcfef2",
+      "machine_lines_equal_to_submitted": true,
+      "submitted_minutes": null,
+      "independent_minutes": 7.8,
+      "method": "Fresh grader result copied to a unique proctor-evidence path before Nova artifact capture; exact bytes retained separately from the submitted result."
+    },
+    {
+      "task": "02-move",
+      "passed": 8,
+      "of": 8,
+      "independent_sha256": "0780ee64f1e9fe32b6a0b29da4e1c67db9550262d4c4478b3102bf782005067c",
+      "submitted_sha256": "59a47efdcdf3dab7421ea36ce1ff2709a4b8fe50f04759c7f0fac04a472b454f",
+      "grader_stdout_sha256": "de6861aa614d32da6618f458b7fddba2aef724aa7e372bd1f28744fd2441f5c6",
+      "machine_lines_equal_to_submitted": true,
+      "submitted_minutes": null,
+      "independent_minutes": 11.2,
+      "method": "Fresh grader result copied to a unique proctor-evidence path before Nova artifact capture; exact bytes retained separately from the submitted result."
+    },
+    {
+      "task": "03-correct",
+      "passed": 6,
+      "of": 6,
+      "independent_sha256": "8e70f7cdb95eb4666a1e3d5b76ac28c8097b9942df506602e44b956cce93e769",
+      "submitted_sha256": "6ff4154d20af15b75fd8711cd30b5cbcb01af6fd55b23618583916b25623c443",
+      "grader_stdout_sha256": "30ebed48a4f4b1da2db65e5ba3dd684139d8f3097c04b058fae62b79f5a82715",
+      "machine_lines_equal_to_submitted": true,
+      "submitted_minutes": null,
+      "independent_minutes": 5.9,
+      "method": "Fresh grader result copied to a unique proctor-evidence path before Nova artifact capture; exact bytes retained separately from the submitted result."
+    },
+    {
+      "task": "04-soft",
+      "passed": 9,
+      "of": 9,
+      "independent_sha256": "205a592a315efa991fa0f5176ef065518dd82f4c6e1b830369c16fccffb8e921",
+      "submitted_sha256": "e8846674efaec386d78bead586f5c29319b5120e79363795429886281008dca6",
+      "grader_stdout_sha256": "ec90f3c37b33b54230f832b173a1c0180bae6590d943a6c5aa5bc5c1f78bd5a0",
+      "machine_lines_equal_to_submitted": true,
+      "submitted_minutes": null,
+      "independent_minutes": 6.6,
+      "method": "Fresh grader result copied to a unique proctor-evidence path before Nova artifact capture; exact bytes retained separately from the submitted result."
+    },
+    {
+      "task": "05-dance",
+      "passed": 11,
+      "of": 11,
+      "independent_sha256": "30a89b3289879a4b218fca0d1214a62f04f597ecbd960789a404fdba725c5102",
+      "submitted_sha256": "4dff1304cbf04540292f6a1d13a561dc669dbb3738eee2831007507d11041838",
+      "grader_stdout_sha256": "33d2c9b8ab8d55c9983bd777dc74ea70e651c5f58535ed5b7c114c17e11fe448",
+      "machine_lines_equal_to_submitted": true,
+      "submitted_minutes": null,
+      "independent_minutes": 8.4,
+      "method": "Fresh grader result copied to a unique proctor-evidence path before Nova artifact capture; exact bytes retained separately from the submitted result."
+    }
+  ],
+  "input_sha256": "ba7f2b3b3d4e648530a7f616cf8c5036bdc11719696f21585a9b9e242486cd71",
+  "grading_receipt_sha256": "1ec0db6bb445f6df119dc2fc64b8853916991f89c4d05178974490171113008f",
+  "grade_subprocess_receipts": [
+    {
+      "task": "01-build",
+      "mode": "grade",
+      "command": [
+        "python3",
+        "grade.py",
+        "runs/2026-10-25-gemini-4-argon-high-01-build"
+      ],
+      "exit": 0,
+      "finished_UTC": "2026-10-25T10:25:09.448668+00:00"
+    },
+    {
+      "task": "02-move",
+      "mode": "grade",
+      "command": [
+        "python3",
+        "grade.py",
+        "runs/2026-10-25-gemini-4-argon-high-02-move"
+      ],
+      "exit": 0,
+      "finished_UTC": "2026-10-25T10:25:35.502294+00:00"
+    },
+    {
+      "task": "03-correct",
+      "mode": "grade",
+      "command": [
+        "python3",
+        "grade.py",
+        "runs/2026-10-25-gemini-4-argon-high-03-correct"
+      ],
+      "exit": 0,
+      "finished_UTC": "2026-10-25T10:25:54.372315+00:00"
+    },
+    {
+      "task": "04-soft",
+      "mode": "grade",
+      "command": [
+        "python3",
+        "grade.py",
+        "runs/2026-10-25-gemini-4-argon-high-04-soft"
+      ],
+      "exit": 0,
+      "finished_UTC": "2026-10-25T10:26:38.734234+00:00"
+    },
+    {
+      "task": "05-dance",
+      "mode": "grade",
+      "command": [
+        "python3",
+        "grade.py",
+        "runs/2026-10-25-gemini-4-argon-high-05-dance"
+      ],
+      "exit": 0,
+      "finished_UTC": "2026-10-25T10:27:57.640645+00:00"
+    }
+  ],
+  "runtime": {
+    "bun": "1.4.4",
+    "git": "git version 2.43.0",
+    "node": "v24.21.0",
+    "python3": "Python 3.12.3"
+  },
+  "resource_budget": {
+    "cpu_quota": 4,
+    "memory_bytes": 6442450944,
+    "parallel_task_graders": 1,
+    "verified_cgroup": {
+      "memory_max": "6442450944",
+      "cpu_max": [
+        "400000",
+        "100000"
+      ],
+      "workers": 4,
+      "mode": "grade"
+    }
+  },
+  "quiescence": {
+    "available": true,
+    "detail": "Linux subreaper direct-child registry empty after kill/reap",
+    "quiescent": true
+  },
+  "source_integrity": "Frozen source inputs unchanged; original and independent results are separate."
+}

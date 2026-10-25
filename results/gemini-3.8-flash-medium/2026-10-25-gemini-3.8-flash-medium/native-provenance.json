@@ -1,0 +1,4835 @@
+{
+  "session_id": "9430479a-a089-48be-bfff-2da76ad19f84",
+  "native_last_step_completed_UTC": "2026-10-25T09:42:18.944536Z",
+  "native_preservation_observed_UTC": "2026-10-25T09:45:13.489107+00:00",
+  "source_sealed_UTC": "2026-10-25T09:49:22.531108+00:00",
+  "coverage": {
+    "steps": 537,
+    "generators": 268,
+    "executors": 22,
+    "native_model_records": {
+      "gemini-3.8-flash-medium": 268
+    },
+    "plannerConfigs_available": 1,
+    "systemPrompts_available": 1,
+    "global_instruction_containment_true": 1,
+    "global_instruction_containment_unknown": 267
+  },
+  "generator_model_fields": [
+    {
+      "generator": 0,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        1,
+        2
+      ]
+    },
+    {
+      "generator": 1,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        3,
+        4
+      ]
+    },
+    {
+      "generator": 2,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        5,
+        6
+      ]
+    },
+    {
+      "generator": 3,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        7,
+        8
+      ]
+    },
+    {
+      "generator": 4,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        9,
+        10
+      ]
+    },
+    {
+      "generator": 5,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        11,
+        12
+      ]
+    },
+    {
+      "generator": 6,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        13,
+        14
+      ]
+    },
+    {
+      "generator": 7,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        15,
+        16
+      ]
+    },
+    {
+      "generator": 8,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        17,
+        18
+      ]
+    },
+    {
+      "generator": 9,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        19,
+        20
+      ]
+    },
+    {
+      "generator": 10,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        21,
+        22
+      ]
+    },
+    {
+      "generator": 11,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        23,
+        24
+      ]
+    },
+    {
+      "generator": 12,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        25,
+        26
+      ]
+    },
+    {
+      "generator": 13,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        27,
+        28
+      ]
+    },
+    {
+      "generator": 14,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        29,
+        30
+      ]
+    },
+    {
+      "generator": 15,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        31,
+        32
+      ]
+    },
+    {
+      "generator": 16,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        33,
+        34
+      ]
+    },
+    {
+      "generator": 17,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        35,
+        36
+      ]
+    },
+    {
+      "generator": 18,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        37,
+        38
+      ]
+    },
+    {
+      "generator": 19,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        39,
+        40
+      ]
+    },
+    {
+      "generator": 20,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        41,
+        42
+      ]
+    },
+    {
+      "generator": 21,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        43,
+        44
+      ]
+    },
+    {
+      "generator": 22,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        45,
+        46
+      ]
+    },
+    {
+      "generator": 23,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        47,
+        48
+      ]
+    },
+    {
+      "generator": 24,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        49,
+        50
+      ]
+    },
+    {
+      "generator": 25,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        51,
+        52
+      ]
+    },
+    {
+      "generator": 26,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        53,
+        54
+      ]
+    },
+    {
+      "generator": 27,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        55,
+        56
+      ]
+    },
+    {
+      "generator": 28,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        57,
+        58
+      ]
+    },
+    {
+      "generator": 29,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        59
+      ]
+    },
+    {
+      "generator": 30,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        61,
+        62
+      ]
+    },
+    {
+      "generator": 31,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        63,
+        64
+      ]
+    },
+    {
+      "generator": 32,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        65,
+        66
+      ]
+    },
+    {
+      "generator": 33,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        67
+      ]
+    },
+    {
+      "generator": 34,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        69,
+        70
+      ]
+    },
+    {
+      "generator": 35,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        71,
+        72
+      ]
+    },
+    {
+      "generator": 36,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        73,
+        74
+      ]
+    },
+    {
+      "generator": 37,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        75,
+        76
+      ]
+    },
+    {
+      "generator": 38,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        77,
+        78
+      ]
+    },
+    {
+      "generator": 39,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        79,
+        80
+      ]
+    },
+    {
+      "generator": 40,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        81,
+        82
+      ]
+    },
+    {
+      "generator": 41,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        83,
+        84
+      ]
+    },
+    {
+      "generator": 42,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        85,
+        86
+      ]
+    },
+    {
+      "generator": 43,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        87,
+        88
+      ]
+    },
+    {
+      "generator": 44,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        89,
+        90
+      ]
+    },
+    {
+      "generator": 45,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        91
+      ]
+    },
+    {
+      "generator": 46,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        93,
+        94
+      ]
+    },
+    {
+      "generator": 47,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        95,
+        96
+      ]
+    },
+    {
+      "generator": 48,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        97,
+        98
+      ]
+    },
+    {
+      "generator": 49,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        99
+      ]
+    },
+    {
+      "generator": 50,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        101,
+        102
+      ]
+    },
+    {
+      "generator": 51,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        103,
+        104
+      ]
+    },
+    {
+      "generator": 52,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        105,
+        106
+      ]
+    },
+    {
+      "generator": 53,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        107,
+        108
+      ]
+    },
+    {
+      "generator": 54,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        109,
+        110
+      ]
+    },
+    {
+      "generator": 55,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        111
+      ]
+    },
+    {
+      "generator": 56,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        113,
+        114
+      ]
+    },
+    {
+      "generator": 57,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        115,
+        116
+      ]
+    },
+    {
+      "generator": 58,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        117,
+        118
+      ]
+    },
+    {
+      "generator": 59,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        119,
+        120
+      ]
+    },
+    {
+      "generator": 60,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        121,
+        122
+      ]
+    },
+    {
+      "generator": 61,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        123,
+        124
+      ]
+    },
+    {
+      "generator": 62,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        125,
+        126
+      ]
+    },
+    {
+      "generator": 63,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        127,
+        128
+      ]
+    },
+    {
+      "generator": 64,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        129,
+        130
+      ]
+    },
+    {
+      "generator": 65,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        131,
+        132
+      ]
+    },
+    {
+      "generator": 66,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        133,
+        134
+      ]
+    },
+    {
+      "generator": 67,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        135,
+        136
+      ]
+    },
+    {
+      "generator": 68,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        137,
+        138
+      ]
+    },
+    {
+      "generator": 69,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        139,
+        140
+      ]
+    },
+    {
+      "generator": 70,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        141,
+        142
+      ]
+    },
+    {
+      "generator": 71,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        143,
+        144
+      ]
+    },
+    {
+      "generator": 72,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        145,
+        146
+      ]
+    },
+    {
+      "generator": 73,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        147,
+        148
+      ]
+    },
+    {
+      "generator": 74,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        149,
+        150
+      ]
+    },
+    {
+      "generator": 75,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        151,
+        152
+      ]
+    },
+    {
+      "generator": 76,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        153,
+        154
+      ]
+    },
+    {
+      "generator": 77,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        155,
+        156
+      ]
+    },
+    {
+      "generator": 78,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        157,
+        158
+      ]
+    },
+    {
+      "generator": 79,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        159,
+        160
+      ]
+    },
+    {
+      "generator": 80,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        161,
+        162
+      ]
+    },
+    {
+      "generator": 81,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        163,
+        164
+      ]
+    },
+    {
+      "generator": 82,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        165,
+        166
+      ]
+    },
+    {
+      "generator": 83,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        167,
+        168
+      ]
+    },
+    {
+      "generator": 84,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        169,
+        170
+      ]
+    },
+    {
+      "generator": 85,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        171,
+        172
+      ]
+    },
+    {
+      "generator": 86,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        173,
+        174
+      ]
+    },
+    {
+      "generator": 87,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        175,
+        176
+      ]
+    },
+    {
+      "generator": 88,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        177,
+        178
+      ]
+    },
+    {
+      "generator": 89,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        179,
+        180
+      ]
+    },
+    {
+      "generator": 90,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        181,
+        182
+      ]
+    },
+    {
+      "generator": 91,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        183,
+        184
+      ]
+    },
+    {
+      "generator": 92,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        185,
+        186
+      ]
+    },
+    {
+      "generator": 93,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        187,
+        188
+      ]
+    },
+    {
+      "generator": 94,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        189,
+        190
+      ]
+    },
+    {
+      "generator": 95,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        191,
+        192
+      ]
+    },
+    {
+      "generator": 96,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        193,
+        194
+      ]
+    },
+    {
+      "generator": 97,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        195,
+        196
+      ]
+    },
+    {
+      "generator": 98,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        197,
+        198
+      ]
+    },
+    {
+      "generator": 99,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        199,
+        200
+      ]
+    },
+    {
+      "generator": 100,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        201,
+        202
+      ]
+    },
+    {
+      "generator": 101,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        203,
+        204
+      ]
+    },
+    {
+      "generator": 102,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        205,
+        206
+      ]
+    },
+    {
+      "generator": 103,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        207,
+        208
+      ]
+    },
+    {
+      "generator": 104,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        209,
+        210
+      ]
+    },
+    {
+      "generator": 105,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        211
+      ]
+    },
+    {
+      "generator": 106,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        213,
+        214
+      ]
+    },
+    {
+      "generator": 107,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        215,
+        216
+      ]
+    },
+    {
+      "generator": 108,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        217,
+        218
+      ]
+    },
+    {
+      "generator": 109,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        219
+      ]
+    },
+    {
+      "generator": 110,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        221,
+        222
+      ]
+    },
+    {
+      "generator": 111,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        223,
+        224
+      ]
+    },
+    {
+      "generator": 112,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        225,
+        226
+      ]
+    },
+    {
+      "generator": 113,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        227,
+        228
+      ]
+    },
+    {
+      "generator": 114,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        229,
+        230
+      ]
+    },
+    {
+      "generator": 115,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        231
+      ]
+    },
+    {
+      "generator": 116,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        233,
+        234
+      ]
+    },
+    {
+      "generator": 117,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        235,
+        236
+      ]
+    },
+    {
+      "generator": 118,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        237,
+        238
+      ]
+    },
+    {
+      "generator": 119,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        239,
+        240
+      ]
+    },
+    {
+      "generator": 120,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        241,
+        242
+      ]
+    },
+    {
+      "generator": 121,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        243,
+        244
+      ]
+    },
+    {
+      "generator": 122,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        245,
+        246
+      ]
+    },
+    {
+      "generator": 123,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        247
+      ]
+    },
+    {
+      "generator": 124,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        249,
+        250
+      ]
+    },
+    {
+      "generator": 125,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        251,
+        252
+      ]
+    },
+    {
+      "generator": 126,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        253,
+        254
+      ]
+    },
+    {
+      "generator": 127,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        255
+      ]
+    },
+    {
+      "generator": 128,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        257,
+        258
+      ]
+    },
+    {
+      "generator": 129,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        259,
+        260
+      ]
+    },
+    {
+      "generator": 130,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        261,
+        262
+      ]
+    },
+    {
+      "generator": 131,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        263,
+        264
+      ]
+    },
+    {
+      "generator": 132,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        265,
+        266
+      ]
+    },
+    {
+      "generator": 133,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        267,
+        268
+      ]
+    },
+    {
+      "generator": 134,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        269,
+        270
+      ]
+    },
+    {
+      "generator": 135,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        271,
+        272
+      ]
+    },
+    {
+      "generator": 136,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        273,
+        274
+      ]
+    },
+    {
+      "generator": 137,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        275,
+        276
+      ]
+    },
+    {
+      "generator": 138,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        277
+      ]
+    },
+    {
+      "generator": 139,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        279,
+        280
+      ]
+    },
+    {
+      "generator": 140,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        281,
+        282
+      ]
+    },
+    {
+      "generator": 141,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        283,
+        284
+      ]
+    },
+    {
+      "generator": 142,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        285
+      ]
+    },
+    {
+      "generator": 143,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        287,
+        288
+      ]
+    },
+    {
+      "generator": 144,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        289,
+        290
+      ]
+    },
+    {
+      "generator": 145,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        291,
+        292
+      ]
+    },
+    {
+      "generator": 146,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        293,
+        294
+      ]
+    },
+    {
+      "generator": 147,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        295,
+        296
+      ]
+    },
+    {
+      "generator": 148,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        297
+      ]
+    },
+    {
+      "generator": 149,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        299,
+        300
+      ]
+    },
+    {
+      "generator": 150,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        301,
+        302
+      ]
+    },
+    {
+      "generator": 151,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        303,
+        304
+      ]
+    },
+    {
+      "generator": 152,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        305,
+        306
+      ]
+    },
+    {
+      "generator": 153,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        307,
+        308
+      ]
+    },
+    {
+      "generator": 154,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        309,
+        310
+      ]
+    },
+    {
+      "generator": 155,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        311,
+        312
+      ]
+    },
+    {
+      "generator": 156,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        313,
+        314
+      ]
+    },
+    {
+      "generator": 157,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        315,
+        316
+      ]
+    },
+    {
+      "generator": 158,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        317,
+        318
+      ]
+    },
+    {
+      "generator": 159,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        320,
+        321
+      ]
+    },
+    {
+      "generator": 160,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        322,
+        323
+      ]
+    },
+    {
+      "generator": 161,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        324,
+        325
+      ]
+    },
+    {
+      "generator": 162,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        326,
+        327
+      ]
+    },
+    {
+      "generator": 163,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        328,
+        329
+      ]
+    },
+    {
+      "generator": 164,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        330,
+        331
+      ]
+    },
+    {
+      "generator": 165,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        332,
+        333
+      ]
+    },
+    {
+      "generator": 166,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        334,
+        335
+      ]
+    },
+    {
+      "generator": 167,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        336,
+        337
+      ]
+    },
+    {
+      "generator": 168,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        338,
+        339
+      ]
+    },
+    {
+      "generator": 169,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        340,
+        341
+      ]
+    },
+    {
+      "generator": 170,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        342,
+        343
+      ]
+    },
+    {
+      "generator": 171,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        344,
+        345
+      ]
+    },
+    {
+      "generator": 172,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        346,
+        347
+      ]
+    },
+    {
+      "generator": 173,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        348,
+        349
+      ]
+    },
+    {
+      "generator": 174,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        350,
+        351
+      ]
+    },
+    {
+      "generator": 175,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        352,
+        353
+      ]
+    },
+    {
+      "generator": 176,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        354
+      ]
+    },
+    {
+      "generator": 177,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        356,
+        357
+      ]
+    },
+    {
+      "generator": 178,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        358,
+        359
+      ]
+    },
+    {
+      "generator": 179,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        360,
+        361
+      ]
+    },
+    {
+      "generator": 180,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        362,
+        363
+      ]
+    },
+    {
+      "generator": 181,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        364,
+        365
+      ]
+    },
+    {
+      "generator": 182,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        366,
+        367
+      ]
+    },
+    {
+      "generator": 183,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        368,
+        369
+      ]
+    },
+    {
+      "generator": 184,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        370,
+        371
+      ]
+    },
+    {
+      "generator": 185,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        372,
+        373
+      ]
+    },
+    {
+      "generator": 186,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        374,
+        375
+      ]
+    },
+    {
+      "generator": 187,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        376,
+        377
+      ]
+    },
+    {
+      "generator": 188,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        378,
+        379
+      ]
+    },
+    {
+      "generator": 189,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        380,
+        381
+      ]
+    },
+    {
+      "generator": 190,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        382,
+        383
+      ]
+    },
+    {
+      "generator": 191,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        384,
+        385
+      ]
+    },
+    {
+      "generator": 192,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        386,
+        387
+      ]
+    },
+    {
+      "generator": 193,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        388,
+        389
+      ]
+    },
+    {
+      "generator": 194,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        390,
+        391
+      ]
+    },
+    {
+      "generator": 195,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        392
+      ]
+    },
+    {
+      "generator": 196,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        394,
+        395
+      ]
+    },
+    {
+      "generator": 197,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        396,
+        397
+      ]
+    },
+    {
+      "generator": 198,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        398,
+        399
+      ]
+    },
+    {
+      "generator": 199,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        400,
+        401
+      ]
+    },
+    {
+      "generator": 200,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        402,
+        403
+      ]
+    },
+    {
+      "generator": 201,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        404,
+        405
+      ]
+    },
+    {
+      "generator": 202,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        406,
+        407
+      ]
+    },
+    {
+      "generator": 203,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        408,
+        409
+      ]
+    },
+    {
+      "generator": 204,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        410,
+        411
+      ]
+    },
+    {
+      "generator": 205,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        412,
+        413
+      ]
+    },
+    {
+      "generator": 206,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        414
+      ]
+    },
+    {
+      "generator": 207,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        416,
+        417
+      ]
+    },
+    {
+      "generator": 208,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        418,
+        419
+      ]
+    },
+    {
+      "generator": 209,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        420,
+        421
+      ]
+    },
+    {
+      "generator": 210,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        422,
+        423
+      ]
+    },
+    {
+      "generator": 211,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        424
+      ]
+    },
+    {
+      "generator": 212,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        426,
+        427
+      ]
+    },
+    {
+      "generator": 213,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        428,
+        429
+      ]
+    },
+    {
+      "generator": 214,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        430,
+        431
+      ]
+    },
+    {
+      "generator": 215,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        432,
+        433
+      ]
+    },
+    {
+      "generator": 216,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        434
+      ]
+    },
+    {
+      "generator": 217,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        436,
+        437
+      ]
+    },
+    {
+      "generator": 218,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        438,
+        439
+      ]
+    },
+    {
+      "generator": 219,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        440,
+        441
+      ]
+    },
+    {
+      "generator": 220,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        442,
+        443
+      ]
+    },
+    {
+      "generator": 221,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        444,
+        445
+      ]
+    },
+    {
+      "generator": 222,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        446,
+        447
+      ]
+    },
+    {
+      "generator": 223,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        448,
+        449
+      ]
+    },
+    {
+      "generator": 224,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        450,
+        451
+      ]
+    },
+    {
+      "generator": 225,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        452,
+        453
+      ]
+    },
+    {
+      "generator": 226,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        454,
+        455
+      ]
+    },
+    {
+      "generator": 227,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        456,
+        457
+      ]
+    },
+    {
+      "generator": 228,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        458,
+        459
+      ]
+    },
+    {
+      "generator": 229,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        460,
+        461
+      ]
+    },
+    {
+      "generator": 230,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        462,
+        463
+      ]
+    },
+    {
+      "generator": 231,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        464,
+        465
+      ]
+    },
+    {
+      "generator": 232,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        466,
+        467
+      ]
+    },
+    {
+      "generator": 233,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        468,
+        469
+      ]
+    },
+    {
+      "generator": 234,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        470,
+        471
+      ]
+    },
+    {
+      "generator": 235,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        472,
+        473
+      ]
+    },
+    {
+      "generator": 236,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        474,
+        475
+      ]
+    },
+    {
+      "generator": 237,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        476
+      ]
+    },
+    {
+      "generator": 238,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        478,
+        479
+      ]
+    },
+    {
+      "generator": 239,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        480,
+        481
+      ]
+    },
+    {
+      "generator": 240,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        482,
+        483
+      ]
+    },
+    {
+      "generator": 241,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        484,
+        485
+      ]
+    },
+    {
+      "generator": 242,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        486
+      ]
+    },
+    {
+      "generator": 243,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        488,
+        489
+      ]
+    },
+    {
+      "generator": 244,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        490,
+        491
+      ]
+    },
+    {
+      "generator": 245,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        492,
+        493
+      ]
+    },
+    {
+      "generator": 246,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        494,
+        495
+      ]
+    },
+    {
+      "generator": 247,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        496
+      ]
+    },
+    {
+      "generator": 248,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        498,
+        499
+      ]
+    },
+    {
+      "generator": 249,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        500,
+        501
+      ]
+    },
+    {
+      "generator": 250,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        502,
+        503
+      ]
+    },
+    {
+      "generator": 251,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        504,
+        505
+      ]
+    },
+    {
+      "generator": 252,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        506,
+        507
+      ]
+    },
+    {
+      "generator": 253,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        508,
+        509
+      ]
+    },
+    {
+      "generator": 254,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        510,
+        511
+      ]
+    },
+    {
+      "generator": 255,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        512,
+        513
+      ]
+    },
+    {
+      "generator": 256,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        514,
+        515
+      ]
+    },
+    {
+      "generator": 257,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        516,
+        517
+      ]
+    },
+    {
+      "generator": 258,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        518,
+        519
+      ]
+    },
+    {
+      "generator": 259,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        520,
+        521
+      ]
+    },
+    {
+      "generator": 260,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        522,
+        523
+      ]
+    },
+    {
+      "generator": 261,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        524,
+        525
+      ]
+    },
+    {
+      "generator": 262,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        526,
+        527
+      ]
+    },
+    {
+      "generator": 263,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        528
+      ]
+    },
+    {
+      "generator": 264,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        530,
+        531
+      ]
+    },
+    {
+      "generator": 265,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        532,
+        533
+      ]
+    },
+    {
+      "generator": 266,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": false,
+      "planner_model": null,
+      "systemPrompt_available": false,
+      "systemPrompt_sha256": null,
+      "messagePrompts_count": null,
+      "global_instruction_exact_full_text_containment": null,
+      "step_indices": [
+        534
+      ]
+    },
+    {
+      "generator": 267,
+      "native_model_field": "chatModel.model",
+      "native_enum": "MODEL_PLACEHOLDER_M319",
+      "model": "gemini-3.8-flash-medium",
+      "model_enum": "MODEL_PLACEHOLDER_M319",
+      "label": "Gemini 3.8 Flash (Medium)",
+      "plannerConfig_available": true,
+      "planner_model": "MODEL_PLACEHOLDER_M319",
+      "systemPrompt_available": true,
+      "systemPrompt_sha256": "c230350e709cdc09bdc7b3238df6549745199614985b53326622aa26e162188e",
+      "messagePrompts_count": 218,
+      "global_instruction_exact_full_text_containment": true,
+      "step_indices": [
+        536
+      ]
+    }
+  ],
+  "native_capture_manifest_sha256": "ea5900cb44fb71b4a3688783bf3f2abec9f19ebf4cd4878f3d63c6d2b1118b5c",
+  "argument_audit": {
+    "tool_calls": 244,
+    "run_commands": 193,
+    "source": "All recorded tool names and argument bodies inspected; agent CLI/API and bridge launch candidates reviewed.",
+    "finding": "No observed subagent/other-model execution. The sole bridge command is a post-hand-in reply, not a session/model launch. Persona sender/recipient labels and stylistic assertions are not delegation evidence.",
+    "limits": "Cannot certify unrecorded host activity or unavailable historical prompt bodies."
+  },
+  "inbound_messages": {
+    "launch": 1,
+    "automatic_command_completions": 22,
+    "post_submission_acknowledgment": 1,
+    "technical_help_observed": false
+  },
+  "raw_native_and_persona_prefix": "Retained privately; not reproduced on public surfaces."
+}

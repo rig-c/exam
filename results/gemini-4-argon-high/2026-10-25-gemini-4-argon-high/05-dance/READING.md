@@ -1,0 +1,5 @@
+# 05-dance — proctor reading
+
+Inspected `05-dance-contact.png` (97 endpoint-inclusive frames). Alternating arms rise and sweep on either side while the torso leans and the pelvis shifts; feet appear planted at sheet scale. The sheet does not establish audible beat alignment, exact foot contact throughout interpolation, or dance taste. Separate machine evidence: 4s loop, endpoint difference 0.0px, hand travel 585.0/593.8px, minimum topwear travel 47.6px, shin/foot separation 5.83px against 6px and repeat metric 1.0. The 6px margin is narrow. `SEAM_OVER_MOTION` is WARN in the lower-level check, not silently relabelled clean; all 11 counted exam lines pass with 3 named SKIPs. A three-loop click clip is retained privately for blind judging. Human judge is null. Original chain: 1 entry, 0 WTF; 504 seconds.
+
+`submitted/result.json` preserves the original result; `result.json` is the independent pinned regrade. Exact original file identities and any privacy-only public redaction are listed in the group source manifest.

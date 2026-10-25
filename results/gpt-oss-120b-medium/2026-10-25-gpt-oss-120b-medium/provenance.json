@@ -1,0 +1,337 @@
+{
+  "actual_clone_head": "0643977fb2adb99eb91fc48cceb166b1b587b3bf",
+  "exam_contract_base": "c014e3cf529535546d2d77349ceca1d35f343b42",
+  "contract_equivalence": {
+    "comparison": "c014e3cf..0643977f",
+    "changed_paths": 84,
+    "results_paths": 83,
+    "non_results_paths": 1,
+    "only_non_results_change": "README generated sitting count 13 to 14",
+    "tasks_grader_tools_prompt_dependencies_unchanged": true,
+    "comparison_receipt_sha256": "b0c4e91e3a045cdab990c90d34aabaf7b0315c0e0cb39ae9b7123a27ade6b076",
+    "source": "Independent proctor GitHub comparison receipt and direct fixed-document hash verification"
+  },
+  "native_capture": {
+    "session_id": "459a2cf9-7578-4def-a104-31aafc17fdc3",
+    "trajectory_id": "6b35eaec-a97c-4d6b-810d-08b1691c6ebf",
+    "capture_manifest_sha256": "0ddf3b1c884b4c772e271ea2cd5dc1e1decb00511858f337459fdd6954c69e56",
+    "coverage": {
+      "steps": {
+        "captured": 20,
+        "advertised": 20
+      },
+      "generators": {
+        "captured": 10,
+        "advertised": 10,
+        "plannerConfig_available": 1,
+        "expected_native_model": 10
+      },
+      "executors": {
+        "captured": 2,
+        "advertised": 2
+      },
+      "inflight": 0,
+      "context": {
+        "enabled_global_rule_executors": 2,
+        "prompt_bodies_available_generators": 1,
+        "prompt_bodies_unavailable_generators": 9,
+        "direct_global_instruction_containment_generators": 1
+      },
+      "handed_in_task_directories": 0,
+      "handed_in_files": 0
+    },
+    "stable_last_modified": "2026-10-25T09:31:20.714207Z",
+    "state_before_and_after": "idle",
+    "executor_termination_reasons": [
+      "EXECUTOR_TERMINATION_REASON_NO_TOOL_CALL",
+      "EXECUTOR_TERMINATION_REASON_NO_TOOL_CALL"
+    ],
+    "raw_evidence": "Retained privately by the proctor; hashes identify the preserved records. No public raw prompts or host paths.",
+    "capture_addendum_sha256": "052571f3bc48dbd25d585d5b1521ac784611a3227ec343b5894c1c9893e41a26",
+    "correction_audit_sha256": "3923e2faad05cbacf793ee18d0af75c5c74a2b9ceca102eff09140879909c006",
+    "task_extent_audit_sha256": "4bde7d77332ce8ac06a315adae9dcf5039666f65d73814ab4807ae6f6376731d"
+  },
+  "all_generator_model_audit": {
+    "expected_model": "gpt-oss-120b-medium",
+    "expected_native_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+    "native_recorded_model_field": "chatModel.model",
+    "native_recorded_model_count": 10,
+    "plannerConfig_count": 1,
+    "generators": [
+      {
+        "generator_index": 0,
+        "native_model_field": "generatorMetadata[0].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          1,
+          2
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 1,
+        "native_model_field": "generatorMetadata[1].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          3,
+          4
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 2,
+        "native_model_field": "generatorMetadata[2].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          5,
+          6
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 3,
+        "native_model_field": "generatorMetadata[3].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          7
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 4,
+        "native_model_field": "generatorMetadata[4].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          9,
+          10
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 5,
+        "native_model_field": "generatorMetadata[5].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          11,
+          12
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 6,
+        "native_model_field": "generatorMetadata[6].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          13,
+          14
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 7,
+        "native_model_field": "generatorMetadata[7].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          15
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 8,
+        "native_model_field": "generatorMetadata[8].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": false,
+        "planner_model_field": null,
+        "planner_model_enum": null,
+        "step_indices": [
+          17,
+          18
+        ],
+        "system_prompt_available": false,
+        "system_prompt_sha256": null,
+        "system_prompt_characters": null,
+        "message_prompts_available": false,
+        "message_prompt_count": 0,
+        "global_instruction_exact_full_text_containment": null
+      },
+      {
+        "generator_index": 9,
+        "native_model_field": "generatorMetadata[9].chatModel.model",
+        "native_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "model": "gpt-oss-120b-medium",
+        "catalog_mapping_source": "Native host model catalog captured via bridge metadata",
+        "planner_config_present": true,
+        "planner_model_field": "generatorMetadata[9].plannerConfig.planModel",
+        "planner_model_enum": "MODEL_OPENAI_GPT_OSS_120B_MEDIUM",
+        "step_indices": [
+          19
+        ],
+        "system_prompt_available": true,
+        "system_prompt_sha256": "ad27d86862db97997e84af2add8844d094f63e6c563c33716e954276365b548a",
+        "system_prompt_characters": 45323,
+        "message_prompts_available": true,
+        "message_prompt_count": 20,
+        "global_instruction_exact_full_text_containment": true
+      }
+    ],
+    "limitation": "All ten models are recorded independently in their own chatModel.model fields. Only generator 9 returns plannerConfig.planModel. Earlier planner configs are unavailable and are not inferred from generator 9."
+  },
+  "context": {
+    "host_global_file_presence_verified": true,
+    "host_global_file_sha256": "0f584349be90f52dbe0f88dce689f4a274b8c779fc9a13667e93dbf1b65f4cfb",
+    "native_executor_global_rule_status": "Enabled in loadedCustomizations for both executors. This alone is not direct prompt injection proof.",
+    "generator_messages_requested": true,
+    "generators_with_returned_system_prompt": 1,
+    "generators_with_returned_message_prompts": 1,
+    "last_generator_message_prompt_count": 20,
+    "historical_generators_with_prompt_bodies_unavailable": 9,
+    "direct_prompt_evidence": {
+      "generator_index": 9,
+      "field": "chatModel.systemPrompt",
+      "exact_full_global_instruction_file_text_contained": true,
+      "system_prompt_sha256": "ad27d86862db97997e84af2add8844d094f63e6c563c33716e954276365b548a"
+    },
+    "limitations": "Direct native prompt evidence applies only to generator 9. Generators 0-8 have no returned prompt bodies and remain unavailable."
+  },
+  "intake": {
+    "private_intake_manifest_sha256": "fd7fc8e3c9b84823eed7347fdaaa01f324e4bec154e8b443cf4bc0139d5065dd",
+    "source_before_after_hashes_match": true,
+    "handed_in_task_directories": 0,
+    "handed_in_artifacts": 0,
+    "runs_entries": 1,
+    "runs_entry_kind": "Empty tracked .gitkeep scaffold only; excluded from handed-in artifacts.",
+    "no_original_clone_writes": true
+  },
+  "seven_step_disposition": {
+    "authorship": "All 10 native generator model records identify the expected model.",
+    "independent_rebuild_regrade": "Not applicable: no task inputs handed in; no grader invoked and no machine result created.",
+    "pictures": "Unavailable: no built rig or render; no clip and no taste score.",
+    "two_traces": "Not assessable: no authored config values, expectation journal or build sequence; no other sitting was read for comparison.",
+    "task_clocks": "Task 01 body was opened at native step 14 without a recorded required journal start command. No task start/finish transcript exists, so duration is unavailable; no event, arrival or commit time is substituted.",
+    "journal_to_DRAFT_cards": "No journal or demonstrated package-tool friction; no package issue card justified.",
+    "filing": "Preserved as stopped and not counted; source metadata, native coverage, fixed reply and limitations retained."
+  },
+  "detection_timestamps": {
+    "clone_HEAD_and_document_preflight_UTC": "2026-10-25T09:26:33.202793+00:00",
+    "initial_preservation_native_state_observed_UTC": "2026-10-25T09:31:31.315451+00:00",
+    "second_deferral_stopped_gate_observed_UTC": "2026-10-25T09:32:50.083902+00:00",
+    "native_after_intake_state_observed_UTC": "2026-10-25T09:33:44.000607+00:00",
+    "source_intake_window_UTC": {
+      "after": "2026-10-25T09:32:50.129472+00:00",
+      "before": "2026-10-25T09:33:44.000607+00:00",
+      "precision": "Copy itself was not separately clocked; these are the enclosing source-metadata and native-after-intake observations."
+    },
+    "fixed_reply_created_UTC": "2026-10-25T09:31:10.066133Z",
+    "second_deferral_completed_UTC": "2026-10-25T09:31:20.714207Z"
+  },
+  "stopped_extent": {
+    "classification": "stopped after reading task 01, before journal or task execution (host workflow deferral)",
+    "read_evidence": [
+      {
+        "native_step": 12,
+        "tool": "read_file",
+        "relative_file": "README.md",
+        "status": "CORTEX_STEP_STATUS_DONE",
+        "returned_document_body": true,
+        "result_sha256": "16cddbdb87be5b65c8000cfeb7040e034148792f660028a78607a3192eea4ea5",
+        "completed_at_UTC": "2026-10-25T09:25:58.814083Z"
+      },
+      {
+        "native_step": 14,
+        "tool": "read_file",
+        "relative_file": "tasks/01-build/TASK.md",
+        "status": "CORTEX_STEP_STATUS_DONE",
+        "returned_document_body": true,
+        "result_sha256": "f5796f2156bee43f25567b7f4f1ddfb78ccfbcf4a8f7d447428e9bf9646954b2",
+        "completed_at_UTC": "2026-10-25T09:26:00.725654Z"
+      }
+    ],
+    "native_run_command_count": 3,
+    "required_journal_start_recorded": false,
+    "task01_opened_without_required_start": true,
+    "no_build_render_grade_recorded": true,
+    "task_duration": "unavailable; no task started:/finished: clock exists"
+  }
+}

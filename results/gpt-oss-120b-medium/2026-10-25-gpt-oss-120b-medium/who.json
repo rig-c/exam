@@ -1,0 +1,52 @@
+{
+  "model": "gpt-oss-120b-medium",
+  "short": "GPT-OSS 120B (Medium)",
+  "how": "Antigravity desktop; 10 native per-generator chatModel.model records audited",
+  "counts": "stopped after reading task 01, before journal or task execution (host workflow deferral)",
+  "status": "stopped after reading task 01, before journal or task execution (host workflow deferral)",
+  "actual_clone_head": "0643977fb2adb99eb91fc48cceb166b1b587b3bf",
+  "exam_contract_base": "c014e3cf529535546d2d77349ceca1d35f343b42",
+  "minutes": null,
+  "minutes_read_from": "Task 01 was opened without a recorded required journal start command. No started:/finished: transcript was handed in; no task duration is assigned.",
+  "workflow_intervention": {
+    "initial_deferral": {
+      "native_step": 15,
+      "completed_at": "2026-10-25T09:26:05.789172Z",
+      "kind": "Asked the user to invoke /goal instead of performing the exam."
+    },
+    "fixed_reply": {
+      "logical_message_count": 1,
+      "native_step": 16,
+      "created_at": "2026-10-25T09:31:10.066133Z",
+      "text": "Follow the README and PROMPT; no person can help.",
+      "scope": "Fixed no-help response to the single initial workflow deferral; no technical assistance."
+    },
+    "repeated_deferral": {
+      "native_step": 19,
+      "completed_at": "2026-10-25T09:31:20.714207Z",
+      "kind": "Again asked the user to invoke /goal."
+    },
+    "stop_basis": "The second terminal workflow deferral after the fixed reply, with idle native state and no in-flight calls; the 30-minute inactivity rule was not used."
+  },
+  "standing_context": {
+    "global_persona_and_standing_instruction_file_present": true,
+    "native_enabled_global_rule_recorded_in_executors": 2,
+    "direct_native_prompt_evidence": {
+      "generator_index": 9,
+      "field": "chatModel.systemPrompt",
+      "finding": "Contains the exact whole global instruction file text.",
+      "system_prompt_sha256": "ad27d86862db97997e84af2add8844d094f63e6c563c33716e954276365b548a",
+      "global_instruction_file_sha256": "0f584349be90f52dbe0f88dce689f4a274b8c779fc9a13667e93dbf1b65f4cfb"
+    },
+    "historical_prompt_contents": "Generators 0-8 unavailable, even with includeMessages=true; last-generator contents are not projected onto history."
+  },
+  "provenance": "provenance.json",
+  "reading": "READING.md",
+  "stopped_extent": {
+    "task01_read": true,
+    "native_step": 14,
+    "task01_read_completed_at_UTC": "2026-10-25T09:26:00.725654Z",
+    "required_journal_start_recorded": false,
+    "journal_or_task_execution_recorded": false
+  }
+}

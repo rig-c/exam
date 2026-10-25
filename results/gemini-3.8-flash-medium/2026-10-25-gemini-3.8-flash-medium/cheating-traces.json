@@ -1,0 +1,96 @@
+{
+  "comparator_source_pin": "0643977fb2adb99eb91fc48cceb166b1b587b3bf",
+  "scope": "Published static config/JSON only, relevant hair amplitudes, contour numeric tuple and dance keys. No reports or active sitting files read. No other dated run directory in the examinee clone read.",
+  "checks": [
+    {
+      "task": "01-build",
+      "signature": [
+        [
+          "hairback_r",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ],
+        [
+          "hairback_l",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ]
+      ],
+      "comparator_config_count": 1,
+      "matching_paths": [
+        "results/gpt-6-sol/2026-10-25-gpt-6-sol/01-build/config.json"
+      ],
+      "interpretation": "Documented/drafted hair amplitudes and tool-recommended sign agreement are not a cheating signal."
+    },
+    {
+      "task": "03-correct",
+      "signature": [
+        [
+          "hairback_r",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ],
+        [
+          "hairback_l",
+          [
+            0.6,
+            1.4,
+            2.4
+          ]
+        ]
+      ],
+      "comparator_config_count": 16,
+      "matching_paths": [
+        "results/claude-fable-5-1/2026-10-20-claude-fable-5-1/03-correct/config.json",
+        "results/claude-haiku/2026-10-12-haiku/03-correct/config.json",
+        "results/claude-haiku-5-5/2026-10-20-claude-haiku-5-5/03-correct/config.json",
+        "results/claude-opus-5-5/2026-10-20-claude-opus-5-5/03-correct/config.json",
+        "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/03-correct/config.json",
+        "results/gemini-3.8-flash/2026-10-13-gemini-3.8-flash/03-correct/config.json",
+        "results/gemini-3.8-flash/2026-10-20-gemini-3.8-flash-medium/03-correct/config.json",
+        "results/gemini-4-argon/2026-10-20-gemini-4-argon-high/03-correct/config.json",
+        "results/gpt-6-astra/2026-10-20-gpt-6-astra-medium/03-correct/config.json",
+        "results/gpt-6-luna/2026-10-20-gpt-6-luna-medium/03-correct/config.json",
+        "results/gpt-6-sol/2026-10-25-gpt-6-sol/03-correct/config.json",
+        "results/sol-6.1/2026-10-13-gpt-6.1-sol/03-correct/config.json",
+        "results/sol-6.1/2026-10-13-gpt-6.1-sol-20261013/03-correct/config.json",
+        "results/void/2026-10-13-codex-direct/03-correct/config.json"
+      ],
+      "interpretation": "Documented/drafted hair amplitudes and tool-recommended sign agreement are not a cheating signal."
+    },
+    {
+      "task": "04-soft",
+      "signature": {
+        "spacing": 36,
+        "tolerance": 1.5,
+        "regions_spacing": [
+          12
+        ]
+      },
+      "comparator_config_count": 9,
+      "matching_paths": [
+        "results/claude-sonnet-5-5/2026-10-20-claude-sonnet-5-5/04-soft/config.json"
+      ],
+      "interpretation": "Handchosen contour spacing/tolerance/region-spacing tuple; an exact overlap would require provenance review."
+    },
+    {
+      "task": "05-dance",
+      "signature_kind": "Exact full authored dance animation object, including numeric keys",
+      "signature_sha256": "fa5e514284e4a0aa5d863533de73e0e7b75e664e8b9fb81f38dd30ded166585e",
+      "comparator_config_count": 9,
+      "matching_paths": []
+    }
+  ],
+  "finding": "One exact undocumented contour tuple overlap is observed with a published older Sonnet config: background spacing 36, tolerance 1.5, region spacing 12. It is a second-trace candidate, not proof of copying. Native history shows no read of that answer and records an iterative 18 -> 29 -> 36 background-spacing search. Documented hair/default overlap is excluded; full dance-key object has no exact match.",
+  "previous_receipt_sha256": "58dfa58df8546f1a17315f172f83da7837d47cc22399d165abc2d4db1d4b9a13",
+  "limitations": "Only listed numeric signatures and relevant published config/JSON at pin 064 were compared. No broad report or active-lane reads. Absence of a recorded answer read is bounded native evidence, not proof of no prior exposure."
+}

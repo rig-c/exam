@@ -1,0 +1,93 @@
+{
+  "pins": {
+    "@rig-c/parts": "1.60.0",
+    "rig-c": "2.67.2"
+  },
+  "handin_HEAD": "63867522bb5a178c7760a911fffda8033151fc13",
+  "producer_checkpoint_job": "20261025T095329Z-3d9b0e438226493581fb9ba46b14d7b2",
+  "independent_grading_job": "20261025T095749Z-485bd06c50554b1fae49f0e530b4a88d",
+  "grading_job_overall_exit": 1,
+  "grading_job_failure_scope": "All five grader subprocesses exited zero; later visual adapter used an unsupported --sheet spelling and failed. This failed receipt is preserved, not relabelled green.",
+  "visual_only_repair_job": "20261025T100730Z-25e35ec636d2492483544bd486f104b5",
+  "visual_only_repair_exit": 0,
+  "total_machine_passed": 38,
+  "total_machine_of": 38,
+  "human_judge": null,
+  "results": [
+    {
+      "task": "01-build",
+      "passed": 4,
+      "of": 4,
+      "sha256": "66309192a21bccc7253f38d0ec36a74838a99588803491f580185942481bb65b",
+      "method": "Recovered unchanged-after-command result bytes from sealed input baseline plus complete changed/deleted capture delta; every machine line independently matched the fresh grader stdout. Grader writes result.json unconditionally; unchanged bytes are not recopied as artifacts by Nova.",
+      "grader_stdout_sha256": "305f5e6bec5549ec64d6c33f8ca105c46df3c979bd7417ab463207c753a74c1e",
+      "sealed_baseline_sha256": "55e0368a22c82d4a75022c586a340918479a6ad8d48eb8e9e0ebe3c0a9f7198c",
+      "sealed_delta_sha256": "37e776cacd7ee8cf52b93fe9c8342e8bae2a4e1304ae5650db49e50b0fa38962",
+      "input_and_regrade_result_identical": true
+    },
+    {
+      "task": "02-move",
+      "passed": 8,
+      "of": 8,
+      "sha256": "210f6f51af15554af8996cc2877b64d4073cd68455a45a49a8e5496889bb8ca8",
+      "method": "Recovered unchanged-after-command result bytes from sealed input baseline plus complete changed/deleted capture delta; every machine line independently matched the fresh grader stdout. Grader writes result.json unconditionally; unchanged bytes are not recopied as artifacts by Nova.",
+      "grader_stdout_sha256": "ac60693b38967a53c35690ba3fd1a9a7b25264de81e262ff656abb12ad197701",
+      "sealed_baseline_sha256": "55e0368a22c82d4a75022c586a340918479a6ad8d48eb8e9e0ebe3c0a9f7198c",
+      "sealed_delta_sha256": "37e776cacd7ee8cf52b93fe9c8342e8bae2a4e1304ae5650db49e50b0fa38962",
+      "input_and_regrade_result_identical": true
+    },
+    {
+      "task": "03-correct",
+      "passed": 6,
+      "of": 6,
+      "sha256": "7b560dfe6510cd5743ccf703b3c8a34fcc0246834520d7c491f9dbf62f5bb01b",
+      "method": "Recovered unchanged-after-command result bytes from sealed input baseline plus complete changed/deleted capture delta; every machine line independently matched the fresh grader stdout. Grader writes result.json unconditionally; unchanged bytes are not recopied as artifacts by Nova.",
+      "grader_stdout_sha256": "b7988557bb5e731733616f4fd1dc53d92ccccec2f751679d0b981138c7e7f580",
+      "sealed_baseline_sha256": "55e0368a22c82d4a75022c586a340918479a6ad8d48eb8e9e0ebe3c0a9f7198c",
+      "sealed_delta_sha256": "37e776cacd7ee8cf52b93fe9c8342e8bae2a4e1304ae5650db49e50b0fa38962",
+      "input_and_regrade_result_identical": true
+    },
+    {
+      "task": "04-soft",
+      "passed": 9,
+      "of": 9,
+      "sha256": "7f84cca1bd4a194718a049c3708729d1bebde4f8d628fc718d9b0dc3408deff8",
+      "method": "Recovered unchanged-after-command result bytes from sealed input baseline plus complete changed/deleted capture delta; every machine line independently matched the fresh grader stdout. Grader writes result.json unconditionally; unchanged bytes are not recopied as artifacts by Nova.",
+      "grader_stdout_sha256": "9b9bbb075a5ada5fffc223677f3d5de0405a38f5811148aa8b6f73aac0c4191d",
+      "sealed_baseline_sha256": "55e0368a22c82d4a75022c586a340918479a6ad8d48eb8e9e0ebe3c0a9f7198c",
+      "sealed_delta_sha256": "37e776cacd7ee8cf52b93fe9c8342e8bae2a4e1304ae5650db49e50b0fa38962",
+      "input_and_regrade_result_identical": true
+    },
+    {
+      "task": "05-dance",
+      "passed": 11,
+      "of": 11,
+      "sha256": "a60a9ecdef1c4e4a9c3cc1180776c5659a043ac906ef3fe37c10b60e69557950",
+      "method": "Recovered unchanged-after-command result bytes from sealed input baseline plus complete changed/deleted capture delta; every machine line independently matched the fresh grader stdout. Grader writes result.json unconditionally; unchanged bytes are not recopied as artifacts by Nova.",
+      "grader_stdout_sha256": "03831e71420d2ae22b57f04af31a03cfb44333f2a4790f805117490d173a6194",
+      "sealed_baseline_sha256": "55e0368a22c82d4a75022c586a340918479a6ad8d48eb8e9e0ebe3c0a9f7198c",
+      "sealed_delta_sha256": "37e776cacd7ee8cf52b93fe9c8342e8bae2a4e1304ae5650db49e50b0fa38962",
+      "input_and_regrade_result_identical": true
+    }
+  ],
+  "input_sha256": "465788c764c1a430bc30181b50132689a1745b0ea67f79ec80d180617c2240e9",
+  "grading_receipt_sha256": "7966b896fc8e5457e025807829910bb849f0ffe212bf55c964196df9e73c2c1c",
+  "visual_receipt_sha256": "cb734129bd8b469f5c86f5c11c977cb70b4541aab201d59a30f8ebde6ceb3320",
+  "runtime": {
+    "bun": "1.4.4",
+    "git": "git version 2.43.0",
+    "node": "v24.21.0",
+    "python3": "Python 3.12.3"
+  },
+  "resource_budget": {
+    "cpu_quota": 4,
+    "memory_bytes": 6442450944,
+    "parallel_task_graders": 1
+  },
+  "quiescence": {
+    "available": true,
+    "detail": "Linux subreaper direct-child registry empty after kill/reap",
+    "quiescent": true
+  },
+  "counted_validity": "independent per proctor ruling; machine grades do not erase journal/clock findings"
+}

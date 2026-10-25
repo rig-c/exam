@@ -1,0 +1,90 @@
+{
+  "model": "gemini-3.8-flash-medium",
+  "short": "Gemini 3.8 Flash (Medium)",
+  "how": "Antigravity desktop; all 268 native per-generator chatModel.model records audited",
+  "counts": "independent",
+  "initial_exam_HEAD": "c014e3cf529535546d2d77349ceca1d35f343b42",
+  "handin_HEAD": "63867522bb5a178c7760a911fffda8033151fc13",
+  "minutes": 33.483333333333334,
+  "minutes_read_from": "2009 literal submitted started:/finished: seconds; early finishes exclude five later unjournalled grader calls, so this is not a compliant complete-task duration.",
+  "literal_clock_seconds": 2009,
+  "literal_clock_minutes_rounded_1dp": 33.5,
+  "judge": null,
+  "journal_rulings": {
+    "01-build": {
+      "credit": "kept",
+      "outside_entry_grader_count": 1,
+      "finished_UTC": "2026-10-25T09:05:58Z",
+      "subsequent_grader": {
+        "native_step": 110,
+        "native_command_start_UTC": "2026-10-25T09:06:05.454001Z",
+        "native_command_end_UTC": "2026-10-25T09:07:01.023421Z",
+        "after_finished": true,
+        "journal_wrapped": false
+      },
+      "note": "Chain intact. finished 2026-10-25T09:05:58Z; an unjournalled grader ran 2026-10-25T09:06:05.454001Z to 2026-10-25T09:07:01.023421Z (native step 110). Early finish and missing entry retained as protocol findings; counting retained by the proctor ruling. Literal clock not repaired."
+    },
+    "02-move": {
+      "credit": "kept",
+      "outside_entry_grader_count": 1,
+      "finished_UTC": "2026-10-25T09:14:22Z",
+      "subsequent_grader": {
+        "native_step": 230,
+        "native_command_start_UTC": "2026-10-25T09:14:34.598461Z",
+        "native_command_end_UTC": "2026-10-25T09:15:40.535315Z",
+        "after_finished": true,
+        "journal_wrapped": false
+      },
+      "note": "Chain intact. finished 2026-10-25T09:14:22Z; an unjournalled grader ran 2026-10-25T09:14:34.598461Z to 2026-10-25T09:15:40.535315Z (native step 230). Early finish and missing entry retained as protocol findings; counting retained by the proctor ruling. Literal clock not repaired."
+    },
+    "03-correct": {
+      "credit": "kept",
+      "outside_entry_grader_count": 1,
+      "finished_UTC": "2026-10-25T09:19:34Z",
+      "subsequent_grader": {
+        "native_step": 296,
+        "native_command_start_UTC": "2026-10-25T09:19:45.151242Z",
+        "native_command_end_UTC": "2026-10-25T09:20:27.185077Z",
+        "after_finished": true,
+        "journal_wrapped": false
+      },
+      "note": "Chain intact. finished 2026-10-25T09:19:34Z; an unjournalled grader ran 2026-10-25T09:19:45.151242Z to 2026-10-25T09:20:27.185077Z (native step 296). Early finish and missing entry retained as protocol findings; counting retained by the proctor ruling. Literal clock not repaired."
+    },
+    "04-soft": {
+      "credit": "kept",
+      "outside_entry_grader_count": 1,
+      "finished_UTC": "2026-10-25T09:28:28Z",
+      "subsequent_grader": {
+        "native_step": 433,
+        "native_command_start_UTC": "2026-10-25T09:28:32.426133Z",
+        "native_command_end_UTC": "2026-10-25T09:30:03.116874Z",
+        "after_finished": true,
+        "journal_wrapped": false
+      },
+      "note": "Chain intact. finished 2026-10-25T09:28:28Z; an unjournalled grader ran 2026-10-25T09:28:32.426133Z to 2026-10-25T09:30:03.116874Z (native step 433). Early finish and missing entry retained as protocol findings; counting retained by the proctor ruling. Literal clock not repaired."
+    },
+    "05-dance": {
+      "credit": "kept",
+      "outside_entry_grader_count": 1,
+      "finished_UTC": "2026-10-25T09:37:57Z",
+      "subsequent_grader": {
+        "native_step": 495,
+        "native_command_start_UTC": "2026-10-25T09:38:00.656634Z",
+        "native_command_end_UTC": "2026-10-25T09:40:27.824226Z",
+        "after_finished": true,
+        "journal_wrapped": false
+      },
+      "note": "Chain intact. finished 2026-10-25T09:37:57Z; an unjournalled grader ran 2026-10-25T09:38:00.656634Z to 2026-10-25T09:40:27.824226Z (native step 495). Early finish and missing entry retained as protocol findings; counting retained by the proctor ruling. Literal clock not repaired."
+    }
+  },
+  "counting_ruling": "Tool-written chains verify intact. Outside-entry graders and early finish are recorded but do not disqualify under the proctor ruling; only broken/not-kept/non-tool-written chains disqualify.",
+  "standing_context": {
+    "native_enabled_global_rule_executors": 22,
+    "global_file_sha256": "0f584349be90f52dbe0f88dce689f4a274b8c779fc9a13667e93dbf1b65f4cfb",
+    "direct_prompt_evidence": "The last generator chatModel.systemPrompt contains the exact whole global persona/standing-instruction file. Earlier 267 prompt bodies are unavailable, not inferred.",
+    "systemPrompt_generators_available": 1,
+    "historical_prompt_generators_unavailable": 267
+  },
+  "public_copy_note": "Original hand-in and independent chain verification are preserved privately and bound to the immutable commit. Twelve public text views redact host-local roots; their chain-output hashes intentionally differ. No source inputs or journal chains were repaired.",
+  "aggregate_time_display_limit": "The unchanged results generator adds per-task grader-rounded minutes. That rounded-input aggregation must not be described as the exact measured total; clock-audit.json records the exact 2009-second literal total."
+}
