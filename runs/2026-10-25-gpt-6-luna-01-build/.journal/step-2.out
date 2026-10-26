@@ -1,0 +1,138 @@
+config /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-luna-r2/exam-gpt-6-luna/runs/2026-10-25-gpt-6-luna-01-build/config.json: added assemble.plan
+config /Users/firejune/Workspace/Firejune/exam-sittings/2026-10-25-gpt-6-luna-r2/exam-gpt-6-luna/runs/2026-10-25-gpt-6-luna-01-build/config.json: added assemble.extend_below_crop
+{
+  "plan": [
+    [
+      "hair_back",
+      "head",
+      "back hair"
+    ],
+    [
+      "hairpin",
+      "full",
+      "headwear"
+    ],
+    [
+      "handwear_l",
+      "full",
+      "handwear-l"
+    ],
+    [
+      "handwear_r",
+      "full",
+      "handwear-r"
+    ],
+    [
+      "legwear",
+      "full",
+      "legwear"
+    ],
+    [
+      "shoes",
+      "full",
+      "footwear"
+    ],
+    [
+      "neck",
+      "head",
+      "neck"
+    ],
+    [
+      "bottomwear",
+      "full",
+      "bottomwear"
+    ],
+    [
+      "topwear",
+      "full",
+      "topwear"
+    ],
+    [
+      "ear_r",
+      "head",
+      "ears-r"
+    ],
+    [
+      "ear_l",
+      "head",
+      "ears-l"
+    ],
+    [
+      "face",
+      "head",
+      "face"
+    ],
+    [
+      "eyewhite_r",
+      "head",
+      "eyewhite-r"
+    ],
+    [
+      "eyewhite_l",
+      "head",
+      "eyewhite-l"
+    ],
+    [
+      "mouth",
+      "head",
+      "mouth"
+    ],
+    [
+      "iris_r",
+      "head",
+      "irides-r"
+    ],
+    [
+      "iris_l",
+      "head",
+      "irides-l"
+    ],
+    [
+      "brow_l",
+      "head",
+      "eyebrow-l"
+    ],
+    [
+      "lash_r",
+      "head",
+      "eyelash-r"
+    ],
+    [
+      "brow_r",
+      "head",
+      "eyebrow-r"
+    ],
+    [
+      "lash_l",
+      "head",
+      "eyelash-l"
+    ],
+    [
+      "hair_front",
+      "head",
+      "front hair"
+    ]
+  ],
+  "extend_below_crop": [
+    {
+      "part": "hair_front",
+      "run": "full",
+      "tag": "front hair"
+    },
+    {
+      "part": "hair_back",
+      "run": "full",
+      "tag": "back hair"
+    }
+  ],
+  "notes": [
+    "headwear: head run 526 rig px < 0.8 x full run 1516 -> full-run layer, drawn behind the face",
+    "neckwear: in no plan row — full run: 74 px, empty: below the proposer's floor of 150 (PROPOSE_MIN_PX, src/assemble.ts); head run: 66 px, but the proposer takes neckwear from the full run only (it is not one of PROPOSE_HEAD_TAGS, src/assemble.ts) (px: run pixels of alpha above 8 after ghost clean-up)",
+    "tail: in no plan row — full run: 73 px, empty: below the proposer's floor of 150 (PROPOSE_MIN_PX, src/assemble.ts); head run: 72 px, but the proposer takes tail from the full run only (it is not one of PROPOSE_HEAD_TAGS, src/assemble.ts) (px: run pixels of alpha above 8 after ghost clean-up)",
+    "wings: in no plan row — full run: 69 px, empty: below the proposer's floor of 150 (PROPOSE_MIN_PX, src/assemble.ts); head run: 70 px, but the proposer takes wings from the full run only (it is not one of PROPOSE_HEAD_TAGS, src/assemble.ts) (px: run pixels of alpha above 8 after ghost clean-up)",
+    "objects: in no plan row — full run: 69 px, empty: below the proposer's floor of 150 (PROPOSE_MIN_PX, src/assemble.ts); head run: 67 px, but the proposer takes objects from the full run only (it is not one of PROPOSE_HEAD_TAGS, src/assemble.ts) (px: run pixels of alpha above 8 after ghost clean-up)",
+    "eyewear: in no plan row — full run: 72 px, empty: below the proposer's floor of 150 (PROPOSE_MIN_PX, src/assemble.ts); head run: 71 px, but the proposer takes eyewear from the full run only (it is not one of PROPOSE_HEAD_TAGS, src/assemble.ts) (px: run pixels of alpha above 8 after ghost clean-up)",
+    "earwear: in no plan row — full run: 72 px, empty: below the proposer's floor of 150 (PROPOSE_MIN_PX, src/assemble.ts); head run: 72 px, empty: below the proposer's floor of 150 (PROPOSE_MIN_PX, src/assemble.ts) (px: run pixels of alpha above 8 after ghost clean-up)",
+    "nose: in no plan row — the proposer never plans nose (the reference implementation's rule, which this port keeps); full run 118 px, head run 1067 px (px: run pixels of alpha above 8 after ghost clean-up); propose reads the head's pitch (where the nose sits between the eye midpoint and the mouth) only off a part tagged nose, and without one prints \"not read: no part tagged nose\"; to have it read, add [\"nose\", \"head\", \"nose\"] to assemble.plan after the row that takes \"face\" (the head run's layer holds the more of it) and run assemble and propose again"
+  ]
+}

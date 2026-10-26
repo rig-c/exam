@@ -1,0 +1,478 @@
+{
+  "key": "mannequin",
+  "seethrough": {
+    "resolution": 1024,
+    "steps": 30,
+    "seed": 42,
+    "offload": true,
+    "head_box": [
+      683,
+      170,
+      983,
+      470
+    ]
+  },
+  "assemble": {
+    "rig_scale": 0.5,
+    "plan": [
+      [
+        "legwear",
+        "full",
+        "legwear"
+      ],
+      [
+        "footwear",
+        "full",
+        "footwear"
+      ],
+      [
+        "topwear",
+        "full",
+        "topwear"
+      ],
+      [
+        "handwear_r",
+        "full",
+        "handwear-r"
+      ],
+      [
+        "handwear_l",
+        "full",
+        "handwear-l"
+      ],
+      [
+        "face",
+        "head",
+        "face"
+      ],
+      [
+        "neck",
+        "full",
+        "neck"
+      ]
+    ],
+    "extend_below_crop": [],
+    "cuts": [
+      {
+        "from": "topwear",
+        "into": "pelvis",
+        "polygon": [
+          [
+            330,
+            456
+          ],
+          [
+            500,
+            456
+          ],
+          [
+            500,
+            610
+          ],
+          [
+            330,
+            610
+          ]
+        ],
+        "draw": {
+          "before": "handwear_r"
+        },
+        "overlap": 12
+      }
+    ]
+  },
+  "constraints": [
+    {
+      "type": "ik",
+      "name": "leg_r_ik",
+      "bones": [
+        "leg_r0",
+        "leg_r1"
+      ],
+      "target": "foot_r_tgt",
+      "mix": 1,
+      "bendPositive": true
+    },
+    {
+      "type": "ik",
+      "name": "leg_l_ik",
+      "bones": [
+        "leg_l0",
+        "leg_l1"
+      ],
+      "target": "foot_l_tgt",
+      "mix": 1,
+      "bendPositive": false
+    }
+  ],
+  "bones": [
+    {
+      "name": "hip",
+      "parent": "root",
+      "at": [
+        414,
+        623
+      ]
+    },
+    {
+      "name": "chest",
+      "parent": "hip",
+      "at": [
+        416,
+        456
+      ]
+    },
+    {
+      "name": "neck",
+      "parent": "chest",
+      "at": [
+        417,
+        252
+      ]
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "at": [
+        417,
+        205
+      ]
+    },
+    {
+      "chain": "sleeve_r",
+      "parent": "chest",
+      "points": [
+        [
+          326,
+          286
+        ],
+        [
+          253,
+          424
+        ]
+      ],
+      "tip": [
+        165,
+        547
+      ]
+    },
+    {
+      "chain": "sleeve_l",
+      "parent": "chest",
+      "points": [
+        [
+          505,
+          285
+        ],
+        [
+          578,
+          423
+        ]
+      ],
+      "tip": [
+        661,
+        546
+      ]
+    },
+    {
+      "chain": "leg_r",
+      "parent": "hip",
+      "points": [
+        [
+          374,
+          623
+        ],
+        [
+          345,
+          864
+        ]
+      ],
+      "tip": [
+        320,
+        1108
+      ]
+    },
+    {
+      "chain": "leg_l",
+      "parent": "hip",
+      "points": [
+        [
+          454,
+          623
+        ],
+        [
+          483,
+          866
+        ]
+      ],
+      "tip": [
+        507,
+        1108
+      ]
+    },
+    {
+      "name": "foot_r",
+      "parent": "leg_r1",
+      "at": [
+        320,
+        1108
+      ],
+      "inherit": "noRotationOrReflection"
+    },
+    {
+      "name": "foot_l",
+      "parent": "leg_l1",
+      "at": [
+        507,
+        1108
+      ],
+      "inherit": "noRotationOrReflection"
+    },
+    {
+      "name": "hand_r",
+      "parent": "sleeve_r1",
+      "at": [
+        165,
+        547
+      ]
+    },
+    {
+      "name": "hand_l",
+      "parent": "sleeve_l1",
+      "at": [
+        661,
+        546
+      ]
+    },
+    {
+      "name": "foot_r_tgt",
+      "parent": "root",
+      "at": [
+        320,
+        1108
+      ]
+    },
+    {
+      "name": "foot_l_tgt",
+      "parent": "root",
+      "at": [
+        507,
+        1108
+      ]
+    }
+  ],
+  "meshes": {},
+  "regions": {
+    "upperarm_r": "sleeve_r0",
+    "forearm_r": "sleeve_r1",
+    "upperarm_l": "sleeve_l0",
+    "forearm_l": "sleeve_l1",
+    "thigh_r": "leg_r0",
+    "shin_r": "leg_r1",
+    "foot_r": "foot_r",
+    "thigh_l": "leg_l0",
+    "shin_l": "leg_l1",
+    "foot_l": "foot_l",
+    "topwear": "chest",
+    "pelvis": "hip",
+    "hand_r": "hand_r",
+    "hand_l": "hand_l",
+    "neckpiece": "neck",
+    "headpiece": "head"
+  },
+  "limbs": {
+    "arm_r": {
+      "segments": [
+        {
+          "part": "upperarm_r",
+          "from": "handwear_r",
+          "bone": "sleeve_r0"
+        },
+        {
+          "part": "forearm_r",
+          "from": "handwear_r",
+          "bone": "sleeve_r1",
+          "joint": "elbow",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/arm_r_elbow.png"
+        },
+        {
+          "part": "hand_r",
+          "from": "handwear_r",
+          "bone": "hand_r",
+          "joint": "wrist",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/arm_r_wrist.png"
+        }
+      ]
+    },
+    "arm_l": {
+      "segments": [
+        {
+          "part": "upperarm_l",
+          "from": "handwear_l",
+          "bone": "sleeve_l0"
+        },
+        {
+          "part": "forearm_l",
+          "from": "handwear_l",
+          "bone": "sleeve_l1",
+          "joint": "elbow",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/arm_l_elbow.png"
+        },
+        {
+          "part": "hand_l",
+          "from": "handwear_l",
+          "bone": "hand_l",
+          "joint": "wrist",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/arm_l_wrist.png"
+        }
+      ]
+    },
+    "leg_r": {
+      "segments": [
+        {
+          "part": "thigh_r",
+          "from": "legwear",
+          "bone": "leg_r0"
+        },
+        {
+          "part": "shin_r",
+          "from": "legwear",
+          "bone": "leg_r1",
+          "joint": "knee",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/leg_r_knee.png"
+        },
+        {
+          "part": "foot_r",
+          "from": "footwear",
+          "bone": "foot_r",
+          "joint": "ankle",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/leg_r_ankle.png"
+        }
+      ]
+    },
+    "leg_l": {
+      "segments": [
+        {
+          "part": "thigh_l",
+          "from": "legwear",
+          "bone": "leg_l0"
+        },
+        {
+          "part": "shin_l",
+          "from": "legwear",
+          "bone": "leg_l1",
+          "joint": "knee",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/leg_l_knee.png"
+        },
+        {
+          "part": "foot_l",
+          "from": "footwear",
+          "bone": "foot_l",
+          "joint": "ankle",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/leg_l_ankle.png"
+        }
+      ]
+    },
+    "neck": {
+      "segments": [
+        {
+          "part": "neckpiece",
+          "from": "neck",
+          "bone": "neck"
+        },
+        {
+          "part": "headpiece",
+          "from": "face",
+          "bone": "head",
+          "joint": "nape",
+          "range": [
+            -45,
+            45
+          ],
+          "cap": "caps/neck_nape.png"
+        }
+      ]
+    }
+  },
+  "motion": {
+    "duration": 3.3333333333333335,
+    "tracks": [
+      {
+        "bone": "chest",
+        "prop": "translatey",
+        "amp": 4.64,
+        "period": 3.3333333333333335,
+        "phase": 0,
+        "base": 4.64
+      },
+      {
+        "bone": "neck",
+        "prop": "rotate",
+        "amp": 1.0,
+        "period": 3.3333333333333335,
+        "phase": 0.08
+      },
+      {
+        "bone": "head",
+        "prop": "rotate",
+        "amp": 1.5,
+        "period": 3.3333333333333335,
+        "phase": 0.12
+      },
+      {
+        "chain": "sleeve_r",
+        "amps": [
+          1.0,
+          1.5
+        ],
+        "period": 3.3333333333333335,
+        "phase": 0.22,
+        "lag": 0.08
+      },
+      {
+        "chain": "sleeve_l",
+        "amps": [
+          1.0,
+          1.5
+        ],
+        "period": 3.3333333333333335,
+        "phase": 0.27,
+        "lag": 0.08
+      }
+    ],
+    "animations_from": "dance.json"
+  },
+  "proposed_rig_scale": 0.5
+}

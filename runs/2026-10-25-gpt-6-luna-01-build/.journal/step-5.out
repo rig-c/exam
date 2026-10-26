@@ -1,0 +1,4 @@
+rig-parts build: runs/2026-10-25-gpt-6-luna-01-build/config.json -> runs/2026-10-25-gpt-6-luna-01-build/out, seam rule near-white, projection rule core, page edges free, pack shape polygon
+[assemble]   FAIL  ASSEMBLE_LIMB_JOINT_ON_ART: config.limbs.arm_r.segments[1] (joint "elbow", part "forearm_r") — the joint, "sleeve_r1"'s origin at [290, 390], lies on none of the limb's art within 1 px along its joint line (the nearest of it on that line is the pixel [303, 398], 15.952 px from the joint), so the limb has no width there to size the cap by; a bone origin on the limb's art (alpha above 8) is required — move the bone onto the joint (see rig-parts guide ASSEMBLE_LIMB_JOINT_ON_ART)
+[assemble] refused: 1 problem(s)
+build: stopped at assemble; no later stage ran

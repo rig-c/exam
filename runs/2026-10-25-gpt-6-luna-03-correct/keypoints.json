@@ -1,0 +1,144 @@
+{
+  "spec": "spine-parts-keypoints/1",
+  "space": {
+    "units": "painting-px",
+    "origin": "top-left",
+    "y": "down"
+  },
+  "width": 1664,
+  "height": 2432,
+  "source": "tasks/03-correct/inputs/pose_seated.json scaled x2, supplied pose points not eye observations",
+  "people": [
+    {
+      "id": "a",
+      "joints": {
+        "nose": {
+          "state": "observed",
+          "at": [
+            840,
+            500
+          ]
+        },
+        "r_eye": {
+          "state": "observed",
+          "at": [
+            804,
+            468
+          ]
+        },
+        "l_eye": {
+          "state": "observed",
+          "at": [
+            876,
+            468
+          ]
+        },
+        "r_ear": {
+          "state": "observed",
+          "at": [
+            764,
+            492
+          ]
+        },
+        "l_ear": {
+          "state": "observed",
+          "at": [
+            916,
+            492
+          ]
+        },
+        "neck": {
+          "state": "observed",
+          "at": [
+            832,
+            652
+          ]
+        },
+        "r_shoulder": {
+          "state": "observed",
+          "at": [
+            688,
+            696
+          ]
+        },
+        "l_shoulder": {
+          "state": "observed",
+          "at": [
+            980,
+            696
+          ]
+        },
+        "r_elbow": {
+          "state": "observed",
+          "at": [
+            612,
+            984
+          ]
+        },
+        "r_wrist": {
+          "state": "observed",
+          "at": [
+            712,
+            672
+          ]
+        },
+        "l_elbow": {
+          "state": "observed",
+          "at": [
+            1072,
+            1000
+          ]
+        },
+        "l_wrist": {
+          "state": "observed",
+          "at": [
+            1132,
+            1296
+          ]
+        },
+        "r_hip": {
+          "state": "occluded",
+          "at": [
+            760,
+            1328
+          ]
+        },
+        "l_hip": {
+          "state": "occluded",
+          "at": [
+            912,
+            1328
+          ]
+        },
+        "r_knee": {
+          "state": "observed",
+          "at": [
+            704,
+            1692
+          ]
+        },
+        "l_knee": {
+          "state": "observed",
+          "at": [
+            864,
+            1712
+          ]
+        },
+        "r_ankle": {
+          "state": "observed",
+          "at": [
+            752,
+            2152
+          ]
+        },
+        "l_ankle": {
+          "state": "observed",
+          "at": [
+            704,
+            2172
+          ]
+        }
+      }
+    }
+  ]
+}
