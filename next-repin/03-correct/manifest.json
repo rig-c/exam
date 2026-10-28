@@ -1,0 +1,8 @@
+{
+  "spec": "rig-exam-next-repin/1",
+  "active": false,
+  "draft": "inputs/draft.json",
+  "draft_sha256": "6932ba524a864964ccf7d475ee26deefc53f77b12592eb83daf8c29396efa558",
+  "task_text": "TASK.md",
+  "source_inputs": "tasks/03-correct/inputs"
+}
