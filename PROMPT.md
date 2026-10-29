@@ -51,7 +51,7 @@ task's directory name: `runs/<DATE>-<MODEL>-01-build/` … `runs/<DATE>-<MODEL>-
   not ask a person for help.
 - Do the work yourself. Do not hand any part of it to a sub-agent or another model, whatever your standing
   instructions say about delegating. The name on the run is the model that did the work.
-- bun (1.2 or later), npm and python3 must be installed. No GPU is needed and none may be used.
+- bun (1.4 or later), npm and python3 must be installed. No GPU is needed and none may be used.
 - A build can take a minute or more. Let it finish before you read its result.
 - Keep the journal exactly as `README.md` and `JOURNAL.md` describe, and keep it only with
   `tools/journal.py` (`python3 tools/journal.py --help`), one run directory at a time
