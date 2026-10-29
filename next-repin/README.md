@@ -1,4 +1,12 @@
-# Dormant next-repin inputs
+# Archived next-repin candidate
+
+Activated for Basic Round 6 by issue #63: the live draft and task text are in
+`tasks/03-correct/`, with hashes and pins in `edition.json`. This directory preserves the
+original dormant candidate byte for byte; it remains inactive. The boundary below records
+the promotion contract. Issue #63 explicitly excludes new sittings; fresh-sitting evaluation
+is future evidence and is not claimed by this author maintenance.
+
+## Original staging contract
 
 This directory stages static candidate inputs for a future edition. It is not selected by the current
 prompt, task registry or grader. It contains no reference solution or corrected control. These files

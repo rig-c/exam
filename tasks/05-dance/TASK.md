@@ -14,15 +14,14 @@ The fixture, as it is in the repository: the painting and its layers, the ball-j
 with the rig and an idle. Nothing else: no keys, no pose, no reference clip.
 
 The rig builds as given, with the shell in `fixtures/mannequin/`, on the versions the root `package.json`
-pins (`@rig-c/parts` 1.60.0, `rig-c` 2.67.2):
+pins:
 
     rig-parts build --config config.json --source inputs/painting.png --full inputs/layers/full --head inputs/layers/head --out out
 
-and ends `check: PASS; 9 of 14 bar(s) measured, 5 skipped (BLINK_NO_HOLE, TIP_OVER_ROOT, TEXTURE_STRETCH,
-FEET_STAY_LEVEL, STRESS_OFF_CHAIN)`. That is the idle-only check; with a `dance` that poses the legs,
-`FEET_STAY_LEVEL` is also measured and the check ends `check: PASS; 10 of 14 bar(s) measured, 4 skipped` —
-both counts describe passing builds. Two iks aim the ankles at fixed targets under `root`; hip movement
-must stay within the fixture's [planted-leg reach](../../fixtures/mannequin/README.md#planted-leg-reach).
+and its `check` reports PASS. This is the supplied idle. A `dance` that poses the legs also measures
+`FEET_STAY_LEVEL`; `check/check.json` records the measured and skipped bars for that build. Two iks aim
+the ankles at fixed targets under `root`; hip movement must stay within the fixture's
+[planted-leg reach](../../fixtures/mannequin/README.md#planted-leg-reach).
 The targets staying fixed does not guarantee drawing contact. There are no legs to construct.
 
 For a run-local config, see [manual build from clone root](../../README.md#manual-build-from-clone-root):

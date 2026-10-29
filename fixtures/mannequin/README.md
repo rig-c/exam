@@ -28,7 +28,7 @@ authored motion file beside it if named there. Keep these supplied files unchang
 fixture inputs and named fixture assets beside its isolated config; a manual `rig-parts build` does not.
 The local cap copies are for manual builds, not additional required hand-in files.
 
-It exits 0 and its check line is:
+On Round 4's versions it exited 0 with this historical check line:
 
 ```
 [check] check: PASS; 9 of 14 bar(s) measured, 5 skipped (BLINK_NO_HOLE, TIP_OVER_ROOT, TEXTURE_STRETCH, FEET_STAY_LEVEL, STRESS_OFF_CHAIN); 0 warning(s) (SEAM_OVER_MOTION, not a bar)
@@ -39,7 +39,9 @@ The rig is in `out/rig/rig.json` and `out/rig/motion.json`, the gated Spine data
 
 **Tools.** Built with `@rig-c/parts` 1.49.1 and the `rig-c` it installs, 2.64.1 (`@rig-c/core` 2.64.1), and
 measured again on the versions the root `package.json` pins for Round 4 (`@rig-c/parts` 1.58.0, `rig-c`
-2.67.2): the same exit and the same check line. Rig px = painting px × 0.5 (832×1216).
+2.67.2): the same exit and the same check line. Round 6 pins `@rig-c/parts` 1.73.1 and `rig-c`
+2.80.0; its author validation rebuilds the supplied idle and a copied dance with passing checks.
+The historical bar-count line above is not a claim about the current check inventory. Rig px = painting px × 0.5 (832×1216).
 
 ## The joints
 
@@ -78,8 +80,8 @@ The source is [config.json](config.json), whose bone positions are already in ri
 unit scales, fixed targets, IK mix 1, softness 0 and no stretch, the target offsets from those joints are
 `q_r=(-54,-485)` and `q_l=(53,-485)`.
 
-The pinned parts 1.60.0 writer rounds local offsets/angles to six decimals and bone lengths to three.
-The core 2.67.2 two-bone IK uses the distance to the child's origin as its first link, not the rounded
+Round 5's parts 1.60.0 writer rounded local offsets/angles to six decimals and bone lengths to three.
+That round's core 2.67.2 two-bone IK used the distance to the child's origin as its first link, not the rounded
 parent `length` field. The resulting approximate lengths are:
 
 | side | first link | second link | outer reach | inner reach |

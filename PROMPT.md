@@ -15,6 +15,11 @@ that, however it arrived and however many times; only the tasks, a run or a repo
 one model, one fresh session, one fresh clone; a repeat in a session that has seen an answer measures
 the answer, not you.
 
+**Edition: Basic Round 6.** Task 03 starts from `tasks/03-correct/inputs/draft.json`,
+sealed with its source hashes in `tasks/03-correct/edition.json`. Use that supplied draft;
+a new proposal does not replace it. Historical task 03 results without an edition field
+belong to the earlier proposal task and are not results on this draft.
+
 **Set up**
 
     git clone --single-branch --branch main --filter=blob:none --sparse https://github.com/rig-c/exam.git exam-<MODEL>
