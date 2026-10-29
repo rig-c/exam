@@ -222,6 +222,20 @@ line in about two minutes, one line was answered by the package's own README, an
 turning bone cannot draw. The part of that work that does measure an agent is the polish that follows,
 comparing the rig with the video and closing the gap, and it returns as a task once that gap can be measured.
 
+Round 6, on `@rig-c/parts` 1.73.1 and `rig-c` 2.80.0: task 03 now starts from the static
+[`inputs/draft.json`](tasks/03-correct/inputs/draft.json), with its edition, exact draft hash and unchanged
+source input hashes in [`edition.json`](tasks/03-correct/edition.json). The draft can pass the package
+check while failing an independent exam line. Its [task text](tasks/03-correct/TASK.md) replaces the
+old failing-proposal description and correction hint; [`TASK-round5.md`](tasks/03-correct/TASK-round5.md)
+preserves that text byte for byte. Existing results with no task edition field remain historical
+proposal-task records on their recorded versions; they are not results on the new static draft.
+New task 03 grader output records `edition` and `task_input` provenance. The other Basic tasks keep
+their existing inputs and bars. This repin is author validation, not a new sitting.
+
+The package name stays `rig-c`: the tasks and grader invoke its `rigc` binary and the grader records
+its installed package version under that literal name. Advanced's current round packages use the
+same core and parts pins, with `@rig-c/pose` 1.5.2; recorded sittings keep their original versions.
+
 Every painting was generated for this exam (each task's `inputs/generation.json` records how). None is
 one of the packages' examples, nor walked by any public guide: their configs do not fit. A guide walks its own
 painting, never an exam's input.

@@ -88,8 +88,10 @@ read 0.5 or more, and the two that did not read 0.106.
    installs (`rig-c`, `@rig-c/pose`, `@rig-c/parts`: their `README.md`, `docs/`, `--help`) and their public
    pages, and nothing else on the machine — not another sitting, not another copy of the exam, not this
    repository. It may not ask a person.
-2. **Pinned versions.** The round's `package.json` names them: `rig-c` 2.59.0, `@rig-c/pose` 0.31.1,
-   `@rig-c/parts` 1.35.0. `npm install` installs them.
+2. **Pinned versions.** The round's `package.json` names the current author-validated toolchain:
+   `rig-c` 2.80.0, `@rig-c/pose` 1.5.2, `@rig-c/parts` 1.73.1. `npm ci` installs each round's lockfile.
+   The repin changes no pass table and records no new sitting. Earlier sittings used `rig-c` 2.59.0,
+   `@rig-c/pose` 0.31.1 and `@rig-c/parts` 1.35.0; their results and inputs remain unchanged.
 3. **One round, one fresh session, one fresh copy of the package.** A session that has seen a round, or
    anyone's answer to one, does not sit another.
 4. **Journal before you act.** Lines 1–3 of an entry before the step, line 4 after, `WTF?:` where the

@@ -1,1 +1,9 @@
-{ "name": "rig-c-exam-advanced", "private": true, "dependencies": { "rig-c": "2.59.0", "@rig-c/pose": "0.31.1", "@rig-c/parts": "1.35.0" } }
+{
+  "name": "rig-c-exam-advanced",
+  "private": true,
+  "dependencies": {
+    "rig-c": "2.80.0",
+    "@rig-c/pose": "1.5.2",
+    "@rig-c/parts": "1.73.1"
+  }
+}

@@ -38,6 +38,8 @@ class NextRepinFixtureTests(unittest.TestCase):
         for name in ('grade.py', 'PROMPT.md', 'tasks/03-correct/TASK.md'):
             self.assertNotIn('next-repin/', (ROOT / name).read_text())
         self.assertFalse((ROOT / 'tasks/03-correct/fixture.json').exists())
+        self.assertEqual((ROOT / 'tasks/03-correct/inputs/draft.json').read_bytes(),
+                         (CANDIDATE / 'inputs/draft.json').read_bytes())
 
     def test_no_private_controls_in_candidate(self):
         self.assertEqual(sorted(str(p.relative_to(CANDIDATE)) for p in CANDIDATE.rglob('*') if p.is_file()),

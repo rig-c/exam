@@ -20,13 +20,12 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BIN = os.path.join(ROOT, 'node_modules', '.bin')
 UNCOVERED_LINE = {'01-build': 3700, '02-move': 3700, '03-correct': 3500, '04-soft': 3700, '05-dance': 4200}   # rig px; about twice what the proposed plan
                         # leaves, rounded up to the next 100: Round 5's painting 1,812 (01, 02, 04), task 03's 1,726; 05 is the fixture's own
-KEPT_MESHES = 8          # task 03: the meshes the proposal drafts on its painting
+KEPT_MESHES = 8          # task 03: minimum number of deformed meshes
 GESTURE = {'part': 'face', 'against': 'bottomwear', 'floor': 22}
                         # task 02: rig px the face's furthest vertex travels from the middle of the skirt. The idle's own travel
                         # (9.1) plus half of what a reference gesture adds (35.0: head −8°, chest −3° and −6 px, no limb keyed), rounded down
 FPS = 12
-STILL_MOVES = 23        # task 03: rig px the back hair travels against the head over the idle — half of what the draft's
-                        # own amplitudes give once its two chains agree (45.9); the same amplitudes cut to a quarter give 17.5
+STILL_MOVES = 23        # task 03: minimum back-hair vertex travel relative to the head over the idle, at FPS
 SOFT = (3.0, 15.0)      # task 04: rig px the soft patch differs from the same build without its physics, on the hop
 PATCH = (8, 0.80)       # task 04: at least 8 of the part's vertices move, and at most 80 % of them — a patch, not the garment
 BUDGET = 700            # task 04: triangles in the whole rig; on Round 5's painting the recipe's own region spacing, copied,
@@ -330,6 +329,24 @@ def from_the_guide(rundir):
             except (OSError, ValueError): pass
     return hits
 
+def task_edition(task):
+    """Provenance for an explicitly versioned task; older result files have no edition field."""
+    path = os.path.join(ROOT, 'tasks', task, 'edition.json')
+    if not os.path.isfile(path): return None
+    with open(path) as source:
+        edition = json.load(source)
+    import hashlib
+    base = os.path.join(ROOT, 'tasks', task)
+    expected = {edition['draft']: edition['draft_sha256']}
+    expected.update({'inputs/' + name: digest for name, digest in edition['source_sha256'].items()})
+    for name, digest in expected.items():
+        with open(os.path.join(base, name), 'rb') as source:
+            actual = hashlib.sha256(source.read()).hexdigest()
+        if actual != digest:
+            raise ValueError(f"task edition input changed: {name}: sha256 {actual}, expected {digest}")
+    return edition
+
+
 def main():
     args = sys.argv[1:]; fx = None
     if '--fixture' in args:
@@ -360,6 +377,10 @@ def main():
         os.symlink(own if os.path.exists(os.path.join(own, 'painting.png')) else os.path.join(ROOT, 'tasks', '01-build', 'inputs'), os.path.join(work, 'inputs'))
     versions = {p: json.load(open(os.path.join(ROOT, 'node_modules', p, 'package.json')))['version'] for p in ('@rig-c/parts', 'rig-c')}
     res = {'run': name, 'task': task, 'versions': versions, 'lines': {}}
+    edition = task_edition(task)
+    if edition is not None:
+        res['edition'] = edition['edition']
+        res['task_input'] = edition
     pp = os.path.join(work, 'inputs', 'painting.png')   # which painting the run was graded on: the results split their columns by it
     if os.path.exists(pp):
         import hashlib
