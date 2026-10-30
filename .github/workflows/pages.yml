@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: python3 -B tools/check_readme.py
+      - run: python3 -B -m unittest discover -s tools -p 'test_readme.py' -v
+        env:
+          TMPDIR: ${{ runner.temp }}
       - run: python3 results.py --check
       - run: python3 -B -m unittest discover -s tools -p 'test_results.py'
         env:
