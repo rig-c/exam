@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rig-c/exam/main/assets/banner.svg" alt="rig-c/exam — Open-book exam for AI agents: one painting to a gated rig with a journal" width="100%" />
+</p>
+
 # rig-c exam
 
 An open-book exam for AI agents: build a rig from one painting with the published rig-c tools, and
