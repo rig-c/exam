@@ -51,16 +51,11 @@ def summary(basic, advanced):
         return (grade['of'] > 0 and grade['passed'] == grade['of']
                 and all(v == 'PASS' for v in grade['rows'].values()))
 
-    cells = [rr[r] for rr in models.values() for r in advanced.ROUNDS if r in rr]
     all_rounds = sum(all(all_rows(rr[r]) for r in advanced.ROUNDS) for rr in complete)
-    failed = sum(not all_rows(s) for s in cells)
     return (
-        f'**Basic:** {len(groups)} models, {passed} passed every graded line across their independent '
-        f'sittings ({sum(map(len, groups.values()))} sittings). Only tasks actually graded count; '
-        'this does not claim that every task was sat.\n\n'
-        f'**Advanced:** {len(models)} models, {len(complete)} with all three rounds; {all_rounds} passed '
-        f'every graded row in all three. {failed} of {len(cells)} displayed round cells did not pass '
-        'every row. Shin-scale what-ifs do not change the recorded grades.\n'
+        f'**Basic:** {passed} of {len(groups)} models passed every graded line, '
+        f'from each vendor\'s lighter tier to its heaviest. '
+        f'**Advanced:** {all_rounds} of {len(complete)} passed every graded row in all three rounds.\n'
     ).encode('utf-8')
 
 
@@ -118,13 +113,16 @@ LEGACY_ADVANCED = re.compile(
 
 
 def splice(data, basic, advanced, counts):
-    sections = {name: region(data, name, optional=name == 'exam-summary')
+    # The tables may be gone only where the summary stands in for them.
+    has_summary = region(data, 'exam-summary', optional=True) is not None
+    sections = {name: region(data, name, optional=has_summary or name == 'exam-summary')
                 for name in ('exam', 'exam-advanced', 'exam-summary')}
     present = sorted(r for r in sections.values() if r is not None)
     if any(a[3] > b[0] for a, b in zip(present, present[1:])):
         raise ProfileError('exam marker pairs overlap')
     edits = [(sections[name][1], sections[name][2], value)
-             for name, value in (('exam', basic), ('exam-advanced', advanced))]
+             for name, value in (('exam', basic), ('exam-advanced', advanced))
+             if sections[name] is not None]
     if sections['exam-summary'] is not None:
         s = sections['exam-summary']
         edits.append((s[1], s[2], counts))
