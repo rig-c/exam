@@ -106,6 +106,17 @@ class SpliceTests(unittest.TestCase):
             with self.assertRaises(profile.ProfileError):
                 self.splice(data)
 
+    def test_summary_alone_is_refreshed_and_half_a_table_pair_refuses(self):
+        summary = (b'intro\n' + profile.SUMMARY_START + b'old\n' + profile.SUMMARY_END + b'\nrest\n')
+        self.assertEqual(self.splice(summary),
+                         b'intro\n' + profile.SUMMARY_START + self.counts + profile.SUMMARY_END + b'\nrest\n')
+        with self.assertRaises(profile.ProfileError):
+            self.splice(summary + b'<!-- exam:start -->\n')
+
+    def test_a_table_pair_stays_required_without_a_summary(self):
+        with self.assertRaises(profile.ProfileError):
+            self.splice(b'no markers at all\n')
+
     def test_inline_malformed_and_overlapping_pairs_refuse(self):
         cases = [self.after.replace(b'<!-- exam:end -->', b'inline <!-- exam:end -->'),
                  self.after.replace(b'<!-- exam:end -->', b'<!-- exam:end'),
@@ -168,18 +179,17 @@ class CountTests(unittest.TestCase):
                    self.run_record('b'), self.run_record('b', passed=0),
                    self.run_record('void', counts='void'), self.run_record('assisted', counts='assisted')]
         s = self.counts(basic=records)
-        self.assertIn('Basic:** 2 models, 1 passed every graded line', s)
-        self.assertIn('(4 sittings)', s)
+        self.assertIn('Basic:** 1 of 2 models passed every graded line', s)
 
     def test_basic_empty_and_zero_denominator_do_not_pass(self):
         empty = self.run_record('empty'); empty['tasks'] = {}
         s = self.counts(basic=[empty, self.run_record('zero', passed=0, of=0)])
-        self.assertIn('Basic:** 2 models, 0 passed', s)
-        self.assertIn('Basic:** 0 models, 0 passed', self.counts())
+        self.assertIn('Basic:** 0 of 2 models passed', s)
+        self.assertIn('Basic:** 0 of 0 models passed', self.counts())
 
     def test_basic_separate_round5_painting_still_has_graded_lines(self):
         record = self.run_record('new-painting', passed=0, painting=self.basic_reader.NEW_PAINTING)
-        self.assertIn('Basic:** 1 models, 0 passed', self.counts(basic=[record]))
+        self.assertIn('Basic:** 0 of 1 models passed', self.counts(basic=[record]))
 
     def test_advanced_uses_selected_sittings_complete_rounds_and_ignores_whatif(self):
         ss = [self.sitting('a', r, shin=('FAIL', 0.1)) for r in ('R1', 'R2', 'R3')]
@@ -187,15 +197,13 @@ class CountTests(unittest.TestCase):
         # by_model replaces the earlier failed R1 with the later passing R1.
         ss.insert(0, self.sitting('a', 'R1', 'FAIL'))
         s = self.counts(advanced=ss)
-        self.assertIn('Advanced:** 2 models, 1 with all three rounds; 1 passed', s)
-        self.assertIn('1 of 5 displayed round cells did not pass every row', s)
+        self.assertIn('Advanced:** 1 of 1 passed', s)
 
     def test_advanced_fail_and_skip_prevent_all_round_pass(self):
         for status in ('FAIL', 'SKIP'):
             ss = [self.sitting('a', r, status if r == 'R2' else 'PASS') for r in ('R1', 'R2', 'R3')]
             s = self.counts(advanced=ss)
-            self.assertIn('1 with all three rounds; 0 passed', s)
-            self.assertIn('1 of 3 displayed round cells', s)
+            self.assertIn('Advanced:** 0 of 1 passed', s)
 
 
 class CliTests(unittest.TestCase):
